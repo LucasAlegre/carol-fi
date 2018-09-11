@@ -40,7 +40,6 @@ int simulated_annealing() {
        solution[i] = rand_bit();
     int best = cost(solution);
     int temp = 2000000;
-    int co=0;
     for(int t = 0; t < 1000000; t++){
          vector<int> s(solution);
          int i = rand() % n;
@@ -53,13 +52,11 @@ int simulated_annealing() {
          }
          else if (random01() <= exp(-delta/(float)(temp))){
              //cout << exp(-delta/(float)(temp)) << endl;
-             co++;
              solution = s;
              best = min(c, best);
          }
          temp *= 0.99999;
     }
-    cout << co << endl;
     return -best;
 }
  
