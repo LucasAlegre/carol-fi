@@ -24,7 +24,6 @@ int knapSack(int W, int n, vector<int> &val, vector<int> &wt) {
                 }
                 else
                     V[i][w] = V[i-1][w];
-                int x = max(i*w, i*w);
             }
         }
         return V[n][W];
