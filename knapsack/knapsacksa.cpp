@@ -40,6 +40,9 @@ int simulated_annealing() {
        solution[i] = rand_bit();
     int best = cost(solution);
     int temp = 2000000;
+
+    //int co=0;
+
     for(int t = 0; t < 1000000; t++){
          vector<int> s(solution);
          int i = rand() % n;
@@ -52,18 +55,24 @@ int simulated_annealing() {
          }
          else if (random01() <= exp(-delta/(float)(temp))){
              //cout << exp(-delta/(float)(temp)) << endl;
+             //co++;
+
              solution = s;
              best = min(c, best);
          }
          temp *= 0.99999;
     }
+    //cout << co << endl;
+    
     return -best;
 }
  
 int main()
 {
     ifstream file("instance.txt");
-    srand (time(NULL));
+    ofstream outfile("outputsa");
+
+    srand (42);
     file >> n; file >> W;
     
     for(int i = 0; i < n; i++){
@@ -72,6 +81,8 @@ int main()
         wt.push_back(y);
     }
 
-    cout << simulated_annealing();
+    outfile << simulated_annealing();
+    outfile.close();
+
     return 0;
 }

@@ -121,7 +121,8 @@ int genetic_algorithm() {
 int main()
 {
     ifstream file("instance.txt");
-    srand (time(NULL));
+    ofstream outfile("outputga");
+    srand (42);
     file >> n; file >> W;
     
     for(int i = 0; i < n; i++){
@@ -130,6 +131,8 @@ int main()
         wt.push_back(y);
     }
 
-    cout << genetic_algorithm();
+    outfile << genetic_algorithm();
+    outfile.close();
+
     return 0;
 }

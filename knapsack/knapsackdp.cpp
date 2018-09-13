@@ -32,6 +32,7 @@ int knapSack(int W, int n, vector<int> &val, vector<int> &wt) {
 int main()
 {
     ifstream file("instance.txt");
+    ofstream outfile("outputdp");
     
     vector<int> val;
     vector<int> wt;
@@ -44,6 +45,7 @@ int main()
         wt.push_back(y);
     }
 
-    cout << knapSack(W, n, val, wt);
+    outfile << knapSack(W, n, val, wt);
+    outfile.close();
     return 0;
 }
