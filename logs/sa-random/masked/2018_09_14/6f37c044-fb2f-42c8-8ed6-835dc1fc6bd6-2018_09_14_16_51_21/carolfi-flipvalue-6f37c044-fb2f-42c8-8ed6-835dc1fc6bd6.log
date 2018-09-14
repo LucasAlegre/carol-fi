@@ -1,0 +1,44 @@
+[INFO -- 2018-09-14 16:51:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-14 16:51:18]
+Initialization strings:
+[INFO -- 2018-09-14 16:51:18]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-14 16:51:18]
+initSignal:0
+[INFO -- 2018-09-14 16:51:18]
+endSignal:2
+[INFO -- 2018-09-14 16:51:18]
+faultModel:2
+[INFO -- 2018-09-14 16:51:19]
+Backtrace BEGIN:
+#0  __expf_finite () at ../sysdeps/x86_64/fpu/e_expf.S:92
+#1  0x00007ffff770738f in __GI___expf (x=-0.342295229) at ../sysdeps/ieee754/flt-32/w_expf_compat.c:26
+#2  0x00005555555554e1 in std::exp (__x=-0.342295229) at /usr/include/c++/7/cmath:223
+#3  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+87	../sysdeps/x86_64/fpu/e_expf.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x520x410xaf0xbe
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd97c
+address max offset: 4
+Memory content after  bitflip:0xd00xd30x9f0x82
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf_compat.c
+symbol line: 24
+value: -2.34845246e-37
+value address: 0x7fffffffd97c
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-09-14 16:51:19]
+Fault Injection Successful after 1.5920145511627197s
+[INFO -- 2018-09-14 16:51:21]
+event type: exit
+[INFO -- 2018-09-14 16:51:21]
+exit code: 0

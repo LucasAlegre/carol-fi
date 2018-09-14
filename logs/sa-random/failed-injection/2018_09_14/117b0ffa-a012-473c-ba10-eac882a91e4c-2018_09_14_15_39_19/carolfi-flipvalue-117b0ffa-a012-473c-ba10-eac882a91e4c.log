@@ -1,0 +1,19 @@
+[INFO -- 2018-09-14 15:39:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-14 15:39:18]
+Initialization strings:
+[INFO -- 2018-09-14 15:39:18]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-14 15:39:18]
+initSignal:0
+[INFO -- 2018-09-14 15:39:18]
+endSignal:2
+[INFO -- 2018-09-14 15:39:18]
+faultModel:2
+[EXCEPTION -- 2018-09-14 15:39:18]
+gdbException: Cannot access memory at address 0xafa5b2914db03871
+[INFO -- 2018-09-14 15:39:18]
+event type: exit
+[EXCEPTION -- 2018-09-14 15:39:18]
+exit code: no exit code available

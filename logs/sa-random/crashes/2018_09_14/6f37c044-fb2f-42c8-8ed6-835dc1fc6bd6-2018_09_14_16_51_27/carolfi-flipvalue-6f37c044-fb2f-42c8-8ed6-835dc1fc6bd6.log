@@ -1,0 +1,59 @@
+[INFO -- 2018-09-14 16:51:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-14 16:51:24]
+Initialization strings:
+[INFO -- 2018-09-14 16:51:24]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-14 16:51:24]
+initSignal:0
+[INFO -- 2018-09-14 16:51:24]
+endSignal:2
+[INFO -- 2018-09-14 16:51:24]
+faultModel:2
+[EXCEPTION -- 2018-09-14 16:51:26]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-14 16:51:26]
+gdbException: Cannot access memory at address 0xa401699eb2cff186
+[INFO -- 2018-09-14 16:51:26]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff713af5d in __GI_abort () at abort.c:90
+#2  0x00007ffff7ae1095 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7adec86 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7adecd1 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7adef14 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7adf49c in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x0000555555556ce0 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffda00, __n=1657248717795346778) at /usr/include/c++/7/ext/new_allocator.h:111
+#8  0x0000555555556a43 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=1657248717795346778) at /usr/include/c++/7/bits/alloc_traits.h:436
+#9  0x0000555555556600 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffda00, __n=1657248717795346778) at /usr/include/c++/7/bits/stl_vector.h:172
+#10 0x0000555555556431 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffda00, __n=1657248717795346778) at /usr/include/c++/7/bits/stl_vector.h:187
+#11 0x0000555555555bc5 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffda00, __n=1657248717795346778, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#12 0x0000555555555665 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 1657248717795346778, capacity 1657248717795346778 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#13 0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#14 0x000055555555535e in main () at knapsacksa.cpp:84
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff74ddce0 
+address max offset: 8
+Memory content after  bitflip:0x6a0xd20xfc0x490x9f0x070x550x54
+frame name: __GI_abort
+symbol name: __GI___abort_msg
+symbol filename: abort.c
+symbol line: 38
+value: 0x0
+value address: 0x7ffff74ddce0 <__abort_msg>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-14 16:51:26]
+Fault Injection Successful after 2.5826385021209717s
+[INFO -- 2018-09-14 16:51:26]
+event type: exit
+[EXCEPTION -- 2018-09-14 16:51:26]
+exit code: no exit code available

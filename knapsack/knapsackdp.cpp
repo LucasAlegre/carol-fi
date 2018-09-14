@@ -26,13 +26,14 @@ int knapSack(int W, int n, vector<int> &val, vector<int> &wt) {
                     V[i][w] = V[i-1][w];
             }
         }
+        
         return V[n][W];
 }
  
 int main()
 {
-    ifstream file("instance.txt");
-    ofstream outfile("outputdp");
+    ifstream file("/tmp/knapsack/instance.txt");
+    ofstream outfile("/tmp/knapsack/outputdp");
     
     vector<int> val;
     vector<int> wt;

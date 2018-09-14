@@ -120,8 +120,8 @@ int genetic_algorithm() {
  
 int main()
 {
-    ifstream file("instance.txt");
-    ofstream outfile("outputga");
+    ifstream file("/tmp/knapsack/instance.txt");
+    ofstream outfile("/tmp/knapsack/outputga");
     srand (42);
     file >> n; file >> W;
     

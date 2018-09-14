@@ -69,8 +69,8 @@ int simulated_annealing() {
  
 int main()
 {
-    ifstream file("instance.txt");
-    ofstream outfile("outputsa");
+    ifstream file("/tmp/knapsack/instance.txt");
+    ofstream outfile("/tmp/knapsack/outputsa");
 
     srand (42);
     file >> n; file >> W;

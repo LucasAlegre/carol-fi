@@ -1,0 +1,58 @@
+[INFO -- 2018-09-14 16:49:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-14 16:49:52]
+Initialization strings:
+[INFO -- 2018-09-14 16:49:52]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-14 16:49:52]
+initSignal:0
+[INFO -- 2018-09-14 16:49:52]
+endSignal:2
+[INFO -- 2018-09-14 16:49:52]
+faultModel:2
+[EXCEPTION -- 2018-09-14 16:49:53]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-14 16:49:53]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-14 16:49:53]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-14 16:49:53]
+Backtrace BEGIN:
+#0  0x0000555555555c38 in std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (this=0x7fffffffda00) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x000055555555567d in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:333
+#2  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Memory content before bitflip:0xc60x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9d8
+address max offset: 4
+Memory content after  bitflip:0xc00x780x110xb7
+frame name: simulated_annealing
+symbol name: i
+symbol filename: knapsacksa.cpp
+symbol line: 48
+value: -1223591744
+value address: 0x7fffffffd9d8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-14 16:49:53]
+Fault Injection Successful after 1.7853522300720215s
+[INFO -- 2018-09-14 16:49:55]
+event type: exit
+[INFO -- 2018-09-14 16:49:55]
+exit code: 0
