@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 14:53:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:53:49]
+Initialization strings:
+[INFO -- 2018-09-23 14:53:49]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:53:49]
+initSignal:0
+[INFO -- 2018-09-23 14:53:49]
+endSignal:2
+[INFO -- 2018-09-23 14:53:49]
+faultModel:4
+[INFO -- 2018-09-23 14:53:49]
+Backtrace BEGIN:
+#0  std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=1433868032) at /usr/include/c++/7/bits/cpp_type_traits.h:408
+#1  0x0000555555555fa5 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:455
+#2  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+403	
+404	  // Fallback implementation of the function in bits/stl_iterator.h used to
+405	  // remove the move_iterator wrapper.
+406	  template<typename _Iterator>
+407	    inline _Iterator
+408	    __miter_base(_Iterator __it)
+409	    { return __it; }
+410	
+411	_GLIBCXX_END_NAMESPACE_VERSION
+412	} // namespace
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x02
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 34143025
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:53:49]
+Fault Injection Successful after 0.562366247177124s
+[INFO -- 2018-09-23 14:53:51]
+event type: exit
+[INFO -- 2018-09-23 14:53:51]
+exit code: 0

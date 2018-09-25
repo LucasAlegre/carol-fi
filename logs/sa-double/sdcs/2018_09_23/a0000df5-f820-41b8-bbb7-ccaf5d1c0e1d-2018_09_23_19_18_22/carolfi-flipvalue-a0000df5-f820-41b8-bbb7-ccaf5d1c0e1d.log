@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 19:18:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:18:19]
+Initialization strings:
+[INFO -- 2018-09-23 19:18:19]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:18:19]
+initSignal:0
+[INFO -- 2018-09-23 19:18:19]
+endSignal:2
+[INFO -- 2018-09-23 19:18:19]
+faultModel:1
+[EXCEPTION -- 2018-09-23 19:18:19]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-09-23 19:18:20]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x555555759050 <wt>, __n=72) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x0000555555554fab in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#2  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xd30x080x00
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 578353
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 19:18:20]
+Fault Injection Successful after 1.1137619018554688s
+[INFO -- 2018-09-23 19:18:21]
+event type: exit
+[INFO -- 2018-09-23 19:18:21]
+exit code: 0

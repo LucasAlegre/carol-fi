@@ -1,0 +1,58 @@
+[INFO -- 2018-09-24 19:49:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:49:50]
+Initialization strings:
+[INFO -- 2018-09-24 19:49:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:49:50]
+initSignal:1
+[INFO -- 2018-09-24 19:49:50]
+endSignal:3.5
+[INFO -- 2018-09-24 19:49:50]
+faultModel:4
+[INFO -- 2018-09-24 19:49:51]
+Backtrace BEGIN:
+#0  0x00005555555568b8 in std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (this=0x7fffffffd9f0) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x000055555555713e in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9f0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1264
+#2  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9f0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x00005555555554d1 in genetic_algorithm () at knapsackga.cpp:105
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x5555557824c0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x80
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: -2147483648
+value address: 0x7fffffffd818
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-24 19:49:51]
+Fault Injection Successful after 1.8543744087219238s
+[INFO -- 2018-09-24 19:49:54]
+event type: exit
+[INFO -- 2018-09-24 19:49:54]
+exit code: 0

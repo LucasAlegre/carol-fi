@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 08:15:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:15:35]
+Initialization strings:
+[INFO -- 2018-09-25 08:15:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:15:35]
+initSignal:1
+[INFO -- 2018-09-25 08:15:35]
+endSignal:3.5
+[INFO -- 2018-09-25 08:15:35]
+faultModel:0
+[EXCEPTION -- 2018-09-25 08:15:36]
+gdbException: Cannot access memory at address 0x55575577fdf0
+[INFO -- 2018-09-25 08:15:36]
+Backtrace BEGIN:
+#0  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#1  0x0000555555555b62 in chromossome::~chromossome (this=0x555555776520, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#2  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x555555776520) at /usr/include/c++/7/bits/stl_construct.h:98
+#3  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776520, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#4  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#5  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#6  0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#7  0x0000555555555088 in tournament (pop=std::vector of length -268435416, capacity -268435392 = {...}) at knapsackga.cpp:59
+#8  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+439	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Single bit-flip
+base address to flip value: 0x555555776538
+address max offset: 4
+Memory content after  bitflip:0x690x390xb80xff
+frame name: std::_Destroy<chromossome>
+symbol name: __pointer
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 97
+value: 0x555555776520
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:15:36]
+Fault Injection Successful after 1.4124698638916016s
+[INFO -- 2018-09-25 08:15:36]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:15:36]
+exit code: no exit code available

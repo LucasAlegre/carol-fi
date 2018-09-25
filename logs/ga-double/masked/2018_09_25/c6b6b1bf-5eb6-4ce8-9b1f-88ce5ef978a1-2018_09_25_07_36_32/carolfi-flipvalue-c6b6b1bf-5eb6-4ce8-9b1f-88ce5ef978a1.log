@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 07:36:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:36:27]
+Initialization strings:
+[INFO -- 2018-09-25 07:36:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:36:27]
+initSignal:1
+[INFO -- 2018-09-25 07:36:27]
+endSignal:3.5
+[INFO -- 2018-09-25 07:36:27]
+faultModel:1
+[INFO -- 2018-09-25 07:36:28]
+Backtrace BEGIN:
+#0  0x000055555555806b in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776560, __last=0x555555776560, __result=0x555555776720, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#1  0x0000555555556bcd in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 68, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#2  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+307					       _ForwardIterator __result,
+308					       _Allocator& __alloc)
+309	    {
+310	      return std::__uninitialized_copy_a
+311		(_GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__first),
+312		 _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+313	    }
+314	
+315	  template<typename _ForwardIterator, typename _Tp, typename _Allocator>
+316	    void
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x600x650x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd7f8
+address max offset: 8
+Memory content after  bitflip:0x600x650x660x550x550x550x000x00
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 305
+value: 0x555555776560
+value address: 0x7fffffffd7f8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 07:36:28]
+Fault Injection Successful after 1.8506858348846436s
+[INFO -- 2018-09-25 07:36:31]
+event type: exit
+[INFO -- 2018-09-25 07:36:31]
+exit code: 0

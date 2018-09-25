@@ -1,0 +1,55 @@
+[INFO -- 2018-09-24 18:22:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 18:22:52]
+Initialization strings:
+[INFO -- 2018-09-24 18:22:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 18:22:52]
+initSignal:1
+[INFO -- 2018-09-24 18:22:52]
+endSignal:3.5
+[INFO -- 2018-09-24 18:22:52]
+faultModel:0
+[INFO -- 2018-09-24 18:22:54]
+Backtrace BEGIN:
+#0  0x0000555555559455 in __gnu_cxx::new_allocator<int>::new_allocator (this=0x555555558aac <std::allocator_traits<std::allocator<chromossome> >::deallocate(std::allocator<chromossome>&, chromossome*, unsigned long)+43>) at /usr/include/c++/7/ext/new_allocator.h:81
+#1  0x00005555555582cb in std::allocator<int>::allocator (this=0x7fffffffd81f, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#2  0x00005555555589be in std::_Vector_base<int, std::allocator<int> >::get_allocator (this=0x7fffffffd910) at /usr/include/c++/7/bits/stl_vector.h:124
+#3  0x00005555555573fd in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#4  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+76	      typedef std::true_type propagate_on_container_move_assignment;
+77	#endif
+78	
+79	      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+80	
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xff0x080x00
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 589617
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 18:22:54]
+Fault Injection Successful after 2.172027826309204s
+[INFO -- 2018-09-24 18:22:56]
+event type: exit
+[INFO -- 2018-09-24 18:22:56]
+exit code: 0

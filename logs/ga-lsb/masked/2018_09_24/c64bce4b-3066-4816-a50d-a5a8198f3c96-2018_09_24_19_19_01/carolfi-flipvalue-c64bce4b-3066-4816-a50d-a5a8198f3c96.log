@@ -1,0 +1,51 @@
+[INFO -- 2018-09-24 19:18:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:18:57]
+Initialization strings:
+[INFO -- 2018-09-24 19:18:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:18:57]
+initSignal:1
+[INFO -- 2018-09-24 19:18:57]
+endSignal:3.5
+[INFO -- 2018-09-24 19:18:57]
+faultModel:4
+[INFO -- 2018-09-24 19:18:59]
+Backtrace BEGIN:
+#0  0x00005555555551eb in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:78
+#1  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+73	    for(int i = 0; i < n; i++){
+74	        mask[i] = rand_bit();
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+79	        if(mask[i]){
+80	            swap(filho1[i], filho2[i]);  
+81	        }
+82	    }
+
+Backtrace END
+Memory content before bitflip:0xc80x290xf80xff
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 4
+Memory content after  bitflip:0xc80x290xf80xbf
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -1074255416
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:18:59]
+Fault Injection Successful after 2.206113576889038s
+[INFO -- 2018-09-24 19:19:00]
+event type: exit
+[INFO -- 2018-09-24 19:19:00]
+exit code: 0

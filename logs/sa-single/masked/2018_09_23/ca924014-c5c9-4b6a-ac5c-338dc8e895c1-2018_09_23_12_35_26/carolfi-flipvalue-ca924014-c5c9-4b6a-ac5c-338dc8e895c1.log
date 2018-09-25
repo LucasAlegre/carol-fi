@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 12:35:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:35:23]
+Initialization strings:
+[INFO -- 2018-09-23 12:35:23]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:35:23]
+initSignal:0
+[INFO -- 2018-09-23 12:35:23]
+endSignal:2
+[INFO -- 2018-09-23 12:35:23]
+faultModel:0
+[INFO -- 2018-09-23 12:35:24]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:181
+#1  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#2  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+176	      _M_deallocate(pointer __p, size_t __n)
+177	      {
+178		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+179		if (__p)
+180		  _Tr::deallocate(_M_impl, __p, __n);
+181	      }
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x300xda0xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9a8
+address max offset: 8
+Memory content after  bitflip:0x300xda0xff0xff0xff0x770x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::~_Vector_base
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda30
+value address: 0x7fffffffd9a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 12:35:24]
+Fault Injection Successful after 1.0496606826782227s
+[INFO -- 2018-09-23 12:35:26]
+event type: exit
+[INFO -- 2018-09-23 12:35:26]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 01:34:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:34:08]
+Initialization strings:
+[INFO -- 2018-09-25 01:34:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:34:08]
+initSignal:1
+[INFO -- 2018-09-25 01:34:08]
+endSignal:3.5
+[INFO -- 2018-09-25 01:34:08]
+faultModel:4
+[INFO -- 2018-09-25 01:34:09]
+Backtrace BEGIN:
+#0  0x000055555555687d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#1  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x0000555555555b62 in chromossome::~chromossome (this=0x7fffffffd9d0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#3  0x0000555555555515 in genetic_algorithm () at knapsackga.cpp:105
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+158	      }
+159	#endif
+160	
+161	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+162	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+163			      - this->_M_impl._M_start); }
+164	
+165	    public:
+166	      _Vector_impl _M_impl;
+167	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x600x1e0x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd9d0
+address max offset: 8
+Memory content after  bitflip:0x600x1e0x780x550x550x550x000x08
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd9d0
+value address: 0x7fffffffd878
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:34:09]
+Fault Injection Successful after 1.1726617813110352s
+[INFO -- 2018-09-25 01:34:09]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:34:09]
+exit code: no exit code available

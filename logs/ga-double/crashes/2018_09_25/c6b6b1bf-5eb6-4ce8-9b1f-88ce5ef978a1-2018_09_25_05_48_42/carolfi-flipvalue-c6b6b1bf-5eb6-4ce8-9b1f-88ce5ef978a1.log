@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 05:48:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:48:39]
+Initialization strings:
+[INFO -- 2018-09-25 05:48:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:48:39]
+initSignal:1
+[INFO -- 2018-09-25 05:48:39]
+endSignal:3.5
+[INFO -- 2018-09-25 05:48:39]
+faultModel:1
+[EXCEPTION -- 2018-09-25 05:48:41]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 05:48:41]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 05:48:41]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 05:48:41]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff7ae1095 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7adec86 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7adecd1 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7adef69 in __cxa_rethrow () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x0000555555556cec in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:444
+#7  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555502c in tournament (pop=std::vector of length 44, capacity 68 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#10 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff7833ce0 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x030x00
+frame name: __GI_abort
+symbol name: __GI___abort_msg
+symbol filename: abort.c
+symbol line: 38
+value: 0x0
+value address: 0x7ffff7833ce0 <__abort_msg>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:48:41]
+Fault Injection Successful after 2.750734567642212s
+[INFO -- 2018-09-25 05:48:41]
+event type: exit
+[EXCEPTION -- 2018-09-25 05:48:41]
+exit code: no exit code available

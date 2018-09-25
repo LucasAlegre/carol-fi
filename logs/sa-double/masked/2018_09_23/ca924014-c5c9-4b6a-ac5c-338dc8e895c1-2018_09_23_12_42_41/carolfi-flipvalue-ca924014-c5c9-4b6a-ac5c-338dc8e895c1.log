@@ -1,0 +1,50 @@
+[INFO -- 2018-09-23 12:42:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:42:38]
+Initialization strings:
+[INFO -- 2018-09-23 12:42:38]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:42:38]
+initSignal:0
+[INFO -- 2018-09-23 12:42:38]
+endSignal:2
+[INFO -- 2018-09-23 12:42:38]
+faultModel:1
+[INFO -- 2018-09-23 12:42:38]
+Backtrace BEGIN:
+#0  tcache_get (tc_idx=<optimized out>) at malloc.c:2979
+#1  __GI___libc_malloc (bytes=800) at malloc.c:3079
+#2  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x0000555555556ce0 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#4  0x0000555555556a43 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#5  0x0000555555556600 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#6  0x0000555555556431 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#7  0x0000555555555bc5 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffda30, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#8  0x0000555555555665 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#9  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#10 0x000055555555535e in main () at knapsacksa.cpp:84
+
+2974	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8d0
+address max offset: 8
+Memory content after  bitflip:0xc80x000x000x000x000x000x000x60
+frame name: __gnu_cxx::new_allocator<int>::allocate
+symbol name: __n
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 99
+value: 6917529027641082056
+value address: 0x7fffffffd8d0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 12:42:38]
+Fault Injection Successful after 0.5823886394500732s
+[INFO -- 2018-09-23 12:42:40]
+event type: exit
+[INFO -- 2018-09-23 12:42:40]
+exit code: 0

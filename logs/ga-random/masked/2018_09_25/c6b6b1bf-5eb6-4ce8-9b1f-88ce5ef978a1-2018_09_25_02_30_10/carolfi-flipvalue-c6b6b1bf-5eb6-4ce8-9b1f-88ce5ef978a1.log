@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 02:30:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:30:05]
+Initialization strings:
+[INFO -- 2018-09-25 02:30:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:30:05]
+initSignal:1
+[INFO -- 2018-09-25 02:30:05]
+endSignal:3.5
+[INFO -- 2018-09-25 02:30:05]
+faultModel:2
+[INFO -- 2018-09-25 02:30:07]
+Backtrace BEGIN:
+#0  std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513553}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#1  0x0000555555555dfd in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513553}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#2  0x0000555555555058 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+1966	      if (__first != __last)
+1967		{
+1968		  std::__introsort_loop(__first, __last,
+1969					std::__lg(__last - __first) * 2,
+1970					__comp);
+1971		  std::__final_insertion_sort(__first, __last, __comp);
+1972		}
+1973	    }
+1974	
+1975	  template<typename _RandomAccessIterator, typename _Size, typename _Compare>
+
+Backtrace END
+Memory content before bitflip:0xef0x290xf80xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 4
+Memory content after  bitflip:0xdc0x2d0xbc0xc8
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -927191588
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 02:30:07]
+Fault Injection Successful after 2.474963903427124s
+[INFO -- 2018-09-25 02:30:09]
+event type: exit
+[INFO -- 2018-09-25 02:30:09]
+exit code: 0

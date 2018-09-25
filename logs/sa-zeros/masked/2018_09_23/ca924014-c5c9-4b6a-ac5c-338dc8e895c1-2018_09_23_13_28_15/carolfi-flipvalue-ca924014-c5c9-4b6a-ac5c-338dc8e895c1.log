@@ -1,0 +1,57 @@
+[INFO -- 2018-09-23 13:28:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:28:12]
+Initialization strings:
+[INFO -- 2018-09-23 13:28:12]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:28:12]
+initSignal:0
+[INFO -- 2018-09-23 13:28:12]
+endSignal:2
+[INFO -- 2018-09-23 13:28:12]
+faultModel:3
+[INFO -- 2018-09-23 13:28:12]
+Backtrace BEGIN:
+#0  0x0000555555555e02 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x7fffffffd9b0, __n=93824994449152) at /usr/include/c++/7/bits/stl_vector.h:176
+#1  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#2  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+171		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+172		return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+173	      }
+174	
+175	      void
+176	      _M_deallocate(pointer __p, size_t __n)
+177	      {
+178		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+179		if (__p)
+180		  _Tr::deallocate(_M_impl, __p, __n);
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555771a20
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::~_Vector_base
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda30
+value address: 0x7fffffffd9a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 13:28:12]
+Fault Injection Successful after 0.6854743957519531s
+[INFO -- 2018-09-23 13:28:14]
+event type: exit
+[INFO -- 2018-09-23 13:28:14]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 03:59:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:59:45]
+Initialization strings:
+[INFO -- 2018-09-25 03:59:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:59:45]
+initSignal:1
+[INFO -- 2018-09-25 03:59:45]
+endSignal:3.5
+[INFO -- 2018-09-25 03:59:45]
+faultModel:3
+[EXCEPTION -- 2018-09-25 03:59:46]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 03:59:46]
+Backtrace BEGIN:
+#0  0x0000555555558342 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#1  0x0000555555556e73 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x0000555555555fd8 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#3  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+190	      }
+191	    };
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 03:59:46]
+Fault Injection Successful after 1.7035810947418213s
+[INFO -- 2018-09-25 03:59:46]
+event type: exit
+[EXCEPTION -- 2018-09-25 03:59:46]
+exit code: no exit code available

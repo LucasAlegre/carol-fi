@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 19:51:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:51:05]
+Initialization strings:
+[INFO -- 2018-09-23 19:51:05]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:51:05]
+initSignal:0
+[INFO -- 2018-09-23 19:51:05]
+endSignal:2
+[INFO -- 2018-09-23 19:51:05]
+faultModel:2
+[INFO -- 2018-09-23 19:51:06]
+Backtrace BEGIN:
+#0  0x000055555555653f in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#1  0x0000555555555dbb in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x00005555555556b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557716f0
+address max offset: 4
+Memory content after  bitflip:0x3f0xe20x810x98
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 115
+value: -1736318401
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 19:51:06]
+Fault Injection Successful after 1.12870454788208s
+[INFO -- 2018-09-23 19:51:07]
+event type: exit
+[INFO -- 2018-09-23 19:51:07]
+exit code: 0

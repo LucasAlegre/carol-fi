@@ -1,0 +1,67 @@
+[INFO -- 2018-09-25 01:57:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:57:18]
+Initialization strings:
+[INFO -- 2018-09-25 01:57:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:57:18]
+initSignal:1
+[INFO -- 2018-09-25 01:57:18]
+endSignal:3.5
+[INFO -- 2018-09-25 01:57:18]
+faultModel:2
+[EXCEPTION -- 2018-09-25 01:57:19]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 01:57:19]
+Backtrace BEGIN:
+#0  0x000055555555aa49 in std::move_iterator<chromossome*>::operator* (this=0x7fffffffd6d8) at /usr/include/c++/7/bits/stl_iterator.h:1049
+#1  0x000055555555a3c4 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559a5f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776400, __last=0x555555776440, __result=0x5555557764e0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+1044	      _GLIBCXX17_CONSTEXPR iterator_type
+1045	      base() const
+1046	      { return _M_current; }
+1047	
+1048	      _GLIBCXX17_CONSTEXPR reference
+1049	      operator*() const
+1050	      { return static_cast<reference>(*_M_current); }
+1051	
+1052	      _GLIBCXX17_CONSTEXPR pointer
+1053	      operator->() const
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x720x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f058 
+address max offset: 8
+Memory content after  bitflip:0xec0x5a0x5e0x830x970xcf0xda0x15
+frame name: std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: wt
+symbol filename: knapsackga.cpp
+symbol line: 15
+value: std::vector of length 393676361093987042, capacity 279 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 266496, 0, 2703616, 2682624, 400896, 473344, 2394880, 2140160, 1970688, 1044992, 1807360, 1809664, 1744128, 661504, 1358592, 1263616, 2107136, 2802944, 2686464, 1649152, 1394944, 942848, 348160, 326400, 1446144, 1071360, 1229056, 2539008, 1602048, 1691136, 860672, 317184, 1088512, 605952, 1562368, 2812672, 1982720, 721664, 2543616, 2295808, 2136320, 2576896, 2209024, 2277888, 1161728, 2767360, 2718720, 668672, 2186496, 2086912, 1437440, 1613824, 1510656, 2623744, 1538304, 2384896, 1162240, 2516224, 2559488, 1436416, 1709568, 2612224, 2108928, 1501952, 824064, 1087232, 2046976, 681216, 2580480, 942592, 2589184, 1048576, 2706944, 2064128, 1547008, 1581568, 1923840, 1761280, 1054464, 788224, 1566464, 2647552, 1851648, 449024, 2356224, 2114560, 2579712, 746240, 2162688, 406528, 1927680, 955136, 836352, 2497280, 528128, 1593344, 2442240, 882944, 794880, 2510336, 1338880, 2091520, 337664, 1183744, 696064, 1978368, 468480, 2699776, 321024, 2123520, 310272, 910592, 2338304, 658432, 726528, 2026240, 1243136, 366592, 2790656, 643840, 348928, 1137408, 1831168, 2156800, 545792, 1119488, 335104, 1404672, 2216960, 2150400, 2565376, 2190592, 2464000, 2061824, 1466368, 833536, 1947904, 1065984, 517376, 1402624, 2495488, 582656, 1753600, 1262080, 1574144, 624384, 2713088, 919296, 1807616, 1330688, 302336, 1684480, 615936, 401408, 342016, 668672, 501504, 1881856, 1557248, 2773760, 2647552, 2802176, 851200, 1394432, 898048, 1769728, 1853952, 2304768, 2072320, 913152, 1339136, 1603072, 268544, 346880, 1302528, 540672, 2108928, 872704, 511488...}
+value address: 0x55555575f050 <wt>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 01:57:19]
+Fault Injection Successful after 1.9896740913391113s
+[INFO -- 2018-09-25 01:57:22]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:57:22]
+exit code: no exit code available

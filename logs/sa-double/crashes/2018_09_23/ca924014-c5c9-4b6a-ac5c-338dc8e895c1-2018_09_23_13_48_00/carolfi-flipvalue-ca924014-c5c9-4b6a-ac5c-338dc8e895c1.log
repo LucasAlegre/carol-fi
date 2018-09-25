@@ -1,0 +1,50 @@
+[INFO -- 2018-09-23 13:47:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:47:57]
+Initialization strings:
+[INFO -- 2018-09-23 13:47:57]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:47:57]
+initSignal:0
+[INFO -- 2018-09-23 13:47:57]
+endSignal:2
+[INFO -- 2018-09-23 13:47:57]
+faultModel:1
+[EXCEPTION -- 2018-09-23 13:47:58]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 13:47:58]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 13:47:58]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 13:47:58]
+Backtrace BEGIN:
+#0  __kernel_standard (x=-1407.2420654296875, y=-1407.2420654296875, type=107) at ../sysdeps/ieee754/k_standard.c:230
+#1  0x00007ffff77074f1 in __kernel_standard_f (x=<optimized out>, y=<optimized out>, type=<optimized out>) at ../sysdeps/ieee754/k_standardf.c:30
+#2  0x00005555555554e1 in std::exp (__x=-1407.24207) at /usr/include/c++/7/cmath:223
+#3  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+225	../sysdeps/ieee754/k_standard.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xbf0xe70xaf0xc4
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9cc
+address max offset: 4
+Memory content after  bitflip:0xbf0xe70x8e0xc4
+frame name: std::exp
+symbol name: __x
+symbol filename: /usr/include/c++/7/cmath
+symbol line: 222
+value: -1143.24207
+value address: 0x7fffffffd9cc
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:47:58]
+Fault Injection Successful after 1.3253974914550781s
+[INFO -- 2018-09-23 13:48:00]
+event type: exit
+[EXCEPTION -- 2018-09-23 13:48:00]
+exit code: no exit code available

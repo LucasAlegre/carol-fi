@@ -1,0 +1,50 @@
+[INFO -- 2018-09-21 21:56:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 21:56:01]
+Initialization strings:
+[INFO -- 2018-09-21 21:56:01]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 21:56:01]
+initSignal:1
+[INFO -- 2018-09-21 21:56:01]
+endSignal:3
+[INFO -- 2018-09-21 21:56:01]
+faultModel:2
+[INFO -- 2018-09-21 21:56:02]
+Backtrace BEGIN:
+#0  knapSack (W=588593, n=200, val=std::vector of length 200, capacity 256 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:24
+#1  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+19	            for(int w=0; w <= W; w++){
+20	                if(i == 0 || w == 0)
+21	                    V[i][w] = 0;
+22	                else if(w >= wt[i-1]){
+23	                    if(val[i-1] + V[i-1][w - wt[i-1]] > V[i-1][w]){
+24	                        V[i][w] = val[i-1] + V[i-1][w - wt[i-1]];
+25	                    }
+26	                    else{
+27	                        V[i][w] = V[i-1][w];
+28	                    }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd968
+address max offset: 4
+Memory content after  bitflip:0xd10x060x950xbc
+frame name: knapSack
+symbol name: n
+symbol filename: knapsackdp.cpp
+symbol line: 11
+value: -1131084079
+value address: 0x7fffffffd968
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-21 21:56:02]
+Fault Injection Successful after 1.3898158073425293s
+[INFO -- 2018-09-21 21:56:02]
+event type: exit
+[EXCEPTION -- 2018-09-21 21:56:02]
+exit code: no exit code available

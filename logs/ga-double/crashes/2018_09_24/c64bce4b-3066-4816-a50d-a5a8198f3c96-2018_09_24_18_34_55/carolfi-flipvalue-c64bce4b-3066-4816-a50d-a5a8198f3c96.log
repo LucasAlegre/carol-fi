@@ -1,0 +1,60 @@
+[INFO -- 2018-09-24 18:34:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 18:34:53]
+Initialization strings:
+[INFO -- 2018-09-24 18:34:53]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 18:34:53]
+initSignal:1
+[INFO -- 2018-09-24 18:34:53]
+endSignal:3.5
+[INFO -- 2018-09-24 18:34:53]
+faultModel:1
+[INFO -- 2018-09-24 18:34:54]
+Backtrace BEGIN:
+#0  0x0000555555557abe in std::_Destroy<int*> (__first=0x555555559fd6 <std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*)+69>, __last=0x7fffffffd750) at /usr/include/c++/7/bits/stl_construct.h:127
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x555555782190, __last=0x5555557824b0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x5555557764e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555b62 in chromossome::~chromossome (this=0x5555557764e0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#4  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x5555557764e0) at /usr/include/c++/7/bits/stl_construct.h:98
+#5  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#6  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#7  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#8  0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#9  0x0000555555555088 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#10 0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+122	   * a trivial destructor, the compiler should optimize all of this
+123	   * away, otherwise the objects' destructors must be invoked.
+124	   */
+125	  template<typename _ForwardIterator>
+126	    inline void
+127	    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+128	    {
+129	      typedef typename iterator_traits<_ForwardIterator>::value_type
+130	                       _Value_type;
+131	#if __cplusplus >= 201103L
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x410x000x00
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 16680
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 18:34:54]
+Fault Injection Successful after 1.4701077938079834s
+[INFO -- 2018-09-24 18:34:54]
+event type: exit
+[EXCEPTION -- 2018-09-24 18:34:54]
+exit code: no exit code available

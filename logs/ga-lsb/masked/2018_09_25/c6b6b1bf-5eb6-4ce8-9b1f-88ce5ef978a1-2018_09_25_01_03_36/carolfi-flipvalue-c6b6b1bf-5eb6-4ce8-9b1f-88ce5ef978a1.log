@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 01:03:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:03:32]
+Initialization strings:
+[INFO -- 2018-09-25 01:03:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:03:32]
+initSignal:1
+[INFO -- 2018-09-25 01:03:32]
+endSignal:3.5
+[INFO -- 2018-09-25 01:03:32]
+faultModel:4
+[EXCEPTION -- 2018-09-25 01:03:33]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 01:03:33]
+Backtrace BEGIN:
+#0  0x00007ffff7ad9110 in free@plt () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd870, __p=0x5555557824c0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557824c0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd870, __p=0x5555557824c0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#7  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#8  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+121	    return -best;
+122	}
+123	 
+124	int main()
+125	{
+126	    ifstream file("/tmp/knapsack/instance.txt");
+127	    ofstream outfile("/tmp/knapsack/outputga");
+128	    srand (42);
+129	    file >> n; file >> W;
+130	    
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd80xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x700xd80xff0xff0xff0x7f0x000x01
+frame name: std::_Vector_base<int, std::allocator<int> >::~_Vector_base
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd870
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:03:33]
+Fault Injection Successful after 1.57655930519104s
+[INFO -- 2018-09-25 01:03:36]
+event type: exit
+[INFO -- 2018-09-25 01:03:36]
+exit code: 0

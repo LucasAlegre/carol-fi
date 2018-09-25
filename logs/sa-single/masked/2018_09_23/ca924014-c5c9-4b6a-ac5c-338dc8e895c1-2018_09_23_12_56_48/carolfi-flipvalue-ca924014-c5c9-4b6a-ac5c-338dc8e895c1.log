@@ -1,0 +1,52 @@
+[INFO -- 2018-09-23 12:56:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:56:45]
+Initialization strings:
+[INFO -- 2018-09-23 12:56:45]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:56:45]
+initSignal:0
+[INFO -- 2018-09-23 12:56:45]
+endSignal:2
+[INFO -- 2018-09-23 12:56:45]
+faultModel:0
+[INFO -- 2018-09-23 12:56:45]
+Backtrace BEGIN:
+#0  0x00007ffff7ddf980 in do_lookup_x (undef_name=undef_name@entry=0x7ffff7aac18c "_ZTINSt7__cxx1119basic_ostringstreamIwSt11char_traitsIwESaIwEEE", new_hash=new_hash@entry=3221255868, old_hash=old_hash@entry=0x7fffffffda80, ref=0x7ffff7a74498, result=result@entry=0x7fffffffda90, scope=<optimized out>, i=<optimized out>, version=0x7ffff7fc7838, flags=1, skip=<optimized out>, type_class=0, undef_map=0x7ffff7fc6000) at dl-lookup.c:420
+#1  0x00007ffff7ddfee1 in _dl_lookup_symbol_x (undef_name=0x7ffff7aac18c "_ZTINSt7__cxx1119basic_ostringstreamIwSt11char_traitsIwESaIwEEE", undef_map=undef_map@entry=0x7ffff7fc6000, ref=ref@entry=0x7fffffffdbe0, symbol_scope=symbol_scope@entry=0x7ffff7fc6358, version=0x7ffff7fc7838, type_class=0, flags=1, skip_map=0x0) at dl-lookup.c:833
+#2  0x00007ffff7de1c30 in elf_machine_rela (skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7dce058, version=<optimized out>, sym=<optimized out>, reloc=0x7ffff7ad0960, map=0x7ffff7fc6000) at ../sysdeps/x86_64/dl-machine.h:326
+#3  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fc6000) at do-rel.h:137
+#4  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:259
+#5  0x00007ffff7dd90d9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2187
+#6  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#7  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#8  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#9  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#10 0x0000000000000001 in ?? ()
+#11 0x00007fffffffe2f7 in ?? ()
+#12 0x0000000000000000 in ?? ()
+
+415	dl-lookup.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xf40x4d0x060xaa0x100xbf0xd70x82
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffc8b0 
+address max offset: 8
+Memory content after  bitflip:0xf40x4d0x060xaa0x100xbf0xd70x8a
+frame name: dl_main
+symbol name: __pointer_chk_guard_local
+symbol filename: rtld.c
+symbol line: 96
+value: 10004675175519768052
+value address: 0x7ffff7ffc8b0 <__pointer_chk_guard_local>
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 12:56:45]
+Fault Injection Successful after 0.49509215354919434s
+[INFO -- 2018-09-23 12:56:47]
+event type: exit
+[INFO -- 2018-09-23 12:56:47]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 05:30:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:30:35]
+Initialization strings:
+[INFO -- 2018-09-25 05:30:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:30:35]
+initSignal:1
+[INFO -- 2018-09-25 05:30:35]
+endSignal:3.5
+[INFO -- 2018-09-25 05:30:35]
+faultModel:2
+[EXCEPTION -- 2018-09-25 05:30:36]
+gdbException: Cannot access memory at address 0x5167ade196e979cf
+[EXCEPTION -- 2018-09-25 05:30:36]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 05:30:36]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x5167ade196e979cf) at malloc.c:3124
+#1  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd820, __p=0x5167ade196e979cf) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5167ade196e979cf, __n=16980282017688428940) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd820, __p=0x5167ade196e979cf, __n=16980282017688428940) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555557474 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#7  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#8  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3119	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557857c0
+address max offset: 4
+Memory content after  bitflip:0xc80x120x360xc2
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd930
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:30:36]
+Fault Injection Successful after 1.4170522689819336s
+[INFO -- 2018-09-25 05:30:36]
+event type: exit
+[EXCEPTION -- 2018-09-25 05:30:36]
+exit code: no exit code available

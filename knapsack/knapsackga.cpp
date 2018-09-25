@@ -59,11 +59,13 @@ vector<int> tournament(vector<chromossome> &pop){
     vector<chromossome> competitors;
  
     for(int i=0; i < 3; i++){
-       competitors.push_back(pop[rand() % pop_size]);
+       int randIndex = rand() % pop_size;
+       competitors.push_back(pop[randIndex]);
      }
 
     sort(competitors.begin(), competitors.end());
-    return competitors[0].solution;
+    vector<int> tournamentWinner = competitors[0].solution;
+    return tournamentWinner;
 }
 
 void crossover(vector<int> &pai, vector<int> &mae, vector<int> &filho1, vector<int> &filho2){
@@ -113,6 +115,7 @@ int genetic_algorithm() {
         sort(new_pop.begin(), new_pop.end());
         best = new_pop[0].fitness;
         pop = new_pop;
+        //cout << g << " " << -best << endl;
     }
 
     return -best;

@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 16:21:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:21:52]
+Initialization strings:
+[INFO -- 2018-09-23 16:21:52]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:21:52]
+initSignal:0
+[INFO -- 2018-09-23 16:21:52]
+endSignal:2
+[INFO -- 2018-09-23 16:21:52]
+faultModel:0
+[INFO -- 2018-09-23 16:21:52]
+Backtrace BEGIN:
+#0  0x0000555555556633 in std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=0) at /usr/include/c++/7/bits/cpp_type_traits.h:409
+#1  0x0000555555555fa5 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:455
+#2  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+404	  // Fallback implementation of the function in bits/stl_iterator.h used to
+405	  // remove the move_iterator wrapper.
+406	  template<typename _Iterator>
+407	    inline _Iterator
+408	    __miter_base(_Iterator __it)
+409	    { return __it; }
+410	
+411	_GLIBCXX_END_NAMESPACE_VERSION
+412	} // namespace
+413	} // extern "C++"
+
+Backtrace END
+Memory content before bitflip:0xe50x610xf80xff
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9f4
+address max offset: 4
+Memory content after  bitflip:0xe50x610xf80xfd
+frame name: simulated_annealing
+symbol name: best
+symbol filename: knapsacksa.cpp
+symbol line: 41
+value: -34053659
+value address: 0x7fffffffd9f4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 16:21:52]
+Fault Injection Successful after 0.9976463317871094s
+[INFO -- 2018-09-23 16:21:54]
+event type: exit
+[INFO -- 2018-09-23 16:21:54]
+exit code: 0

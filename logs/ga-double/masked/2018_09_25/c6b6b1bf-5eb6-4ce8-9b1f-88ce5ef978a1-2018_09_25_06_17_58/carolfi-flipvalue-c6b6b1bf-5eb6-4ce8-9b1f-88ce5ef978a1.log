@@ -1,0 +1,50 @@
+[INFO -- 2018-09-25 06:17:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:17:54]
+Initialization strings:
+[INFO -- 2018-09-25 06:17:54]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:17:54]
+initSignal:1
+[INFO -- 2018-09-25 06:17:54]
+endSignal:3.5
+[INFO -- 2018-09-25 06:17:54]
+faultModel:1
+[INFO -- 2018-09-25 06:17:55]
+Backtrace BEGIN:
+#0  0x00007ffff74e25fb in _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555785e10, have_lock=0) at malloc.c:4162
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd870, __p=0x555555785e20) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555785e20, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd870, __p=0x555555785e20, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#8  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+4157	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd80xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd788
+address max offset: 8
+Memory content after  bitflip:0x700xd80xff0xff0xff0x3b0x000x00
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd870
+value address: 0x7fffffffd788
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 06:17:55]
+Fault Injection Successful after 1.9611551761627197s
+[INFO -- 2018-09-25 06:17:58]
+event type: exit
+[INFO -- 2018-09-25 06:17:58]
+exit code: 0

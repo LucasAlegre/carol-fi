@@ -1,0 +1,43 @@
+[INFO -- 2018-09-23 20:17:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:17:43]
+Initialization strings:
+[INFO -- 2018-09-23 20:17:43]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:17:43]
+initSignal:0
+[INFO -- 2018-09-23 20:17:43]
+endSignal:2
+[INFO -- 2018-09-23 20:17:43]
+faultModel:4
+[INFO -- 2018-09-23 20:17:43]
+Backtrace BEGIN:
+#0  0x00007ffff713ea29 in __random () at random.c:295
+#1  0x00007ffff713eea9 in rand () at rand.c:27
+#2  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+290	random.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff74de580 
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x20
+frame name: __random
+symbol name: lock
+symbol filename: random.c
+symbol line: 197
+value: 536870913
+value address: 0x7ffff74de580 <lock>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 20:17:43]
+Fault Injection Successful after 0.7412588596343994s
+[INFO -- 2018-09-23 20:17:45]
+event type: exit
+[INFO -- 2018-09-23 20:17:45]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-09-25 09:15:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:15:22]
+Initialization strings:
+[INFO -- 2018-09-25 09:15:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:15:22]
+initSignal:1
+[INFO -- 2018-09-25 09:15:22]
+endSignal:3.5
+[INFO -- 2018-09-25 09:15:22]
+faultModel:4
+[EXCEPTION -- 2018-09-25 09:15:24]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 09:15:24]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x555555782b20) at malloc.c:3107
+#1  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd870, __p=0x555555782b20) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555782b20, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd870, __p=0x555555782b20, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#7  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#8  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3102	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0xb30x2d0xf80xff
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 4
+Memory content after  bitflip:0xb30x2d0xf80x7f
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: 2146971059
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:15:24]
+Fault Injection Successful after 2.251002311706543s
+[INFO -- 2018-09-25 09:15:26]
+event type: exit
+[INFO -- 2018-09-25 09:15:26]
+exit code: 0

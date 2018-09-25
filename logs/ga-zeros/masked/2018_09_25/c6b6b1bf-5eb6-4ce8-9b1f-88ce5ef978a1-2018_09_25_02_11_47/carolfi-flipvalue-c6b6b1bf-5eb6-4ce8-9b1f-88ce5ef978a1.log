@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 02:11:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:11:42]
+Initialization strings:
+[INFO -- 2018-09-25 02:11:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:11:42]
+initSignal:1
+[INFO -- 2018-09-25 02:11:42]
+endSignal:3.5
+[INFO -- 2018-09-25 02:11:42]
+faultModel:3
+[INFO -- 2018-09-25 02:11:44]
+Backtrace BEGIN:
+#0  0x0000555555556a58 in std::forward<chromossome const&> (__t=...) at /usr/include/c++/7/bits/move.h:74
+#1  0x0000555555556b28 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#2  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+69	   *  This function is used to implement "perfect forwarding".
+70	   */
+71	  template<typename _Tp>
+72	    constexpr _Tp&&
+73	    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+74	    { return static_cast<_Tp&&>(__t); }
+75	
+76	  /**
+77	   *  @brief  Forward an rvalue.
+78	   *  @return The parameter cast to the specified type.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd7d0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __position
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: non-dereferenceable iterator for std::vector
+value address: 0x7fffffffd7d0
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 02:11:44]
+Fault Injection Successful after 2.500880479812622s
+[INFO -- 2018-09-25 02:11:46]
+event type: exit
+[INFO -- 2018-09-25 02:11:46]
+exit code: 0

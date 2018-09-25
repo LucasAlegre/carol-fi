@@ -1,0 +1,63 @@
+[INFO -- 2018-09-25 09:09:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:09:45]
+Initialization strings:
+[INFO -- 2018-09-25 09:09:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:09:45]
+initSignal:1
+[INFO -- 2018-09-25 09:09:45]
+endSignal:3.5
+[INFO -- 2018-09-25 09:09:45]
+faultModel:2
+[INFO -- 2018-09-25 09:09:47]
+Backtrace BEGIN:
+#0  0x0000555555556b76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:426
+#1  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+421	#endif
+422		  __new_finish = pointer();
+423	
+424		  __new_finish
+425		    = std::__uninitialized_move_if_noexcept_a
+426		    (this->_M_impl._M_start, __position.base(),
+427		     __new_start, _M_get_Tp_allocator());
+428	
+429		  ++__new_finish;
+430	
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555776450
+address max offset: 8
+Memory content after  bitflip:0xa30x590x940x960xed0x670x580x91
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __position
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: {solution = std::vector of length 36, capacity -1993377217532062103 = {<error reading variable>
+value address: 0x7fffffffd7d0
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 09:09:47]
+Fault Injection Successful after 2.2860794067382812s
+[INFO -- 2018-09-25 09:09:49]
+event type: exit
+[INFO -- 2018-09-25 09:09:49]
+exit code: 0

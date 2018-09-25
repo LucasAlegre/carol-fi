@@ -1,0 +1,61 @@
+[INFO -- 2018-09-25 02:33:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:33:09]
+Initialization strings:
+[INFO -- 2018-09-25 02:33:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:33:09]
+initSignal:1
+[INFO -- 2018-09-25 02:33:09]
+endSignal:3.5
+[INFO -- 2018-09-25 02:33:09]
+faultModel:2
+[EXCEPTION -- 2018-09-25 02:33:11]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 02:33:11]
+Backtrace BEGIN:
+#0  0x000055555555ae01 in std::__fill_n_a<int*, unsigned long, int> (__first=0x5555557859d8, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:753
+#1  0x000055555555a8e0 in std::fill_n<int*, unsigned long, int> (__first=0x5555557857c0, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x000055555555a01a in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x5555557857c0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x000055555555953a in std::__uninitialized_default_n<int*, unsigned long> (__first=0x5555557857c0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x00005555555584a5 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x5555557857c0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x000055555555700d in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x0000555555555feb in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#8  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+748	    __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, _OutputIterator>::__type
+749	    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value)
+750	    {
+751	      const _Tp __tmp = __value;
+752	      for (__decltype(__n + 0) __niter = __n;
+753		   __niter > 0; --__niter, ++__first)
+754		*__first = __tmp;
+755	      return __first;
+756	    }
+757	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000xa90x680x550x550x550x550x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd867
+address max offset: 8
+Memory content after  bitflip:0x580x210x7e0xc30x0a0xd10x030x17
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 283
+value: @0x7fffffffd867
+value address: 0x7fffffffd867
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 02:33:11]
+Fault Injection Successful after 2.6843130588531494s
+[INFO -- 2018-09-25 02:33:14]
+event type: exit
+[EXCEPTION -- 2018-09-25 02:33:14]
+exit code: no exit code available

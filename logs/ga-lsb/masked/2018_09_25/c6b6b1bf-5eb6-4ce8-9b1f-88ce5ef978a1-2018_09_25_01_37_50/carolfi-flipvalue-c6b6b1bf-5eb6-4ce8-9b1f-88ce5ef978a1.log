@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 01:37:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:37:45]
+Initialization strings:
+[INFO -- 2018-09-25 01:37:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:37:45]
+initSignal:1
+[INFO -- 2018-09-25 01:37:45]
+endSignal:3.5
+[INFO -- 2018-09-25 01:37:45]
+faultModel:4
+[INFO -- 2018-09-25 01:37:46]
+Backtrace BEGIN:
+#0  0x0000555555557abe in std::_Destroy<int*> (__first=0x5555555568a9 <std::_Vector_base<int, std::allocator<int> >::~_Vector_base()+77>, __last=0x7fffffffd860) at /usr/include/c++/7/bits/stl_construct.h:127
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x5555557827f0, __last=0x555555782b10) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555524 in genetic_algorithm () at knapsackga.cpp:101
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+122	   * a trivial destructor, the compiler should optimize all of this
+123	   * away, otherwise the objects' destructors must be invoked.
+124	   */
+125	  template<typename _ForwardIterator>
+126	    inline void
+127	    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+128	    {
+129	      typedef typename iterator_traits<_ForwardIterator>::value_type
+130	                       _Value_type;
+131	#if __cplusplus >= 201103L
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x600xd80xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd840
+address max offset: 8
+Memory content after  bitflip:0x600xd80xff0xff0xff0x7f0x000x40
+frame name: std::_Destroy<int*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x7fffffffd860
+value address: 0x7fffffffd840
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:37:46]
+Fault Injection Successful after 1.995093584060669s
+[INFO -- 2018-09-25 01:37:49]
+event type: exit
+[INFO -- 2018-09-25 01:37:49]
+exit code: 0

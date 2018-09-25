@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 01:12:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:12:12]
+Initialization strings:
+[INFO -- 2018-09-25 01:12:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:12:12]
+initSignal:1
+[INFO -- 2018-09-25 01:12:12]
+endSignal:3.5
+[INFO -- 2018-09-25 01:12:12]
+faultModel:1
+[INFO -- 2018-09-25 01:12:13]
+Backtrace BEGIN:
+#0  0x0000555555558035 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776380, __last=0x5555557763a0, __result=0x555555776400, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:305
+#1  0x0000555555556bcd in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#2  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+300	    }
+301	
+302	  template<typename _InputIterator, typename _ForwardIterator,
+303		   typename _Allocator>
+304	    inline _ForwardIterator
+305	    __uninitialized_move_if_noexcept_a(_InputIterator __first,
+306					       _InputIterator __last,
+307					       _ForwardIterator __result,
+308					       _Allocator& __alloc)
+309	    {
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x040x00
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 326449
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 01:12:13]
+Fault Injection Successful after 1.6920483112335205s
+[INFO -- 2018-09-25 01:12:16]
+event type: exit
+[INFO -- 2018-09-25 01:12:16]
+exit code: 0

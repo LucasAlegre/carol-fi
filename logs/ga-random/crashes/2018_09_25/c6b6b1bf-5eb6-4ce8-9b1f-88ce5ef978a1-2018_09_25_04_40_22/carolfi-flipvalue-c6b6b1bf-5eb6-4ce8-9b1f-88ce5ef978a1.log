@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 04:40:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:40:20]
+Initialization strings:
+[INFO -- 2018-09-25 04:40:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:40:20]
+initSignal:1
+[INFO -- 2018-09-25 04:40:20]
+endSignal:3.5
+[INFO -- 2018-09-25 04:40:20]
+faultModel:2
+[INFO -- 2018-09-25 04:40:22]
+Backtrace BEGIN:
+#0  0x00005555555576ed in std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 200, capacity 256 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}) at /usr/include/c++/7/bits/stl_algobase.h:455
+#1  0x00005555555566e9 in std::vector<chromossome, std::allocator<chromossome> >::operator= (this=0x7fffffffd8d0, __x=std::vector of length 40, capacity 64 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#2  0x00005555555556c5 in genetic_algorithm () at knapsackga.cpp:117
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+450	      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+451		    typename iterator_traits<_II>::value_type>)
+452	      __glibcxx_requires_valid_range(__first, __last);
+453	
+454	      return (std::__copy_move_a2<__is_move_iterator<_II>::__value>
+455		      (std::__miter_base(__first), std::__miter_base(__last),
+456		       __result));
+457	    }
+458	
+459	#if __cplusplus >= 201103L
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd868
+address max offset: 8
+Memory content after  bitflip:0x5f0x6f0x6c0xd90x3b0x160xd50x18
+frame name: std::vector<chromossome, std::allocator<chromossome> >::operator=
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8d0
+value address: 0x7fffffffd868
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:40:22]
+Fault Injection Successful after 2.355046510696411s
+[INFO -- 2018-09-25 04:40:22]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:40:22]
+exit code: no exit code available

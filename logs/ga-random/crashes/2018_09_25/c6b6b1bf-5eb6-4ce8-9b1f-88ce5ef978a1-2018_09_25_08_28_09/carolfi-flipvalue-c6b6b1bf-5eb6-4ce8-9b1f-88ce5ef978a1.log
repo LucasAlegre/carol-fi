@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 08:28:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:28:06]
+Initialization strings:
+[INFO -- 2018-09-25 08:28:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:28:06]
+initSignal:1
+[INFO -- 2018-09-25 08:28:06]
+endSignal:3.5
+[INFO -- 2018-09-25 08:28:06]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:28:08]
+gdbException: Cannot access memory at address 0x9252ca779ae6ac90
+[EXCEPTION -- 2018-09-25 08:28:08]
+gdbException: Cannot access memory at address 0x4a28f7e04c4ceee4
+[INFO -- 2018-09-25 08:28:08]
+Backtrace BEGIN:
+#0  0x0000555555556361 in std::swap<int> (__a=<error reading variable>, __b=@0x555555785930: 0) at /usr/include/c++/7/bits/move.h:198
+#1  0x00005555555551e7 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length -1335924918901351069, capacity -1335924918901351069 = {...}, filho1=std::vector of length 1975781401506900680, capacity 1975781401506900680 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xa10x2a0x490x07
+frame name: genetic_algorithm
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 122235553
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:28:08]
+Fault Injection Successful after 2.4861159324645996s
+[INFO -- 2018-09-25 08:28:08]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:28:08]
+exit code: no exit code available

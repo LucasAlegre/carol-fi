@@ -1,0 +1,47 @@
+[INFO -- 2018-09-25 08:00:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:00:45]
+Initialization strings:
+[INFO -- 2018-09-25 08:00:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:00:45]
+initSignal:1
+[INFO -- 2018-09-25 08:00:45]
+endSignal:3.5
+[INFO -- 2018-09-25 08:00:45]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:00:47]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 08:00:47]
+Backtrace BEGIN:
+#0  0x00007ffff74949d2 in __random () at random.c:288
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+283	in random.c
+
+Backtrace END
+Memory content before bitflip:0x560x6e0xee0x33
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd804
+address max offset: 4
+Memory content after  bitflip:0xcb0x5a0x330x5c
+frame name: __random
+symbol name: retval
+symbol filename: random.c
+symbol line: 289
+value: 1546869451
+value address: 0x7fffffffd804
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:00:47]
+Fault Injection Successful after 2.7366912364959717s
+[INFO -- 2018-09-25 08:00:48]
+event type: exit
+[INFO -- 2018-09-25 08:00:48]
+exit code: 0

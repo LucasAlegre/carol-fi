@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 09:44:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:44:00]
+Initialization strings:
+[INFO -- 2018-09-25 09:44:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:44:00]
+initSignal:1
+[INFO -- 2018-09-25 09:44:00]
+endSignal:3.5
+[INFO -- 2018-09-25 09:44:00]
+faultModel:2
+[INFO -- 2018-09-25 09:44:02]
+Backtrace BEGIN:
+#0  0x0000555555557060 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9d0, __p=0x0, __n=140737488345552) at /usr/include/c++/7/bits/stl_vector.h:176
+#1  0x00005555555561e0 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:210
+#2  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+171		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+172		return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+173	      }
+174	
+175	      void
+176	      _M_deallocate(pointer __p, size_t __n)
+177	      {
+178		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+179		if (__p)
+180		  _Tr::deallocate(_M_impl, __p, __n);
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0xe10x750xc40xe6
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_deallocate
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -423332383
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:44:02]
+Fault Injection Successful after 2.4434962272644043s
+[INFO -- 2018-09-25 09:44:04]
+event type: exit
+[INFO -- 2018-09-25 09:44:04]
+exit code: 0

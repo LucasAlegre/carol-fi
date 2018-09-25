@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 00:47:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:47:41]
+Initialization strings:
+[INFO -- 2018-09-25 00:47:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:47:41]
+initSignal:1
+[INFO -- 2018-09-25 00:47:41]
+endSignal:3.5
+[INFO -- 2018-09-25 00:47:41]
+faultModel:3
+[INFO -- 2018-09-25 00:47:42]
+Backtrace BEGIN:
+#0  0x0000555555555b80 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd9f0) at /usr/include/c++/7/bits/stl_vector.h:263
+#1  0x0000555555555b46 in chromossome::chromossome (this=0x7fffffffd9f0) at knapsackga.cpp:50
+#2  0x00005555555554a5 in genetic_algorithm () at knapsackga.cpp:105
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+258	       */
+259	      vector()
+260	#if __cplusplus >= 201103L
+261	      noexcept(is_nothrow_default_constructible<_Alloc>::value)
+262	#endif
+263	      : _Base() { }
+264	
+265	      /**
+266	       *  @brief  Creates a %vector with no elements.
+267	       *  @param  __a  An allocator object.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x720x780x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd9f8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd9f0
+value address: 0x7fffffffd878
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 00:47:42]
+Fault Injection Successful after 1.6403281688690186s
+[INFO -- 2018-09-25 00:47:45]
+event type: exit
+[INFO -- 2018-09-25 00:47:45]
+exit code: 0

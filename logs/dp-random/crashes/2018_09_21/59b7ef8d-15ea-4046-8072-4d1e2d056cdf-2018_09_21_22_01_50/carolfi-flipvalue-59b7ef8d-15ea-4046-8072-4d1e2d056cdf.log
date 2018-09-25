@@ -1,0 +1,60 @@
+[INFO -- 2018-09-21 22:01:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 22:01:46]
+Initialization strings:
+[INFO -- 2018-09-21 22:01:46]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 22:01:46]
+initSignal:1
+[INFO -- 2018-09-21 22:01:46]
+endSignal:3
+[INFO -- 2018-09-21 22:01:46]
+faultModel:2
+[EXCEPTION -- 2018-09-21 22:01:48]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-21 22:01:48]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-21 22:01:48]
+Backtrace BEGIN:
+#0  0x000055555555572e in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd980, __n=116) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x0000555555555117 in knapSack (W=588593, n=200, val=std::vector of length 200, capacity 256 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:27
+#2  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555771360
+address max offset: 4
+Memory content after  bitflip:0xa00xc30x2b0x83
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackdp.cpp
+symbol line: 0
+value: 0x7fffffffd980
+value address: 0x7fffffffd938
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-21 22:01:48]
+Fault Injection Successful after 2.735474109649658s
+[INFO -- 2018-09-21 22:01:50]
+event type: exit
+[EXCEPTION -- 2018-09-21 22:01:50]
+exit code: no exit code available

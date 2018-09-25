@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 00:48:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:48:04]
+Initialization strings:
+[INFO -- 2018-09-25 00:48:04]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:48:04]
+initSignal:1
+[INFO -- 2018-09-25 00:48:04]
+endSignal:3.5
+[INFO -- 2018-09-25 00:48:04]
+faultModel:3
+[EXCEPTION -- 2018-09-25 00:48:06]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-09-25 00:48:06]
+Backtrace BEGIN:
+#0  0x0000555555556363 in std::swap<int> (__a=@0x555555785d60: 0, __b=@0x555555785b00: 1) at /usr/include/c++/7/bits/move.h:198
+#1  0x0000555555555610 in genetic_algorithm () at knapsackga.cpp:111
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::swap<int>
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 0
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:48:06]
+Fault Injection Successful after 2.722419261932373s
+[INFO -- 2018-09-25 00:48:06]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:48:06]
+exit code: no exit code available

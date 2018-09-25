@@ -1,0 +1,56 @@
+[INFO -- 2018-09-21 22:25:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 22:25:02]
+Initialization strings:
+[INFO -- 2018-09-21 22:25:02]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 22:25:02]
+initSignal:1
+[INFO -- 2018-09-21 22:25:02]
+endSignal:3
+[INFO -- 2018-09-21 22:25:02]
+faultModel:2
+[INFO -- 2018-09-21 22:25:03]
+Backtrace BEGIN:
+#0  0x00005555555555bd in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[] (this=0x7fffffffd980, __n=42) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555550ab in knapSack (W=588593, n=200, val=std::vector of length 200, capacity 256 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:24
+#2  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0xa80x260x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd990
+address max offset: 8
+Memory content after  bitflip:0x850xaf0x400xe90xd40x450xc10x50
+frame name: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[]
+symbol name: this
+symbol filename: knapsackdp.cpp
+symbol line: 0
+value: 0x7fffffffd980
+value address: 0x7fffffffd938
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-21 22:25:03]
+Fault Injection Successful after 1.2639970779418945s
+[INFO -- 2018-09-21 22:25:05]
+event type: exit
+[INFO -- 2018-09-21 22:25:05]
+exit code: 0

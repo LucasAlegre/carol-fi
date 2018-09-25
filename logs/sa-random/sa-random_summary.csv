@@ -1,0 +1,76 @@
+Faults Injected:;2026
+
+Fault Effect;#Effect;PVF
+Masked;1098;0.5419545903257651
+SDCs;388;0.19151036525172754
+Crashes;526;0.2596248766041461
+Hangs;14;0.006910167818361303
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Random bit-flip;388;100.0
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Random bit-flip;526;100.0
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Random bit-flip;14;100.0
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+73.76425855513308;263;194;W;knapsacksa.cpp;15
+90.69767441860465;43;39;best;knapsacksa.cpp;41
+76.47058823529412;51;39;temp;knapsacksa.cpp;42
+65.38461538461539;52;34;valor;knapsacksa.cpp;26
+14.965986394557824;147;22;val;knapsacksa.cpp;13
+31.372549019607842;51;16;peso;knapsacksa.cpp;26
+11.450381679389313;131;15;wt;knapsacksa.cpp;14
+26.47058823529412;34;9;t;knapsacksa.cpp;46
+36.84210526315789;19;7;solution;knapsacksa.cpp;25
+27.77777777777778;18;5;s;knapsacksa.cpp;47
+3.571428571428571;56;2;i;knapsacksa.cpp;27
+3.0303030303030303;33;1;c;knapsacksa.cpp;50
+3.7037037037037033;27;1;solution;knapsacksa.cpp;38
+100.0;1;1;__first;/usr/include/c++/7/bits/stl_algobase.h;446
+20.0;5;1;__first;/usr/include/c++/7/bits/stl_algobase.h;420
+25.0;4;1;__result;/usr/include/c++/7/bits/stl_algobase.h;420
+100.0;1;1;__result;/usr/include/c++/7/bits/stl_algobase.h;446
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+100.0;242;242;n;knapsacksa.cpp;15
+87.5;56;49;i;knapsacksa.cpp;27
+100.0;43;43;user_entry;../elf/dl-sysdep.c;91
+10.646387832699618;263;28;W;knapsacksa.cpp;15
+14.965986394557824;147;22;val;knapsacksa.cpp;13
+100.0;22;22;_dl_skip_args;rtld.c;84
+15.267175572519085;131;20;wt;knapsacksa.cpp;14
+36.0;25;9;__n;/usr/include/c++/7/bits/stl_vector.h;795
+15.384615384615385;52;8;valor;knapsacksa.cpp;26
+19.51219512195122;41;8;__GI__dl_argv;rtld.c;83
+20.588235294117645;34;7;i;knapsacksa.cpp;48
+29.166666666666668;24;7;this;knapsacksa.cpp;0
+13.725490196078432;51;7;peso;knapsacksa.cpp;26
+36.84210526315789;19;7;solution;knapsacksa.cpp;25
+13.725490196078432;51;7;temp;knapsacksa.cpp;42
+22.22222222222222;27;6;solution;knapsacksa.cpp;38
+14.705882352941178;34;5;t;knapsacksa.cpp;46
+8.695652173913043;46;4;delta;knapsacksa.cpp;51
+9.30232558139535;43;4;best;knapsacksa.cpp;41
+12.121212121212121;33;4;c;knapsacksa.cpp;50
+16.666666666666664;18;3;s;knapsacksa.cpp;47
+8.571428571428571;35;3;_rtld_global;rtld.c;231
+100.0;2;2;__xlen;/usr/include/c++/7/bits/vector.tcc;203
+100.0;2;2;set;../sysdeps/unix/sysv/linux/raise.c;39
+40.0;5;2;__first;/usr/include/c++/7/bits/stl_algobase.h;420
+100.0;1;1;_Num;/usr/include/c++/7/bits/stl_algobase.h;366
+50.0;2;1;__result;/usr/include/c++/7/bits/stl_algobase.h;357
+100.0;1;1;__a;/usr/include/c++/7/ext/alloc_traits.h;94
+100.0;1;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;99
+25.0;4;1;__p;/usr/include/c++/7/bits/alloc_traits.h;461
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+41.17647058823529;34;14;t;knapsacksa.cpp;46

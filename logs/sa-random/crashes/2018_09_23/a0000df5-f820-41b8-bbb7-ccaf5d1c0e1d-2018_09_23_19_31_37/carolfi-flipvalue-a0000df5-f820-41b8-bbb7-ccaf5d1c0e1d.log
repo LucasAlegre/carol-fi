@@ -1,0 +1,49 @@
+[INFO -- 2018-09-23 19:31:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:31:35]
+Initialization strings:
+[INFO -- 2018-09-23 19:31:35]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:31:35]
+initSignal:0
+[INFO -- 2018-09-23 19:31:35]
+endSignal:2
+[INFO -- 2018-09-23 19:31:35]
+faultModel:2
+[INFO -- 2018-09-23 19:31:36]
+Backtrace BEGIN:
+#0  tcache_put (tc_idx=49, chunk=0x5555557716f0) at malloc.c:2967
+#1  _int_free (av=0x7ffff74dcc20 <main_arena>, p=0x5555557716f0, have_lock=0) at malloc.c:4196
+#2  0x00007ffff719144e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#3  0x0000555555556a18 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffda00, __p=0x555555771700) at /usr/include/c++/7/ext/new_allocator.h:125
+#4  0x00005555555565c4 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#5  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda00, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#6  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#7  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#8  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#9  0x000055555555535e in main () at knapsacksa.cpp:84
+
+2962	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0x020x260xb40x77
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 2008294914
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 19:31:36]
+Fault Injection Successful after 1.0797479152679443s
+[INFO -- 2018-09-23 19:31:36]
+event type: exit
+[EXCEPTION -- 2018-09-23 19:31:36]
+exit code: no exit code available

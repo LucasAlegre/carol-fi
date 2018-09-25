@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 09:51:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:51:31]
+Initialization strings:
+[INFO -- 2018-09-25 09:51:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:51:31]
+initSignal:1
+[INFO -- 2018-09-25 09:51:31]
+endSignal:3.5
+[INFO -- 2018-09-25 09:51:31]
+faultModel:2
+[EXCEPTION -- 2018-09-25 09:51:32]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 09:51:32]
+Backtrace BEGIN:
+#0  0x00007ffff74e6fd8 in __GI___libc_malloc (bytes=128) at malloc.c:3068
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555559a14 in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x0000555555558fa1 in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x0000555555558018 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556b10 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3063	in malloc.c
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x100x720x780x55
+Fault Model: Random bit-flip
+base address to flip value: 0x555555776458
+address max offset: 4
+Memory content after  bitflip:0x2c0x3f0xa20x8f
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 59
+value: std::vector of length 2, capacity 2 = {{solution = std::vector of length 184, capacity 184 = {0, 0, 0, 0, 0, 256, 0, 0, 256, 0, 0, 256, 256, 0, 0, 0, 0, 256, 256, 0, 0, 256, 256, 0, 0, 0, 0, 0, 256, 0, 256, 0, 256, 0, 0, 256, 256, 0, 256, 256, 256, 0, 0, 256, 256, 256, 256, 0, 0, 0, 256, 0, 0, 0, 0, 0, 0, 0, 256, 256, 0, 0, 0, 256, 256, 0, 0, 256, 256, 0, 256, 0, 256, 0, 0, 256, 0, 0, 256, 0, 0, 0, 0, 0, 0, 256, 0, 256, 0, 256, 0, 256, 0, 0, 256, 0, 256, 256, 0, 256, 0, 0, 256, 256, 256, 0, 256, 256, 0, 0, 256, 0, 256, 256, 256, 256, 0, 0, 256, 0, 0, 256, 256, 0, 0, 0, 256, 0, 256, 0, 0, 0, 0, 256, 0, 0, 0, 256, 0, 0, 0, 256, 256, 256, 256, 0, 0, 0, 256, 0, 0, 0, 256, 256, 256, 0, 256, 0, 256, 0, 0, 0, 0, 0, 256, 0, 0, 256, 256, 0, 256, 256, 256, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 256, 208896, 0, 209152, 0, 2020536320, 5592405, 0, 0, 256, 256, 0, 0, 0, 0, 0, 0...}, fitness = -499440}, {solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}}
+value address: 0x7fffffffd870
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 09:51:32]
+Fault Injection Successful after 1.3048734664916992s
+[INFO -- 2018-09-25 09:51:32]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:51:32]
+exit code: no exit code available

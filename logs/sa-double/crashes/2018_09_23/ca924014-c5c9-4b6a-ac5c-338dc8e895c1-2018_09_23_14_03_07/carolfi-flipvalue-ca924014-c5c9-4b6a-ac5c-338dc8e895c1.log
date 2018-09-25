@@ -1,0 +1,52 @@
+[INFO -- 2018-09-23 14:03:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:03:06]
+Initialization strings:
+[INFO -- 2018-09-23 14:03:06]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:03:06]
+initSignal:0
+[INFO -- 2018-09-23 14:03:06]
+endSignal:2
+[INFO -- 2018-09-23 14:03:06]
+faultModel:1
+[EXCEPTION -- 2018-09-23 14:03:06]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 14:03:06]
+Backtrace BEGIN:
+#0  0x00005555555550f2 in simulated_annealing () at knapsacksa.cpp:49
+#1  0x000055555555535e in main () at knapsacksa.cpp:84
+
+44	    //int co=0;
+45	
+46	    for(int t = 0; t < 1000000; t++){
+47	         vector<int> s(solution);
+48	         int i = rand() % n;
+49	         s[i] = 1 - s[i];
+50	         int c = cost(s);
+51	         int delta = c - best;
+52	         if(delta <= 0){
+53	             solution = s;
+
+Backtrace END
+Memory content before bitflip:0x510x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffda08
+address max offset: 4
+Memory content after  bitflip:0x510x000x180x00
+frame name: simulated_annealing
+symbol name: i
+symbol filename: knapsacksa.cpp
+symbol line: 48
+value: 1572945
+value address: 0x7fffffffda08
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:03:06]
+Fault Injection Successful after 0.5386302471160889s
+[INFO -- 2018-09-23 14:03:06]
+event type: exit
+[EXCEPTION -- 2018-09-23 14:03:06]
+exit code: no exit code available

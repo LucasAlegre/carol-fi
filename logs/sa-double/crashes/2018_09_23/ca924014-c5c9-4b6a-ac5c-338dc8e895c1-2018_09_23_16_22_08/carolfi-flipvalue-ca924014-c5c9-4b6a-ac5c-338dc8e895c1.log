@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 16:22:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:22:07]
+Initialization strings:
+[INFO -- 2018-09-23 16:22:07]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:22:07]
+initSignal:0
+[INFO -- 2018-09-23 16:22:07]
+endSignal:2
+[INFO -- 2018-09-23 16:22:07]
+faultModel:1
+[INFO -- 2018-09-23 16:22:07]
+Backtrace BEGIN:
+#0  0x0000555555556521 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd970, __i=@0x7fffffffd968: 0x5555557716f0) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555555d72 in std::vector<int, std::allocator<int> >::end (this=0x7fffffffda10) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x0000555555555693 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x300xda0xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd998
+address max offset: 8
+Memory content after  bitflip:0x300xda0xf90xff0xff0x7f0x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda30
+value address: 0x7fffffffd998
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 16:22:07]
+Fault Injection Successful after 0.9224631786346436s
+[INFO -- 2018-09-23 16:22:08]
+event type: exit
+[EXCEPTION -- 2018-09-23 16:22:08]
+exit code: no exit code available

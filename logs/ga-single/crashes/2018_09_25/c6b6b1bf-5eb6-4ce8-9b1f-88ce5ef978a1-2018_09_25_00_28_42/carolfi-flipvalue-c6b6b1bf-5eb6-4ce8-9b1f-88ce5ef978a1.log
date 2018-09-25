@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 00:28:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:28:40]
+Initialization strings:
+[INFO -- 2018-09-25 00:28:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:28:40]
+initSignal:1
+[INFO -- 2018-09-25 00:28:40]
+endSignal:3.5
+[INFO -- 2018-09-25 00:28:40]
+faultModel:0
+[EXCEPTION -- 2018-09-25 00:28:42]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 00:28:42]
+Backtrace BEGIN:
+#0  std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555786860, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#1  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#2  0x00005555555554fd in genetic_algorithm () at knapsackga.cpp:107
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+470	       *  Calls <tt> __a.construct(__p, std::forward<Args>(__args)...) </tt>
+471	      */
+472	      template<typename _Up, typename... _Args>
+473		static void
+474		construct(allocator_type& __a, _Up* __p, _Args&&... __args)
+475		{ __a.construct(__p, std::forward<_Args>(__args)...); }
+476	
+477	      /**
+478	       *  @brief  Destroy an object of type @a _Up
+479	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd898
+address max offset: 8
+Memory content after  bitflip:0xf00xd80xff0xff0xff0x7e0x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8f0
+value address: 0x7fffffffd898
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 00:28:42]
+Fault Injection Successful after 2.1099536418914795s
+[INFO -- 2018-09-25 00:28:42]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:28:42]
+exit code: no exit code available

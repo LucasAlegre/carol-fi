@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 00:51:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:51:37]
+Initialization strings:
+[INFO -- 2018-09-25 00:51:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:51:37]
+initSignal:1
+[INFO -- 2018-09-25 00:51:37]
+endSignal:3.5
+[INFO -- 2018-09-25 00:51:37]
+faultModel:1
+[EXCEPTION -- 2018-09-25 00:51:39]
+gdbException: Cannot access memory at address 0x554455776fc0
+[INFO -- 2018-09-25 00:51:39]
+Backtrace BEGIN:
+#0  0x00005555555583af in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785490) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#1  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555785490) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555557155 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9f0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#3  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9f0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#4  0x00005555555554d1 in genetic_algorithm () at knapsackga.cpp:105
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x14
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 335544360
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:51:39]
+Fault Injection Successful after 2.4695544242858887s
+[INFO -- 2018-09-25 00:51:39]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:51:39]
+exit code: no exit code available

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-24 19:10:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:10:23]
+Initialization strings:
+[INFO -- 2018-09-24 19:10:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:10:23]
+initSignal:1
+[INFO -- 2018-09-24 19:10:23]
+endSignal:3.5
+[INFO -- 2018-09-24 19:10:23]
+faultModel:2
+[EXCEPTION -- 2018-09-24 19:10:26]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-24 19:10:26]
+Backtrace BEGIN:
+#0  0x0000555555555b90 in std::vector<int, std::allocator<int> >::operator[] (this=0x55555578a050, __n=125) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x0000555555554f53 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:27
+#2  0x0000555555555654 in genetic_algorithm () at knapsackga.cpp:112
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500xa00x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd858
+address max offset: 8
+Memory content after  bitflip:0x830x780x530x180x440x080xf20xa4
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x55555578a050
+value address: 0x7fffffffd858
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 19:10:26]
+Fault Injection Successful after 3.0935239791870117s
+[INFO -- 2018-09-24 19:10:27]
+event type: exit
+[EXCEPTION -- 2018-09-24 19:10:27]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 05:06:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:06:16]
+Initialization strings:
+[INFO -- 2018-09-25 05:06:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:06:16]
+initSignal:1
+[INFO -- 2018-09-25 05:06:16]
+endSignal:3.5
+[INFO -- 2018-09-25 05:06:16]
+faultModel:0
+[INFO -- 2018-09-25 05:06:19]
+Backtrace BEGIN:
+#0  std::__fill_n_a<int*, unsigned long, int> (__first=0x5555557861f0, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:754
+#1  0x000055555555a8e0 in std::fill_n<int*, unsigned long, int> (__first=0x555555786150, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x000055555555a01a in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555786150, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x000055555555953a in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555786150, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x00005555555584a5 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555786150, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x000055555555700d in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x0000555555555feb in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#8  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+749	    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value)
+750	    {
+751	      const _Tp __tmp = __value;
+752	      for (__decltype(__n + 0) __niter = __n;
+753		   __niter > 0; --__niter, ++__first)
+754		*__first = __tmp;
+755	      return __first;
+756	    }
+757	
+758	  template<typename _Size, typename _Tp>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd80xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd818
+address max offset: 8
+Memory content after  bitflip:0x700xd80xff0xff0xff0x7f0x100x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd870
+value address: 0x7fffffffd818
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:06:19]
+Fault Injection Successful after 3.4979913234710693s
+[INFO -- 2018-09-25 05:06:20]
+event type: exit
+[INFO -- 2018-09-25 05:06:20]
+exit code: 0

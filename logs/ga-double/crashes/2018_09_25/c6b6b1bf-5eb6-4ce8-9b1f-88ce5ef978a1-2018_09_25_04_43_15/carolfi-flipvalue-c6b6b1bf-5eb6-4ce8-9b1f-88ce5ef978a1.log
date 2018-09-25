@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 04:43:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:43:11]
+Initialization strings:
+[INFO -- 2018-09-25 04:43:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:43:11]
+initSignal:1
+[INFO -- 2018-09-25 04:43:11]
+endSignal:3.5
+[INFO -- 2018-09-25 04:43:11]
+faultModel:1
+[EXCEPTION -- 2018-09-25 04:43:14]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 04:43:14]
+Backtrace BEGIN:
+#0  std::swap<int*> (__a=@0x7fffffffd918: 0x0, __b=@0x7fffffffd828: 0x0) at /usr/include/c++/7/bits/move.h:187
+#1  0x0000555555558460 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#2  0x000055555555742f in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+182	    inline
+183	#if __cplusplus >= 201103L
+184	    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+185				      is_move_constructible<_Tp>,
+186				      is_move_assignable<_Tp>>::value>::type
+187	    swap(_Tp& __a, _Tp& __b)
+188	    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+189		            is_nothrow_move_assignable<_Tp>>::value)
+190	#else
+191	    void
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x600x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 6291656
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:43:14]
+Fault Injection Successful after 3.750870704650879s
+[INFO -- 2018-09-25 04:43:14]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:43:14]
+exit code: no exit code available

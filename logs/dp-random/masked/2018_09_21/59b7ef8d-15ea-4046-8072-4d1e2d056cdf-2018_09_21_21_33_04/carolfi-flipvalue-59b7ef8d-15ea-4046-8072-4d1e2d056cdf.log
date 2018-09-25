@@ -1,0 +1,51 @@
+[INFO -- 2018-09-21 21:33:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 21:33:00]
+Initialization strings:
+[INFO -- 2018-09-21 21:33:00]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 21:33:00]
+initSignal:1
+[INFO -- 2018-09-21 21:33:00]
+endSignal:3
+[INFO -- 2018-09-21 21:33:00]
+faultModel:2
+[INFO -- 2018-09-21 21:33:02]
+Backtrace BEGIN:
+#0  0x00005555555555ae in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[] (this=0x555555771958, __n=438070) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x000055555555500d in knapSack (W=588593, n=200, val=std::vector of length 200, capacity 256 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:23
+#2  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0x360xaf0x060x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd930
+address max offset: 8
+Memory content after  bitflip:0xf40x070xb70x920xee0x3e0x3b0x57
+frame name: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[]
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 795
+value: 6285686899310266356
+value address: 0x7fffffffd930
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-21 21:33:02]
+Fault Injection Successful after 2.457416534423828s
+[INFO -- 2018-09-21 21:33:04]
+event type: exit
+[INFO -- 2018-09-21 21:33:04]
+exit code: 0

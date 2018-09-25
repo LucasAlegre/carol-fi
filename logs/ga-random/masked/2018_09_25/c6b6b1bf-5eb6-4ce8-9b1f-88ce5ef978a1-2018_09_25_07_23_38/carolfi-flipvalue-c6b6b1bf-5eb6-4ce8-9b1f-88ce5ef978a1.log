@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 07:23:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:23:33]
+Initialization strings:
+[INFO -- 2018-09-25 07:23:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:23:33]
+initSignal:1
+[INFO -- 2018-09-25 07:23:33]
+endSignal:3.5
+[INFO -- 2018-09-25 07:23:33]
+faultModel:2
+[INFO -- 2018-09-25 07:23:34]
+Backtrace BEGIN:
+#0  0x0000555555556359 in std::swap<int> (__a=@0x55555578645c: 0, __b=@0x55555578216c: 0) at /usr/include/c++/7/bits/move.h:198
+#1  0x00005555555551e7 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555578216c
+address max offset: 8
+Memory content after  bitflip:0x730x6e0xd20xe60xd70x6f0x260x7c
+frame name: std::swap<int>
+symbol name: __b
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x55555578216c
+value address: 0x55555578216c
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 07:23:34]
+Fault Injection Successful after 1.3544416427612305s
+[INFO -- 2018-09-25 07:23:37]
+event type: exit
+[INFO -- 2018-09-25 07:23:37]
+exit code: 0

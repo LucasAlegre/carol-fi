@@ -1,0 +1,65 @@
+[INFO -- 2018-09-23 22:34:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 22:34:42]
+Initialization strings:
+[INFO -- 2018-09-23 22:34:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-23 22:34:42]
+initSignal:1
+[INFO -- 2018-09-23 22:34:42]
+endSignal:3.5
+[INFO -- 2018-09-23 22:34:42]
+faultModel:2
+[INFO -- 2018-09-23 22:34:44]
+Backtrace BEGIN:
+#0  std::swap<int*> (__a=@0x7fffffffd938: 0x555555783170, __b=@0x7fffffffd9b8: 0x555555783170) at /usr/include/c++/7/bits/move.h:200
+#1  0x0000555555558460 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#2  0x0000555555557442 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+
+Backtrace END
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555782e50
+address max offset: 4
+Memory content after  bitflip:0xec0x460xc40xac
+frame name: genetic_algorithm
+symbol name: f1
+symbol filename: knapsackga.cpp
+symbol line: 105
+value: {solution = std::vector of length 200, capacity 200 = {-1396422932, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 1431664636}
+value address: 0x7fffffffd9d0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-09-23 22:34:44]
+Fault Injection Successful after 2.1522815227508545s
+[INFO -- 2018-09-23 22:34:46]
+event type: exit
+[INFO -- 2018-09-23 22:34:46]
+exit code: 0

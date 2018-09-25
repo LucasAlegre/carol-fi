@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 13:02:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:02:35]
+Initialization strings:
+[INFO -- 2018-09-23 13:02:35]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:02:35]
+initSignal:0
+[INFO -- 2018-09-23 13:02:35]
+endSignal:2
+[INFO -- 2018-09-23 13:02:35]
+faultModel:0
+[EXCEPTION -- 2018-09-23 13:02:36]
+gdbException: Cannot access memory at address 0x5555757713d0
+[INFO -- 2018-09-23 13:02:36]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length -134217528, capacity -134217528 = {...}) at /usr/include/c++/7/bits/stl_vector.h:334
+#1  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+333					      _M_get_Tp_allocator());
+334	      }
+335	
+336	#if __cplusplus >= 201103L
+337	      /**
+338	       *  @brief  %Vector move constructor.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x02
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 33554632
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:02:36]
+Fault Injection Successful after 1.1633155345916748s
+[INFO -- 2018-09-23 13:02:36]
+event type: exit
+[EXCEPTION -- 2018-09-23 13:02:36]
+exit code: no exit code available

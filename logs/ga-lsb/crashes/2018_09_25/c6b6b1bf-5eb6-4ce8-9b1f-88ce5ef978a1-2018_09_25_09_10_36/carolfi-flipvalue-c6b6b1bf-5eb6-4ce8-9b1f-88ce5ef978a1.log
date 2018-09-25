@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 09:10:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:10:33]
+Initialization strings:
+[INFO -- 2018-09-25 09:10:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:10:33]
+initSignal:1
+[INFO -- 2018-09-25 09:10:33]
+endSignal:3.5
+[INFO -- 2018-09-25 09:10:33]
+faultModel:4
+[EXCEPTION -- 2018-09-25 09:10:35]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 09:10:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 09:10:35]
+Backtrace BEGIN:
+#0  0x0000555555556dc4 in std::vector<int, std::allocator<int> >::size (this=0x7fffffffd9d0) at /usr/include/c++/7/bits/stl_vector.h:671
+#1  0x0000555555555e6e in std::vector<int, std::allocator<int> >::vector (this=0x555555776b20, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x0000555555557e39 in chromossome::chromossome (this=0x555555776b20) at knapsackga.cpp:42
+#3  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8f0, __p=0x555555776b20, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776b20, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#6  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+675	      max_size() const _GLIBCXX_NOEXCEPT
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x40
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1073741864
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:10:35]
+Fault Injection Successful after 2.5619919300079346s
+[INFO -- 2018-09-25 09:10:35]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:10:35]
+exit code: no exit code available

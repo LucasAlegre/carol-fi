@@ -1,0 +1,52 @@
+[INFO -- 2018-09-24 19:22:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:22:01]
+Initialization strings:
+[INFO -- 2018-09-24 19:22:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:22:01]
+initSignal:1
+[INFO -- 2018-09-24 19:22:01]
+endSignal:3.5
+[INFO -- 2018-09-24 19:22:01]
+faultModel:3
+[INFO -- 2018-09-24 19:22:04]
+Backtrace BEGIN:
+#0  std::_Destroy<int*, int> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:207
+#1  0x00005555555561a8 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:208
+#2  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+211	    inline void
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::_Destroy<int*, int>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:22:04]
+Fault Injection Successful after 3.367494583129883s
+[INFO -- 2018-09-24 19:22:05]
+event type: exit
+[INFO -- 2018-09-24 19:22:05]
+exit code: 0

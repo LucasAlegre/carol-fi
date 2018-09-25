@@ -1,0 +1,61 @@
+[INFO -- 2018-09-25 06:28:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:28:50]
+Initialization strings:
+[INFO -- 2018-09-25 06:28:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:28:50]
+initSignal:1
+[INFO -- 2018-09-25 06:28:50]
+endSignal:3.5
+[INFO -- 2018-09-25 06:28:50]
+faultModel:2
+[EXCEPTION -- 2018-09-25 06:28:52]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 06:28:52]
+Backtrace BEGIN:
+#0  0x0000555555556e95 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555776380, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#1  0x0000555555555e83 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x0000555555557e39 in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#3  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+133	      : _M_impl()
+134	      { _M_create_storage(__n); }
+135	
+136	      _Vector_base(size_t __n, const allocator_type& __a)
+137	      : _M_impl(__a)
+138	      { _M_create_storage(__n); }
+139	
+140	#if __cplusplus >= 201103L
+141	      _Vector_base(_Tp_alloc_type&& __a) noexcept
+142	      : _M_impl(std::move(__a)) { }
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x100xc50x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555780150
+address max offset: 8
+Memory content after  bitflip:0x540x750x4a0xe60x730x000xff0xa8
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x555555780150
+value address: 0x555555780150
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 06:28:52]
+Fault Injection Successful after 2.446977376937866s
+[INFO -- 2018-09-25 06:28:52]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:28:52]
+exit code: no exit code available

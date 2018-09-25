@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 22:41:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 22:41:56]
+Initialization strings:
+[INFO -- 2018-09-23 22:41:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-23 22:41:56]
+initSignal:1
+[INFO -- 2018-09-23 22:41:56]
+endSignal:3.5
+[INFO -- 2018-09-23 22:41:56]
+faultModel:3
+[EXCEPTION -- 2018-09-23 22:41:57]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 22:41:57]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 22:41:57]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 22:41:57]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff74d928d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7600528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74e064a in malloc_printerr (action=<optimized out>, str=0x7ffff75fceae "free(): invalid pointer", ptr=<optimized out>, ar_ptr=<optimized out>) at malloc.c:5426
+#4  0x00007ffff74e273e in _int_free (av=0x7ffff7832c20 <main_arena>, p=<optimized out>, have_lock=0) at malloc.c:4175
+#5  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#6  0x0000555555559724 in __gnu_cxx::new_allocator<chromossome>::deallocate (this=0x7fffffffd8f0, __p=0x555555786400) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555558aac in std::allocator_traits<std::allocator<chromossome> >::deallocate (__a=..., __p=0x555555786400, __n=36) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x000055555555750a in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd8f0, __p=0x555555786400, __n=36) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555556c32 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:448
+#10 0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#12 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 0
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 22:41:57]
+Fault Injection Successful after 1.6897528171539307s
+[INFO -- 2018-09-23 22:41:57]
+event type: exit
+[EXCEPTION -- 2018-09-23 22:41:57]
+exit code: no exit code available

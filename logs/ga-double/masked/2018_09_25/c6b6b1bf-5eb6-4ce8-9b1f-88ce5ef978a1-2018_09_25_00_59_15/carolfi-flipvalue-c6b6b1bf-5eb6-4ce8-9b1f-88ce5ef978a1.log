@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 00:59:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:59:10]
+Initialization strings:
+[INFO -- 2018-09-25 00:59:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:59:10]
+initSignal:1
+[INFO -- 2018-09-25 00:59:10]
+endSignal:3.5
+[INFO -- 2018-09-25 00:59:10]
+faultModel:1
+[INFO -- 2018-09-25 00:59:11]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0xa9e623efdecb6600, __n=4294967480) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x00005555555551a4 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:79
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffda08
+address max offset: 4
+Memory content after  bitflip:0xff0xe00xd70x05
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 105
+value: {solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 98033919}
+value address: 0x7fffffffd9f0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-09-25 00:59:11]
+Fault Injection Successful after 1.4772460460662842s
+[INFO -- 2018-09-25 00:59:14]
+event type: exit
+[INFO -- 2018-09-25 00:59:14]
+exit code: 0

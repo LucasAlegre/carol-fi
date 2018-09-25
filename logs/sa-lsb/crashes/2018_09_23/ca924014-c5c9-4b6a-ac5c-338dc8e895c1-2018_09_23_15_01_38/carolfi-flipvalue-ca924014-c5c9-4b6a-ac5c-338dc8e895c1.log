@@ -1,0 +1,65 @@
+[INFO -- 2018-09-23 15:01:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 15:01:36]
+Initialization strings:
+[INFO -- 2018-09-23 15:01:36]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 15:01:36]
+initSignal:0
+[INFO -- 2018-09-23 15:01:36]
+endSignal:2
+[INFO -- 2018-09-23 15:01:36]
+faultModel:4
+[EXCEPTION -- 2018-09-23 15:01:36]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 15:01:36]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 15:01:37]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 15:01:37]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 15:01:37]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff713af5d in __GI_abort () at abort.c:90
+#2  0x00007ffff718328d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff72aa528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff7191650 in malloc_printerr (ar_ptr=0x0, ptr=<optimized out>, str=0x7ffff72aa840 "munmap_chunk(): invalid pointer", action=<optimized out>) at malloc.c:5426
+#4  munmap_chunk (p=<optimized out>) at malloc.c:2877
+#5  __GI___libc_free (mem=<optimized out>) at malloc.c:3138
+#6  0x0000555555556a18 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffda30, __p=0x555555771701) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x00005555555565c4 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771701, __n=199) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x555555771701, __n=199) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#12 0x000055555555535e in main () at knapsacksa.cpp:84
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: __val
+Fliping array at pos: 9
+Memory content before bitflip:0xec0x470x550x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd438
+address max offset: 8
+Memory content after  bitflip:0xec0x470x550x550x550x550x000x40
+frame name: __GI_raise
+symbol name: set
+symbol filename: ../sysdeps/unix/sysv/linux/raise.c
+symbol line: 39
+value: {__val = {0, 0, 140737488344480, 925580, 0, 140737354129696, 140737488343504, 17179869184, 140737353903792, 4611779843419621356, 2049, 925580, 1, 33261, 0, 0}}
+value address: 0x7fffffffd3f0
+Type: The type is a structure.
+Type sizeof: 128
+Field name: __val
+Field Type: The type is an array.
+Field Type sizeof: 128
+
+[INFO -- 2018-09-23 15:01:37]
+Fault Injection Successful after 1.371558427810669s
+[INFO -- 2018-09-23 15:01:37]
+event type: exit
+[EXCEPTION -- 2018-09-23 15:01:37]
+exit code: no exit code available

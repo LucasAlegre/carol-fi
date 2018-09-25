@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 02:36:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:36:34]
+Initialization strings:
+[INFO -- 2018-09-25 02:36:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:36:34]
+initSignal:1
+[INFO -- 2018-09-25 02:36:34]
+endSignal:3.5
+[INFO -- 2018-09-25 02:36:34]
+faultModel:4
+[EXCEPTION -- 2018-09-25 02:36:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 02:36:35]
+Backtrace BEGIN:
+#0  0x0000555555558376 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x555555557add <std::_Destroy<int*>(int*, int*)+35>, __i=@0x7fffffffd820: 0x7fffffffd850) at /usr/include/c++/7/bits/stl_iterator.h:779
+#1  0x0000555555556f24 in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd970) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x0000555555556156 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9f0, __x=std::vector of length 199, capacity 199 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x00005555555554d1 in genetic_algorithm () at knapsackga.cpp:105
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+774	
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x40
+frame name: std::vector<int, std::allocator<int> >::end
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1073741864
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 02:36:35]
+Fault Injection Successful after 1.6743443012237549s
+[INFO -- 2018-09-25 02:36:35]
+event type: exit
+[EXCEPTION -- 2018-09-25 02:36:35]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-09-23 21:03:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:03:37]
+Initialization strings:
+[INFO -- 2018-09-23 21:03:37]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:03:37]
+initSignal:0
+[INFO -- 2018-09-23 21:03:37]
+endSignal:2
+[INFO -- 2018-09-23 21:03:37]
+faultModel:4
+[EXCEPTION -- 2018-09-23 21:03:37]
+gdbException: Cannot access memory at address 0x2000555555771700
+[INFO -- 2018-09-23 21:03:37]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffda00, __n=154) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x0000555555554fc8 in cost (solution=std::vector of length -576460752303423288, capacity -576460752303423288 = {...}) at knapsacksa.cpp:29
+#2  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x200x1a0x770x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffda08
+address max offset: 8
+Memory content after  bitflip:0x200x1a0x770x550x550x550x000x80
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda00
+value address: 0x7fffffffd958
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 21:03:37]
+Fault Injection Successful after 0.918426513671875s
+[INFO -- 2018-09-23 21:03:38]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:03:38]
+exit code: no exit code available

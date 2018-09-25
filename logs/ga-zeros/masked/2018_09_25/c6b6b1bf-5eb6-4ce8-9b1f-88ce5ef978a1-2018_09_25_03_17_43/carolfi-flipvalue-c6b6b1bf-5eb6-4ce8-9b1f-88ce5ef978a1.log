@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 03:17:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:17:39]
+Initialization strings:
+[INFO -- 2018-09-25 03:17:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:17:39]
+initSignal:1
+[INFO -- 2018-09-25 03:17:39]
+endSignal:3.5
+[INFO -- 2018-09-25 03:17:39]
+faultModel:3
+[INFO -- 2018-09-25 03:17:41]
+Backtrace BEGIN:
+#0  0x0000555555558342 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#1  0x0000555555556e73 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x0000555555555fd8 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#3  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+190	      }
+191	    };
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555786ee0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: crossover
+symbol name: pai
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd910
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 03:17:41]
+Fault Injection Successful after 2.422957420349121s
+[INFO -- 2018-09-25 03:17:43]
+event type: exit
+[INFO -- 2018-09-25 03:17:43]
+exit code: 0

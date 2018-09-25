@@ -1,0 +1,61 @@
+Faults Injected:;1334
+
+Fault Effect;#Effect;PVF
+Masked;816;0.6116941529235382
+SDCs;238;0.17841079460269865
+Crashes;280;0.2098950524737631
+Hangs;0;N/A
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;238;100.0
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Zero bit-flip;280;100.0
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+76.82926829268293;164;126;W;knapsacksa.cpp;15
+65.625;32;21;temp;knapsacksa.cpp;42
+23.863636363636363;88;21;val;knapsacksa.cpp;13
+58.333333333333336;36;21;i;knapsacksa.cpp;27
+94.44444444444444;18;17;best;knapsacksa.cpp;41
+12.745098039215685;102;13;wt;knapsacksa.cpp;14
+35.483870967741936;31;11;valor;knapsacksa.cpp;26
+12.903225806451612;31;4;peso;knapsacksa.cpp;26
+9.090909090909092;22;2;s;knapsacksa.cpp;47
+100.0;1;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;287
+5.0;20;1;this;knapsacksa.cpp;0
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+100.0;146;146;n;knapsacksa.cpp;15
+100.0;25;25;user_entry;../elf/dl-sysdep.c;91
+13.414634146341465;164;22;W;knapsacksa.cpp;15
+17.647058823529413;102;18;wt;knapsacksa.cpp;14
+11.363636363636363;88;10;val;knapsacksa.cpp;13
+18.181818181818183;33;6;delta;knapsacksa.cpp;51
+18.75;32;6;temp;knapsacksa.cpp;42
+22.727272727272727;22;5;s;knapsacksa.cpp;47
+16.129032258064516;31;5;peso;knapsacksa.cpp;26
+15.384615384615385;26;4;i;knapsacksa.cpp;48
+14.814814814814813;27;4;c;knapsacksa.cpp;50
+8.333333333333332;36;3;i;knapsacksa.cpp;27
+100.0;3;3;__xlen;/usr/include/c++/7/bits/vector.tcc;203
+25.0;12;3;__n;/usr/include/c++/7/bits/stl_vector.h;795
+10.0;20;2;_rtld_global_ro;rtld.c;259
+6.451612903225806;31;2;valor;knapsacksa.cpp;26
+7.4074074074074066;27;2;t;knapsacksa.cpp;46
+10.0;20;2;this;knapsacksa.cpp;0
+11.76470588235294;17;2;solution;knapsacksa.cpp;38
+50.0;2;1;__result;/usr/include/c++/7/bits/stl_algobase.h;357
+50.0;2;1;__first;/usr/include/c++/7/bits/stl_algobase.h;357
+100.0;1;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;115
+6.25;16;1;_rtld_global;rtld.c;231
+33.33333333333333;3;1;__last;/usr/include/c++/7/bits/stl_uninitialized.h;115
+50.0;2;1;ranges;dl-reloc.c;259
+100.0;1;1;__last;/usr/include/c++/7/bits/stl_uninitialized.h;287
+16.666666666666664;6;1;solution;knapsacksa.cpp;25
+5.555555555555555;18;1;best;knapsacksa.cpp;41
+33.33333333333333;3;1;__result;/usr/include/c++/7/bits/stl_algobase.h;446

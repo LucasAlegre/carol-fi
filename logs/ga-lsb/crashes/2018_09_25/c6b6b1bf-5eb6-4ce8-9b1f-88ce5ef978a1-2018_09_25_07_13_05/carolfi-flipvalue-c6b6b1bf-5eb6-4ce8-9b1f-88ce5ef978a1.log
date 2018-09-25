@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 07:13:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:13:02]
+Initialization strings:
+[INFO -- 2018-09-25 07:13:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:13:02]
+initSignal:1
+[INFO -- 2018-09-25 07:13:02]
+endSignal:3.5
+[INFO -- 2018-09-25 07:13:02]
+faultModel:4
+[EXCEPTION -- 2018-09-25 07:13:04]
+gdbException: Cannot access memory at address 0x10005555557824c0
+[EXCEPTION -- 2018-09-25 07:13:04]
+gdbException: Cannot access memory at address 0x8000555555786890
+[EXCEPTION -- 2018-09-25 07:13:04]
+gdbException: Cannot access memory at address 0x800555555786bc0
+[INFO -- 2018-09-25 07:13:04]
+Backtrace BEGIN:
+#0  0x00005555555551ab in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length -288230376151711544, capacity -288230376151711544 = {...}, filho2=std::vector of length -144115188075855672, capacity -144115188075855672 = {...}) at knapsackga.cpp:79
+#1  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+74	        mask[i] = rand_bit();
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+79	        if(mask[i]){
+80	            swap(filho1[i], filho2[i]);  
+81	        }
+82	    }
+83	}
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x04
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 67109064
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 07:13:04]
+Fault Injection Successful after 2.423924207687378s
+[INFO -- 2018-09-25 07:13:04]
+event type: exit
+[EXCEPTION -- 2018-09-25 07:13:04]
+exit code: no exit code available

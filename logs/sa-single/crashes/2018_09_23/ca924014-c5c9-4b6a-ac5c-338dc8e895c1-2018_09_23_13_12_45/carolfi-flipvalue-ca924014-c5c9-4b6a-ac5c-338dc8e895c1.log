@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 13:12:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:12:42]
+Initialization strings:
+[INFO -- 2018-09-23 13:12:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:12:42]
+initSignal:0
+[INFO -- 2018-09-23 13:12:42]
+endSignal:2
+[INFO -- 2018-09-23 13:12:42]
+faultModel:0
+[EXCEPTION -- 2018-09-23 13:12:43]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 13:12:43]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 13:12:43]
+Backtrace BEGIN:
+#0  0x0000555555556a63 in std::__niter_base<int*, std::vector<int, std::allocator<int> > > (__it=0) at /usr/include/c++/7/bits/stl_iterator.h:983
+#1  0x0000555555556667 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=1) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x0000555555555fc9 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=1) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#4  0x0000555555555148 in simulated_annealing () at knapsacksa.cpp:53
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+978	{
+979	_GLIBCXX_BEGIN_NAMESPACE_VERSION
+980	
+981	  template<typename _Iterator, typename _Container>
+982	    _Iterator
+983	    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
+984	    { return __it.base(); }
+985	
+986	_GLIBCXX_END_NAMESPACE_VERSION
+987	} // namespace
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xeb0x080x00
+frame name: std::__niter_base<int*, std::vector<int, std::allocator<int> > >
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 584497
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:12:43]
+Fault Injection Successful after 1.634800910949707s
+[INFO -- 2018-09-23 13:12:45]
+event type: exit
+[EXCEPTION -- 2018-09-23 13:12:45]
+exit code: no exit code available

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 05:09:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:09:33]
+Initialization strings:
+[INFO -- 2018-09-25 05:09:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:09:33]
+initSignal:1
+[INFO -- 2018-09-25 05:09:33]
+endSignal:3.5
+[INFO -- 2018-09-25 05:09:33]
+faultModel:2
+[EXCEPTION -- 2018-09-25 05:09:34]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 05:09:34]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 05:09:34]
+Backtrace BEGIN:
+#0  0x00007ffff7494b65 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd804) at random_r.c:357
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+352	in random_r.c
+
+Backtrace END
+Fliping array at pos: 24
+Memory content before bitflip:0xcc0xb70x230xcb
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7832200 
+address max offset: 4
+Memory content after  bitflip:0x900xe40x0b0x0d
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -1633733326, -312641995, 1076456231, -1640232883, 822748213, 1198689165, -1232115425, 794408583, 956944827, 1578614626, 1307179134, 1068054153, 1184990421, -1551824948, 254969741, -243199120, -312198313, -1826528311, 1463642279, 2041165290, -1545578444, -1340751324, -229266665, 218883216, 758400345, 1980943942, -1364331874, -1864729577, -691591653, 519190855, 42504323}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 05:09:34]
+Fault Injection Successful after 1.3704369068145752s
+[INFO -- 2018-09-25 05:09:37]
+event type: exit
+[EXCEPTION -- 2018-09-25 05:09:37]
+exit code: no exit code available

@@ -1,0 +1,60 @@
+[INFO -- 2018-09-23 14:17:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:17:51]
+Initialization strings:
+[INFO -- 2018-09-23 14:17:51]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:17:51]
+initSignal:0
+[INFO -- 2018-09-23 14:17:51]
+endSignal:2
+[INFO -- 2018-09-23 14:17:51]
+faultModel:3
+[INFO -- 2018-09-23 14:17:51]
+Backtrace BEGIN:
+#0  strcmp () at ../sysdeps/x86_64/strcmp.S:2200
+#1  0x00007ffff7ddf194 in check_match (undef_name=undef_name@entry=0x7ffff7a857e3 "_ZTISt5ctypeIwE", ref=ref@entry=0x7ffff7a689a8, version=version@entry=0x7ffff7fc7640, flags=flags@entry=1, type_class=type_class@entry=4, sym=sym@entry=0x7ffff7a689a8, symidx=2933, strtab=0x7ffff7a77ee8 "", map=0x7ffff7fc6000, versioned_sym=0x7fffffffd9b8, num_versions=0x7fffffffd9b4) at dl-lookup.c:138
+#2  0x00007ffff7ddf9db in do_lookup_x (undef_name=undef_name@entry=0x7ffff7a857e3 "_ZTISt5ctypeIwE", new_hash=new_hash@entry=2527611457, old_hash=old_hash@entry=0x7fffffffda80, ref=0x7ffff7a689a8, result=result@entry=0x7fffffffda90, scope=<optimized out>, i=<optimized out>, version=0x7ffff7fc7640, flags=1, skip=<optimized out>, type_class=4, undef_map=0x7ffff7fc6000) at dl-lookup.c:423
+#3  0x00007ffff7ddfee1 in _dl_lookup_symbol_x (undef_name=0x7ffff7a857e3 "_ZTISt5ctypeIwE", undef_map=undef_map@entry=0x7ffff7fc6000, ref=ref@entry=0x7fffffffdbe0, symbol_scope=symbol_scope@entry=0x7ffff7fc6358, version=0x7ffff7fc7640, type_class=4, flags=1, skip_map=0x0) at dl-lookup.c:833
+#4  0x00007ffff7de1c30 in elf_machine_rela (skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7dcf030, version=<optimized out>, sym=<optimized out>, reloc=0x7ffff7ac84d0, map=0x7ffff7fc6000) at ../sysdeps/x86_64/dl-machine.h:326
+#5  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fc6000) at do-rel.h:137
+#6  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:259
+#7  0x00007ffff7dd90d9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2187
+#8  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#11 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000001 in ?? ()
+#13 0x00007fffffffe2f7 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+2195	../sysdeps/x86_64/strcmp.S: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 1
+Fliping value of field: size
+Memory content before bitflip:0x580x4d0x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdc18
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_relocate_object
+symbol name: ranges
+symbol filename: dl-reloc.c
+symbol line: 259
+value: {{start = 140737348617424, size = 92880, nrelative = 755, lazy = 0}, {start = 140737348710304, size = 0, nrelative = 0, lazy = 1}}
+value address: 0x7fffffffdbf0
+Type: The type is an array.
+Type sizeof: 64
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 1)
+
+[INFO -- 2018-09-23 14:17:51]
+Fault Injection Successful after 0.47173380851745605s
+[INFO -- 2018-09-23 14:17:51]
+event type: exit
+[EXCEPTION -- 2018-09-23 14:17:51]
+exit code: no exit code available

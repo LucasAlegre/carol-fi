@@ -1,0 +1,54 @@
+[INFO -- 2018-09-24 18:41:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 18:41:38]
+Initialization strings:
+[INFO -- 2018-09-24 18:41:38]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 18:41:38]
+initSignal:1
+[INFO -- 2018-09-24 18:41:38]
+endSignal:3.5
+[INFO -- 2018-09-24 18:41:38]
+faultModel:4
+[INFO -- 2018-09-24 18:41:40]
+Backtrace BEGIN:
+#0  0x0000555555556a41 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#1  0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x0000555555555088 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#3  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x650x770x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd810
+address max offset: 8
+Memory content after  bitflip:0x400x650x770x550x550x550x000x40
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555776540
+value address: 0x7fffffffd810
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 18:41:40]
+Fault Injection Successful after 2.2592670917510986s
+[INFO -- 2018-09-24 18:41:42]
+event type: exit
+[INFO -- 2018-09-24 18:41:42]
+exit code: 0

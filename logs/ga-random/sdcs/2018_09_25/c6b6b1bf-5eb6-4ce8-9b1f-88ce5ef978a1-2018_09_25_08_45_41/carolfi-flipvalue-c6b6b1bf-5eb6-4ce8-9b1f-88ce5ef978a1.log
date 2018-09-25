@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 08:45:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:45:36]
+Initialization strings:
+[INFO -- 2018-09-25 08:45:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:45:36]
+initSignal:1
+[INFO -- 2018-09-25 08:45:36]
+endSignal:3.5
+[INFO -- 2018-09-25 08:45:36]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:45:38]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 08:45:38]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 08:45:38]
+Backtrace BEGIN:
+#0  0x0000555555558ee9 in std::__addressof<chromossome> (__r=...) at /usr/include/c++/7/bits/move.h:47
+#1  0x000055555555a3d3 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776450) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559a5f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776450) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776450) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776400, __last=0x555555776440, __result=0x555555776450, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+42	   *  @brief Same as C++11 std::addressof
+43	   *  @ingroup utilities
+44	   */
+45	  template<typename _Tp>
+46	    inline _GLIBCXX_CONSTEXPR _Tp*
+47	    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+48	    { return __builtin_addressof(__r); }
+49	
+50	_GLIBCXX_END_NAMESPACE_VERSION
+51	} // namespace
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x500x1d0x0b0xec
+frame name: genetic_algorithm
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -334815920
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:45:38]
+Fault Injection Successful after 2.759744882583618s
+[INFO -- 2018-09-25 08:45:40]
+event type: exit
+[INFO -- 2018-09-25 08:45:40]
+exit code: 0

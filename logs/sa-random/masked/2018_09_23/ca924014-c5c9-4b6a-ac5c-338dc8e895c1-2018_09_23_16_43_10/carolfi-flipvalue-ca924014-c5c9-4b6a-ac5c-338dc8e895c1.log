@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 16:43:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:43:08]
+Initialization strings:
+[INFO -- 2018-09-23 16:43:08]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:43:08]
+initSignal:0
+[INFO -- 2018-09-23 16:43:08]
+endSignal:2
+[INFO -- 2018-09-23 16:43:08]
+faultModel:2
+[INFO -- 2018-09-23 16:43:09]
+Backtrace BEGIN:
+#0  0x00005555555565bf in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#1  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#2  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#3  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+457	       *
+458	       *  Calls <tt> a.deallocate(p, n) </tt>
+459	      */
+460	      static void
+461	      deallocate(allocator_type& __a, pointer __p, size_type __n)
+462	      { __a.deallocate(__p, __n); }
+463	
+464	      /**
+465	       *  @brief  Construct an object of type @a _Up
+466	       *  @param  __a  An allocator.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x7f0x4a0xeb0xf6
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -152352129
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 16:43:09]
+Fault Injection Successful after 1.279125690460205s
+[INFO -- 2018-09-23 16:43:10]
+event type: exit
+[INFO -- 2018-09-23 16:43:10]
+exit code: 0

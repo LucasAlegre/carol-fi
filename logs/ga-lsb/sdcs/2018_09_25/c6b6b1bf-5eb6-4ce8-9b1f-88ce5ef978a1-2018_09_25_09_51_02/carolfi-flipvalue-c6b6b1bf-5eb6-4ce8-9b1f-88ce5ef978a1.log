@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 09:51:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:51:00]
+Initialization strings:
+[INFO -- 2018-09-25 09:51:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:51:00]
+initSignal:1
+[INFO -- 2018-09-25 09:51:00]
+endSignal:3.5
+[INFO -- 2018-09-25 09:51:00]
+faultModel:4
+[EXCEPTION -- 2018-09-25 09:51:01]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 09:51:01]
+Backtrace BEGIN:
+#0  0x0000555555555bd9 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#1  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+429	       *  elements themselves are pointers, the pointed-to memory is
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+
+Backtrace END
+Memory content before bitflip:0x4a0x0d0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd8c4
+address max offset: 4
+Memory content after  bitflip:0x4a0x0d0x000x04
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 67112266
+value address: 0x7fffffffd8c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:51:01]
+Fault Injection Successful after 1.653470754623413s
+[INFO -- 2018-09-25 09:51:01]
+event type: exit
+[INFO -- 2018-09-25 09:51:01]
+exit code: 0

@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 21:40:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:40:32]
+Initialization strings:
+[INFO -- 2018-09-23 21:40:32]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:40:32]
+initSignal:0
+[INFO -- 2018-09-23 21:40:32]
+endSignal:2
+[INFO -- 2018-09-23 21:40:32]
+faultModel:2
+[INFO -- 2018-09-23 21:40:32]
+Backtrace BEGIN:
+#0  0x00005555555555fd in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#1  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+439	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0x3d0x780xc50xfe
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -20613059
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 21:40:32]
+Fault Injection Successful after 0.9040830135345459s
+[INFO -- 2018-09-23 21:40:33]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:40:33]
+exit code: no exit code available

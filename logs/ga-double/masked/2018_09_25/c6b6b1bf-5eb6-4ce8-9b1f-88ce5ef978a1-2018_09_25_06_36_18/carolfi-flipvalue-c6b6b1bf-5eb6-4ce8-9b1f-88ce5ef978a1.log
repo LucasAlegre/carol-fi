@@ -1,0 +1,63 @@
+[INFO -- 2018-09-25 06:36:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:36:13]
+Initialization strings:
+[INFO -- 2018-09-25 06:36:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:36:13]
+initSignal:1
+[INFO -- 2018-09-25 06:36:13]
+endSignal:3.5
+[INFO -- 2018-09-25 06:36:13]
+faultModel:1
+[INFO -- 2018-09-25 06:36:14]
+Backtrace BEGIN:
+#0  std::_Destroy<chromossome> (__pointer=0x555555776b00) at /usr/include/c++/7/bits/stl_construct.h:97
+#1  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776b00, __last=0x555555776ba0) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x5555557769a0, __last=0x555555776ba0) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557769a0, __last=0x555555776ba0) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555556bfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 260, capacity 10177998752086 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#5  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+92	  /**
+93	   * Destroy the object pointed to by a pointer type.
+94	   */
+95	  template<typename _Tp>
+96	    inline void
+97	    _Destroy(_Tp* __pointer)
+98	    { __pointer->~_Tp(); }
+99	
+100	  template<bool>
+101	    struct _Destroy_aux
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555783170
+address max offset: 4
+Memory content after  bitflip:0x300x410x000x00
+frame name: genetic_algorithm
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd970
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 06:36:14]
+Fault Injection Successful after 1.9511668682098389s
+[INFO -- 2018-09-25 06:36:17]
+event type: exit
+[INFO -- 2018-09-25 06:36:17]
+exit code: 0

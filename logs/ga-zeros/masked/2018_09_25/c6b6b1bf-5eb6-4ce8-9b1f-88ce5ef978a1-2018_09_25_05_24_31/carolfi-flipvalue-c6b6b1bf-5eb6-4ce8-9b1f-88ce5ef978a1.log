@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 05:24:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:24:26]
+Initialization strings:
+[INFO -- 2018-09-25 05:24:26]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:24:26]
+initSignal:1
+[INFO -- 2018-09-25 05:24:26]
+endSignal:3.5
+[INFO -- 2018-09-25 05:24:26]
+faultModel:3
+[INFO -- 2018-09-25 05:24:27]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 23456248633020 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:453
+#1  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+448	      _M_deallocate(this->_M_impl._M_start,
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+451	      this->_M_impl._M_start = __new_start;
+452	      this->_M_impl._M_finish = __new_finish;
+453	      this->_M_impl._M_end_of_storage = __new_start + __len;
+454	    }
+455	
+456	  template<typename _Tp, typename _Alloc>
+457	    void
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x630x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd7e8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_finish
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 407
+value: 0x5555557763f0
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:24:27]
+Fault Injection Successful after 1.3898873329162598s
+[INFO -- 2018-09-25 05:24:30]
+event type: exit
+[INFO -- 2018-09-25 05:24:30]
+exit code: 0

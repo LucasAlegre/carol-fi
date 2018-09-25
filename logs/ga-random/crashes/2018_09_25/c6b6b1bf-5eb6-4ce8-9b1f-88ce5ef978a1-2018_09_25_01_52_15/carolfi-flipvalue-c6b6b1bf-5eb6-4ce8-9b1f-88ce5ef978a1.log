@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 01:52:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:52:08]
+Initialization strings:
+[INFO -- 2018-09-25 01:52:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:52:08]
+initSignal:1
+[INFO -- 2018-09-25 01:52:08]
+endSignal:3.5
+[INFO -- 2018-09-25 01:52:08]
+faultModel:2
+[INFO -- 2018-09-25 01:52:10]
+Backtrace BEGIN:
+#0  0x0000555555556dc8 in std::vector<int, std::allocator<int> >::size (this=0x7fffffffd950) at /usr/include/c++/7/bits/stl_vector.h:671
+#1  0x000055555555612b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:203
+#2  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+675	      max_size() const _GLIBCXX_NOEXCEPT
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x220xfd0x640x14
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 342162722
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 01:52:10]
+Fault Injection Successful after 2.3196349143981934s
+[INFO -- 2018-09-25 01:52:14]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:52:14]
+exit code: no exit code available

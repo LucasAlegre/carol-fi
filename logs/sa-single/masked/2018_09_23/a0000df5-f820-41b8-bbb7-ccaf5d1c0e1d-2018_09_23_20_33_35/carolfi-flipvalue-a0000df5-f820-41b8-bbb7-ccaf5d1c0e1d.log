@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 20:33:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:33:32]
+Initialization strings:
+[INFO -- 2018-09-23 20:33:32]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:33:32]
+initSignal:0
+[INFO -- 2018-09-23 20:33:32]
+endSignal:2
+[INFO -- 2018-09-23 20:33:32]
+faultModel:0
+[INFO -- 2018-09-23 20:33:33]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x555555759050 <wt>, __n=102) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x0000555555554fab in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#2  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500x900x750x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd958
+address max offset: 8
+Memory content after  bitflip:0x500x920x750x550x550x550x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x555555759050 <wt>
+value address: 0x7fffffffd958
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:33:33]
+Fault Injection Successful after 1.6488234996795654s
+[INFO -- 2018-09-23 20:33:35]
+event type: exit
+[INFO -- 2018-09-23 20:33:35]
+exit code: 0

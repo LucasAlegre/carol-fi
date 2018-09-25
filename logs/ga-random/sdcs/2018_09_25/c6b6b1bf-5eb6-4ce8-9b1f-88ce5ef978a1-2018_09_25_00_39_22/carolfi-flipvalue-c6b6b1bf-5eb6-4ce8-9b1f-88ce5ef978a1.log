@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 00:39:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:39:17]
+Initialization strings:
+[INFO -- 2018-09-25 00:39:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:39:17]
+initSignal:1
+[INFO -- 2018-09-25 00:39:17]
+endSignal:3.5
+[INFO -- 2018-09-25 00:39:17]
+faultModel:2
+[INFO -- 2018-09-25 00:39:18]
+Backtrace BEGIN:
+#0  0x0000555555557e47 in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:42
+#1  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#4  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+37	
+38	float random01(){
+39	   return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+40	}
+41	
+42	struct chromossome{
+43	    vector<int> solution;
+44	    int fitness;
+45	    chromossome(int size){  
+46	        for(int i = 0; i < size; i++)
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x1c0xdf0xa40xf8
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -123412708
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:39:18]
+Fault Injection Successful after 1.4321544170379639s
+[INFO -- 2018-09-25 00:39:21]
+event type: exit
+[INFO -- 2018-09-25 00:39:21]
+exit code: 0

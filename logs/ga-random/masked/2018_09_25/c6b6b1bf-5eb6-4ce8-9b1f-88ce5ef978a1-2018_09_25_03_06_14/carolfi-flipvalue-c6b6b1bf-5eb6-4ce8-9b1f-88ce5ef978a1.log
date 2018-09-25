@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 03:06:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:06:09]
+Initialization strings:
+[INFO -- 2018-09-25 03:06:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:06:09]
+initSignal:1
+[INFO -- 2018-09-25 03:06:09]
+endSignal:3.5
+[INFO -- 2018-09-25 03:06:09]
+faultModel:2
+[INFO -- 2018-09-25 03:06:10]
+Backtrace BEGIN:
+#0  std::_Destroy<chromossome*> (__first=0x55555555807d <std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >(chromossome*, chromossome*, chromossome*, std::allocator<chromossome>&)+77>, __last=0x7fffffffd7b0) at /usr/include/c++/7/bits/stl_construct.h:127
+#1  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776400, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555556bfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#3  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+122	   * a trivial destructor, the compiler should optimize all of this
+123	   * away, otherwise the objects' destructors must be invoked.
+124	   */
+125	  template<typename _ForwardIterator>
+126	    inline void
+127	    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+128	    {
+129	      typedef typename iterator_traits<_ForwardIterator>::value_type
+130	                       _Value_type;
+131	#if __cplusplus >= 201103L
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0xb30x2d0xf80xff
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557800a8
+address max offset: 4
+Memory content after  bitflip:0xa30xa30xaa0x92
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x555555780090
+value address: 0x555555780090
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 03:06:10]
+Fault Injection Successful after 1.9944913387298584s
+[INFO -- 2018-09-25 03:06:13]
+event type: exit
+[INFO -- 2018-09-25 03:06:13]
+exit code: 0

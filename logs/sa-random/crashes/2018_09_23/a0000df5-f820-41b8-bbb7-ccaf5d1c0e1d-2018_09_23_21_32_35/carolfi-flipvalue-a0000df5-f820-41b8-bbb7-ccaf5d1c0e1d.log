@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 21:32:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:32:34]
+Initialization strings:
+[INFO -- 2018-09-23 21:32:34]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:32:34]
+initSignal:0
+[INFO -- 2018-09-23 21:32:34]
+endSignal:2
+[INFO -- 2018-09-23 21:32:34]
+faultModel:2
+[INFO -- 2018-09-23 21:32:35]
+Backtrace BEGIN:
+#0  std::allocator<int>::~allocator (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#1  0x0000555555555b02 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#2  0x0000555555555b6f in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#3  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+139	      ~allocator() throw() { }
+140	
+141	      // Inherit everything else.
+142	    };
+143	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0x320x470x970x98
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1734916302
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 21:32:35]
+Fault Injection Successful after 1.5401439666748047s
+[INFO -- 2018-09-23 21:32:35]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:32:35]
+exit code: no exit code available

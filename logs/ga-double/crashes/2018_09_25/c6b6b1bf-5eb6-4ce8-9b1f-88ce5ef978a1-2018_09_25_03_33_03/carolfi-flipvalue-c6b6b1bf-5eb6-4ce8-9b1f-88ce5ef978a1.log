@@ -1,0 +1,64 @@
+[INFO -- 2018-09-25 03:33:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:33:01]
+Initialization strings:
+[INFO -- 2018-09-25 03:33:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:33:01]
+initSignal:1
+[INFO -- 2018-09-25 03:33:01]
+endSignal:3.5
+[INFO -- 2018-09-25 03:33:01]
+faultModel:1
+[EXCEPTION -- 2018-09-25 03:33:02]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 03:33:02]
+Backtrace BEGIN:
+#0  __memmove_sse2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:494
+#1  0x000055555555a0d0 in std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_algobase.h:368
+#2  0x0000555555559640 in std::__copy_move_a<false, int*, int*> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_algobase.h:386
+#3  0x00005555555586a2 in std::__copy_move_a2<false, int*, int*> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_algobase.h:424
+#4  0x00005555555572e9 in std::copy<int*, int*> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#5  0x000055555555966d in std::__uninitialized_copy<true>::__uninit_copy<int*, int*> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#6  0x00005555555586da in std::uninitialized_copy<int*, int*> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#7  0x000055555555731f in std::__uninitialized_copy_a<int*, int*, int> (__first=0x555555785af0, __last=0x555555785e10, __result=0x0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#8  0x000055555555630b in std::vector<int, std::allocator<int> >::operator= (this=0x55555577fdd8, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:225
+#9  0x000055555555a1c3 in chromossome::operator= (this=0x55555577fdd8) at knapsackga.cpp:42
+#10 0x000055555555a21b in std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<chromossome const*, chromossome*> (__first=0x555555789b90, __last=0x55555578a090, __result=0x55555577fdd8) at /usr/include/c++/7/bits/stl_algobase.h:324
+#11 0x00005555555597c1 in std::__copy_move_a<false, chromossome const*, chromossome*> (__first=0x555555789b90, __last=0x55555578a090, __result=0x55555577fdd8) at /usr/include/c++/7/bits/stl_algobase.h:386
+#12 0x0000555555558b78 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 0, capacity 516, fitness = 1433930256}) at /usr/include/c++/7/bits/stl_algobase.h:422
+#13 0x000055555555770a in std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 0, capacity 516, fitness = 1433930256}) at /usr/include/c++/7/bits/stl_algobase.h:456
+#14 0x00005555555566e9 in std::vector<chromossome, std::allocator<chromossome> >::operator= (this=0x7fffffffd8d0, __x=std::vector of length 40, capacity 64 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#15 0x00005555555556c5 in genetic_algorithm () at knapsackga.cpp:117
+#16 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+489	../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S: No such file or directory.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x100x0a0x780x55
+Fault Model: Double bit-flip
+base address to flip value: 0x55555577fdf0
+address max offset: 4
+Memory content after  bitflip:0x100x0a0x720x55
+frame name: std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > >
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 446
+value: {solution = std::vector of length 0, capacity 516, fitness = 1433537040}
+value address: 0x7fffffffd828
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 03:33:02]
+Fault Injection Successful after 1.867117166519165s
+[INFO -- 2018-09-25 03:33:02]
+event type: exit
+[EXCEPTION -- 2018-09-25 03:33:02]
+exit code: no exit code available

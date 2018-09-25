@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 04:30:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:30:19]
+Initialization strings:
+[INFO -- 2018-09-25 04:30:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:30:19]
+initSignal:1
+[INFO -- 2018-09-25 04:30:19]
+endSignal:3.5
+[INFO -- 2018-09-25 04:30:19]
+faultModel:1
+[INFO -- 2018-09-25 04:30:20]
+Backtrace BEGIN:
+#0  0x0000555555558440 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#1  0x000055555555742f in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#2  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+100		{ }
+101	#endif
+102	
+103		void _M_swap_data(_Vector_impl& __x) _GLIBCXX_NOEXCEPT
+104		{
+105		  std::swap(_M_start, __x._M_start);
+106		  std::swap(_M_finish, __x._M_finish);
+107		  std::swap(_M_end_of_storage, __x._M_end_of_storage);
+108		}
+109	      };
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x60
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1610612936
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:30:20]
+Fault Injection Successful after 1.3895609378814697s
+[INFO -- 2018-09-25 04:30:20]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:30:20]
+exit code: no exit code available

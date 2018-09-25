@@ -1,0 +1,61 @@
+[INFO -- 2018-09-25 04:37:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:37:32]
+Initialization strings:
+[INFO -- 2018-09-25 04:37:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:37:32]
+initSignal:1
+[INFO -- 2018-09-25 04:37:32]
+endSignal:3.5
+[INFO -- 2018-09-25 04:37:32]
+faultModel:2
+[EXCEPTION -- 2018-09-25 04:37:33]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 04:37:33]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 04:37:33]
+gdbException: Cannot access memory at address 0x295c740e92e460be
+[INFO -- 2018-09-25 04:37:33]
+Backtrace BEGIN:
+#0  __gnu_cxx::operator-<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > (__lhs=<error reading variable: Cannot access memory at address 0x84c09f0f10f88348>, __rhs={solution = std::vector of length -11728124026512, capacity -11728123468992 = {-10080, 32767, 1431654488, 21845, -10032, 32767, -9840, 32767, -10112, 32767, 3, 35, 1433887968, 21845, 1433888064, 21845, 1433888096, 21845, -1030388224, -1788649076, -9744, 32767, 1433968784, 21845, -9680, 32767, 1431655433, 21845, 0, 0, -145853362, 40, -510591, 2835, 2, 40, 1433927152, 21845, 1433928432, 21845, 1433929200, 21845, -8880, 32767, 1433953408, 21845, 1433954176, 21845, 1433954432, 21845, -139062032, 32767, 0, 0, 0, 0, 0, 0, -858993460, 214748364, 0, 0, 0, 0, 0, 0, -9716, 32767, 0, 0, 0, 0, 0, 0, 1433792592, 21845, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 1431669922, 21845, 0, 0, 0, 0, 0, 0, 1433792592, 21845, 1433935456, 21845, 1433936256, 21845, 1433936256, 21845, 1431664636, 21845, 1433954448, 21845, 1433955248, 21845, 1433955248, 21845, 99999999, 21845, -9680, 32767, -1030388224, -1788649076, 0, 0, 1431653792, 21845, -8592, 32767, 1431656663, 21845, -134455296, 9215, 10215, 200, -136526640, 32767, -136527080, 32767, 1433879264, 21845, 1433879264, 21845, 1433879264, 21845, 0, 0, 0, 0, 0, 0, -136493472, 32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1433878704, 21845, 1, 0, 48, 0, 0, 0, 0, 0, 0, 32767, 1433879264, 21845, 8192, 0, 1, 32767, 0, 0, 0, 0, -134449664, 32767, -136495120, 32767, 0, 0, 0, 0, 0, 0, 0, 0, -136526600, 32767, 6, 0, 0, 0...}, fitness = 1431657957}) at /usr/include/c++/7/bits/stl_iterator.h:962
+#1  0x00005555555581f0 in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1883
+#2  0x0000555555556da9 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#3  0x0000555555555dfd in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#4  0x0000555555555058 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#5  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+957	#endif
+958	    { return __lhs.base() - __rhs.base(); }
+959	
+960	  template<typename _Iterator, typename _Container>
+961	    inline typename __normal_iterator<_Iterator, _Container>::difference_type
+962	    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+963		      const __normal_iterator<_Iterator, _Container>& __rhs)
+964	    _GLIBCXX_NOEXCEPT
+965	    { return __lhs.base() - __rhs.base(); }
+966	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x060x920xa70xb6
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -1230532090
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:37:33]
+Fault Injection Successful after 1.8394839763641357s
+[INFO -- 2018-09-25 04:37:33]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:37:33]
+exit code: no exit code available

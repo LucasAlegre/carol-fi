@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 05:01:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:01:30]
+Initialization strings:
+[INFO -- 2018-09-25 05:01:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:01:31]
+initSignal:1
+[INFO -- 2018-09-25 05:01:31]
+endSignal:3.5
+[INFO -- 2018-09-25 05:01:31]
+faultModel:4
+[INFO -- 2018-09-25 05:01:33]
+Backtrace BEGIN:
+#0  0x0000555555557aaf in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd9f0) at /usr/include/c++/7/bits/stl_vector.h:89
+#1  0x0000555555556858 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd9f0) at /usr/include/c++/7/bits/stl_vector.h:127
+#2  0x0000555555555b88 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd9f0) at /usr/include/c++/7/bits/stl_vector.h:263
+#3  0x0000555555555b46 in chromossome::chromossome (this=0x7fffffffd9f0) at knapsackga.cpp:50
+#4  0x00005555555554a5 in genetic_algorithm () at knapsackga.cpp:105
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+84		pointer _M_start;
+85		pointer _M_finish;
+86		pointer _M_end_of_storage;
+87	
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+
+Backtrace END
+Memory content before bitflip:0xee0x160x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd8c4
+address max offset: 4
+Memory content after  bitflip:0xee0x160x000x40
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 1073747694
+value address: 0x7fffffffd8c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 05:01:33]
+Fault Injection Successful after 2.416219472885132s
+[INFO -- 2018-09-25 05:01:33]
+event type: exit
+[INFO -- 2018-09-25 05:01:33]
+exit code: 0

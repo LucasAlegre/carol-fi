@@ -1,0 +1,135 @@
+[INFO -- 2018-09-23 15:43:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 15:43:18]
+Initialization strings:
+[INFO -- 2018-09-23 15:43:18]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 15:43:18]
+initSignal:0
+[INFO -- 2018-09-23 15:43:18]
+endSignal:2
+[INFO -- 2018-09-23 15:43:18]
+faultModel:2
+[INFO -- 2018-09-23 15:43:18]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2286
+#1  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#4  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe2f7 in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2281	rtld.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: _dl_num_cache_relocations
+Memory content before bitflip:0xb20x040x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7ffd9c0 
+address max offset: 8
+Memory content after  bitflip:0xcb0xe90x850x190x410xf30x460x94
+frame name: _dl_start_final
+symbol name: _rtld_global
+symbol filename: rtld.c
+symbol line: 231
+value: {_dl_ns = {{_ns_loaded = 0x7ffff7ffe150, _ns_nloaded = 7, _ns_main_searchlist = 0x7ffff7ffe408, _ns_global_scope_alloc = 0, _ns_unique_sym_table = {lock = {mutex = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 1, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 16 times>, "\001", '\000' <repeats 22 times>, __align = 0}}, entries = 0x7ffff7fc27a0, size = 127, n_elements = 82, free = 0x7ffff7df0a80 <free>}, _ns_debug = {r_version = 0, r_map = 0x0, r_brk = 0, r_state = RT_CONSISTENT, r_ldbase = 0}}, {_ns_loaded = 0x0, _ns_nloaded = 0, _ns_main_searchlist = 0x0, _ns_global_scope_alloc = 0, _ns_unique_sym_table = {lock = {mutex = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 0, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 39 times>, __align = 0}}, entries = 0x0, size = 0, n_elements = 0, free = 0x0}, _ns_debug = {r_version = 0, r_map = 0x0, r_brk = 0, r_state = RT_CONSISTENT, r_ldbase = 0}} <repeats 15 times>}, _dl_nns = 1, _dl_load_lock = {mutex = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 1, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 16 times>, "\001", '\000' <repeats 22 times>, __align = 0}}, _dl_load_write_lock = {mutex = {__data = {__lock = 0, __count = 0, __owner = 0, __nusers = 0, __kind = 1, __spins = 0, __elision = 0, __list = {__prev = 0x0, __next = 0x0}}, __size = '\000' <repeats 16 times>, "\001", '\000' <repeats 22 times>, __align = 0}}, _dl_load_adds = 7, _dl_initfirst = 0x0, _dl_cpuclock_offset = 43512948247848, _dl_profile_map = 0x0, _dl_num_relocations = 2040, _dl_num_cache_relocations = 10684494626909710795, _dl_all_dirs = 0x7ffff7ffec20, _dl_rtld_map = {l_addr = 140737351864320, l_name = 0x555555554238 "/lib64/ld-linux-x86-64.so.2", l_ld = 0x7ffff7ffce78, l_next = 0x0, l_prev = 0x7ffff7fc6ed0, l_real = 0x7ffff7ffd9d0 <_rtld_global+2448>, l_ns = 0, l_libname = 0x7ffff7ffe010 <_dl_rtld_libname>, l_info = {0x0, 0x0, 0x7ffff7ffcef8, 0x7ffff7ffcee8, 0x7ffff7ffce88, 0x7ffff7ffcea8, 0x7ffff7ffceb8, 0x7ffff7ffcf28, 0x7ffff7ffcf38, 0x7ffff7ffcf48, 0x7ffff7ffcec8, 0x7ffff7ffced8, 0x0, 0x0, 0x7ffff7ffce78, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7ffff7ffcf08, 0x0, 0x0, 0x7ffff7ffcf18, 0x0 <repeats 12 times>, 0x7ffff7ffcf68, 0x7ffff7ffcf58, 0x0, 0x0, 0x7ffff7ffcf88, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x7ffff7ffcf78, 0x0 <repeats 25 times>, 0x7ffff7ffce98}, l_phdr = 0x7ffff7dd5040, l_entry = 0, l_phnum = 7, l_ldnum = 0, l_searchlist = {r_list = 0x0, r_nlist = 0}, l_symbolic_searchlist = {r_list = 0x0, r_nlist = 0}, l_loader = 0x0, l_versions = 0x7ffff7fc42f0, l_nversions = 6, l_nbuckets = 17, l_gnu_bitmask_idxbits = 3, l_gnu_shift = 8, l_gnu_bitmask = 0x7ffff7dd52c0, {l_gnu_buckets = 0x7ffff7dd52e0, l_chain = 0x7ffff7dd52e0}, {l_gnu_chain_zero = 0x7ffff7dd5320, l_buckets = 0x7ffff7dd5320}, l_direct_opencount = 0, l_type = lt_library, l_relocated = 1, l_init_called = 0, l_global = 1, l_reserved = 0, l_phdr_allocated = 0, l_soname_added = 0, l_faked = 0, l_need_tls_init = 0, l_auditing = 0, l_audit_any_plt = 0, l_removed = 0, l_contiguous = 0, l_symbolic_in_local_scope = 0, l_free_initfini = 0, l_rpath_dirs = {dirs = 0x0, malloced = 0}, l_reloc_result = 0x0, l_versyms = 0x7ffff7dd580c, l_origin = 0x0, l_map_start = 140737351864320, l_map_end = 140737354129744, l_text_end = 140737351995536, l_scope_mem = {0x0, 0x0, 0x0, 0x0}, l_scope_max = 0, l_scope = 0x0, l_local_scope = {0x0, 0x0}, l_file_id = {dev = 0, ino = 0}, l_runpath_dirs = {dirs = 0x0, malloced = 0}, l_initfini = 0x0, l_reldeps = 0x0, l_reldepsmax = 0, l_used = 1, l_feature_1 = 0, l_flags_1 = 0, l_flags = 0, l_idx = 0, l_mach = {plt = 0, gotplt = 0, tlsdesc_table = 0x0}, l_lookup_cache = {sym = 0x7ffff7dd5428, type_class = 1, value = 0x7ffff7fc6ed0, ret = 0x7ffff7107000}, l_tls_initimage = 0x0, l_tls_initimage_size = 0, l_tls_blocksize = 0, l_tls_align = 0, l_tls_firstbyte_offset = 0, l_tls_offset = 0, l_tls_modid = 0, l_tls_dtor_count = 0, l_relro_addr = 2258944, l_relro_size = 2048, l_serial = 0, l_audit = 0x7ffff7ffde40 <_rtld_global+3584>}, audit_data = {{cookie = 0, bindflags = 0} <repeats 16 times>}, _dl_rtld_lock_recursive = 0x7ffff7dd5ef0 <rtld_lock_default_lock_recursive>, _dl_rtld_unlock_recursive = 0x7ffff7dd5f00 <rtld_lock_default_unlock_recursive>, _dl_make_stack_executable_hook = 0x7ffff7de94c0 <__GI__dl_make_stack_executable>, _dl_stack_flags = 6, _dl_tls_dtv_gaps = false, _dl_tls_max_dtv_idx = 2, _dl_tls_dtv_slotinfo_list = 0x7ffff7fc4380, _dl_tls_static_nelem = 2, _dl_tls_static_size = 4160, _dl_tls_static_used = 176, _dl_tls_static_align = 64, _dl_initial_dtv = 0x7ffff7fc5840, _dl_tls_generation = 1, _dl_init_static_tls = 0x7ffff7de1580 <_dl_nothread_init_static_tls>, _dl_wait_lookup_done = 0x0, _dl_scope_free_list = 0x0}
+value address: 0x7ffff7ffd040 <_rtld_global>
+Type: The type is a structure.
+Type sizeof: 3960
+Field name: _dl_ns
+Field Type: The type is an array.
+Field Type sizeof: 2304
+Field name: _dl_nns
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_load_lock
+Field Type: The type is a structure.
+Field Type sizeof: 40
+Field name: _dl_load_write_lock
+Field Type: The type is a structure.
+Field Type sizeof: 40
+Field name: _dl_load_adds
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_initfirst
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_cpuclock_offset
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_profile_map
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_num_relocations
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_num_cache_relocations
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_all_dirs
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_rtld_map
+Field Type: The type is a structure.
+Field Type sizeof: 1136
+Field name: audit_data
+Field Type: The type is an array.
+Field Type sizeof: 256
+Field name: _dl_rtld_lock_recursive
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_rtld_unlock_recursive
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_make_stack_executable_hook
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_stack_flags
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_tls_dtv_gaps
+Field Type: A boolean type.
+Field Type sizeof: 1
+Field name: _dl_tls_max_dtv_idx
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_tls_dtv_slotinfo_list
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_tls_static_nelem
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_tls_static_size
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_tls_static_used
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_tls_static_align
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_initial_dtv
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_tls_generation
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_init_static_tls
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_wait_lookup_done
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_scope_free_list
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 15:43:18]
+Fault Injection Successful after 0.5324475765228271s
+[INFO -- 2018-09-23 15:43:20]
+event type: exit
+[INFO -- 2018-09-23 15:43:20]
+exit code: 0

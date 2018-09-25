@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 20:06:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:06:52]
+Initialization strings:
+[INFO -- 2018-09-23 20:06:52]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:06:52]
+initSignal:0
+[INFO -- 2018-09-23 20:06:52]
+endSignal:2
+[INFO -- 2018-09-23 20:06:52]
+faultModel:2
+[EXCEPTION -- 2018-09-23 20:06:52]
+gdbException: Cannot access memory at address 0xb3d449b5df2a3500
+[INFO -- 2018-09-23 20:06:52]
+Backtrace BEGIN:
+#0  0x0000555555555d76 in std::vector<int, std::allocator<int> >::end (this=0x7fffffffda00) at /usr/include/c++/7/bits/stl_vector.h:591
+#1  0x000055555555596a in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#2  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+586	       *  the last element in the %vector.  Iteration is done in
+587	       *  ordinary element order.
+588	       */
+589	      const_iterator
+590	      end() const _GLIBCXX_NOEXCEPT
+591	      { return const_iterator(this->_M_impl._M_finish); }
+592	
+593	      /**
+594	       *  Returns a read/write reverse iterator that points to the
+595	       *  last element in the %vector.  Iteration is done in reverse
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xda0xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd928
+address max offset: 8
+Memory content after  bitflip:0x0c0x620xf10x7c0x790x220xf40x52
+frame name: std::vector<int, std::allocator<int> >::end
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda00
+value address: 0x7fffffffd928
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:06:52]
+Fault Injection Successful after 0.9635014533996582s
+[INFO -- 2018-09-23 20:06:53]
+event type: exit
+[EXCEPTION -- 2018-09-23 20:06:53]
+exit code: no exit code available

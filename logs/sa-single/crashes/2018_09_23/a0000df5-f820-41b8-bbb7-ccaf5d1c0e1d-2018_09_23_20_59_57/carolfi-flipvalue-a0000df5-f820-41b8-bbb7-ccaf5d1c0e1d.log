@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 20:59:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:59:56]
+Initialization strings:
+[INFO -- 2018-09-23 20:59:56]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:59:56]
+initSignal:0
+[INFO -- 2018-09-23 20:59:56]
+endSignal:2
+[INFO -- 2018-09-23 20:59:56]
+faultModel:0
+[EXCEPTION -- 2018-09-23 20:59:56]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 20:59:57]
+Backtrace BEGIN:
+#0  0x0000555555555504 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffda00, __n=6) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x0000555555554fab in cost (solution=std::vector of length 199, capacity 199 = {...}) at knapsacksa.cpp:28
+#2  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0x060x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd950
+address max offset: 8
+Memory content after  bitflip:0x060x000x000x000x000x400x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 795
+value: 70368744177670
+value address: 0x7fffffffd950
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:59:57]
+Fault Injection Successful after 1.0422351360321045s
+[INFO -- 2018-09-23 20:59:57]
+event type: exit
+[EXCEPTION -- 2018-09-23 20:59:57]
+exit code: no exit code available

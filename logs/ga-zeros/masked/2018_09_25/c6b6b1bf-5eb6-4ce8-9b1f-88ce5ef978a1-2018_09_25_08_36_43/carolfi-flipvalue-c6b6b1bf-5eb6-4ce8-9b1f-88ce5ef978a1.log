@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 08:36:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:36:38]
+Initialization strings:
+[INFO -- 2018-09-25 08:36:38]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:36:38]
+initSignal:1
+[INFO -- 2018-09-25 08:36:38]
+endSignal:3.5
+[INFO -- 2018-09-25 08:36:38]
+faultModel:3
+[INFO -- 2018-09-25 08:36:40]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd930) at /usr/include/c++/7/bits/stl_vector.h:90
+#1  0x0000555555556858 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd930) at /usr/include/c++/7/bits/stl_vector.h:127
+#2  0x0000555555555b88 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd930) at /usr/include/c++/7/bits/stl_vector.h:263
+#3  0x00005555555553d2 in genetic_algorithm () at knapsackga.cpp:101
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+85		pointer _M_finish;
+86		pointer _M_end_of_storage;
+87	
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd940
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd930
+value address: 0x7fffffffd898
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:36:40]
+Fault Injection Successful after 2.6152238845825195s
+[INFO -- 2018-09-25 08:36:42]
+event type: exit
+[INFO -- 2018-09-25 08:36:42]
+exit code: 0

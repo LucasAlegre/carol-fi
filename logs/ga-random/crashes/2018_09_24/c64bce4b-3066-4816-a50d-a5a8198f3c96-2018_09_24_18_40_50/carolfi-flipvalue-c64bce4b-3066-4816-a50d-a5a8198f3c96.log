@@ -1,0 +1,58 @@
+[INFO -- 2018-09-24 18:40:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 18:40:47]
+Initialization strings:
+[INFO -- 2018-09-24 18:40:47]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 18:40:47]
+initSignal:1
+[INFO -- 2018-09-24 18:40:47]
+endSignal:3.5
+[INFO -- 2018-09-24 18:40:47]
+faultModel:2
+[INFO -- 2018-09-24 18:40:49]
+Backtrace BEGIN:
+#0  std::__copy_move_a<false, int const*, int*> (__first=0x5555555595a1 <std::__niter_base<int const*, std::vector<int, std::allocator<int> > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)+24>, __last=0x7fffffffd6e0, __result=0x7fffffffd6d8) at /usr/include/c++/7/bits/stl_algobase.h:375
+#1  0x000055555555a8a1 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785af0) at /usr/include/c++/7/bits/stl_algobase.h:424
+#2  0x0000555555559fd6 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785af0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x000055555555948e in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785af0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785af0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555785af0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555557155 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9d0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#7  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#8  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+370		}
+371	    };
+372	
+373	  template<bool _IsMove, typename _II, typename _OI>
+374	    inline _OI
+375	    __copy_move_a(_II __first, _II __last, _OI __result)
+376	    {
+377	      typedef typename iterator_traits<_II>::value_type _ValueTypeI;
+378	      typedef typename iterator_traits<_OI>::value_type _ValueTypeO;
+379	      typedef typename iterator_traits<_II>::iterator_category _Category;
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x8e0xa40x6f0x11
+frame name: std::__copy_move_a<false, int const*, int*>
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 292529294
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 18:40:49]
+Fault Injection Successful after 2.5521628856658936s
+[INFO -- 2018-09-24 18:40:49]
+event type: exit
+[EXCEPTION -- 2018-09-24 18:40:49]
+exit code: no exit code available

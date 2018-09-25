@@ -1,0 +1,56 @@
+[INFO -- 2018-09-23 21:16:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:16:59]
+Initialization strings:
+[INFO -- 2018-09-23 21:16:59]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:16:59]
+initSignal:0
+[INFO -- 2018-09-23 21:16:59]
+endSignal:2
+[INFO -- 2018-09-23 21:16:59]
+faultModel:4
+[INFO -- 2018-09-23 21:17:00]
+Backtrace BEGIN:
+#0  0x0000555555555a2d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:230
+#1  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+225		      std::__uninitialized_copy_a(__x._M_impl._M_start + size(),
+226						  __x._M_impl._M_finish,
+227						  this->_M_impl._M_finish,
+228						  _M_get_Tp_allocator());
+229		    }
+230		  this->_M_impl._M_finish = this->_M_impl._M_start + __xlen;
+231		}
+232	      return *this;
+233	    }
+234	
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x010x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555771700
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x80
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 180
+value: std::vector of length 200, capacity 200 = {-2147483647, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1...}
+value address: 0x7fffffffda00
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 21:17:00]
+Fault Injection Successful after 1.1479191780090332s
+[INFO -- 2018-09-23 21:17:02]
+event type: exit
+[INFO -- 2018-09-23 21:17:02]
+exit code: 0

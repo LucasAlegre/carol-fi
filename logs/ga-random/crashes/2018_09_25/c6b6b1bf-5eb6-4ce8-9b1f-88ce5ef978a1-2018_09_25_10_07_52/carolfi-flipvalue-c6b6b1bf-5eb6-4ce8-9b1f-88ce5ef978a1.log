@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 10:07:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 10:07:43]
+Initialization strings:
+[INFO -- 2018-09-25 10:07:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 10:07:43]
+initSignal:1
+[INFO -- 2018-09-25 10:07:43]
+endSignal:3.5
+[INFO -- 2018-09-25 10:07:43]
+faultModel:2
+[INFO -- 2018-09-25 10:07:44]
+Backtrace BEGIN:
+#0  0x0000555555556f6e in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555786890) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#1  0x0000555555557155 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9d0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#2  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+292		   typename _Allocator>
+293	    inline _ForwardIterator
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x420xbd0xf90x23
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 603569474
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 10:07:44]
+Fault Injection Successful after 1.9903547763824463s
+[INFO -- 2018-09-25 10:07:52]
+event type: exit
+[EXCEPTION -- 2018-09-25 10:07:52]
+exit code: no exit code available

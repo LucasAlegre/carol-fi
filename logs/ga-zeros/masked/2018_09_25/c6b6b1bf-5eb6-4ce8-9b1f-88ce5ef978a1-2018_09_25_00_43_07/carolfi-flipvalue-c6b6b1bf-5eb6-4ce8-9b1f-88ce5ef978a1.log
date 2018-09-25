@@ -1,0 +1,46 @@
+[INFO -- 2018-09-25 00:43:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:43:02]
+Initialization strings:
+[INFO -- 2018-09-25 00:43:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:43:02]
+initSignal:1
+[INFO -- 2018-09-25 00:43:02]
+endSignal:3.5
+[INFO -- 2018-09-25 00:43:02]
+faultModel:3
+[EXCEPTION -- 2018-09-25 00:43:04]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 00:43:04]
+Backtrace BEGIN:
+#0  0x00007ffff7494b82 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd884) at random_r.c:376
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555555595 in genetic_algorithm () at knapsackga.cpp:111
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+371	in random_r.c
+
+Backtrace END
+Memory content before bitflip:0x300xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd884
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __random
+symbol name: retval
+symbol filename: random.c
+symbol line: 289
+value: 0
+value address: 0x7fffffffd884
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:43:04]
+Fault Injection Successful after 2.693371057510376s
+[INFO -- 2018-09-25 00:43:06]
+event type: exit
+[INFO -- 2018-09-25 00:43:06]
+exit code: 0

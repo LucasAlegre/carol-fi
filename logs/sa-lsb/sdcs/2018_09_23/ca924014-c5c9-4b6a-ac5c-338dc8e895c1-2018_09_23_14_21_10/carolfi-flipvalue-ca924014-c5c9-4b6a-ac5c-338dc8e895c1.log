@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 14:21:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:21:09]
+Initialization strings:
+[INFO -- 2018-09-23 14:21:09]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:21:09]
+initSignal:0
+[INFO -- 2018-09-23 14:21:09]
+endSignal:2
+[INFO -- 2018-09-23 14:21:09]
+faultModel:4
+[INFO -- 2018-09-23 14:21:10]
+Backtrace BEGIN:
+#0  0x00005555555564dd in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:505
+#1  0x0000555555555cbc in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#2  0x0000555555555644 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+500	       *  @param  __rhs  An allocator.
+501	       *  @return @c __rhs
+502	      */
+503	      static allocator_type
+504	      select_on_container_copy_construction(const allocator_type& __rhs)
+505	      { return __rhs; }
+506	    };
+507	
+508	
+509	  template<typename _Alloc>
+
+Backtrace END
+Memory content before bitflip:0x100xaa0x010x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffda04
+address max offset: 4
+Memory content after  bitflip:0x100xaa0x010x04
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 46
+value: 67217936
+value address: 0x7fffffffda04
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:21:10]
+Fault Injection Successful after 1.2711355686187744s
+[INFO -- 2018-09-23 14:21:10]
+event type: exit
+[INFO -- 2018-09-23 14:21:10]
+exit code: 0

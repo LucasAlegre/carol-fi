@@ -1,0 +1,27 @@
+[INFO -- 2018-09-21 21:02:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 21:02:40]
+Initialization strings:
+[INFO -- 2018-09-21 21:02:40]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 21:02:40]
+initSignal:1
+[INFO -- 2018-09-21 21:02:40]
+endSignal:3
+[INFO -- 2018-09-21 21:02:40]
+faultModel:2
+[EXCEPTION -- 2018-09-21 21:02:41]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-21 21:02:41]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-21 21:02:42]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-21 21:02:42]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-21 21:02:42]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-21 21:02:44]
+event type: exit
+[INFO -- 2018-09-21 21:02:44]
+exit code: 0

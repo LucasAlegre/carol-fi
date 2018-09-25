@@ -1,0 +1,62 @@
+[INFO -- 2018-09-24 19:08:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:08:31]
+Initialization strings:
+[INFO -- 2018-09-24 19:08:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:08:31]
+initSignal:1
+[INFO -- 2018-09-24 19:08:31]
+endSignal:3.5
+[INFO -- 2018-09-24 19:08:31]
+faultModel:3
+[INFO -- 2018-09-24 19:08:32]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<int>::deallocate (this=0x555555776520, __p=0x555555781e60) at /usr/include/c++/7/ext/new_allocator.h:126
+#1  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555781e60, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#2  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555776520, __p=0x555555781e60, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#3  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#4  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#5  0x0000555555555b62 in chromossome::~chromossome (this=0x555555776520, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#6  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x555555776520) at /usr/include/c++/7/bits/stl_construct.h:98
+#7  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776520, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#8  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#9  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#10 0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#11 0x0000555555555088 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#12 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#13 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+121		    ::operator delete(__p, std::align_val_t(alignof(_Tp)));
+122		    return;
+123		  }
+124	#endif
+125		::operator delete(__p);
+126	      }
+127	
+128	      size_type
+129	      max_size() const _GLIBCXX_USE_NOEXCEPT
+130	      { return size_t(-1) / sizeof(_Tp); }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: tournament
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:08:32]
+Fault Injection Successful after 1.3088033199310303s
+[INFO -- 2018-09-24 19:08:32]
+event type: exit
+[EXCEPTION -- 2018-09-24 19:08:32]
+exit code: no exit code available

@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 04:02:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:02:28]
+Initialization strings:
+[INFO -- 2018-09-25 04:02:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:02:28]
+initSignal:1
+[INFO -- 2018-09-25 04:02:28]
+endSignal:3.5
+[INFO -- 2018-09-25 04:02:28]
+faultModel:4
+[EXCEPTION -- 2018-09-25 04:02:31]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 04:02:31]
+Backtrace BEGIN:
+#0  0x00007ffff74949d2 in __random () at random.c:288
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+283	in random.c
+
+Backtrace END
+Fliping array at pos: 8
+Memory content before bitflip:0xe40x8d0x9d0x8d
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff78321c0 
+address max offset: 4
+Memory content after  bitflip:0xe40x8d0x9d0x8f
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -675988490, 1674263646, 1736128164, -1038903656, 433507828, 814713368, -669844224, -1885499932, 1696942121, 2039077541, -1289785887, 1712091652, 2049434230, -537910025, 727137015, -1408224835, -1960705851, 103878097, -1194553411, 1218885640, 1650126898, -979648995, 1640092469, -2046807330, 949971187, -335959137, 1788691148, -303254240, 1237616272, -1649445427, 242988395}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 04:02:31]
+Fault Injection Successful after 3.5566110610961914s
+[INFO -- 2018-09-25 04:02:32]
+event type: exit
+[INFO -- 2018-09-25 04:02:32]
+exit code: 0

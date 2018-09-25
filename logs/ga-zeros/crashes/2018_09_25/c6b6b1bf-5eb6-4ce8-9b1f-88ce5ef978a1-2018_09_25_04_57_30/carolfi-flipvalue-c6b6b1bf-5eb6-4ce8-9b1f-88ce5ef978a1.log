@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 04:57:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:57:27]
+Initialization strings:
+[INFO -- 2018-09-25 04:57:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:57:27]
+initSignal:1
+[INFO -- 2018-09-25 04:57:27]
+endSignal:3.5
+[INFO -- 2018-09-25 04:57:27]
+faultModel:3
+[EXCEPTION -- 2018-09-25 04:57:29]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-09-25 04:57:29]
+Backtrace BEGIN:
+#0  0x00005555555582bc in std::allocator<int>::allocator (this=0x7fffffffd870, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#1  0x00005555555582f1 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd870, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#2  0x0000555555556e60 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#3  0x0000555555555fd8 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#4  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 23456248632404, capacity 23456248632404 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000xa90x680x550x550x550x550x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd867
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 283
+value: @0x7fffffffd867
+value address: 0x7fffffffd867
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:57:29]
+Fault Injection Successful after 2.5156006813049316s
+[INFO -- 2018-09-25 04:57:29]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:57:29]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-09-23 17:08:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 17:08:32]
+Initialization strings:
+[INFO -- 2018-09-23 17:08:32]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 17:08:32]
+initSignal:0
+[INFO -- 2018-09-23 17:08:32]
+endSignal:2
+[INFO -- 2018-09-23 17:08:32]
+faultModel:2
+[INFO -- 2018-09-23 17:08:32]
+Backtrace BEGIN:
+#0  0x0000555555556aa3 in std::__copy_move_a<false, int const*, int*> (__first=0x555555771700, __last=0x555555771a20, __result=0x5555557713d0) at /usr/include/c++/7/bits/stl_algobase.h:386
+#1  0x0000555555556693 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x0000555555555fc9 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#4  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+381		                     && __is_pointer<_II>::__value
+382		                     && __is_pointer<_OI>::__value
+383				     && __are_same<_ValueTypeI, _ValueTypeO>::__value);
+384	
+385	      return std::__copy_move<_IsMove, __simple,
+386		                      _Category>::__copy_m(__first, __last, __result);
+387	    }
+388	
+389	  // Helpers for streambuf iterators (either istream or ostream).
+390	  // NB: avoid including <iosfwd>, relatively large.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x170x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd908
+address max offset: 8
+Memory content after  bitflip:0xfa0x5b0xfe0x4d0x550xeb0x8c0xd1
+frame name: std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 420
+value: <error reading variable: Cannot access memory at address 0xd18ceb554dfe5bfa>
+value address: 0x7fffffffd908
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 17:08:32]
+Fault Injection Successful after 0.7902731895446777s
+[INFO -- 2018-09-23 17:08:34]
+event type: exit
+[INFO -- 2018-09-23 17:08:34]
+exit code: 0

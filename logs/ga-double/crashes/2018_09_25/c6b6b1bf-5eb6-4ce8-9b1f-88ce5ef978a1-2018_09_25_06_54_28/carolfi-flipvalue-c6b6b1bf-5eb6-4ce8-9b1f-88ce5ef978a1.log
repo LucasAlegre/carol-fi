@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 06:54:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:54:25]
+Initialization strings:
+[INFO -- 2018-09-25 06:54:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:54:25]
+initSignal:1
+[INFO -- 2018-09-25 06:54:25]
+endSignal:3.5
+[INFO -- 2018-09-25 06:54:25]
+faultModel:1
+[EXCEPTION -- 2018-09-25 06:54:27]
+gdbException: Cannot access memory at address 0x55dd5577fdf0
+[INFO -- 2018-09-25 06:54:27]
+Backtrace BEGIN:
+#0  0x0000555555557f4f in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd870, __n=1, __s=0x55555555b297 "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1502
+#1  0x0000555555556ad2 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#2  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555502c in tournament (pop=std::vector of length -18253610968, capacity -18253610944 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+1497	      _M_check_len(size_type __n, const char* __s) const
+1498	      {
+1499		if (max_size() - size() < __n)
+1500		  __throw_length_error(__N(__s));
+1501	
+1502		const size_type __len = size() + std::max(size(), __n);
+1503		return (__len < size() || __len > max_size()) ? max_size() : __len;
+1504	      }
+1505	
+1506	      // Internal erase functions follow.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc40x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 196
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:54:27]
+Fault Injection Successful after 2.2800426483154297s
+[INFO -- 2018-09-25 06:54:27]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:54:27]
+exit code: no exit code available

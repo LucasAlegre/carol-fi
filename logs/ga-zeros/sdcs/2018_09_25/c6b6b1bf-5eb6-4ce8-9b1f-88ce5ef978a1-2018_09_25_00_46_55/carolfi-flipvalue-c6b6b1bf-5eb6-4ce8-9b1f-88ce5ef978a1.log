@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 00:46:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:46:50]
+Initialization strings:
+[INFO -- 2018-09-25 00:46:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:46:50]
+initSignal:1
+[INFO -- 2018-09-25 00:46:50]
+endSignal:3.5
+[INFO -- 2018-09-25 00:46:50]
+faultModel:3
+[EXCEPTION -- 2018-09-25 00:46:51]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 00:46:51]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 00:46:52]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 00:46:52]
+Backtrace BEGIN:
+#0  0x00007ffff74e7020 in __GI___libc_malloc (bytes=64) at malloc.c:3076
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555559a14 in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd870, __n=2) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x0000555555558fa1 in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=2) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x0000555555558018 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd870, __n=2) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556b10 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3071	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:46:52]
+Fault Injection Successful after 2.144296407699585s
+[INFO -- 2018-09-25 00:46:54]
+event type: exit
+[INFO -- 2018-09-25 00:46:54]
+exit code: 0

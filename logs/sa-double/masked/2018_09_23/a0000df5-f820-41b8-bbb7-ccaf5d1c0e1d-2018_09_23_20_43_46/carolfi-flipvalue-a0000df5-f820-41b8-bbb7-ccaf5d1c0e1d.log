@@ -1,0 +1,68 @@
+[INFO -- 2018-09-23 20:43:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:43:43]
+Initialization strings:
+[INFO -- 2018-09-23 20:43:43]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:43:43]
+initSignal:0
+[INFO -- 2018-09-23 20:43:43]
+endSignal:2
+[INFO -- 2018-09-23 20:43:43]
+faultModel:1
+[EXCEPTION -- 2018-09-23 20:43:43]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-09-23 20:43:45]
+Backtrace BEGIN:
+#0  __random () at random.c:288
+#1  0x00007ffff713eea9 in rand () at rand.c:27
+#2  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+283	random.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: fptr
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x6b0x710x8d0x44
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff74dc1cc 
+address max offset: 4
+Memory content after  bitflip:0x6b0x710x8d0x0c
+frame name: __random
+symbol name: unsafe_state
+symbol filename: random.c
+symbol line: 160
+value: {fptr = 0x7ffff74dc1cc <randtbl+44>, rptr = 0x7ffff74dc1c0 <randtbl+32>, state = 0x7ffff74dc1a4 <randtbl+4>, rand_type = 3, rand_deg = 31, rand_sep = 3, end_ptr = 0x7ffff74dc220 <pa_next_type>}
+value address: 0x7ffff74dc720 <unsafe_state>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: fptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: state
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rand_type
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_deg
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_sep
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: end_ptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 20:43:45]
+Fault Injection Successful after 2.438779830932617s
+[INFO -- 2018-09-23 20:43:46]
+event type: exit
+[INFO -- 2018-09-23 20:43:46]
+exit code: 0

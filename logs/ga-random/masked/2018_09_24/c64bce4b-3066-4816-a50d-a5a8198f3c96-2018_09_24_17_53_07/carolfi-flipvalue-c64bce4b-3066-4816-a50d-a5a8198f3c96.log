@@ -1,0 +1,54 @@
+[INFO -- 2018-09-24 17:53:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 17:53:02]
+Initialization strings:
+[INFO -- 2018-09-24 17:53:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 17:53:02]
+initSignal:1
+[INFO -- 2018-09-24 17:53:02]
+endSignal:3.5
+[INFO -- 2018-09-24 17:53:02]
+faultModel:2
+[INFO -- 2018-09-24 17:53:05]
+Backtrace BEGIN:
+#0  0x000055555555683e in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x00005555555568a9 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x0000555555555524 in genetic_algorithm () at knapsackga.cpp:101
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd90xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd898
+address max offset: 8
+Memory content after  bitflip:0x6a0x3e0x400x6c0xc60x790x340x49
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd970
+value address: 0x7fffffffd898
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 17:53:05]
+Fault Injection Successful after 3.2520434856414795s
+[INFO -- 2018-09-24 17:53:06]
+event type: exit
+[INFO -- 2018-09-24 17:53:06]
+exit code: 0

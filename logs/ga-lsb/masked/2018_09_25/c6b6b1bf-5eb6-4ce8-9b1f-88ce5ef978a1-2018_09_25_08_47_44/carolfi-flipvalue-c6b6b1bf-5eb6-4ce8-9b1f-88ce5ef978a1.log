@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 08:47:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:47:39]
+Initialization strings:
+[INFO -- 2018-09-25 08:47:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:47:39]
+initSignal:1
+[INFO -- 2018-09-25 08:47:39]
+endSignal:3.5
+[INFO -- 2018-09-25 08:47:39]
+faultModel:4
+[EXCEPTION -- 2018-09-25 08:47:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 08:47:41]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd870, __n=32) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x0000555555555147 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555787210
+address max offset: 4
+Memory content after  bitflip:0x300x030x000x02
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd870
+value address: 0x7fffffffd828
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:47:41]
+Fault Injection Successful after 2.0312113761901855s
+[INFO -- 2018-09-25 08:47:43]
+event type: exit
+[INFO -- 2018-09-25 08:47:43]
+exit code: 0

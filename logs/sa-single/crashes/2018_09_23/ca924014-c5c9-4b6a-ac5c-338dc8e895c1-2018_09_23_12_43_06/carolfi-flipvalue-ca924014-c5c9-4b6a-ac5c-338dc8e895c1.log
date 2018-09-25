@@ -1,0 +1,47 @@
+[INFO -- 2018-09-23 12:43:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:43:05]
+Initialization strings:
+[INFO -- 2018-09-23 12:43:05]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:43:05]
+initSignal:0
+[INFO -- 2018-09-23 12:43:05]
+endSignal:2
+[INFO -- 2018-09-23 12:43:05]
+faultModel:0
+[INFO -- 2018-09-23 12:43:06]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x555555771700) at malloc.c:3122
+#1  0x0000555555556a18 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffda30, __p=0x555555771700) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x00005555555565c4 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#7  0x000055555555535e in main () at knapsacksa.cpp:84
+
+3117	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x020x00
+frame name: std::allocator_traits<std::allocator<int> >::deallocate
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 131272
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 12:43:06]
+Fault Injection Successful after 1.409322738647461s
+[INFO -- 2018-09-23 12:43:06]
+event type: exit
+[EXCEPTION -- 2018-09-23 12:43:06]
+exit code: no exit code available

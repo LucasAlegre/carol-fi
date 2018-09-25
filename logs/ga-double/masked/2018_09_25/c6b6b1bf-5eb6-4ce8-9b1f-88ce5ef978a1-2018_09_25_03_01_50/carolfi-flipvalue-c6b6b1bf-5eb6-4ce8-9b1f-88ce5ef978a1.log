@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 03:01:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:01:45]
+Initialization strings:
+[INFO -- 2018-09-25 03:01:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:01:45]
+initSignal:1
+[INFO -- 2018-09-25 03:01:45]
+endSignal:3.5
+[INFO -- 2018-09-25 03:01:45]
+faultModel:1
+[INFO -- 2018-09-25 03:01:47]
+Backtrace BEGIN:
+#0  0x00005555555599b9 in std::_Destroy<chromossome> (__pointer=0x5555557865e0) at /usr/include/c++/7/bits/stl_construct.h:98
+#1  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557865e0, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x555555786480, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x555555786480, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555556bfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#5  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+93	   * Destroy the object pointed to by a pointer type.
+94	   */
+95	  template<typename _Tp>
+96	    inline void
+97	    _Destroy(_Tp* __pointer)
+98	    { __pointer->~_Tp(); }
+99	
+100	  template<bool>
+101	    struct _Destroy_aux
+102	    {
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x680x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd7d0
+address max offset: 8
+Memory content after  bitflip:0x910x680x780x550x550x550x000x00
+frame name: std::_Destroy<chromossome*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x555555786880
+value address: 0x7fffffffd7d0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 03:01:47]
+Fault Injection Successful after 2.0441625118255615s
+[INFO -- 2018-09-25 03:01:49]
+event type: exit
+[INFO -- 2018-09-25 03:01:49]
+exit code: 0

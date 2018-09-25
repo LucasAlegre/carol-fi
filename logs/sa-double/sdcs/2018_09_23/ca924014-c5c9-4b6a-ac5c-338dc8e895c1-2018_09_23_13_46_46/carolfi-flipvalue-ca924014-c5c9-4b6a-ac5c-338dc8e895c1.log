@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 13:46:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:46:43]
+Initialization strings:
+[INFO -- 2018-09-23 13:46:43]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:46:43]
+initSignal:0
+[INFO -- 2018-09-23 13:46:43]
+endSignal:2
+[INFO -- 2018-09-23 13:46:43]
+faultModel:1
+[EXCEPTION -- 2018-09-23 13:46:44]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 13:46:44]
+Backtrace BEGIN:
+#0  0x0000555555555c65 in std::vector<int, std::allocator<int> >::size (this=0xe3331dc15edeb600) at /usr/include/c++/7/bits/stl_vector.h:670
+#1  0x0000555555555650 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+665	#endif
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x30
+frame name: simulated_annealing
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 805894961
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:46:44]
+Fault Injection Successful after 1.2482714653015137s
+[INFO -- 2018-09-23 13:46:46]
+event type: exit
+[INFO -- 2018-09-23 13:46:46]
+exit code: 0

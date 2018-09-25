@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 04:35:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:35:39]
+Initialization strings:
+[INFO -- 2018-09-25 04:35:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:35:39]
+initSignal:1
+[INFO -- 2018-09-25 04:35:39]
+endSignal:3.5
+[INFO -- 2018-09-25 04:35:39]
+faultModel:1
+[EXCEPTION -- 2018-09-25 04:35:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 04:35:40]
+Backtrace BEGIN:
+#0  0x00007ffff74e7047 in __GI___libc_malloc (bytes=<optimized out>) at malloc.c:3102
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555559a14 in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x0000555555558fa1 in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x0000555555558018 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556b10 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#6  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3097	in malloc.c
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9c0
+address max offset: 8
+Memory content after  bitflip:0x000x000x280x000x000x000x000x00
+frame name: tournament
+symbol name: tournamentWinner
+symbol filename: knapsackga.cpp
+symbol line: 67
+value: std::vector of length 0, capacity 655360
+value address: 0x7fffffffd9b0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 04:35:40]
+Fault Injection Successful after 1.138770580291748s
+[INFO -- 2018-09-25 04:35:40]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:35:40]
+exit code: no exit code available

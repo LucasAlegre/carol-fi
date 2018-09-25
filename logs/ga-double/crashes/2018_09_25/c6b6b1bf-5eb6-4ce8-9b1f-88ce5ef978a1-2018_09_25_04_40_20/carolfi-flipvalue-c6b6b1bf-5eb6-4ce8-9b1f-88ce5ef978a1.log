@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 04:40:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:40:17]
+Initialization strings:
+[INFO -- 2018-09-25 04:40:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:40:17]
+initSignal:1
+[INFO -- 2018-09-25 04:40:17]
+endSignal:3.5
+[INFO -- 2018-09-25 04:40:17]
+faultModel:1
+[EXCEPTION -- 2018-09-25 04:40:19]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 04:40:19]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#1  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+439	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x240x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 2359496
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:40:19]
+Fault Injection Successful after 2.573976516723633s
+[INFO -- 2018-09-25 04:40:19]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:40:19]
+exit code: no exit code available

@@ -20,7 +20,12 @@ int knapSack(int W, int n, vector<int> &val, vector<int> &wt) {
                 if(i == 0 || w == 0)
                     V[i][w] = 0;
                 else if(w >= wt[i-1]){
-                    V[i][w] = max(val[i-1] + V[i-1][w - wt[i-1]], V[i-1][w]);
+                    if(val[i-1] + V[i-1][w - wt[i-1]] > V[i-1][w]){
+                        V[i][w] = val[i-1] + V[i-1][w - wt[i-1]];
+                    }
+                    else{
+                        V[i][w] = V[i-1][w];
+                    }
                 }
                 else
                     V[i][w] = V[i-1][w];

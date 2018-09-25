@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 12:21:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:21:37]
+Initialization strings:
+[INFO -- 2018-09-23 12:21:37]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:21:37]
+initSignal:0
+[INFO -- 2018-09-23 12:21:37]
+endSignal:2
+[INFO -- 2018-09-23 12:21:37]
+faultModel:2
+[EXCEPTION -- 2018-09-23 12:21:38]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-09-23 12:21:38]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9f8, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:433
+#1  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+428	       *  The dtor only erases the elements, and note that if the
+429	       *  elements themselves are pointers, the pointed-to memory is
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0x320x5c0x230x13
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 321084466
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 12:21:38]
+Fault Injection Successful after 1.816683292388916s
+[INFO -- 2018-09-23 12:21:38]
+event type: exit
+[EXCEPTION -- 2018-09-23 12:21:38]
+exit code: no exit code available

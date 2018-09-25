@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 09:52:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:52:20]
+Initialization strings:
+[INFO -- 2018-09-25 09:52:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:52:20]
+initSignal:1
+[INFO -- 2018-09-25 09:52:20]
+endSignal:3.5
+[INFO -- 2018-09-25 09:52:20]
+faultModel:0
+[EXCEPTION -- 2018-09-25 09:52:21]
+pythonException: 19
+[INFO -- 2018-09-25 09:52:21]
+Backtrace BEGIN:
+#0  0x000055555555aa62 in std::_Construct<chromossome, chromossome> (__p=0x55555555aa22 <std::operator!=<chromossome*>(std::move_iterator<chromossome*> const&, std::move_iterator<chromossome*> const&)+35>, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:74
+#1  0x000055555555a3de in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=<error reading variable: Cannot access memory at address 0x47fffffffd6d8>, __last=<error reading variable: Cannot access memory at address 0x47fffffffd6d0>, __result=<error reading variable: Cannot access memory at address 0x47fffffffd6c8>) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+Backtrace stopped: Cannot access memory at address 0x47fffffffd708
+
+69	   * object's constructor with an initializer.
+70	   */
+71	#if __cplusplus >= 201103L
+72	  template<typename _T1, typename... _Args>
+73	    inline void
+74	    _Construct(_T1* __p, _Args&&... __args)
+75	    { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+76	#else
+77	  template<typename _T1, typename _T2>
+78	    inline void
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x80
+frame name: std::_Construct<chromossome, chromossome>
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: -2147483608
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:52:21]
+Fault Injection Successful after 1.803575038909912s
+[INFO -- 2018-09-25 09:52:21]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:52:21]
+exit code: no exit code available

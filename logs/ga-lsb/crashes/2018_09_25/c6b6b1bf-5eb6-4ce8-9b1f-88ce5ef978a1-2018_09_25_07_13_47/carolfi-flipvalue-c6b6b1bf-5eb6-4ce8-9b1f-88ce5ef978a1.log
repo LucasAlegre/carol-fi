@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 07:13:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:13:44]
+Initialization strings:
+[INFO -- 2018-09-25 07:13:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:13:44]
+initSignal:1
+[INFO -- 2018-09-25 07:13:44]
+endSignal:3.5
+[INFO -- 2018-09-25 07:13:44]
+faultModel:4
+[INFO -- 2018-09-25 07:13:45]
+Backtrace BEGIN:
+#0  0x00007ffff74e2756 in _int_free (av=0x7ffff7832c20 <main_arena>, p=<optimized out>, have_lock=<optimized out>) at malloc.c:4428
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x555555789cf0, __p=0x5555557844a0) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557844a0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555789cf0, __p=0x5555557844a0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555789cf0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x555555789cf0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x0000555555555b62 in chromossome::~chromossome (this=0x555555789cf0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#8  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x555555789cf0) at /usr/include/c++/7/bits/stl_construct.h:98
+#9  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555789cf0, __last=0x55555578a090) at /usr/include/c++/7/bits/stl_construct.h:108
+#10 0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x555555789b90, __last=0x55555578a090) at /usr/include/c++/7/bits/stl_construct.h:137
+#11 0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x555555789b90, __last=0x55555578a090) at /usr/include/c++/7/bits/stl_construct.h:206
+#12 0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8f0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#13 0x00005555555556d4 in genetic_algorithm () at knapsackga.cpp:95
+#14 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+4423	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x04
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 67109064
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 07:13:45]
+Fault Injection Successful after 1.4106171131134033s
+[INFO -- 2018-09-25 07:13:46]
+event type: exit
+[EXCEPTION -- 2018-09-25 07:13:46]
+exit code: no exit code available

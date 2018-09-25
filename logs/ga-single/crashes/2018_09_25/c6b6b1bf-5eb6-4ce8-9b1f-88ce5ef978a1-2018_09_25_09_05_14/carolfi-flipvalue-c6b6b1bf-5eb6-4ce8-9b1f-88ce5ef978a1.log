@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 09:05:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:05:12]
+Initialization strings:
+[INFO -- 2018-09-25 09:05:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:05:12]
+initSignal:1
+[INFO -- 2018-09-25 09:05:12]
+endSignal:3.5
+[INFO -- 2018-09-25 09:05:12]
+faultModel:0
+[EXCEPTION -- 2018-09-25 09:05:13]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 09:05:13]
+Backtrace BEGIN:
+#0  0x0000555555558308 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#1  0x00005555555596e1 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:130
+#2  0x00005555555589e7 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:271
+#3  0x0000555555557410 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#4  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+95	
+96	#if __cplusplus >= 201103L
+97		_Vector_impl(_Tp_alloc_type&& __a) noexcept
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x380x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 56
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:05:13]
+Fault Injection Successful after 1.962550163269043s
+[INFO -- 2018-09-25 09:05:14]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:05:14]
+exit code: no exit code available

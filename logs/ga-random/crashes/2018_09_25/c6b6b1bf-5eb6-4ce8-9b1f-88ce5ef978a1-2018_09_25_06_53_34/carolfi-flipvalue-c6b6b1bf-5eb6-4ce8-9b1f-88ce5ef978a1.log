@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 06:53:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:53:32]
+Initialization strings:
+[INFO -- 2018-09-25 06:53:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:53:32]
+initSignal:1
+[INFO -- 2018-09-25 06:53:32]
+endSignal:3.5
+[INFO -- 2018-09-25 06:53:32]
+faultModel:2
+[INFO -- 2018-09-25 06:53:33]
+Backtrace BEGIN:
+#0  0x0000555555557e1e in chromossome::chromossome (this=0x20) at knapsackga.cpp:42
+#1  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8f0, __p=0x555555776740, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776740, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#4  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+37	
+38	float random01(){
+39	   return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+40	}
+41	
+42	struct chromossome{
+43	    vector<int> solution;
+44	    int fitness;
+45	    chromossome(int size){  
+46	        for(int i = 0; i < size; i++)
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd898
+address max offset: 8
+Memory content after  bitflip:0x8e0x090x820xfc0x2c0xc70x690x69
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8f0
+value address: 0x7fffffffd898
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 06:53:33]
+Fault Injection Successful after 1.6448066234588623s
+[INFO -- 2018-09-25 06:53:33]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:53:33]
+exit code: no exit code available

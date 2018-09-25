@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 05:46:49]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:46:49]
+Initialization strings:
+[INFO -- 2018-09-25 05:46:49]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:46:49]
+initSignal:1
+[INFO -- 2018-09-25 05:46:49]
+endSignal:3.5
+[INFO -- 2018-09-25 05:46:49]
+faultModel:4
+[INFO -- 2018-09-25 05:46:52]
+Backtrace BEGIN:
+#0  0x0000555555558f07 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:107
+#1  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x0000555555556bfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#4  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+102	    {
+103	      template<typename _ForwardIterator>
+104	        static void
+105	        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+106		{
+107		  for (; __first != __last; ++__first)
+108		    std::_Destroy(std::__addressof(*__first));
+109		}
+110	    };
+111	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7a8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x02
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x0
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:46:52]
+Fault Injection Successful after 3.08449387550354s
+[INFO -- 2018-09-25 05:46:53]
+event type: exit
+[INFO -- 2018-09-25 05:46:53]
+exit code: 0

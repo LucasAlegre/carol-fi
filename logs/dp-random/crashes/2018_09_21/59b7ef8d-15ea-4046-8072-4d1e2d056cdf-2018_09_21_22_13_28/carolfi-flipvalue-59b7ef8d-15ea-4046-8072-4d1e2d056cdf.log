@@ -1,0 +1,53 @@
+[INFO -- 2018-09-21 22:13:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 22:13:26]
+Initialization strings:
+[INFO -- 2018-09-21 22:13:26]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 22:13:26]
+initSignal:1
+[INFO -- 2018-09-21 22:13:26]
+endSignal:3
+[INFO -- 2018-09-21 22:13:26]
+faultModel:2
+[EXCEPTION -- 2018-09-21 22:13:28]
+gdbException: Cannot access memory at address 0xe989827cc9ebef44
+[INFO -- 2018-09-21 22:13:28]
+Backtrace BEGIN:
+#0  0x0000555555555749 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffda10, __n=39) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x0000555555555040 in knapSack (W=588593, n=200, val=std::vector of length 404678235895547875, capacity 404678235895547931 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:24
+#2  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Memory content before bitflip:0x270x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd930
+address max offset: 8
+Memory content after  bitflip:0x330x3d0x3b0x9b0xfe0x140x8c0x7e
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 795
+value: 9118686429277011251
+value address: 0x7fffffffd930
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-21 22:13:28]
+Fault Injection Successful after 2.176557779312134s
+[INFO -- 2018-09-21 22:13:28]
+event type: exit
+[EXCEPTION -- 2018-09-21 22:13:28]
+exit code: no exit code available

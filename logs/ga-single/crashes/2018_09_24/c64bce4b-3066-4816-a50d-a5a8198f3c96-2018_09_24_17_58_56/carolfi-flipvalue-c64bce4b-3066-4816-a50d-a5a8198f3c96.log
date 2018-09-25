@@ -1,0 +1,66 @@
+[INFO -- 2018-09-24 17:58:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 17:58:51]
+Initialization strings:
+[INFO -- 2018-09-24 17:58:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 17:58:51]
+initSignal:1
+[INFO -- 2018-09-24 17:58:51]
+endSignal:3.5
+[INFO -- 2018-09-24 17:58:51]
+faultModel:0
+[EXCEPTION -- 2018-09-24 17:58:53]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-24 17:58:53]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-24 17:58:53]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-24 17:58:53]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-24 17:58:54]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-24 17:58:54]
+Backtrace BEGIN:
+#0  0x00005555555551a6 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:79
+#1  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+74	        mask[i] = rand_bit();
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+79	        if(mask[i]){
+80	            swap(filho1[i], filho2[i]);  
+81	        }
+82	    }
+83	}
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x6b0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd960
+address max offset: 8
+Memory content after  bitflip:0xb00x6b0x780x550x550x5d0x000x00
+frame name: crossover
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 200, capacity 2199023255752 = {0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0...}
+value address: 0x7fffffffd950
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 17:58:54]
+Fault Injection Successful after 3.8750758171081543s
+[INFO -- 2018-09-24 17:58:56]
+event type: exit
+[EXCEPTION -- 2018-09-24 17:58:56]
+exit code: no exit code available

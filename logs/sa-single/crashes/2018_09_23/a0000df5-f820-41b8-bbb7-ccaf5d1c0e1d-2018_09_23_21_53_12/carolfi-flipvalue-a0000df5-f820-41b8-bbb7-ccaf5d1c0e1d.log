@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 21:53:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:53:11]
+Initialization strings:
+[INFO -- 2018-09-23 21:53:11]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:53:11]
+initSignal:0
+[INFO -- 2018-09-23 21:53:11]
+endSignal:2
+[INFO -- 2018-09-23 21:53:11]
+faultModel:0
+[INFO -- 2018-09-23 21:53:11]
+Backtrace BEGIN:
+#0  0x0000555555556ce6 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::base (this=0x7fffffffd8a8) at /usr/include/c++/7/bits/stl_iterator.h:844
+#1  0x0000555555556a5d in std::__niter_base<int const*, std::vector<int, std::allocator<int> > > (__it=0) at /usr/include/c++/7/bits/stl_iterator.h:984
+#2  0x0000555555556676 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:422
+#3  0x0000555555555fc9 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#4  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#5  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#6  0x000055555555535e in main () at knapsacksa.cpp:84
+
+839	      __normal_iterator
+840	      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+841	      { return __normal_iterator(_M_current - __n); }
+842	
+843	      const _Iterator&
+844	      base() const _GLIBCXX_NOEXCEPT
+845	      { return _M_current; }
+846	    };
+847	
+848	  // Note: In what follows, the left- and right-hand-side iterators are
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x010x00
+frame name: std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 65736
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 21:53:11]
+Fault Injection Successful after 0.5960671901702881s
+[INFO -- 2018-09-23 21:53:11]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:53:11]
+exit code: no exit code available

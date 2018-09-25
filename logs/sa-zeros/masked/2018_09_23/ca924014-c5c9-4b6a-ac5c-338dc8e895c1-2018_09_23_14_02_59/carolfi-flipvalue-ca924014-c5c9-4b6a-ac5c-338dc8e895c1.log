@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 14:02:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:02:56]
+Initialization strings:
+[INFO -- 2018-09-23 14:02:56]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:02:56]
+initSignal:0
+[INFO -- 2018-09-23 14:02:56]
+endSignal:2
+[INFO -- 2018-09-23 14:02:56]
+faultModel:3
+[INFO -- 2018-09-23 14:02:56]
+Backtrace BEGIN:
+#0  0x00007ffff7de1a94 in elf_machine_rela_relative (reloc_addr_arg=0x7ffff74db2b8, reloc=0x7ffff711fff0, l_addr=140737338417152) at ../sysdeps/x86_64/dl-machine.h:559
+#1  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=0, nrelative=<optimized out>, relsize=30864, reladdr=<optimized out>, map=0x7ffff7fc6ed0) at do-rel.h:112
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:259
+#3  0x00007ffff7dd90d9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2187
+#4  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#5  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#6  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#7  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000001 in ?? ()
+#9  0x00007fffffffe2f7 in ?? ()
+#10 0x0000000000000000 in ?? ()
+
+554	../sysdeps/x86_64/dl-machine.h: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffc808 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_start_final
+symbol name: preloadlist
+symbol filename: rtld.c
+symbol line: 824
+value: 0x0
+value address: 0x7ffff7ffc808 <preloadlist>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 14:02:56]
+Fault Injection Successful after 0.9249176979064941s
+[INFO -- 2018-09-23 14:02:59]
+event type: exit
+[INFO -- 2018-09-23 14:02:59]
+exit code: 0

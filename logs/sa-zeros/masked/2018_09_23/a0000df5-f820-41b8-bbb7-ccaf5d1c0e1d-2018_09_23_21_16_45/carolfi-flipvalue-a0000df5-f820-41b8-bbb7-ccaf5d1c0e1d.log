@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 21:16:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:16:42]
+Initialization strings:
+[INFO -- 2018-09-23 21:16:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:16:42]
+initSignal:0
+[INFO -- 2018-09-23 21:16:42]
+endSignal:2
+[INFO -- 2018-09-23 21:16:42]
+faultModel:3
+[INFO -- 2018-09-23 21:16:43]
+Backtrace BEGIN:
+#0  0x0000555555556519 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd940, __i=@0x7fffffffd938: 0x555555771700) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555555d1d in std::vector<int, std::allocator<int> >::begin (this=0x7fffffffda00) at /usr/include/c++/7/bits/stl_vector.h:573
+#2  0x0000555555555979 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x200x1a0x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffda10
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::begin
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda00
+value address: 0x7fffffffd928
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 21:16:43]
+Fault Injection Successful after 1.6477646827697754s
+[INFO -- 2018-09-23 21:16:45]
+event type: exit
+[INFO -- 2018-09-23 21:16:45]
+exit code: 0

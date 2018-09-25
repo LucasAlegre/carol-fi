@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 09:42:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:42:50]
+Initialization strings:
+[INFO -- 2018-09-25 09:42:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:42:50]
+initSignal:1
+[INFO -- 2018-09-25 09:42:50]
+endSignal:3.5
+[INFO -- 2018-09-25 09:42:50]
+faultModel:1
+[INFO -- 2018-09-25 09:42:51]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<int>::~new_allocator (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/ext/new_allocator.h:86
+#1  0x0000555555555fa8 in std::allocator<int>::~allocator (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#2  0x000055555555683c in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#3  0x00005555555568a9 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#4  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#5  0x0000555555557474 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#6  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#7  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#8  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+86	      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+87	
+88	      pointer
+89	      address(reference __x) const _GLIBCXX_NOEXCEPT
+90	      { return std::__addressof(__x); }
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x82
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -2113340623
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:42:51]
+Fault Injection Successful after 1.8684358596801758s
+[INFO -- 2018-09-25 09:42:54]
+event type: exit
+[INFO -- 2018-09-25 09:42:54]
+exit code: 0

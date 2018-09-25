@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 04:18:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:18:48]
+Initialization strings:
+[INFO -- 2018-09-25 04:18:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:18:48]
+initSignal:1
+[INFO -- 2018-09-25 04:18:48]
+endSignal:3.5
+[INFO -- 2018-09-25 04:18:48]
+faultModel:4
+[INFO -- 2018-09-25 04:18:49]
+Backtrace BEGIN:
+#0  0x00005555555589ee in std::__alloc_on_move<std::allocator<int> > (__one=..., __two=...) at /usr/include/c++/7/bits/alloc_traits.h:543
+#1  0x0000555555557468 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1534
+#2  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+538	  template<typename _Alloc>
+539	    inline void __do_alloc_on_move(_Alloc&, _Alloc&, false_type)
+540	    { }
+541	
+542	  template<typename _Alloc>
+543	    inline void __alloc_on_move(_Alloc& __one, _Alloc& __two)
+544	    {
+545	      typedef allocator_traits<_Alloc> __traits;
+546	      typedef typename __traits::propagate_on_container_move_assignment __pocma;
+547	      __do_alloc_on_move(__one, __two, __pocma());
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x900xc90xc30x550x480x890xe50x48
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555555847b 
+address max offset: 8
+Memory content after  bitflip:0x900xc90xc30x550x480x890xe50x4a
+frame name: std::__alloc_on_move<std::allocator<int> >
+symbol name: __one
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 543
+value: @0x55555555847b
+value address: 0x55555555847b <std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data(std::_Vector_base<int, std::allocator<int> >::_Vector_impl&)+89>
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:18:49]
+Fault Injection Successful after 1.6511666774749756s
+[INFO -- 2018-09-25 04:18:51]
+event type: exit
+[INFO -- 2018-09-25 04:18:51]
+exit code: 0

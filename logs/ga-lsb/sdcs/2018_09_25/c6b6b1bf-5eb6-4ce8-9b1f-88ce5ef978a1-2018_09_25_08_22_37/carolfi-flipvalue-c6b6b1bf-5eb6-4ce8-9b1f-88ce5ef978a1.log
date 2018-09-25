@@ -1,0 +1,51 @@
+[INFO -- 2018-09-25 08:22:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:22:32]
+Initialization strings:
+[INFO -- 2018-09-25 08:22:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:22:32]
+initSignal:1
+[INFO -- 2018-09-25 08:22:32]
+endSignal:3.5
+[INFO -- 2018-09-25 08:22:32]
+faultModel:4
+[INFO -- 2018-09-25 08:22:33]
+Backtrace BEGIN:
+#0  __memmove_sse2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:524
+#1  0x000055555555a0d0 in std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int> (__first=0x555555781e60, __last=0x555555782180, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_algobase.h:368
+#2  0x00005555555595f2 in std::__copy_move_a<false, int const*, int*> (__first=0x555555781e60, __last=0x555555782180, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_algobase.h:386
+#3  0x000055555555a8a1 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_algobase.h:424
+#4  0x0000555555559fd6 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#5  0x000055555555948e in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#6  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#7  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x5555557847d0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#8  0x0000555555555ed1 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd9b0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#9  0x000055555555507b in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#10 0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+519	../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x40
+frame name: std::__copy_move_a<false, int const*, int*>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1074330417
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:22:33]
+Fault Injection Successful after 1.998274326324463s
+[INFO -- 2018-09-25 08:22:36]
+event type: exit
+[INFO -- 2018-09-25 08:22:36]
+exit code: 0

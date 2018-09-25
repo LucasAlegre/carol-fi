@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 20:52:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:52:34]
+Initialization strings:
+[INFO -- 2018-09-23 20:52:34]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:52:34]
+initSignal:0
+[INFO -- 2018-09-23 20:52:34]
+endSignal:2
+[INFO -- 2018-09-23 20:52:34]
+faultModel:1
+[EXCEPTION -- 2018-09-23 20:52:35]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 20:52:35]
+Backtrace BEGIN:
+#0  0x0000555555555afa in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x0000555555555b6f in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x90
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1878459599
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 20:52:35]
+Fault Injection Successful after 1.367396593093872s
+[INFO -- 2018-09-23 20:52:36]
+event type: exit
+[INFO -- 2018-09-23 20:52:36]
+exit code: 0

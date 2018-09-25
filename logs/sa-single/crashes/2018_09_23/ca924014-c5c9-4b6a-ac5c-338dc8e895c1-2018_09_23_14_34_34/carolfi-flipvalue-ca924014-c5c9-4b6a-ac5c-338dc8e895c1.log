@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 14:34:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:34:33]
+Initialization strings:
+[INFO -- 2018-09-23 14:34:33]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:34:33]
+initSignal:0
+[INFO -- 2018-09-23 14:34:33]
+endSignal:2
+[INFO -- 2018-09-23 14:34:33]
+faultModel:0
+[EXCEPTION -- 2018-09-23 14:34:33]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 14:34:33]
+gdbException: Cannot access memory at address 0x2555555770bb0
+[INFO -- 2018-09-23 14:34:33]
+Backtrace BEGIN:
+#0  0x000055555555516c in simulated_annealing () at knapsacksa.cpp:56
+#1  0x000055555555535e in main () at knapsacksa.cpp:84
+
+51	         int delta = c - best;
+52	         if(delta <= 0){
+53	             solution = s;
+54	             best = c;
+55	         }
+56	         else if (random01() <= exp(-delta/(float)(temp))){
+57	             //cout << exp(-delta/(float)(temp)) << endl;
+58	             //co++;
+59	
+60	             solution = s;
+
+Backtrace END
+Memory content before bitflip:0xc40x6e0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffda04
+address max offset: 4
+Memory content after  bitflip:0xc40x6f0x000x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 46
+value: 28612
+value address: 0x7fffffffda04
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:34:33]
+Fault Injection Successful after 0.48415613174438477s
+[INFO -- 2018-09-23 14:34:33]
+event type: exit
+[EXCEPTION -- 2018-09-23 14:34:33]
+exit code: no exit code available

@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 16:54:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:54:55]
+Initialization strings:
+[INFO -- 2018-09-23 16:54:55]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:54:55]
+initSignal:0
+[INFO -- 2018-09-23 16:54:55]
+endSignal:2
+[INFO -- 2018-09-23 16:54:55]
+faultModel:4
+[EXCEPTION -- 2018-09-23 16:54:55]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-09-23 16:54:57]
+Backtrace BEGIN:
+#0  0x00005555555554e1 in std::exp (__x=-inf) at /usr/include/c++/7/cmath:223
+#1  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+218	  using ::exp;
+219	
+220	#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+221	  inline _GLIBCXX_CONSTEXPR float
+222	  exp(float __x)
+223	  { return __builtin_expf(__x); }
+224	
+225	  inline _GLIBCXX_CONSTEXPR long double
+226	  exp(long double __x)
+227	  { return __builtin_expl(__x); }
+
+Backtrace END
+Memory content before bitflip:0x3b0x850xfd0x05
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffda0c
+address max offset: 4
+Memory content after  bitflip:0x3b0x850xfd0x0d
+frame name: simulated_annealing
+symbol name: delta
+symbol filename: knapsacksa.cpp
+symbol line: 51
+value: 234718523
+value address: 0x7fffffffda0c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 16:54:57]
+Fault Injection Successful after 2.2727346420288086s
+[INFO -- 2018-09-23 16:54:58]
+event type: exit
+[INFO -- 2018-09-23 16:54:58]
+exit code: 0

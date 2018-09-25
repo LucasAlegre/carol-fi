@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 17:18:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 17:18:20]
+Initialization strings:
+[INFO -- 2018-09-23 17:18:20]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 17:18:20]
+initSignal:0
+[INFO -- 2018-09-23 17:18:20]
+endSignal:2
+[INFO -- 2018-09-23 17:18:20]
+faultModel:4
+[INFO -- 2018-09-23 17:18:20]
+Backtrace BEGIN:
+#0  0x00007ffff7df2403 in __mmap64 (addr=0x7ffff7a4d000, len=8192, prot=prot@entry=3, flags=flags@entry=2066, fd=fd@entry=4, offset=1392640) at ../sysdeps/unix/sysv/linux/mmap64.c:52
+#1  0x00007ffff7ddc5aa in _dl_map_segments (loader=0x7fffffffd2f0, has_holes=<optimized out>, maplength=<optimized out>, nloadcmds=2, loadcmds=0x7fffffffd2c0, type=<optimized out>, header=<optimized out>, fd=<optimized out>, l=0x7ffff7fc64f0) at ./dl-map-segments.h:94
+#2  _dl_map_object_from_fd (name=name@entry=0x5555555547c0 "libm.so.6", origname=origname@entry=0x0, fd=<optimized out>, fbp=<optimized out>, realname=<optimized out>, loader=loader@entry=0x7ffff7ffe150, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1205
+#3  0x00007ffff7dddf85 in _dl_map_object (loader=0x7ffff7ffe150, name=0x5555555547c0 "libm.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2458
+#4  0x00007ffff7de3280 in openaux (a=a@entry=0x7fffffffdc00) at dl-deps.c:63
+#5  0x00007ffff7df10b0 in _dl_catch_error (objname=objname@entry=0x7fffffffdbf8, errstring=errstring@entry=0x7fffffffdbf0, mallocedp=mallocedp@entry=0x7fffffffdbef, operate=operate@entry=0x7ffff7de3250 <openaux>, args=args@entry=0x7fffffffdc00) at dl-error-skeleton.c:198
+#6  0x00007ffff7de389b in _dl_map_object_deps (map=map@entry=0x7ffff7ffe150, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#7  0x00007ffff7dd8b14 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1725
+#8  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#11 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000001 in ?? ()
+#13 0x00007fffffffe2f7 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+47	../sysdeps/unix/sysv/linux/mmap64.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffe148 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x02
+frame name: dl_main
+symbol name: audit_list_string
+symbol filename: rtld.c
+symbol line: 134
+value: 0x0
+value address: 0x7ffff7ffe148 <audit_list_string>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 17:18:20]
+Fault Injection Successful after 0.32450413703918457s
+[INFO -- 2018-09-23 17:18:22]
+event type: exit
+[INFO -- 2018-09-23 17:18:22]
+exit code: 0

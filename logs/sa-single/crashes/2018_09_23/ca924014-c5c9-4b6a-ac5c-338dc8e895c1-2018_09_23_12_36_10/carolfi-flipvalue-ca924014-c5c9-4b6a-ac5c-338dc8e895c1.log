@@ -1,0 +1,61 @@
+[INFO -- 2018-09-23 12:36:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:36:07]
+Initialization strings:
+[INFO -- 2018-09-23 12:36:07]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:36:07]
+initSignal:0
+[INFO -- 2018-09-23 12:36:07]
+endSignal:2
+[INFO -- 2018-09-23 12:36:07]
+faultModel:0
+[INFO -- 2018-09-23 12:36:07]
+Backtrace BEGIN:
+#0  std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771a20, __n=72151419030166813) at /usr/include/c++/7/bits/alloc_traits.h:461
+#1  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda30, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#2  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#3  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+456	       *  @param  __n  The number of objects space was allocated for.
+457	       *
+458	       *  Calls <tt> a.deallocate(p, n) </tt>
+459	      */
+460	      static void
+461	      deallocate(allocator_type& __a, pointer __p, size_type __n)
+462	      { __a.deallocate(__p, __n); }
+463	
+464	      /**
+465	       *  @brief  Construct an object of type @a _Up
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x0b0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759030 
+address max offset: 8
+Memory content after  bitflip:0xb00x8b0x770x550x550x550x000x00
+frame name: main
+symbol name: val
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: std::vector of length -7992, capacity -7936 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...}
+value address: 0x555555759030 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 12:36:07]
+Fault Injection Successful after 0.8591933250427246s
+[INFO -- 2018-09-23 12:36:09]
+event type: exit
+[EXCEPTION -- 2018-09-23 12:36:09]
+exit code: no exit code available

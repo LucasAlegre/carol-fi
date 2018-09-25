@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 03:55:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:55:27]
+Initialization strings:
+[INFO -- 2018-09-25 03:55:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:55:27]
+initSignal:1
+[INFO -- 2018-09-25 03:55:27]
+endSignal:3.5
+[INFO -- 2018-09-25 03:55:27]
+faultModel:1
+[INFO -- 2018-09-25 03:55:29]
+Backtrace BEGIN:
+#0  0x00005555555589e7 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:271
+#1  0x0000555555557410 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#2  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+266	       *  @brief  Creates a %vector with no elements.
+267	       *  @param  __a  An allocator object.
+268	       */
+269	      explicit
+270	      vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+271	      : _Base(__a) { }
+272	
+273	#if __cplusplus >= 201103L
+274	      /**
+275	       *  @brief  Creates a %vector with default constructed elements.
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd887
+address max offset: 1
+Memory content after  bitflip:0x19
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __move_storage
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 463
+value: 25
+value address: 0x7fffffffd887
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-09-25 03:55:29]
+Fault Injection Successful after 2.181234359741211s
+[INFO -- 2018-09-25 03:55:31]
+event type: exit
+[INFO -- 2018-09-25 03:55:31]
+exit code: 0

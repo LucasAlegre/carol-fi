@@ -1,0 +1,50 @@
+[INFO -- 2018-09-24 19:56:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:56:10]
+Initialization strings:
+[INFO -- 2018-09-24 19:56:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:56:10]
+initSignal:1
+[INFO -- 2018-09-24 19:56:10]
+endSignal:3.5
+[INFO -- 2018-09-24 19:56:10]
+faultModel:3
+[INFO -- 2018-09-24 19:56:11]
+Backtrace BEGIN:
+#0  0x00007ffff74e703e in tcache_get (tc_idx=<optimized out>) at malloc.c:2978
+#1  __GI___libc_malloc (bytes=128) at malloc.c:3079
+#2  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x0000555555559a14 in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#4  0x0000555555558fa1 in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#5  0x0000555555558018 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#6  0x0000555555556b10 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 23456248636544 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#7  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#10 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+2973	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x8d0x070x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd8c4
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 0
+value address: 0x7fffffffd8c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:56:11]
+Fault Injection Successful after 1.7300207614898682s
+[INFO -- 2018-09-24 19:56:15]
+event type: exit
+[INFO -- 2018-09-24 19:56:15]
+exit code: 0

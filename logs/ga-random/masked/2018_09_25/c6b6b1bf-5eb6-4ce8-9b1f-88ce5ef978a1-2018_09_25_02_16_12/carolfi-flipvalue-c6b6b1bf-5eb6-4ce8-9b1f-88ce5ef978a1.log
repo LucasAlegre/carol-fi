@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 02:16:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:16:07]
+Initialization strings:
+[INFO -- 2018-09-25 02:16:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:16:07]
+initSignal:1
+[INFO -- 2018-09-25 02:16:07]
+endSignal:3.5
+[INFO -- 2018-09-25 02:16:07]
+faultModel:2
+[INFO -- 2018-09-25 02:16:09]
+Backtrace BEGIN:
+#0  0x00005555555594df in std::swap<int*> (__a=@0x7fffffffd918: 0x0, __b=@0x7fffffffd828: 0x0) at /usr/include/c++/7/bits/move.h:199
+#1  0x0000555555558460 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#2  0x000055555555742f in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+
+Backtrace END
+Memory content before bitflip:0x000x260xf80xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 4
+Memory content after  bitflip:0x0f0xe30x410xca
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -901651697
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 02:16:09]
+Fault Injection Successful after 2.623859405517578s
+[INFO -- 2018-09-25 02:16:11]
+event type: exit
+[INFO -- 2018-09-25 02:16:11]
+exit code: 0

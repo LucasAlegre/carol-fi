@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 14:52:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:52:13]
+Initialization strings:
+[INFO -- 2018-09-23 14:52:13]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:52:13]
+initSignal:0
+[INFO -- 2018-09-23 14:52:13]
+endSignal:2
+[INFO -- 2018-09-23 14:52:13]
+faultModel:2
+[EXCEPTION -- 2018-09-23 14:52:13]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-09-23 14:52:14]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 14:52:14]
+Backtrace BEGIN:
+#0  0x00005555555554d4 in std::exp (__x=-0.00722976541) at /usr/include/c++/7/cmath:223
+#1  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+218	  using ::exp;
+219	
+220	#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+221	  inline _GLIBCXX_CONSTEXPR float
+222	  exp(float __x)
+223	  { return __builtin_expf(__x); }
+224	
+225	  inline _GLIBCXX_CONSTEXPR long double
+226	  exp(long double __x)
+227	  { return __builtin_expl(__x); }
+
+Backtrace END
+Memory content before bitflip:0x510x250x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffda0c
+address max offset: 4
+Memory content after  bitflip:0xe30xb90xe50x64
+frame name: simulated_annealing
+symbol name: delta
+symbol filename: knapsacksa.cpp
+symbol line: 51
+value: 1692776931
+value address: 0x7fffffffda0c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:52:14]
+Fault Injection Successful after 1.1596312522888184s
+[INFO -- 2018-09-23 14:52:16]
+event type: exit
+[INFO -- 2018-09-23 14:52:16]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 06:47:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:47:18]
+Initialization strings:
+[INFO -- 2018-09-25 06:47:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:47:18]
+initSignal:1
+[INFO -- 2018-09-25 06:47:18]
+endSignal:3.5
+[INFO -- 2018-09-25 06:47:18]
+faultModel:2
+[INFO -- 2018-09-25 06:47:20]
+Backtrace BEGIN:
+#0  0x0000555555555daa in std::vector<chromossome, std::allocator<chromossome> >::end (this=0x7fffffffd870) at /usr/include/c++/7/bits/stl_vector.h:582
+#1  0x000055555555503e in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#2  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+577	       *  element in the %vector.  Iteration is done in ordinary
+578	       *  element order.
+579	       */
+580	      iterator
+581	      end() _GLIBCXX_NOEXCEPT
+582	      { return iterator(this->_M_impl._M_finish); }
+583	
+584	      /**
+585	       *  Returns a read-only (constant) iterator that points one past
+586	       *  the last element in the %vector.  Iteration is done in
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xe70x330xf60x07
+frame name: genetic_algorithm
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 133575655
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:47:20]
+Fault Injection Successful after 2.7997138500213623s
+[INFO -- 2018-09-25 06:47:22]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:47:22]
+exit code: no exit code available

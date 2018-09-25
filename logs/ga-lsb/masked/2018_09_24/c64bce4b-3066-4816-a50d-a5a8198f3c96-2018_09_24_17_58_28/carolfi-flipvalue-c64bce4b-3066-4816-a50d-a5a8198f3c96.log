@@ -1,0 +1,63 @@
+[INFO -- 2018-09-24 17:58:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 17:58:23]
+Initialization strings:
+[INFO -- 2018-09-24 17:58:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 17:58:23]
+initSignal:1
+[INFO -- 2018-09-24 17:58:23]
+endSignal:3.5
+[INFO -- 2018-09-24 17:58:23]
+faultModel:4
+[INFO -- 2018-09-24 17:58:25]
+Backtrace BEGIN:
+#0  0x0000555555559604 in std::__niter_base<int*> (__it=0x55555578646c) at /usr/include/c++/7/bits/stl_algobase.h:277
+#1  0x000055555555a875 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785e20) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x0000555555559fd6 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785e20) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x000055555555948e in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785e20) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555785e20) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555785e20) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555557155 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9d0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#7  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#8  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+272	
+273	  // Fallback implementation of the function in bits/stl_iterator.h used to
+274	  // remove the __normal_iterator wrapper. See copy, fill, ...
+275	  template<typename _Iterator>
+276	    inline _Iterator
+277	    __niter_base(_Iterator __it)
+278	    { return __it; }
+279	
+280	  // All of these auxiliary structs serve two purposes.  (1) Replace
+281	  // calls to copy with memmove whenever possible.  (Memmove, not memcpy,
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x720x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd780
+address max offset: 8
+Memory content after  bitflip:0x100x720x780x550x550x550x000x10
+frame name: std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 99
+value: <error reading variable: Cannot access memory at address 0x1000555555787210>
+value address: 0x7fffffffd780
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-24 17:58:25]
+Fault Injection Successful after 2.6031689643859863s
+[INFO -- 2018-09-24 17:58:27]
+event type: exit
+[INFO -- 2018-09-24 17:58:27]
+exit code: 0

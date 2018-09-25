@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 04:16:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:16:24]
+Initialization strings:
+[INFO -- 2018-09-25 04:16:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:16:24]
+initSignal:1
+[INFO -- 2018-09-25 04:16:24]
+endSignal:3.5
+[INFO -- 2018-09-25 04:16:24]
+faultModel:3
+[INFO -- 2018-09-25 04:16:26]
+Backtrace BEGIN:
+#0  0x0000555555558385 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd7d0, __i=@0x7fffffffd7c8: 0x555555785e20) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555556ecf in std::vector<int, std::allocator<int> >::begin (this=0x7fffffffd930) at /usr/include/c++/7/bits/stl_vector.h:573
+#2  0x0000555555556165 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd970, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x000055555555517d in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd970
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: crossover
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 0, capacity 0
+value address: 0x7fffffffd970
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:16:26]
+Fault Injection Successful after 2.009669303894043s
+[INFO -- 2018-09-25 04:16:28]
+event type: exit
+[INFO -- 2018-09-25 04:16:28]
+exit code: 0

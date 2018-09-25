@@ -1,0 +1,71 @@
+[INFO -- 2018-09-25 07:55:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:55:26]
+Initialization strings:
+[INFO -- 2018-09-25 07:55:26]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:55:26]
+initSignal:1
+[INFO -- 2018-09-25 07:55:26]
+endSignal:3.5
+[INFO -- 2018-09-25 07:55:26]
+faultModel:4
+[EXCEPTION -- 2018-09-25 07:55:27]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 07:55:27]
+Backtrace BEGIN:
+#0  std::move<int*&> (__t=@0x555555786670: 0x0) at /usr/include/c++/7/bits/move.h:98
+#1  0x00005555555594dc in std::swap<int*> (__a=@0x555555786670: 0x0, __b=@0x555555776b90: 0x555555784160) at /usr/include/c++/7/bits/move.h:199
+#2  0x000055555555847b in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x555555786660, __x=...) at /usr/include/c++/7/bits/stl_vector.h:107
+#3  0x0000555555556fb7 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555786660, __x=...) at /usr/include/c++/7/bits/stl_vector.h:146
+#4  0x0000555555555f6c in std::vector<int, std::allocator<int> >::vector (this=0x555555786660, __x=...) at /usr/include/c++/7/bits/stl_vector.h:345
+#5  0x00005555555591ff in chromossome::chromossome (this=0x555555786660) at knapsackga.cpp:42
+#6  0x000055555555aa9a in std::_Construct<chromossome, chromossome> (__p=0x555555786660, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#7  0x000055555555a3de in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555786480) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#8  0x0000555555559a5f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555786480) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#9  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555786480) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#10 0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557769a0, __last=0x555555776ba0, __result=0x555555786480, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#11 0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 260, capacity 10177998752086 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#12 0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#13 0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#14 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+93	   *  @param  __t  A thing of arbitrary type.
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555776b98
+address max offset: 4
+Memory content after  bitflip:0xff0xe00xf50x07
+frame name: std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 76
+value: {_M_current = 0x555555776b80}
+value address: 0x7fffffffd738
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 07:55:27]
+Fault Injection Successful after 1.9361493587493896s
+[INFO -- 2018-09-25 07:55:30]
+event type: exit
+[INFO -- 2018-09-25 07:55:30]
+exit code: 0

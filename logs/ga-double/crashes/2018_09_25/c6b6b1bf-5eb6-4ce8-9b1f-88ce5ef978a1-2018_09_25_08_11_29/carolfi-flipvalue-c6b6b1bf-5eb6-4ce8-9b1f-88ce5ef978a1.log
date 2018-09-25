@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 08:11:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:11:26]
+Initialization strings:
+[INFO -- 2018-09-25 08:11:26]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:11:26]
+initSignal:1
+[INFO -- 2018-09-25 08:11:26]
+endSignal:3.5
+[INFO -- 2018-09-25 08:11:26]
+faultModel:1
+[EXCEPTION -- 2018-09-25 08:11:28]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 08:11:28]
+Backtrace BEGIN:
+#0  0x00007ffff7494a36 in __random () at random.c:295
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 183, capacity 183 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+290	in random.c
+
+Backtrace END
+Fliping array at pos: 22
+Memory content before bitflip:0x940x2e0xc60xc4
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff78321f8 
+address max offset: 4
+Memory content after  bitflip:0x940x2e0x560xc4
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, 392398758, -1930512393, 459462599, 637115820, -706550049, -1469058292, -1404033791, 1206624254, -655825830, 598655920, -1212740266, 752344047, -707068353, -608911477, -211278047, 1665177236, -125697910, 44523023, -1512987995, 1401277649, -1108577524, -1000984940, -1605743626, -1619632555, 48807399, -118630621, -423669060, 1756359249, -1033207116, 173796026, -1231135433}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 08:11:28]
+Fault Injection Successful after 2.693171501159668s
+[INFO -- 2018-09-25 08:11:28]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:11:28]
+exit code: no exit code available

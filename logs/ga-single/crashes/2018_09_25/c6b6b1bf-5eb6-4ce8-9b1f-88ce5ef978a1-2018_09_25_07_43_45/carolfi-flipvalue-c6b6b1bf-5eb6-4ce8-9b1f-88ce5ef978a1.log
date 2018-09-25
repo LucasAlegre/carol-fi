@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 07:43:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:43:43]
+Initialization strings:
+[INFO -- 2018-09-25 07:43:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:43:43]
+initSignal:1
+[INFO -- 2018-09-25 07:43:43]
+endSignal:3.5
+[INFO -- 2018-09-25 07:43:43]
+faultModel:0
+[EXCEPTION -- 2018-09-25 07:43:44]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 07:43:44]
+Backtrace BEGIN:
+#0  std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:504
+#1  0x0000555555556e10 in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#2  0x0000555555555e62 in std::vector<int, std::allocator<int> >::vector (this=0x555555786720, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x0000555555557e39 in chromossome::chromossome (this=0x555555786720) at knapsackga.cpp:42
+#4  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8f0, __p=0x555555786720, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555786720, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#7  0x00005555555554fd in genetic_algorithm () at knapsackga.cpp:107
+#8  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+499	       *  @brief  Obtain an allocator to use when copying a container.
+500	       *  @param  __rhs  An allocator.
+501	       *  @return @c __rhs
+502	      */
+503	      static allocator_type
+504	      select_on_container_copy_construction(const allocator_type& __rhs)
+505	      { return __rhs; }
+506	    };
+507	
+508	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xf00x5a0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9f0
+address max offset: 8
+Memory content after  bitflip:0xf00x5a0x780x550x550x750x000x00
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: @0x7fffffffd9f0
+value address: 0x7fffffffd9f0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 07:43:44]
+Fault Injection Successful after 1.986665964126587s
+[INFO -- 2018-09-25 07:43:45]
+event type: exit
+[EXCEPTION -- 2018-09-25 07:43:45]
+exit code: no exit code available

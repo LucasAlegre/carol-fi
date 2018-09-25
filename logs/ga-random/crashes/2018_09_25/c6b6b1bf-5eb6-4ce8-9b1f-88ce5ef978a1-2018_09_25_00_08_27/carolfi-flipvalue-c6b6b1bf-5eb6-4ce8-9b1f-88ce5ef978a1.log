@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 00:08:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:08:25]
+Initialization strings:
+[INFO -- 2018-09-25 00:08:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:08:25]
+initSignal:1
+[INFO -- 2018-09-25 00:08:25]
+endSignal:3.5
+[INFO -- 2018-09-25 00:08:25]
+faultModel:2
+[EXCEPTION -- 2018-09-25 00:08:27]
+gdbException: Cannot access memory at address 0x85b9a5eb1418301a
+[INFO -- 2018-09-25 00:08:27]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x00005555555568a9 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x0000555555557474 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#4  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100xd90xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x170x560x940x480xab0x2c0x850xa1
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd910
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 00:08:27]
+Fault Injection Successful after 2.2304136753082275s
+[INFO -- 2018-09-25 00:08:27]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:08:27]
+exit code: no exit code available

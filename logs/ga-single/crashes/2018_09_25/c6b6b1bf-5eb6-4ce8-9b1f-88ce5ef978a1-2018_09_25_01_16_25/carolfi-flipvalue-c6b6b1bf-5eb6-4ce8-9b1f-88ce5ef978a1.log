@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 01:16:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:16:23]
+Initialization strings:
+[INFO -- 2018-09-25 01:16:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:16:23]
+initSignal:1
+[INFO -- 2018-09-25 01:16:23]
+endSignal:3.5
+[INFO -- 2018-09-25 01:16:23]
+faultModel:0
+[EXCEPTION -- 2018-09-25 01:16:24]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 01:16:24]
+Backtrace BEGIN:
+#0  0x00005555555594f5 in std::swap<int*> (__a=@0x7fffffffd938: 0x555555786470, __b=@0x7fffffffd9b8: 0x555555786470) at /usr/include/c++/7/bits/move.h:200
+#1  0x0000555555558460 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#2  0x0000555555557442 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x80
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: -2147483608
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 01:16:24]
+Fault Injection Successful after 1.7631292343139648s
+[INFO -- 2018-09-25 01:16:24]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:16:24]
+exit code: no exit code available

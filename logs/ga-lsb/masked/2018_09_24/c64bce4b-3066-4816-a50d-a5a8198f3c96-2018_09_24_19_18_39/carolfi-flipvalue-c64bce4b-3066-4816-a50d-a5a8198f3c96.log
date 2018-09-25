@@ -1,0 +1,56 @@
+[INFO -- 2018-09-24 19:18:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:18:34]
+Initialization strings:
+[INFO -- 2018-09-24 19:18:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:18:34]
+initSignal:1
+[INFO -- 2018-09-24 19:18:34]
+endSignal:3.5
+[INFO -- 2018-09-24 19:18:34]
+faultModel:4
+[INFO -- 2018-09-24 19:18:36]
+Backtrace BEGIN:
+#0  0x00005555555599ca in std::allocator_traits<std::allocator<chromossome> >::max_size (__a=...) at /usr/include/c++/7/bits/alloc_traits.h:496
+#1  0x0000555555558f4c in std::vector<chromossome, std::allocator<chromossome> >::max_size (this=0x7fffffffd870) at /usr/include/c++/7/bits/stl_vector.h:676
+#2  0x0000555555557f77 in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd870, __n=1, __s=0x55555555b297 "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1503
+#3  0x0000555555556ad2 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#4  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+491	       *  @param  __a  An allocator.
+492	       *  @return @c __a.max_size()
+493	      */
+494	      static size_type
+495	      max_size(const allocator_type& __a) noexcept
+496	      { return __a.max_size(); }
+497	
+498	      /**
+499	       *  @brief  Obtain an allocator to use when copying a container.
+500	       *  @param  __rhs  An allocator.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd868
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x02
+frame name: tournament
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 61
+value: 33554432
+value address: 0x7fffffffd868
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:18:36]
+Fault Injection Successful after 2.1148176193237305s
+[INFO -- 2018-09-24 19:18:38]
+event type: exit
+[INFO -- 2018-09-24 19:18:38]
+exit code: 0

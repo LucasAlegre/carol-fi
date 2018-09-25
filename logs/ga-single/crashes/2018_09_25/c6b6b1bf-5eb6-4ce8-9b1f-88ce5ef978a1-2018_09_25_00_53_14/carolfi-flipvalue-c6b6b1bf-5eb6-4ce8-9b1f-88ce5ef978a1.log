@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 00:53:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:53:12]
+Initialization strings:
+[INFO -- 2018-09-25 00:53:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:53:12]
+initSignal:1
+[INFO -- 2018-09-25 00:53:12]
+endSignal:3.5
+[INFO -- 2018-09-25 00:53:12]
+faultModel:0
+[INFO -- 2018-09-25 00:53:13]
+Backtrace BEGIN:
+#0  0x0000555555557adf in std::_Destroy<int*> (__first=0x555555785160, __last=0x555555785480) at /usr/include/c++/7/bits/stl_construct.h:138
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x555555785160, __last=0x555555785480) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd950, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555533 in genetic_algorithm () at knapsackga.cpp:101
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+142	    {
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x200x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 2097192
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:53:13]
+Fault Injection Successful after 1.574883222579956s
+[INFO -- 2018-09-25 00:53:13]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:53:13]
+exit code: no exit code available

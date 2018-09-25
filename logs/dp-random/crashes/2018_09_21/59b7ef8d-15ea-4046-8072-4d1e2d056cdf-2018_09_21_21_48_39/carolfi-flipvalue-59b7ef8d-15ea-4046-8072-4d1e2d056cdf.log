@@ -1,0 +1,54 @@
+[INFO -- 2018-09-21 21:48:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 21:48:37]
+Initialization strings:
+[INFO -- 2018-09-21 21:48:37]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 21:48:37]
+initSignal:1
+[INFO -- 2018-09-21 21:48:37]
+endSignal:3
+[INFO -- 2018-09-21 21:48:37]
+faultModel:2
+[EXCEPTION -- 2018-09-21 21:48:38]
+gdbException: Cannot access memory at address 0x84f37140dcb06b79
+[EXCEPTION -- 2018-09-21 21:48:38]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-21 21:48:38]
+Backtrace BEGIN:
+#0  0x0000555555554f75 in knapSack (W=588593, n=200, val=std::vector of length 200, capacity 256 = {...}, wt=std::vector of length 2216678135740606937, capacity 2216678135740606993 = {...}) at knapsackdp.cpp:22
+#1  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+17	
+18	        for(int i=0; i <= n; i++){
+19	            for(int w=0; w <= W; w++){
+20	                if(i == 0 || w == 0)
+21	                    V[i][w] = 0;
+22	                else if(w >= wt[i-1]){
+23	                    if(val[i-1] + V[i-1][w - wt[i-1]] > V[i-1][w]){
+24	                        V[i][w] = val[i-1] + V[i-1][w - wt[i-1]];
+25	                    }
+26	                    else{
+
+Backtrace END
+Memory content before bitflip:0x7c0x7c0x010x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd97c
+address max offset: 4
+Memory content after  bitflip:0x5f0x220x670x1d
+frame name: knapSack
+symbol name: w
+symbol filename: knapsackdp.cpp
+symbol line: 19
+value: 493298271
+value address: 0x7fffffffd97c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-21 21:48:38]
+Fault Injection Successful after 1.3435895442962646s
+[INFO -- 2018-09-21 21:48:38]
+event type: exit
+[EXCEPTION -- 2018-09-21 21:48:38]
+exit code: no exit code available

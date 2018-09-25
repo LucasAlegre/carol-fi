@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 20:02:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:02:39]
+Initialization strings:
+[INFO -- 2018-09-23 20:02:39]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:02:39]
+initSignal:0
+[INFO -- 2018-09-23 20:02:39]
+endSignal:2
+[INFO -- 2018-09-23 20:02:39]
+faultModel:0
+[EXCEPTION -- 2018-09-23 20:02:40]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 20:02:41]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 20:02:41]
+Backtrace BEGIN:
+#0  0x00005555555564ca in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:505
+#1  0x0000555555555cbc in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#2  0x0000555555555644 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+500	       *  @param  __rhs  An allocator.
+501	       *  @return @c __rhs
+502	      */
+503	      static allocator_type
+504	      select_on_container_copy_construction(const allocator_type& __rhs)
+505	      { return __rhs; }
+506	    };
+507	
+508	
+509	  template<typename _Alloc>
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xd00x130x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9e0
+address max offset: 8
+Memory content after  bitflip:0xd00x130x770xd50x550x550x000x00
+frame name: __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy
+symbol name: __a
+symbol filename: /usr/include/c++/7/ext/alloc_traits.h
+symbol line: 94
+value: @0x7fffffffd9e0
+value address: 0x7fffffffd9e0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:02:41]
+Fault Injection Successful after 2.144000768661499s
+[INFO -- 2018-09-23 20:02:41]
+event type: exit
+[EXCEPTION -- 2018-09-23 20:02:41]
+exit code: no exit code available

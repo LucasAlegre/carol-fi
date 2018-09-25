@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 19:22:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:22:01]
+Initialization strings:
+[INFO -- 2018-09-23 19:22:01]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:22:01]
+initSignal:0
+[INFO -- 2018-09-23 19:22:01]
+endSignal:2
+[INFO -- 2018-09-23 19:22:01]
+faultModel:0
+[INFO -- 2018-09-23 19:22:01]
+Backtrace BEGIN:
+#0  0x00007ffff7de1d0c in elf_machine_rela (skip_ifunc=<optimized out>, reloc_addr_arg=0x7ffff7dcf058, version=<optimized out>, sym=<optimized out>, reloc=0x7ffff7ac5b30, map=0x7ffff7fc6000) at ../sysdeps/x86_64/dl-machine.h:476
+#1  elf_dynamic_do_Rela (skip_ifunc=<optimized out>, lazy=<optimized out>, nrelative=<optimized out>, relsize=<optimized out>, reladdr=<optimized out>, map=0x7ffff7fc6000) at do-rel.h:137
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:259
+#3  0x00007ffff7dd90d9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2187
+#4  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf50, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#5  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf50) at rtld.c:414
+#6  _dl_start (arg=0x7fffffffdf50) at rtld.c:520
+#7  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000001 in ?? ()
+#9  0x00007fffffffe2ce in ?? ()
+#10 0x0000000000000000 in ?? ()
+
+471	../sysdeps/x86_64/dl-machine.h: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 17
+Memory content before bitflip:0x64
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7df9231  
+address max offset: 1
+Memory content after  bitflip:0x65
+frame name: dl_main
+symbol name: preload_file
+symbol filename: rtld.c
+symbol line: 1629
+value: "/etc/ld.so.preloae"
+value address: 0x7ffff7df9220 <preload_file>
+Type: The type is an array.
+Type sizeof: 19
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 18)
+
+[INFO -- 2018-09-23 19:22:01]
+Fault Injection Successful after 0.6458902359008789s
+[INFO -- 2018-09-23 19:22:03]
+event type: exit
+[INFO -- 2018-09-23 19:22:03]
+exit code: 0

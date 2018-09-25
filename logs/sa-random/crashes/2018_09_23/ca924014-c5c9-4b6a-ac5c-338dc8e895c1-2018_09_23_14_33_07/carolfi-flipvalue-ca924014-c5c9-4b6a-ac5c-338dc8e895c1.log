@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 14:33:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 14:33:04]
+Initialization strings:
+[INFO -- 2018-09-23 14:33:04]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 14:33:04]
+initSignal:0
+[INFO -- 2018-09-23 14:33:04]
+endSignal:2
+[INFO -- 2018-09-23 14:33:04]
+faultModel:2
+[EXCEPTION -- 2018-09-23 14:33:04]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 14:33:05]
+Backtrace BEGIN:
+#0  0x00007ffff7191028 in __GI___libc_malloc (bytes=800) at malloc.c:3077
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555556ce0 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x0000555555556a43 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x0000555555556600 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556431 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#6  0x0000555555555bc5 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffda30, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#7  0x0000555555555665 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#8  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#9  0x000055555555535e in main () at knapsacksa.cpp:84
+
+3072	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0xe50x610xf80xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9f4
+address max offset: 4
+Memory content after  bitflip:0x850xf30xf30x67
+frame name: simulated_annealing
+symbol name: best
+symbol filename: knapsacksa.cpp
+symbol line: 41
+value: 1744040837
+value address: 0x7fffffffd9f4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 14:33:05]
+Fault Injection Successful after 1.0259120464324951s
+[INFO -- 2018-09-23 14:33:06]
+event type: exit
+[EXCEPTION -- 2018-09-23 14:33:06]
+exit code: no exit code available

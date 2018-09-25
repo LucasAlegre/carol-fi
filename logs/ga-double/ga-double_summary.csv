@@ -1,0 +1,64 @@
+Faults Injected:;376
+
+Fault Effect;#Effect;PVF
+Masked;133;0.3537234042553192
+SDCs;81;0.2154255319148936
+Crashes;160;0.425531914893617
+Hangs;2;0.005319148936170213
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Double bit-flip;81;100.0
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Double bit-flip;160;100.0
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Double bit-flip;2;100.0
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+84.05797101449275;69;58;W;knapsackga.cpp;16
+16.363636363636363;55;9;n;knapsackga.cpp;16
+15.151515151515152;33;5;val;knapsackga.cpp;14
+50.0;8;4;g;knapsackga.cpp;94
+4.6875;64;3;pop_size;knapsackga.cpp;17
+6.896551724137931;29;2;wt;knapsackga.cpp;15
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+93.75;64;60;pop_size;knapsackga.cpp;17
+83.63636363636363;55;46;n;knapsackga.cpp;16
+14.492753623188406;69;10;W;knapsackga.cpp;16
+24.137931034482758;29;7;wt;knapsackga.cpp;15
+60.0;5;3;filho1;knapsackga.cpp;71
+9.090909090909092;33;3;val;knapsackga.cpp;14
+66.66666666666666;3;2;__args#0;/usr/include/c++/7/ext/new_allocator.h;135
+28.57142857142857;7;2;best;knapsackga.cpp;92
+100.0;2;2;__new_start;/usr/include/c++/7/bits/vector.tcc;406
+66.66666666666666;3;2;filho1;knapsackga.cpp;101
+66.66666666666666;3;2;i;knapsackga.cpp;25
+66.66666666666666;3;2;filho2;knapsackga.cpp;101
+100.0;2;2;__x;/usr/include/c++/7/bits/stl_vector.h;326
+14.285714285714285;14;2;this;knapsackga.cpp;0
+25.0;8;2;f1;knapsackga.cpp;105
+50.0;2;1;pai;knapsackga.cpp;71
+100.0;1;1;__elems_before;/usr/include/c++/7/bits/vector.tcc;405
+50.0;2;1;mae;knapsackga.cpp;101
+50.0;2;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;115
+12.5;8;1;g;knapsackga.cpp;94
+100.0;1;1;__args#0;/usr/include/c++/7/bits/alloc_traits.h;474
+100.0;1;1;valor;knapsackga.cpp;24
+100.0;1;1;__a;/usr/include/c++/7/bits/alloc_traits.h;474
+25.0;4;1;mask;knapsackga.cpp;72
+25.0;4;1;__n;/usr/include/c++/7/bits/stl_vector.h;795
+100.0;1;1;mae;knapsackga.cpp;71
+50.0;2;1;i;knapsackga.cpp;73
+100.0;1;1;__args#0;/usr/include/c++/7/bits/vector.tcc;395
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+1.5625;64;1;pop_size;knapsackga.cpp;17
+100.0;1;1;lock;random.c;197

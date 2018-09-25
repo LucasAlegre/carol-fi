@@ -1,0 +1,76 @@
+[INFO -- 2018-09-25 05:04:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:04:36]
+Initialization strings:
+[INFO -- 2018-09-25 05:04:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:04:36]
+initSignal:1
+[INFO -- 2018-09-25 05:04:36]
+endSignal:3.5
+[INFO -- 2018-09-25 05:04:36]
+faultModel:2
+[EXCEPTION -- 2018-09-25 05:04:37]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 05:04:37]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 05:04:37]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 05:04:38]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 05:04:39]
+Backtrace BEGIN:
+#0  0x000055555555945c in __gnu_cxx::new_allocator<int>::new_allocator (this=0x555555776380) at /usr/include/c++/7/ext/new_allocator.h:81
+#1  0x00005555555582cb in std::allocator<int>::allocator (this=0x555555776380, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#2  0x00005555555582f1 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x555555776380, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#3  0x0000555555556e60 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555776380, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#4  0x0000555555555e83 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#5  0x0000555555557e39 in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#6  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#7  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#8  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#9  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#10 0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#11 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#12 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+76	      typedef std::true_type propagate_on_container_move_assignment;
+77	#endif
+78	
+79	      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+80	
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555776ed0
+address max offset: 4
+Memory content after  bitflip:0x480xd90x0a0x38
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: val
+symbol filename: knapsackga.cpp
+symbol line: 14
+value: std::vector of length 233, capacity 289 = {0, 0, 0, 1433926656, 85, 0, 0, 0, 0, 0, 0, -169804032, 261, 0, 0, 0, 0, 0, 0, 1433926656, 85, 0, 0, 0, 0, 0, 0, -169804032, 261, 0, 0, 266496, 0, 2447616, 2426624, 144896, 217344, 2138880, 1884160, 1714688, 788992, 1551360, 1553664, 1488128, 405504, 1102592, 1007616, 1851136, 2546944, 2430464, 1393152, 1138944, 686848, 92160, 70400, 1190144, 815360, 973056, 2283008, 1346048, 1435136, 604672, 61184, 832512, 349952, 1306368, 2556672, 1726720, 465664, 2287616, 2039808, 1880320, 2320896, 1953024, 2021888, 905728, 2511360, 2462720, 412672, 1930496, 1830912, 1181440, 1357824, 1254656, 2367744, 1282304, 2128896, 906240, 2260224, 2303488, 1180416, 1453568, 2356224, 1852928, 1245952, 568064, 831232, 1790976, 425216, 2324480, 686592, 2333184, 792576, 2450944, 1808128, 1291008, 1325568, 1667840, 1505280, 798464, 532224, 1310464, 2391552, 1595648, 193024, 2100224, 1858560, 2323712, 490240, 1906688, 150528, 1671680, 699136, 580352, 2241280, 272128, 1337344, 2186240, 626944, 538880, 2254336, 1082880, 1835520, 81664, 927744, 440064, 1722368, 212480, 2443776, 65024, 1867520, 54272, 654592, 2082304, 402432, 470528, 1770240, 987136, 110592, 2534656, 387840, 92928, 881408, 1575168, 1900800, 289792, 863488, 79104, 1148672, 1960960, 1894400, 2309376, 1934592, 2208000, 1805824, 1210368, 577536, 1691904, 809984, 261376, 1146624, 2239488, 326656, 1497600, 1006080, 1318144, 368384, 2457088, 663296, 1551616, 1074688, 46336, 1428480, 359936, 145408, 86016, 412672, 245504, 1625856, 1301248, 2517760, 2391552, 2546176, 595200, 1138432, 642048, 1513728, 1597952, 2048768, 1816320...}
+value address: 0x55555575f030 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 05:04:39]
+Fault Injection Successful after 3.0599794387817383s
+[INFO -- 2018-09-25 05:04:40]
+event type: exit
+[EXCEPTION -- 2018-09-25 05:04:40]
+exit code: no exit code available

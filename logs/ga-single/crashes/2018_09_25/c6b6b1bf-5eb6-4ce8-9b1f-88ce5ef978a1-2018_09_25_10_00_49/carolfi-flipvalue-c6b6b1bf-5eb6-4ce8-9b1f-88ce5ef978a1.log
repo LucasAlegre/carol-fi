@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 10:00:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 10:00:46]
+Initialization strings:
+[INFO -- 2018-09-25 10:00:46]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 10:00:46]
+initSignal:1
+[INFO -- 2018-09-25 10:00:46]
+endSignal:3.5
+[INFO -- 2018-09-25 10:00:46]
+faultModel:0
+[EXCEPTION -- 2018-09-25 10:00:48]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 10:00:48]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 10:00:48]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 10:00:48]
+Backtrace BEGIN:
+#0  0x0000555555557ac2 in std::_Destroy<int*> (__first=0x555555786150, __last=0x555555786470) at /usr/include/c++/7/bits/stl_construct.h:127
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x00005555555561a8 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd970, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:208
+#3  0x000055555555517d in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+122	   * a trivial destructor, the compiler should optimize all of this
+123	   * away, otherwise the objects' destructors must be invoked.
+124	   */
+125	  template<typename _ForwardIterator>
+126	    inline void
+127	    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
+128	    {
+129	      typedef typename iterator_traits<_ForwardIterator>::value_type
+130	                       _Value_type;
+131	#if __cplusplus >= 201103L
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x010x000x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 456
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 10:00:48]
+Fault Injection Successful after 2.684844970703125s
+[INFO -- 2018-09-25 10:00:48]
+event type: exit
+[EXCEPTION -- 2018-09-25 10:00:48]
+exit code: no exit code available

@@ -1,0 +1,52 @@
+[INFO -- 2018-09-24 19:46:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:46:11]
+Initialization strings:
+[INFO -- 2018-09-24 19:46:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:46:11]
+initSignal:1
+[INFO -- 2018-09-24 19:46:11]
+endSignal:3.5
+[INFO -- 2018-09-24 19:46:11]
+faultModel:2
+[INFO -- 2018-09-24 19:46:12]
+Backtrace BEGIN:
+#0  0x00007ffff74e703e in tcache_get (tc_idx=<optimized out>) at malloc.c:2978
+#1  __GI___libc_malloc (bytes=800) at malloc.c:3079
+#2  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x000055555555a070 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#4  0x0000555555559587 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#5  0x0000555555558554 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#6  0x000055555555833b in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#7  0x0000555555556e73 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#8  0x0000555555555fd8 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#9  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#10 0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+2973	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd870
+address max offset: 8
+Memory content after  bitflip:0xa90x410x710x2e0xec0x810xd50x14
+frame name: std::allocator_traits<std::allocator<int> >::allocate
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 435
+value: @0x7fffffffd870
+value address: 0x7fffffffd870
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 19:46:12]
+Fault Injection Successful after 1.2823705673217773s
+[INFO -- 2018-09-24 19:46:14]
+event type: exit
+[INFO -- 2018-09-24 19:46:14]
+exit code: 0

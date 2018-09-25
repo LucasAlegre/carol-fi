@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 17:12:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 17:12:29]
+Initialization strings:
+[INFO -- 2018-09-23 17:12:29]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 17:12:29]
+initSignal:0
+[INFO -- 2018-09-23 17:12:29]
+endSignal:2
+[INFO -- 2018-09-23 17:12:29]
+faultModel:0
+[EXCEPTION -- 2018-09-23 17:12:29]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-09-23 17:12:29]
+gdbException: Cannot access memory at address 0x4000555555771700
+[INFO -- 2018-09-23 17:12:30]
+Backtrace BEGIN:
+#0  0x0000555555554fc0 in cost (solution=std::vector of length -1152921504606846776, capacity -1152921504606846776 = {...}) at knapsacksa.cpp:29
+#1  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+33	    else
+
+Backtrace END
+Memory content before bitflip:0xde0x450x060x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9b4
+address max offset: 4
+Memory content after  bitflip:0xde0x450x040x00
+frame name: cost
+symbol name: peso
+symbol filename: knapsacksa.cpp
+symbol line: 26
+value: 280030
+value address: 0x7fffffffd9b4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 17:12:30]
+Fault Injection Successful after 1.0032589435577393s
+[INFO -- 2018-09-23 17:12:30]
+event type: exit
+[EXCEPTION -- 2018-09-23 17:12:30]
+exit code: no exit code available

@@ -1,0 +1,57 @@
+[INFO -- 2018-09-23 16:11:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:11:14]
+Initialization strings:
+[INFO -- 2018-09-23 16:11:14]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:11:14]
+initSignal:0
+[INFO -- 2018-09-23 16:11:14]
+endSignal:2
+[INFO -- 2018-09-23 16:11:14]
+faultModel:3
+[EXCEPTION -- 2018-09-23 16:11:15]
+gdbException: Cannot access memory at address 0x0
+[EXCEPTION -- 2018-09-23 16:11:15]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 16:11:15]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 16:11:15]
+Backtrace BEGIN:
+#0  0x0000555555554fc8 in cost (solution=std::vector of length 23456248612488, capacity 23456248612488 = {...}) at knapsacksa.cpp:29
+#1  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+33	    else
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: simulated_annealing
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 0
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 16:11:15]
+Fault Injection Successful after 1.9892873764038086s
+[INFO -- 2018-09-23 16:11:16]
+event type: exit
+[EXCEPTION -- 2018-09-23 16:11:16]
+exit code: no exit code available

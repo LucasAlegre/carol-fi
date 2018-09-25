@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 20:32:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:32:10]
+Initialization strings:
+[INFO -- 2018-09-23 20:32:10]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:32:10]
+initSignal:0
+[INFO -- 2018-09-23 20:32:10]
+endSignal:2
+[INFO -- 2018-09-23 20:32:10]
+faultModel:1
+[INFO -- 2018-09-23 20:32:10]
+Backtrace BEGIN:
+#0  0x0000555555555648 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#1  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+323	       *  The newly-created %vector uses a copy of the allocator object used
+324	       *  by @a __x (unless the allocator traits dictate a different object).
+325	       */
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0xa10xfb0x080x00
+frame name: simulated_annealing
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 588705
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 20:32:10]
+Fault Injection Successful after 0.5042638778686523s
+[INFO -- 2018-09-23 20:32:12]
+event type: exit
+[INFO -- 2018-09-23 20:32:12]
+exit code: 0

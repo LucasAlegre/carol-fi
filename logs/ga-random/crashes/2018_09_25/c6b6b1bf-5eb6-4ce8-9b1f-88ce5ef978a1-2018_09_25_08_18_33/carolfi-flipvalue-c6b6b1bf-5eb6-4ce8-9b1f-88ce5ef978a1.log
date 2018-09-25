@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 08:18:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:18:30]
+Initialization strings:
+[INFO -- 2018-09-25 08:18:30]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:18:30]
+initSignal:1
+[INFO -- 2018-09-25 08:18:30]
+endSignal:3.5
+[INFO -- 2018-09-25 08:18:30]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:18:31]
+gdbException: Cannot access memory at address 0x37680b562e8bee8e
+[EXCEPTION -- 2018-09-25 08:18:31]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 08:18:31]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x37680b562e8bee8e) at malloc.c:3124
+#1  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd820, __p=0x37680b562e8bee8e) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x37680b562e8bee8e, __n=17448630690099561564) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd820, __p=0x37680b562e8bee8e, __n=17448630690099561564) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555557474 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#7  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#8  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+3119	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x670x0e0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8c4
+address max offset: 4
+Memory content after  bitflip:0xd00xa90x880x57
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 1468574160
+value address: 0x7fffffffd8c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:18:31]
+Fault Injection Successful after 1.993546962738037s
+[INFO -- 2018-09-25 08:18:32]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:18:32]
+exit code: no exit code available

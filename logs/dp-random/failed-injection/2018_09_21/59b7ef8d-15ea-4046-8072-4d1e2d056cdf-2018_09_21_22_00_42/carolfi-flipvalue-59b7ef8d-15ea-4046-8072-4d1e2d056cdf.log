@@ -1,0 +1,23 @@
+[INFO -- 2018-09-21 22:00:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 22:00:40]
+Initialization strings:
+[INFO -- 2018-09-21 22:00:40]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 22:00:40]
+initSignal:1
+[INFO -- 2018-09-21 22:00:40]
+endSignal:3
+[INFO -- 2018-09-21 22:00:40]
+faultModel:2
+[EXCEPTION -- 2018-09-21 22:00:41]
+gdbException: Cannot access memory at address 0xd364fe61f0a02e4c
+[EXCEPTION -- 2018-09-21 22:00:41]
+gdbException: Cannot access memory at address 0x8f272098822aef27
+[EXCEPTION -- 2018-09-21 22:00:41]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-21 22:00:42]
+event type: exit
+[EXCEPTION -- 2018-09-21 22:00:42]
+exit code: no exit code available

@@ -1,0 +1,64 @@
+[INFO -- 2018-09-25 01:59:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:59:28]
+Initialization strings:
+[INFO -- 2018-09-25 01:59:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:59:28]
+initSignal:1
+[INFO -- 2018-09-25 01:59:28]
+endSignal:3.5
+[INFO -- 2018-09-25 01:59:28]
+faultModel:3
+[EXCEPTION -- 2018-09-25 01:59:30]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 01:59:30]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 01:59:31]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 01:59:31]
+Backtrace BEGIN:
+#0  0x0000555555559604 in std::__niter_base<int*> (__it=0x7fffffffd750) at /usr/include/c++/7/bits/stl_algobase.h:277
+#1  0x000055555555a8ca in std::fill_n<int*, unsigned long, int> (__first=0x555555782e50, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x000055555555a01a in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555782e50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x000055555555953a in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555782e50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x00005555555584a5 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555782e50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x000055555555700d in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x0000555555555feb in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#8  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+272	
+273	  // Fallback implementation of the function in bits/stl_iterator.h used to
+274	  // remove the __normal_iterator wrapper. See copy, fill, ...
+275	  template<typename _Iterator>
+276	    inline _Iterator
+277	    __niter_base(_Iterator __it)
+278	    { return __it; }
+279	
+280	  // All of these auxiliary structs serve two purposes.  (1) Replace
+281	  // calls to copy with memmove whenever possible.  (Memmove, not memcpy,
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd810
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 283
+value: 0
+value address: 0x7fffffffd810
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:59:31]
+Fault Injection Successful after 3.6756045818328857s
+[INFO -- 2018-09-25 01:59:32]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:59:32]
+exit code: no exit code available

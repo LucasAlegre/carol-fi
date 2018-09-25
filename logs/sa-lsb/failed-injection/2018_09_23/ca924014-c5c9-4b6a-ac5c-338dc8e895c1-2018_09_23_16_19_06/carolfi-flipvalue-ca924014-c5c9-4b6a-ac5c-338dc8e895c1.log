@@ -1,0 +1,25 @@
+[INFO -- 2018-09-23 16:19:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:19:04]
+Initialization strings:
+[INFO -- 2018-09-23 16:19:04]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:19:04]
+initSignal:0
+[INFO -- 2018-09-23 16:19:04]
+endSignal:2
+[INFO -- 2018-09-23 16:19:04]
+faultModel:4
+[EXCEPTION -- 2018-09-23 16:19:05]
+gdbException: Cannot access memory at address 0x100555555770bb0
+[EXCEPTION -- 2018-09-23 16:19:05]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 16:19:05]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-23 16:19:05]
+gdbException: Cannot access memory at address 0x100555555770bb0
+[INFO -- 2018-09-23 16:19:05]
+event type: exit
+[EXCEPTION -- 2018-09-23 16:19:05]
+exit code: no exit code available

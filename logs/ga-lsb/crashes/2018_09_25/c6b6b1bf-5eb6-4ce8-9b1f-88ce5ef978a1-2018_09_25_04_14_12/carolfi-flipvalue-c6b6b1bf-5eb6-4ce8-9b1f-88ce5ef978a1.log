@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 04:14:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:14:10]
+Initialization strings:
+[INFO -- 2018-09-25 04:14:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:14:10]
+initSignal:1
+[INFO -- 2018-09-25 04:14:10]
+endSignal:3.5
+[INFO -- 2018-09-25 04:14:10]
+faultModel:4
+[INFO -- 2018-09-25 04:14:12]
+Backtrace BEGIN:
+#0  0x00005555555582fc in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd870, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#1  0x0000555555556e60 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#2  0x0000555555555fd8 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#3  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+95	
+96	#if __cplusplus >= 201103L
+97		_Vector_impl(_Tp_alloc_type&& __a) noexcept
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7d0
+address max offset: 8
+Memory content after  bitflip:0xc80x000x000x000x000x000x000x08
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 136
+value: 576460752303423688
+value address: 0x7fffffffd7d0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:14:12]
+Fault Injection Successful after 2.19026255607605s
+[INFO -- 2018-09-25 04:14:12]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:14:12]
+exit code: no exit code available

@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 08:05:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:05:13]
+Initialization strings:
+[INFO -- 2018-09-25 08:05:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:05:13]
+initSignal:1
+[INFO -- 2018-09-25 08:05:13]
+endSignal:3.5
+[INFO -- 2018-09-25 08:05:13]
+faultModel:3
+[INFO -- 2018-09-25 08:05:15]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/ext/new_allocator.h:112
+#1  0x0000555555558fa1 in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#2  0x0000555555558018 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd870, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#3  0x0000555555556b10 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#4  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+107		    std::align_val_t __al = std::align_val_t(alignof(_Tp));
+108		    return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp), __al));
+109		  }
+110	#endif
+111		return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+112	      }
+113	
+114	      // __p is not permitted to be a null pointer.
+115	      void
+116	      deallocate(pointer __p, size_type)
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xa00x780x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd818
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_finish
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 407
+value: 0x7fffffffd810
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:05:15]
+Fault Injection Successful after 2.3183088302612305s
+[INFO -- 2018-09-25 08:05:17]
+event type: exit
+[INFO -- 2018-09-25 08:05:17]
+exit code: 0

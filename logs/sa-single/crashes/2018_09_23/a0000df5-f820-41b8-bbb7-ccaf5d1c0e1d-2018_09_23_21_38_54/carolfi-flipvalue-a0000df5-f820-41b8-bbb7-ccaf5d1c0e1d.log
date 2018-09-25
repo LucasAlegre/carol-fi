@@ -1,0 +1,56 @@
+[INFO -- 2018-09-23 21:38:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:38:51]
+Initialization strings:
+[INFO -- 2018-09-23 21:38:51]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:38:51]
+initSignal:0
+[INFO -- 2018-09-23 21:38:51]
+endSignal:2
+[INFO -- 2018-09-23 21:38:51]
+faultModel:0
+[EXCEPTION -- 2018-09-23 21:38:51]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 21:38:52]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x555555771700) at malloc.c:3122
+#1  0x0000555555556a18 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffda00, __p=0x555555771700) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x00005555555565c4 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffda00, __p=0x555555771700, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#7  0x000055555555535e in main () at knapsacksa.cpp:84
+
+3117	in malloc.c
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x5555557713d0
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x02
+frame name: simulated_annealing
+symbol name: solution
+symbol filename: knapsacksa.cpp
+symbol line: 38
+value: std::vector of length 200, capacity 200 = {33554433, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0...}
+value address: 0x7fffffffd9e0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 21:38:52]
+Fault Injection Successful after 1.025547981262207s
+[INFO -- 2018-09-23 21:38:54]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:38:54]
+exit code: no exit code available

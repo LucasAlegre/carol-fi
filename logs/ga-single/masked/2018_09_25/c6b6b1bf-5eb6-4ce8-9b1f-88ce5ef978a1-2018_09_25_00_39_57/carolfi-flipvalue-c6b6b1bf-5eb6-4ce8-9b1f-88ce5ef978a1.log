@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 00:39:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:39:52]
+Initialization strings:
+[INFO -- 2018-09-25 00:39:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:39:52]
+initSignal:1
+[INFO -- 2018-09-25 00:39:52]
+endSignal:3.5
+[INFO -- 2018-09-25 00:39:52]
+faultModel:0
+[INFO -- 2018-09-25 00:39:53]
+Backtrace BEGIN:
+#0  std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1433936256, __last=1433936272, __result=0x55555555833b <std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long)+35>) at /usr/include/c++/7/bits/stl_uninitialized.h:115
+#1  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555782190) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555555ed1 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd9b0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x000055555555507b in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#4  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+110	   *
+111	   *  Like copy(), but does not require an initialized output range.
+112	  */
+113	  template<typename _InputIterator, typename _ForwardIterator>
+114	    inline _ForwardIterator
+115	    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+116			       _ForwardIterator __result)
+117	    {
+118	      typedef typename iterator_traits<_InputIterator>::value_type
+119		_ValueType1;
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7bf
+address max offset: 1
+Memory content after  bitflip:0x20
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __assignable
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 128
+value: 32
+value address: 0x7fffffffd7bf
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-09-25 00:39:53]
+Fault Injection Successful after 1.6295316219329834s
+[INFO -- 2018-09-25 00:39:55]
+event type: exit
+[INFO -- 2018-09-25 00:39:55]
+exit code: 0

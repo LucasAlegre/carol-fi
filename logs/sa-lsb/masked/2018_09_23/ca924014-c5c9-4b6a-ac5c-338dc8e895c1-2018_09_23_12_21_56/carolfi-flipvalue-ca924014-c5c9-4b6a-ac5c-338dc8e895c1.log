@@ -1,0 +1,46 @@
+[INFO -- 2018-09-23 12:21:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:21:53]
+Initialization strings:
+[INFO -- 2018-09-23 12:21:53]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:21:53]
+initSignal:0
+[INFO -- 2018-09-23 12:21:53]
+endSignal:2
+[INFO -- 2018-09-23 12:21:53]
+faultModel:4
+[EXCEPTION -- 2018-09-23 12:21:54]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 12:21:54]
+Backtrace BEGIN:
+#0  __expf_finite () at ../sysdeps/x86_64/fpu/e_expf.S:73
+#1  0x00007ffff770738f in __GI___expf (x=-0.438343495) at ../sysdeps/ieee754/flt-32/w_expf_compat.c:26
+#2  0x00005555555554e1 in std::exp (__x=-0.438343495) at /usr/include/c++/7/cmath:223
+#3  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+68	in ../sysdeps/x86_64/fpu/e_expf.S
+
+Backtrace END
+Memory content before bitflip:0x8f0x6e0xe00xbe
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd9ac
+address max offset: 4
+Memory content after  bitflip:0x8f0x6e0xe00xae
+frame name: __GI___expf
+symbol name: x
+symbol filename: ../sysdeps/ieee754/flt-32/w_expf_compat.c
+symbol line: 24
+value: -1.02059798e-10
+value address: 0x7fffffffd9ac
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 12:21:54]
+Fault Injection Successful after 1.3784639835357666s
+[INFO -- 2018-09-23 12:21:55]
+event type: exit
+[INFO -- 2018-09-23 12:21:55]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-09-25 08:26:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:26:45]
+Initialization strings:
+[INFO -- 2018-09-25 08:26:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:26:45]
+initSignal:1
+[INFO -- 2018-09-25 08:26:45]
+endSignal:3.5
+[INFO -- 2018-09-25 08:26:45]
+faultModel:4
+[EXCEPTION -- 2018-09-25 08:26:47]
+gdbException: Cannot access memory at address 0x4000555555776bb0
+[INFO -- 2018-09-25 08:26:47]
+Backtrace BEGIN:
+#0  0x0000555555554cb0 in operator delete(void*)@plt ()
+#1  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd910, __p=0x555555782190) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555782190, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd910, __p=0x555555782190, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd910, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd910, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555551 in genetic_algorithm () at knapsackga.cpp:101
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+121	    return -best;
+122	}
+123	 
+124	int main()
+125	{
+126	    ifstream file("/tmp/knapsack/instance.txt");
+127	    ofstream outfile("/tmp/knapsack/outputga");
+128	    srand (42);
+129	    file >> n; file >> W;
+130	    
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x80
+frame name: genetic_algorithm
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: -2147483608
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:26:47]
+Fault Injection Successful after 2.919677734375s
+[INFO -- 2018-09-25 08:26:48]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:26:48]
+exit code: no exit code available

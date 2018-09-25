@@ -1,0 +1,67 @@
+[INFO -- 2018-09-23 19:04:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:04:42]
+Initialization strings:
+[INFO -- 2018-09-23 19:04:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:04:42]
+initSignal:0
+[INFO -- 2018-09-23 19:04:42]
+endSignal:2
+[INFO -- 2018-09-23 19:04:42]
+faultModel:0
+[INFO -- 2018-09-23 19:04:43]
+Backtrace BEGIN:
+#0  0x00007ffff713eb65 in __random_r (buf=buf@entry=0x7ffff74dc720 <unsafe_state>, result=result@entry=0x7fffffffd984) at random_r.c:357
+#1  0x00007ffff713ea22 in __random () at random.c:293
+#2  0x00007ffff713eea9 in rand () at rand.c:27
+#3  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+352	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: state
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x180x9d0xf30x9c
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff74dc1a4 
+address max offset: 4
+Memory content after  bitflip:0x180x9d0xf30x9d
+frame name: __random
+symbol name: unsafe_state
+symbol filename: random.c
+symbol line: 160
+value: {fptr = 0x7ffff74dc1fc <randtbl+92>, rptr = 0x7ffff74dc1f0 <randtbl+80>, state = 0x7ffff74dc1a4 <randtbl+4>, rand_type = 3, rand_deg = 31, rand_sep = 3, end_ptr = 0x7ffff74dc220 <pa_next_type>}
+value address: 0x7ffff74dc720 <unsafe_state>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: fptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: state
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rand_type
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_deg
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_sep
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: end_ptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 19:04:43]
+Fault Injection Successful after 1.671459674835205s
+[INFO -- 2018-09-23 19:04:44]
+event type: exit
+[INFO -- 2018-09-23 19:04:44]
+exit code: 0

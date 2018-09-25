@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 02:59:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:59:20]
+Initialization strings:
+[INFO -- 2018-09-25 02:59:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:59:20]
+initSignal:1
+[INFO -- 2018-09-25 02:59:20]
+endSignal:3.5
+[INFO -- 2018-09-25 02:59:20]
+faultModel:4
+[EXCEPTION -- 2018-09-25 02:59:22]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 02:59:22]
+Backtrace BEGIN:
+#0  0x0000555555554f0a in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:26
+#1  0x0000555555555654 in genetic_algorithm () at knapsackga.cpp:112
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+21	}
+22	
+23	int cost(vector<int> &solution){
+24	    int peso=0, valor=0;
+25	    for(int i=0; i < n; i++){
+26	       peso += solution[i] * wt[i];
+27	       valor += solution[i] * val[i];
+28	    }
+29	
+30	    if(peso > W){
+
+Backtrace END
+Memory content before bitflip:0xea0x130x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd8c4
+address max offset: 4
+Memory content after  bitflip:0xea0x130x000x04
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 67113962
+value address: 0x7fffffffd8c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 02:59:22]
+Fault Injection Successful after 2.7291884422302246s
+[INFO -- 2018-09-25 02:59:22]
+event type: exit
+[EXCEPTION -- 2018-09-25 02:59:22]
+exit code: no exit code available

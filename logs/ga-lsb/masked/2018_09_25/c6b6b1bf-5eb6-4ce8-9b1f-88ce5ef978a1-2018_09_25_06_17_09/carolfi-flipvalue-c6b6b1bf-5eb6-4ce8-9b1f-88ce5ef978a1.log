@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 06:17:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:17:04]
+Initialization strings:
+[INFO -- 2018-09-25 06:17:04]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:17:04]
+initSignal:1
+[INFO -- 2018-09-25 06:17:04]
+endSignal:3.5
+[INFO -- 2018-09-25 06:17:04]
+faultModel:4
+[INFO -- 2018-09-25 06:17:06]
+Backtrace BEGIN:
+#0  std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555789b90) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#1  0x0000555555559a5f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555789b90) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555789b90) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555786480, __last=0x555555786880, __result=0x555555789b90, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#4  0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#5  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+78	        {
+79		  _ForwardIterator __cur = __result;
+80		  __try
+81		    {
+82		      for (; __first != __last; ++__first, (void)++__cur)
+83			std::_Construct(std::__addressof(*__cur), *__first);
+84		      return __cur;
+85		    }
+86		  __catch(...)
+87		    {
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0xe00x1f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x5555557891f0
+address max offset: 4
+Memory content after  bitflip:0xe00x1f0x000x10
+frame name: std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 288
+value: 0x555555789b90
+value address: 0x7fffffffd7b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 06:17:06]
+Fault Injection Successful after 2.0766797065734863s
+[INFO -- 2018-09-25 06:17:08]
+event type: exit
+[INFO -- 2018-09-25 06:17:08]
+exit code: 0

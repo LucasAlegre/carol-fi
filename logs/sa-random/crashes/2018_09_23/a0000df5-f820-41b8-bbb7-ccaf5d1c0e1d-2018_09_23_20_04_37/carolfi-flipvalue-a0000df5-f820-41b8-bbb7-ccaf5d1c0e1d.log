@@ -1,0 +1,57 @@
+[INFO -- 2018-09-23 20:04:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:04:36]
+Initialization strings:
+[INFO -- 2018-09-23 20:04:36]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:04:36]
+initSignal:0
+[INFO -- 2018-09-23 20:04:36]
+endSignal:2
+[INFO -- 2018-09-23 20:04:36]
+faultModel:2
+[EXCEPTION -- 2018-09-23 20:04:37]
+gdbException: Cannot access memory at address 0x15506a521d937aa6
+[INFO -- 2018-09-23 20:04:37]
+Backtrace BEGIN:
+#0  0x0000555555556c9e in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_algobase.h:457
+#1  0x00005555555569f6 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#2  0x0000555555556552 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x0000555555555dbb in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x00005555555556b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#5  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#6  0x000055555555535e in main () at knapsacksa.cpp:84
+
+452	      __glibcxx_requires_valid_range(__first, __last);
+453	
+454	      return (std::__copy_move_a2<__is_move_iterator<_II>::__value>
+455		      (std::__miter_base(__first), std::__miter_base(__last),
+456		       __result));
+457	    }
+458	
+459	#if __cplusplus >= 201103L
+460	  /**
+461	   *  @brief Moves the range [first,last) into result.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0xae0xd00x270x98
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1742221138
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 20:04:37]
+Fault Injection Successful after 1.0838587284088135s
+[INFO -- 2018-09-23 20:04:37]
+event type: exit
+[EXCEPTION -- 2018-09-23 20:04:37]
+exit code: no exit code available

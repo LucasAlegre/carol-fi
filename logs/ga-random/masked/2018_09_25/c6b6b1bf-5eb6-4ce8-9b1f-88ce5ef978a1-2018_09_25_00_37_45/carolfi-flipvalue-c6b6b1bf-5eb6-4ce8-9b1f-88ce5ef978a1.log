@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 00:37:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:37:40]
+Initialization strings:
+[INFO -- 2018-09-25 00:37:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:37:40]
+initSignal:1
+[INFO -- 2018-09-25 00:37:40]
+endSignal:3.5
+[INFO -- 2018-09-25 00:37:40]
+faultModel:2
+[INFO -- 2018-09-25 00:37:42]
+Backtrace BEGIN:
+#0  0x00005555555594c1 in std::swap<int*> (__a=@0x7fffffffd940: 0x0, __b=@0x7fffffffd9c0: 0x555555782e40) at /usr/include/c++/7/bits/move.h:198
+#1  0x000055555555847b in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:107
+#2  0x0000555555557442 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555782e40
+address max offset: 4
+Memory content after  bitflip:0xb50xd40xb80xb5
+frame name: std::swap<int*>
+symbol name: __b
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x7fffffffd9c0
+value address: 0x7fffffffd9c0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 00:37:42]
+Fault Injection Successful after 2.09163761138916s
+[INFO -- 2018-09-25 00:37:44]
+event type: exit
+[INFO -- 2018-09-25 00:37:44]
+exit code: 0

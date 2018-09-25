@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 20:39:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:39:32]
+Initialization strings:
+[INFO -- 2018-09-23 20:39:32]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:39:32]
+initSignal:0
+[INFO -- 2018-09-23 20:39:32]
+endSignal:2
+[INFO -- 2018-09-23 20:39:32]
+faultModel:1
+[EXCEPTION -- 2018-09-23 20:39:33]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 20:39:33]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 20:39:34]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 20:39:34]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 20:39:35]
+Backtrace BEGIN:
+#0  0x00007ffff7191444 in __GI___libc_free (mem=<optimized out>) at malloc.c:3144
+#1  0x0000555555556a18 in __gnu_cxx::new_allocator<int>::deallocate (this=0x555555759030 <val>, __p=0x555555770b98) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x00005555555565c4 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555770b98, __n=262) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555555e28 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555759030 <val>, __p=0x555555770b98, __n=262) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555555b63 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555759030 <val>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x555555759030 <val>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00007ffff713dec0 in __run_exit_handlers (status=0, listp=0x7ffff74dc6f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:83
+#7  0x00007ffff713df1a in __GI_exit (status=<optimized out>) at exit.c:105
+#8  0x00007ffff71231c8 in __libc_start_main (main=0x55555555524b <main()>, argc=1, argv=0x7fffffffdf58, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffdf48) at ../csu/libc-start.c:342
+#9  0x0000555555554e3a in _start ()
+
+3139	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x980x0b0x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffdd80
+address max offset: 8
+Memory content after  bitflip:0x980x0b0x770x550x550x560x000x00
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 116
+value: 0x555555770b98
+value address: 0x7fffffffdd80
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:39:35]
+Fault Injection Successful after 3.5386860370635986s
+[INFO -- 2018-09-23 20:39:35]
+event type: exit
+[EXCEPTION -- 2018-09-23 20:39:35]
+exit code: no exit code available

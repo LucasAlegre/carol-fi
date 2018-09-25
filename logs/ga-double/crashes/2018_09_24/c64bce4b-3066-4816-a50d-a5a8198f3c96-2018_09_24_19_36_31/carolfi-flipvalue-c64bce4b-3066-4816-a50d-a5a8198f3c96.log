@@ -1,0 +1,49 @@
+[INFO -- 2018-09-24 19:36:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:36:27]
+Initialization strings:
+[INFO -- 2018-09-24 19:36:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:36:27]
+initSignal:1
+[INFO -- 2018-09-24 19:36:27]
+endSignal:3.5
+[INFO -- 2018-09-24 19:36:27]
+faultModel:1
+[INFO -- 2018-09-24 19:36:30]
+Backtrace BEGIN:
+#0  0x00007ffff74e25d2 in _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555782180, have_lock=0) at malloc.c:4149
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd9f0, __p=0x555555782190) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555782190, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9f0, __p=0x555555782190, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x0000555555555b62 in chromossome::~chromossome (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#8  0x0000555555555509 in genetic_algorithm () at knapsackga.cpp:105
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+4144	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x420x000x00
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 17096
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-24 19:36:30]
+Fault Injection Successful after 3.7261645793914795s
+[INFO -- 2018-09-24 19:36:30]
+event type: exit
+[EXCEPTION -- 2018-09-24 19:36:30]
+exit code: no exit code available

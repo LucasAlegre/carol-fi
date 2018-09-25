@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 09:52:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:52:42]
+Initialization strings:
+[INFO -- 2018-09-25 09:52:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:52:42]
+initSignal:1
+[INFO -- 2018-09-25 09:52:42]
+endSignal:3.5
+[INFO -- 2018-09-25 09:52:42]
+faultModel:1
+[EXCEPTION -- 2018-09-25 09:52:43]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 09:52:43]
+Backtrace BEGIN:
+#0  0x0000555555555bbc in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd950, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#1  0x0000555555555533 in genetic_algorithm () at knapsackga.cpp:101
+#2  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+439	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 4
+Memory content after  bitflip:0x690x390xea0xff
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -1427095
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:52:43]
+Fault Injection Successful after 1.145235538482666s
+[INFO -- 2018-09-25 09:52:45]
+event type: exit
+[INFO -- 2018-09-25 09:52:45]
+exit code: 0

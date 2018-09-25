@@ -1,0 +1,67 @@
+[INFO -- 2018-09-23 22:32:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 22:32:45]
+Initialization strings:
+[INFO -- 2018-09-23 22:32:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-23 22:32:45]
+initSignal:1
+[INFO -- 2018-09-23 22:32:45]
+endSignal:3.5
+[INFO -- 2018-09-23 22:32:45]
+faultModel:0
+[EXCEPTION -- 2018-09-23 22:32:47]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 22:32:47]
+Backtrace BEGIN:
+#0  0x000055555555947b in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787bb0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#1  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787bb0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555787bb0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x0000555555555ed1 in std::vector<int, std::allocator<int> >::vector (this=0x555555776520, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#4  0x0000555555557e39 in chromossome::chromossome (this=0x555555776520) at knapsackga.cpp:42
+#5  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776520, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#6  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776520, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#7  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#8  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#9  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#10 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+96	    {
+97	      template<typename _InputIterator, typename _ForwardIterator>
+98	        static _ForwardIterator
+99	        __uninit_copy(_InputIterator __first, _InputIterator __last,
+100			      _ForwardIterator __result)
+101	        { return std::copy(__first, __last, __result); }
+102	    };
+103	
+104	  /**
+105	   *  @brief Copies the range [first,last) into result.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555577c100
+address max offset: 4
+Memory content after  bitflip:0x000x000x020x00
+frame name: std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 99
+value: 131072
+value address: 0x7fffffffd648
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 22:32:47]
+Fault Injection Successful after 2.6253294944763184s
+[INFO -- 2018-09-23 22:32:49]
+event type: exit
+[INFO -- 2018-09-23 22:32:49]
+exit code: 0

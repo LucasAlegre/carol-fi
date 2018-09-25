@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 10:00:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 10:00:18]
+Initialization strings:
+[INFO -- 2018-09-25 10:00:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 10:00:18]
+initSignal:1
+[INFO -- 2018-09-25 10:00:18]
+endSignal:3.5
+[INFO -- 2018-09-25 10:00:18]
+faultModel:3
+[INFO -- 2018-09-25 10:00:19]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:454
+#1  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+451	      this->_M_impl._M_start = __new_start;
+452	      this->_M_impl._M_finish = __new_finish;
+453	      this->_M_impl._M_end_of_storage = __new_start + __len;
+454	    }
+455	
+456	  template<typename _Tp, typename _Alloc>
+457	    void
+458	    vector<_Tp, _Alloc>::
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x500x940x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555780210
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x555555780210
+value address: 0x555555780210
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 10:00:19]
+Fault Injection Successful after 1.4460229873657227s
+[INFO -- 2018-09-25 10:00:19]
+event type: exit
+[EXCEPTION -- 2018-09-25 10:00:19]
+exit code: no exit code available

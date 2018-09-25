@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 01:22:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:22:52]
+Initialization strings:
+[INFO -- 2018-09-25 01:22:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:22:52]
+initSignal:1
+[INFO -- 2018-09-25 01:22:52]
+endSignal:3.5
+[INFO -- 2018-09-25 01:22:52]
+faultModel:2
+[EXCEPTION -- 2018-09-25 01:22:54]
+gdbException: Cannot access memory at address 0xd30c72f853253b7e
+[EXCEPTION -- 2018-09-25 01:22:54]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 01:22:54]
+Backtrace BEGIN:
+#0  0x00005555555570e8 in std::vector<int, std::allocator<int> >::capacity (this=0xd30c72f853253b7e) at /usr/include/c++/7/bits/stl_vector.h:751
+#1  0x000055555555613b in std::vector<int, std::allocator<int> >::operator= (this=0xd30c72f853253b7e, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:204
+#2  0x000055555555a1c3 in chromossome::operator= (this=0xd30c72f853253b7e) at knapsackga.cpp:42
+#3  0x000055555555a21b in std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<chromossome const*, chromossome*> (__first=0x555555789b90, __last=0x55555578a090, __result=0xd30c72f853253b7e) at /usr/include/c++/7/bits/stl_algobase.h:324
+#4  0x00005555555597c1 in std::__copy_move_a<false, chromossome const*, chromossome*> (__first=0x555555789b90, __last=0x55555578a090, __result=0xd30c72f853253b7e) at /usr/include/c++/7/bits/stl_algobase.h:386
+#5  0x0000555555558b78 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513587}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result=<error reading variable: Cannot access memory at address 0xd30c72f853253b7e>) at /usr/include/c++/7/bits/stl_algobase.h:422
+#6  0x000055555555770a in std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513587}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result=<error reading variable: Cannot access memory at address 0xd30c72f853253b7e>) at /usr/include/c++/7/bits/stl_algobase.h:456
+#7  0x00005555555566e9 in std::vector<chromossome, std::allocator<chromossome> >::operator= (this=0x7fffffffd8d0, __x=std::vector of length 40, capacity 64 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#8  0x00005555555556c5 in genetic_algorithm () at knapsackga.cpp:117
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+746	       *  Returns the total number of elements that the %vector can
+747	       *  hold before needing to allocate more memory.
+748	       */
+749	      size_type
+750	      capacity() const _GLIBCXX_NOEXCEPT
+751	      { return size_type(this->_M_impl._M_end_of_storage
+752				 - this->_M_impl._M_start); }
+753	
+754	      /**
+755	       *  Returns true if the %vector is empty.  (Thus begin() would
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6e0
+address max offset: 8
+Memory content after  bitflip:0x430xc60x8a0x890x3f0xb60x970x7c
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __xlen
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 203
+value: 8977844766193141315
+value address: 0x7fffffffd6e0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:22:54]
+Fault Injection Successful after 2.7266125679016113s
+[INFO -- 2018-09-25 01:22:54]
+event type: exit
+[EXCEPTION -- 2018-09-25 01:22:54]
+exit code: no exit code available

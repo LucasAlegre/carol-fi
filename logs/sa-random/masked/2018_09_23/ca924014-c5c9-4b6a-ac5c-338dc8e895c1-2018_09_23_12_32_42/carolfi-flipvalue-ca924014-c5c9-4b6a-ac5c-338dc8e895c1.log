@@ -1,0 +1,52 @@
+[INFO -- 2018-09-23 12:32:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:32:39]
+Initialization strings:
+[INFO -- 2018-09-23 12:32:39]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:32:39]
+initSignal:0
+[INFO -- 2018-09-23 12:32:39]
+endSignal:2
+[INFO -- 2018-09-23 12:32:39]
+faultModel:2
+[INFO -- 2018-09-23 12:32:39]
+Backtrace BEGIN:
+#0  0x00007ffff7df24d7 in mprotect () at ../sysdeps/unix/syscall-template.S:84
+#1  0x00007ffff7de219d in _dl_protect_relro (l=0x7ffff7fc6000) at dl-reloc.c:322
+#2  _dl_relocate_object (scope=<optimized out>, reloc_mode=<optimized out>, consider_profiling=<optimized out>, consider_profiling@entry=0) at dl-reloc.c:307
+#3  0x00007ffff7dd90d9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2187
+#4  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#5  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#6  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#7  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#8  0x0000000000000001 in ?? ()
+#9  0x00007fffffffe2f7 in ?? ()
+#10 0x0000000000000000 in ?? ()
+
+79	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: l_text_end
+Memory content before bitflip:0x000x700xbc0xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7fc6350
+address max offset: 8
+Memory content after  bitflip:0xf50x530x190xd80xf50x570xdb0x66
+frame name: _dl_protect_relro
+symbol name: l
+symbol filename: dl-reloc.c
+symbol line: 312
+value: 0x7ffff7fc6000
+value address: 0x7fffffffdbc8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 12:32:39]
+Fault Injection Successful after 0.9028236865997314s
+[INFO -- 2018-09-23 12:32:42]
+event type: exit
+[INFO -- 2018-09-23 12:32:42]
+exit code: 0

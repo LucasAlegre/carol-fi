@@ -1,0 +1,55 @@
+[INFO -- 2018-09-24 19:16:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 19:16:07]
+Initialization strings:
+[INFO -- 2018-09-24 19:16:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 19:16:07]
+initSignal:1
+[INFO -- 2018-09-24 19:16:07]
+endSignal:3.5
+[INFO -- 2018-09-24 19:16:07]
+faultModel:3
+[INFO -- 2018-09-24 19:16:08]
+Backtrace BEGIN:
+#0  0x00005555555594c1 in std::swap<int*> (__a=@0x7fffffffd920: 0x0, __b=@0x7fffffffd830: 0x0) at /usr/include/c++/7/bits/move.h:198
+#1  0x000055555555847b in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:107
+#2  0x000055555555742f in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100xd90xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd910
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 19:16:08]
+Fault Injection Successful after 1.804555892944336s
+[INFO -- 2018-09-24 19:16:08]
+event type: exit
+[EXCEPTION -- 2018-09-24 19:16:08]
+exit code: no exit code available

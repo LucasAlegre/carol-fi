@@ -1,0 +1,57 @@
+[INFO -- 2018-09-25 03:05:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:05:27]
+Initialization strings:
+[INFO -- 2018-09-25 03:05:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:05:27]
+initSignal:1
+[INFO -- 2018-09-25 03:05:27]
+endSignal:3.5
+[INFO -- 2018-09-25 03:05:27]
+faultModel:2
+[EXCEPTION -- 2018-09-25 03:05:29]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 03:05:29]
+Backtrace BEGIN:
+#0  0x0000555555557ad2 in std::_Destroy<int*> (__first=0x555555782190, __last=0x5555557824b0) at /usr/include/c++/7/bits/stl_construct.h:137
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x555555782190, __last=0x5555557824b0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x00005555555551f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+132	      // A deleted destructor is trivial, this ensures we reject such types:
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555782190
+address max offset: 4
+Memory content after  bitflip:0x1c0xf50xa00x56
+frame name: std::_Destroy<int*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x555555782190
+value address: 0x7fffffffd7d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 03:05:29]
+Fault Injection Successful after 2.4601738452911377s
+[INFO -- 2018-09-25 03:05:31]
+event type: exit
+[EXCEPTION -- 2018-09-25 03:05:31]
+exit code: no exit code available

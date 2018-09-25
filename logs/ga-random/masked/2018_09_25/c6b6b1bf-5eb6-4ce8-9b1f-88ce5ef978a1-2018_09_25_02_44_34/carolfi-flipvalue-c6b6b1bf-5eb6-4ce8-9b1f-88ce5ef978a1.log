@@ -1,0 +1,51 @@
+[INFO -- 2018-09-25 02:44:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:44:29]
+Initialization strings:
+[INFO -- 2018-09-25 02:44:29]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:44:29]
+initSignal:1
+[INFO -- 2018-09-25 02:44:29]
+endSignal:3.5
+[INFO -- 2018-09-25 02:44:29]
+faultModel:2
+[INFO -- 2018-09-25 02:44:30]
+Backtrace BEGIN:
+#0  __random () at random.c:295
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554ff9 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:62
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+290	random.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9a0
+address max offset: 8
+Memory content after  bitflip:0x6b0x950x3e0xa70xc50x4a0x470x99
+frame name: tournament
+symbol name: tournamentWinner
+symbol filename: knapsackga.cpp
+symbol line: 67
+value: std::vector of length 0, capacity -1850466312446302885
+value address: 0x7fffffffd990
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 02:44:30]
+Fault Injection Successful after 1.71649169921875s
+[INFO -- 2018-09-25 02:44:33]
+event type: exit
+[INFO -- 2018-09-25 02:44:33]
+exit code: 0

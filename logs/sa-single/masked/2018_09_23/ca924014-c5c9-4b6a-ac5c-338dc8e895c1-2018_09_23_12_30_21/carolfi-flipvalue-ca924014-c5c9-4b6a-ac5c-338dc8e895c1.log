@@ -1,0 +1,59 @@
+[INFO -- 2018-09-23 12:30:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:30:18]
+Initialization strings:
+[INFO -- 2018-09-23 12:30:18]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:30:18]
+initSignal:0
+[INFO -- 2018-09-23 12:30:18]
+endSignal:2
+[INFO -- 2018-09-23 12:30:18]
+faultModel:0
+[INFO -- 2018-09-23 12:30:19]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffda30, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#1  0x0000555555555665 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+133	      : _M_impl()
+134	      { _M_create_storage(__n); }
+135	
+136	      _Vector_base(size_t __n, const allocator_type& __a)
+137	      : _M_impl(__a)
+138	      { _M_create_storage(__n); }
+139	
+140	#if __cplusplus >= 201103L
+141	      _Vector_base(_Tp_alloc_type&& __a) noexcept
+142	      : _M_impl(std::move(__a)) { }
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555771700
+address max offset: 4
+Memory content after  bitflip:0x000x010x000x00
+frame name: simulated_annealing
+symbol name: s
+symbol filename: knapsacksa.cpp
+symbol line: 47
+value: std::vector of length 0, capacity 200
+value address: 0x7fffffffda30
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 12:30:19]
+Fault Injection Successful after 1.5574488639831543s
+[INFO -- 2018-09-23 12:30:20]
+event type: exit
+[INFO -- 2018-09-23 12:30:20]
+exit code: 0

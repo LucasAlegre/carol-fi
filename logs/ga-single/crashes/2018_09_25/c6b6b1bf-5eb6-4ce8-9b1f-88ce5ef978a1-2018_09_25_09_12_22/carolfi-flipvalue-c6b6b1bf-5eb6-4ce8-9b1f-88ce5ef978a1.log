@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 09:12:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:12:19]
+Initialization strings:
+[INFO -- 2018-09-25 09:12:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:12:19]
+initSignal:1
+[INFO -- 2018-09-25 09:12:19]
+endSignal:3.5
+[INFO -- 2018-09-25 09:12:19]
+faultModel:0
+[EXCEPTION -- 2018-09-25 09:12:22]
+gdbException: Cannot access memory at address 0x8000555555785e20
+[INFO -- 2018-09-25 09:12:22]
+Backtrace BEGIN:
+#0  0x00007ffff74e25d2 in _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555785150, have_lock=0) at malloc.c:4149
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x000055555555955c in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd9f0, __p=0x555555785160) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x0000555555558518 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555785160, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557086 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9f0, __p=0x555555785160, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x000055555555689d in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x0000555555555b62 in chromossome::~chromossome (this=0x7fffffffd9f0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#8  0x0000555555555509 in genetic_algorithm () at knapsackga.cpp:105
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+4144	in malloc.c
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd878
+address max offset: 8
+Memory content after  bitflip:0xf00xd90xff0x7f0xff0x7f0x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd9f0
+value address: 0x7fffffffd878
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 09:12:22]
+Fault Injection Successful after 3.3934221267700195s
+[INFO -- 2018-09-25 09:12:22]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:12:22]
+exit code: no exit code available

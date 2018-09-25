@@ -1,0 +1,61 @@
+[INFO -- 2018-09-23 17:36:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 17:36:27]
+Initialization strings:
+[INFO -- 2018-09-23 17:36:27]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 17:36:27]
+initSignal:0
+[INFO -- 2018-09-23 17:36:27]
+endSignal:2
+[INFO -- 2018-09-23 17:36:27]
+faultModel:2
+[EXCEPTION -- 2018-09-23 17:36:28]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 17:36:28]
+Backtrace BEGIN:
+#0  0x0000555555555501 in std::vector<int, std::allocator<int> >::operator[] (this=0x555555759030 <val>, __n=67) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x0000555555554f95 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#2  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557716f0
+address max offset: 4
+Memory content after  bitflip:0xef0x020xe50x03
+frame name: simulated_annealing
+symbol name: solution
+symbol filename: knapsacksa.cpp
+symbol line: 38
+value: std::vector of length 200, capacity 200 = {1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1...}
+value address: 0x7fffffffda10
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 17:36:28]
+Fault Injection Successful after 1.7812509536743164s
+[INFO -- 2018-09-23 17:36:30]
+event type: exit
+[INFO -- 2018-09-23 17:36:30]
+exit code: 0

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 10:10:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 10:10:45]
+Initialization strings:
+[INFO -- 2018-09-25 10:10:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 10:10:45]
+initSignal:1
+[INFO -- 2018-09-25 10:10:45]
+endSignal:3.5
+[INFO -- 2018-09-25 10:10:45]
+faultModel:0
+[EXCEPTION -- 2018-09-25 10:10:46]
+gdbException: Cannot access memory at address 0x555515776bb0
+[INFO -- 2018-09-25 10:10:46]
+Backtrace BEGIN:
+#0  0x0000555555556381 in std::swap<int> (__a=@0x555555782cdc: 0, __b=@0x55555578234c: 0) at /usr/include/c++/7/bits/move.h:200
+#1  0x00005555555551e7 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555782cdc
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x080x00
+frame name: std::swap<int>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x555555782cdc
+value address: 0x555555782cdc
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 10:10:46]
+Fault Injection Successful after 1.59804105758667s
+[INFO -- 2018-09-25 10:10:46]
+event type: exit
+[EXCEPTION -- 2018-09-25 10:10:46]
+exit code: no exit code available

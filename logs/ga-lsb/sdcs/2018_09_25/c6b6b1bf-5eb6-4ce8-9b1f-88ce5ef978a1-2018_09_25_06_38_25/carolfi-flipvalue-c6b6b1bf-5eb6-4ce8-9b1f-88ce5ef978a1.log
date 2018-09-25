@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 06:38:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:38:20]
+Initialization strings:
+[INFO -- 2018-09-25 06:38:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:38:20]
+initSignal:1
+[INFO -- 2018-09-25 06:38:20]
+endSignal:3.5
+[INFO -- 2018-09-25 06:38:20]
+faultModel:4
+[EXCEPTION -- 2018-09-25 06:38:21]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 06:38:21]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd804) at random_r.c:379
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+374	in random_r.c
+
+Backtrace END
+Fliping array at pos: 29
+Memory content before bitflip:0x730x600xcd0x93
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7832214 
+address max offset: 4
+Memory content after  bitflip:0x730x600xcd0xb3
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -727530286, -1306614516, -298425237, 103967808, -1815303678, 1772971887, 1704216308, -960443923, 1323845644, 43307479, 1814936439, 1309834667, 809708234, 847945250, 388611994, 431171887, -1506738768, -1443528530, -1639042930, -244624263, -532113713, 90596584, 2006256547, 1554794913, 164864848, -752567075, 2138627140, -463228975, -1278386061, -924774460, 92635606}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 06:38:21]
+Fault Injection Successful after 1.7727031707763672s
+[INFO -- 2018-09-25 06:38:24]
+event type: exit
+[INFO -- 2018-09-25 06:38:24]
+exit code: 0

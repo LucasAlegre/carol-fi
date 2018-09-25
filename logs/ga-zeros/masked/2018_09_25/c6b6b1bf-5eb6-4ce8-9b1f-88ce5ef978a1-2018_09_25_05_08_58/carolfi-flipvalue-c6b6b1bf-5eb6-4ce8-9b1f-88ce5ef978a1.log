@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 05:08:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:08:53]
+Initialization strings:
+[INFO -- 2018-09-25 05:08:53]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:08:53]
+initSignal:1
+[INFO -- 2018-09-25 05:08:53]
+endSignal:3.5
+[INFO -- 2018-09-25 05:08:53]
+faultModel:3
+[INFO -- 2018-09-25 05:08:55]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#1  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+280	       *  constructed elements.
+281	       */
+282	      explicit
+283	      vector(size_type __n, const allocator_type& __a = allocator_type())
+284	      : _Base(__n, __a)
+285	      { _M_default_initialize(__n); }
+286	
+287	      /**
+288	       *  @brief  Creates a %vector with copies of an exemplar element.
+289	       *  @param  __n  The number of elements to initially create.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd950
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: crossover
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 0, capacity 0
+value address: 0x7fffffffd950
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 05:08:55]
+Fault Injection Successful after 2.5568408966064453s
+[INFO -- 2018-09-25 05:08:57]
+event type: exit
+[INFO -- 2018-09-25 05:08:57]
+exit code: 0

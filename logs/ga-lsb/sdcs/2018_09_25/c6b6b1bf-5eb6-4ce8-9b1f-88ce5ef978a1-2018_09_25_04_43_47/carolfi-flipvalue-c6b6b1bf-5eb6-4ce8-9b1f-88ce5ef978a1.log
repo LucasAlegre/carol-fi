@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 04:43:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:43:42]
+Initialization strings:
+[INFO -- 2018-09-25 04:43:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:43:42]
+initSignal:1
+[INFO -- 2018-09-25 04:43:42]
+endSignal:3.5
+[INFO -- 2018-09-25 04:43:42]
+faultModel:4
+[EXCEPTION -- 2018-09-25 04:43:44]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 04:43:44]
+Backtrace BEGIN:
+#0  0x0000555555555f75 in std::allocator<int>::allocator (this=0x7fffffffd930) at /usr/include/c++/7/bits/allocator.h:131
+#1  0x0000555555557a94 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd950) at /usr/include/c++/7/bits/stl_vector.h:89
+#2  0x0000555555556858 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd950) at /usr/include/c++/7/bits/stl_vector.h:127
+#3  0x0000555555555b88 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd950) at /usr/include/c++/7/bits/stl_vector.h:263
+#4  0x00005555555553e1 in genetic_algorithm () at knapsackga.cpp:101
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+126	      typedef true_type propagate_on_container_move_assignment;
+127	
+128	      typedef true_type is_always_equal;
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x02
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 34143025
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:43:44]
+Fault Injection Successful after 2.9314568042755127s
+[INFO -- 2018-09-25 04:43:46]
+event type: exit
+[INFO -- 2018-09-25 04:43:46]
+exit code: 0

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 00:26:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 00:26:43]
+Initialization strings:
+[INFO -- 2018-09-25 00:26:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 00:26:43]
+initSignal:1
+[INFO -- 2018-09-25 00:26:43]
+endSignal:3.5
+[INFO -- 2018-09-25 00:26:43]
+faultModel:2
+[INFO -- 2018-09-25 00:26:45]
+Backtrace BEGIN:
+#0  std::move<int*&> (__t=@0x7fffffffd930: 0x0) at /usr/include/c++/7/bits/move.h:98
+#1  0x00005555555594dc in std::swap<int*> (__a=@0x7fffffffd930: 0x0, __b=@0x7fffffffd9b0: 0x555555785af0) at /usr/include/c++/7/bits/move.h:199
+#2  0x0000555555558445 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#3  0x0000555555557442 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#4  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd930, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555545d in genetic_algorithm () at knapsackga.cpp:103
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+93	   *  @param  __t  A thing of arbitrary type.
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xe60x6e0x500x71
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1901096678
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 00:26:45]
+Fault Injection Successful after 2.6403090953826904s
+[INFO -- 2018-09-25 00:26:45]
+event type: exit
+[EXCEPTION -- 2018-09-25 00:26:45]
+exit code: no exit code available

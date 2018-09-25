@@ -1,0 +1,57 @@
+[INFO -- 2018-09-23 17:26:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 17:26:58]
+Initialization strings:
+[INFO -- 2018-09-23 17:26:58]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 17:26:58]
+initSignal:0
+[INFO -- 2018-09-23 17:26:58]
+endSignal:2
+[INFO -- 2018-09-23 17:26:58]
+faultModel:3
+[INFO -- 2018-09-23 17:27:00]
+Backtrace BEGIN:
+#0  0x000055555555643f in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffda30, __n=200) at /usr/include/c++/7/bits/stl_vector.h:188
+#1  0x0000555555555bc5 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffda30, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x0000555555555665 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+190	      }
+191	    };
+192	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffda40
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffda30
+value address: 0x7fffffffd968
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 17:27:00]
+Fault Injection Successful after 2.40190052986145s
+[INFO -- 2018-09-23 17:27:01]
+event type: exit
+[INFO -- 2018-09-23 17:27:01]
+exit code: 0

@@ -1,0 +1,64 @@
+[INFO -- 2018-09-25 08:15:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:15:21]
+Initialization strings:
+[INFO -- 2018-09-25 08:15:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:15:21]
+initSignal:1
+[INFO -- 2018-09-25 08:15:21]
+endSignal:3.5
+[INFO -- 2018-09-25 08:15:21]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:15:22]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 08:15:22]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 08:15:23]
+Backtrace BEGIN:
+#0  0x0000555555559573 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#1  0x0000555555558554 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd970, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#2  0x000055555555712e in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd970, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#3  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd970, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#4  0x000055555555517d in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+431	       *
+432	       *  Calls @c a.allocate(n)
+433	      */
+434	      static pointer
+435	      allocate(allocator_type& __a, size_type __n)
+436	      { return __a.allocate(__n); }
+437	
+438	      /**
+439	       *  @brief  Allocate memory.
+440	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555785490
+address max offset: 4
+Memory content after  bitflip:0x740xc70xfe0x74
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: 1962854260
+value address: 0x7fffffffd7a8
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 08:15:23]
+Fault Injection Successful after 2.9804670810699463s
+[INFO -- 2018-09-25 08:15:25]
+event type: exit
+[INFO -- 2018-09-25 08:15:25]
+exit code: 0

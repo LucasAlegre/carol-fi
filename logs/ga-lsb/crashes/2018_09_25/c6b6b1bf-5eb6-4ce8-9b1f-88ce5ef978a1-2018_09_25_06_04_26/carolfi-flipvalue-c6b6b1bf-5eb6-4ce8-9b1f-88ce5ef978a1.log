@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 06:04:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:04:24]
+Initialization strings:
+[INFO -- 2018-09-25 06:04:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:04:24]
+initSignal:1
+[INFO -- 2018-09-25 06:04:24]
+endSignal:3.5
+[INFO -- 2018-09-25 06:04:24]
+faultModel:4
+[INFO -- 2018-09-25 06:04:25]
+Backtrace BEGIN:
+#0  0x0000555555555bfd in std::move<int&> (__t=@0x7fffffffd824: 1) at /usr/include/c++/7/bits/move.h:99
+#1  0x0000555555556386 in std::swap<int> (__a=@0x5555557821d0: 1, __b=@0x5555557831c0: 1) at /usr/include/c++/7/bits/move.h:200
+#2  0x00005555555551e7 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#3  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x20
+frame name: std::swap<int>
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 536870952
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:04:25]
+Fault Injection Successful after 1.6361300945281982s
+[INFO -- 2018-09-25 06:04:25]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:04:25]
+exit code: no exit code available

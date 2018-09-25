@@ -1,0 +1,61 @@
+[INFO -- 2018-09-25 07:00:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:00:09]
+Initialization strings:
+[INFO -- 2018-09-25 07:00:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:00:09]
+initSignal:1
+[INFO -- 2018-09-25 07:00:09]
+endSignal:3.5
+[INFO -- 2018-09-25 07:00:09]
+faultModel:3
+[EXCEPTION -- 2018-09-25 07:00:10]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-09-25 07:00:10]
+Backtrace BEGIN:
+#0  0x00005555555583bf in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555786150) at /usr/include/c++/7/bits/stl_uninitialized.h:135
+#1  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555786150) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555557155 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9f0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#3  0x000055555555617b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9f0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#4  0x00005555555554d1 in genetic_algorithm () at knapsackga.cpp:105
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+139	    struct __uninitialized_fill
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555782190
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: 0
+value address: 0x7fffffffd818
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-25 07:00:10]
+Fault Injection Successful after 1.5539355278015137s
+[INFO -- 2018-09-25 07:00:10]
+event type: exit
+[EXCEPTION -- 2018-09-25 07:00:10]
+exit code: no exit code available

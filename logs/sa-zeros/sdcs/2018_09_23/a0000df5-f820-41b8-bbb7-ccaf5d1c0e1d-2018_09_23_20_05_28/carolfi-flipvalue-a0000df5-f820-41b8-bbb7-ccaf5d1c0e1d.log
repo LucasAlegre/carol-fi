@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 20:05:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:05:24]
+Initialization strings:
+[INFO -- 2018-09-23 20:05:24]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:05:24]
+initSignal:0
+[INFO -- 2018-09-23 20:05:24]
+endSignal:2
+[INFO -- 2018-09-23 20:05:24]
+faultModel:3
+[EXCEPTION -- 2018-09-23 20:05:24]
+gdbException: Attempt to dereference a generic pointer.
+[EXCEPTION -- 2018-09-23 20:05:25]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 20:05:25]
+Backtrace BEGIN:
+#0  0x0000555555554f97 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#1  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+23	}
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+
+Backtrace END
+Memory content before bitflip:0x2c0x7c0xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd9c4
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: simulated_annealing
+symbol name: best
+symbol filename: knapsacksa.cpp
+symbol line: 41
+value: 0
+value address: 0x7fffffffd9c4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 20:05:25]
+Fault Injection Successful after 1.0639991760253906s
+[INFO -- 2018-09-23 20:05:28]
+event type: exit
+[INFO -- 2018-09-23 20:05:28]
+exit code: 0

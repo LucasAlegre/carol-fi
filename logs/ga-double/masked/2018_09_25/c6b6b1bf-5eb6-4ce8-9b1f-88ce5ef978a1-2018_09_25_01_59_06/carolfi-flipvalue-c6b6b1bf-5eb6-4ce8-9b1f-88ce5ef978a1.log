@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 01:59:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 01:59:01]
+Initialization strings:
+[INFO -- 2018-09-25 01:59:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 01:59:01]
+initSignal:1
+[INFO -- 2018-09-25 01:59:01]
+endSignal:3.5
+[INFO -- 2018-09-25 01:59:01]
+faultModel:1
+[INFO -- 2018-09-25 01:59:03]
+Backtrace BEGIN:
+#0  std::__fill_n_a<int*, unsigned long, int> (__first=0x555555785e10, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:756
+#1  0x000055555555a8e0 in std::fill_n<int*, unsigned long, int> (__first=0x555555785af0, __n=200, __value=@0x7fffffffd764: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x000055555555a01a in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555785af0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x000055555555953a in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555785af0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x00005555555584a5 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555785af0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x000055555555700d in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd870, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x0000555555555feb in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd870, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555555114 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#8  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#9  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+751	      const _Tp __tmp = __value;
+752	      for (__decltype(__n + 0) __niter = __n;
+753		   __niter > 0; --__niter, ++__first)
+754		*__first = __tmp;
+755	      return __first;
+756	    }
+757	
+758	  template<typename _Size, typename _Tp>
+759	    inline typename
+760	    __gnu_cxx::__enable_if<__is_byte<_Tp>::__value, _Tp*>::__type
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000xa30x700xe0
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd764
+address max offset: 8
+Memory content after  bitflip:0x110x000x000x000x000xa30x700xe0
+frame name: std::fill_n<int*, unsigned long, int>
+symbol name: __value
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 784
+value: @0x7fffffffd764
+value address: 0x7fffffffd764
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 01:59:03]
+Fault Injection Successful after 2.166165351867676s
+[INFO -- 2018-09-25 01:59:05]
+event type: exit
+[INFO -- 2018-09-25 01:59:05]
+exit code: 0

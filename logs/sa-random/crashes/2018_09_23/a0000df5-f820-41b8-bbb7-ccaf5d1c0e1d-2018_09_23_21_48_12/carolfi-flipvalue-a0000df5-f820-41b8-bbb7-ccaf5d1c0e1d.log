@@ -1,0 +1,62 @@
+[INFO -- 2018-09-23 21:48:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:48:09]
+Initialization strings:
+[INFO -- 2018-09-23 21:48:09]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:48:09]
+initSignal:0
+[INFO -- 2018-09-23 21:48:09]
+endSignal:2
+[INFO -- 2018-09-23 21:48:09]
+faultModel:2
+[EXCEPTION -- 2018-09-23 21:48:09]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-23 21:48:09]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-23 21:48:09]
+Backtrace BEGIN:
+#0  0x0000555555554fc0 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:29
+#1  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+33	    else
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555770fb0
+address max offset: 4
+Memory content after  bitflip:0x7f0x530x3c0x04
+frame name: cost
+symbol name: val
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: std::vector of length 224, capacity 280 = {310272, 910592, 2338304, 658432, 726528, 2026240, 1243136, 366592, 2790656, 643840, 348928, 1137408, 1831168, 2156800, 545792, 1119488, 335104, 1404672, 2216960, 2150400, 0, 0, 266496, 0, 2447616, 2426624, 144896, 217344, 2138880, 1884160, 1714688, 788992, 1551360, 1553664, 1488128, 405504, 1102592, 1007616, 1851136, 2546944, 2430464, 1393152, 1138944, 686848, 92160, 70400, 1190144, 815360, 973056, 2283008, 1346048, 1435136, 604672, 61184, 832512, 349952, 1306368, 2556672, 1726720, 465664, 2287616, 2039808, 1880320, 2320896, 1953024, 2021888, 905728, 2511360, 2462720, 412672, 1930496, 1830912, 1181440, 1357824, 1254656, 2367744, 1282304, 2128896, 906240, 2260224, 2303488, 1180416, 1453568, 2356224, 1852928, 1245952, 568064, 831232, 1790976, 425216, 2324480, 686592, 2333184, 792576, 2450944, 1808128, 1291008, 1325568, 1667840, 1505280, 798464, 532224, 1310464, 2391552, 1595648, 193024, 2100224, 1858560, 2323712, 490240, 1906688, 150528, 1671680, 699136, 580352, 2241280, 272128, 1337344, 2186240, 626944, 538880, 2254336, 1082880, 1835520, 81664, 927744, 440064, 1722368, 212480, 2443776, 65024, 1867520, 54272, 654592, 2082304, 402432, 470528, 1770240, 987136, 110592, 2534656, 387840, 92928, 881408, 1575168, 1900800, 289792, 863488, 79104, 1148672, 1960960, 1894400, 2309376, 1934592, 2208000, 1805824, 1210368, 577536, 1691904, 809984, 261376, 1146624, 2239488, 326656, 1497600, 1006080, 1318144, 368384, 2457088, 663296, 1551616, 1074688, 46336, 1428480, 359936, 145408, 86016, 412672, 245504, 1625856, 1301248, 2517760, 2391552, 2546176, 595200, 1138432, 642048, 1513728, 1597952, 2048768, 1816320, 657152, 1083136, 1347072, 12544, 90880, 1046528, 284672, 1852928, 616704...}
+value address: 0x555555759030 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 21:48:09]
+Fault Injection Successful after 0.978515625s
+[INFO -- 2018-09-23 21:48:12]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:48:12]
+exit code: no exit code available

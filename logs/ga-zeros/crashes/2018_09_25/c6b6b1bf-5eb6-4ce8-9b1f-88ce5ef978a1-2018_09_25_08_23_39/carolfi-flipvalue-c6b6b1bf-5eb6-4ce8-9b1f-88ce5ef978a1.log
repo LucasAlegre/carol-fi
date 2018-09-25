@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 08:23:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:23:36]
+Initialization strings:
+[INFO -- 2018-09-25 08:23:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:23:36]
+initSignal:1
+[INFO -- 2018-09-25 08:23:36]
+endSignal:3.5
+[INFO -- 2018-09-25 08:23:36]
+faultModel:3
+[EXCEPTION -- 2018-09-25 08:23:38]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 08:23:38]
+Backtrace BEGIN:
+#0  0x00005555555563a3 in std::swap<int> (__a=@0x5555557869bc: 1, __b=@0x555555786cec: 1) at /usr/include/c++/7/bits/move.h:201
+#1  0x00005555555551e7 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+205	  /// Swap the contents of two arrays.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: crossover
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:23:38]
+Fault Injection Successful after 2.353311061859131s
+[INFO -- 2018-09-25 08:23:38]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:23:38]
+exit code: no exit code available

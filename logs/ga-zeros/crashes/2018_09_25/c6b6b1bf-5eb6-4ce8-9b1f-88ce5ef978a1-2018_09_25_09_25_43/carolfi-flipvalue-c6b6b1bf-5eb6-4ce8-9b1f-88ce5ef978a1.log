@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 09:25:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:25:40]
+Initialization strings:
+[INFO -- 2018-09-25 09:25:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:25:40]
+initSignal:1
+[INFO -- 2018-09-25 09:25:40]
+endSignal:3.5
+[INFO -- 2018-09-25 09:25:40]
+faultModel:3
+[INFO -- 2018-09-25 09:25:42]
+Backtrace BEGIN:
+#0  0x0000555555555ea2 in std::vector<int, std::allocator<int> >::vector (this=0x555555776b00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#1  0x0000555555557e39 in chromossome::chromossome (this=0x555555776b00) at knapsackga.cpp:42
+#2  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8f0, __p=0x555555776b00, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#3  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776b00, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#4  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#5  0x00005555555554fd in genetic_algorithm () at knapsackga.cpp:107
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+333					      _M_get_Tp_allocator());
+334	      }
+335	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 09:25:42]
+Fault Injection Successful after 2.5807902812957764s
+[INFO -- 2018-09-25 09:25:42]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:25:42]
+exit code: no exit code available

@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 13:48:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:48:27]
+Initialization strings:
+[INFO -- 2018-09-23 13:48:27]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:48:27]
+initSignal:0
+[INFO -- 2018-09-23 13:48:27]
+endSignal:2
+[INFO -- 2018-09-23 13:48:27]
+faultModel:2
+[EXCEPTION -- 2018-09-23 13:48:27]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 13:48:27]
+Backtrace BEGIN:
+#0  0x0000555555556e25 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_algobase.h:422
+#1  0x0000555555556c99 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_algobase.h:456
+#2  0x00005555555569f6 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x0000555555556552 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555555dbb in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x00005555555556b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#6  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#7  0x000055555555535e in main () at knapsacksa.cpp:84
+
+417	
+418	  template<bool _IsMove, typename _II, typename _OI>
+419	    inline _OI
+420	    __copy_move_a2(_II __first, _II __last, _OI __result)
+421	    {
+422	      return _OI(std::__copy_move_a<_IsMove>(std::__niter_base(__first),
+423						     std::__niter_base(__last),
+424						     std::__niter_base(__result)));
+425	    }
+426	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759068 
+address max offset: 4
+Memory content after  bitflip:0xa20x800x340xa2
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1573617502
+value address: 0x555555759068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:48:27]
+Fault Injection Successful after 0.8904509544372559s
+[INFO -- 2018-09-23 13:48:28]
+event type: exit
+[EXCEPTION -- 2018-09-23 13:48:28]
+exit code: no exit code available

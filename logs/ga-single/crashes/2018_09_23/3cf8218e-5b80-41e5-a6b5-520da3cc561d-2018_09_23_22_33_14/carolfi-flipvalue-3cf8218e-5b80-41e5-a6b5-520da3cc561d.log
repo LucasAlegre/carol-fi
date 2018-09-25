@@ -1,0 +1,66 @@
+[INFO -- 2018-09-23 22:33:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 22:33:09]
+Initialization strings:
+[INFO -- 2018-09-23 22:33:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-23 22:33:09]
+initSignal:1
+[INFO -- 2018-09-23 22:33:09]
+endSignal:3.5
+[INFO -- 2018-09-23 22:33:09]
+faultModel:0
+[INFO -- 2018-09-23 22:33:12]
+Backtrace BEGIN:
+#0  0x000055555555838d in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd6b0, __i=@0x7fffffffd6a8: 0x55555577cc40) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555556f24 in std::vector<int, std::allocator<int> >::end (this=0x55555577fe50) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x0000555555555eb1 in std::vector<int, std::allocator<int> >::vector (this=0x555555776520, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x0000555555557e39 in chromossome::chromossome (this=0x555555776520) at knapsackga.cpp:42
+#4  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776520, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776520, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#7  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#10 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x6f0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f050 
+address max offset: 8
+Memory content after  bitflip:0xc00x670x770x550x550x550x000x00
+frame name: genetic_algorithm
+symbol name: wt
+symbol filename: knapsackga.cpp
+symbol line: 15
+value: std::vector of length 712, capacity 768 = {1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 529, 0, 1433888656, 21845, 0, 0, 0, 0, -514590, 1, 0, 0, 0, 0, 0, 0, -514590, 1, 0, 0, 0, 0, 0, 0, 1431664636, 1, 0, 0, 0, 0, 0, 0, 99999999, 0, 0, 0, 0, 0, 0, 0, 1431664636, 1, 0, 0, 0, 0, 0, 0, 99999999, 1, 0, 0, 0, 0, 0, 0, 1431664636, 0, 0, 0, 0, 0, 0, 0, 99999999, 1, 0, 0, 0, 0, 0, 0, 1431664636, 1, 0, 0, 0, 0, 0, 0, 99999999, 1...}
+value address: 0x55555575f050 <wt>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 22:33:12]
+Fault Injection Successful after 3.3483686447143555s
+[INFO -- 2018-09-23 22:33:13]
+event type: exit
+[EXCEPTION -- 2018-09-23 22:33:13]
+exit code: no exit code available

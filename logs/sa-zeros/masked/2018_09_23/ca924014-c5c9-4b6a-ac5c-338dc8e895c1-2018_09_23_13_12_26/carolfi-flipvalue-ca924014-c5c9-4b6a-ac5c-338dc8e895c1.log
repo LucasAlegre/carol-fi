@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 13:12:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:12:23]
+Initialization strings:
+[INFO -- 2018-09-23 13:12:23]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:12:23]
+initSignal:0
+[INFO -- 2018-09-23 13:12:23]
+endSignal:2
+[INFO -- 2018-09-23 13:12:23]
+faultModel:3
+[INFO -- 2018-09-23 13:12:23]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2286
+#1  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#4  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe2f7 in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2281	rtld.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: next
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffdff8 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_start
+symbol name: _dl_rtld_libname2
+symbol filename: rtld.c
+symbol line: 302
+value: {name = 0x0, next = 0x0, dont_free = 0}
+value address: 0x7ffff7ffdff0 <_dl_rtld_libname2>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: name
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dont_free
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-09-23 13:12:23]
+Fault Injection Successful after 0.8274247646331787s
+[INFO -- 2018-09-23 13:12:25]
+event type: exit
+[INFO -- 2018-09-23 13:12:25]
+exit code: 0

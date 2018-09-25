@@ -1,0 +1,58 @@
+[INFO -- 2018-09-21 21:37:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-21 21:37:13]
+Initialization strings:
+[INFO -- 2018-09-21 21:37:13]
+(1) file /tmp/knapsack/dp
+[INFO -- 2018-09-21 21:37:13]
+initSignal:1
+[INFO -- 2018-09-21 21:37:13]
+endSignal:3
+[INFO -- 2018-09-21 21:37:13]
+faultModel:2
+[EXCEPTION -- 2018-09-21 21:37:15]
+gdbException: Cannot access memory at address 0x63fadf10c53b3cf5
+[INFO -- 2018-09-21 21:37:15]
+Backtrace BEGIN:
+#0  0x00005555555555c7 in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[] (this=0x7fffffffd980, __n=64) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x000055555555500d in knapSack (W=588593, n=200, val=std::vector of length -1801055498014886793, capacity -1801055498014886737 = {...}, wt=std::vector of length 200, capacity 256 = {...}) at knapsackdp.cpp:23
+#2  0x0000555555555375 in main () at knapsackdp.cpp:54
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xd00x130x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd980
+address max offset: 8
+Memory content after  bitflip:0x990x090x970x0f0x280x610x620x55
+frame name: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[]
+symbol name: this
+symbol filename: knapsackdp.cpp
+symbol line: 0
+value: 0x7fffffffd980
+value address: 0x7fffffffd938
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-21 21:37:15]
+Fault Injection Successful after 2.3438820838928223s
+[INFO -- 2018-09-21 21:37:15]
+event type: exit
+[EXCEPTION -- 2018-09-21 21:37:15]
+exit code: no exit code available

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 03:54:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:54:37]
+Initialization strings:
+[INFO -- 2018-09-25 03:54:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:54:37]
+initSignal:1
+[INFO -- 2018-09-25 03:54:37]
+endSignal:3.5
+[INFO -- 2018-09-25 03:54:37]
+faultModel:3
+[INFO -- 2018-09-25 03:54:39]
+Backtrace BEGIN:
+#0  0x0000555555555d73 in std::vector<chromossome, std::allocator<chromossome> >::begin (this=0x7fffffffd870) at /usr/include/c++/7/bits/stl_vector.h:564
+#1  0x0000555555556ae2 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:405
+#2  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+559	       *  element in the %vector.  Iteration is done in ordinary
+560	       *  element order.
+561	       */
+562	      iterator
+563	      begin() _GLIBCXX_NOEXCEPT
+564	      { return iterator(this->_M_impl._M_start); }
+565	
+566	      /**
+567	       *  Returns a read-only (constant) iterator that points to the
+568	       *  first element in the %vector.  Iteration is done in ordinary
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x200xd80xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd800
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_start
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 406
+value: 0x7fffffffd820
+value address: 0x7fffffffd800
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 03:54:39]
+Fault Injection Successful after 2.872058629989624s
+[INFO -- 2018-09-25 03:54:41]
+event type: exit
+[INFO -- 2018-09-25 03:54:41]
+exit code: 0

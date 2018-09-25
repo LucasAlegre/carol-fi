@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 13:35:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:35:54]
+Initialization strings:
+[INFO -- 2018-09-23 13:35:54]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:35:54]
+initSignal:0
+[INFO -- 2018-09-23 13:35:54]
+endSignal:2
+[INFO -- 2018-09-23 13:35:54]
+faultModel:2
+[EXCEPTION -- 2018-09-23 13:35:55]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 13:35:55]
+Backtrace BEGIN:
+#0  0x0000555555555fac in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=1, __last=0, __result=1) at /usr/include/c++/7/bits/stl_algobase.h:455
+#1  0x0000555555555987 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#2  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+450	      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+451		    typename iterator_traits<_II>::value_type>)
+452	      __glibcxx_requires_valid_range(__first, __last);
+453	
+454	      return (std::__copy_move_a2<__is_move_iterator<_II>::__value>
+455		      (std::__miter_base(__first), std::__miter_base(__last),
+456		       __result));
+457	    }
+458	
+459	#if __cplusplus >= 201103L
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x7e0xe20x2e0xac
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1406213506
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:35:55]
+Fault Injection Successful after 1.284294605255127s
+[INFO -- 2018-09-23 13:35:57]
+event type: exit
+[INFO -- 2018-09-23 13:35:57]
+exit code: 0

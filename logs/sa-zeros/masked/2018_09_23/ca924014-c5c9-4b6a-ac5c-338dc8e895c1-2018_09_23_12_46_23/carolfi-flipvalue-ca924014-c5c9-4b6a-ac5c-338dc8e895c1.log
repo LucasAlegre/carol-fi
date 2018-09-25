@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 12:46:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:46:20]
+Initialization strings:
+[INFO -- 2018-09-23 12:46:20]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:46:20]
+initSignal:0
+[INFO -- 2018-09-23 12:46:20]
+endSignal:2
+[INFO -- 2018-09-23 12:46:20]
+faultModel:3
+[INFO -- 2018-09-23 12:46:21]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x7ffff770738f <__GI___expf+15>, __x=std::vector of length -11728124027444, capacity -34121360 = {...}) at /usr/include/c++/7/bits/vector.tcc:179
+#1  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+174	      return __first;
+175	    }
+176	
+177	  template<typename _Tp, typename _Alloc>
+178	    vector<_Tp, _Alloc>&
+179	    vector<_Tp, _Alloc>::
+180	    operator=(const vector<_Tp, _Alloc>& __x)
+181	    {
+182	      if (&__x != this)
+183		{
+
+Backtrace END
+Memory content before bitflip:0x0f0x180x020x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffda04
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 46
+value: 0
+value address: 0x7fffffffda04
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 12:46:21]
+Fault Injection Successful after 1.5195584297180176s
+[INFO -- 2018-09-23 12:46:23]
+event type: exit
+[INFO -- 2018-09-23 12:46:23]
+exit code: 0

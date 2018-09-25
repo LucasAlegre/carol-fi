@@ -1,0 +1,65 @@
+[INFO -- 2018-09-25 04:03:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:03:55]
+Initialization strings:
+[INFO -- 2018-09-25 04:03:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:03:55]
+initSignal:1
+[INFO -- 2018-09-25 04:03:55]
+endSignal:3.5
+[INFO -- 2018-09-25 04:03:55]
+faultModel:4
+[EXCEPTION -- 2018-09-25 04:03:56]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 04:03:56]
+Backtrace BEGIN:
+#0  std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=0) at /usr/include/c++/7/bits/cpp_type_traits.h:409
+#1  0x0000555555559fb2 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786150) at /usr/include/c++/7/bits/stl_algobase.h:455
+#2  0x000055555555948e in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786150) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786150) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555786150) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x0000555555555ed1 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#6  0x0000555555557e39 in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#7  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#8  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#9  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#10 0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#12 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#13 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+404	  // Fallback implementation of the function in bits/stl_iterator.h used to
+405	  // remove the move_iterator wrapper.
+406	  template<typename _Iterator>
+407	    inline _Iterator
+408	    __miter_base(_Iterator __it)
+409	    { return __it; }
+410	
+411	_GLIBCXX_END_NAMESPACE_VERSION
+412	} // namespace
+413	} // extern "C++"
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500x610x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd638
+address max offset: 8
+Memory content after  bitflip:0x500x610x780x550x550x550x000x08
+frame name: std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 100
+value: 0x555555786150
+value address: 0x7fffffffd638
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:03:56]
+Fault Injection Successful after 1.5905838012695312s
+[INFO -- 2018-09-25 04:03:59]
+event type: exit
+[INFO -- 2018-09-25 04:03:59]
+exit code: 0

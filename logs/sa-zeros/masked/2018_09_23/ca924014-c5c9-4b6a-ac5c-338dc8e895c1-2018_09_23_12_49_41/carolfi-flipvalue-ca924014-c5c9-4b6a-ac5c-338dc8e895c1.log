@@ -1,0 +1,172 @@
+[INFO -- 2018-09-23 12:49:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 12:49:38]
+Initialization strings:
+[INFO -- 2018-09-23 12:49:38]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 12:49:38]
+initSignal:0
+[INFO -- 2018-09-23 12:49:38]
+endSignal:2
+[INFO -- 2018-09-23 12:49:38]
+faultModel:3
+[INFO -- 2018-09-23 12:49:39]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2286
+#1  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#4  0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe2f7 in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2281	rtld.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: _dl_trace_prelink
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffca10 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: dl_main
+symbol name: _rtld_global_ro
+symbol filename: rtld.c
+symbol line: 259
+value: {_dl_debug_mask = 0, _dl_osversion = 265488, _dl_platform = 0x0, _dl_platformlen = 0, _dl_pagesize = 4096, _dl_inhibit_cache = 0, _dl_initial_searchlist = {r_list = 0x7ffff7fc74c8, r_nlist = 6}, _dl_clktck = 100, _dl_verbose = 0, _dl_debug_fd = 2, _dl_lazy = 1, _dl_bind_not = 0, _dl_dynamic_weak = 0, _dl_fpu_control = 895, _dl_correct_cache_id = 771, _dl_hwcap = 2, _dl_auxv = 0x7fffffffe190, _dl_x86_cpu_features = {kind = arch_kind_intel, max_cpuid = 22, cpuid = {{eax = 591593, ebx = 133120, ecx = 3740934659, edx = 395049983}, {eax = 0, ebx = 8659969, ecx = 0, edx = 0}, {eax = 0, ebx = 0, ecx = 0, edx = 0}}, family = 6, model = 158, feature = {6602865}, data_cache_size = 0, shared_cache_size = 0, non_temporal_threshold = 0}, _dl_x86_hwcap_flags = {"sse2\000\000\000\000", "x86_64\000\000", "avx512_1"}, _dl_x86_platforms = {"i586\000\000\000\000", "i686\000\000\000\000", "haswell\000", "xeon_phi"}, _dl_inhibit_rpath = 0x0, _dl_origin_path = 0x0, _dl_use_load_bias = 0, _dl_profile = 0x0, _dl_profile_output = 0x7ffff7df511c "/var/tmp", _dl_trace_prelink = 0x0, _dl_trace_prelink_map = 0x0, _dl_init_all_dirs = 0x7ffff7ffec20, _dl_sysinfo_dso = 0x7ffff7ffa000, _dl_sysinfo_map = 0x7ffff7ffe6f0, _dl_hwcap2 = 0, _dl_debug_printf = 0x7ffff7de6bb0 <_dl_debug_printf>, _dl_mcount = 0x7ffff7de80d0 <__GI__dl_mcount>, _dl_lookup_symbol_x = 0x7ffff7ddfd90 <_dl_lookup_symbol_x>, _dl_check_caller = 0x7ffff7de9550 <_dl_check_caller>, _dl_open = 0x7ffff7dea080 <_dl_open>, _dl_close = 0x7ffff7dec520 <_dl_close>, _dl_tls_get_addr_soft = 0x7ffff7de90e0 <_dl_tls_get_addr_soft>, _dl_discover_osversion = 0x7ffff7df0690 <_dl_discover_osversion>, _dl_audit = 0x0, _dl_naudit = 0}
+value address: 0x7ffff7ffc8e0 <_rtld_global_ro>
+Type: The type is a structure.
+Type sizeof: 432
+Field name: _dl_debug_mask
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_osversion
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_platform
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_platformlen
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_pagesize
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_inhibit_cache
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_initial_searchlist
+Field Type: The type is a structure.
+Field Type sizeof: 16
+Field name: _dl_clktck
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_verbose
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_debug_fd
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_lazy
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_bind_not
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_dynamic_weak
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_fpu_control
+Field Type: The type is an integer type.
+Field Type sizeof: 2
+Field name: _dl_correct_cache_id
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: _dl_hwcap
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_auxv
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_x86_cpu_features
+Field Type: The type is a structure.
+Field Type sizeof: 96
+Field name: _dl_x86_hwcap_flags
+Field Type: The type is an array.
+Field Type sizeof: 27
+Field name: _dl_x86_platforms
+Field Type: The type is an array.
+Field Type sizeof: 36
+Field name: _dl_inhibit_rpath
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_origin_path
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_use_load_bias
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_profile
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_profile_output
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_trace_prelink
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_trace_prelink_map
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_init_all_dirs
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_sysinfo_dso
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_sysinfo_map
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_hwcap2
+Field Type: The type is an integer type.
+Field Type sizeof: 8
+Field name: _dl_debug_printf
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_mcount
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_lookup_symbol_x
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_check_caller
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_open
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_close
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_tls_get_addr_soft
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_discover_osversion
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_audit
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: _dl_naudit
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-09-23 12:49:39]
+Fault Injection Successful after 1.1893723011016846s
+[INFO -- 2018-09-23 12:49:41]
+event type: exit
+[INFO -- 2018-09-23 12:49:41]
+exit code: 0

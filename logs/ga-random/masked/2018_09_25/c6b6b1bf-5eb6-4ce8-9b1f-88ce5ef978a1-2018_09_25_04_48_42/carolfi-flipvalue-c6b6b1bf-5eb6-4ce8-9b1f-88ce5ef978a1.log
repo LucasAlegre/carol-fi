@@ -1,0 +1,69 @@
+[INFO -- 2018-09-25 04:48:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:48:37]
+Initialization strings:
+[INFO -- 2018-09-25 04:48:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:48:37]
+initSignal:1
+[INFO -- 2018-09-25 04:48:37]
+endSignal:3.5
+[INFO -- 2018-09-25 04:48:37]
+faultModel:2
+[INFO -- 2018-09-25 04:48:38]
+Backtrace BEGIN:
+#0  0x00005555555594f5 in std::swap<int*> (__a=@0x5555557764e8: 0x555555785480, __b=@0x555555776408: 0x555555785480) at /usr/include/c++/7/bits/move.h:200
+#1  0x0000555555558460 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#2  0x0000555555556fb7 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:146
+#3  0x0000555555555f6c in std::vector<int, std::allocator<int> >::vector (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:345
+#4  0x00005555555591ff in chromossome::chromossome (this=0x5555557764e0) at knapsackga.cpp:42
+#5  0x000055555555aa9a in std::_Construct<chromossome, chromossome> (__p=0x5555557764e0, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#6  0x000055555555a3de in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#7  0x0000555555559a5f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#8  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#9  0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776400, __last=0x555555776440, __result=0x5555557764e0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#10 0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#11 0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#12 0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#13 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#14 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x900x090x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555785480
+address max offset: 4
+Memory content after  bitflip:0xd90x200x770x73
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 305
+value: 0x555555776400
+value address: 0x7fffffffd798
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 04:48:38]
+Fault Injection Successful after 1.8512709140777588s
+[INFO -- 2018-09-25 04:48:41]
+event type: exit
+[INFO -- 2018-09-25 04:48:41]
+exit code: 0
