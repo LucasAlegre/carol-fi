@@ -1,0 +1,54 @@
+[INFO -- 2018-10-18 19:59:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:59:50]
+Initialization strings:
+[INFO -- 2018-10-18 19:59:50]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-18 19:59:50]
+initSignal:1
+[INFO -- 2018-10-18 19:59:50]
+endSignal:3
+[INFO -- 2018-10-18 19:59:50]
+faultModel:4
+[EXCEPTION -- 2018-10-18 19:59:52]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-10-18 19:59:52]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-10-18 19:59:52]
+Backtrace BEGIN:
+#0  0x0000000000400f08 in knapSack () at knapsackmf.cpp:34
+#1  0x0000000000401240 in main () at knapsackmf.cpp:75
+
+29	    for (int i = 0; i <= n; i++) {
+30	        for (int w = 0; w <= W; w++) {
+31	            if (i == 0 || w == 0) {
+32	                V[i][w] = 0;
+33	            } else {
+34	                V[i][w] = -1;
+35	            }
+36	        }
+37	    }
+38	
+
+Backtrace END
+Memory content before bitflip:0x990xf50x020x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7cc
+address max offset: 4
+Memory content after  bitflip:0x990xf50x020x02
+frame name: knapSack
+symbol name: w
+symbol filename: knapsackmf.cpp
+symbol line: 30
+value: 33748377
+value address: 0x7fffffffd7cc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-18 19:59:52]
+Fault Injection Successful after 2.4210758209228516s
+[INFO -- 2018-10-18 20:00:03]
+event type: exit
+[INFO -- 2018-10-18 20:00:03]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-10-18 20:02:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 20:02:44]
+Initialization strings:
+[INFO -- 2018-10-18 20:02:44]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-18 20:02:44]
+initSignal:1
+[INFO -- 2018-10-18 20:02:44]
+endSignal:3
+[INFO -- 2018-10-18 20:02:44]
+faultModel:0
+[INFO -- 2018-10-18 20:02:45]
+Backtrace BEGIN:
+#0  0x0000000000402ca3 in std::__fill_n_a<int*, unsigned long, int> (__first=0x7fffec9e3000, __n=588594, __value=@0x7fffffffd6e4: 0) at /usr/include/c++/5/bits/stl_algobase.h:770
+#1  0x0000000000402c02 in std::fill_n<int*, unsigned long, int> (__first=0x7fffec8f7010, __n=588594, __value=@0x7fffffffd6e4: 0) at /usr/include/c++/5/bits/stl_algobase.h:805
+#2  0x0000000000402a96 in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x7fffec8f7010, __n=588594) at /usr/include/c++/5/bits/stl_uninitialized.h:540
+#3  0x0000000000402765 in std::__uninitialized_default_n<int*, unsigned long> (__first=0x7fffec8f7010, __n=588594) at /usr/include/c++/5/bits/stl_uninitialized.h:575
+#4  0x00000000004021ea in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x7fffec8f7010, __n=588594) at /usr/include/c++/5/bits/stl_uninitialized.h:637
+#5  0x0000000000401af5 in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd7d0, __n=588594) at /usr/include/c++/5/bits/stl_vector.h:1311
+#6  0x00000000004015dd in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd7d0, __n=588594, __a=...) at /usr/include/c++/5/bits/stl_vector.h:279
+#7  0x0000000000400e4f in knapSack () at knapsackmf.cpp:27
+#8  0x0000000000401240 in main () at knapsackmf.cpp:75
+
+765	    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value)
+766	    {
+767	      const _Tp __tmp = __value;
+768	      for (__decltype(__n + 0) __niter = __n;
+769		   __niter > 0; --__niter, ++__first)
+770		*__first = __tmp;
+771	      return __first;
+772	    }
+773	
+774	  template<typename _Size, typename _Tp>
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffec8f7010
+address max offset: 4
+Memory content after  bitflip:0x400x000x000x00
+frame name: std::__uninitialized_default_n<int*, unsigned long>
+symbol name: __first
+symbol filename: /usr/include/c++/5/bits/stl_uninitialized.h
+symbol line: 566
+value: 0x7fffec8f7010
+value address: 0x7fffffffd708
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 20:02:45]
+Fault Injection Successful after 1.3534259796142578s

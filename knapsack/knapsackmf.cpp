@@ -36,7 +36,7 @@ int knapSack() {
         }
     }
 
-    //V[n][W] = knapSackAuxRec(n, W);
+    V[n][W] = knapSackAuxRec(n, W);
 
     return V[n][W];
 }
@@ -60,7 +60,7 @@ int knapSackAuxRec(int i, int j) { // i = n, j = w
 
 int main() {
     ifstream file("/tmp/knapsack/instance.txt");
-    ofstream outfile("/tmp/knapsack/outputdp");
+    ofstream outfile("/tmp/knapsack/outputmf");
 
     file >> n;
     file >> W;

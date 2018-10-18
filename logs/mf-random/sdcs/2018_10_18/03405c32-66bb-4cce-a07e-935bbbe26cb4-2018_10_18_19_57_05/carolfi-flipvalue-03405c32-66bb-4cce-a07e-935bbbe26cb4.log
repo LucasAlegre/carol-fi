@@ -1,0 +1,60 @@
+[INFO -- 2018-10-18 19:56:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:56:51]
+Initialization strings:
+[INFO -- 2018-10-18 19:56:51]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-18 19:56:51]
+initSignal:1
+[INFO -- 2018-10-18 19:56:51]
+endSignal:3
+[INFO -- 2018-10-18 19:56:51]
+faultModel:2
+[INFO -- 2018-10-18 19:56:52]
+Backtrace BEGIN:
+#0  0x000000000040154f in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[] (this=0x605140 <V>, __n=48) at /usr/include/c++/5/bits/stl_vector.h:780
+#1  0x0000000000400f08 in knapSack () at knapsackmf.cpp:34
+#2  0x0000000000401240 in main () at knapsackmf.cpp:75
+
+775	       *  out_of_range lookups are not defined. (For checked lookups
+776	       *  see at().)
+777	       */
+778	      reference
+779	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+780	      { return *(this->_M_impl._M_start + __n); }
+781	
+782	      /**
+783	       *  @brief  Subscript access to the data contained in the %vector.
+784	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x61e250
+address max offset: 8
+Memory content after  bitflip:0xb20xe20x090xe50x350x900xf60x6d
+frame name: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[]
+symbol name: this
+symbol filename: knapsackmf.cpp
+symbol line: 0
+value: 0x605140 <V>
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 19:56:52]
+Fault Injection Successful after 1.8794817924499512s
+[INFO -- 2018-10-18 19:57:05]
+event type: exit
+[INFO -- 2018-10-18 19:57:05]
+exit code: 0

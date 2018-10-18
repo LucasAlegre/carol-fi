@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 20:42:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:42:57]
+Initialization strings:
+[INFO -- 2018-09-25 20:42:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:42:57]
+initSignal:1
+[INFO -- 2018-09-25 20:42:57]
+endSignal:3.5
+[INFO -- 2018-09-25 20:42:57]
+faultModel:1
+[INFO -- 2018-09-25 20:42:59]
+Backtrace BEGIN:
+#0  std::_Iter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, false>::_S_base (__it=0) at /usr/include/c++/5/bits/stl_iterator_base_types.h:216
+#1  0x00000000004042bb in std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=0) at /usr/include/c++/5/bits/stl_algobase.h:294
+#2  0x0000000000405cad in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=1, __result=0x62df40) at /usr/include/c++/5/bits/stl_algobase.h:471
+#3  0x000000000040510c in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=1, __result=0x62df40) at /usr/include/c++/5/bits/stl_uninitialized.h:93
+#4  0x00000000004040f4 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=1, __result=0x62df40) at /usr/include/c++/5/bits/stl_uninitialized.h:126
+#5  0x0000000000402de5 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=1, __result=0x62df40) at /usr/include/c++/5/bits/stl_uninitialized.h:281
+#6  0x0000000000402fd7 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd7a0, __n=200, __first=0, __last=1) at /usr/include/c++/5/bits/stl_vector.h:1227
+#7  0x00000000004020b6 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd7a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/5/bits/vector.tcc:195
+#8  0x00000000004010f9 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#9  0x0000000000401409 in genetic_algorithm () at knapsackga.cpp:104
+#10 0x0000000000401844 in main () at knapsackga.cpp:137
+
+211	  template<typename _Iterator, bool _HasBase>
+212	    struct _Iter_base
+213	    {
+214	      typedef _Iterator iterator_type;
+215	      static iterator_type _S_base(_Iterator __it)
+216	      { return __it; }
+217	    };
+218	
+219	  template<typename _Iterator>
+220	    struct _Iter_base<_Iterator, true>
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x60b138 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x300x00
+frame name: std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 3145928
+value address: 0x60b138 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 20:42:59]
+Fault Injection Successful after 2.1475207805633545s
+[INFO -- 2018-09-25 20:42:59]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:42:59]
+exit code: no exit code available

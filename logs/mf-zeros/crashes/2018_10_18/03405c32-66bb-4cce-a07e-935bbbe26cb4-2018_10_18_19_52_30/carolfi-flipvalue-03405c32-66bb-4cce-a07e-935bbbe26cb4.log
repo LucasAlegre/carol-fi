@@ -1,0 +1,58 @@
+[INFO -- 2018-10-18 19:52:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-18 19:52:27]
+Initialization strings:
+[INFO -- 2018-10-18 19:52:27]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-18 19:52:27]
+initSignal:1
+[INFO -- 2018-10-18 19:52:27]
+endSignal:3
+[INFO -- 2018-10-18 19:52:27]
+faultModel:3
+[EXCEPTION -- 2018-10-18 19:52:29]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-10-18 19:52:29]
+Backtrace BEGIN:
+#0  0x00000000004016c4 in std::vector<int, std::allocator<int> >::operator[] (this=0x61d588, __n=65) at /usr/include/c++/5/bits/stl_vector.h:779
+#1  0x0000000000400f13 in knapSack () at knapsackmf.cpp:34
+#2  0x0000000000401240 in main () at knapsackmf.cpp:75
+
+774	       *  Note that data access with this operator is unchecked and
+775	       *  out_of_range lookups are not defined. (For checked lookups
+776	       *  see at().)
+777	       */
+778	      reference
+779	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+780	      { return *(this->_M_impl._M_start + __n); }
+781	
+782	      /**
+783	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffedf6ccd8
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackmf.cpp
+symbol line: 0
+value: 0x61d588
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-10-18 19:52:29]
+Fault Injection Successful after 2.4522969722747803s
+[INFO -- 2018-10-18 19:52:30]
+event type: exit
+[EXCEPTION -- 2018-10-18 19:52:30]
+exit code: no exit code available

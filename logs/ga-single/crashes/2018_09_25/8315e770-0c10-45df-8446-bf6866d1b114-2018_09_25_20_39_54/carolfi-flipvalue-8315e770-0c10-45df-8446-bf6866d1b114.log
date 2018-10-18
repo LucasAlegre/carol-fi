@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 20:39:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:39:51]
+Initialization strings:
+[INFO -- 2018-09-25 20:39:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:39:51]
+initSignal:1
+[INFO -- 2018-09-25 20:39:51]
+endSignal:3.5
+[INFO -- 2018-09-25 20:39:51]
+faultModel:0
+[INFO -- 2018-09-25 20:39:52]
+Backtrace BEGIN:
+#0  0x0000000000401be1 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd6a0, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:425
+#1  0x0000000000401004 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#2  0x0000000000401385 in genetic_algorithm () at knapsackga.cpp:102
+#3  0x0000000000401844 in main () at knapsackga.cpp:137
+
+420	       *  not touched in any way.  Managing the pointer is the user's
+421	       *  responsibility.
+422	       */
+423	      ~vector() _GLIBCXX_NOEXCEPT
+424	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+425			      _M_get_Tp_allocator()); }
+426	
+427	      /**
+428	       *  @brief  %Vector assignment operator.
+429	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd790
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x400x00
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 0, capacity 4503599627370496
+value address: 0x7fffffffd780
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 20:39:52]
+Fault Injection Successful after 1.7706794738769531s
+[INFO -- 2018-09-25 20:39:53]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:39:53]
+exit code: no exit code available

@@ -1,0 +1,64 @@
+[INFO -- 2018-09-25 20:42:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:42:37]
+Initialization strings:
+[INFO -- 2018-09-25 20:42:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:42:37]
+initSignal:1
+[INFO -- 2018-09-25 20:42:37]
+endSignal:3.5
+[INFO -- 2018-09-25 20:42:37]
+faultModel:3
+[INFO -- 2018-09-25 20:42:39]
+Backtrace BEGIN:
+#0  0x0000000000401ede in std::allocator<int>::~allocator (this=0x6279f0, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/allocator.h:121
+#1  0x000000000040275e in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x6279f0, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:79
+#2  0x00000000004027cb in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x6279f0, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:161
+#3  0x0000000000401b3f in std::vector<int, std::allocator<int> >::~vector (this=0x6279f0, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:425
+#4  0x0000000000401ab4 in chromossome::~chromossome (this=0x6279f0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#5  0x0000000000405687 in std::_Destroy<chromossome> (__pointer=0x6279f0) at /usr/include/c++/5/bits/stl_construct.h:93
+#6  0x0000000000404b87 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x6279f0, __last=0x627a30) at /usr/include/c++/5/bits/stl_construct.h:103
+#7  0x0000000000403b58 in std::_Destroy<chromossome*> (__first=0x6279f0, __last=0x627a30) at /usr/include/c++/5/bits/stl_construct.h:126
+#8  0x0000000000402953 in std::_Destroy<chromossome*, chromossome> (__first=0x6279f0, __last=0x627a30) at /usr/include/c++/5/bits/stl_construct.h:151
+#9  0x0000000000402a88 in std::vector<chromossome, std::allocator<chromossome> >::_M_emplace_back_aux<chromossome const&> (this=0x7fffffffd6a0) at /usr/include/c++/5/bits/vector.tcc:436
+#10 0x0000000000401c6b in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd6a0, __x=...) at /usr/include/c++/5/bits/stl_vector.h:923
+#11 0x0000000000400fa8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#12 0x0000000000401385 in genetic_algorithm () at knapsackga.cpp:102
+#13 0x0000000000401844 in main () at knapsackga.cpp:137
+
+116	      : __allocator_base<_Tp>(__a) { }
+117	
+118	      template<typename _Tp1>
+119	        allocator(const allocator<_Tp1>&) throw() { }
+120	
+121	      ~allocator() throw() { }
+122	
+123	      // Inherit everything else.
+124	    };
+125	
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: Zero bit-flip
+base address to flip value: 0x62c078
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/5/bits/stl_vector.h
+symbol line: 913
+value: @0x62c060
+value address: 0x62c060
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 20:42:39]
+Fault Injection Successful after 2.5456197261810303s
+[INFO -- 2018-09-25 20:42:45]
+event type: exit
+[INFO -- 2018-09-25 20:42:45]
+exit code: 0

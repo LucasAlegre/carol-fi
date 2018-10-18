@@ -1,0 +1,55 @@
+[INFO -- 2018-09-25 20:42:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:42:03]
+Initialization strings:
+[INFO -- 2018-09-25 20:42:03]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:42:03]
+initSignal:1
+[INFO -- 2018-09-25 20:42:03]
+endSignal:3.5
+[INFO -- 2018-09-25 20:42:03]
+faultModel:2
+[EXCEPTION -- 2018-09-25 20:42:04]
+gdbException: Cannot access memory at address 0xc84277a52e5bb162
+[EXCEPTION -- 2018-09-25 20:42:04]
+gdbException: Cannot access memory at address 0x0
+[EXCEPTION -- 2018-09-25 20:42:06]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 20:42:06]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 20:42:06]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x631f00) at malloc.c:2934
+#1  0x00000000004053c4 in __gnu_cxx::new_allocator<chromossome>::deallocate (this=0x7fffffffd720, __p=0x631f00) at /usr/include/c++/5/ext/new_allocator.h:110
+#2  0x000000000040475a in std::allocator_traits<std::allocator<chromossome> >::deallocate (__a=..., __p=0x631f00, __n=32) at /usr/include/c++/5/bits/alloc_traits.h:517
+#3  0x0000000000403374 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd720, __p=0x631f00, __n=32) at /usr/include/c++/5/bits/stl_vector.h:178
+#4  0x0000000000402abd in std::vector<chromossome, std::allocator<chromossome> >::_M_emplace_back_aux<chromossome const&> (this=0x7fffffffd720) at /usr/include/c++/5/bits/vector.tcc:438
+#5  0x0000000000401c6b in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd720, __x=...) at /usr/include/c++/5/bits/stl_vector.h:923
+#6  0x0000000000401463 in genetic_algorithm () at knapsackga.cpp:106
+#7  0x0000000000401844 in main () at knapsackga.cpp:137
+
+2929	in malloc.c
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x60b0e8 
+address max offset: 4
+Memory content after  bitflip:0x5a0xca0xc00x59
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1505806938
+value address: 0x60b0e8 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 20:42:06]
+Fault Injection Successful after 3.1527469158172607s
+[INFO -- 2018-09-25 20:42:06]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:42:06]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 20:43:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:43:24]
+Initialization strings:
+[INFO -- 2018-09-25 20:43:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:43:24]
+initSignal:1
+[INFO -- 2018-09-25 20:43:24]
+endSignal:3.5
+[INFO -- 2018-09-25 20:43:24]
+faultModel:1
+[EXCEPTION -- 2018-09-25 20:43:25]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 20:43:25]
+Backtrace BEGIN:
+#0  std::__addressof<chromossome> (__r=...) at /usr/include/c++/5/bits/move.h:51
+#1  0x0000000000406117 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x631f00) at /usr/include/c++/5/bits/stl_uninitialized.h:75
+#2  0x000000000040572f in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x631f00) at /usr/include/c++/5/bits/stl_uninitialized.h:126
+#3  0x0000000000404c80 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x631f00) at /usr/include/c++/5/bits/stl_uninitialized.h:281
+#4  0x0000000000403d70 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x6224b0, __last=0x6226b0, __result=0x631f00, __alloc=...) at /usr/include/c++/5/bits/stl_uninitialized.h:304
+#5  0x0000000000402a56 in std::vector<chromossome, std::allocator<chromossome> >::_M_emplace_back_aux<chromossome const&> (this=0x7fffffffd720) at /usr/include/c++/5/bits/vector.tcc:420
+#6  0x0000000000401c6b in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd720, __x=...) at /usr/include/c++/5/bits/stl_vector.h:923
+#7  0x0000000000401463 in genetic_algorithm () at knapsackga.cpp:106
+#8  0x0000000000401844 in main () at knapsackga.cpp:137
+
+46	    inline _Tp*
+47	    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+48	    {
+49	      return reinterpret_cast<_Tp*>
+50		(&const_cast<char&>(reinterpret_cast<const volatile char&>(__r)));
+51	    }
+52	
+53	_GLIBCXX_END_NAMESPACE_VERSION
+54	} // namespace
+55	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x60b138 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x210x00
+frame name: std::__addressof<chromossome>
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 2162888
+value address: 0x60b138 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 20:43:25]
+Fault Injection Successful after 1.6602206230163574s
+[INFO -- 2018-09-25 20:43:25]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:43:25]
+exit code: no exit code available

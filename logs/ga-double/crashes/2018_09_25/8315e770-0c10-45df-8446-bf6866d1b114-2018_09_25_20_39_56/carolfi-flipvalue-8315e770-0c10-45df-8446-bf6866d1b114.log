@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 20:39:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:39:54]
+Initialization strings:
+[INFO -- 2018-09-25 20:39:54]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:39:54]
+initSignal:1
+[INFO -- 2018-09-25 20:39:54]
+endSignal:3.5
+[INFO -- 2018-09-25 20:39:54]
+faultModel:1
+[INFO -- 2018-09-25 20:39:55]
+Backtrace BEGIN:
+#0  0x000000000040511a in std::move<int*&> (__t=@0x7fffffffd768: 0x0) at /usr/include/c++/5/bits/move.h:102
+#1  0x0000000000405147 in std::swap<int*> (__a=@0x7fffffffd768: 0x0, __b=@0x7fffffffd658: 0x0) at /usr/include/c++/5/bits/move.h:185
+#2  0x0000000000404188 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd760, __x=...) at /usr/include/c++/5/bits/stl_vector.h:104
+#3  0x0000000000403299 in std::vector<int, std::allocator<int> >::_M_move_assign(std::vector<int, std::allocator<int> >&&, std::integral_constant<bool, true>) (this=0x7fffffffd760, __x=<unknown type in /tmp/knapsack/ga, CU 0x0, DIE 0x9aca>) at /usr/include/c++/5/bits/stl_vector.h:1457
+#4  0x000000000040238b in std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> >&&) (this=0x7fffffffd760, __x=<unknown type in /tmp/knapsack/ga, CU 0x0, DIE 0x8c80>) at /usr/include/c++/5/bits/stl_vector.h:453
+#5  0x00000000004013d9 in genetic_algorithm () at knapsackga.cpp:103
+#6  0x0000000000401844 in main () at knapsackga.cpp:137
+
+97	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+98	  */
+99	  template<typename _Tp>
+100	    constexpr typename std::remove_reference<_Tp>::type&&
+101	    move(_Tp&& __t) noexcept
+102	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+103	
+104	
+105	  template<typename _Tp>
+106	    struct __move_if_noexcept_cond
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x600xd70xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd618
+address max offset: 8
+Memory content after  bitflip:0x600xd70xff0xff0xff0x2f0x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd760
+value address: 0x7fffffffd618
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 20:39:55]
+Fault Injection Successful after 1.6005048751831055s
+[INFO -- 2018-09-25 20:39:55]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:39:55]
+exit code: no exit code available
