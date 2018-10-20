@@ -71,9 +71,13 @@ int main() {
         values.push_back(x);
         weights.push_back(y);
     }
+	
+	int result = knapSack();
 
-    outfile << knapSack();
+    outfile << result;
     outfile.close();
+	
+	std::cout << "Result: " << result << "\n";
 
     return 0;
 }

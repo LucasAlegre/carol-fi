@@ -1,0 +1,148 @@
+[INFO -- 2018-10-19 03:27:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 03:27:26]
+Initialization strings:
+[INFO -- 2018-10-19 03:27:26]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-19 03:27:26]
+initSignal:1
+[INFO -- 2018-10-19 03:27:26]
+endSignal:3
+[INFO -- 2018-10-19 03:27:26]
+faultModel:2
+[INFO -- 2018-10-19 03:27:27]
+Backtrace BEGIN:
+#0  0x0000555555555899 in std::vector<int, std::allocator<int> >::operator[] (this=0x555555771d90, __n=99807) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x0000555555555251 in knapSackAuxRec (i=104, j=99807) at knapsackmf.cpp:55
+#2  0x0000555555555211 in knapSackAuxRec (i=105, j=99807) at knapsackmf.cpp:51
+#3  0x0000555555555211 in knapSackAuxRec (i=106, j=99807) at knapsackmf.cpp:51
+#4  0x0000555555555211 in knapSackAuxRec (i=107, j=99807) at knapsackmf.cpp:51
+#5  0x00005555555551fa in knapSackAuxRec (i=108, j=101019) at knapsackmf.cpp:51
+#6  0x00005555555551fa in knapSackAuxRec (i=109, j=104576) at knapsackmf.cpp:51
+#7  0x0000555555555211 in knapSackAuxRec (i=110, j=104576) at knapsackmf.cpp:51
+#8  0x00005555555551fa in knapSackAuxRec (i=111, j=107148) at knapsackmf.cpp:51
+#9  0x00005555555551fa in knapSackAuxRec (i=112, j=109986) at knapsackmf.cpp:51
+#10 0x00005555555551fa in knapSackAuxRec (i=113, j=117901) at knapsackmf.cpp:51
+#11 0x00005555555551fa in knapSackAuxRec (i=114, j=122757) at knapsackmf.cpp:51
+#12 0x00005555555551fa in knapSackAuxRec (i=115, j=124189) at knapsackmf.cpp:51
+#13 0x00005555555551fa in knapSackAuxRec (i=116, j=135090) at knapsackmf.cpp:51
+#14 0x00005555555551fa in knapSackAuxRec (i=117, j=137605) at knapsackmf.cpp:51
+#15 0x00005555555551fa in knapSackAuxRec (i=118, j=138968) at knapsackmf.cpp:51
+#16 0x00005555555551fa in knapSackAuxRec (i=119, j=143411) at knapsackmf.cpp:51
+#17 0x00005555555551fa in knapSackAuxRec (i=120, j=150564) at knapsackmf.cpp:51
+#18 0x00005555555551fa in knapSackAuxRec (i=121, j=158989) at knapsackmf.cpp:51
+#19 0x00005555555551fa in knapSackAuxRec (i=122, j=161121) at knapsackmf.cpp:51
+#20 0x00005555555551fa in knapSackAuxRec (i=123, j=165494) at knapsackmf.cpp:51
+#21 0x00005555555551fa in knapSackAuxRec (i=124, j=166803) at knapsackmf.cpp:51
+#22 0x00005555555551fa in knapSackAuxRec (i=125, j=172290) at knapsackmf.cpp:51
+#23 0x00005555555551fa in knapSackAuxRec (i=126, j=180950) at knapsackmf.cpp:51
+#24 0x00005555555551fa in knapSackAuxRec (i=127, j=189350) at knapsackmf.cpp:51
+#25 0x00005555555551fa in knapSackAuxRec (i=128, j=199371) at knapsackmf.cpp:51
+#26 0x00005555555551fa in knapSackAuxRec (i=129, j=207928) at knapsackmf.cpp:51
+#27 0x00005555555551fa in knapSackAuxRec (i=130, j=217553) at knapsackmf.cpp:51
+#28 0x00005555555551fa in knapSackAuxRec (i=131, j=225607) at knapsackmf.cpp:51
+#29 0x00005555555551fa in knapSackAuxRec (i=132, j=231335) at knapsackmf.cpp:51
+#30 0x00005555555551fa in knapSackAuxRec (i=133, j=234591) at knapsackmf.cpp:51
+#31 0x00005555555551fa in knapSackAuxRec (i=134, j=242200) at knapsackmf.cpp:51
+#32 0x00005555555551fa in knapSackAuxRec (i=135, j=246364) at knapsackmf.cpp:51
+#33 0x00005555555551fa in knapSackAuxRec (i=136, j=248385) at knapsackmf.cpp:51
+#34 0x00005555555551fa in knapSackAuxRec (i=137, j=253864) at knapsackmf.cpp:51
+#35 0x00005555555551fa in knapSackAuxRec (i=138, j=263612) at knapsackmf.cpp:51
+#36 0x00005555555551fa in knapSackAuxRec (i=139, j=265888) at knapsackmf.cpp:51
+#37 0x00005555555551fa in knapSackAuxRec (i=140, j=272738) at knapsackmf.cpp:51
+#38 0x00005555555551fa in knapSackAuxRec (i=141, j=277668) at knapsackmf.cpp:51
+#39 0x00005555555551fa in knapSackAuxRec (i=142, j=283817) at knapsackmf.cpp:51
+#40 0x00005555555551fa in knapSackAuxRec (i=143, j=286256) at knapsackmf.cpp:51
+#41 0x00005555555551fa in knapSackAuxRec (i=144, j=296854) at knapsackmf.cpp:51
+#42 0x00005555555551fa in knapSackAuxRec (i=145, j=300445) at knapsackmf.cpp:51
+#43 0x00005555555551fa in knapSackAuxRec (i=146, j=307506) at knapsackmf.cpp:51
+#44 0x00005555555551fa in knapSackAuxRec (i=147, j=312704) at knapsackmf.cpp:51
+#45 0x00005555555551fa in knapSackAuxRec (i=148, j=313885) at knapsackmf.cpp:51
+#46 0x00005555555551fa in knapSackAuxRec (i=149, j=320465) at knapsackmf.cpp:51
+#47 0x00005555555551fa in knapSackAuxRec (i=150, j=322871) at knapsackmf.cpp:51
+#48 0x00005555555551fa in knapSackAuxRec (i=151, j=324439) at knapsackmf.cpp:51
+#49 0x00005555555551fa in knapSackAuxRec (i=152, j=325775) at knapsackmf.cpp:51
+#50 0x00005555555551fa in knapSackAuxRec (i=153, j=328387) at knapsackmf.cpp:51
+#51 0x00005555555551fa in knapSackAuxRec (i=154, j=330346) at knapsackmf.cpp:51
+#52 0x00005555555551fa in knapSackAuxRec (i=155, j=337697) at knapsackmf.cpp:51
+#53 0x00005555555551fa in knapSackAuxRec (i=156, j=343780) at knapsackmf.cpp:51
+#54 0x00005555555551fa in knapSackAuxRec (i=157, j=354615) at knapsackmf.cpp:51
+#55 0x00005555555551fa in knapSackAuxRec (i=158, j=364957) at knapsackmf.cpp:51
+#56 0x00005555555551fa in knapSackAuxRec (i=159, j=375903) at knapsackmf.cpp:51
+#57 0x00005555555551fa in knapSackAuxRec (i=160, j=379228) at knapsackmf.cpp:51
+#58 0x00005555555551fa in knapSackAuxRec (i=161, j=384675) at knapsackmf.cpp:51
+#59 0x00005555555551fa in knapSackAuxRec (i=162, j=388183) at knapsackmf.cpp:51
+#60 0x00005555555551fa in knapSackAuxRec (i=163, j=395096) at knapsackmf.cpp:51
+#61 0x00005555555551fa in knapSackAuxRec (i=164, j=402338) at knapsackmf.cpp:51
+#62 0x00005555555551fa in knapSackAuxRec (i=165, j=411341) at knapsackmf.cpp:51
+#63 0x00005555555551fa in knapSackAuxRec (i=166, j=419436) at knapsackmf.cpp:51
+#64 0x00005555555551fa in knapSackAuxRec (i=167, j=423003) at knapsackmf.cpp:51
+#65 0x00005555555551fa in knapSackAuxRec (i=168, j=428234) at knapsackmf.cpp:51
+#66 0x00005555555551fa in knapSackAuxRec (i=169, j=434496) at knapsackmf.cpp:51
+#67 0x00005555555551fa in knapSackAuxRec (i=170, j=435545) at knapsackmf.cpp:51
+#68 0x00005555555551fa in knapSackAuxRec (i=171, j=436900) at knapsackmf.cpp:51
+#69 0x00005555555551fa in knapSackAuxRec (i=172, j=441988) at knapsackmf.cpp:51
+#70 0x00005555555551fa in knapSackAuxRec (i=173, j=444100) at knapsackmf.cpp:51
+#71 0x00005555555551fa in knapSackAuxRec (i=174, j=452338) at knapsackmf.cpp:51
+#72 0x00005555555551fa in knapSackAuxRec (i=175, j=455747) at knapsackmf.cpp:51
+#73 0x00005555555551fa in knapSackAuxRec (i=176, j=457745) at knapsackmf.cpp:51
+#74 0x00005555555551fa in knapSackAuxRec (i=177, j=460563) at knapsackmf.cpp:51
+#75 0x00005555555551fa in knapSackAuxRec (i=178, j=463879) at knapsackmf.cpp:51
+#76 0x00005555555551fa in knapSackAuxRec (i=179, j=467053) at knapsackmf.cpp:51
+#77 0x00005555555551fa in knapSackAuxRec (i=180, j=473261) at knapsackmf.cpp:51
+#78 0x00005555555551fa in knapSackAuxRec (i=181, j=478906) at knapsackmf.cpp:51
+#79 0x00005555555551fa in knapSackAuxRec (i=182, j=483004) at knapsackmf.cpp:51
+#80 0x00005555555551fa in knapSackAuxRec (i=183, j=490422) at knapsackmf.cpp:51
+#81 0x00005555555551fa in knapSackAuxRec (i=184, j=493547) at knapsackmf.cpp:51
+#82 0x00005555555551fa in knapSackAuxRec (i=185, j=503613) at knapsackmf.cpp:51
+#83 0x00005555555551fa in knapSackAuxRec (i=186, j=514245) at knapsackmf.cpp:51
+#84 0x00005555555551fa in knapSackAuxRec (i=187, j=522535) at knapsackmf.cpp:51
+#85 0x00005555555551fa in knapSackAuxRec (i=188, j=527873) at knapsackmf.cpp:51
+#86 0x00005555555551fa in knapSackAuxRec (i=189, j=533989) at knapsackmf.cpp:51
+#87 0x00005555555551fa in knapSackAuxRec (i=190, j=540800) at knapsackmf.cpp:51
+#88 0x00005555555551fa in knapSackAuxRec (i=191, j=542313) at knapsackmf.cpp:51
+#89 0x00005555555551fa in knapSackAuxRec (i=192, j=547494) at knapsackmf.cpp:51
+#90 0x00005555555551fa in knapSackAuxRec (i=193, j=553745) at knapsackmf.cpp:51
+#91 0x00005555555551fa in knapSackAuxRec (i=194, j=556558) at knapsackmf.cpp:51
+#92 0x00005555555551fa in knapSackAuxRec (i=195, j=558496) at knapsackmf.cpp:51
+#93 0x00005555555551fa in knapSackAuxRec (i=196, j=567523) at knapsackmf.cpp:51
+#94 0x00005555555551fa in knapSackAuxRec (i=197, j=572185) at knapsackmf.cpp:51
+#95 0x00005555555551fa in knapSackAuxRec (i=198, j=578378) at knapsackmf.cpp:51
+#96 0x00005555555551fa in knapSackAuxRec (i=199, j=588593) at knapsackmf.cpp:51
+#97 0x00005555555551fa in knapSackAuxRec (i=200, j=588593) at knapsackmf.cpp:51
+#98 0x00005555555550ad in knapSack () at knapsackmf.cpp:39
+#99 0x00005555555553a4 in main () at knapsackmf.cpp:75
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x0d0x6d0x020x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffc0e8
+address max offset: 4
+Memory content after  bitflip:0x550x880xfc0x7e
+frame name: knapSackAuxRec
+symbol name: j
+symbol filename: knapsackmf.cpp
+symbol line: 44
+value: 2130479189
+value address: 0x7fffffffc0e8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 03:27:27]
+Fault Injection Successful after 1.5392673015594482s
+[INFO -- 2018-10-19 03:27:27]
+event type: exit
+[EXCEPTION -- 2018-10-19 03:27:27]
+exit code: no exit code available

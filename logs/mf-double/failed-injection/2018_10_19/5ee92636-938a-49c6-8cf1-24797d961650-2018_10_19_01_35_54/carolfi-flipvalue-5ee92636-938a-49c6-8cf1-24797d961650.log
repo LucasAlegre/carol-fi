@@ -1,0 +1,23 @@
+[INFO -- 2018-10-19 01:35:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 01:35:52]
+Initialization strings:
+[INFO -- 2018-10-19 01:35:52]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-19 01:35:52]
+initSignal:1
+[INFO -- 2018-10-19 01:35:52]
+endSignal:3
+[INFO -- 2018-10-19 01:35:52]
+faultModel:1
+[EXCEPTION -- 2018-10-19 01:35:54]
+gdbException: Cannot access memory at address 0x555c557713d0
+[EXCEPTION -- 2018-10-19 01:35:54]
+gdbException: Cannot access memory at address 0x24555c557713d0
+[EXCEPTION -- 2018-10-19 01:35:54]
+gdbException: Cannot access memory at address 0x24555c557713d0
+[INFO -- 2018-10-19 01:35:54]
+event type: exit
+[EXCEPTION -- 2018-10-19 01:35:54]
+exit code: no exit code available

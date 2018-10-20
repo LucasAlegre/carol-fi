@@ -1,0 +1,58 @@
+[INFO -- 2018-10-19 12:53:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 12:53:38]
+Initialization strings:
+[INFO -- 2018-10-19 12:53:38]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-19 12:53:38]
+initSignal:1
+[INFO -- 2018-10-19 12:53:38]
+endSignal:3
+[INFO -- 2018-10-19 12:53:38]
+faultModel:0
+[EXCEPTION -- 2018-10-19 12:53:40]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-10-19 12:53:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-10-19 12:53:40]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x12e1) at malloc.c:3103
+#1  0x0000555555556cf8 in __gnu_cxx::new_allocator<int>::deallocate (this=0x5555557713c8, __p=0x12e1) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555556893 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x12e1, __n=35184334502525) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x000055555555615c in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x5555557713c8, __p=0x12e1, __n=35184334502525) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x00005555555559c3 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x5555557713c8, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x000055555555580b in std::vector<int, std::allocator<int> >::~vector (this=0x5555557713c8, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555556db6 in std::_Destroy<std::vector<int, std::allocator<int> > > (__pointer=0x5555557713c8) at /usr/include/c++/7/bits/stl_construct.h:98
+#7  0x0000555555556982 in std::_Destroy_aux<false>::__destroy<std::vector<int, std::allocator<int> >*> (__first=0x5555557713c8, __last=0x5555557726a8) at /usr/include/c++/7/bits/stl_construct.h:108
+#8  0x00005555555562cd in std::_Destroy<std::vector<int, std::allocator<int> >*> (__first=0x555555771350, __last=0x5555557726a8) at /usr/include/c++/7/bits/stl_construct.h:137
+#9  0x0000555555555b5b in std::_Destroy<std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > > (__first=0x555555771350, __last=0x5555557726a8) at /usr/include/c++/7/bits/stl_construct.h:206
+#10 0x000055555555567f in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::~vector (this=0x555555759190 <V>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#11 0x00007ffff7481041 in __run_exit_handlers (status=0, listp=0x7ffff7829718 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:108
+#12 0x00007ffff748113a in __GI_exit (status=<optimized out>) at exit.c:139
+#13 0x00007ffff745fb9e in __libc_start_main (main=0x55555555529b <main()>, argc=1, argv=0x7fffffffdf58, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffdf48) at ../csu/libc-start.c:344
+#14 0x0000555555554dfa in _start ()
+
+3098	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759140 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x0c0x00
+frame name: std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::~vector
+symbol name: W
+symbol filename: knapsackmf.cpp
+symbol line: 12
+value: 850737
+value address: 0x555555759140 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-10-19 12:53:40]
+Fault Injection Successful after 2.6237199306488037s
+[INFO -- 2018-10-19 12:53:40]
+event type: exit
+[EXCEPTION -- 2018-10-19 12:53:40]
+exit code: no exit code available

@@ -1,0 +1,23 @@
+[INFO -- 2018-10-19 00:51:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-10-19 00:51:05]
+Initialization strings:
+[INFO -- 2018-10-19 00:51:05]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-10-19 00:51:05]
+initSignal:1
+[INFO -- 2018-10-19 00:51:05]
+endSignal:3
+[INFO -- 2018-10-19 00:51:05]
+faultModel:3
+[EXCEPTION -- 2018-10-19 00:51:06]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-10-19 00:51:07]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-10-19 00:51:07]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-10-19 00:51:07]
+event type: exit
+[EXCEPTION -- 2018-10-19 00:51:07]
+exit code: no exit code available
