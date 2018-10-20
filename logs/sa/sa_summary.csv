@@ -1,0 +1,124 @@
+Faults Injected:;10155
+
+Fault Effect;#Effect;PVF
+Masked;5866;0.5776464795667159
+SDCs;1869;0.18404726735598229
+Crashes;2367;0.23308714918759232
+Hangs;53;0.005219103889709502
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Double bit-flip;396;21.187800963081862
+Single bit-flip;390;20.86677367576244
+Random bit-flip;388;20.759764579989298
+LSB bit-flip;361;19.3151417870519
+Zero bit-flip;334;17.8705189941145
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+LSB bit-flip;546;23.067173637515843
+Random bit-flip;526;22.22222222222222
+Zero bit-flip;446;18.842416561047738
+Double bit-flip;442;18.673426277989016
+Single bit-flip;407;17.194761301225178
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+Double bit-flip;20;37.735849056603776
+Single bit-flip;15;28.30188679245283
+Random bit-flip;14;26.41509433962264
+LSB bit-flip;4;7.547169811320755
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+73.10924369747899;1190;870;W;knapsacksa.cpp;15
+74.58333333333333;240;179;temp;knapsacksa.cpp;42
+88.05970149253731;201;177;best;knapsacksa.cpp;41
+18.08066759388039;719;130;val;knapsacksa.cpp;13
+47.73662551440329;243;116;valor;knapsacksa.cpp;26
+7.824591573516767;1163;91;n;knapsacksa.cpp;15
+11.142857142857142;700;78;wt;knapsacksa.cpp;14
+29.166666666666668;240;70;peso;knapsacksa.cpp;26
+30.34825870646766;201;61;t;knapsacksa.cpp;46
+17.063492063492063;252;43;i;knapsacksa.cpp;27
+13.953488372093023;129;18;s;knapsacksa.cpp;47
+13.253012048192772;83;11;solution;knapsacksa.cpp;25
+5.072463768115942;138;7;solution;knapsacksa.cpp;38
+2.4242424242424243;165;4;this;knapsacksa.cpp;0
+1.5706806282722512;191;3;i;knapsacksa.cpp;48
+1.0526315789473684;190;2;c;knapsacksa.cpp;50
+22.22222222222222;9;2;__first;/usr/include/c++/7/bits/stl_algobase.h;446
+15.384615384615385;13;2;__first;/usr/include/c++/7/bits/stl_algobase.h;420
+11.11111111111111;9;1;__result;/usr/include/c++/7/bits/stl_algobase.h;420
+14.285714285714285;7;1;__result;/usr/include/c++/7/bits/stl_algobase.h;446
+16.666666666666664;6;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;287
+100.0;1;1;randtbl;random.c;146
+10.0;10;1;__x;/usr/include/c++/7/bits/stl_vector.h;326
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+88.2201203783319;1163;1026;n;knapsacksa.cpp;15
+99.46808510638297;188;187;user_entry;../elf/dl-sysdep.c;91
+13.445378151260504;1190;160;W;knapsacksa.cpp;15
+58.730158730158735;252;148;i;knapsacksa.cpp;27
+17.142857142857142;700;120;wt;knapsacksa.cpp;14
+16.27260083449235;719;117;val;knapsacksa.cpp;13
+69.33333333333334;150;104;_dl_skip_args;rtld.c;84
+26.060606060606062;165;43;this;knapsacksa.cpp;0
+16.666666666666664;240;40;peso;knapsacksa.cpp;26
+15.22633744855967;243;37;valor;knapsacksa.cpp;26
+39.75903614457831;83;33;solution;knapsacksa.cpp;25
+25.581395348837212;129;33;s;knapsacksa.cpp;47
+13.333333333333334;240;32;temp;knapsacksa.cpp;42
+16.75392670157068;191;32;i;knapsacksa.cpp;48
+15.263157894736842;190;29;c;knapsacksa.cpp;50
+26.41509433962264;106;28;__n;/usr/include/c++/7/bits/stl_vector.h;795
+13.930348258706468;201;28;t;knapsacksa.cpp;46
+11.363636363636363;220;25;delta;knapsacksa.cpp;51
+14.492753623188406;138;20;solution;knapsacksa.cpp;38
+11.046511627906977;172;19;__GI__dl_argv;rtld.c;83
+7.960199004975125;201;16;best;knapsacksa.cpp;41
+8.783783783783784;148;13;_rtld_global;rtld.c;231
+53.84615384615385;13;7;__first;/usr/include/c++/7/bits/stl_algobase.h;420
+100.0;6;6;__xlen;/usr/include/c++/7/bits/vector.tcc;203
+75.0;8;6;_Num;/usr/include/c++/7/bits/stl_algobase.h;366
+3.0864197530864197;162;5;_rtld_global_ro;rtld.c;259
+100.0;4;4;set;../sysdeps/unix/sysv/linux/raise.c;39
+57.14285714285714;7;4;ranges;dl-reloc.c;259
+30.0;10;3;__x;/usr/include/c++/7/bits/stl_vector.h;326
+50.0;6;3;__result;/usr/include/c++/7/bits/stl_algobase.h;357
+11.76470588235294;17;2;x;../sysdeps/ieee754/flt-32/w_expf_compat.c;24
+100.0;2;2;__a;/usr/include/c++/7/bits/stl_vector.h;136
+33.33333333333333;6;2;__result;/usr/include/c++/7/bits/stl_uninitialized.h;288
+28.57142857142857;7;2;unsafe_state;random.c;160
+100.0;2;2;__a;/usr/include/c++/7/ext/alloc_traits.h;94
+40.0;5;2;__p;/usr/include/c++/7/ext/new_allocator.h;116
+33.33333333333333;6;2;__result;/usr/include/c++/7/bits/stl_algobase.h;375
+25.0;8;2;__first;/usr/include/c++/7/bits/stl_algobase.h;375
+50.0;4;2;__simple;/usr/include/c++/7/bits/stl_algobase.h;380
+7.6923076923076925;13;1;__result;/usr/include/c++/7/bits/stl_uninitialized.h;100
+16.666666666666664;6;1;__last;/usr/include/c++/7/bits/stl_algobase.h;446
+11.11111111111111;9;1;__first;/usr/include/c++/7/bits/stl_algobase.h;446
+0.7092198581560284;141;1;preloadlist;rtld.c;824
+20.0;5;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;99
+14.285714285714285;7;1;__p;/usr/include/c++/7/bits/alloc_traits.h;461
+14.285714285714285;7;1;__first;/usr/include/c++/7/bits/stl_algobase.h;357
+11.11111111111111;9;1;__result;/usr/include/c++/7/bits/stl_algobase.h;420
+33.33333333333333;3;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;115
+11.11111111111111;9;1;__last;/usr/include/c++/7/bits/stl_uninitialized.h;115
+100.0;1;1;sigs;abort.c;54
+16.666666666666664;6;1;__last;/usr/include/c++/7/bits/stl_uninitialized.h;287
+14.285714285714285;7;1;__result;/usr/include/c++/7/bits/stl_algobase.h;446
+100.0;1;1;flags;dl-lookup.c;809
+100.0;1;1;version;dl-lookup.c;353
+50.0;2;1;__x;/usr/include/c++/7/cmath;222
+100.0;1;1;objname;dl-error-skeleton.c;173
+0.6802721088435374;147;1;audit_list_string;rtld.c;134
+100.0;1;1;act;abort.c;53
+50.0;2;1;__last;/usr/include/c++/7/bits/stl_algobase.h;375
+25.0;4;1;__p;/usr/include/c++/7/bits/stl_vector.h;176
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+2.6655202063628547;1163;31;n;knapsacksa.cpp;15
+10.945273631840797;201;22;t;knapsacksa.cpp;46

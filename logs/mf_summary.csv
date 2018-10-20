@@ -1,0 +1,72 @@
+Faults Injected:;10034
+
+Fault Effect;#Effect;PVF
+Masked;3975;0.3961530795295994
+SDCs;1306;0.130157464620291
+Crashes;4745;0.4728921666334463
+Hangs;8;0.0007972892166633447
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;560;42.87901990811638
+Double bit-flip;300;22.97090352220521
+Single bit-flip;280;21.43950995405819
+LSB bit-flip;155;11.868300153139357
+Random bit-flip;11;0.8422664624808576
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Random bit-flip;1347;28.38777660695469
+LSB bit-flip;1174;24.741833508956795
+Single bit-flip;885;18.651211801896732
+Double bit-flip;838;17.660695468914646
+Zero bit-flip;501;10.558482613277134
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+LSB bit-flip;3;37.5
+Zero bit-flip;2;25.0
+Single bit-flip;2;25.0
+Double bit-flip;1;12.5
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+50.0;1432;716;W;knapsackmf.cpp;12
+20.473996050032916;1519;311;n;knapsackmf.cpp;13
+11.577522004062288;1477;171;j;knapsackmf.cpp;44
+6.071179344033497;1433;87;i;knapsackmf.cpp;44
+0.6451612903225806;930;6;values;knapsackmf.cpp;14
+62.5;8;5;w;knapsackmf.cpp;30
+0.5112474437627812;978;5;weights;knapsackmf.cpp;15
+0.4166666666666667;720;3;V;knapsackmf.cpp;16
+14.285714285714285;7;1;this;knapsackmf.cpp;0
+16.666666666666664;6;1;i;knapsackmf.cpp;29
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+86.53175157013258;1433;1240;i;knapsackmf.cpp;44
+78.73601053324556;1519;1196;n;knapsackmf.cpp;13
+51.65876777251185;1477;763;j;knapsackmf.cpp;44
+49.790502793296085;1432;713;W;knapsackmf.cpp;12
+40.69444444444444;720;293;V;knapsackmf.cpp;16
+16.174496644295303;1490;241;value;knapsackmf.cpp;45
+14.92842535787321;978;146;weights;knapsackmf.cpp;15
+13.655913978494624;930;127;values;knapsackmf.cpp;14
+100.0;5;5;__exit_funcs_done;exit.c;31
+100.0;4;4;set;../sysdeps/unix/sysv/linux/raise.c;39
+57.14285714285714;7;4;this;knapsackmf.cpp;0
+66.66666666666666;6;4;i;knapsackmf.cpp;29
+100.0;2;2;sigs;abort.c;51
+18.181818181818183;11;2;result;knapsackmf.cpp;75
+25.0;8;2;w;knapsackmf.cpp;30
+100.0;1;1;action;../sysdeps/posix/libc_fatal.c;67
+100.0;1;1;__p;/usr/include/c++/7/bits/stl_vector.h;176
+16.666666666666664;6;1;__n;/usr/include/c++/7/bits/stl_vector.h;795
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+0.20949720670391062;1432;3;W;knapsackmf.cpp;12
+0.21505376344086022;930;2;values;knapsackmf.cpp;14
+100.0;1;1;file_size;rtld.c;794
+0.10224948875255625;978;1;weights;knapsackmf.cpp;15
+100.0;1;1;__first;/usr/include/c++/5/bits/stl_uninitialized.h;566
