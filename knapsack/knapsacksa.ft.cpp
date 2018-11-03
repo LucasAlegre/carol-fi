@@ -10,9 +10,29 @@
 #include <math.h>
 using namespace std;
 
+int W1;
 vector<int> val;
+int W2;
 vector<int> wt;
-int n, W;
+int n;
+int W3;
+
+int getW() {
+	if(W1 == W2 && W2 == W3) {
+		return W1;
+	} else if(W1 == W2) {
+		W3 = W1;
+	} else if(W2 == W3) {
+		W1 = W2;
+	} else if(W1 == W3) {
+		W2 = W1;
+	}
+	return W1;
+}
+
+void setW(int newW) {
+	W1 = W2 = W3 = newW;
+}
 
 int rand_bit(){
     return rand() % 2;
@@ -28,7 +48,7 @@ int cost(vector<int> &solution){
         peso += solution[i] * wt[i];
         valor += solution[i] * val[i];
     }
-    if(peso > W)
+    if(peso > getW())
         return 99999999;
     else
         return -valor;
@@ -71,9 +91,13 @@ int main()
 {
     ifstream file("/tmp/knapsack/instance.txt");
     ofstream outfile("/tmp/knapsack/outputsa");
+	
+	int tempW;
 
     srand (42);
-    file >> n; file >> W;
+    file >> n; file >> tempW;
+	
+	setW(tempW);
 
     for(int i = 0; i < n; i++){
         int x, y; file >> x >> y;
