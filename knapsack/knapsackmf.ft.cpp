@@ -9,17 +9,11 @@
 
 using namespace std;
 
-int W;
-int n;
-vector<int> values;
-vector<int> weights;
-vector<vector<int>> V;
-
-int knapSack();
-int knapSackAuxRec(int i, int j);
+int knapSack(int W, int n, vector<int>& values, vector<int>& weights, vector<vector<int>>& V);
+int knapSackAuxRec(int i, int j, vector<int>& values, vector<int>& weights, vector<vector<int>>& V);
 
 
-int knapSack() {
+int knapSack(int W, int n, vector<int>& values, vector<int>& weights, vector<vector<int>>& V) {
 
     V = vector<vector<int>>(n + 1);
 
@@ -36,19 +30,19 @@ int knapSack() {
         }
     }
 
-    V[n][W] = knapSackAuxRec(n, W);
+    V[n][W] = knapSackAuxRec(n, W, values, weights, V);
 
     return V[n][W];
 }
 
-int knapSackAuxRec(int i, int j) { // i = n, j = w
+int knapSackAuxRec(int i, int j, vector<int>& values, vector<int>& weights, vector<vector<int>>& V) { // i = n, j = w
     int value;
     if (V[i][j] < 0) { // meaning not already calculated
 
         if (j < weights[i]) {
-            value = knapSackAuxRec(i - 1, j);
+            value = knapSackAuxRec(i - 1, j, values, weights, V);
         } else {
-            value = max(knapSackAuxRec(i - 1, j), values[i] + knapSackAuxRec(i - 1, j - weights[i]));
+            value = max(knapSackAuxRec(i - 1, j, values, weights, V), values[i] + knapSackAuxRec(i - 1, j - weights[i], values, weights, V));
         }
 
 
@@ -58,9 +52,14 @@ int knapSackAuxRec(int i, int j) { // i = n, j = w
     return V[i][j];
 }
 
-int main() {
+int executeAlgorithm() {
+    int W;
+    int n;
+    vector<int> values;
+    vector<int> weights;
+    vector<vector<int>> V;
+
     ifstream file("/tmp/knapsack/instance.txt");
-    ofstream outfile("/tmp/knapsack/outputmf");
 
     file >> n;
     file >> W;
@@ -72,7 +71,21 @@ int main() {
         weights.push_back(y);
     }
 
-    int result = knapSack();
+    return knapSack(W, n, values, weights, V);
+}
+
+int main() {
+    ofstream outfile("/tmp/knapsack/outputmf");
+
+    int result;
+    int result1 = executeAlgorithm();
+    int result2 = executeAlgorithm();
+
+    if(result1 == result2) {
+        result = result1;
+    } else {
+        result = executeAlgorithm();
+    }
 
     outfile << result;
     outfile.close();
