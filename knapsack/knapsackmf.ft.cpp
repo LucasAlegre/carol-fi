@@ -82,15 +82,15 @@ int main() {
     int result2 = executeAlgorithm();
 
     if(result1 == result2) {
-        result = result1;
+        outfile << result1;
+    	outfile.close();
+    	std::cout << "Result: " << result1 << "\n";
     } else {
-        result = executeAlgorithm();
+		result = executeAlgorithm();
+        outfile << result;
+    	outfile.close();
+    	std::cout << "Result: " << result << "\n";
     }
-
-    outfile << result;
-    outfile.close();
-
-    std::cout << "Result: " << result << "\n";
 
     return 0;
 }
