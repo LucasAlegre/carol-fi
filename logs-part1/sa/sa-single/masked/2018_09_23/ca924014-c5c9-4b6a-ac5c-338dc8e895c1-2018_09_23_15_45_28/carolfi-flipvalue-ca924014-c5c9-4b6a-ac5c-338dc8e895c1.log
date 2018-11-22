@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 15:45:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 15:45:25]
+Initialization strings:
+[INFO -- 2018-09-23 15:45:25]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 15:45:25]
+initSignal:0
+[INFO -- 2018-09-23 15:45:25]
+endSignal:2
+[INFO -- 2018-09-23 15:45:25]
+faultModel:0
+[INFO -- 2018-09-23 15:45:25]
+Backtrace BEGIN:
+#0  0x00005555555566f0 in std::_Destroy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0) at /usr/include/c++/7/bits/stl_construct.h:138
+#1  0x0000555555556043 in std::_Destroy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int> (__first=0, __last=0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555995 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda10, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+142	    {
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x160x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd978
+address max offset: 8
+Memory content after  bitflip:0xf00x160x770x570x550x550x000x00
+frame name: std::_Destroy<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: <error reading variable: Cannot access memory at address 0x5555577716f0>
+value address: 0x7fffffffd978
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-09-23 15:45:25]
+Fault Injection Successful after 0.5537858009338379s
+[INFO -- 2018-09-23 15:45:27]
+event type: exit
+[INFO -- 2018-09-23 15:45:27]
+exit code: 0

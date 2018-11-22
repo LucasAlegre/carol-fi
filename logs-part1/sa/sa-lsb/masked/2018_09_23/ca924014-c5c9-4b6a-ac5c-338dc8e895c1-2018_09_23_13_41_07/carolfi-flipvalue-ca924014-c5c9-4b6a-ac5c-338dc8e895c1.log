@@ -1,0 +1,52 @@
+[INFO -- 2018-09-23 13:41:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:41:04]
+Initialization strings:
+[INFO -- 2018-09-23 13:41:04]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:41:04]
+initSignal:0
+[INFO -- 2018-09-23 13:41:04]
+endSignal:2
+[INFO -- 2018-09-23 13:41:04]
+faultModel:4
+[INFO -- 2018-09-23 13:41:05]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff74dc720 <unsafe_state>, result=result@entry=0x7fffffffd9b4) at random_r.c:394
+#1  0x00007ffff713ea22 in __random () at random.c:293
+#2  0x00007ffff713eea9 in rand () at rand.c:27
+#3  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+389	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: seps
+Fliping array at pos: 4
+Memory content before bitflip:0x010x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff729b890 
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x80
+frame name: __random_r
+symbol name: random_poly_info
+symbol filename: random_r.c
+symbol line: 143
+value: {seps = {0, 3, 1, 3, -2147483647}, degrees = {0, 7, 15, 31, 63}}
+value address: 0x7ffff729b880 <random_poly_info>
+Type: The type is a structure.
+Type sizeof: 40
+Field name: seps
+Field Type: The type is an array.
+Field Type sizeof: 20
+Field name: degrees
+Field Type: The type is an array.
+Field Type sizeof: 20
+
+[INFO -- 2018-09-23 13:41:05]
+Fault Injection Successful after 1.2222778797149658s
+[INFO -- 2018-09-23 13:41:07]
+event type: exit
+[INFO -- 2018-09-23 13:41:07]
+exit code: 0

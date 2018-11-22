@@ -1,0 +1,51 @@
+[INFO -- 2018-09-23 19:07:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:07:28]
+Initialization strings:
+[INFO -- 2018-09-23 19:07:28]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:07:28]
+initSignal:0
+[INFO -- 2018-09-23 19:07:28]
+endSignal:2
+[INFO -- 2018-09-23 19:07:28]
+faultModel:2
+[INFO -- 2018-09-23 19:07:29]
+Backtrace BEGIN:
+#0  0x00005555555554dc in std::exp (__x=-inf) at /usr/include/c++/7/cmath:223
+#1  0x0000555555555171 in simulated_annealing () at knapsacksa.cpp:56
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+218	  using ::exp;
+219	
+220	#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+221	  inline _GLIBCXX_CONSTEXPR float
+222	  exp(float __x)
+223	  { return __builtin_expf(__x); }
+224	
+225	  inline _GLIBCXX_CONSTEXPR long double
+226	  exp(long double __x)
+227	  { return __builtin_expl(__x); }
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x800x040x6d0x96
+frame name: std::exp
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: -1771240320
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 19:07:29]
+Fault Injection Successful after 1.7103416919708252s
+[INFO -- 2018-09-23 19:07:31]
+event type: exit
+[INFO -- 2018-09-23 19:07:31]
+exit code: 0

@@ -1,0 +1,50 @@
+[INFO -- 2018-09-25 07:27:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:27:01]
+Initialization strings:
+[INFO -- 2018-09-25 07:27:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:27:01]
+initSignal:1
+[INFO -- 2018-09-25 07:27:01]
+endSignal:3.5
+[INFO -- 2018-09-25 07:27:01]
+faultModel:1
+[INFO -- 2018-09-25 07:27:02]
+Backtrace BEGIN:
+#0  __random () at random.c:288
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+283	random.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 15
+Memory content before bitflip:0xba0x930x4b0xd3
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff78321dc 
+address max offset: 4
+Memory content after  bitflip:0xba0x930x4b0x97
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -1943829834, 621076951, 975521312, 80198580, -1908960176, 1024182237, -1566641507, 511415830, -342626684, 1541980923, -842942822, 1693010059, 1723644065, 1120956083, -1756654662, 385952347, -1474652303, 2012503194, -886097661, 1431822612, 73891478, -442802871, 507433076, -963762502, 1652733368, 1584214942, 1160417010, 2033963251, 55890543, 367306585, 399293073}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 07:27:02]
+Fault Injection Successful after 1.5060043334960938s
+[INFO -- 2018-09-25 07:27:05]
+event type: exit
+[INFO -- 2018-09-25 07:27:05]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-09-23 20:03:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:03:42]
+Initialization strings:
+[INFO -- 2018-09-23 20:03:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:03:42]
+initSignal:0
+[INFO -- 2018-09-23 20:03:42]
+endSignal:2
+[INFO -- 2018-09-23 20:03:42]
+faultModel:3
+[INFO -- 2018-09-23 20:03:43]
+Backtrace BEGIN:
+#0  0x0000555555556c58 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=non-dereferenceable iterator for std::vector, __last=0, __result=0x555555556ce0 <__gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*)+64>) at /usr/include/c++/7/bits/stl_algobase.h:446
+#1  0x00005555555569f6 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#2  0x0000555555556552 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x0000555555555dbb in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x00005555555556b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#5  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#6  0x000055555555535e in main () at knapsacksa.cpp:84
+
+441	   *  Note that the end of the output range is permitted to be contained
+442	   *  within [first,last).
+443	  */
+444	  template<typename _II, typename _OI>
+445	    inline _OI
+446	    copy(_II __first, _II __last, _OI __result)
+447	    {
+448	      // concept requirements
+449	      __glibcxx_function_requires(_InputIteratorConcept<_II>)
+450	      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x6c0x550x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd888
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 446
+value: 0x555555556ce0 <__gnu_cxx::new_allocator<int>::allocate(unsigned long, void const*)+64>
+value address: 0x7fffffffd888
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 20:03:43]
+Fault Injection Successful after 1.472543716430664s
+[INFO -- 2018-09-23 20:03:45]
+event type: exit
+[INFO -- 2018-09-23 20:03:45]
+exit code: 0

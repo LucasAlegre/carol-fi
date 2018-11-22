@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 06:46:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:46:57]
+Initialization strings:
+[INFO -- 2018-09-25 06:46:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:46:57]
+initSignal:1
+[INFO -- 2018-09-25 06:46:57]
+endSignal:3.5
+[INFO -- 2018-09-25 06:46:57]
+faultModel:2
+[EXCEPTION -- 2018-09-25 06:46:58]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-09-25 06:46:58]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 06:46:58]
+Backtrace BEGIN:
+#0  0x000055555555559e in genetic_algorithm () at knapsackga.cpp:111
+#1  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+106	            new_pop.push_back(f1); 
+107	            new_pop.push_back(f2);
+108	        }
+109	        for(int i=0; i < pop_size; i++){
+110	            if(random01() < 0.5)
+111	                swap(new_pop[i].solution[rand() % n], new_pop[i].solution[rand() % n]);
+112	            new_pop[i].fitness = cost(new_pop[i].solution);
+113	        }
+114	        
+115	        sort(new_pop.begin(), new_pop.end());
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xfe0x0e0x7a0x39
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 964300542
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:46:58]
+Fault Injection Successful after 1.5760157108306885s
+[INFO -- 2018-09-25 06:46:58]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:46:58]
+exit code: no exit code available

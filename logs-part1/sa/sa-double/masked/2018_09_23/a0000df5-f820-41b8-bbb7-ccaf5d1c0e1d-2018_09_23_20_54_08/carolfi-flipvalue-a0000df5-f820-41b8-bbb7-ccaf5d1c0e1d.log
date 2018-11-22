@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 20:54:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:54:05]
+Initialization strings:
+[INFO -- 2018-09-23 20:54:05]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:54:05]
+initSignal:0
+[INFO -- 2018-09-23 20:54:05]
+endSignal:2
+[INFO -- 2018-09-23 20:54:05]
+faultModel:1
+[EXCEPTION -- 2018-09-23 20:54:06]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-23 20:54:06]
+Backtrace BEGIN:
+#0  0x00007ffff713eb82 in __random_r (buf=buf@entry=0x7ffff74dc720 <unsafe_state>, result=result@entry=0x7fffffffd984) at random_r.c:376
+#1  0x00007ffff713ea22 in __random () at random.c:293
+#2  0x00007ffff713eea9 in rand () at rand.c:27
+#3  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+371	in random_r.c
+
+Backtrace END
+Fliping value of field: seps
+Fliping array at pos: 3
+Memory content before bitflip:0x030x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff729b88c 
+address max offset: 4
+Memory content after  bitflip:0x030x000x000x09
+frame name: __random_r
+symbol name: random_poly_info
+symbol filename: random_r.c
+symbol line: 143
+value: {seps = {0, 3, 1, 150994947, 1}, degrees = {0, 7, 15, 31, 63}}
+value address: 0x7ffff729b880 <random_poly_info>
+Type: The type is a structure.
+Type sizeof: 40
+Field name: seps
+Field Type: The type is an array.
+Field Type sizeof: 20
+Field name: degrees
+Field Type: The type is an array.
+Field Type sizeof: 20
+
+[INFO -- 2018-09-23 20:54:06]
+Fault Injection Successful after 1.184058427810669s
+[INFO -- 2018-09-23 20:54:08]
+event type: exit
+[INFO -- 2018-09-23 20:54:08]
+exit code: 0

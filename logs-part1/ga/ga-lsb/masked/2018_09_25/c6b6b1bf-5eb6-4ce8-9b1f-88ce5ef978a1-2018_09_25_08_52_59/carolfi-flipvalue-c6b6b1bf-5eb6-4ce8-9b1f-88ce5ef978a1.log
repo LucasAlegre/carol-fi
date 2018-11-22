@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 08:52:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:52:55]
+Initialization strings:
+[INFO -- 2018-09-25 08:52:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:52:55]
+initSignal:1
+[INFO -- 2018-09-25 08:52:55]
+endSignal:3.5
+[INFO -- 2018-09-25 08:52:55]
+faultModel:4
+[EXCEPTION -- 2018-09-25 08:52:57]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 08:52:57]
+Backtrace BEGIN:
+#0  0x00007ffff7494b82 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd824) at random_r.c:376
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554ff9 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:62
+#4  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+371	in random_r.c
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd9a0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x20
+frame name: tournament
+symbol name: tournamentWinner
+symbol filename: knapsackga.cpp
+symbol line: 67
+value: std::vector of length 0, capacity 576460752303423488
+value address: 0x7fffffffd990
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 08:52:57]
+Fault Injection Successful after 2.249753952026367s
+[INFO -- 2018-09-25 08:52:59]
+event type: exit
+[INFO -- 2018-09-25 08:52:59]
+exit code: 0

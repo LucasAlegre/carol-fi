@@ -1,0 +1,54 @@
+[INFO -- 2018-09-25 20:41:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:41:05]
+Initialization strings:
+[INFO -- 2018-09-25 20:41:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:41:05]
+initSignal:1
+[INFO -- 2018-09-25 20:41:05]
+endSignal:3.5
+[INFO -- 2018-09-25 20:41:05]
+faultModel:2
+[EXCEPTION -- 2018-09-25 20:41:06]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-09-25 20:41:06]
+Backtrace BEGIN:
+#0  0x0000000000401ae6 in std::vector<int, std::allocator<int> >::operator[] (this=0x60b120 <wt>, __n=167) at /usr/include/c++/5/bits/stl_vector.h:779
+#1  0x0000000000400e9a in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:26
+#2  0x00000000004015cd in genetic_algorithm () at knapsackga.cpp:112
+#3  0x0000000000401844 in main () at knapsackga.cpp:137
+
+774	       *  Note that data access with this operator is unchecked and
+775	       *  out_of_range lookups are not defined. (For checked lookups
+776	       *  see at().)
+777	       */
+778	      reference
+779	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+780	      { return *(this->_M_impl._M_start + __n); }
+781	
+782	      /**
+783	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x60b13c 
+address max offset: 4
+Memory content after  bitflip:0x840x670x8b0x7e
+frame name: cost
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 2123065220
+value address: 0x60b13c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 20:41:06]
+Fault Injection Successful after 1.8631117343902588s
+[INFO -- 2018-09-25 20:41:12]
+event type: exit
+[INFO -- 2018-09-25 20:41:12]
+exit code: 0

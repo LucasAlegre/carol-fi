@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 02:14:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:14:02]
+Initialization strings:
+[INFO -- 2018-09-25 02:14:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:14:02]
+initSignal:1
+[INFO -- 2018-09-25 02:14:02]
+endSignal:3.5
+[INFO -- 2018-09-25 02:14:02]
+faultModel:1
+[INFO -- 2018-09-25 02:14:03]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::capacity (this=0x7fffffffd930) at /usr/include/c++/7/bits/stl_vector.h:750
+#1  0x000055555555613b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd970, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:204
+#2  0x000055555555517d in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#3  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+745	      /**
+746	       *  Returns the total number of elements that the %vector can
+747	       *  hold before needing to allocate more memory.
+748	       */
+749	      size_type
+750	      capacity() const _GLIBCXX_NOEXCEPT
+751	      { return size_type(this->_M_impl._M_end_of_storage
+752				 - this->_M_impl._M_start); }
+753	
+754	      /**
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f06c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x400x00
+frame name: crossover
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 4258609
+value address: 0x55555575f06c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 02:14:03]
+Fault Injection Successful after 1.7337260246276855s
+[INFO -- 2018-09-25 02:14:06]
+event type: exit
+[INFO -- 2018-09-25 02:14:06]
+exit code: 0

@@ -1,0 +1,55 @@
+[INFO -- 2018-09-24 18:11:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-24 18:11:50]
+Initialization strings:
+[INFO -- 2018-09-24 18:11:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-24 18:11:50]
+initSignal:1
+[INFO -- 2018-09-24 18:11:50]
+endSignal:3.5
+[INFO -- 2018-09-24 18:11:50]
+faultModel:2
+[INFO -- 2018-09-24 18:11:53]
+Backtrace BEGIN:
+#0  0x0000555555555a1a in operator new (__p=0x0) at /usr/include/c++/7/new:169
+#1  0x0000555555557e83 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8f0, __p=0x5555557866c0, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x5555557866c0, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555555cf0 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#4  0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#5  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+164	#endif // __cpp_sized_deallocation
+165	#endif // __cpp_aligned_new
+166	
+167	// Default placement versions of operator new.
+168	inline void* operator new(std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+169	{ return __p; }
+170	inline void* operator new[](std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+171	{ return __p; }
+172	
+173	// Default placement versions of operator delete.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x660x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd820
+address max offset: 8
+Memory content after  bitflip:0x590xe00xb10xf60xf10x5f0x850x1b
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: __p
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 135
+value: 0x5555557866c0
+value address: 0x7fffffffd820
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-24 18:11:53]
+Fault Injection Successful after 3.4902279376983643s
+[INFO -- 2018-09-24 18:11:54]
+event type: exit
+[INFO -- 2018-09-24 18:11:54]
+exit code: 0

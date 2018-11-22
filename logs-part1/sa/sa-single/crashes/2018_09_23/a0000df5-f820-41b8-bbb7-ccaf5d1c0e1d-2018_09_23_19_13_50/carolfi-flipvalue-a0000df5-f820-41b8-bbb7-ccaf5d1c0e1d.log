@@ -1,0 +1,58 @@
+[INFO -- 2018-09-23 19:13:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 19:13:47]
+Initialization strings:
+[INFO -- 2018-09-23 19:13:47]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 19:13:47]
+initSignal:0
+[INFO -- 2018-09-23 19:13:47]
+endSignal:2
+[INFO -- 2018-09-23 19:13:47]
+faultModel:0
+[INFO -- 2018-09-23 19:13:48]
+Backtrace BEGIN:
+#0  0x0000555555554fe3 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:29
+#1  0x000055555555511f in simulated_annealing () at knapsacksa.cpp:50
+#2  0x000055555555535e in main () at knapsacksa.cpp:84
+
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+33	    else
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x0f0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759050 
+address max offset: 8
+Memory content after  bitflip:0xc00x0d0x770x550x550x550x000x00
+frame name: cost
+symbol name: wt
+symbol filename: knapsacksa.cpp
+symbol line: 14
+value: std::vector of length 328, capacity 384 = {4728, 2256, 6609, 3164, 1021, 4479, 8748, 1276, 5850, 3930, 5149, 1439, 9598, 2591, 6061, 4198, 181, 5580, 1406, 568, 336, 1612, 959, 6351, 5083, 9835, 9342, 9946, 2325, 4447, 2508, 5913, 6242, 8003, 7095, 2567, 4231, 5262, 49, 355, 4088, 1112, 7238, 2409, 998, 1818, 2316, 2174, 5208, 4645, 3098, 6418, 2125, 9066, 9632, 7290, 4338, 5116, 5811, 513, 4181, 5251, 1813, 938, 8027, 3662, 5193, 9215, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1041, 0, 10561, 10479, 1566, 1849, 9355, 8360, 7698, 4082, 7060, 7069, 6813, 2584, 5307, 4936, 8231, 10949, 10494, 6442, 5449, 3683, 1360, 1275, 5649, 4185, 4801, 9918, 6258, 6606, 3362, 1239, 4252, 2367, 6103, 10987, 7745, 2819, 9936, 8968, 8345, 10066, 8629, 8898, 4538, 10810, 10620, 2612, 8541, 8152, 5615, 6304, 5901, 10249, 6009, 9316, 4540, 9829, 9998, 5611, 6678, 10204, 8238, 5867, 3219, 4247, 7996, 2661, 10080, 3682, 10114, 4096, 10574, 8063...}
+value address: 0x555555759050 <wt>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 19:13:48]
+Fault Injection Successful after 1.5390779972076416s
+[INFO -- 2018-09-23 19:13:50]
+event type: exit
+[EXCEPTION -- 2018-09-23 19:13:50]
+exit code: no exit code available

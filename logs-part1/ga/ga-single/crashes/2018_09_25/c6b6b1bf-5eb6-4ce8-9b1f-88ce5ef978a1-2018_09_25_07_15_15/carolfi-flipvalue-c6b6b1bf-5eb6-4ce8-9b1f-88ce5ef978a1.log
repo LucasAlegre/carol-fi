@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 07:15:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 07:15:12]
+Initialization strings:
+[INFO -- 2018-09-25 07:15:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 07:15:12]
+initSignal:1
+[INFO -- 2018-09-25 07:15:12]
+endSignal:3.5
+[INFO -- 2018-09-25 07:15:12]
+faultModel:0
+[INFO -- 2018-09-25 07:15:14]
+Backtrace BEGIN:
+#0  std::_Destroy<int*> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:138
+#1  0x00005555555568e1 in std::_Destroy<int*, int> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x5555557867a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555b62 in chromossome::~chromossome (this=0x5555557867a0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#4  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x5555557867a0) at /usr/include/c++/7/bits/stl_construct.h:98
+#5  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557867a0, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:108
+#6  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x555555786480, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:137
+#7  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x555555786480, __last=0x555555786880) at /usr/include/c++/7/bits/stl_construct.h:206
+#8  0x0000555555556bfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8f0, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#9  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8f0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#10 0x00005555555554e7 in genetic_algorithm () at knapsackga.cpp:106
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+142	    {
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x080x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 524488
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 07:15:14]
+Fault Injection Successful after 2.546182870864868s
+[INFO -- 2018-09-25 07:15:14]
+event type: exit
+[EXCEPTION -- 2018-09-25 07:15:14]
+exit code: no exit code available

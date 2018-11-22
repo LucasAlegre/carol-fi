@@ -5,15 +5,18 @@ import csv
 from collections import Counter
 
 varSDCList = list()
+varSDCDetectList = list()
 varCrashList = list()
 varHangList = list()
 flipList = list()
 faultModelCrash = list()
 faultModelHang = list()
 faultModelSDC = list()
+faultModelSDCDetect = list()
 
 flipCount = 0
 sdcCount = 0
+sdcDetectCount = 0
 crashCount = 0
 hangCount = 0
 
@@ -27,6 +30,7 @@ def processDirectory(dirName, fileList):
     flipInfo = ""
     flip=False
     sdc=0
+    sdcDetect=0
     crash=0
     hang=0
     var = ""
@@ -42,8 +46,13 @@ def processDirectory(dirName, fileList):
             (flip, flipInfo, var, varFile, varLine, faultTime, faultModel, signalTime) = getFlipInfo(dirName, fname)
             if re.search("sdcs",dirName):
                 sdc = 1
+                if re.search("sdcs-detected",dirName):
+                    sdcDetect = 1
+                else:
+                    sdcDetect = 0
             else:
                 sdc = 0
+                sdcDetect = 0
             if re.search("hangs",dirName):
                 hang = 1
             else:
@@ -55,6 +64,7 @@ def processDirectory(dirName, fileList):
     if flip:
         global flipCount
         global sdcCount
+        global sdcDetectCount
         global crashCount
         global hangCount
         if var != "":
@@ -65,9 +75,13 @@ def processDirectory(dirName, fileList):
                 sdcCount += 1
                 varSDCList.append(varInfo)
                 faultModelSDC.append(faultModel)
+                if sdcDetect == 1:
+                    sdcDetectCount += 1
+                    varSDCDetectList.append(varInfo)
+                    faultModelSDCDetect.append(faultModel)
                 csvWFP = open(current_folder_name+"_"+sdcFilename, "a")
                 writer = csv.writer(csvWFP, delimiter=';')
-                writer.writerow([var,varFile,str(varLine),str(faultTime),str(signalTime),str(faultModel)])
+                writer.writerow([var,varFile,str(varLine),str(faultTime),str(signalTime),str(faultModel),str(sdcDetect)])
                 csvWFP.close()
             elif crash == 1:
                 crashCount += 1
@@ -176,7 +190,7 @@ print ("Processing folder "+current_folder_name)
 
 csvWFP = open(current_folder_name+"_"+sdcFilename, "w")
 writer = csv.writer(csvWFP, delimiter=';')
-writer.writerow(["Variable Name","Variable File","Variable Line","Fault Injection Time(s)","Injection Time Interval","Fault Model"])
+writer.writerow(["Variable Name","Variable File","Variable Line","Fault Injection Time(s)","Injection Time Interval","Fault Model","Detected"])
 csvWFP.close()
 csvWFP = open(current_folder_name+"_"+crashFilename, "w")
 writer = csv.writer(csvWFP, delimiter=';')
@@ -216,6 +230,9 @@ fp.write("\nSDCs;"+str(sdcCount)+";"+str(sdcPVF))
 fp.write("\nCrashes;"+str(crashCount)+";"+str(crashPVF))
 fp.write("\nHangs;"+str(hangCount)+";"+str(hangPVF))
 fp.write("\n\n")
+fp.write("\nDetected SDCs:;"+str(sdcDetectCount))
+fp.write("\nSDC Coverage (%):;"+str((sdcDetectCount*100)/sdcCount))
+fp.write("\n\n")
 
 flips = Counter(flipList)
 
@@ -223,6 +240,17 @@ if faultModelSDC:
     fp.write("FaultModels SDCs:")
     fp.write("\nFaultModel ;#SDCs;percentage")
     for k,v in Counter(faultModelSDC).most_common():
+        try:
+            per = float(v)/float(sdcCount) * 100
+        except:
+            per = "N/A"
+        fp.write("\n"+str(k)+";"+str(v)+";"+str(per))
+
+if faultModelSDCDetect:
+    fp.write("\n\n")
+    fp.write("FaultModels Detected SDCs:")
+    fp.write("\nFaultModel ;#SDCs Detected; percentage")
+    for k,v in Counter(faultModelSDCDetect).most_common():
         try:
             per = float(v)/float(sdcCount) * 100
         except:
@@ -262,6 +290,17 @@ if varSDCList:
             pvf = "N/A"
         fp.write("\n"+str(pvf)+";"+str(flips[k])+";"+str(v)+";"+k)
 
+if varSDCDetectList:
+    fp.write("\n\n")
+    fp.write("Variables that caused Detected SDCs:")
+    fp.write("\nPVF ;#flips ;#SDCs ;Var name ;file ;line number")
+    for k,v in Counter(varSDCDetectList).most_common():
+        try:
+            pvf = float(v)/float(flips[k]) * 100
+        except:
+            pvf = "N/A"
+        fp.write("\n"+str(pvf)+";"+str(flips[k])+";"+str(v)+";"+k)
+
 if varCrashList:
     fp.write("\n")
     fp.write("\nVariables that caused Crash:")
@@ -285,4 +324,3 @@ if varHangList:
         fp.write("\n"+str(pvf)+";"+str(flips[k])+";"+str(v)+";"+k)
 
 fp.close()
-

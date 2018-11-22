@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 09:28:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:28:52]
+Initialization strings:
+[INFO -- 2018-09-25 09:28:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:28:52]
+initSignal:1
+[INFO -- 2018-09-25 09:28:52]
+endSignal:3.5
+[INFO -- 2018-09-25 09:28:52]
+faultModel:0
+[INFO -- 2018-09-25 09:28:53]
+Backtrace BEGIN:
+#0  0x0000555555556a98 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 35184372086962, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:394
+#1  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+389	
+390	#if __cplusplus >= 201103L
+391	  template<typename _Tp, typename _Alloc>
+392	    template<typename... _Args>
+393	      void
+394	      vector<_Tp, _Alloc>::
+395	      _M_realloc_insert(iterator __position, _Args&&... __args)
+396	#else
+397	  template<typename _Tp, typename _Alloc>
+398	    void
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x6b0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f030 
+address max offset: 8
+Memory content after  bitflip:0xb00x630x770x550x550x550x000x00
+frame name: genetic_algorithm
+symbol name: val
+symbol filename: knapsackga.cpp
+symbol line: 14
+value: std::vector of length 712, capacity 768 = {0, 0, 0, 0, 0, 0, -510591, 0, 0, 0, 0, 0, 0, 0, -505823, 1, 0, 0, 81, 0, 1433887664, 21845, 0, 0, 0, 0, -510591, 1, 0, 0, 0, 0, 0, 0, -510591, 1, 0, 0, 145, 0, 0, 0, 1433938704, 21845, 1433938704, 21845, -510591, 1, 1433940352, 21845, 1433941152, 21845, 1433941152, 21845, -510591, 0, 1433938720, 21845, 1433939520, 21845, 1433939520, 21845, -505823, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 145, 0, 1433887824, 21845, 1433938704, 21845, 1433938704, 21845, -510591, 1, 1433940352, 21845, 1433941152, 21845, 1433941152, 21845, -510591, 1, 1433938720, 21845, 1433939520, 21845, 1433939520, 21845, -507021, 1, 0, 0, 0, 0, 0, 0, 99999999, 0, 0, 0, 273, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 273, 0, 1433888112, 21845, 0, 0, 0, 0, -510591, 1, 0, 0, 0, 0, 0, 0, -510591, 1, 0, 0, 0, 0...}
+value address: 0x55555575f030 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 09:28:53]
+Fault Injection Successful after 1.6336605548858643s
+[INFO -- 2018-09-25 09:28:56]
+event type: exit
+[INFO -- 2018-09-25 09:28:56]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 15:11:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 15:11:00]
+Initialization strings:
+[INFO -- 2018-09-23 15:11:00]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 15:11:00]
+initSignal:0
+[INFO -- 2018-09-23 15:11:00]
+endSignal:2
+[INFO -- 2018-09-23 15:11:00]
+faultModel:0
+[INFO -- 2018-09-23 15:11:00]
+Backtrace BEGIN:
+#0  0x0000555555556505 in std::allocator<int>::allocator (this=0x7fffffffd9a7, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#1  0x00005555555564d9 in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:505
+#2  0x0000555555555cbc in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#3  0x0000555555555644 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#4  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#5  0x000055555555535e in main () at knapsacksa.cpp:84
+
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+
+Backtrace END
+Memory content before bitflip:0x830xab0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffda04
+address max offset: 4
+Memory content after  bitflip:0x830xa90x000x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 46
+value: 43395
+value address: 0x7fffffffda04
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 15:11:00]
+Fault Injection Successful after 0.6409895420074463s
+[INFO -- 2018-09-23 15:11:02]
+event type: exit
+[INFO -- 2018-09-23 15:11:02]
+exit code: 0

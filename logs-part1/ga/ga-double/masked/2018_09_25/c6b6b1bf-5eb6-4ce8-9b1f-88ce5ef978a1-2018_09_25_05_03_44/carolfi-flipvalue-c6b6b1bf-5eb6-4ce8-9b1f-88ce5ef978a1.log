@@ -1,0 +1,69 @@
+[INFO -- 2018-09-25 05:03:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 05:03:39]
+Initialization strings:
+[INFO -- 2018-09-25 05:03:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 05:03:39]
+initSignal:1
+[INFO -- 2018-09-25 05:03:39]
+endSignal:3.5
+[INFO -- 2018-09-25 05:03:39]
+faultModel:1
+[EXCEPTION -- 2018-09-25 05:03:41]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 05:03:41]
+Backtrace BEGIN:
+#0  std::swap<int*> (__a=@0x5555557764e0: 0x0, __b=@0x7fffffffd640: 0x0) at /usr/include/c++/7/bits/move.h:199
+#1  0x0000555555558445 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#2  0x000055555555742f in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#3  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555559233 in chromossome::operator= (this=0x5555557764e0) at knapsackga.cpp:42
+#5  0x0000555555559345 in std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1852
+#6  0x000055555555826f in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#7  0x0000555555556da9 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#8  0x0000555555555dfd in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#9  0x0000555555555058 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#10 0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#11 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd650
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x21
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: __tmp
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1531
+value: std::vector of length 0, capacity 594475150812905472
+value address: 0x7fffffffd640
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-25 05:03:41]
+Fault Injection Successful after 2.119326114654541s
+[INFO -- 2018-09-25 05:03:43]
+event type: exit
+[INFO -- 2018-09-25 05:03:43]
+exit code: 0

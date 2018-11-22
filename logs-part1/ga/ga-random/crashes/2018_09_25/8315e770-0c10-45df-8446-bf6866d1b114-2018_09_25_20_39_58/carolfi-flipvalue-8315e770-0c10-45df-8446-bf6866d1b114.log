@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 20:39:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:39:56]
+Initialization strings:
+[INFO -- 2018-09-25 20:39:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:39:56]
+initSignal:1
+[INFO -- 2018-09-25 20:39:56]
+endSignal:3.5
+[INFO -- 2018-09-25 20:39:56]
+faultModel:2
+[INFO -- 2018-09-25 20:39:58]
+Backtrace BEGIN:
+#0  0x00000000004027a9 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x635830, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:160
+#1  0x0000000000401b3f in std::vector<int, std::allocator<int> >::~vector (this=0x635830, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:425
+#2  0x0000000000401ab4 in chromossome::~chromossome (this=0x635830, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#3  0x0000000000405687 in std::_Destroy<chromossome> (__pointer=0x635830) at /usr/include/c++/5/bits/stl_construct.h:93
+#4  0x0000000000404b87 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x635830, __last=0x635b10) at /usr/include/c++/5/bits/stl_construct.h:103
+#5  0x0000000000403b58 in std::_Destroy<chromossome*> (__first=0x635610, __last=0x635b10) at /usr/include/c++/5/bits/stl_construct.h:126
+#6  0x0000000000402953 in std::_Destroy<chromossome*, chromossome> (__first=0x635610, __last=0x635b10) at /usr/include/c++/5/bits/stl_construct.h:151
+#7  0x0000000000401bd3 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd720, __in_chrg=<optimized out>) at /usr/include/c++/5/bits/stl_vector.h:424
+#8  0x000000000040164d in genetic_algorithm () at knapsackga.cpp:95
+#9  0x0000000000401844 in main () at knapsackga.cpp:137
+
+155		  }
+156	      }
+157	#endif
+158	
+159	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+160	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+161			      - this->_M_impl._M_start); }
+162	
+163	    public:
+164	      _Vector_impl _M_impl;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x300x580x630x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd658
+address max offset: 8
+Memory content after  bitflip:0x9e0x800xe00xff0xf40x790xa30xd5
+frame name: std::_Destroy_aux<false>::__destroy<chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/5/bits/stl_construct.h
+symbol line: 100
+value: 0x635830
+value address: 0x7fffffffd658
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 20:39:58]
+Fault Injection Successful after 2.2665858268737793s
+[INFO -- 2018-09-25 20:39:58]
+event type: exit
+[EXCEPTION -- 2018-09-25 20:39:58]
+exit code: no exit code available

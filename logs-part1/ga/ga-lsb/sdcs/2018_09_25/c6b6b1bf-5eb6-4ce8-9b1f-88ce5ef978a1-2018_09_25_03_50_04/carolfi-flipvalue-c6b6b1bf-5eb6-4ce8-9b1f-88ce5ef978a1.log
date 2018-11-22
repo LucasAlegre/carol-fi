@@ -1,0 +1,51 @@
+[INFO -- 2018-09-25 03:50:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 03:50:00]
+Initialization strings:
+[INFO -- 2018-09-25 03:50:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 03:50:00]
+initSignal:1
+[INFO -- 2018-09-25 03:50:00]
+endSignal:3.5
+[INFO -- 2018-09-25 03:50:00]
+faultModel:4
+[INFO -- 2018-09-25 03:50:01]
+Backtrace BEGIN:
+#0  0x00007ffff7494b65 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd804) at random_r.c:357
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+352	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 26
+Memory content before bitflip:0xa50x5b0x880x58
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7832208 
+address max offset: 4
+Memory content after  bitflip:0xa50x5b0x880x50
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, 1931475379, 330308583, 501760435, -290271899, -1128719279, -1450432770, 1799858990, 165092428, -722271653, -969326645, 549902334, -1713350327, 64402937, -2118657100, 1927415598, -69028217, -172666254, 62154310, 747596063, 89523763, -1016448912, 1310455060, 636355572, -445703495, -1432222995, 1351113637, -699449395, -492382327, 1436598908, -1735330198, 1325938561}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-09-25 03:50:01]
+Fault Injection Successful after 1.7536156177520752s
+[INFO -- 2018-09-25 03:50:04]
+event type: exit
+[INFO -- 2018-09-25 03:50:04]
+exit code: 0

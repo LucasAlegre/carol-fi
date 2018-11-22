@@ -1,0 +1,53 @@
+[INFO -- 2018-09-23 21:29:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:29:54]
+Initialization strings:
+[INFO -- 2018-09-23 21:29:54]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:29:54]
+initSignal:0
+[INFO -- 2018-09-23 21:29:54]
+endSignal:2
+[INFO -- 2018-09-23 21:29:54]
+faultModel:4
+[INFO -- 2018-09-23 21:29:55]
+Backtrace BEGIN:
+#0  0x0000555555555c74 in std::vector<int, std::allocator<int> >::size (this=0x7fffffffd9e0) at /usr/include/c++/7/bits/stl_vector.h:671
+#1  0x0000555555555650 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda00, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+675	      max_size() const _GLIBCXX_NOEXCEPT
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00xd90xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd948
+address max offset: 8
+Memory content after  bitflip:0xe00xd90xff0xff0xff0x7f0x000x01
+frame name: std::vector<int, std::allocator<int> >::size
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffd9e0
+value address: 0x7fffffffd948
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-23 21:29:55]
+Fault Injection Successful after 1.717818021774292s
+[INFO -- 2018-09-23 21:29:55]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:29:55]
+exit code: no exit code available

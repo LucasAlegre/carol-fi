@@ -1,0 +1,61 @@
+[INFO -- 2018-09-25 06:57:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:57:14]
+Initialization strings:
+[INFO -- 2018-09-25 06:57:14]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:57:14]
+initSignal:1
+[INFO -- 2018-09-25 06:57:14]
+endSignal:3.5
+[INFO -- 2018-09-25 06:57:14]
+faultModel:3
+[EXCEPTION -- 2018-09-25 06:57:16]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 06:57:16]
+Backtrace BEGIN:
+#0  0x00005555555568bb in std::_Destroy<int*, int> (__first=0x5555557764e0, __last=0xc8) at /usr/include/c++/7/bits/stl_construct.h:203
+#1  0x0000555555555be1 in std::vector<int, std::allocator<int> >::~vector (this=0x5555557764e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x0000555555555b62 in chromossome::~chromossome (this=0x5555557764e0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#3  0x00005555555599b7 in std::_Destroy<chromossome> (__pointer=0x5555557764e0) at /usr/include/c++/7/bits/stl_construct.h:98
+#4  0x0000555555558f21 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#5  0x0000555555557e12 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#6  0x0000555555556a49 in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#7  0x0000555555555c81 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd870, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#8  0x0000555555555088 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#9  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#10 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+198		__traits::destroy(__alloc, std::__addressof(*__first));
+199	    }
+200	
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:57:16]
+Fault Injection Successful after 2.3542044162750244s
+[INFO -- 2018-09-25 06:57:16]
+event type: exit
+[EXCEPTION -- 2018-09-25 06:57:16]
+exit code: no exit code available

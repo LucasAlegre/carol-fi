@@ -1,0 +1,49 @@
+[INFO -- 2018-09-25 06:56:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 06:56:05]
+Initialization strings:
+[INFO -- 2018-09-25 06:56:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 06:56:05]
+initSignal:1
+[INFO -- 2018-09-25 06:56:05]
+endSignal:3.5
+[INFO -- 2018-09-25 06:56:05]
+faultModel:1
+[INFO -- 2018-09-25 06:56:06]
+Backtrace BEGIN:
+#0  0x0000555555556834 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x00005555555568a9 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555bed in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd970, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x0000555555555524 in genetic_algorithm () at knapsackga.cpp:101
+#4  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x210x000x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 33
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 06:56:06]
+Fault Injection Successful after 1.781104564666748s

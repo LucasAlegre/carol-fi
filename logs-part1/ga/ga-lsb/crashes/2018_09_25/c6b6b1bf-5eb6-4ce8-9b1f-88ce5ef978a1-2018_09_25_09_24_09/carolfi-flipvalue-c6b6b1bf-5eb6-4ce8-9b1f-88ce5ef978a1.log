@@ -1,0 +1,60 @@
+[INFO -- 2018-09-25 09:24:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 09:24:07]
+Initialization strings:
+[INFO -- 2018-09-25 09:24:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 09:24:07]
+initSignal:1
+[INFO -- 2018-09-25 09:24:07]
+endSignal:3.5
+[INFO -- 2018-09-25 09:24:07]
+faultModel:4
+[INFO -- 2018-09-25 09:24:08]
+Backtrace BEGIN:
+#0  0x0000555555558fab in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x7fffffffd870) at /usr/include/c++/7/bits/stl_iterator.h:1221
+#1  0x0000555555558055 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x0, __last=0x0, __result=0x555555776380, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#2  0x0000555555556b8c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#3  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+1216	  // returning a constant iterator when we don't want to move.
+1217	  template<typename _Tp, typename _ReturnType
+1218	    = typename conditional<__move_if_noexcept_cond<_Tp>::value,
+1219				   const _Tp*, move_iterator<_Tp*>>::type>
+1220	    inline _GLIBCXX17_CONSTEXPR _ReturnType
+1221	    __make_move_if_noexcept_iterator(_Tp* __i)
+1222	    { return _ReturnType(__i); }
+1223	
+1224	  // @} group iterators
+1225	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd878
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x04
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd870
+value address: 0x7fffffffd838
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 09:24:08]
+Fault Injection Successful after 1.7736010551452637s
+[INFO -- 2018-09-25 09:24:08]
+event type: exit
+[EXCEPTION -- 2018-09-25 09:24:08]
+exit code: no exit code available

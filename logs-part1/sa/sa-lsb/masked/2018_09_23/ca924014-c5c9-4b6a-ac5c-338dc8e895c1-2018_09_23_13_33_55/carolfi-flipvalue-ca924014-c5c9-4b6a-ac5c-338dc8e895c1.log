@@ -1,0 +1,55 @@
+[INFO -- 2018-09-23 13:33:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:33:52]
+Initialization strings:
+[INFO -- 2018-09-23 13:33:52]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:33:52]
+initSignal:0
+[INFO -- 2018-09-23 13:33:52]
+endSignal:2
+[INFO -- 2018-09-23 13:33:52]
+faultModel:4
+[EXCEPTION -- 2018-09-23 13:33:52]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-09-23 13:33:54]
+Backtrace BEGIN:
+#0  0x0000555555556527 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1433868016, __last=1433868032, __result=0x555555556431 <std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long)+35>) at /usr/include/c++/7/bits/stl_uninitialized.h:115
+#1  0x0000555555555dbb in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=0, __result=0x555555771700) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x00005555555556b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x00005555555550ca in simulated_annealing () at knapsacksa.cpp:47
+#4  0x000055555555535e in main () at knapsacksa.cpp:84
+
+110	   *
+111	   *  Like copy(), but does not require an initialized output range.
+112	  */
+113	  template<typename _InputIterator, typename _ForwardIterator>
+114	    inline _ForwardIterator
+115	    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+116			       _ForwardIterator __result)
+117	    {
+118	      typedef typename iterator_traits<_InputIterator>::value_type
+119		_ValueType1;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x40
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 1074330417
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:33:54]
+Fault Injection Successful after 2.276193141937256s
+[INFO -- 2018-09-23 13:33:55]
+event type: exit
+[INFO -- 2018-09-23 13:33:55]
+exit code: 0

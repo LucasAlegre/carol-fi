@@ -1,0 +1,59 @@
+[INFO -- 2018-09-23 20:20:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 20:20:59]
+Initialization strings:
+[INFO -- 2018-09-23 20:20:59]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 20:20:59]
+initSignal:0
+[INFO -- 2018-09-23 20:20:59]
+endSignal:2
+[INFO -- 2018-09-23 20:20:59]
+faultModel:4
+[INFO -- 2018-09-23 20:20:59]
+Backtrace BEGIN:
+#0  0x00007ffff7df2403 in __mmap64 (addr=0x7ffff7dc6000, len=49152, prot=prot@entry=3, flags=flags@entry=2066, fd=fd@entry=4, offset=1536000) at ../sysdeps/unix/sysv/linux/mmap64.c:52
+#1  0x00007ffff7ddc5aa in _dl_map_segments (loader=0x7fffffffd2c0, has_holes=<optimized out>, maplength=<optimized out>, nloadcmds=2, loadcmds=0x7fffffffd290, type=<optimized out>, header=<optimized out>, fd=<optimized out>, l=0x7ffff7fc6000) at ./dl-map-segments.h:94
+#2  _dl_map_object_from_fd (name=name@entry=0x555555554589 "libstdc++.so.6", origname=origname@entry=0x0, fd=<optimized out>, fbp=<optimized out>, realname=<optimized out>, loader=loader@entry=0x7ffff7ffe150, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1205
+#3  0x00007ffff7dddf85 in _dl_map_object (loader=0x7ffff7ffe150, name=0x555555554589 "libstdc++.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2458
+#4  0x00007ffff7de3280 in openaux (a=a@entry=0x7fffffffdbd0) at dl-deps.c:63
+#5  0x00007ffff7df10b0 in _dl_catch_error (objname=objname@entry=0x7fffffffdbc8, errstring=errstring@entry=0x7fffffffdbc0, mallocedp=mallocedp@entry=0x7fffffffdbbf, operate=operate@entry=0x7ffff7de3250 <openaux>, args=args@entry=0x7fffffffdbd0) at dl-error-skeleton.c:198
+#6  0x00007ffff7de389b in _dl_map_object_deps (map=map@entry=0x7ffff7ffe150, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#7  0x00007ffff7dd8b14 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1725
+#8  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf50, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf50) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffdf50) at rtld.c:520
+#11 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000001 in ?? ()
+#13 0x00007fffffffe2ce in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+47	../sysdeps/unix/sysv/linux/mmap64.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 3
+Memory content before bitflip:0x090x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7df55d8 
+address max offset: 8
+Memory content after  bitflip:0x090x000x000x000x000x000x000x01
+frame name: _dl_map_object_from_fd
+symbol name: system_dirs_len
+symbol filename: dl-load.c
+symbol line: 112
+value: {22, 26, 5, 72057594037927945}
+value address: 0x7ffff7df55c0 <system_dirs_len>
+Type: The type is an array.
+Type sizeof: 32
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 3)
+
+[INFO -- 2018-09-23 20:20:59]
+Fault Injection Successful after 0.3479006290435791s
+[INFO -- 2018-09-23 20:21:01]
+event type: exit
+[INFO -- 2018-09-23 20:21:01]
+exit code: 0

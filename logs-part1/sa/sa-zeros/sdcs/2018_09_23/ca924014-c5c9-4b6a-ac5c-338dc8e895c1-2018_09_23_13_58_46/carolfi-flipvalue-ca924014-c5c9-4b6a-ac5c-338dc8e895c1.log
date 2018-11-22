@@ -1,0 +1,52 @@
+[INFO -- 2018-09-23 13:58:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:58:43]
+Initialization strings:
+[INFO -- 2018-09-23 13:58:43]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:58:43]
+initSignal:0
+[INFO -- 2018-09-23 13:58:43]
+endSignal:2
+[INFO -- 2018-09-23 13:58:43]
+faultModel:3
+[INFO -- 2018-09-23 13:58:44]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#1  0x00005555555555fb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffda30, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x00005555555551cb in simulated_annealing () at knapsacksa.cpp:47
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+158	      }
+159	#endif
+160	
+161	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+162	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+163			      - this->_M_impl._M_start); }
+164	
+165	    public:
+166	      _Vector_impl _M_impl;
+167	
+
+Backtrace END
+Memory content before bitflip:0x160x650x010x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffda00
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: simulated_annealing
+symbol name: temp
+symbol filename: knapsacksa.cpp
+symbol line: 42
+value: 0
+value address: 0x7fffffffda00
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 13:58:44]
+Fault Injection Successful after 1.4990277290344238s
+[INFO -- 2018-09-23 13:58:46]
+event type: exit
+[INFO -- 2018-09-23 13:58:46]
+exit code: 0

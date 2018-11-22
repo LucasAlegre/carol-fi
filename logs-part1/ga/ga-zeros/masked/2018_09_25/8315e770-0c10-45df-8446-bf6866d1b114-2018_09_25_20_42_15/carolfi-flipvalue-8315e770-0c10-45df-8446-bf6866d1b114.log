@@ -1,0 +1,56 @@
+[INFO -- 2018-09-25 20:42:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 20:42:07]
+Initialization strings:
+[INFO -- 2018-09-25 20:42:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 20:42:07]
+initSignal:1
+[INFO -- 2018-09-25 20:42:07]
+endSignal:3.5
+[INFO -- 2018-09-25 20:42:07]
+faultModel:3
+[INFO -- 2018-09-25 20:42:08]
+Backtrace BEGIN:
+#0  std::__make_move_if_noexcept_iterator<chromossome*, std::move_iterator<chromossome*> > (__i=0x625420) at /usr/include/c++/5/bits/stl_iterator.h:1166
+#1  0x0000000000403d57 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x625400, __last=0x625420, __result=0x6279c0, __alloc=...) at /usr/include/c++/5/bits/stl_uninitialized.h:303
+#2  0x0000000000402a56 in std::vector<chromossome, std::allocator<chromossome> >::_M_emplace_back_aux<chromossome const&> (this=0x7fffffffd6a0) at /usr/include/c++/5/bits/vector.tcc:420
+#3  0x0000000000401c6b in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd6a0, __x=...) at /usr/include/c++/5/bits/stl_vector.h:923
+#4  0x0000000000400fa8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000000000401385 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000000000401844 in main () at knapsackga.cpp:137
+
+1161	  template<typename _Iterator, typename _ReturnType
+1162	    = typename conditional<__move_if_noexcept_cond
+1163	      <typename iterator_traits<_Iterator>::value_type>::value,
+1164	                _Iterator, move_iterator<_Iterator>>::type>
+1165	    inline _ReturnType
+1166	    __make_move_if_noexcept_iterator(_Iterator __i)
+1167	    { return _ReturnType(__i); }
+1168	
+1169	  // @} group iterators
+1170	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd628
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_emplace_back_aux<chromossome const&>
+symbol name: __new_finish
+symbol filename: /usr/include/c++/5/bits/vector.tcc
+symbol line: 413
+value: 0x0
+value address: 0x7fffffffd628
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 20:42:08]
+Fault Injection Successful after 1.2051193714141846s
+[INFO -- 2018-09-25 20:42:15]
+event type: exit
+[INFO -- 2018-09-25 20:42:15]
+exit code: 0

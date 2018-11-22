@@ -1,0 +1,53 @@
+[INFO -- 2018-09-25 08:55:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:55:22]
+Initialization strings:
+[INFO -- 2018-09-25 08:55:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:55:22]
+initSignal:1
+[INFO -- 2018-09-25 08:55:22]
+endSignal:3.5
+[INFO -- 2018-09-25 08:55:22]
+faultModel:0
+[INFO -- 2018-09-25 08:55:24]
+Backtrace BEGIN:
+#0  0x00005555555573fd in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#1  0x0000555555556453 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd910, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#2  0x0000555555555422 in genetic_algorithm () at knapsackga.cpp:102
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+1526	      // moved, either because the source's allocator will move too
+1527	      // or because the allocators are equal.
+1528	      void
+1529	      _M_move_assign(vector&& __x, std::true_type) noexcept
+1530	      {
+1531		vector __tmp(get_allocator());
+1532		this->_M_impl._M_swap_data(__tmp._M_impl);
+1533		this->_M_impl._M_swap_data(__x._M_impl);
+1534		std::__alloc_on_move(_M_get_Tp_allocator(), __x._M_get_Tp_allocator());
+1535	      }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x100xd90xef0xff0xff0x7f0x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd910
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:55:24]
+Fault Injection Successful after 2.706019878387451s
+[INFO -- 2018-09-25 08:55:24]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:55:24]
+exit code: no exit code available

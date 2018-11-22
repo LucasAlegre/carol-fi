@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 16:36:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 16:36:05]
+Initialization strings:
+[INFO -- 2018-09-23 16:36:05]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 16:36:05]
+initSignal:0
+[INFO -- 2018-09-23 16:36:05]
+endSignal:2
+[INFO -- 2018-09-23 16:36:05]
+faultModel:0
+[INFO -- 2018-09-23 16:36:05]
+Backtrace BEGIN:
+#0  0x00007ffff7df2403 in __mmap64 (addr=addr@entry=0x0, len=len@entry=8192, prot=prot@entry=3, flags=flags@entry=34, fd=fd@entry=-1, offset=offset@entry=0) at ../sysdeps/unix/sysv/linux/mmap64.c:52
+#1  0x00007ffff7df09b7 in malloc (n=744) at dl-minimal.c:73
+#2  0x00007ffff7df0a6e in calloc (nmemb=nmemb@entry=31, size=size@entry=24) at dl-minimal.c:103
+#3  0x00007ffff7de765e in _dl_check_map_versions (map=map@entry=0x7ffff7fc6ed0, verbose=verbose@entry=1, trace_mode=trace_mode@entry=0) at dl-version.c:293
+#4  0x00007ffff7de78b4 in _dl_check_all_versions (map=<optimized out>, verbose=verbose@entry=1, trace_mode=0) at dl-version.c:386
+#5  0x00007ffff7dd6bd8 in version_check_doit (a=a@entry=0x7fffffffdd20) at rtld.c:622
+#6  0x00007ffff7df113b in _dl_receive_error (fct=fct@entry=0x7ffff7dd6010 <print_missing_version>, operate=operate@entry=0x7ffff7dd6bc0 <version_check_doit>, args=args@entry=0x7fffffffdd20) at dl-error-skeleton.c:225
+#7  0x00007ffff7dd8cf9 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1788
+#8  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf80, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf80) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffdf80) at rtld.c:520
+#11 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000001 in ?? ()
+#13 0x00007fffffffe2f7 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+47	../sysdeps/unix/sysv/linux/mmap64.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffc8b8 
+address max offset: 4
+Memory content after  bitflip:0x020x000x000x00
+frame name: _dl_start_final
+symbol name: _dl_skip_args
+symbol filename: rtld.c
+symbol line: 84
+value: 2
+value address: 0x7ffff7ffc8b8 <_dl_skip_args>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 16:36:05]
+Fault Injection Successful after 0.9258673191070557s
+[INFO -- 2018-09-23 16:36:08]
+event type: exit
+[INFO -- 2018-09-23 16:36:08]
+exit code: 0

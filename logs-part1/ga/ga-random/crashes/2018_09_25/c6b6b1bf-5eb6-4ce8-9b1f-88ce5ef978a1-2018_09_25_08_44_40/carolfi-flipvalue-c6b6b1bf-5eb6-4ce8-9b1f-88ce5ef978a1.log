@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 08:44:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:44:38]
+Initialization strings:
+[INFO -- 2018-09-25 08:44:38]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:44:38]
+initSignal:1
+[INFO -- 2018-09-25 08:44:38]
+endSignal:3.5
+[INFO -- 2018-09-25 08:44:38]
+faultModel:2
+[EXCEPTION -- 2018-09-25 08:44:39]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 08:44:39]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-09-25 08:44:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-09-25 08:44:40]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd804) at random_r.c:394
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554eb3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555514f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 222, capacity 222 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x000055555555548d in genetic_algorithm () at knapsackga.cpp:104
+#6  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+389	in random_r.c
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x380xd30xc00xd1
+frame name: rand_bit
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: -775892168
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 08:44:40]
+Fault Injection Successful after 2.027024984359741s
+[INFO -- 2018-09-25 08:44:40]
+event type: exit
+[EXCEPTION -- 2018-09-25 08:44:40]
+exit code: no exit code available

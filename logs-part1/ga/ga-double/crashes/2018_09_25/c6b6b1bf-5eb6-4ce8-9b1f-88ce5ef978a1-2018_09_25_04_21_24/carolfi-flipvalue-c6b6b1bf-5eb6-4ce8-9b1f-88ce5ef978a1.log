@@ -1,0 +1,52 @@
+[INFO -- 2018-09-25 04:21:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 04:21:22]
+Initialization strings:
+[INFO -- 2018-09-25 04:21:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 04:21:22]
+initSignal:1
+[INFO -- 2018-09-25 04:21:22]
+endSignal:3.5
+[INFO -- 2018-09-25 04:21:22]
+faultModel:1
+[INFO -- 2018-09-25 04:21:24]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::begin (this=0x7fffffffd950) at /usr/include/c++/7/bits/stl_vector.h:572
+#1  0x0000555555556165 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#2  0x00005555555554bb in genetic_algorithm () at knapsackga.cpp:105
+#3  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+567	       *  Returns a read-only (constant) iterator that points to the
+568	       *  first element in the %vector.  Iteration is done in ordinary
+569	       *  element order.
+570	       */
+571	      const_iterator
+572	      begin() const _GLIBCXX_NOEXCEPT
+573	      { return const_iterator(this->_M_impl._M_start); }
+574	
+575	      /**
+576	       *  Returns a read/write iterator that points one past the last
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x120x00
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1179848
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-25 04:21:24]
+Fault Injection Successful after 2.059276580810547s
+[INFO -- 2018-09-25 04:21:24]
+event type: exit
+[EXCEPTION -- 2018-09-25 04:21:24]
+exit code: no exit code available

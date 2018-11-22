@@ -1,0 +1,50 @@
+[INFO -- 2018-09-23 13:00:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 13:00:48]
+Initialization strings:
+[INFO -- 2018-09-23 13:00:48]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 13:00:48]
+initSignal:0
+[INFO -- 2018-09-23 13:00:48]
+endSignal:2
+[INFO -- 2018-09-23 13:00:48]
+faultModel:2
+[INFO -- 2018-09-23 13:00:49]
+Backtrace BEGIN:
+#0  0x00007ffff713ea29 in __random () at random.c:295
+#1  0x00007ffff713eea9 in rand () at rand.c:27
+#2  0x00005555555550cf in simulated_annealing () at knapsacksa.cpp:48
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+290	random.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x160x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffda20
+address max offset: 8
+Memory content after  bitflip:0xc60xec0xa00xf00x840xec0x010x9e
+frame name: simulated_annealing
+symbol name: solution
+symbol filename: knapsacksa.cpp
+symbol line: 38
+value: std::vector of length 200, capacity -1765299127504439746 = {1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1...}
+value address: 0x7fffffffda10
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-09-23 13:00:49]
+Fault Injection Successful after 1.32096529006958s
+[INFO -- 2018-09-23 13:00:50]
+event type: exit
+[INFO -- 2018-09-23 13:00:50]
+exit code: 0

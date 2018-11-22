@@ -31,6 +31,7 @@ except ImportError:
 VERSION = "1.1"
 
 ### Global variables
+detectLogFile = ''
 uniqueID = str(uuid.uuid4())
 gdbFIlogFile = "/tmp/carolfi-"+uniqueID+".log"
 summFIlogFile = "summary-carolfi.log"
@@ -41,7 +42,7 @@ else:
 
 
 # Counters to keep track of fault effects so we can show them to the user
-faults = {"masked": 0, "sdc": 0, "crash": 0, "hang": 0, "noOutput": 0, "failed": 0}
+faults = {"masked": 0, "sdc": 0, "crash": 0, "hang": 0, "noOutput": 0, "failed": 0, "detected": 0}
 
 status = ""
 
@@ -170,12 +171,17 @@ def saveOutput(section, isHang):
         fp.close()
 
     isOutput = checkIsOutput(section)
-
+    if os.path.isfile(detectLogFile):
+        isDetected = True
+    else:
+        isDetected = False
+    
     dt = datetime.datetime.fromtimestamp(time.time())
     ymd = dt.strftime('%Y_%m_%d')
     ymdhms = dt.strftime('%Y_%m_%d_%H_%M_%S')
     ymdhms = uniqueID+"-"+ymdhms
     dirDT = os.path.join(ymd,ymdhms)
+    masked = False
     if not fiSucc:
         cpDir = os.path.join('logs',section,'failed-injection',dirDT)
         logging.summary(section+" - Fault Injection Failed")
@@ -192,6 +198,10 @@ def saveOutput(section, isHang):
         cpDir = os.path.join('logs',section,'noOutputGenerated',dirDT)
         logging.summary(section+" - NoOutputGenerated")
         faults["noOutput"] += 1
+    elif isDetected:
+        cpDir = os.path.join('logs',section,'sdcs-detected',dirDT)
+        logging.summary(section+" - SDC Detected")
+        faults["detected"] += 1
     else:
         # Check output files for SDCs
         isSDC = checkSDCs(section)
@@ -209,7 +219,9 @@ def saveOutput(section, isHang):
 
     shutil.move(flipLogFile, cpDir)
     shutil.move(gdbFIlogFile, cpDir)
-    if isSDC:
+    if os.path.isfile(detectLogFile):
+        shutil.move(detectLogFile, cpDir)
+    if isSDC or isDetected:
         shutil.move(outputFile, cpDir)
 
 
@@ -258,6 +270,9 @@ def runGDBFaultInjection(section):
 
     # Generate python script for GDB
     genFlipScript(section)
+
+    # Make sure there is not detection log left before execution
+    os.system("rm -f "+detectLogFile)
 
     # Run pre execution function
     preExecution(section)
@@ -354,6 +369,8 @@ def main(stdscr):
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--conf', dest="configFile", help='Configuration file', required=True)
     parser.add_argument('-i', '--iter', dest="iterations", help='How many times to repeat the programs in the configuration file', required=True, type=int)
+    parser.add_argument('-d', '--detect', dest="detectLog", help='Detection Log File. If this file exists after execution, a successful SDC detection will be assumed', required=False, default='')
+    #parser.add_argument('-m', '--model', dest="model", help='Fault injection model; all will randomly choose one fault model', required=False, choices=('single', 'double', 'random', 'zeros', 'lsb', 'all'), default='all')
     
     args = parser.parse_args()
     if args.iterations < 1:
@@ -367,6 +384,9 @@ def main(stdscr):
     # Read the configuration file with data for all the apps that will be executed
     conf.read(args.configFile)
     
+    # Set the duplication detection log
+    global detectLogFile
+    detectLogFile = args.detectLog
     
     try:
 

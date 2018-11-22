@@ -1,0 +1,59 @@
+[INFO -- 2018-09-25 02:16:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 02:16:36]
+Initialization strings:
+[INFO -- 2018-09-25 02:16:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 02:16:36]
+initSignal:1
+[INFO -- 2018-09-25 02:16:36]
+endSignal:3.5
+[INFO -- 2018-09-25 02:16:36]
+faultModel:3
+[INFO -- 2018-09-25 02:16:37]
+Backtrace BEGIN:
+#0  0x000055555555838c in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd6b0, __i=@0x7fffffffd6a8: 0x55555577edb0) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555556ecf in std::vector<int, std::allocator<int> >::begin (this=0x555555780010) at /usr/include/c++/7/bits/stl_vector.h:573
+#2  0x0000555555555ec0 in std::vector<int, std::allocator<int> >::vector (this=0x555555776520, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x0000555555557e39 in chromossome::chromossome (this=0x555555776520) at knapsackga.cpp:42
+#4  0x0000555555557e96 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd870, __p=0x555555776520, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556a90 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776520, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555556b50 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#7  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555447 in genetic_algorithm () at knapsackga.cpp:103
+#10 0x00005555555558d7 in main () at knapsackga.cpp:137
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Memory content before bitflip:0x020x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd7f8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __elems_before
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 405
+value: 0
+value address: 0x7fffffffd7f8
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 02:16:37]
+Fault Injection Successful after 1.43721342086792s
+[INFO -- 2018-09-25 02:16:40]
+event type: exit
+[INFO -- 2018-09-25 02:16:40]
+exit code: 0

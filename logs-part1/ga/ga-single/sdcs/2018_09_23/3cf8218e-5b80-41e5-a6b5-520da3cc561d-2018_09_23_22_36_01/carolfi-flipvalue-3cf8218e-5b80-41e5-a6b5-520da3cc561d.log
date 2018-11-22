@@ -1,0 +1,57 @@
+[INFO -- 2018-09-23 22:35:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 22:35:56]
+Initialization strings:
+[INFO -- 2018-09-23 22:35:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-23 22:35:56]
+initSignal:1
+[INFO -- 2018-09-23 22:35:56]
+endSignal:3.5
+[INFO -- 2018-09-23 22:35:56]
+faultModel:0
+[INFO -- 2018-09-23 22:35:58]
+Backtrace BEGIN:
+#0  0x000055555555857c in std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=-10368) at /usr/include/c++/7/bits/cpp_type_traits.h:408
+#1  0x0000555555559fb2 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557827f0) at /usr/include/c++/7/bits/stl_algobase.h:455
+#2  0x000055555555948e in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557827f0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x00005555555583be in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557827f0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555556f6d in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x5555557827f0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x0000555555555ed1 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#6  0x000055555555507b in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#7  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#8  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+403	
+404	  // Fallback implementation of the function in bits/stl_iterator.h used to
+405	  // remove the move_iterator wrapper.
+406	  template<typename _Iterator>
+407	    inline _Iterator
+408	    __miter_base(_Iterator __it)
+409	    { return __it; }
+410	
+411	_GLIBCXX_END_NAMESPACE_VERSION
+412	} // namespace
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f068 
+address max offset: 4
+Memory content after  bitflip:0xca0x000x000x00
+frame name: std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 202
+value address: 0x55555575f068 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 22:35:58]
+Fault Injection Successful after 2.1747519969940186s
+[INFO -- 2018-09-23 22:36:00]
+event type: exit
+[INFO -- 2018-09-23 22:36:00]
+exit code: 0

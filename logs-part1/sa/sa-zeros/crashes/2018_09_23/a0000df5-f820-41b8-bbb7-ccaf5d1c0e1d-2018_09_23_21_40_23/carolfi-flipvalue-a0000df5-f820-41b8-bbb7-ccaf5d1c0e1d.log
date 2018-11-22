@@ -1,0 +1,54 @@
+[INFO -- 2018-09-23 21:40:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-23 21:40:21]
+Initialization strings:
+[INFO -- 2018-09-23 21:40:21]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-09-23 21:40:21]
+initSignal:0
+[INFO -- 2018-09-23 21:40:21]
+endSignal:2
+[INFO -- 2018-09-23 21:40:21]
+faultModel:3
+[EXCEPTION -- 2018-09-23 21:40:22]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-09-23 21:40:22]
+Backtrace BEGIN:
+#0  0x0000555555555d03 in std::vector<int, std::allocator<int> >::begin (this=0x7fffffffda00) at /usr/include/c++/7/bits/stl_vector.h:573
+#1  0x0000555555555979 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9e0, __x=std::vector of length 23456248612488, capacity 23456248612488 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#2  0x000055555555518f in simulated_annealing () at knapsacksa.cpp:60
+#3  0x000055555555535e in main () at knapsacksa.cpp:84
+
+568	       *  first element in the %vector.  Iteration is done in ordinary
+569	       *  element order.
+570	       */
+571	      const_iterator
+572	      begin() const _GLIBCXX_NOEXCEPT
+573	      { return const_iterator(this->_M_impl._M_start); }
+574	
+575	      /**
+576	       *  Returns a read/write iterator that points one past the last
+577	       *  element in the %vector.  Iteration is done in ordinary
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575906c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 0
+value address: 0x55555575906c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-09-23 21:40:22]
+Fault Injection Successful after 1.1411845684051514s
+[INFO -- 2018-09-23 21:40:22]
+event type: exit
+[EXCEPTION -- 2018-09-23 21:40:22]
+exit code: no exit code available

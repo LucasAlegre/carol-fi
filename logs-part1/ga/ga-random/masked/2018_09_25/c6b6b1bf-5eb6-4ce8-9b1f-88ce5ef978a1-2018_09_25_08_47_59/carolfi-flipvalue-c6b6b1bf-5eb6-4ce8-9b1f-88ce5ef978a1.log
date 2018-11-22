@@ -1,0 +1,62 @@
+[INFO -- 2018-09-25 08:47:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-09-25 08:47:55]
+Initialization strings:
+[INFO -- 2018-09-25 08:47:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-09-25 08:47:55]
+initSignal:1
+[INFO -- 2018-09-25 08:47:55]
+endSignal:3.5
+[INFO -- 2018-09-25 08:47:55]
+faultModel:2
+[INFO -- 2018-09-25 08:47:56]
+Backtrace BEGIN:
+#0  std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776380) at /usr/include/c++/7/bits/stl_uninitialized.h:115
+#1  0x000055555555901a in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557763a0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x000055555555807d in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x0, __last=0x0, __result=0x5555557763a0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#3  0x0000555555556bcd in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd870, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#4  0x0000555555555d28 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd870, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555502c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555409 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x00005555555558d7 in main () at knapsackga.cpp:137
+
+110	   *
+111	   *  Like copy(), but does not require an initialized output range.
+112	  */
+113	  template<typename _InputIterator, typename _ForwardIterator>
+114	    inline _ForwardIterator
+115	    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+116			       _ForwardIterator __result)
+117	    {
+118	      typedef typename iterator_traits<_InputIterator>::value_type
+119		_ValueType1;
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555779b80
+address max offset: 4
+Memory content after  bitflip:0x180x9b0x650x27
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x5555557801f0
+value address: 0x5555557801f0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-09-25 08:47:56]
+Fault Injection Successful after 1.195310115814209s
+[INFO -- 2018-09-25 08:47:58]
+event type: exit
+[INFO -- 2018-09-25 08:47:58]
+exit code: 0
