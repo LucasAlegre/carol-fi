@@ -70,6 +70,7 @@ int executeAlgorithm() {
         values.push_back(x);
         weights.push_back(y);
     }
+    file.close();
 
     return knapSack(W, n, values, weights, V);
 }
@@ -77,20 +78,18 @@ int executeAlgorithm() {
 int main() {
     ofstream outfile("/tmp/knapsack/outputmf");
 
-    int result;
     int result1 = executeAlgorithm();
     int result2 = executeAlgorithm();
 
     if(result1 != result2) {
 	ofstream detection_log("/tmp/knapsack/mf-detection.log");
         detection_log << result1 << " " << result2;
-    	outfile.close();
+    	detection_log.close();
     }
 
-    outfile << result;
+    outfile << result1;
     outfile.close();
-    cout << "Result: " << result << "\n";
+    cout << "Result: " << result1 << "\n";
    
-
     return 0;
 }

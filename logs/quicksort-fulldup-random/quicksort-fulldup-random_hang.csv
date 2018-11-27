@@ -1,0 +1,4 @@
+Variable Name;Variable File;Variable Line;Fault Injection Time(s);Injection Time Interval;Fault Model
+data;quicksort-fulldup.c;43;2.0072085857391357;0-5;Random bit-flip
+data;quicksort-fulldup.c;43;2.682732105255127;0-5;Random bit-flip
+_rtld_global;rtld.c;231;0.5362386703491211;0-5;Random bit-flip

@@ -1,0 +1,56 @@
+[INFO -- 2018-11-24 22:15:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-24 22:15:10]
+Initialization strings:
+[INFO -- 2018-11-24 22:15:10]
+(1) file /tmp/quicksort-fulldup/quicksort-fulldup
+[INFO -- 2018-11-24 22:15:10]
+(2) set args 5000000 4 /tmp/quicksort-fulldup/inputsort_134217728 /tmp/quicksort-fulldup/output_5000000 /tmp/quick-fulldup-detection.log
+[INFO -- 2018-11-24 22:15:10]
+initSignal:0
+[INFO -- 2018-11-24 22:15:10]
+endSignal:5
+[INFO -- 2018-11-24 22:15:10]
+faultModel:2
+[INFO -- 2018-11-24 22:15:10]
+Backtrace BEGIN:
+#0  qsort_parallel (a=0x7ffff6090010, l=0, r=4999999) at quicksort-fulldup.c:17
+#1  0x00005555555551bb in quick_wrapper._omp_fn.2 () at quicksort-fulldup.c:49
+#2  0x00007ffff7bb3d5f in GOMP_parallel () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#3  0x0000555555554e5f in quick_wrapper (size=5000000, inputFile=0x7fffffffe1fe "/tmp/quicksort-fulldup/inputsort_134217728") at quicksort-fulldup.c:47
+#4  0x0000555555555083 in main (argc=6, argv=0x7fffffffde18) at quicksort-fulldup.c:100
+
+12	
+13	        int pivot=a[r],tmp;
+14	        int less=l-1,more;
+15	        for(more=l; more<=r; more++) {
+16	            if(a[more]<=pivot) {
+17	                less++;
+18	                tmp=a[less];
+19	                a[less]=a[more];
+20	                a[more]=tmp;
+21	            }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x000x090xf60xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffdcb8
+address max offset: 8
+Memory content after  bitflip:0x230x780x3d0xe80x0c0xe60xc30xa6
+frame name: quick_wrapper
+symbol name: data
+symbol filename: quicksort-fulldup.c
+symbol line: 43
+value: 0x7ffff6090010
+value address: 0x7fffffffdcb8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-24 22:15:10]
+Fault Injection Successful after 0.8714382648468018s
+[INFO -- 2018-11-24 22:15:15]
+event type: exit
+[EXCEPTION -- 2018-11-24 22:15:15]
+exit code: no exit code available

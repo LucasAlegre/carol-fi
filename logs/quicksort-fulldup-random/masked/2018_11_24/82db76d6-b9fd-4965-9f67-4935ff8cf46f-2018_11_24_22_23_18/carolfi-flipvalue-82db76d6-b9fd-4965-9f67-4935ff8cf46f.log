@@ -1,0 +1,63 @@
+[INFO -- 2018-11-24 22:23:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-24 22:23:12]
+Initialization strings:
+[INFO -- 2018-11-24 22:23:12]
+(1) file /tmp/quicksort-fulldup/quicksort-fulldup
+[INFO -- 2018-11-24 22:23:12]
+(2) set args 5000000 4 /tmp/quicksort-fulldup/inputsort_134217728 /tmp/quicksort-fulldup/output_5000000 /tmp/quick-fulldup-detection.log
+[INFO -- 2018-11-24 22:23:12]
+initSignal:0
+[INFO -- 2018-11-24 22:23:12]
+endSignal:5
+[INFO -- 2018-11-24 22:23:12]
+faultModel:2
+[EXCEPTION -- 2018-11-24 22:23:14]
+pythonException: invalid frame
+[INFO -- 2018-11-24 22:23:14]
+Backtrace BEGIN:
+#0  0x00007ffff7bbf1a5 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff7bb79c2 in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=0, r=2531932) at quicksort-fulldup.c:27
+#3  0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#4  0x00007ffff7bb679a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x00007ffff7bbf58c in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#6  0x00007ffff7bbe1f9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#7  0x0000555555554e5f in quick_wrapper (size=5000000, inputFile=0x7fffffffe1fe "/tmp/quicksort-fulldup/inputsort_134217728") at quicksort-fulldup.c:47
+#8  0x0000555555555083 in main (argc=6, argv=0x7fffffffde18) at quicksort-fulldup.c:100
+
+82	    int size, omp_num_threads, iterations;
+83	    char * inputFile, *outputFile, *detectLog;
+84	    unsigned *data1, *data2;
+85	
+86	    if (argc == 6) {
+87	        size = atoi(argv[1]);
+88	        omp_num_threads = atoi(argv[2]);
+89	        inputFile = argv[3];
+90	        outputFile = argv[4];
+91	        detectLog = argv[5];
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x2f
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffe1cb 
+address max offset: 1
+Memory content after  bitflip:0x09
+frame name: main
+symbol name: argv
+symbol filename: quicksort-fulldup.c
+symbol line: 80
+value: 0x7fffffffde18
+value address: 0x7fffffffdcf0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-24 22:23:14]
+Fault Injection Successful after 2.5184385776519775s
+[INFO -- 2018-11-24 22:23:17]
+event type: exit
+[INFO -- 2018-11-24 22:23:17]
+exit code: 0

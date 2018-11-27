@@ -1,0 +1,14 @@
+[INFO -- 2018-11-24 22:16:48]
+Starting GDB script
+[INFO -- 2018-11-24 22:16:48]
+initSignal:0.0
+[INFO -- 2018-11-24 22:16:48]
+endSignal:5.0
+[INFO -- 2018-11-24 22:16:48]
+sending 5 signals using command: 'killall -2 quicksort-fulldup' after 0.600007228389s
+[INFO -- 2018-11-24 22:16:49]
+sending 5 signals using command: 'killall -2 quicksort-fulldup' after 0.963687443698s
+[INFO -- 2018-11-24 22:16:49]
+sending 5 signals using command: 'killall -2 quicksort-fulldup' after 1.15394186034s
+[INFO -- 2018-11-24 22:16:54]
+Execution finished before waitTime

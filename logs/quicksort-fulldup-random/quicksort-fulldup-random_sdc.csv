@@ -1,0 +1,11 @@
+Variable Name;Variable File;Variable Line;Fault Injection Time(s);Injection Time Interval;Fault Model;Detected
+size;quicksort-fulldup.c;82;1.2374937534332275;0-5;Random bit-flip;0
+a;quicksort-fulldup.c;10;1.254150390625;0-5;Random bit-flip;1
+a;quicksort-fulldup.c;10;2.1879539489746094;0-5;Random bit-flip;1
+data;quicksort-fulldup.c;43;2.1816914081573486;0-5;Random bit-flip;1
+data;quicksort-fulldup.c;43;1.1674408912658691;0-5;Random bit-flip;1
+a;quicksort-fulldup.c;10;3.948605537414551;0-5;Random bit-flip;1
+a;quicksort-fulldup.c;10;1.2103838920593262;0-5;Random bit-flip;1
+a;quicksort-fulldup.c;10;1.2766249179840088;0-5;Random bit-flip;1
+a;quicksort-fulldup.c;10;3.8508260250091553;0-5;Random bit-flip;1
+data;quicksort-fulldup.c;43;2.821157217025757;0-5;Random bit-flip;1

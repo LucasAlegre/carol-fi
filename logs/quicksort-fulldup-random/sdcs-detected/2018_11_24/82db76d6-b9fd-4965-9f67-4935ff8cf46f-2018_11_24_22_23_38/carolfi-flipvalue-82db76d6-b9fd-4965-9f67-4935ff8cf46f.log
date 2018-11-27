@@ -1,0 +1,55 @@
+[INFO -- 2018-11-24 22:23:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-24 22:23:19]
+Initialization strings:
+[INFO -- 2018-11-24 22:23:19]
+(1) file /tmp/quicksort-fulldup/quicksort-fulldup
+[INFO -- 2018-11-24 22:23:19]
+(2) set args 5000000 4 /tmp/quicksort-fulldup/inputsort_134217728 /tmp/quicksort-fulldup/output_5000000 /tmp/quick-fulldup-detection.log
+[INFO -- 2018-11-24 22:23:19]
+initSignal:0
+[INFO -- 2018-11-24 22:23:19]
+endSignal:5
+[INFO -- 2018-11-24 22:23:19]
+faultModel:2
+[INFO -- 2018-11-24 22:23:21]
+Backtrace BEGIN:
+#0  0x00007ffff7bbf549 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff7bbe1f9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000555555554e5f in quick_wrapper (size=5000000, inputFile=0x7fffffffe1fe "/tmp/quicksort-fulldup/inputsort_134217728") at quicksort-fulldup.c:47
+#3  0x0000555555555098 in main (argc=6, argv=0x7fffffffde18) at quicksort-fulldup.c:102
+
+72	                fprintf(fp, "[%d]: %u %u\n",i,data1[i],data2[i]);
+73	                fclose(fp);
+74	            }
+75	
+76	        }
+77	    }
+78	}
+79	
+80	int main(int argc, char** argv)
+81	{
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x670xc60x690x73
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffe6ced010
+address max offset: 4
+Memory content after  bitflip:0x8d0x3b0x840x06
+frame name: quick_wrapper
+symbol name: data
+symbol filename: quicksort-fulldup.c
+symbol line: 43
+value: 0x7fffe6ced010
+value address: 0x7fffffffdcb8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-24 22:23:21]
+Fault Injection Successful after 2.821157217025757s
+[INFO -- 2018-11-24 22:23:38]
+event type: exit
+[INFO -- 2018-11-24 22:23:38]
+exit code: 0

@@ -1,0 +1,136 @@
+[INFO -- 2018-11-24 22:14:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-24 22:14:26]
+Initialization strings:
+[INFO -- 2018-11-24 22:14:26]
+(1) file /tmp/quicksort-fulldup/quicksort-fulldup
+[INFO -- 2018-11-24 22:14:26]
+(2) set args 5000000 4 /tmp/quicksort-fulldup/inputsort_134217728 /tmp/quicksort-fulldup/output_5000000 /tmp/quick-fulldup-detection.log
+[INFO -- 2018-11-24 22:14:26]
+initSignal:0
+[INFO -- 2018-11-24 22:14:26]
+endSignal:5
+[INFO -- 2018-11-24 22:14:26]
+faultModel:2
+[EXCEPTION -- 2018-11-24 22:14:26]
+pythonException: invalid frame
+[INFO -- 2018-11-24 22:14:26]
+Backtrace BEGIN:
+#0  0x00007ffff7bbeced in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#1  0x00007ffff7bb96f4 in GOMP_task () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#2  0x0000555555554d0b in qsort_parallel (a=0x7ffff6090010, l=2407335, r=2407340) at quicksort-fulldup.c:23
+#3  0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#4  0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#5  0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407335, r=2407344) at quicksort-fulldup.c:27
+#6  0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#7  0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#8  0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407244, r=2407344) at quicksort-fulldup.c:27
+#9  0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#10 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#11 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407244, r=2407347) at quicksort-fulldup.c:27
+#12 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#13 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#14 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407101, r=2407347) at quicksort-fulldup.c:27
+#15 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#16 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#17 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407101, r=2407530) at quicksort-fulldup.c:27
+#18 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#19 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#20 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2407101, r=2407869) at quicksort-fulldup.c:27
+#21 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#22 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#23 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2406393, r=2407869) at quicksort-fulldup.c:27
+#24 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#25 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#26 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2405666, r=2407869) at quicksort-fulldup.c:27
+#27 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#28 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#29 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2405666, r=2408704) at quicksort-fulldup.c:27
+#30 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#31 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#32 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2405640, r=2408704) at quicksort-fulldup.c:27
+#33 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#34 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#35 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404945, r=2408704) at quicksort-fulldup.c:27
+#36 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#37 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#38 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404616, r=2408704) at quicksort-fulldup.c:27
+#39 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#40 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#41 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404192, r=2408704) at quicksort-fulldup.c:27
+#42 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#43 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#44 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404192, r=2409965) at quicksort-fulldup.c:27
+#45 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#46 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#47 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404192, r=2412164) at quicksort-fulldup.c:27
+#48 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#49 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#50 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2404192, r=2415109) at quicksort-fulldup.c:27
+#51 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#52 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#53 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2397403, r=2415109) at quicksort-fulldup.c:27
+#54 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#55 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#56 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2390669, r=2415109) at quicksort-fulldup.c:27
+#57 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#58 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#59 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2390669, r=2448495) at quicksort-fulldup.c:27
+#60 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#61 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#62 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2390669, r=2459055) at quicksort-fulldup.c:27
+#63 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#64 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#65 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2390669, r=2464932) at quicksort-fulldup.c:27
+#66 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#67 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#68 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2390669, r=2485406) at quicksort-fulldup.c:27
+#69 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#70 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#71 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2217045, r=2485406) at quicksort-fulldup.c:27
+#72 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#73 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#74 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=2217045, r=2531932) at quicksort-fulldup.c:27
+#75 0x0000555555555178 in qsort_parallel._omp_fn.1 () at quicksort-fulldup.c:26
+#76 0x00007ffff7bb733d in GOMP_taskwait () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#77 0x0000555555554d5f in qsort_parallel (a=0x7ffff6090010, l=0, r=2531932) at quicksort-fulldup.c:27
+#78 0x0000555555555134 in qsort_parallel._omp_fn.0 () at quicksort-fulldup.c:24
+#79 0x00007ffff7bb679a in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#80 0x00007ffff7bbf58c in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#81 0x00007ffff7bbe1f9 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+#82 0x0000555555554e5f in quick_wrapper (size=5000000, inputFile=0x7fffffffe1fe "/tmp/quicksort-fulldup/inputsort_134217728") at quicksort-fulldup.c:47
+#83 0x0000555555555083 in main (argc=6, argv=0x7fffffffde18) at quicksort-fulldup.c:100
+
+72	                fprintf(fp, "[%d]: %u %u\n",i,data1[i],data2[i]);
+73	                fclose(fp);
+74	            }
+75	
+76	        }
+77	    }
+78	}
+79	
+80	int main(int argc, char** argv)
+81	{
+
+Backtrace END
+Memory content before bitflip:0x600xaf0x240x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffcc24
+address max offset: 4
+Memory content after  bitflip:0xb20x420xaa0x08
+frame name: qsort_parallel._omp_fn.0
+symbol name: l
+symbol filename: quicksort-fulldup.c
+symbol line: 10
+value: 145375922
+value address: 0x7fffffffcc24
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-24 22:14:26]
+Fault Injection Successful after 0.8517560958862305s
+[INFO -- 2018-11-24 22:14:31]
+event type: exit
+[INFO -- 2018-11-24 22:14:31]
+exit code: 0

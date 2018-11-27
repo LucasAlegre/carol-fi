@@ -83,7 +83,7 @@ void crossover(vector<int> &pai, vector<int> &mae, vector<int> &filho1, vector<i
 }
 
 int genetic_algorithm() {
-
+    srand (42);
     vector<chromossome> pop;
     for(int i = 0; i < pop_size; i++)
         pop.push_back(chromossome(n));
@@ -121,21 +121,36 @@ int genetic_algorithm() {
     return -best;
 }
 
-int main()
-{
+void read_input(){
     ifstream file("/tmp/knapsack/instance.txt");
-    ofstream outfile("/tmp/knapsack/outputga");
-    srand (42);
+    val.clear(); wt.clear();
     file >> n; file >> W;
-
     for(int i = 0; i < n; i++){
         int x, y; file >> x >> y;
         val.push_back(x);
         wt.push_back(y);
     }
+    file.close();
+}
 
-    outfile << genetic_algorithm();
+int main()
+{
+    
+    ofstream outfile("/tmp/knapsack/outputga");
+    read_input();
+    int result1 = genetic_algorithm();
+    read_input();
+    int result2 = genetic_algorithm();
+    
+    if(result1 != result2) {
+	ofstream detection_log("/tmp/knapsack/ga-detection.log");
+        detection_log << result1 << " " << result2;
+    	detection_log.close();
+    }
+
+    outfile << result1;
     outfile.close();
+    cout << "Result: " << result1 << "\n";
 
     return 0;
 }
