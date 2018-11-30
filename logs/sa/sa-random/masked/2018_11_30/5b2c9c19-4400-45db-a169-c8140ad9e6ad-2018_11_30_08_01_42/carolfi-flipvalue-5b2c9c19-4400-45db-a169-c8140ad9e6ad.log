@@ -1,0 +1,53 @@
+[INFO -- 2018-11-30 08:01:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 08:01:33]
+Initialization strings:
+[INFO -- 2018-11-30 08:01:33]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 08:01:33]
+initSignal:0
+[INFO -- 2018-11-30 08:01:33]
+endSignal:7
+[INFO -- 2018-11-30 08:01:33]
+faultModel:2
+[EXCEPTION -- 2018-11-30 08:01:33]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 08:01:35]
+Backtrace BEGIN:
+#0  0x0000555555555917 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#1  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#2  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+333					      _M_get_Tp_allocator());
+334	      }
+335	
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd960
+address max offset: 4
+Memory content after  bitflip:0x710x330x770x81
+frame name: simulated_annealing
+symbol name: temp
+symbol filename: knapsacksa.cpp
+symbol line: 44
+value: -2122894479
+value address: 0x7fffffffd960
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 08:01:35]
+Fault Injection Successful after 2.983468770980835s
+[INFO -- 2018-11-30 08:01:41]
+event type: exit
+[INFO -- 2018-11-30 08:01:41]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-11-30 05:17:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 05:17:57]
+Initialization strings:
+[INFO -- 2018-11-30 05:17:57]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 05:17:57]
+initSignal:0
+[INFO -- 2018-11-30 05:17:57]
+endSignal:7
+[INFO -- 2018-11-30 05:17:57]
+faultModel:0
+[INFO -- 2018-11-30 05:17:59]
+Backtrace BEGIN:
+#0  0x0000555555556cd5 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#1  0x0000555555556892 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#2  0x0000555555556707 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#3  0x0000555555555e7b in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd990, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#4  0x00005555555558f5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#5  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#6  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+431	       *
+432	       *  Calls @c a.allocate(n)
+433	      */
+434	      static pointer
+435	      allocate(allocator_type& __a, size_type __n)
+436	      { return __a.allocate(__n); }
+437	
+438	      /**
+439	       *  @brief  Allocate memory.
+440	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x900xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8c8
+address max offset: 8
+Memory content after  bitflip:0x900xd90xff0xff0xbf0x7f0x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffd990
+value address: 0x7fffffffd8c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 05:17:59]
+Fault Injection Successful after 2.690066337585449s
+[INFO -- 2018-11-30 05:18:04]
+event type: exit
+[INFO -- 2018-11-30 05:18:04]
+exit code: 0

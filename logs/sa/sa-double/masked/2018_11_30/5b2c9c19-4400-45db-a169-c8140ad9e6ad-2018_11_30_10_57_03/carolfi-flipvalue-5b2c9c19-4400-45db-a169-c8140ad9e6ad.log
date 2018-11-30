@@ -1,0 +1,43 @@
+[INFO -- 2018-11-30 10:56:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 10:56:55]
+Initialization strings:
+[INFO -- 2018-11-30 10:56:55]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 10:56:55]
+initSignal:0
+[INFO -- 2018-11-30 10:56:55]
+endSignal:7
+[INFO -- 2018-11-30 10:56:55]
+faultModel:1
+[INFO -- 2018-11-30 10:57:00]
+Backtrace BEGIN:
+#0  0x00007ffff770738a in __GI___expf (x=-0.0530287437) at ../sysdeps/ieee754/flt-32/w_expf_compat.c:26
+#1  0x0000555555555771 in std::exp (__x=-0.0530287437) at /usr/include/c++/7/cmath:223
+#2  0x00005555555552ab in simulated_annealing () at knapsacksa.cpp:58
+#3  0x0000555555555532 in main () at knapsacksa.cpp:87
+
+21	../sysdeps/ieee754/flt-32/w_expf_compat.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xfb0x520x010x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd964
+address max offset: 4
+Memory content after  bitflip:0xfb0x130x010x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 48
+value: 70651
+value address: 0x7fffffffd964
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 10:57:00]
+Fault Injection Successful after 5.214803218841553s
+[INFO -- 2018-11-30 10:57:03]
+event type: exit
+[INFO -- 2018-11-30 10:57:03]
+exit code: 0

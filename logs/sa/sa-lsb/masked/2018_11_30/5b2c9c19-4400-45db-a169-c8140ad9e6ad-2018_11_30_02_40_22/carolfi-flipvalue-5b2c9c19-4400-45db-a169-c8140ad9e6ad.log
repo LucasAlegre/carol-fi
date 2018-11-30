@@ -1,0 +1,48 @@
+[INFO -- 2018-11-30 02:40:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:40:13]
+Initialization strings:
+[INFO -- 2018-11-30 02:40:14]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:40:14]
+initSignal:0
+[INFO -- 2018-11-30 02:40:14]
+endSignal:7
+[INFO -- 2018-11-30 02:40:14]
+faultModel:4
+[INFO -- 2018-11-30 02:40:15]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x55555576e610) at malloc.c:3119
+#1  0x0000555555556caa in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd990, __p=0x55555576e610) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555556855 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x55555576e610, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x00005555555560b8 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd990, __p=0x55555576e610, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555555e19 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd990, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x000055555555588b in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd990, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555305 in simulated_annealing () at knapsacksa.cpp:49
+#7  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+3114	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x010x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555576e610
+address max offset: 4
+Memory content after  bitflip:0x010x000x000x40
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 116
+value: 0x55555576e610
+value address: 0x7fffffffd880
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 02:40:15]
+Fault Injection Successful after 1.5521295070648193s
+[INFO -- 2018-11-30 02:40:21]
+event type: exit
+[INFO -- 2018-11-30 02:40:21]
+exit code: 0

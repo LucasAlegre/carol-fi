@@ -1,0 +1,59 @@
+[INFO -- 2018-11-30 11:53:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 11:53:26]
+Initialization strings:
+[INFO -- 2018-11-30 11:53:26]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 11:53:26]
+initSignal:0
+[INFO -- 2018-11-30 11:53:26]
+endSignal:7
+[INFO -- 2018-11-30 11:53:26]
+faultModel:4
+[EXCEPTION -- 2018-11-30 11:53:27]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-11-30 11:53:27]
+Backtrace BEGIN:
+#0  0x00005555555557a3 in std::vector<int, std::allocator<int> >::operator[] (this=0x555555759140 <val>, __n=58) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x000055555555510e in cost (solution=std::vector of length 192, capacity 192 = {...}) at knapsacksa.cpp:29
+#2  0x0000555555555259 in simulated_annealing () at knapsacksa.cpp:52
+#3  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555770fb0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x02
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x555555759140 <val>
+value address: 0x7fffffffd8e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 11:53:27]
+Fault Injection Successful after 1.676372766494751s
+[INFO -- 2018-11-30 11:53:27]
+event type: exit
+[EXCEPTION -- 2018-11-30 11:53:27]
+exit code: no exit code available

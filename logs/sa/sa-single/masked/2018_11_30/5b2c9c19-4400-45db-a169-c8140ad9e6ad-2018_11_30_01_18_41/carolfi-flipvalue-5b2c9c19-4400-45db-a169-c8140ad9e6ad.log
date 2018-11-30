@@ -1,0 +1,56 @@
+[INFO -- 2018-11-30 01:18:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 01:18:33]
+Initialization strings:
+[INFO -- 2018-11-30 01:18:33]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 01:18:33]
+initSignal:0
+[INFO -- 2018-11-30 01:18:33]
+endSignal:7
+[INFO -- 2018-11-30 01:18:33]
+faultModel:0
+[EXCEPTION -- 2018-11-30 01:18:34]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-11-30 01:18:34]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 01:18:36]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd990, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#1  0x000055555555588b in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd990, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x0000555555555305 in simulated_annealing () at knapsacksa.cpp:49
+#3  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+158	      }
+159	#endif
+160	
+161	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+162	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+163			      - this->_M_impl._M_start); }
+164	
+165	    public:
+166	      _Vector_impl _M_impl;
+167	
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9dc
+address max offset: 4
+Memory content after  bitflip:0xff0x5f0x000x00
+frame name: main
+symbol name: result2
+symbol filename: knapsacksa.cpp
+symbol line: 87
+value: 24575
+value address: 0x7fffffffd9dc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 01:18:36]
+Fault Injection Successful after 3.7236850261688232s
+[INFO -- 2018-11-30 01:18:40]
+event type: exit
+[INFO -- 2018-11-30 01:18:40]
+exit code: 0

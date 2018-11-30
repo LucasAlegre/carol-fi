@@ -1,0 +1,55 @@
+[INFO -- 2018-11-30 08:35:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 08:35:10]
+Initialization strings:
+[INFO -- 2018-11-30 08:35:10]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 08:35:10]
+initSignal:0
+[INFO -- 2018-11-30 08:35:10]
+endSignal:7
+[INFO -- 2018-11-30 08:35:10]
+faultModel:1
+[INFO -- 2018-11-30 08:35:14]
+Backtrace BEGIN:
+#0  0x0000555555556c52 in __gnu_cxx::new_allocator<int>::new_allocator (this=0x555555556caa <__gnu_cxx::new_allocator<int>::deallocate(int*, unsigned long)+32>) at /usr/include/c++/7/ext/new_allocator.h:81
+#1  0x00005555555567d9 in std::allocator<int>::allocator (this=0x7fffffffd907, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#2  0x00005555555567af in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:505
+#3  0x0000555555555f72 in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#4  0x00005555555558d4 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#5  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#6  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+76	      typedef std::true_type propagate_on_container_move_assignment;
+77	#endif
+78	
+79	      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+80	
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575917c 
+address max offset: 4
+Memory content after  bitflip:0x130xfb0x080x00
+frame name: __gnu_cxx::new_allocator<int>::new_allocator
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 588563
+value address: 0x55555575917c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 08:35:14]
+Fault Injection Successful after 4.197275161743164s
+[INFO -- 2018-11-30 08:35:17]
+event type: exit
+[INFO -- 2018-11-30 08:35:17]
+exit code: 0

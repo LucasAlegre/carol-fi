@@ -1,0 +1,58 @@
+[INFO -- 2018-11-30 02:15:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:15:18]
+Initialization strings:
+[INFO -- 2018-11-30 02:15:18]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:15:18]
+initSignal:0
+[INFO -- 2018-11-30 02:15:18]
+endSignal:7
+[INFO -- 2018-11-30 02:15:18]
+faultModel:4
+[INFO -- 2018-11-30 02:15:18]
+Backtrace BEGIN:
+#0  0x00005555555550dd in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#1  0x0000555555555259 in simulated_annealing () at knapsacksa.cpp:52
+#2  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+23	}
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+27	    for(int i=0; i < n; i++){
+28	       peso += solution[i] * wt[i];
+29	       valor += solution[i] * val[i];
+30	    }
+31	    if(peso > W)
+32	       return 99999999;
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x330x320x350x20
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555576e930
+address max offset: 4
+Memory content after  bitflip:0x330x320x350x30
+frame name: simulated_annealing
+symbol name: s
+symbol filename: knapsacksa.cpp
+symbol line: 49
+value: std::vector of length 200, capacity 200 = {1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0...}
+value address: 0x7fffffffd990
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-11-30 02:15:18]
+Fault Injection Successful after 0.9555404186248779s
+[INFO -- 2018-11-30 02:15:26]
+event type: exit
+[INFO -- 2018-11-30 02:15:26]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-11-30 02:12:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:12:29]
+Initialization strings:
+[INFO -- 2018-11-30 02:12:29]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:12:29]
+initSignal:0
+[INFO -- 2018-11-30 02:12:29]
+endSignal:7
+[INFO -- 2018-11-30 02:12:29]
+faultModel:2
+[INFO -- 2018-11-30 02:12:31]
+Backtrace BEGIN:
+#0  0x0000555555556819 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#1  0x0000555555556071 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555555943 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#4  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x100xe60x760x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8c8
+address max offset: 8
+Memory content after  bitflip:0xc50xcf0x320xdd0x9c0xac0xf30x9e
+frame name: std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 288
+value: 0x55555576e610
+value address: 0x7fffffffd8c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 02:12:31]
+Fault Injection Successful after 2.666379690170288s
+[INFO -- 2018-11-30 02:12:37]
+event type: exit
+[INFO -- 2018-11-30 02:12:37]
+exit code: 0

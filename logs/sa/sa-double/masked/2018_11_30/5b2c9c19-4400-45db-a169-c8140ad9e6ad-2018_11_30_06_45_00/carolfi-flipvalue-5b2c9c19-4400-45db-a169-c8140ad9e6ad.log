@@ -1,0 +1,54 @@
+[INFO -- 2018-11-30 06:44:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 06:44:51]
+Initialization strings:
+[INFO -- 2018-11-30 06:44:51]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 06:44:51]
+initSignal:0
+[INFO -- 2018-11-30 06:44:51]
+endSignal:7
+[INFO -- 2018-11-30 06:44:51]
+faultModel:1
+[EXCEPTION -- 2018-11-30 06:44:52]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 06:44:52]
+Backtrace BEGIN:
+#0  0x000055555555604e in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x55555576e2e0) at /usr/include/c++/7/bits/stl_uninitialized.h:287
+#1  0x0000555555555943 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#2  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#3  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+282		}
+283	    }
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+
+Backtrace END
+Memory content before bitflip:0x4a0x8c0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd964
+address max offset: 4
+Memory content after  bitflip:0x4a0xae0x000x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 48
+value: 44618
+value address: 0x7fffffffd964
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 06:44:52]
+Fault Injection Successful after 1.6340422630310059s
+[INFO -- 2018-11-30 06:44:59]
+event type: exit
+[INFO -- 2018-11-30 06:44:59]
+exit code: 0

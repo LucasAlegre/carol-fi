@@ -1,0 +1,52 @@
+[INFO -- 2018-11-30 03:36:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 03:36:24]
+Initialization strings:
+[INFO -- 2018-11-30 03:36:24]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 03:36:24]
+initSignal:0
+[INFO -- 2018-11-30 03:36:24]
+endSignal:7
+[INFO -- 2018-11-30 03:36:24]
+faultModel:0
+[EXCEPTION -- 2018-11-30 03:36:25]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 03:36:27]
+Backtrace BEGIN:
+#0  simulated_annealing () at knapsacksa.cpp:63
+#1  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+58	         else if (random01() <= exp(-delta/(float)(temp))){
+59	
+60	             solution = s;
+61	             best = min(c, best);
+62	         }
+63	         temp *= 0.99999;
+64	    }
+65	    
+66	    return -best;
+67	}
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0xc80x010x000x00
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 456
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 03:36:27]
+Fault Injection Successful after 3.6888046264648438s
+[INFO -- 2018-11-30 03:36:30]
+event type: exit
+[EXCEPTION -- 2018-11-30 03:36:30]
+exit code: no exit code available
