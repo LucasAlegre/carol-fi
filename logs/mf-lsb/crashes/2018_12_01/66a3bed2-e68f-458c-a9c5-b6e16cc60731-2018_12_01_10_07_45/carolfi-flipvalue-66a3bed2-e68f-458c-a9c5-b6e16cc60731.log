@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 10:07:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:07:38]
+Initialization strings:
+[INFO -- 2018-12-01 10:07:38]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 10:07:38]
+initSignal:0
+[INFO -- 2018-12-01 10:07:38]
+endSignal:12
+[INFO -- 2018-12-01 10:07:38]
+faultModel:4
+[EXCEPTION -- 2018-12-01 10:07:42]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 10:07:42]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 10:07:44]
+gdbException: Cannot access memory at address 0x20055555576e2e0
+[INFO -- 2018-12-01 10:07:44]
+Backtrace BEGIN:
+#0  0x0000555555555a55 in std::vector<int, std::allocator<int> >::operator[] (this=0x55555576f048, __n=527206) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555550c5 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length -6004799503160460, capacity -6004799503160460 = {...}) at knapsackmf.cpp:28
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x0000555555555595 in main () at knapsackmf.cpp:82
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x660x0b0x080x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd5e0
+address max offset: 8
+Memory content after  bitflip:0x660x0b0x080x000x000x000x000x04
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 795
+value: 288230376152238950
+value address: 0x7fffffffd5e0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 10:07:44]
+Fault Injection Successful after 6.1546995639801025s
+[INFO -- 2018-12-01 10:07:44]
+event type: exit
+[EXCEPTION -- 2018-12-01 10:07:44]
+exit code: no exit code available

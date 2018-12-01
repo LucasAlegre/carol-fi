@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 08:36:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:36:19]
+Initialization strings:
+[INFO -- 2018-12-01 08:36:19]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 08:36:19]
+initSignal:0
+[INFO -- 2018-12-01 08:36:19]
+endSignal:12
+[INFO -- 2018-12-01 08:36:19]
+faultModel:2
+[EXCEPTION -- 2018-12-01 08:36:24]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 08:36:24]
+Backtrace BEGIN:
+#0  0x00007ffff755eab7 in munmap () at ../sysdeps/unix/syscall-template.S:78
+#1  0x00007ffff74dabef in munmap_chunk (p=0x7fffdcedf000) at malloc.c:2854
+#2  __GI___libc_free (mem=0x7fffdcedf010) at malloc.c:3117
+#3  0x0000555555556fb8 in __gnu_cxx::new_allocator<int>::deallocate (this=0x55555576f438, __p=0x7fffdcedf010) at /usr/include/c++/7/ext/new_allocator.h:125
+#4  0x0000555555556c85 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x7fffdcedf010, __n=588594) at /usr/include/c++/7/bits/alloc_traits.h:462
+#5  0x00005555555565ee in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x55555576f438, __p=0x7fffdcedf010, __n=588594) at /usr/include/c++/7/bits/stl_vector.h:180
+#6  0x0000555555555e47 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555576f438, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#7  0x00005555555559c7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555576f438, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#8  0x0000555555556f84 in std::_Destroy<std::vector<int, std::allocator<int> > > (__pointer=0x55555576f438) at /usr/include/c++/7/bits/stl_construct.h:98
+#9  0x0000555555556b46 in std::_Destroy_aux<false>::__destroy<std::vector<int, std::allocator<int> >*> (__first=0x55555576f438, __last=0x55555576f5b8) at /usr/include/c++/7/bits/stl_construct.h:108
+#10 0x000055555555640d in std::_Destroy<std::vector<int, std::allocator<int> >*> (__first=0x55555576e2e0, __last=0x55555576f5b8) at /usr/include/c++/7/bits/stl_construct.h:137
+#11 0x0000555555555cab in std::_Destroy<std::vector<int, std::allocator<int> >*, std::vector<int, std::allocator<int> > > (__first=0x55555576e2e0, __last=0x55555576f5b8) at /usr/include/c++/7/bits/stl_construct.h:206
+#12 0x000055555555583b in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::~vector (this=0x7fffffffd6d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#13 0x00005555555554b4 in executeAlgorithm () at knapsackmf.cpp:60
+#14 0x000055555555558a in main () at knapsackmf.cpp:81
+
+73	in ../sysdeps/unix/syscall-template.S
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x380xf40x760x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd5e8
+address max offset: 8
+Memory content after  bitflip:0xf40xab0x5c0xe70x400x7b0x960xb6
+frame name: std::_Destroy_aux<false>::__destroy<std::vector<int, std::allocator<int> >*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 105
+value: 0x55555576f438
+value address: 0x7fffffffd5e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:36:24]
+Fault Injection Successful after 5.6786699295043945s
+[INFO -- 2018-12-01 08:36:24]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:36:24]
+exit code: no exit code available

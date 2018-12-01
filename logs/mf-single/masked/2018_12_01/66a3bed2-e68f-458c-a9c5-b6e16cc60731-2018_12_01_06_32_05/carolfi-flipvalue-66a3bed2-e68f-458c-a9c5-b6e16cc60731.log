@@ -1,0 +1,192 @@
+[INFO -- 2018-12-01 06:31:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:31:54]
+Initialization strings:
+[INFO -- 2018-12-01 06:31:54]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 06:31:54]
+initSignal:0
+[INFO -- 2018-12-01 06:31:54]
+endSignal:12
+[INFO -- 2018-12-01 06:31:54]
+faultModel:0
+[INFO -- 2018-12-01 06:31:59]
+Backtrace BEGIN:
+#0  0x00005555555551b1 in knapSackAuxRec (i=60, j=555873, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:38
+#1  0x0000555555555294 in knapSackAuxRec (i=61, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#2  0x00005555555552b8 in knapSackAuxRec (i=62, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#3  0x00005555555552b8 in knapSackAuxRec (i=63, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#4  0x00005555555552b8 in knapSackAuxRec (i=64, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#5  0x00005555555552b8 in knapSackAuxRec (i=65, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#6  0x00005555555552b8 in knapSackAuxRec (i=66, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#7  0x00005555555552b8 in knapSackAuxRec (i=67, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#8  0x00005555555552b8 in knapSackAuxRec (i=68, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#9  0x00005555555552b8 in knapSackAuxRec (i=69, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#10 0x00005555555552b8 in knapSackAuxRec (i=70, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#11 0x00005555555552b8 in knapSackAuxRec (i=71, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#12 0x00005555555552b8 in knapSackAuxRec (i=72, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#13 0x00005555555552b8 in knapSackAuxRec (i=73, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#14 0x00005555555552b8 in knapSackAuxRec (i=74, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#15 0x00005555555552b8 in knapSackAuxRec (i=75, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#16 0x00005555555552b8 in knapSackAuxRec (i=76, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#17 0x00005555555552b8 in knapSackAuxRec (i=77, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#18 0x00005555555552b8 in knapSackAuxRec (i=78, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#19 0x00005555555552b8 in knapSackAuxRec (i=79, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#20 0x00005555555552b8 in knapSackAuxRec (i=80, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#21 0x00005555555552b8 in knapSackAuxRec (i=81, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#22 0x00005555555552b8 in knapSackAuxRec (i=82, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#23 0x00005555555552b8 in knapSackAuxRec (i=83, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#24 0x00005555555552b8 in knapSackAuxRec (i=84, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#25 0x00005555555552b8 in knapSackAuxRec (i=85, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#26 0x00005555555552b8 in knapSackAuxRec (i=86, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#27 0x00005555555552b8 in knapSackAuxRec (i=87, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#28 0x00005555555552b8 in knapSackAuxRec (i=88, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#29 0x00005555555552b8 in knapSackAuxRec (i=89, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#30 0x00005555555552b8 in knapSackAuxRec (i=90, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#31 0x00005555555552b8 in knapSackAuxRec (i=91, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#32 0x00005555555552b8 in knapSackAuxRec (i=92, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#33 0x00005555555552b8 in knapSackAuxRec (i=93, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#34 0x00005555555552b8 in knapSackAuxRec (i=94, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#35 0x00005555555552b8 in knapSackAuxRec (i=95, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#36 0x00005555555552b8 in knapSackAuxRec (i=96, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#37 0x00005555555552b8 in knapSackAuxRec (i=97, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#38 0x00005555555552b8 in knapSackAuxRec (i=98, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#39 0x00005555555552b8 in knapSackAuxRec (i=99, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#40 0x00005555555552b8 in knapSackAuxRec (i=100, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#41 0x00005555555552b8 in knapSackAuxRec (i=101, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#42 0x00005555555552b8 in knapSackAuxRec (i=102, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#43 0x00005555555552b8 in knapSackAuxRec (i=103, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#44 0x00005555555552b8 in knapSackAuxRec (i=104, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#45 0x00005555555552b8 in knapSackAuxRec (i=105, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#46 0x00005555555552b8 in knapSackAuxRec (i=106, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#47 0x00005555555552b8 in knapSackAuxRec (i=107, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#48 0x00005555555552b8 in knapSackAuxRec (i=108, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#49 0x00005555555552b8 in knapSackAuxRec (i=109, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#50 0x00005555555552b8 in knapSackAuxRec (i=110, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#51 0x00005555555552b8 in knapSackAuxRec (i=111, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#52 0x00005555555552b8 in knapSackAuxRec (i=112, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#53 0x00005555555552b8 in knapSackAuxRec (i=113, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#54 0x00005555555552b8 in knapSackAuxRec (i=114, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#55 0x00005555555552b8 in knapSackAuxRec (i=115, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#56 0x00005555555552b8 in knapSackAuxRec (i=116, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#57 0x00005555555552b8 in knapSackAuxRec (i=117, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#58 0x00005555555552b8 in knapSackAuxRec (i=118, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#59 0x00005555555552b8 in knapSackAuxRec (i=119, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#60 0x00005555555552b8 in knapSackAuxRec (i=120, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#61 0x00005555555552b8 in knapSackAuxRec (i=121, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#62 0x00005555555552b8 in knapSackAuxRec (i=122, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#63 0x00005555555552b8 in knapSackAuxRec (i=123, j=561740, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#64 0x0000555555555294 in knapSackAuxRec (i=124, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#65 0x00005555555552b8 in knapSackAuxRec (i=125, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#66 0x00005555555552b8 in knapSackAuxRec (i=126, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#67 0x00005555555552b8 in knapSackAuxRec (i=127, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#68 0x00005555555552b8 in knapSackAuxRec (i=128, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#69 0x00005555555552b8 in knapSackAuxRec (i=129, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#70 0x00005555555552b8 in knapSackAuxRec (i=130, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#71 0x00005555555552b8 in knapSackAuxRec (i=131, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#72 0x00005555555552b8 in knapSackAuxRec (i=132, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#73 0x00005555555552b8 in knapSackAuxRec (i=133, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#74 0x00005555555552b8 in knapSackAuxRec (i=134, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#75 0x00005555555552b8 in knapSackAuxRec (i=135, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#76 0x00005555555552b8 in knapSackAuxRec (i=136, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#77 0x00005555555552b8 in knapSackAuxRec (i=137, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#78 0x00005555555552b8 in knapSackAuxRec (i=138, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#79 0x00005555555552b8 in knapSackAuxRec (i=139, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#80 0x00005555555552b8 in knapSackAuxRec (i=140, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#81 0x00005555555552b8 in knapSackAuxRec (i=141, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#82 0x00005555555552b8 in knapSackAuxRec (i=142, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#83 0x00005555555552b8 in knapSackAuxRec (i=143, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#84 0x00005555555552b8 in knapSackAuxRec (i=144, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#85 0x00005555555552b8 in knapSackAuxRec (i=145, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#86 0x00005555555552b8 in knapSackAuxRec (i=146, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#87 0x00005555555552b8 in knapSackAuxRec (i=147, j=563049, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#88 0x0000555555555294 in knapSackAuxRec (i=148, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#89 0x00005555555552b8 in knapSackAuxRec (i=149, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#90 0x00005555555552b8 in knapSackAuxRec (i=150, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#91 0x00005555555552b8 in knapSackAuxRec (i=151, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#92 0x00005555555552b8 in knapSackAuxRec (i=152, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#93 0x00005555555552b8 in knapSackAuxRec (i=153, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#94 0x00005555555552b8 in knapSackAuxRec (i=154, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#95 0x00005555555552b8 in knapSackAuxRec (i=155, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#96 0x00005555555552b8 in knapSackAuxRec (i=156, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#97 0x00005555555552b8 in knapSackAuxRec (i=157, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#98 0x00005555555552b8 in knapSackAuxRec (i=158, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#99 0x00005555555552b8 in knapSackAuxRec (i=159, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#100 0x00005555555552b8 in knapSackAuxRec (i=160, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#101 0x00005555555552b8 in knapSackAuxRec (i=161, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#102 0x00005555555552b8 in knapSackAuxRec (i=162, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#103 0x00005555555552b8 in knapSackAuxRec (i=163, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#104 0x00005555555552b8 in knapSackAuxRec (i=164, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#105 0x00005555555552b8 in knapSackAuxRec (i=165, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#106 0x00005555555552b8 in knapSackAuxRec (i=166, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#107 0x00005555555552b8 in knapSackAuxRec (i=167, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#108 0x00005555555552b8 in knapSackAuxRec (i=168, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#109 0x00005555555552b8 in knapSackAuxRec (i=169, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#110 0x00005555555552b8 in knapSackAuxRec (i=170, j=564230, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#111 0x0000555555555294 in knapSackAuxRec (i=171, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#112 0x00005555555552b8 in knapSackAuxRec (i=172, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#113 0x00005555555552b8 in knapSackAuxRec (i=173, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#114 0x00005555555552b8 in knapSackAuxRec (i=174, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#115 0x00005555555552b8 in knapSackAuxRec (i=175, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#116 0x00005555555552b8 in knapSackAuxRec (i=176, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#117 0x00005555555552b8 in knapSackAuxRec (i=177, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#118 0x00005555555552b8 in knapSackAuxRec (i=178, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#119 0x00005555555552b8 in knapSackAuxRec (i=179, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#120 0x00005555555552b8 in knapSackAuxRec (i=180, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#121 0x00005555555552b8 in knapSackAuxRec (i=181, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#122 0x00005555555552b8 in knapSackAuxRec (i=182, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#123 0x00005555555552b8 in knapSackAuxRec (i=183, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#124 0x00005555555552b8 in knapSackAuxRec (i=184, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#125 0x00005555555552b8 in knapSackAuxRec (i=185, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#126 0x00005555555552b8 in knapSackAuxRec (i=186, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#127 0x00005555555552b8 in knapSackAuxRec (i=187, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#128 0x00005555555552b8 in knapSackAuxRec (i=188, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#129 0x00005555555552b8 in knapSackAuxRec (i=189, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#130 0x00005555555552b8 in knapSackAuxRec (i=190, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#131 0x00005555555552b8 in knapSackAuxRec (i=191, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#132 0x00005555555552b8 in knapSackAuxRec (i=192, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#133 0x00005555555552b8 in knapSackAuxRec (i=193, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#134 0x00005555555552b8 in knapSackAuxRec (i=194, j=565585, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#135 0x0000555555555294 in knapSackAuxRec (i=195, j=567523, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#136 0x00005555555552b8 in knapSackAuxRec (i=196, j=567523, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#137 0x0000555555555294 in knapSackAuxRec (i=197, j=572185, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#138 0x0000555555555294 in knapSackAuxRec (i=198, j=578378, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#139 0x0000555555555294 in knapSackAuxRec (i=199, j=588593, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#140 0x0000555555555294 in knapSackAuxRec (i=200, j=588593, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:45
+#141 0x000055555555511f in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:33
+#142 0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#143 0x000055555555558a in main () at knapsackmf.cpp:81
+
+33	    V[n][W] = knapSackAuxRec(n, W, values, weights, V);
+34	
+35	    return V[n][W];
+36	}
+37	
+38	int knapSackAuxRec(int i, int j, vector<int>& values, vector<int>& weights, vector<vector<int>>& V) { // i = n, j = w
+39	    int value;
+40	    if (V[i][j] < 0) { // meaning not already calculated
+41	
+42	        if (j < weights[i]) {
+
+Backtrace END
+Memory content before bitflip:0x2c0xf90x060x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffa994
+address max offset: 4
+Memory content after  bitflip:0x2c0xf90x460x00
+frame name: knapSackAuxRec
+symbol name: value
+symbol filename: knapsackmf.cpp
+symbol line: 39
+value: 4651308
+value address: 0x7fffffffa994
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:31:59]
+Fault Injection Successful after 5.173588752746582s
+[INFO -- 2018-12-01 06:32:04]
+event type: exit
+[INFO -- 2018-12-01 06:32:04]
+exit code: 0

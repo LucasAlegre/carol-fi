@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 05:58:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:58:07]
+Initialization strings:
+[INFO -- 2018-12-01 05:58:07]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 05:58:07]
+initSignal:0
+[INFO -- 2018-12-01 05:58:07]
+endSignal:12
+[INFO -- 2018-12-01 05:58:07]
+faultModel:2
+[EXCEPTION -- 2018-12-01 05:58:08]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 05:58:08]
+gdbException: Cannot access memory at address 0x43163ff617bd01e2
+[INFO -- 2018-12-01 05:58:08]
+Backtrace BEGIN:
+#0  0x0000555555555a52 in std::vector<int, std::allocator<int> >::operator[] (this=0x43163ff617bd13ca, __n=211975) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555550c5 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length -201417822967797207, capacity -201417822967797207 = {...}) at knapsackmf.cpp:28
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x000055555555558a in main () at knapsackmf.cpp:81
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd680
+address max offset: 4
+Memory content after  bitflip:0x1b0xdc0x950x57
+frame name: executeAlgorithm
+symbol name: n
+symbol filename: knapsackmf.cpp
+symbol line: 57
+value: 1469439003
+value address: 0x7fffffffd680
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 05:58:08]
+Fault Injection Successful after 1.4324209690093994s
+[INFO -- 2018-12-01 05:58:08]
+event type: exit
+[EXCEPTION -- 2018-12-01 05:58:08]
+exit code: no exit code available

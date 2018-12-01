@@ -1,0 +1,53 @@
+[INFO -- 2018-11-30 22:59:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 22:59:22]
+Initialization strings:
+[INFO -- 2018-11-30 22:59:22]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-11-30 22:59:22]
+initSignal:0
+[INFO -- 2018-11-30 22:59:22]
+endSignal:12
+[INFO -- 2018-11-30 22:59:22]
+faultModel:0
+[EXCEPTION -- 2018-11-30 22:59:27]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 22:59:27]
+Backtrace BEGIN:
+#0  knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:24
+#1  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#2  0x0000555555555595 in main () at knapsackmf.cpp:82
+
+19	
+20	    for (int i = 0; i <= n; i++)
+21	        V[i] = vector<int>(W + 1);
+22	
+23	    for (int i = 0; i <= n; i++) {
+24	        for (int w = 0; w <= W; w++) {
+25	            if (i == 0 || w == 0) {
+26	                V[i][w] = 0;
+27	            } else {
+28	                V[i][w] = -1;
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd680
+address max offset: 4
+Memory content after  bitflip:0xc80x000x400x00
+frame name: executeAlgorithm
+symbol name: n
+symbol filename: knapsackmf.cpp
+symbol line: 57
+value: 4194504
+value address: 0x7fffffffd680
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 22:59:27]
+Fault Injection Successful after 5.882461071014404s
+[INFO -- 2018-11-30 22:59:32]
+event type: exit
+[INFO -- 2018-11-30 22:59:32]
+exit code: 0

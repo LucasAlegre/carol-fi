@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 07:33:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:33:34]
+Initialization strings:
+[INFO -- 2018-12-01 07:33:34]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 07:33:34]
+initSignal:0
+[INFO -- 2018-12-01 07:33:34]
+endSignal:12
+[INFO -- 2018-12-01 07:33:34]
+faultModel:1
+[INFO -- 2018-12-01 07:33:39]
+Backtrace BEGIN:
+#0  std::__fill_n_a<int*, unsigned long, int> (__first=0x555567712c90, __n=588594, __value=@0x7fffffffd524: 0) at /usr/include/c++/7/bits/stl_algobase.h:753
+#1  0x0000555555557164 in std::fill_n<int*, unsigned long, int> (__first=0x5555676d7bd0, __n=588594, __value=@0x7fffffffd524: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x0000555555556ff8 in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x5555676d7bd0, __n=588594) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x0000555555556caf in std::__uninitialized_default_n<int*, unsigned long> (__first=0x5555676d7bd0, __n=588594) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x0000555555556618 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x5555676d7bd0, __n=588594) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x0000555555555e8b in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd630, __n=588594) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x0000555555555963 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd630, __n=588594, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555554ffe in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:21
+#8  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#9  0x0000555555555595 in main () at knapsackmf.cpp:82
+
+748	    __gnu_cxx::__enable_if<__is_scalar<_Tp>::__value, _OutputIterator>::__type
+749	    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value)
+750	    {
+751	      const _Tp __tmp = __value;
+752	      for (__decltype(__n + 0) __niter = __n;
+753		   __niter > 0; --__niter, ++__first)
+754		*__first = __tmp;
+755	      return __first;
+756	    }
+757	
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd92c
+address max offset: 4
+Memory content after  bitflip:0xff0xdf0x000x00
+frame name: main
+symbol name: result2
+symbol filename: knapsackmf.cpp
+symbol line: 82
+value: 57343
+value address: 0x7fffffffd92c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 07:33:39]
+Fault Injection Successful after 5.773924112319946s
+[INFO -- 2018-12-01 07:33:44]
+event type: exit
+[INFO -- 2018-12-01 07:33:44]
+exit code: 0
