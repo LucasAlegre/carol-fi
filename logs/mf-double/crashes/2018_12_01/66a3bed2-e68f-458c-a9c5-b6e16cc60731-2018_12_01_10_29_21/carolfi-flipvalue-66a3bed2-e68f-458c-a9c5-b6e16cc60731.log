@@ -1,0 +1,61 @@
+[INFO -- 2018-12-01 10:29:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:29:18]
+Initialization strings:
+[INFO -- 2018-12-01 10:29:18]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 10:29:18]
+initSignal:0
+[INFO -- 2018-12-01 10:29:18]
+endSignal:12
+[INFO -- 2018-12-01 10:29:18]
+faultModel:1
+[EXCEPTION -- 2018-12-01 10:29:20]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 10:29:20]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 10:29:20]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7483801 in __GI_abort () at abort.c:79
+#2  0x00007ffff74cc897 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff75f9b9a "%s\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74d390a in malloc_printerr (str=str@entry=0x7ffff75f7d88 "free(): invalid pointer") at malloc.c:5350
+#4  0x00007ffff74dae1c in _int_free (have_lock=0, p=0x555555770fc2, av=0x7ffff782ec40 <main_arena>) at malloc.c:4157
+#5  __GI___libc_free (mem=0x555555770fd2) at malloc.c:3124
+#6  0x0000555555556fb8 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd6b0, __p=0x555555770fd2) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555556c85 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555770fd2, __n=251) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x00005555555565ee in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd6b0, __p=0x555555770fd2, __n=251) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555e47 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd6b0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x00005555555559c7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd6b0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x00005555555554c3 in executeAlgorithm () at knapsackmf.cpp:59
+#12 0x000055555555558a in main () at knapsackmf.cpp:81
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: __val
+Fliping array at pos: 6
+Memory content before bitflip:0x000xd20xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd1d0
+address max offset: 8
+Memory content after  bitflip:0x000xd20xff0xbb0xff0x7f0x000x00
+frame name: __GI_raise
+symbol name: set
+symbol filename: ../sysdeps/unix/sysv/linux/raise.c
+symbol line: 39
+value: {__val = {0, 0, 1, 140737353998336, 140737348385059, 5728826544, 140736347492864, 140737488343568, 140737353999192, 0, 140737488344720, 816044374833, 4294967295, 4294957040, 140737348227968, 140737353998336}}
+value address: 0x7fffffffd1a0
+Type: The type is a structure.
+Type sizeof: 128
+Field name: __val
+Field Type: The type is an array.
+Field Type sizeof: 128
+
+[INFO -- 2018-12-01 10:29:20]
+Fault Injection Successful after 2.8626182079315186s
+[INFO -- 2018-12-01 10:29:20]
+event type: exit
+[EXCEPTION -- 2018-12-01 10:29:20]
+exit code: no exit code available

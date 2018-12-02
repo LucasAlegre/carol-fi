@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 02:33:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:33:27]
+Initialization strings:
+[INFO -- 2018-12-01 02:33:27]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 02:33:27]
+initSignal:0
+[INFO -- 2018-12-01 02:33:27]
+endSignal:12
+[INFO -- 2018-12-01 02:33:27]
+faultModel:1
+[INFO -- 2018-12-01 02:33:28]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x55555576e910, __n=333553) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x00005555555550c5 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:28
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x000055555555558a in main () at knapsackmf.cpp:81
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd680
+address max offset: 4
+Memory content after  bitflip:0xc80x120x000x00
+frame name: executeAlgorithm
+symbol name: n
+symbol filename: knapsackmf.cpp
+symbol line: 57
+value: 4808
+value address: 0x7fffffffd680
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 02:33:28]
+Fault Injection Successful after 1.5305869579315186s
+[INFO -- 2018-12-01 02:33:37]
+event type: exit
+[INFO -- 2018-12-01 02:33:37]
+exit code: 0

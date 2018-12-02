@@ -1,0 +1,21 @@
+[INFO -- 2018-11-30 23:33:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 23:33:16]
+Initialization strings:
+[INFO -- 2018-11-30 23:33:16]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-11-30 23:33:16]
+initSignal:0
+[INFO -- 2018-11-30 23:33:16]
+endSignal:12
+[INFO -- 2018-11-30 23:33:16]
+faultModel:3
+[EXCEPTION -- 2018-11-30 23:33:17]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-11-30 23:33:17]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 23:33:26]
+event type: exit
+[INFO -- 2018-11-30 23:33:26]
+exit code: 0

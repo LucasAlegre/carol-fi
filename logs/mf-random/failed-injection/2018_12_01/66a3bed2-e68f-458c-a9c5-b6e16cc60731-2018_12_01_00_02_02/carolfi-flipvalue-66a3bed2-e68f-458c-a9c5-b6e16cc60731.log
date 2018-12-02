@@ -1,0 +1,23 @@
+[INFO -- 2018-12-01 00:01:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 00:01:56]
+Initialization strings:
+[INFO -- 2018-12-01 00:01:56]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 00:01:56]
+initSignal:0
+[INFO -- 2018-12-01 00:01:56]
+endSignal:12
+[INFO -- 2018-12-01 00:01:56]
+faultModel:2
+[EXCEPTION -- 2018-12-01 00:02:01]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 00:02:01]
+gdbException: Cannot access memory at address 0x7a10099b570d95c2
+[EXCEPTION -- 2018-12-01 00:02:01]
+gdbException: Cannot access memory at address 0xd1d754526b8e4c83
+[INFO -- 2018-12-01 00:02:01]
+event type: exit
+[EXCEPTION -- 2018-12-01 00:02:01]
+exit code: no exit code available

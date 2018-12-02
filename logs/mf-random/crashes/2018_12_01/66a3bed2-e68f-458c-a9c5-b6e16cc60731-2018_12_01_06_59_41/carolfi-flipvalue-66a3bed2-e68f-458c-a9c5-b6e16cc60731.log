@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 06:59:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:59:39]
+Initialization strings:
+[INFO -- 2018-12-01 06:59:39]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 06:59:39]
+initSignal:0
+[INFO -- 2018-12-01 06:59:39]
+endSignal:12
+[INFO -- 2018-12-01 06:59:39]
+faultModel:2
+[EXCEPTION -- 2018-12-01 06:59:40]
+gdbException: Cannot access memory at address 0x3b1cf910c3489869
+[EXCEPTION -- 2018-12-01 06:59:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 06:59:40]
+Backtrace BEGIN:
+#0  0x000055555555520c in knapSackAuxRec (i=200, j=588593, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length -1064864843245576546, capacity -1064864843245576490 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:42
+#1  0x000055555555511f in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length -1064864843245576546, capacity -1064864843245576490 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:33
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x000055555555558a in main () at knapsackmf.cpp:81
+
+37	
+38	int knapSackAuxRec(int i, int j, vector<int>& values, vector<int>& weights, vector<vector<int>>& V) { // i = n, j = w
+39	    int value;
+40	    if (V[i][j] < 0) { // meaning not already calculated
+41	
+42	        if (j < weights[i]) {
+43	            value = knapSackAuxRec(i - 1, j, values, weights, V);
+44	        } else {
+45	            value = max(knapSackAuxRec(i - 1, j, values, weights, V), values[i] + knapSackAuxRec(i - 1, j - weights[i], values, weights, V));
+46	        }
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd5d4
+address max offset: 4
+Memory content after  bitflip:0x770xfc0xac0x10
+frame name: knapSackAuxRec
+symbol name: value
+symbol filename: knapsackmf.cpp
+symbol line: 39
+value: 279772279
+value address: 0x7fffffffd5d4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:59:40]
+Fault Injection Successful after 1.4023351669311523s
+[INFO -- 2018-12-01 06:59:40]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:59:40]
+exit code: no exit code available

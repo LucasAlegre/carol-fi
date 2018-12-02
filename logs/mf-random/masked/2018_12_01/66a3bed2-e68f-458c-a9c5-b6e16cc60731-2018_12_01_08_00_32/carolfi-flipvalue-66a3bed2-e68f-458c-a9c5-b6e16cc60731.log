@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 08:00:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:00:21]
+Initialization strings:
+[INFO -- 2018-12-01 08:00:21]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 08:00:21]
+initSignal:0
+[INFO -- 2018-12-01 08:00:21]
+endSignal:12
+[INFO -- 2018-12-01 08:00:21]
+faultModel:2
+[INFO -- 2018-12-01 08:00:21]
+Backtrace BEGIN:
+#0  0x00007ffff7ddc1ae in elf_get_dynamic_info (temp=0x0, l=0x7ffff7fdeed0) at get-dynamic-info.h:101
+#1  _dl_map_object_from_fd (name=name@entry=0x7ffff7ab6029 "libm.so.6", origname=origname@entry=0x0, fd=<optimized out>, fbp=fbp@entry=0x7fffffffd380, realname=<optimized out>, loader=loader@entry=0x7ffff7fde000, l_type=<optimized out>, mode=<optimized out>, stack_endp=<optimized out>, nsid=<optimized out>) at dl-load.c:1143
+#2  0x00007ffff7dddffc in _dl_map_object (loader=0x7ffff7fde000, name=0x7ffff7ab6029 "libm.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2389
+#3  0x00007ffff7de3312 in openaux (a=a@entry=0x7fffffffdac0) at dl-deps.c:63
+#4  0x00007ffff7df0c6b in _dl_catch_exception (exception=exception@entry=0x7fffffffdaa0, operate=operate@entry=0x7ffff7de32e0 <openaux>, args=args@entry=0x7fffffffdac0) at dl-error-skeleton.c:196
+#5  0x00007ffff7de3618 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe170, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:249
+#6  0x00007ffff7dd8ea6 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1726
+#7  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffde30, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#8  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffde30) at rtld.c:414
+#9  _dl_start (arg=0x7fffffffde30) at rtld.c:521
+#10 0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#11 0x0000000000000001 in ?? ()
+#12 0x00007fffffffe0d9 in ?? ()
+#13 0x0000000000000000 in ?? ()
+
+96	get-dynamic-info.h: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00xd90xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffda68
+address max offset: 8
+Memory content after  bitflip:0x0d0xb70x900xf20x110x640x120x72
+frame name: _dl_map_object_deps
+symbol name: orig
+symbol filename: dl-deps.c
+symbol line: 229
+value: 0x7fffffffd9c0
+value address: 0x7fffffffda68
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:00:21]
+Fault Injection Successful after 0.763178825378418s
+[INFO -- 2018-12-01 08:00:31]
+event type: exit
+[INFO -- 2018-12-01 08:00:31]
+exit code: 0

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 01:46:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:46:12]
+Initialization strings:
+[INFO -- 2018-12-01 01:46:12]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 01:46:12]
+initSignal:0
+[INFO -- 2018-12-01 01:46:12]
+endSignal:12
+[INFO -- 2018-12-01 01:46:12]
+faultModel:0
+[EXCEPTION -- 2018-12-01 01:46:12]
+gdbException: Cannot access memory at address 0x12e1
+[EXCEPTION -- 2018-12-01 01:46:12]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 01:46:12]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7483801 in __GI_abort () at abort.c:79
+#2  0x00007ffff74cc897 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff75f9b9a "%s\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74d390a in malloc_printerr (str=str@entry=0x7ffff75f7d88 "free(): invalid pointer") at malloc.c:5350
+#4  0x00007ffff74dae1c in _int_free (have_lock=0, p=0x7ffff55b0cc8, av=0x7ffff782ec40 <main_arena>) at malloc.c:4157
+#5  __GI___libc_free (mem=0x7ffff55b0cd8) at malloc.c:3124
+#6  0x0000555555556fb8 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd570, __p=0x7ffff55b0cd8) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555556c85 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x7ffff55b0cd8, __n=18446744073708962816) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x00005555555565ee in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd570, __p=0x7ffff55b0cd8, __n=18446744073708962816) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555e47 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd570, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x00005555555559c7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd570, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x0000555555555f7c in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x55555576e410, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#12 0x0000555555555a1f in std::vector<int, std::allocator<int> >::operator= (this=0x55555576e410, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#13 0x0000555555555025 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 202, capacity 202 = {...}) at knapsackmf.cpp:21
+#14 0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#15 0x000055555555558a in main () at knapsackmf.cpp:81
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x700xd50xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd538
+address max offset: 8
+Memory content after  bitflip:0x700xd50xff0xff0xff0x7b0x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackmf.cpp
+symbol line: 0
+value: 0x7fffffffd570
+value address: 0x7fffffffd538
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:46:12]
+Fault Injection Successful after 0.5880575180053711s
+[INFO -- 2018-12-01 01:46:12]
+event type: exit
+[EXCEPTION -- 2018-12-01 01:46:12]
+exit code: no exit code available
