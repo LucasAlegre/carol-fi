@@ -12,19 +12,40 @@
 using namespace std;
 
 vector<int> val;
+vector<int> val2;
 vector<int> wt;
-int n, W;
+vector<int> wt2;
+int n, n2, W, W2;
 int pop_size = 40;
+int pop_size2 = 40;
+
+void exit_gracefully(){
+    ofstream detection_log("/tmp/knapsack/ga-detection.log");
+    detection_log << "Erro dectado!";
+    detection_log.close();
+    exit(0);
+}
 
 int rand_bit(){
     return rand() % 2;
 }
 
 int cost(vector<int> &solution){
-    int peso=0, valor=0;
+    if(n != n2 || W != W2){
+        exit_gracefully();
+    }
+
+    int peso=0, peso2=0, valor=0, valor2=0;
     for(int i=0; i < n; i++){
         peso += solution[i] * wt[i];
         valor += solution[i] * val[i];
+    }
+    for(int i=0; i < n; i++){
+        peso2 += solution[i] * wt2[i];
+        valor2 += solution[i] * val2[i];
+    }
+    if(peso != peso2 || valor != valor2){
+        exit_gracefully();
     }
 
     if(peso > W){
@@ -90,8 +111,13 @@ int genetic_algorithm() {
 
     sort(pop.begin(), pop.end());
     int best = pop[0].fitness;
-
+    
+    int g2 = 0;
     for(int g = 0; g < 10000; g++){
+        if(g2++ != g || pop_size != pop_size2){
+            exit_gracefully();
+        }
+
         vector<chromossome> new_pop;
 
         for(int i=0; i < 2; i++)
@@ -125,15 +151,17 @@ int main()
 {
     ifstream file("/tmp/knapsack/instance.txt");
     ofstream outfile("/tmp/knapsack/outputga");
+    
     srand (42);
     file >> n; file >> W;
+    n2 = n; W2 = W;
 
     for(int i = 0; i < n; i++){
         int x, y; file >> x >> y;
-        val.push_back(x);
-        wt.push_back(y);
+        val.push_back(x); val2.push_back(x);
+        wt.push_back(y); wt2.push_back(y);
     }
-
+ 
     outfile << genetic_algorithm();
     outfile.close();
 
