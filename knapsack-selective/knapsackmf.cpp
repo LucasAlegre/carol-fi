@@ -24,7 +24,7 @@ int knapSackAuxRec(int i, int i2, int j, int j2);
 void exit_gracefully();
 
 void exit_gracefully(){
-    ofstream detection_log("/tmp/knapsack/ga-detection.log");
+    ofstream detection_log("/tmp/knapsack/mf-detection.log");
     detection_log << "Erro dectado!";
     detection_log.close();
     exit(0);
