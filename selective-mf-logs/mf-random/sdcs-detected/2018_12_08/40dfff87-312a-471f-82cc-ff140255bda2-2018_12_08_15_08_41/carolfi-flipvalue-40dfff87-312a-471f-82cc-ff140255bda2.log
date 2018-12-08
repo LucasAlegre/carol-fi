@@ -1,0 +1,50 @@
+[INFO -- 2018-12-08 15:08:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:08:39]
+Initialization strings:
+[INFO -- 2018-12-08 15:08:39]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-08 15:08:39]
+initSignal:1
+[INFO -- 2018-12-08 15:08:39]
+endSignal:3
+[INFO -- 2018-12-08 15:08:39]
+faultModel:2
+[INFO -- 2018-12-08 15:08:40]
+Backtrace BEGIN:
+#0  0x0000555555555147 in knapSack () at knapsackmf.cpp:48
+#1  0x0000555555555578 in main () at knapsackmf.cpp:108
+
+43	
+44	        while(w <= W && w == w2) {
+45	            if (i == 0 || w == 0) {
+46	                V[i][w] = 0;
+47	            } else {
+48	                V[i][w] = -1;
+49	            }
+50	            w++; w2++;
+51	        }
+52	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575a14c 
+address max offset: 4
+Memory content after  bitflip:0x690xa70x5a0x97
+frame name: knapSack
+symbol name: n2
+symbol filename: knapsackmf.cpp
+symbol line: 15
+value: -1755666583
+value address: 0x55555575a14c <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 15:08:40]
+Fault Injection Successful after 1.600877046585083s
+[INFO -- 2018-12-08 15:08:40]
+event type: exit
+[INFO -- 2018-12-08 15:08:40]
+exit code: 0
