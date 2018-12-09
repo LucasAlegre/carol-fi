@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 16:43:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 16:43:47]
+Initialization strings:
+[INFO -- 2018-12-08 16:43:47]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 16:43:47]
+initSignal:0
+[INFO -- 2018-12-08 16:43:47]
+endSignal:9
+[INFO -- 2018-12-08 16:43:47]
+faultModel:4
+[EXCEPTION -- 2018-12-08 16:43:51]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 16:43:51]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-08 16:43:52]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 16:43:52]
+Backtrace BEGIN:
+#0  0x0000555555555861 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd740, __n=89) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x0000555555555149 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:59
+#2  0x000055555555534c in simulated_annealing () at knapsacksa.cpp:92
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555759030 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x10
+frame name: main
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 269024049
+value address: 0x555555759030 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 16:43:52]
+Fault Injection Successful after 5.788120746612549s
+[INFO -- 2018-12-08 16:43:53]
+event type: exit
+[EXCEPTION -- 2018-12-08 16:43:53]
+exit code: no exit code available

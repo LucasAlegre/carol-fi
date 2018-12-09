@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 17:37:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:37:45]
+Initialization strings:
+[INFO -- 2018-12-08 17:37:45]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 17:37:45]
+initSignal:0
+[INFO -- 2018-12-08 17:37:45]
+endSignal:9
+[INFO -- 2018-12-08 17:37:45]
+faultModel:2
+[INFO -- 2018-12-08 17:37:48]
+Backtrace BEGIN:
+#0  0x000055555555687d in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=1433872320, __result=0x55555555677f <std::_Vector_base<int, std::allocator<int> >::_M_create_storage(unsigned long)+35>) at /usr/include/c++/7/bits/stl_uninitialized.h:115
+#1  0x0000555555556109 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555555a01 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd740, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x00005555555552f7 in simulated_annealing () at knapsacksa.cpp:89
+#4  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+110	   *
+111	   *  Like copy(), but does not require an initialized output range.
+112	  */
+113	  template<typename _InputIterator, typename _ForwardIterator>
+114	    inline _ForwardIterator
+115	    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+116			       _ForwardIterator __result)
+117	    {
+118	      typedef typename iterator_traits<_InputIterator>::value_type
+119		_ValueType1;
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x900x240x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd638
+address max offset: 8
+Memory content after  bitflip:0xa80xcd0x900x060xde0x030x8b0x92
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 115
+value: <error reading variable: Cannot access memory at address 0x928b03de0690cda8>
+value address: 0x7fffffffd638
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 17:37:48]
+Fault Injection Successful after 3.0483014583587646s
+[INFO -- 2018-12-08 17:37:48]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:37:48]
+exit code: no exit code available

@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 13:36:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 13:36:57]
+Initialization strings:
+[INFO -- 2018-12-08 13:36:57]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 13:36:57]
+initSignal:0
+[INFO -- 2018-12-08 13:36:57]
+endSignal:9
+[INFO -- 2018-12-08 13:36:57]
+faultModel:0
+[EXCEPTION -- 2018-12-08 13:37:00]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 13:37:00]
+Backtrace BEGIN:
+#0  0x0000555555555865 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd740, __n=169) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x0000555555555116 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:58
+#2  0x000055555555534c in simulated_annealing () at knapsacksa.cpp:92
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400xd70xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd678
+address max offset: 8
+Memory content after  bitflip:0x400xd70xff0xff0xf70x7f0x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffd740
+value address: 0x7fffffffd678
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 13:37:00]
+Fault Injection Successful after 3.8589577674865723s
+[INFO -- 2018-12-08 13:37:08]
+event type: exit
+[INFO -- 2018-12-08 13:37:08]
+exit code: 0

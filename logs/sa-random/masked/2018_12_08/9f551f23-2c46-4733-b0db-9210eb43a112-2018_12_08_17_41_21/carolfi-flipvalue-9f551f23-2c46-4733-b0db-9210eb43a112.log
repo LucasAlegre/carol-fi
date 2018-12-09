@@ -1,0 +1,51 @@
+[INFO -- 2018-12-08 17:41:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:41:11]
+Initialization strings:
+[INFO -- 2018-12-08 17:41:12]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 17:41:12]
+initSignal:0
+[INFO -- 2018-12-08 17:41:12]
+endSignal:9
+[INFO -- 2018-12-08 17:41:12]
+faultModel:2
+[INFO -- 2018-12-08 17:41:19]
+Backtrace BEGIN:
+#0  0x0000555555555830 in std::exp (__x=-inf) at /usr/include/c++/7/cmath:223
+#1  0x00005555555553c5 in simulated_annealing () at knapsacksa.cpp:104
+#2  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+218	  using ::exp;
+219	
+220	#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+221	  inline _GLIBCXX_CONSTEXPR float
+222	  exp(float __x)
+223	  { return __builtin_expf(__x); }
+224	
+225	  inline _GLIBCXX_CONSTEXPR long double
+226	  exp(long double __x)
+227	  { return __builtin_expl(__x); }
+
+Backtrace END
+Memory content before bitflip:0x000x000x800xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6cc
+address max offset: 4
+Memory content after  bitflip:0x1d0x540x8e0xc7
+frame name: std::exp
+symbol name: __x
+symbol filename: /usr/include/c++/7/cmath
+symbol line: 222
+value: -72872.2266
+value address: 0x7fffffffd6cc
+Type: A floating point type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 17:41:19]
+Fault Injection Successful after 7.1996238231658936s
+[INFO -- 2018-12-08 17:41:21]
+event type: exit
+[INFO -- 2018-12-08 17:41:21]
+exit code: 0

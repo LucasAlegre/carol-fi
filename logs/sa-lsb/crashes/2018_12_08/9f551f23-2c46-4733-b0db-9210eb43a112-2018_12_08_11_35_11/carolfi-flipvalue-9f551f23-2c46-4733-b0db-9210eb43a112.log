@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 11:35:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 11:35:04]
+Initialization strings:
+[INFO -- 2018-12-08 11:35:04]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 11:35:04]
+initSignal:0
+[INFO -- 2018-12-08 11:35:04]
+endSignal:9
+[INFO -- 2018-12-08 11:35:04]
+faultModel:4
+[EXCEPTION -- 2018-12-08 11:35:08]
+gdbException: Cannot access memory at address 0x4000555555771c70
+[INFO -- 2018-12-08 11:35:09]
+Backtrace BEGIN:
+#0  0x0000555555556853 in std::allocator<int>::allocator (this=0x7fffffffd6a7, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#1  0x0000555555556827 in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:505
+#2  0x000055555555600a in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#3  0x0000555555555992 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd740, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#4  0x00005555555552f7 in simulated_annealing () at knapsacksa.cpp:89
+#5  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555759034 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x20
+frame name: main
+symbol name: W2
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 537459505
+value address: 0x555555759034 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 11:35:09]
+Fault Injection Successful after 5.170904874801636s
+[INFO -- 2018-12-08 11:35:09]
+event type: exit
+[EXCEPTION -- 2018-12-08 11:35:09]
+exit code: no exit code available

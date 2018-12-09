@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 08:19:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 08:19:44]
+Initialization strings:
+[INFO -- 2018-12-08 08:19:44]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 08:19:44]
+initSignal:0
+[INFO -- 2018-12-08 08:19:44]
+endSignal:9
+[INFO -- 2018-12-08 08:19:44]
+faultModel:3
+[INFO -- 2018-12-08 08:19:47]
+Backtrace BEGIN:
+#0  std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:455
+#1  0x0000555555555cd5 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd720, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#2  0x00005555555553e6 in simulated_annealing () at knapsacksa.cpp:108
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+450	      __glibcxx_function_requires(_OutputIteratorConcept<_OI,
+451		    typename iterator_traits<_II>::value_type>)
+452	      __glibcxx_requires_valid_range(__first, __last);
+453	
+454	      return (std::__copy_move_a2<__is_move_iterator<_II>::__value>
+455		      (std::__miter_base(__first), std::__miter_base(__last),
+456		       __result));
+457	    }
+458	
+459	#if __cplusplus >= 201103L
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575903c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: simulated_annealing
+symbol name: n2
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 0
+value address: 0x55555575903c <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 08:19:47]
+Fault Injection Successful after 3.2895913124084473s
+[INFO -- 2018-12-08 08:19:47]
+event type: exit
+[INFO -- 2018-12-08 08:19:47]
+exit code: 0

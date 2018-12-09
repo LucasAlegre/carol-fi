@@ -1,0 +1,61 @@
+[INFO -- 2018-12-08 17:26:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:26:00]
+Initialization strings:
+[INFO -- 2018-12-08 17:26:00]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 17:26:00]
+initSignal:0
+[INFO -- 2018-12-08 17:26:00]
+endSignal:9
+[INFO -- 2018-12-08 17:26:00]
+faultModel:3
+[EXCEPTION -- 2018-12-08 17:26:01]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 17:26:01]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 17:26:01]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff6ede801 in __GI_abort () at abort.c:79
+#2  0x00007ffff6f27897 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7054b9a "%s\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff6f2e90a in malloc_printerr (str=str@entry=0x7ffff7052d88 "free(): invalid pointer") at malloc.c:5350
+#4  0x00007ffff6f35e1c in _int_free (have_lock=0, p=0x5555557717f0, av=0x7ffff7289c40 <main_arena>) at malloc.c:4157
+#5  __GI___libc_free (mem=0x555555771800) at malloc.c:3124
+#6  0x0000555555556d66 in __gnu_cxx::new_allocator<int>::deallocate (this=0x555555759060 <val2>, __p=0x555555771800) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555556912 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555771800, __n=280) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x0000555555556176 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555759060 <val2>, __p=0x555555771800, __n=280) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555eb1 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555759060 <val2>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x0000555555555949 in std::vector<int, std::allocator<int> >::~vector (this=0x555555759060 <val2>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x00007ffff6ee1041 in __run_exit_handlers (status=0, listp=0x7ffff7289718 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:108
+#12 0x00007ffff6ee113a in __GI_exit (status=<optimized out>) at exit.c:139
+#13 0x000055555555504b in exit_gracefully () at knapsacksa.cpp:40
+#14 0x0000555555555200 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:66
+#15 0x000055555555534c in simulated_annealing () at knapsacksa.cpp:92
+#16 0x0000555555555658 in main () at knapsacksa.cpp:146
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd218
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __libc_message
+symbol name: action
+symbol filename: ../sysdeps/posix/libc_fatal.c
+symbol line: 67
+value: do_message
+value address: 0x7fffffffd218
+Type: The type is an enum.
+Type sizeof: 4
+Field name: do_message
+
+[INFO -- 2018-12-08 17:26:01]
+Fault Injection Successful after 1.9352717399597168s
+[INFO -- 2018-12-08 17:26:02]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:26:02]
+exit code: no exit code available

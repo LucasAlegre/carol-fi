@@ -1,0 +1,47 @@
+[INFO -- 2018-12-08 05:42:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 05:42:42]
+Initialization strings:
+[INFO -- 2018-12-08 05:42:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 05:42:42]
+initSignal:0
+[INFO -- 2018-12-08 05:42:42]
+endSignal:9
+[INFO -- 2018-12-08 05:42:42]
+faultModel:0
+[INFO -- 2018-12-08 05:42:45]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x5555557727c0) at malloc.c:3101
+#1  0x0000555555556d66 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd740, __p=0x5555557727c0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555556912 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557727c0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555556176 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd740, __p=0x5555557727c0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555555eb1 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555949 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555468 in simulated_annealing () at knapsacksa.cpp:89
+#7  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+3096	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555759030 
+address max offset: 4
+Memory content after  bitflip:0x310xfa0x080x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_deallocate
+symbol name: W
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 588337
+value address: 0x555555759030 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 05:42:45]
+Fault Injection Successful after 3.825371742248535s
+[INFO -- 2018-12-08 05:42:45]
+event type: exit
+[INFO -- 2018-12-08 05:42:45]
+exit code: 0

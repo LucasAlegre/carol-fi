@@ -1,0 +1,64 @@
+[INFO -- 2018-12-08 13:34:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 13:34:22]
+Initialization strings:
+[INFO -- 2018-12-08 13:34:22]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 13:34:22]
+initSignal:0
+[INFO -- 2018-12-08 13:34:22]
+endSignal:9
+[INFO -- 2018-12-08 13:34:22]
+faultModel:1
+[EXCEPTION -- 2018-12-08 13:34:24]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 13:34:25]
+Backtrace BEGIN:
+#0  std::__copy_move_a<false, int const*, int*> (__first=0x555555556dab <std::__niter_base<int const*, std::vector<int, std::allocator<int> > >(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)+24>, __last=0x7fffffffd560, __result=0x7fffffffd558) at /usr/include/c++/7/bits/stl_algobase.h:375
+#1  0x0000555555557190 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_algobase.h:424
+#2  0x0000555555556fe7 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555556d44 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x00005555555568a0 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555556109 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555555a01 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd740, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#7  0x00005555555552f7 in simulated_annealing () at knapsacksa.cpp:89
+#8  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+370		}
+371	    };
+372	
+373	  template<bool _IsMove, typename _II, typename _OI>
+374	    inline _OI
+375	    __copy_move_a(_II __first, _II __last, _OI __result)
+376	    {
+377	      typedef typename iterator_traits<_II>::value_type _ValueTypeI;
+378	      typedef typename iterator_traits<_OI>::value_type _ValueTypeO;
+379	      typedef typename iterator_traits<_II>::iterator_category _Category;
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x5555557727b0
+address max offset: 4
+Memory content after  bitflip:0x240x000x000x00
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 115
+value: 36
+value address: 0x7fffffffd630
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 13:34:25]
+Fault Injection Successful after 3.229320764541626s
+[INFO -- 2018-12-08 13:34:33]
+event type: exit
+[INFO -- 2018-12-08 13:34:33]
+exit code: 0

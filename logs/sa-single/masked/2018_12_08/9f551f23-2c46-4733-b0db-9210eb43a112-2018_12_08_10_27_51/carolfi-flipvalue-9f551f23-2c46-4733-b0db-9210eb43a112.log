@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 10:27:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 10:27:40]
+Initialization strings:
+[INFO -- 2018-12-08 10:27:40]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 10:27:40]
+initSignal:0
+[INFO -- 2018-12-08 10:27:40]
+endSignal:9
+[INFO -- 2018-12-08 10:27:40]
+faultModel:0
+[INFO -- 2018-12-08 10:27:40]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2289
+#1  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdc90, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdc90) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdc90) at rtld.c:521
+#4  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe07d in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2284	rtld.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: name
+Fliping a bit of the pointer
+Memory content before bitflip:0x380x420x550x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffe030 
+address max offset: 8
+Memory content after  bitflip:0x380x620x550x550x550x550x000x00
+frame name: _dl_start_final
+symbol name: _dl_rtld_libname
+symbol filename: rtld.c
+symbol line: 301
+value: {name = 0x555555556238 <std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >(unsigned long, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >)+70> "\300H\213E\310H\211\307\350\225\376\377\377H\213E\350\353\067H\211\307\350\035\353\377\377H\213E\330H\213U\320H\213M\350H\211\316H\211\307\350\332\376\377\377\350\301\353\377\377H\211\303\350\371\353\377\377H\211\330H\211\307\350\036\354\377\377H\203\304\070[]ÐUH\211\345H\203\354 H\211}\350dH\213\004%(", next = 0x7ffff7ffdfe0 <newname>, dont_free = 0}
+value address: 0x7ffff7ffe030 <_dl_rtld_libname>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: name
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dont_free
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-08 10:27:40]
+Fault Injection Successful after 0.8661246299743652s
+[INFO -- 2018-12-08 10:27:50]
+event type: exit
+[INFO -- 2018-12-08 10:27:50]
+exit code: 0
