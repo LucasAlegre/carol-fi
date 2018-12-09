@@ -1,0 +1,55 @@
+[INFO -- 2018-12-02 03:44:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:44:21]
+Initialization strings:
+[INFO -- 2018-12-02 03:44:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:44:21]
+initSignal:0
+[INFO -- 2018-12-02 03:44:21]
+endSignal:13
+[INFO -- 2018-12-02 03:44:21]
+faultModel:2
+[INFO -- 2018-12-02 03:44:24]
+Backtrace BEGIN:
+#0  0x0000555555558d3c in std::allocator_traits<std::allocator<chromossome> >::deallocate (__a=..., __p=0x5555557764e0, __n=4) at /usr/include/c++/7/bits/alloc_traits.h:462
+#1  0x000055555555779a in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd8d0, __p=0x5555557764e0, __n=4) at /usr/include/c++/7/bits/stl_vector.h:180
+#2  0x0000555555556cbb in std::_Vector_base<chromossome, std::allocator<chromossome> >::~_Vector_base (this=0x7fffffffd8d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#3  0x0000555555555f1d in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#5  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+457	       *
+458	       *  Calls <tt> a.deallocate(p, n) </tt>
+459	      */
+460	      static void
+461	      deallocate(allocator_type& __a, pointer __p, size_type __n)
+462	      { __a.deallocate(__p, __n); }
+463	
+464	      /**
+465	       *  @brief  Construct an object of type @a _Up
+466	       *  @param  __a  An allocator.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x6c0x170x6c0x4d
+frame name: std::vector<chromossome, std::allocator<chromossome> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1298929516
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 03:44:24]
+Fault Injection Successful after 3.1034841537475586s
+[INFO -- 2018-12-02 03:44:24]
+event type: exit
+[EXCEPTION -- 2018-12-02 03:44:24]
+exit code: no exit code available

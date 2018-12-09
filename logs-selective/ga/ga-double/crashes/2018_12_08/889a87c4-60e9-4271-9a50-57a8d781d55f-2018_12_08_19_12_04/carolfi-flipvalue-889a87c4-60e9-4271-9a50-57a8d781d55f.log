@@ -1,0 +1,53 @@
+[INFO -- 2018-12-08 19:12:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:12:01]
+Initialization strings:
+[INFO -- 2018-12-08 19:12:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:12:01]
+initSignal:1
+[INFO -- 2018-12-08 19:12:01]
+endSignal:8
+[INFO -- 2018-12-08 19:12:01]
+faultModel:1
+[EXCEPTION -- 2018-12-08 19:12:03]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 19:12:03]
+Backtrace BEGIN:
+#0  rand () at rand.c:26
+#1  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#2  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#3  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+21	in rand.c
+
+Backtrace END
+Fliping value of field: fitness
+Memory content before bitflip:0xe60x7a0x550x55
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd998
+address max offset: 4
+Memory content after  bitflip:0xe60x7a0x560x55
+frame name: genetic_algorithm
+symbol name: f1
+symbol filename: knapsackga.cpp
+symbol line: 131
+value: {solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 1431730918}
+value address: 0x7fffffffd980
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-08 19:12:03]
+Fault Injection Successful after 2.998889207839966s
+[INFO -- 2018-12-08 19:12:04]
+event type: exit
+[EXCEPTION -- 2018-12-08 19:12:04]
+exit code: no exit code available

@@ -1,0 +1,70 @@
+[INFO -- 2018-12-09 07:25:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:25:33]
+Initialization strings:
+[INFO -- 2018-12-09 07:25:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:25:33]
+initSignal:1
+[INFO -- 2018-12-09 07:25:33]
+endSignal:8
+[INFO -- 2018-12-09 07:25:33]
+faultModel:2
+[EXCEPTION -- 2018-12-09 07:25:35]
+gdbException: Cannot access memory at address 0xc47eb43aabe592ab
+[INFO -- 2018-12-09 07:25:35]
+Backtrace BEGIN:
+#0  __random () at random.c:297
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#3  0x0000555555555353 in crossover (pai=std::vector of length 1071971364029901181, capacity 1071971364029901181 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+292	in random.c
+
+Backtrace END
+Fliping value of field: rptr
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00x210x830xf70xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff7832728 
+address max offset: 8
+Memory content after  bitflip:0xa40x1f0xd40xd60x2a0x810xb20xfc
+frame name: __random
+symbol name: unsafe_state
+symbol filename: random.c
+symbol line: 160
+value: {fptr = 0x7ffff78321cc <randtbl+44>, rptr = 0xfcb2812ad6d41fa4, state = 0x7ffff78321a4 <randtbl+4>, rand_type = 3, rand_deg = 31, rand_sep = 3, end_ptr = 0x7ffff7832220 <pa_next_type>}
+value address: 0x7ffff7832720 <unsafe_state>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: fptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: state
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rand_type
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_deg
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_sep
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: end_ptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 07:25:35]
+Fault Injection Successful after 2.257929801940918s
+[INFO -- 2018-12-09 07:25:35]
+event type: exit
+[EXCEPTION -- 2018-12-09 07:25:35]
+exit code: no exit code available

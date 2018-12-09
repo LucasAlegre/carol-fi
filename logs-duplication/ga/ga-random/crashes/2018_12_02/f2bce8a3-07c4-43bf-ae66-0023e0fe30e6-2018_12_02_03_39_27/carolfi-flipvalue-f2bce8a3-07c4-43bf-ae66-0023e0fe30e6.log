@@ -1,0 +1,67 @@
+[INFO -- 2018-12-02 03:39:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:39:20]
+Initialization strings:
+[INFO -- 2018-12-02 03:39:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:39:20]
+initSignal:0
+[INFO -- 2018-12-02 03:39:20]
+endSignal:13
+[INFO -- 2018-12-02 03:39:20]
+faultModel:2
+[EXCEPTION -- 2018-12-02 03:39:25]
+gdbException: A syntax error in expression, near `...'.
+[EXCEPTION -- 2018-12-02 03:39:25]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-02 03:39:25]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=14) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  malloc (n=14) at dl-minimal.c:50
+#5  <function called from gdb>
+#6  malloc (n=14) at dl-minimal.c:50
+#7  <function called from gdb>
+#8  _int_malloc (av=av@entry=0x7ffff7832c20 <main_arena>, bytes=bytes@entry=800) at malloc.c:3993
+#9  0x00007ffff74e6f3e in __GI___libc_malloc (bytes=800) at malloc.c:3086
+#10 0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#11 0x000055555555a2fe in __gnu_cxx::new_allocator<int>::allocate (this=0x5555557846e0, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#12 0x0000555555559815 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#13 0x00005555555587e2 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x5555557846e0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#14 0x000055555555860f in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x5555557846e0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#15 0x0000555555557129 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x5555557846e0, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#16 0x0000555555556113 in std::vector<int, std::allocator<int> >::vector (this=0x5555557846e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#17 0x000055555555810d in chromossome::chromossome (this=0x5555557846e0) at knapsackga.cpp:42
+#18 0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd950, __p=0x5555557846e0, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#19 0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x5555557846e0, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#20 0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd950, __position={solution = std::vector of length 260, capacity 10177998752086 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#21 0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd950, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#22 0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#23 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+45	in dl-minimal.c
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x6e0xee0xb80x97
+frame name: __gnu_cxx::new_allocator<int>::allocate
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: -1749488018
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 03:39:25]
+Fault Injection Successful after 5.6991493701934814s
+[INFO -- 2018-12-02 03:39:25]
+event type: exit
+[EXCEPTION -- 2018-12-02 03:39:25]
+exit code: no exit code available

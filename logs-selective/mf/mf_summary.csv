@@ -1,0 +1,98 @@
+Faults Injected:;4982
+
+Fault Effect;#Effect;PVF
+Masked;1160;0.23283821758329987
+SDCs;2174;0.43637093536732235
+Crashes;1648;0.3307908470493778
+Hangs;0;N/A
+
+
+Detected SDCs:;2174
+SDC Coverage (%):;100.0
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;569;26.172953081876727
+Single bit-flip;480;22.079116835326587
+Double bit-flip;447;20.561177552897885
+LSB bit-flip;361;16.60533578656854
+Random bit-flip;317;14.581416743330266
+
+FaultModels Detected SDCs:
+FaultModel ;#SDCs Detected; percentage
+Zero bit-flip;569;26.172953081876727
+Single bit-flip;480;22.079116835326587
+Double bit-flip;447;20.561177552897885
+LSB bit-flip;361;16.60533578656854
+Random bit-flip;317;14.581416743330266
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Random bit-flip;448;27.184466019417474
+LSB bit-flip;401;24.33252427184466
+Double bit-flip;306;18.567961165048544
+Single bit-flip;299;18.143203883495147
+Zero bit-flip;194;11.771844660194175
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+87.82608695652175;460;404;W2;knapsackmf.cpp;13
+87.38317757009347;428;374;n2;knapsackmf.cpp;15
+86.68478260869566;368;319;i2;knapsackmf.cpp;69
+82.88770053475936;374;310;j2;knapsackmf.cpp;69
+51.78147268408551;421;218;W;knapsackmf.cpp;12
+50.26178010471204;382;192;j;knapsackmf.cpp;69
+33.20610687022901;262;87;values;knapsackmf.cpp;16
+20.5188679245283;424;87;n;knapsackmf.cpp;14
+18.14814814814815;270;49;weights2;knapsackmf.cpp;19
+10.24390243902439;410;42;i;knapsackmf.cpp;69
+14.0625;256;36;values2;knapsackmf.cpp;17
+13.043478260869565;276;36;weights;knapsackmf.cpp;18
+72.72727272727273;11;8;i2;knapsackmf.cpp;40
+62.5;8;5;w2;knapsackmf.cpp;42
+80.0;5;4;w;knapsackmf.cpp;42
+17.647058823529413;17;3;i;knapsackmf.cpp;40
+
+Variables that caused Detected SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+87.82608695652175;460;404;W2;knapsackmf.cpp;13
+87.38317757009347;428;374;n2;knapsackmf.cpp;15
+86.68478260869566;368;319;i2;knapsackmf.cpp;69
+82.88770053475936;374;310;j2;knapsackmf.cpp;69
+51.78147268408551;421;218;W;knapsackmf.cpp;12
+50.26178010471204;382;192;j;knapsackmf.cpp;69
+33.20610687022901;262;87;values;knapsackmf.cpp;16
+20.5188679245283;424;87;n;knapsackmf.cpp;14
+18.14814814814815;270;49;weights2;knapsackmf.cpp;19
+10.24390243902439;410;42;i;knapsackmf.cpp;69
+14.0625;256;36;values2;knapsackmf.cpp;17
+13.043478260869565;276;36;weights;knapsackmf.cpp;18
+72.72727272727273;11;8;i2;knapsackmf.cpp;40
+62.5;8;5;w2;knapsackmf.cpp;42
+80.0;5;4;w;knapsackmf.cpp;42
+17.647058823529413;17;3;i;knapsackmf.cpp;40
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+89.75609756097562;410;368;i;knapsackmf.cpp;69
+79.48113207547169;424;337;n;knapsackmf.cpp;14
+48.218527315914486;421;203;W;knapsackmf.cpp;12
+49.21465968586388;382;188;j;knapsackmf.cpp;69
+46.34146341463415;205;95;V;knapsackmf.cpp;20
+17.11229946524064;374;64;j2;knapsackmf.cpp;69
+15.025906735751295;386;58;value;knapsackmf.cpp;70
+12.173913043478262;460;56;W2;knapsackmf.cpp;13
+12.616822429906541;428;54;n2;knapsackmf.cpp;15
+18.478260869565215;276;51;weights;knapsackmf.cpp;18
+13.31521739130435;368;49;i2;knapsackmf.cpp;69
+16.030534351145036;262;42;values;knapsackmf.cpp;16
+11.851851851851853;270;32;weights2;knapsackmf.cpp;19
+10.9375;256;28;values2;knapsackmf.cpp;17
+58.82352941176471;17;10;i;knapsackmf.cpp;40
+23.076923076923077;13;3;result;knapsackmf.cpp;108
+37.5;8;3;w2;knapsackmf.cpp;42
+18.181818181818183;11;2;i2;knapsackmf.cpp;40
+100.0;2;2;this;knapsackmf.cpp;0
+33.33333333333333;3;1;__n;/usr/include/c++/7/bits/stl_vector.h;795
+20.0;5;1;w;knapsackmf.cpp;42
+100.0;1;1;__n;/usr/include/c++/7/bits/stl_vector.h;176

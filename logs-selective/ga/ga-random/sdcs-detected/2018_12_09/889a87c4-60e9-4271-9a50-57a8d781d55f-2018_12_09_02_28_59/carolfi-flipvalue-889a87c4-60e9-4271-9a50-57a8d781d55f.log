@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 02:28:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:28:57]
+Initialization strings:
+[INFO -- 2018-12-09 02:28:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:28:57]
+initSignal:1
+[INFO -- 2018-12-09 02:28:57]
+endSignal:8
+[INFO -- 2018-12-09 02:28:57]
+faultModel:2
+[INFO -- 2018-12-09 02:28:58]
+Backtrace BEGIN:
+#0  __gnu_cxx::operator-<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > (__lhs=<error reading variable: Cannot access memory at address 0x84c09f0f10f88348>, __rhs={solution = std::vector of length -11728124026306, capacity -11728123468856 = {-10160, 32767, 1431655004, 21845, -10112, 32767, -9920, 32767, -10192, 32767, 3, 10, 1433888432, 21845, 1433888528, 21845, 1433888560, 21845, 497042176, -217366439, -9824, 32767, 1433973072, 21845, -9760, 32767, 1431656019, 21845, 0, 0, 40, -507587, 824, 823, 2, 40, 1433931440, 21845, 1433932720, 21845, 1433933488, 21845, -8960, 32767, 1433888576, 21845, 1433888704, 21845, 1433888704, 21845, -139062032, 32767, 0, 0, 0, 0, 0, 0, -858993460, 214748364, 0, 0, 0, 0, 0, 0, -9796, 32767, 0, 0, 0, 0, 0, 0, 1433792656, 21845, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 1431670668, 21845, 0, 0, 0, 0, 0, 0, 1433792656, 21845, 1433954432, 21845, 1433955232, 21845, 1433955232, 21845, 1431665382, 21845, 1433951168, 21845, 1433951968, 21845, 1433951968, 21845, 99999999, 21845, -9760, 32767, 497042176, -217366439, 0, 0, 1431653968, 21845, -8672, 32767, 1431657324, 21845, -134455296, 9215, 10215, 200, -136526640, 32767, -136527080, 32767, 1433879264, 21845, 1433879264, 21845, 1433879264, 21845, 0, 0, 0, 0, 0, 0, -136493472, 32767, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1433878704, 21845, 1, 0, 48, 0, 0, 0, 0, 0, 0, 32767, 1433879264, 21845, 8192, 0, 1, 32767, 0, 0, 0, 0, -134449664, 32767, -136495120, 32767, 0, 0, 0, 0, 0, 0, 0, 0, -136526600, 32767, 6, 0, 0, 0...}, fitness = 1431658703}) at /usr/include/c++/7/bits/stl_iterator.h:962
+#1  0x00005555555584da in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -507587}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 0}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1883
+#2  0x0000555555557093 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -507587}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 0}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#3  0x00005555555560e7 in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -507587}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 0}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#4  0x000055555555525c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:87
+#5  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+957	#endif
+958	    { return __lhs.base() - __rhs.base(); }
+959	
+960	  template<typename _Iterator, typename _Container>
+961	    inline typename __normal_iterator<_Iterator, _Container>::difference_type
+962	    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+963		      const __normal_iterator<_Iterator, _Container>& __rhs)
+964	    _GLIBCXX_NOEXCEPT
+965	    { return __lhs.base() - __rhs.base(); }
+966	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x9a0x320x3c0xff
+frame name: tournament
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -12832102
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 02:28:58]
+Fault Injection Successful after 1.4812307357788086s
+[INFO -- 2018-12-09 02:28:58]
+event type: exit
+[INFO -- 2018-12-09 02:28:58]
+exit code: 0

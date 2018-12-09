@@ -1,0 +1,47 @@
+[INFO -- 2018-11-30 07:06:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 07:06:05]
+Initialization strings:
+[INFO -- 2018-11-30 07:06:05]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 07:06:05]
+initSignal:0
+[INFO -- 2018-11-30 07:06:05]
+endSignal:7
+[INFO -- 2018-11-30 07:06:05]
+faultModel:3
+[EXCEPTION -- 2018-11-30 07:06:08]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-11-30 07:06:08]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 07:06:11]
+Backtrace BEGIN:
+#0  __GI___expf (x=-0.568433225) at ../sysdeps/ieee754/flt-32/w_expf_compat.c:25
+#1  0x0000555555555771 in std::exp (__x=-0.568433225) at /usr/include/c++/7/cmath:223
+#2  0x00005555555552ab in simulated_annealing () at knapsacksa.cpp:58
+#3  0x0000555555555532 in main () at knapsacksa.cpp:87
+
+20	../sysdeps/ieee754/flt-32/w_expf_compat.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::exp
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 0
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 07:06:11]
+Fault Injection Successful after 6.413510799407959s
+[INFO -- 2018-11-30 07:06:11]
+event type: exit
+[EXCEPTION -- 2018-11-30 07:06:11]
+exit code: no exit code available

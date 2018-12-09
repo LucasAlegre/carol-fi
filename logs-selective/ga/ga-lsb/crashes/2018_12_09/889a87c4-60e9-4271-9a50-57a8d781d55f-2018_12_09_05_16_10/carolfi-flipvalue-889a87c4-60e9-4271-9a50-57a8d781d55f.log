@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 05:16:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:16:07]
+Initialization strings:
+[INFO -- 2018-12-09 05:16:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:16:07]
+initSignal:1
+[INFO -- 2018-12-09 05:16:07]
+endSignal:8
+[INFO -- 2018-12-09 05:16:07]
+faultModel:4
+[EXCEPTION -- 2018-12-09 05:16:09]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 05:16:09]
+Backtrace BEGIN:
+#0  crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:94
+#1  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+89	    return tournamentWinner;
+90	}
+91	
+92	void crossover(vector<int> &pai, vector<int> &mae, vector<int> &filho1, vector<int> &filho2){
+93	    vector<int> mask(n);
+94	    for(int i = 0; i < n; i++){
+95	        mask[i] = rand_bit();
+96	    }
+97	    filho1 = pai;
+98	    filho2 = mae;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x10
+frame name: main
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 269024049
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 05:16:09]
+Fault Injection Successful after 2.2128868103027344s
+[INFO -- 2018-12-09 05:16:09]
+event type: exit
+[EXCEPTION -- 2018-12-09 05:16:09]
+exit code: no exit code available

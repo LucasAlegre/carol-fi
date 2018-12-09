@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 20:27:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 20:27:10]
+Initialization strings:
+[INFO -- 2018-12-08 20:27:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 20:27:10]
+initSignal:1
+[INFO -- 2018-12-08 20:27:10]
+endSignal:8
+[INFO -- 2018-12-08 20:27:10]
+faultModel:4
+[INFO -- 2018-12-08 20:27:11]
+Backtrace BEGIN:
+#0  0x0000555555559d14 in std::move_iterator<chromossome*>::move_iterator (this=0x7fffffffd710, __i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1037
+#1  0x00005555555592bb in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1222
+#2  0x000055555555834e in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776440, __last=0x555555776440, __result=0x555555776580, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#3  0x0000555555556eb7 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#6  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1032	      move_iterator()
+1033	      : _M_current() { }
+1034	
+1035	      explicit _GLIBCXX17_CONSTEXPR
+1036	      move_iterator(iterator_type __i)
+1037	      : _M_current(__i) { }
+1038	
+1039	      template<typename _Iter>
+1040		_GLIBCXX17_CONSTEXPR
+1041		move_iterator(const move_iterator<_Iter>& __i)
+
+Backtrace END
+Memory content before bitflip:0x1c0x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd81c
+address max offset: 4
+Memory content after  bitflip:0x1c0x000x000x20
+frame name: tournament
+symbol name: randIndex
+symbol filename: knapsackga.cpp
+symbol line: 83
+value: 536870940
+value address: 0x7fffffffd81c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 20:27:11]
+Fault Injection Successful after 1.2970447540283203s
+[INFO -- 2018-12-08 20:27:18]
+event type: exit
+[INFO -- 2018-12-08 20:27:18]
+exit code: 0

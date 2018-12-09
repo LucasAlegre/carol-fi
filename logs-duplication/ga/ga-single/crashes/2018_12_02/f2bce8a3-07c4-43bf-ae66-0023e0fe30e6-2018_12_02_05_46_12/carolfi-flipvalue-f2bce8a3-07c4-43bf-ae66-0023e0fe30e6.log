@@ -1,0 +1,60 @@
+[INFO -- 2018-12-02 05:46:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:46:01]
+Initialization strings:
+[INFO -- 2018-12-02 05:46:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:46:01]
+initSignal:0
+[INFO -- 2018-12-02 05:46:01]
+endSignal:13
+[INFO -- 2018-12-02 05:46:01]
+faultModel:0
+[EXCEPTION -- 2018-12-02 05:46:11]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-02 05:46:11]
+Backtrace BEGIN:
+#0  0x00005555555594aa in chromossome::operator= (this=0x555555788140) at knapsackga.cpp:42
+#1  0x000055555555aff7 in std::swap<chromossome> (__a=..., __b=...) at /usr/include/c++/7/bits/move.h:199
+#2  0x000055555555a9ff in std::iter_swap<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__a={solution = std::vector of length 0, capacity 0, fitness = -514590}, __b={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}) at /usr/include/c++/7/bits/stl_algobase.h:148
+#3  0x000055555555a011 in std::__unguarded_partition<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -514590}, __last={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __pivot={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1909
+#4  0x00005555555593e4 in std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1923
+#5  0x0000555555558448 in std::__introsort_loop<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, long, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __depth_limit=9, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1952
+#6  0x0000555555557043 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1968
+#7  0x000055555555608d in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#8  0x00005555555557c9 in genetic_algorithm () at knapsackga.cpp:115
+#9  0x0000555555555aab in main () at knapsackga.cpp:143
+
+37	
+38	float random01(){
+39	    return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+40	}
+41	
+42	struct chromossome{
+43	    vector<int> solution;
+44	    int fitness;
+45	    chromossome(int size){
+46	        for(int i = 0; i < size; i++)
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x680x000x000x00
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 104
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 05:46:11]
+Fault Injection Successful after 10.545037984848022s
+[INFO -- 2018-12-02 05:46:11]
+event type: exit
+[EXCEPTION -- 2018-12-02 05:46:11]
+exit code: no exit code available

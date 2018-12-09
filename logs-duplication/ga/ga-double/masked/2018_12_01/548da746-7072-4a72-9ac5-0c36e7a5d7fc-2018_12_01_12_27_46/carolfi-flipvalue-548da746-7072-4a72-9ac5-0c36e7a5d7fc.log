@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 12:27:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:27:33]
+Initialization strings:
+[INFO -- 2018-12-01 12:27:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:27:33]
+initSignal:0
+[INFO -- 2018-12-01 12:27:33]
+endSignal:13
+[INFO -- 2018-12-01 12:27:33]
+faultModel:1
+[INFO -- 2018-12-01 12:27:38]
+Backtrace BEGIN:
+#0  0x0000555555556af4 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd900, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x0000555555556b5f in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd900, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd900, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x000055555555565e in genetic_algorithm () at knapsackga.cpp:101
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00x410x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd908
+address max offset: 8
+Memory content after  bitflip:0xa00xe10x780x550x550x550x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd900
+value address: 0x7fffffffd828
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 12:27:38]
+Fault Injection Successful after 5.199607610702515s
+[INFO -- 2018-12-01 12:27:46]
+event type: exit
+[INFO -- 2018-12-01 12:27:46]
+exit code: 0

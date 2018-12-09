@@ -1,0 +1,54 @@
+[INFO -- 2018-12-07 23:20:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:20:41]
+Initialization strings:
+[INFO -- 2018-12-07 23:20:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:20:41]
+initSignal:1
+[INFO -- 2018-12-07 23:20:41]
+endSignal:8
+[INFO -- 2018-12-07 23:20:41]
+faultModel:4
+[INFO -- 2018-12-07 23:20:43]
+Backtrace BEGIN:
+#0  0x000055555555854e in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#1  0x0000555555557093 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#2  0x00005555555560e7 in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -510591}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#3  0x000055555555525c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:87
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1885		  std::__insertion_sort(__first, __first + int(_S_threshold), __comp);
+1886		  std::__unguarded_insertion_sort(__first + int(_S_threshold), __last,
+1887						  __comp);
+1888		}
+1889	      else
+1890		std::__insertion_sort(__first, __last, __comp);
+1891	    }
+1892	
+1893	  /// This is a helper function...
+1894	  template<typename _RandomAccessIterator, typename _Compare>
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x20
+frame name: std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 537459505
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 23:20:43]
+Fault Injection Successful after 2.688322067260742s
+[INFO -- 2018-12-07 23:20:43]
+event type: exit
+[INFO -- 2018-12-07 23:20:43]
+exit code: 0

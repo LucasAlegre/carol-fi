@@ -1,0 +1,47 @@
+[INFO -- 2018-12-08 16:27:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 16:27:38]
+Initialization strings:
+[INFO -- 2018-12-08 16:27:38]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 16:27:38]
+initSignal:0
+[INFO -- 2018-12-08 16:27:38]
+endSignal:9
+[INFO -- 2018-12-08 16:27:38]
+faultModel:4
+[INFO -- 2018-12-08 16:27:39]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2289
+#1  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdc90, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdc90) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdc90) at rtld.c:521
+#4  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe07d in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2284	rtld.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff7ffdff8 
+address max offset: 1
+Memory content after  bitflip:0x00
+frame name: _dl_start_final
+symbol name: tls_init_tp_called
+symbol filename: rtld.c
+symbol line: 677
+value: false
+value address: 0x7ffff7ffdff8 <tls_init_tp_called>
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-08 16:27:39]
+Fault Injection Successful after 1.1859445571899414s
+[INFO -- 2018-12-08 16:27:48]
+event type: exit
+[INFO -- 2018-12-08 16:27:48]
+exit code: 0

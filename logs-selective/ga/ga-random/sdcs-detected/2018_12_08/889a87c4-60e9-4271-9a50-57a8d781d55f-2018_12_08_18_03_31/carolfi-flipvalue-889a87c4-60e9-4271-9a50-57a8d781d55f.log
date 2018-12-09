@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 18:03:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:03:28]
+Initialization strings:
+[INFO -- 2018-12-08 18:03:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:03:28]
+initSignal:1
+[INFO -- 2018-12-08 18:03:28]
+endSignal:8
+[INFO -- 2018-12-08 18:03:28]
+faultModel:2
+[INFO -- 2018-12-08 18:03:30]
+Backtrace BEGIN:
+#0  0x0000555555557763 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1535
+#1  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#2  0x00005555555556a7 in genetic_algorithm () at knapsackga.cpp:129
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1530	      {
+1531		vector __tmp(get_allocator());
+1532		this->_M_impl._M_swap_data(__tmp._M_impl);
+1533		this->_M_impl._M_swap_data(__x._M_impl);
+1534		std::__alloc_on_move(_M_get_Tp_allocator(), __x._M_get_Tp_allocator());
+1535	      }
+1536	
+1537	      // Do move assignment when it might not be possible to move source
+1538	      // object's memory, resulting in a linear-time operation.
+1539	      void
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0xbd0x150x0f0x6b
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 1796150717
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:03:30]
+Fault Injection Successful after 2.181981086730957s
+[INFO -- 2018-12-08 18:03:30]
+event type: exit
+[INFO -- 2018-12-08 18:03:30]
+exit code: 0

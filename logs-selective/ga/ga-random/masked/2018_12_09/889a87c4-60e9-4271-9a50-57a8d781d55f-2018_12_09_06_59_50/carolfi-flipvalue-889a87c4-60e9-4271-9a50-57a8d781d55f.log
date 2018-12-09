@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 06:59:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 06:59:41]
+Initialization strings:
+[INFO -- 2018-12-09 06:59:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 06:59:41]
+initSignal:1
+[INFO -- 2018-12-09 06:59:41]
+endSignal:8
+[INFO -- 2018-12-09 06:59:41]
+faultModel:2
+[INFO -- 2018-12-09 06:59:43]
+Backtrace BEGIN:
+#0  0x0000555555557229 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=<error reading variable: Cannot access memory at address 0xc8>, __result=0x55555555883e <std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long)+42>) at /usr/include/c++/7/bits/stl_uninitialized.h:287
+#1  0x000055555555743f in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd900, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#2  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x000055555555536e in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:97
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+282		}
+283	    }
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555786ba0
+address max offset: 4
+Memory content after  bitflip:0x170xcc0x770x80
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: -2139632617
+value address: 0x7fffffffd750
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 06:59:43]
+Fault Injection Successful after 2.4315907955169678s
+[INFO -- 2018-12-09 06:59:49]
+event type: exit
+[INFO -- 2018-12-09 06:59:49]
+exit code: 0

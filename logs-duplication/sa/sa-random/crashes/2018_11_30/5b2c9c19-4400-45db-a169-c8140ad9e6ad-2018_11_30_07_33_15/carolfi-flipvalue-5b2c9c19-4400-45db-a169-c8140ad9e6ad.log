@@ -1,0 +1,57 @@
+[INFO -- 2018-11-30 07:33:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 07:33:12]
+Initialization strings:
+[INFO -- 2018-11-30 07:33:12]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 07:33:12]
+initSignal:0
+[INFO -- 2018-11-30 07:33:12]
+endSignal:7
+[INFO -- 2018-11-30 07:33:12]
+faultModel:2
+[INFO -- 2018-11-30 07:33:13]
+Backtrace BEGIN:
+#0  0x0000555555554e70 in operator new(unsigned long)@plt ()
+#1  0x0000555555556f72 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#2  0x0000555555556cd5 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#3  0x0000555555556892 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#4  0x0000555555556707 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#5  0x0000555555555e7b in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd990, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#6  0x00005555555558f5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#7  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#8  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+68	
+69	void read_input(){
+70	    ifstream file("/tmp/knapsack/instance.txt");
+71	    val.clear(); wt.clear();
+72	    file >> n; file >> W;
+73	    for(int i = 0; i < n; i++){
+74	        int x, y; file >> x >> y;
+75	        val.push_back(x);
+76	        wt.push_back(y);
+77	    }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0x950xd70x9e0x41
+frame name: std::allocator_traits<std::allocator<int> >::allocate
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 1100928917
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 07:33:13]
+Fault Injection Successful after 1.6205003261566162s
+[INFO -- 2018-11-30 07:33:13]
+event type: exit
+[EXCEPTION -- 2018-11-30 07:33:13]
+exit code: no exit code available

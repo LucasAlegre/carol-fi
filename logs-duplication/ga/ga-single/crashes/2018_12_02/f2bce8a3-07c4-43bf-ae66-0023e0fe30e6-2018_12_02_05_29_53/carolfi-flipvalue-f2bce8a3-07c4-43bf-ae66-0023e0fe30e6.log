@@ -1,0 +1,54 @@
+[INFO -- 2018-12-02 05:29:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:29:39]
+Initialization strings:
+[INFO -- 2018-12-02 05:29:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:29:39]
+initSignal:0
+[INFO -- 2018-12-02 05:29:39]
+endSignal:13
+[INFO -- 2018-12-02 05:29:39]
+faultModel:0
+[EXCEPTION -- 2018-12-02 05:29:40]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-02 05:29:41]
+Backtrace BEGIN:
+#0  0x00005555555560b2 in std::vector<int, std::allocator<int> >::vector (this=0x555555556075 <std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > >(__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >)+37>, __x=std::vector of length 0, capacity 0) at /usr/include/c++/7/bits/stl_vector.h:326
+#1  0x00005555555551ab in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#2  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+321	       *  (i.e. capacity() == size() in the new %vector).
+322	       *
+323	       *  The newly-created %vector uses a copy of the allocator object used
+324	       *  by @a __x (unless the allocator traits dictate a different object).
+325	       */
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x40
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1074330417
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 05:29:41]
+Fault Injection Successful after 2.00264310836792s
+[INFO -- 2018-12-02 05:29:52]
+event type: exit
+[EXCEPTION -- 2018-12-02 05:29:52]
+exit code: no exit code available

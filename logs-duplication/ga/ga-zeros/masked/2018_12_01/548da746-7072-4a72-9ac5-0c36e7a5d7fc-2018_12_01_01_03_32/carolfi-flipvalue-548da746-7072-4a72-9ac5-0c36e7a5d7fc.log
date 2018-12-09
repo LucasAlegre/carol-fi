@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 01:03:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:03:18]
+Initialization strings:
+[INFO -- 2018-12-01 01:03:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:03:18]
+initSignal:0
+[INFO -- 2018-12-01 01:03:18]
+endSignal:13
+[INFO -- 2018-12-01 01:03:18]
+faultModel:3
+[EXCEPTION -- 2018-12-01 01:03:23]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 01:03:23]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+401	#endif
+402	    {
+403	      const size_type __len =
+404		_M_check_len(size_type(1), "vector::_M_realloc_insert");
+405	      const size_type __elems_before = __position - begin();
+406	      pointer __new_start(this->_M_allocate(__len));
+407	      pointer __new_finish(__new_start);
+408	      __try
+409		{
+410		  // The order of the three operations is dictated by the C++11
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0xe20x250xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776418
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 59
+value: std::vector of length 2, capacity 2 = {{solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 0}, {solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}}
+value address: 0x7fffffffd800
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 01:03:23]
+Fault Injection Successful after 5.806143760681152s
+[INFO -- 2018-12-01 01:03:31]
+event type: exit
+[INFO -- 2018-12-01 01:03:31]
+exit code: 0

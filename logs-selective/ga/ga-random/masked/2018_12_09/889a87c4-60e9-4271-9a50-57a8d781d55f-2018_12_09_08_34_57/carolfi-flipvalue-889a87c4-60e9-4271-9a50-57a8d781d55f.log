@@ -1,0 +1,53 @@
+[INFO -- 2018-12-09 08:34:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 08:34:48]
+Initialization strings:
+[INFO -- 2018-12-09 08:34:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 08:34:48]
+initSignal:1
+[INFO -- 2018-12-09 08:34:48]
+endSignal:8
+[INFO -- 2018-12-09 08:34:48]
+faultModel:2
+[INFO -- 2018-12-09 08:34:49]
+Backtrace BEGIN:
+#0  0x0000555555558752 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:107
+#1  0x000055555555772c in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#2  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+102	
+103		void _M_swap_data(_Vector_impl& __x) _GLIBCXX_NOEXCEPT
+104		{
+105		  std::swap(_M_start, __x._M_start);
+106		  std::swap(_M_finish, __x._M_finish);
+107		  std::swap(_M_end_of_storage, __x._M_end_of_storage);
+108		}
+109	      };
+110	
+111	    public:
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd837
+address max offset: 1
+Memory content after  bitflip:0x95
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __move_storage
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 463
+value: 149
+value address: 0x7fffffffd837
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-09 08:34:49]
+Fault Injection Successful after 1.989307165145874s
+[INFO -- 2018-12-09 08:34:56]
+event type: exit
+[INFO -- 2018-12-09 08:34:56]
+exit code: 0

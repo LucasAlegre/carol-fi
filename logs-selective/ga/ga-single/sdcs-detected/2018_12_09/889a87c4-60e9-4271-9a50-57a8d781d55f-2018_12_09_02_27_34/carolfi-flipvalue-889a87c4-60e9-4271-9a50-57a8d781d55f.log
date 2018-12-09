@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 02:27:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:27:31]
+Initialization strings:
+[INFO -- 2018-12-09 02:27:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:27:31]
+initSignal:1
+[INFO -- 2018-12-09 02:27:31]
+endSignal:8
+[INFO -- 2018-12-09 02:27:31]
+faultModel:0
+[EXCEPTION -- 2018-12-09 02:27:33]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 02:27:34]
+Backtrace BEGIN:
+#0  0x000055555555605f in std::vector<chromossome, std::allocator<chromossome> >::end (this=0x555555556caa <std::_Vector_base<chromossome, std::allocator<chromossome> >::_Vector_base()+24>) at /usr/include/c++/7/bits/stl_vector.h:581
+#1  0x0000555555555ffc in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+576	       *  Returns a read/write iterator that points one past the last
+577	       *  element in the %vector.  Iteration is done in ordinary
+578	       *  element order.
+579	       */
+580	      iterator
+581	      end() _GLIBCXX_NOEXCEPT
+582	      { return iterator(this->_M_impl._M_finish); }
+583	
+584	      /**
+585	       *  Returns a read-only (constant) iterator that points one past
+
+Backtrace END
+Memory content before bitflip:0x430x070x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd870
+address max offset: 4
+Memory content after  bitflip:0x430x870x000x00
+frame name: genetic_algorithm
+symbol name: g2
+symbol filename: knapsackga.cpp
+symbol line: 115
+value: 34627
+value address: 0x7fffffffd870
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 02:27:34]
+Fault Injection Successful after 3.167705535888672s
+[INFO -- 2018-12-09 02:27:34]
+event type: exit
+[INFO -- 2018-12-09 02:27:34]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-12-02 06:45:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:45:43]
+Initialization strings:
+[INFO -- 2018-12-02 06:45:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:45:43]
+initSignal:0
+[INFO -- 2018-12-02 06:45:43]
+endSignal:13
+[INFO -- 2018-12-02 06:45:43]
+faultModel:0
+[INFO -- 2018-12-02 06:45:50]
+Backtrace BEGIN:
+#0  0x0000555555555e37 in std::vector<int, std::allocator<int> >::operator[] (this=0x555555788380, __n=111) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x000055555555503a in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:26
+#2  0x000055555555578e in genetic_algorithm () at knapsackga.cpp:112
+#3  0x0000555555555aab in main () at knapsackga.cpp:143
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x400x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 16424
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 06:45:50]
+Fault Injection Successful after 7.574965953826904s
+[INFO -- 2018-12-02 06:45:50]
+event type: exit
+[EXCEPTION -- 2018-12-02 06:45:50]
+exit code: no exit code available

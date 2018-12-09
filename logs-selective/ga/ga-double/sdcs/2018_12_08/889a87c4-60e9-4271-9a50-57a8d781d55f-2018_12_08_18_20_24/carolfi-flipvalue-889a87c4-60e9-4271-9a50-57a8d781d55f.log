@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 18:20:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:20:22]
+Initialization strings:
+[INFO -- 2018-12-08 18:20:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:20:22]
+initSignal:1
+[INFO -- 2018-12-08 18:20:22]
+endSignal:8
+[INFO -- 2018-12-08 18:20:22]
+faultModel:1
+[INFO -- 2018-12-08 18:20:23]
+Backtrace BEGIN:
+#0  0x00005555555564ab in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:212
+#1  0x000055555555536e in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:97
+#2  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+207							   __x.end());
+208		      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+209				    _M_get_Tp_allocator());
+210		      _M_deallocate(this->_M_impl._M_start,
+211				    this->_M_impl._M_end_of_storage
+212				    - this->_M_impl._M_start);
+213		      this->_M_impl._M_start = __tmp;
+214		      this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __xlen;
+215		    }
+216		  else if (size() >= __xlen)
+
+Backtrace END
+Memory content before bitflip:0x290x040x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd874
+address max offset: 4
+Memory content after  bitflip:0x290x040x000x0a
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 116
+value: 167773225
+value address: 0x7fffffffd874
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:20:23]
+Fault Injection Successful after 1.9337172508239746s
+[INFO -- 2018-12-08 18:20:23]
+event type: exit
+[INFO -- 2018-12-08 18:20:23]
+exit code: 0

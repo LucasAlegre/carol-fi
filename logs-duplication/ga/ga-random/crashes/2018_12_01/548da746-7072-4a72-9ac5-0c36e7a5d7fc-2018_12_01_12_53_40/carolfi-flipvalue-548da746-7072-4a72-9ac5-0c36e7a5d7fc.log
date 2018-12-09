@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 12:53:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:53:35]
+Initialization strings:
+[INFO -- 2018-12-01 12:53:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:53:35]
+initSignal:0
+[INFO -- 2018-12-01 12:53:35]
+endSignal:13
+[INFO -- 2018-12-01 12:53:35]
+faultModel:2
+[INFO -- 2018-12-01 12:53:39]
+Backtrace BEGIN:
+#0  0x0000555555555e24 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd8e0, __n=135) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x000055555555530c in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0x870x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd7fc
+address max offset: 4
+Memory content after  bitflip:0x540x800x120x9c
+frame name: crossover
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 78
+value: -1676509100
+value address: 0x7fffffffd7fc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:53:39]
+Fault Injection Successful after 4.830842733383179s
+[INFO -- 2018-12-01 12:53:39]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:53:39]
+exit code: no exit code available

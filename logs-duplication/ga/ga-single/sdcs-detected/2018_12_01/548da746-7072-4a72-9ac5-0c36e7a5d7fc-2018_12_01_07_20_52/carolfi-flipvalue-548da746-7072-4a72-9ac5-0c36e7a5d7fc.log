@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 07:20:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:20:39]
+Initialization strings:
+[INFO -- 2018-12-01 07:20:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:20:39]
+initSignal:0
+[INFO -- 2018-12-01 07:20:39]
+endSignal:13
+[INFO -- 2018-12-01 07:20:39]
+faultModel:0
+[INFO -- 2018-12-01 07:20:45]
+Backtrace BEGIN:
+#0  0x0000555555555df4 in chromossome::~chromossome (this=0x5555557764e0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#1  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x5555557764e0) at /usr/include/c++/7/bits/stl_construct.h:98
+#2  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#3  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#4  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#5  0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#6  0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#7  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+37	
+38	float random01(){
+39	    return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+40	}
+41	
+42	struct chromossome{
+43	    vector<int> solution;
+44	    int fitness;
+45	    chromossome(int size){
+46	        for(int i = 0; i < size; i++)
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x110xfb0x080x00
+frame name: std::_Destroy<chromossome*>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 588561
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 07:20:45]
+Fault Injection Successful after 6.28067421913147s
+[INFO -- 2018-12-01 07:20:52]
+event type: exit
+[INFO -- 2018-12-01 07:20:52]
+exit code: 0

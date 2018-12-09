@@ -1,0 +1,62 @@
+[INFO -- 2018-12-01 06:03:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:03:06]
+Initialization strings:
+[INFO -- 2018-12-01 06:03:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:03:06]
+initSignal:0
+[INFO -- 2018-12-01 06:03:06]
+endSignal:13
+[INFO -- 2018-12-01 06:03:06]
+faultModel:0
+[EXCEPTION -- 2018-12-01 06:03:08]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 06:03:08]
+Backtrace BEGIN:
+#0  std::move<int&> (__t=@0x7fffffffd7b4: 0) at /usr/include/c++/7/bits/move.h:99
+#1  0x0000555555556616 in std::swap<int> (__a=@0x555555783a54: 0, __b=@0x555555776184: 0) at /usr/include/c++/7/bits/move.h:200
+#2  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd998
+address max offset: 4
+Memory content after  bitflip:0xff0xc00xf50x05
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 105
+value: {solution = std::vector of length 200, capacity 200 = {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 99991807}
+value address: 0x7fffffffd980
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-01 06:03:08]
+Fault Injection Successful after 2.254746675491333s
+[INFO -- 2018-12-01 06:03:19]
+event type: exit
+[INFO -- 2018-12-01 06:03:19]
+exit code: 0

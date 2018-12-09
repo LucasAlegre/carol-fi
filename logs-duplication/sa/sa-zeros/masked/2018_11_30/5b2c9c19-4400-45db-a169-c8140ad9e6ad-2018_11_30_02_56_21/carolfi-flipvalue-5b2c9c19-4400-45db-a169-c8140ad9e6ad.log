@@ -1,0 +1,61 @@
+[INFO -- 2018-11-30 02:56:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:56:13]
+Initialization strings:
+[INFO -- 2018-11-30 02:56:13]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:56:13]
+initSignal:0
+[INFO -- 2018-11-30 02:56:13]
+endSignal:7
+[INFO -- 2018-11-30 02:56:13]
+faultModel:3
+[EXCEPTION -- 2018-11-30 02:56:14]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-11-30 02:56:16]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x555555759160 <wt>, __n=180) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x00005555555550db in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#2  0x0000555555555259 in simulated_annealing () at knapsacksa.cpp:52
+#3  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x300xe90x760x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd9a0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: simulated_annealing
+symbol name: s
+symbol filename: knapsacksa.cpp
+symbol line: 49
+value: std::vector of length 200, capacity -23456248609156 = {1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1...}
+value address: 0x7fffffffd990
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-11-30 02:56:16]
+Fault Injection Successful after 3.341862678527832s
+[INFO -- 2018-11-30 02:56:21]
+event type: exit
+[INFO -- 2018-11-30 02:56:21]
+exit code: 0

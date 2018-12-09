@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 01:43:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:43:08]
+Initialization strings:
+[INFO -- 2018-12-01 01:43:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:43:08]
+initSignal:0
+[INFO -- 2018-12-01 01:43:08]
+endSignal:13
+[INFO -- 2018-12-01 01:43:08]
+faultModel:3
+[INFO -- 2018-12-01 01:43:09]
+Backtrace BEGIN:
+#0  malloc (n=22) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  0x00007ffff7df22ca in __access (file=file@entry=0x7ffff7df664f "/etc/ld.so.nohwcap", type=type@entry=0) at ../sysdeps/unix/sysv/linux/access.c:27
+#3  0x00007ffff7ded8c0 in _dl_load_cache_lookup (name=name@entry=0x7ffff7ab8ff2 "libm.so.6") at dl-cache.c:265
+#4  0x00007ffff7dde331 in _dl_map_object (loader=0x7ffff7fc6000, name=0x7ffff7ab8ff2 "libm.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2324
+#5  0x00007ffff7de3280 in openaux (a=a@entry=0x7fffffffdb60) at dl-deps.c:63
+#6  0x00007ffff7df10b0 in _dl_catch_error (objname=objname@entry=0x7fffffffdb58, errstring=errstring@entry=0x7fffffffdb50, mallocedp=mallocedp@entry=0x7fffffffdb4f, operate=operate@entry=0x7ffff7de3250 <openaux>, args=args@entry=0x7fffffffdb60) at dl-error-skeleton.c:198
+#7  0x00007ffff7de389b in _dl_map_object_deps (map=map@entry=0x7ffff7ffe150, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#8  0x00007ffff7dd8b14 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1725
+#9  0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdee0, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#10 0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdee0) at rtld.c:414
+#11 _dl_start (arg=0x7fffffffdee0) at rtld.c:520
+#12 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#13 0x0000000000000001 in ?? ()
+#14 0x00007fffffffe268 in ?? ()
+#15 0x0000000000000000 in ?? ()
+
+45	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffdad8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: _dl_map_object_deps
+symbol name: needed_space
+symbol filename: dl-deps.c
+symbol line: 188
+value: 0x7fffffffd8c0
+value address: 0x7fffffffdad8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:43:09]
+Fault Injection Successful after 1.0360205173492432s
+[INFO -- 2018-12-01 01:43:22]
+event type: exit
+[INFO -- 2018-12-01 01:43:22]
+exit code: 0

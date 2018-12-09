@@ -1,0 +1,55 @@
+[INFO -- 2018-12-07 22:42:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:42:12]
+Initialization strings:
+[INFO -- 2018-12-07 22:42:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:42:12]
+initSignal:1
+[INFO -- 2018-12-07 22:42:12]
+endSignal:8
+[INFO -- 2018-12-07 22:42:12]
+faultModel:3
+[EXCEPTION -- 2018-12-07 22:42:15]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-07 22:42:15]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd7f0, __i=@0x7fffffffd7e8: 0x555555784890) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x000055555555720e in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd920) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x0000555555556440 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x000055555555571b in genetic_algorithm () at knapsackga.cpp:131
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 0
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 22:42:15]
+Fault Injection Successful after 3.2907817363739014s
+[INFO -- 2018-12-07 22:42:15]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:42:15]
+exit code: no exit code available

@@ -1,0 +1,53 @@
+[INFO -- 2018-12-07 23:40:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:40:52]
+Initialization strings:
+[INFO -- 2018-12-07 23:40:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:40:52]
+initSignal:1
+[INFO -- 2018-12-07 23:40:52]
+endSignal:8
+[INFO -- 2018-12-07 23:40:52]
+faultModel:3
+[EXCEPTION -- 2018-12-07 23:40:54]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-07 23:40:54]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7b4) at random_r.c:378
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#4  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#5  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+373	in random_r.c
+
+Backtrace END
+Fliping array at pos: 24
+Memory content before bitflip:0xca0x490x5d0x38
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7832200 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, 1722780957, -1311592696, 1545055605, -429362249, 1016642843, 1867248244, -1600649538, 1987546553, -1516504061, 416073976, 336990256, -1914934216, 225677771, -1519035111, -432213718, 1609167246, 556422308, 965116442, 355453380, -1635511934, 1315216644, -1791518265, -16849542, 0, 27458468, -59780766, -1576757548, -160899665, 190215364, -1499967455, -5886909}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-07 23:40:54]
+Fault Injection Successful after 2.6278722286224365s
+[INFO -- 2018-12-07 23:41:00]
+event type: exit
+[INFO -- 2018-12-07 23:41:00]
+exit code: 0

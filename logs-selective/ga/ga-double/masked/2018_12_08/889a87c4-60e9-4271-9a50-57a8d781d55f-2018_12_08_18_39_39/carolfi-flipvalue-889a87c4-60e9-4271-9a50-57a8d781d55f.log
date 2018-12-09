@@ -1,0 +1,64 @@
+[INFO -- 2018-12-08 18:39:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:39:30]
+Initialization strings:
+[INFO -- 2018-12-08 18:39:30]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:39:30]
+initSignal:1
+[INFO -- 2018-12-08 18:39:30]
+endSignal:8
+[INFO -- 2018-12-08 18:39:30]
+faultModel:1
+[EXCEPTION -- 2018-12-08 18:39:31]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 18:39:31]
+Backtrace BEGIN:
+#0  0x0000555555558871 in std::__miter_base<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (__it=816) at /usr/include/c++/7/bits/cpp_type_traits.h:409
+#1  0x000055555555a29c in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_algobase.h:455
+#2  0x0000555555559778 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x00005555555586a8 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x000055555555743f in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9a0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#6  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#7  0x000055555555571b in genetic_algorithm () at knapsackga.cpp:131
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+404	  // Fallback implementation of the function in bits/stl_iterator.h used to
+405	  // remove the move_iterator wrapper.
+406	  template<typename _Iterator>
+407	    inline _Iterator
+408	    __miter_base(_Iterator __it)
+409	    { return __it; }
+410	
+411	_GLIBCXX_END_NAMESPACE_VERSION
+412	} // namespace
+413	} // extern "C++"
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555787530
+address max offset: 4
+Memory content after  bitflip:0x600x030x000x00
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 115
+value: 864
+value address: 0x7fffffffd760
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 18:39:31]
+Fault Injection Successful after 1.6196088790893555s
+[INFO -- 2018-12-08 18:39:38]
+event type: exit
+[INFO -- 2018-12-08 18:39:38]
+exit code: 0

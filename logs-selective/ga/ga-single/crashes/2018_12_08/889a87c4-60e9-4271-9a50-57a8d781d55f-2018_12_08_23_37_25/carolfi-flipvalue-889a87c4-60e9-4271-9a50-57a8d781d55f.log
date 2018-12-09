@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 23:37:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:37:19]
+Initialization strings:
+[INFO -- 2018-12-08 23:37:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:37:19]
+initSignal:1
+[INFO -- 2018-12-08 23:37:19]
+endSignal:8
+[INFO -- 2018-12-08 23:37:19]
+faultModel:0
+[INFO -- 2018-12-08 23:37:24]
+Backtrace BEGIN:
+#0  0x0000555555556b1e in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x555555776740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x0000555555556b93 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555776740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x555555776740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x0000555555555e4c in chromossome::~chromossome (this=0x555555776740, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#4  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x555555776740) at /usr/include/c++/7/bits/stl_construct.h:98
+#5  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#6  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#7  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#8  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#9  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#10 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x80
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: -2147483608
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 23:37:24]
+Fault Injection Successful after 5.884733438491821s
+[INFO -- 2018-12-08 23:37:25]
+event type: exit
+[EXCEPTION -- 2018-12-08 23:37:25]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-02 03:14:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:14:33]
+Initialization strings:
+[INFO -- 2018-12-02 03:14:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:14:33]
+initSignal:0
+[INFO -- 2018-12-02 03:14:33]
+endSignal:13
+[INFO -- 2018-12-02 03:14:33]
+faultModel:4
+[EXCEPTION -- 2018-12-02 03:14:34]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-02 03:14:34]
+Backtrace BEGIN:
+#0  0x0000555555555e1d in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd8d0, __n=30) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x00005555555552f4 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0x1e0x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd880
+address max offset: 8
+Memory content after  bitflip:0x1e0x000x000x000x000x000x000x20
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 795
+value: 2305843009213693982
+value address: 0x7fffffffd880
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 03:14:34]
+Fault Injection Successful after 1.5122835636138916s
+[INFO -- 2018-12-02 03:14:46]
+event type: exit
+[EXCEPTION -- 2018-12-02 03:14:46]
+exit code: no exit code available

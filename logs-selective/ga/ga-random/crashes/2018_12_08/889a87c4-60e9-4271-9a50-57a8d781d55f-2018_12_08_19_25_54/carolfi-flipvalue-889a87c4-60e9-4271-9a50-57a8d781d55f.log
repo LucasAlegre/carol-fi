@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 19:25:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:25:48]
+Initialization strings:
+[INFO -- 2018-12-08 19:25:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:25:48]
+initSignal:1
+[INFO -- 2018-12-08 19:25:48]
+endSignal:8
+[INFO -- 2018-12-08 19:25:48]
+faultModel:2
+[EXCEPTION -- 2018-12-08 19:25:53]
+gdbException: Cannot access memory at address 0xdb23b279ea28c008
+[INFO -- 2018-12-08 19:25:54]
+Backtrace BEGIN:
+#0  0x000055555555abac in std::fill_n<int*, unsigned long, int> (__first=0x555555785890, __n=200, __value=@0x7fffffffd714: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#1  0x000055555555a304 in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555785890, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#2  0x0000555555559824 in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555785890, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#3  0x000055555555878f in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555785890, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#4  0x00005555555572f7 in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#5  0x00005555555562d5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#6  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 664020779632283646, capacity 664020779632283646 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#7  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+784	    fill_n(_OI __first, _Size __n, const _Tp& __value)
+785	    {
+786	      // concept requirements
+787	      __glibcxx_function_requires(_OutputIteratorConcept<_OI, _Tp>)
+788	
+789	      return _OI(std::__fill_n_a(std::__niter_base(__first), __n, __value));
+790	    }
+791	
+792	  template<bool _BoolType>
+793	    struct __equal
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x620xb50x4b0x21
+frame name: std::__uninitialized_default_n_a<int*, unsigned long, int>
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 558609762
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 19:25:54]
+Fault Injection Successful after 6.152784585952759s
+[INFO -- 2018-12-08 19:25:54]
+event type: exit
+[EXCEPTION -- 2018-12-08 19:25:54]
+exit code: no exit code available

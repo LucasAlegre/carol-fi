@@ -1,0 +1,49 @@
+[INFO -- 2018-12-07 23:00:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:00:41]
+Initialization strings:
+[INFO -- 2018-12-07 23:00:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:00:41]
+initSignal:1
+[INFO -- 2018-12-07 23:00:41]
+endSignal:8
+[INFO -- 2018-12-07 23:00:41]
+faultModel:1
+[INFO -- 2018-12-07 23:00:43]
+Backtrace BEGIN:
+#0  0x00007ffff74e7028 in __GI___libc_malloc (bytes=128) at malloc.c:3077
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555559cfe in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x000055555555928b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x0000555555558302 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#6  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#8  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3072	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x010xfb0x080x00
+frame name: std::allocator_traits<std::allocator<chromossome> >::allocate
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 588545
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 23:00:43]
+Fault Injection Successful after 2.4845407009124756s
+[INFO -- 2018-12-07 23:00:43]
+event type: exit
+[INFO -- 2018-12-07 23:00:43]
+exit code: 0

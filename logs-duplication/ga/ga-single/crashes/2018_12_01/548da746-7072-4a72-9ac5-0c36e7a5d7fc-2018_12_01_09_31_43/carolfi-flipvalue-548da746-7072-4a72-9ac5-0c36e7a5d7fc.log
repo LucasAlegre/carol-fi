@@ -1,0 +1,66 @@
+[INFO -- 2018-12-01 09:31:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:31:29]
+Initialization strings:
+[INFO -- 2018-12-01 09:31:29]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:31:29]
+initSignal:0
+[INFO -- 2018-12-01 09:31:29]
+endSignal:13
+[INFO -- 2018-12-01 09:31:29]
+faultModel:0
+[EXCEPTION -- 2018-12-01 09:31:30]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 09:31:30]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 09:31:34]
+Backtrace BEGIN:
+#0  std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555783e70, __n=93824994525616) at /usr/include/c++/7/bits/alloc_traits.h:461
+#1  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x5555557764e0, __p=0x555555783b50, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#2  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x5555557764e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#3  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x5555557764e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x0000555555555df2 in chromossome::~chromossome (this=0x5555557764e0, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#5  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x5555557764e0) at /usr/include/c++/7/bits/stl_construct.h:98
+#6  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#7  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#8  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#9  0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#10 0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#11 0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#12 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+456	       *  @param  __n  The number of objects space was allocated for.
+457	       *
+458	       *  Calls <tt> a.deallocate(p, n) </tt>
+459	      */
+460	      static void
+461	      deallocate(allocator_type& __a, pointer __p, size_type __n)
+462	      { __a.deallocate(__p, __n); }
+463	
+464	      /**
+465	       *  @brief  Construct an object of type @a _Up
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500x3b0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd6b0
+address max offset: 8
+Memory content after  bitflip:0x500x3b0x780x550x550x550x100x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 176
+value: 0x555555783b50
+value address: 0x7fffffffd6b0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 09:31:34]
+Fault Injection Successful after 5.961105108261108s
+[INFO -- 2018-12-01 09:31:42]
+event type: exit
+[EXCEPTION -- 2018-12-01 09:31:42]
+exit code: no exit code available

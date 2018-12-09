@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 18:53:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:53:21]
+Initialization strings:
+[INFO -- 2018-12-08 18:53:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:53:21]
+initSignal:1
+[INFO -- 2018-12-08 18:53:21]
+endSignal:8
+[INFO -- 2018-12-08 18:53:21]
+faultModel:3
+[INFO -- 2018-12-08 18:53:22]
+Backtrace BEGIN:
+#0  0x000055555555626e in std::allocator<int>::allocator (this=0x7fffffffd980) at /usr/include/c++/7/bits/allocator.h:131
+#1  0x0000555555557d7e in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:89
+#2  0x0000555555556b42 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:127
+#3  0x0000555555555e72 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:263
+#4  0x0000555555555e30 in chromossome::chromossome (this=0x7fffffffd980) at knapsackga.cpp:71
+#5  0x00005555555556e3 in genetic_algorithm () at knapsackga.cpp:131
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+126	      typedef true_type propagate_on_container_move_assignment;
+127	
+128	      typedef true_type is_always_equal;
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:53:22]
+Fault Injection Successful after 1.3755455017089844s
+[INFO -- 2018-12-08 18:53:22]
+event type: exit
+[INFO -- 2018-12-08 18:53:22]
+exit code: 0

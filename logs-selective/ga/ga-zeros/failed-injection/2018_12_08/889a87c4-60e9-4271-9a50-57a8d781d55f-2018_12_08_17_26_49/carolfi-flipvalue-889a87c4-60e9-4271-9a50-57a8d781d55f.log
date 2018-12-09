@@ -1,0 +1,23 @@
+[INFO -- 2018-12-08 17:26:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:26:48]
+Initialization strings:
+[INFO -- 2018-12-08 17:26:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:26:48]
+initSignal:1
+[INFO -- 2018-12-08 17:26:48]
+endSignal:8
+[INFO -- 2018-12-08 17:26:48]
+faultModel:3
+[EXCEPTION -- 2018-12-08 17:26:49]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 17:26:49]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 17:26:49]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-08 17:26:49]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:26:49]
+exit code: no exit code available

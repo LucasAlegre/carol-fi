@@ -1,0 +1,50 @@
+[INFO -- 2018-12-02 03:02:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:02:19]
+Initialization strings:
+[INFO -- 2018-12-02 03:02:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:02:19]
+initSignal:0
+[INFO -- 2018-12-02 03:02:19]
+endSignal:13
+[INFO -- 2018-12-02 03:02:19]
+faultModel:3
+[INFO -- 2018-12-02 03:02:22]
+Backtrace BEGIN:
+#0  __random () at random.c:297
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+292	random.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 2
+Memory content before bitflip:0xb20xe90x0c0xed
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff78321a8 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -1144345969, 0, 646223338, -2006562205, 736749815, -1307310718, 218515848, 1995816298, -1602655199, 1819175021, 978319827, 866831608, -43291095, 1775483059, -1711133421, -143954690, -123214384, 265279606, -1109274352, 859594706, 1352194590, 771745127, 1688627987, -456127778, 374068847, -1539909316, -2014529334, -770019436, -118747875, -266206963, 2050061544}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-02 03:02:22]
+Fault Injection Successful after 3.5272226333618164s
+[INFO -- 2018-12-02 03:02:32]
+event type: exit
+[INFO -- 2018-12-02 03:02:32]
+exit code: 0

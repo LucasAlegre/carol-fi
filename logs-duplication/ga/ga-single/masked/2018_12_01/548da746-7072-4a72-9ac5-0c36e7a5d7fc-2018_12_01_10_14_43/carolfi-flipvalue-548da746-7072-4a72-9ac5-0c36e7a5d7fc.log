@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 10:14:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:14:30]
+Initialization strings:
+[INFO -- 2018-12-01 10:14:30]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:14:30]
+initSignal:0
+[INFO -- 2018-12-01 10:14:30]
+endSignal:13
+[INFO -- 2018-12-01 10:14:30]
+faultModel:0
+[INFO -- 2018-12-01 10:14:32]
+Backtrace BEGIN:
+#0  0x000055555555ad1d in std::_Construct<chromossome, chromossome> (__p=0x555555787f30, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#1  0x000055555555a66c in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557844e0, __last=0x5555557848e0, __result=0x555555787bf0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+70	   */
+71	#if __cplusplus >= 201103L
+72	  template<typename _T1, typename... _Args>
+73	    inline void
+74	    _Construct(_T1* __p, _Args&&... __args)
+75	    { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+76	#else
+77	  template<typename _T1, typename _T2>
+78	    inline void
+79	    _Construct(_T1* __p, const _T2& __value)
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x850x390xf80xff
+Fault Model: Single bit-flip
+base address to flip value: 0x5555557844f8
+address max offset: 4
+Memory content after  bitflip:0x950x390xf80xff
+frame name: std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 287
+value: {_M_current = 0x5555557844e0}
+value address: 0x7fffffffd758
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 10:14:32]
+Fault Injection Successful after 2.0784006118774414s
+[INFO -- 2018-12-01 10:14:43]
+event type: exit
+[INFO -- 2018-12-01 10:14:43]
+exit code: 0

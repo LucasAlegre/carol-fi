@@ -1,0 +1,71 @@
+[INFO -- 2018-12-08 18:49:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:49:17]
+Initialization strings:
+[INFO -- 2018-12-08 18:49:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:49:17]
+initSignal:1
+[INFO -- 2018-12-08 18:49:17]
+endSignal:8
+[INFO -- 2018-12-08 18:49:17]
+faultModel:2
+[INFO -- 2018-12-08 18:49:20]
+Backtrace BEGIN:
+#0  0x00005555555597fb in std::swap<int*> (__a=@0x555555776740: 0x555555783250, __b=@0x7fffffffd6c0: 0x0) at /usr/include/c++/7/bits/move.h:201
+#1  0x000055555555872f in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#2  0x000055555555772c in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555951d in chromossome::operator= (this=0x555555776740) at knapsackga.cpp:63
+#5  0x000055555555962f in std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length -23456248630420, capacity -23456248630420 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -511952}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1852
+#6  0x0000555555558559 in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length -23456248630420, capacity -23456248630420 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -511952}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#7  0x0000555555557093 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length -23456248630420, capacity -23456248630420 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -511952}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#8  0x00005555555560e7 in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length -23456248630420, capacity -23456248630420 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -511952}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#9  0x000055555555525c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:87
+#10 0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+205	  /// Swap the contents of two arrays.
+
+Backtrace END
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6c0
+address max offset: 8
+Memory content after  bitflip:0xe60xeb0xb70x110x190x400x150x41
+frame name: std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter>
+symbol name: __val
+symbol filename: /usr/include/c++/7/bits/stl_algo.h
+symbol line: 1850
+value: {solution = std::vector of length -1172407809599335837, capacity -1172407809599335837 = {<error reading variable>
+value address: 0x7fffffffd6c0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-08 18:49:20]
+Fault Injection Successful after 3.330592155456543s
+[INFO -- 2018-12-08 18:49:20]
+event type: exit
+[EXCEPTION -- 2018-12-08 18:49:20]
+exit code: no exit code available

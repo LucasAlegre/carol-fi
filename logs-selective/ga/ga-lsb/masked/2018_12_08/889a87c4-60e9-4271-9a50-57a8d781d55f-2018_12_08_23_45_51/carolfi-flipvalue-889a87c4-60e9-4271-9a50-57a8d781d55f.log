@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 23:45:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:45:42]
+Initialization strings:
+[INFO -- 2018-12-08 23:45:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:45:42]
+initSignal:1
+[INFO -- 2018-12-08 23:45:42]
+endSignal:8
+[INFO -- 2018-12-08 23:45:42]
+faultModel:4
+[INFO -- 2018-12-08 23:45:46]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:434
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+429		  ++__new_finish;
+430	
+431		  __new_finish
+432		    = std::__uninitialized_move_if_noexcept_a
+433		    (__position.base(), this->_M_impl._M_finish,
+434		     __new_finish, _M_get_Tp_allocator());
+435		}
+436	      __catch(...)
+437		{
+438		  if (!__new_finish)
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x640x770x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd830
+address max offset: 8
+Memory content after  bitflip:0x400x640x770x550x550x550x000x08
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 80
+value: std::vector of length 1, capacity 18014398509481985 = {{solution = std::vector of length 0, capacity 0, fitness = -512589}}
+value address: 0x7fffffffd820
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-08 23:45:46]
+Fault Injection Successful after 4.035167217254639s
+[INFO -- 2018-12-08 23:45:50]
+event type: exit
+[INFO -- 2018-12-08 23:45:50]
+exit code: 0

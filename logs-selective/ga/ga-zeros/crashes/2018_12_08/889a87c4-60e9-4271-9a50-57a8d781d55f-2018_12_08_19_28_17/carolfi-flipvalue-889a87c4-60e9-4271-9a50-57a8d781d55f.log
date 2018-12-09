@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 19:28:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:28:14]
+Initialization strings:
+[INFO -- 2018-12-08 19:28:14]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:28:14]
+initSignal:1
+[INFO -- 2018-12-08 19:28:14]
+endSignal:8
+[INFO -- 2018-12-08 19:28:14]
+faultModel:3
+[INFO -- 2018-12-08 19:28:16]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x555555787800, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#1  0x000055555555715d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555787800, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x000055555555616d in std::vector<int, std::allocator<int> >::vector (this=0x555555787800, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x0000555555558123 in chromossome::chromossome (this=0x555555787800) at knapsackga.cpp:63
+#4  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8a0, __p=0x555555787800, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555787800, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555555fda in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#7  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+190	      }
+191	    };
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x400x750x780x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd8a0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: @0x7fffffffd8a0
+value address: 0x7fffffffd8a0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 19:28:16]
+Fault Injection Successful after 2.696209669113159s
+[INFO -- 2018-12-08 19:28:16]
+event type: exit
+[EXCEPTION -- 2018-12-08 19:28:16]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-08 22:52:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:52:11]
+Initialization strings:
+[INFO -- 2018-12-08 22:52:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:52:11]
+initSignal:1
+[INFO -- 2018-12-08 22:52:11]
+endSignal:8
+[INFO -- 2018-12-08 22:52:11]
+faultModel:2
+[INFO -- 2018-12-08 22:52:12]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd820, __n=1, __s=0x55555555b5bf "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1502
+#1  0x0000555555556dbc in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1497	      _M_check_len(size_type __n, const char* __s) const
+1498	      {
+1499		if (max_size() - size() < __n)
+1500		  __throw_length_error(__N(__s));
+1501	
+1502		const size_type __len = size() + std::max(size(), __n);
+1503		return (__len < size() || __len > max_size()) ? max_size() : __len;
+1504	      }
+1505	
+1506	      // Internal erase functions follow.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x110xc60x3c0x93
+frame name: genetic_algorithm
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -1824733679
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:52:12]
+Fault Injection Successful after 1.897082805633545s
+[INFO -- 2018-12-08 22:52:12]
+event type: exit
+[INFO -- 2018-12-08 22:52:12]
+exit code: 0

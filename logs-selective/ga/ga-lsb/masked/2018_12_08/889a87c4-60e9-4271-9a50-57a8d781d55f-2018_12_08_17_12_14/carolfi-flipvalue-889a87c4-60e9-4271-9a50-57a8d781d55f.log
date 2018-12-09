@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 17:12:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:12:05]
+Initialization strings:
+[INFO -- 2018-12-08 17:12:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:12:05]
+initSignal:1
+[INFO -- 2018-12-08 17:12:05]
+endSignal:8
+[INFO -- 2018-12-08 17:12:05]
+faultModel:4
+[INFO -- 2018-12-08 17:12:10]
+Backtrace BEGIN:
+#0  0x00007ffff7adf441 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x0000555555559cfe in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#2  0x000055555555928b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#3  0x0000555555558302 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#4  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+137	                swap(new_pop[i].solution[rand() % n], new_pop[i].solution[rand() % n]);
+138	            new_pop[i].fitness = cost(new_pop[i].solution);
+139	        }
+140	
+141	        sort(new_pop.begin(), new_pop.end());
+142	        best = new_pop[0].fitness;
+143	        pop = new_pop;
+144	        //cout << g << " " << -best << endl;
+145	    }
+146	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x200xd80xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7e8
+address max offset: 8
+Memory content after  bitflip:0x200xd80xff0xff0xff0x7f0x000x20
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 17:12:10]
+Fault Injection Successful after 5.928058385848999s
+[INFO -- 2018-12-08 17:12:13]
+event type: exit
+[INFO -- 2018-12-08 17:12:13]
+exit code: 0

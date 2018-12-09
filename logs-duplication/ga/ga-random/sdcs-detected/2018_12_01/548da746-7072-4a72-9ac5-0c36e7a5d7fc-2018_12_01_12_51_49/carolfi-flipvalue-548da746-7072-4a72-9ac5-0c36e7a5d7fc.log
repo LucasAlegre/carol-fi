@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 12:51:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:51:34]
+Initialization strings:
+[INFO -- 2018-12-01 12:51:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:51:34]
+initSignal:0
+[INFO -- 2018-12-01 12:51:34]
+endSignal:13
+[INFO -- 2018-12-01 12:51:34]
+faultModel:2
+[EXCEPTION -- 2018-12-01 12:51:36]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 12:51:36]
+Backtrace BEGIN:
+#0  0x000055555555acec in std::_Construct<chromossome, chromossome> (__p=0x55555555acb0 <std::operator!=<chromossome*>(std::move_iterator<chromossome*> const&, std::move_iterator<chromossome*> const&)+35>, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:74
+#1  0x000055555555a66c in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557769a0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557769a0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557769a0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776680, __last=0x555555776780, __result=0x5555557769a0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 132, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+69	   * object's constructor with an initializer.
+70	   */
+71	#if __cplusplus >= 201103L
+72	  template<typename _T1, typename... _Args>
+73	    inline void
+74	    _Construct(_T1* __p, _Args&&... __args)
+75	    { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+76	#else
+77	  template<typename _T1, typename _T2>
+78	    inline void
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x680x320xd20x72
+frame name: std::_Construct<chromossome, chromossome>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1926378088
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:51:36]
+Fault Injection Successful after 2.718093156814575s
+[INFO -- 2018-12-01 12:51:47]
+event type: exit
+[INFO -- 2018-12-01 12:51:47]
+exit code: 0

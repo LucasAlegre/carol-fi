@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 03:30:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:30:19]
+Initialization strings:
+[INFO -- 2018-12-01 03:30:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:30:19]
+initSignal:0
+[INFO -- 2018-12-01 03:30:19]
+endSignal:13
+[INFO -- 2018-12-01 03:30:19]
+faultModel:0
+[EXCEPTION -- 2018-12-01 03:30:22]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 03:30:22]
+Backtrace BEGIN:
+#0  std::move<int&> (__t=@0x7fffffffd7b4: 1) at /usr/include/c++/7/bits/move.h:99
+#1  0x0000555555556616 in std::swap<int> (__a=@0x55555578427c: 1, __b=@0x555555784cec: 1) at /usr/include/c++/7/bits/move.h:200
+#2  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Memory content before bitflip:0xbc0x0c0xaa0xf7
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9d8
+address max offset: 4
+Memory content after  bitflip:0xbc0x0c0x8a0xf7
+frame name: main
+symbol name: result1
+symbol filename: knapsackga.cpp
+symbol line: 141
+value: -141947716
+value address: 0x7fffffffd9d8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 03:30:22]
+Fault Injection Successful after 3.487025499343872s
+[INFO -- 2018-12-01 03:30:32]
+event type: exit
+[INFO -- 2018-12-01 03:30:32]
+exit code: 0

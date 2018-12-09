@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 19:08:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:08:36]
+Initialization strings:
+[INFO -- 2018-12-08 19:08:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:08:36]
+initSignal:1
+[INFO -- 2018-12-08 19:08:36]
+endSignal:8
+[INFO -- 2018-12-08 19:08:36]
+faultModel:1
+[EXCEPTION -- 2018-12-08 19:08:39]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 19:08:39]
+Backtrace BEGIN:
+#0  0x00007ffff7494a29 in __random () at random.c:295
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#3  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+290	in random.c
+
+Backtrace END
+Fliping array at pos: 11
+Memory content before bitflip:0x370x100xcd0xfa
+Fault Model: Double bit-flip
+base address to flip value: 0x7ffff78321cc 
+address max offset: 4
+Memory content after  bitflip:0x970x100xcd0xfa
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -1193371499, 1663564734, -626606311, -833863342, 1209368084, 2122485304, -900245150, -935061863, 632981695, -1026806110, -87224169, -696143222, -1593139642, 277660347, 999889157, 1791289207, 1527288890, -601966123, 1248518421, -712268445, 637874209, 1580183562, 1613154567, 460840790, 1236968841, -528324484, -347501407, 823254497, -2043707749, -720672205, 1529518562}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-08 19:08:39]
+Fault Injection Successful after 3.7479026317596436s
+[INFO -- 2018-12-08 19:08:44]
+event type: exit
+[INFO -- 2018-12-08 19:08:44]
+exit code: 0

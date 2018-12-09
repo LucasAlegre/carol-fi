@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 18:55:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:55:51]
+Initialization strings:
+[INFO -- 2018-12-08 18:55:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:55:51]
+initSignal:1
+[INFO -- 2018-12-08 18:55:51]
+endSignal:8
+[INFO -- 2018-12-08 18:55:51]
+faultModel:0
+[EXCEPTION -- 2018-12-08 18:55:55]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 18:55:55]
+Backtrace BEGIN:
+#0  0x0000555555556d35 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776540, __last=0x555555776580) at /usr/include/c++/7/bits/stl_construct.h:207
+#1  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+211	    inline void
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x880x00
+frame name: main
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 8977201
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:55:55]
+Fault Injection Successful after 4.413943529129028s
+[INFO -- 2018-12-08 18:55:55]
+event type: exit
+[EXCEPTION -- 2018-12-08 18:55:55]
+exit code: no exit code available

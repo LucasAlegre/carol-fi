@@ -1,0 +1,62 @@
+[INFO -- 2018-12-02 03:55:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:55:53]
+Initialization strings:
+[INFO -- 2018-12-02 03:55:53]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:55:53]
+initSignal:0
+[INFO -- 2018-12-02 03:55:53]
+endSignal:13
+[INFO -- 2018-12-02 03:55:53]
+faultModel:3
+[EXCEPTION -- 2018-12-02 03:55:57]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-02 03:55:57]
+Backtrace BEGIN:
+#0  0x00005555555580e8 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:138
+#1  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#4  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+142	    {
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555783b40
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::_Destroy<chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x5555557764e0
+value address: 0x7fffffffd848
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 03:55:57]
+Fault Injection Successful after 4.949537038803101s
+[INFO -- 2018-12-02 03:56:05]
+event type: exit
+[INFO -- 2018-12-02 03:56:05]
+exit code: 0

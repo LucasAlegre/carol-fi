@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 20:40:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 20:40:22]
+Initialization strings:
+[INFO -- 2018-12-08 20:40:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 20:40:22]
+initSignal:1
+[INFO -- 2018-12-08 20:40:22]
+endSignal:8
+[INFO -- 2018-12-08 20:40:22]
+faultModel:4
+[INFO -- 2018-12-08 20:40:25]
+Backtrace BEGIN:
+#0  0x0000555555556150 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd940, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#1  0x000055555555527f in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:88
+#2  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+323	       *  The newly-created %vector uses a copy of the allocator object used
+324	       *  by @a __x (unless the allocator traits dictate a different object).
+325	       */
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x08
+frame name: tournament
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 134217928
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 20:40:25]
+Fault Injection Successful after 3.3900012969970703s
+[INFO -- 2018-12-08 20:40:25]
+event type: exit
+[INFO -- 2018-12-08 20:40:25]
+exit code: 0

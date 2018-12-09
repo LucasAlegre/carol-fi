@@ -1,0 +1,49 @@
+[INFO -- 2018-11-30 05:52:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 05:52:51]
+Initialization strings:
+[INFO -- 2018-11-30 05:52:51]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 05:52:51]
+initSignal:0
+[INFO -- 2018-11-30 05:52:51]
+endSignal:7
+[INFO -- 2018-11-30 05:52:51]
+faultModel:3
+[INFO -- 2018-11-30 05:52:53]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff74dc720 <unsafe_state>, result=result@entry=0x7fffffffd914) at random_r.c:362
+#1  0x00007ffff713ea22 in __random () at random.c:293
+#2  0x00007ffff713eea9 in rand () at rand.c:27
+#3  0x0000555555555209 in simulated_annealing () at knapsacksa.cpp:50
+#4  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+357	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 9
+Memory content before bitflip:0x710xdd0x300x08
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff74dc1c4 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -2035149575, -919333073, 1927722218, -757496179, -674448020, 1882739153, -1061521625, 1050949084, 0, 599573845, -1836916402, -277047716, 574771796, 188950075, -1324428738, 639407787, 2004872016, 352278441, -1940082231, 1469145117, 1501328436, -890750438, -1186474420, -245565864, -629795181, 1981401823, -1747732731, 233163774, -277325820, -552242830, -1279239828}
+value address: 0x7ffff74dc1a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-11-30 05:52:53]
+Fault Injection Successful after 2.0780692100524902s
+[INFO -- 2018-11-30 05:52:59]
+event type: exit
+[INFO -- 2018-11-30 05:52:59]
+exit code: 0

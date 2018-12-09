@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 03:22:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:22:00]
+Initialization strings:
+[INFO -- 2018-12-09 03:22:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:22:00]
+initSignal:1
+[INFO -- 2018-12-09 03:22:00]
+endSignal:8
+[INFO -- 2018-12-09 03:22:00]
+faultModel:4
+[INFO -- 2018-12-09 03:22:02]
+Backtrace BEGIN:
+#0  0x00005555555585e6 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#1  0x000055555555714a in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#2  0x00005555555562c2 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#3  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+95	
+96	#if __cplusplus >= 201103L
+97		_Vector_impl(_Tp_alloc_type&& __a) noexcept
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x20
+frame name: main
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 536871112
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 03:22:02]
+Fault Injection Successful after 2.5847561359405518s
+[INFO -- 2018-12-09 03:22:02]
+event type: exit
+[INFO -- 2018-12-09 03:22:02]
+exit code: 0

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 03:07:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:07:21]
+Initialization strings:
+[INFO -- 2018-12-01 03:07:21]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 03:07:21]
+initSignal:0
+[INFO -- 2018-12-01 03:07:21]
+endSignal:12
+[INFO -- 2018-12-01 03:07:21]
+faultModel:1
+[INFO -- 2018-12-01 03:07:21]
+Backtrace BEGIN:
+#0  0x00007ffff7df1ff7 in mprotect () at ../sysdeps/unix/syscall-template.S:78
+#1  0x00007ffff7ddbf30 in _dl_map_segments (loader=0x0, has_holes=true, maplength=3702816, nloadcmds=2, loadcmds=0x7fffffffd1c0, type=3, header=0x7fffffffd538, fd=4, l=0x7ffff7fde000) at ./dl-map-segments.h:73
+#2  _dl_map_object_from_fd (name=name@entry=0x555555554591 "libstdc++.so.6", origname=origname@entry=0x0, fd=4, fbp=fbp@entry=0x7fffffffd530, realname=0x7ffff7ffedd0 "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", loader=loader@entry=0x7ffff7ffe170, l_type=1, mode=0, stack_endp=0x7fffffffd528, nsid=0) at dl-load.c:1126
+#3  0x00007ffff7dddffc in _dl_map_object (loader=0x7ffff7ffe170, name=0x555555554591 "libstdc++.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2389
+#4  0x00007ffff7de3312 in openaux (a=a@entry=0x7fffffffdac0) at dl-deps.c:63
+#5  0x00007ffff7df0c6b in _dl_catch_exception (exception=exception@entry=0x7fffffffdaa0, operate=operate@entry=0x7ffff7de32e0 <openaux>, args=args@entry=0x7fffffffdac0) at dl-error-skeleton.c:196
+#6  0x00007ffff7de3618 in _dl_map_object_deps (map=map@entry=0x7ffff7ffe170, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:249
+#7  0x00007ffff7dd8ea6 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1726
+#8  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffde30, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#9  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffde30) at rtld.c:414
+#10 _dl_start (arg=0x7fffffffde30) at rtld.c:521
+#11 0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#12 0x0000000000000001 in ?? ()
+#13 0x00007fffffffe0d9 in ?? ()
+#14 0x0000000000000000 in ?? ()
+
+73	../sysdeps/unix/syscall-template.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd37f
+address max offset: 1
+Memory content after  bitflip:0x0c
+frame name: _dl_map_object_from_fd
+symbol name: make_consistent
+symbol filename: dl-load.c
+symbol line: 819
+value: 12
+value address: 0x7fffffffd37f
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-01 03:07:21]
+Fault Injection Successful after 0.44051551818847656s
+[INFO -- 2018-12-01 03:07:31]
+event type: exit
+[INFO -- 2018-12-01 03:07:31]
+exit code: 0

@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 16:08:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 16:08:35]
+Initialization strings:
+[INFO -- 2018-12-08 16:08:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 16:08:35]
+initSignal:1
+[INFO -- 2018-12-08 16:08:35]
+endSignal:8
+[INFO -- 2018-12-08 16:08:35]
+faultModel:1
+[EXCEPTION -- 2018-12-08 16:08:39]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 16:08:39]
+Backtrace BEGIN:
+#0  genetic_algorithm () at knapsackga.cpp:135
+#1  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+130	            crossover(pai, mae, filho1, filho2);
+131	            chromossome f1, f2; f1.solution = filho1; f2.solution = filho2;
+132	            new_pop.push_back(f1);
+133	            new_pop.push_back(f2);
+134	        }
+135	        for(int i=0; i < pop_size; i++){
+136	            if(random01() < 0.5)
+137	                swap(new_pop[i].solution[rand() % n], new_pop[i].solution[rand() % n]);
+138	            new_pop[i].fitness = cost(new_pop[i].solution);
+139	        }
+
+Backtrace END
+Memory content before bitflip:0x070x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd87c
+address max offset: 4
+Memory content after  bitflip:0x070x000x000x48
+frame name: genetic_algorithm
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 135
+value: 1207959559
+value address: 0x7fffffffd87c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 16:08:39]
+Fault Injection Successful after 4.866893768310547s
+[INFO -- 2018-12-08 16:08:40]
+event type: exit
+[EXCEPTION -- 2018-12-08 16:08:40]
+exit code: no exit code available

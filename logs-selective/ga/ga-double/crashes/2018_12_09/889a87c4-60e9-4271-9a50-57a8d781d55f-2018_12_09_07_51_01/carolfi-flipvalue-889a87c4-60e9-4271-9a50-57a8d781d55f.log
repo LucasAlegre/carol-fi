@@ -1,0 +1,73 @@
+[INFO -- 2018-12-09 07:50:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:50:56]
+Initialization strings:
+[INFO -- 2018-12-09 07:50:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:50:56]
+initSignal:1
+[INFO -- 2018-12-09 07:50:56]
+endSignal:8
+[INFO -- 2018-12-09 07:50:56]
+faultModel:1
+[EXCEPTION -- 2018-12-09 07:50:59]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 07:51:00]
+Backtrace BEGIN:
+#0  0x0000555555559786 in std::move<int*&> (__t=@0x555555776740: 0x0) at /usr/include/c++/7/bits/move.h:99
+#1  0x00005555555597b3 in std::swap<int*> (__a=@0x555555776740: 0x0, __b=@0x555555776540: 0x555555784240) at /usr/include/c++/7/bits/move.h:198
+#2  0x000055555555872f in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#3  0x00005555555572a1 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:146
+#4  0x0000555555556256 in std::vector<int, std::allocator<int> >::vector (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:345
+#5  0x00005555555594e9 in chromossome::chromossome (this=0x555555776740) at knapsackga.cpp:63
+#6  0x000055555555ad84 in std::_Construct<chromossome, chromossome> (__p=0x555555776740, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#7  0x000055555555a6c8 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#8  0x0000555555559d49 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#9  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#10 0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776540, __last=0x555555776580, __result=0x555555776740, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#11 0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#12 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#13 0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#14 0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#15 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555777850
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x06
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: val
+symbol filename: knapsackga.cpp
+symbol line: 14
+value: std::vector of length 167, capacity 223 = {654508032, 442040320, 119209984, 585629696, 522190848, 481361920, 594149376, 499974144, 517603328, 231866368, 642908160, 630456320, 105644032, 494206976, 468713472, 302448640, 347602944, 321191936, 606142464, 328269824, 544997376, 231997440, 578617344, 589692928, 302186496, 372113408, 603193344, 474349568, 318963712, 145424384, 212795392, 458489856, 108855296, 595066880, 175767552, 597295104, 202899456, 627441664, 462880768, 330498048, 339345408, 426967040, 385351680, 204406784, 136249344, 335478784, 612237312, 408485888, 49414144, 537657344, 475791360, 594870272, 125501440, 488112128, 38535168, 427950080, 178978816, 148570112, 573767680, 69664768, 342360064, 559677440, 160497664, 137953280, 577110016, 277217280, 469893120, 20905984, 237502464, 112656384, 440926208, 54394880, 625606656, 16646144, 478085120, 13893632, 167575552, 533069824, 103022592, 120455168, 453181440, 252706816, 28311552, 648871936, 99287040, 23789568, 225640448, 403243008, 486604800, 74186752, 221052928, 20250624, 294060032, 502005760, 484966400, 591200256, 495255552, 565248000, 462290944, 309854208, 147849216, 433127424, 207355904, 66912256, 293535744, 573308928, 83623936, 383385600, 257556480, 337444864, 94306304, 629014528, 169803776, 397213696, 275120128, 11862016, 365690880, 92143616, 37224448, 22020096, 105644032, 62849024, 416219136, 333119488, 644546560, 612237312, 651821056, 152371200, 291438592, 164364288, 387514368, 409075712, 524484608, 464977920, 168230912, 277282816, 344850432, 3211264, 23265280, 267911168, 72876032, 474349568, 157876224, 65404928, 119144448, 151781376, 142475264, 341311488, 304414720, 203030528, 420610048, 139264000, 594149376, 631242752, 477757440, 284295168, 335282176, 380829696, 33619968, 274006016, 344129536, 118816768, 61472768, 526057472, 239992832, 340328448, 603914240, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...}
+value address: 0x55555575f030 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 07:51:00]
+Fault Injection Successful after 4.103591680526733s
+[INFO -- 2018-12-09 07:51:00]
+event type: exit
+[EXCEPTION -- 2018-12-09 07:51:00]
+exit code: no exit code available

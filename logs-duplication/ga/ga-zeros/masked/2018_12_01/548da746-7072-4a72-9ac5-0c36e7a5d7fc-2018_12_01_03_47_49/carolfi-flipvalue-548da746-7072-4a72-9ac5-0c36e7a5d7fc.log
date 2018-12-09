@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 03:47:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:47:34]
+Initialization strings:
+[INFO -- 2018-12-01 03:47:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:47:34]
+initSignal:0
+[INFO -- 2018-12-01 03:47:34]
+endSignal:13
+[INFO -- 2018-12-01 03:47:34]
+faultModel:3
+[EXCEPTION -- 2018-12-01 03:47:41]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 03:47:41]
+Backtrace BEGIN:
+#0  std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_get_Tp_allocator (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x0000555555556e1a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:427
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd7f8
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: tournament
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 61
+value: 0
+value address: 0x7fffffffd7f8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 03:47:41]
+Fault Injection Successful after 7.23233437538147s
+[INFO -- 2018-12-01 03:47:47]
+event type: exit
+[INFO -- 2018-12-01 03:47:47]
+exit code: 0

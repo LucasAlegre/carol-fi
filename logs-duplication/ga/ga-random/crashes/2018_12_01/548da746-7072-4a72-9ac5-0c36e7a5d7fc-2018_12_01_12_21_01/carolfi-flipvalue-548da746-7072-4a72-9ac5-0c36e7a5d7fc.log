@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 12:21:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:21:00]
+Initialization strings:
+[INFO -- 2018-12-01 12:21:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:21:00]
+initSignal:0
+[INFO -- 2018-12-01 12:21:00]
+endSignal:13
+[INFO -- 2018-12-01 12:21:00]
+faultModel:2
+[EXCEPTION -- 2018-12-01 12:21:01]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 12:21:01]
+Backtrace BEGIN:
+#0  0x00005555555550f0 in tournament (pop=std::vector of length -2932031079034, capacity -2931896861306 = {...}) at knapsackga.cpp:58
+#1  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+53	bool operator<(const chromossome& a, const chromossome& b)
+54	{
+55	    return a.fitness < b.fitness;
+56	}
+57	
+58	vector<int> tournament(vector<chromossome> &pop){
+59	    vector<chromossome> competitors;
+60	
+61	    for(int i=0; i < 3; i++){
+62	        int randIndex = rand() % pop_size;
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x2b0x0e0xbc0xad
+frame name: genetic_algorithm
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -1380184533
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:21:01]
+Fault Injection Successful after 1.311777114868164s
+[INFO -- 2018-12-01 12:21:01]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:21:01]
+exit code: no exit code available

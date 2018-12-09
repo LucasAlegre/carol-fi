@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 21:58:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:58:13]
+Initialization strings:
+[INFO -- 2018-12-08 21:58:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:58:13]
+initSignal:1
+[INFO -- 2018-12-08 21:58:13]
+endSignal:8
+[INFO -- 2018-12-08 21:58:13]
+faultModel:1
+[INFO -- 2018-12-08 21:58:15]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:427
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+422		  __new_finish = pointer();
+423	
+424		  __new_finish
+425		    = std::__uninitialized_move_if_noexcept_a
+426		    (this->_M_impl._M_start, __position.base(),
+427		     __new_start, _M_get_Tp_allocator());
+428	
+429		  ++__new_finish;
+430	
+431		  __new_finish
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x640x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd830
+address max offset: 8
+Memory content after  bitflip:0x100x640x770x550x550x550x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd788
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:58:15]
+Fault Injection Successful after 2.327247142791748s
+[INFO -- 2018-12-08 21:58:22]
+event type: exit
+[INFO -- 2018-12-08 21:58:22]
+exit code: 0

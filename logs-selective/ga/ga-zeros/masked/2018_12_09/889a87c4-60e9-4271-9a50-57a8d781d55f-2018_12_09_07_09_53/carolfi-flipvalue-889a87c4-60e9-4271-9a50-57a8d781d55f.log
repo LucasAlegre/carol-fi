@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 07:09:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:09:44]
+Initialization strings:
+[INFO -- 2018-12-09 07:09:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:09:44]
+initSignal:1
+[INFO -- 2018-12-09 07:09:44]
+endSignal:8
+[INFO -- 2018-12-09 07:09:44]
+faultModel:3
+[INFO -- 2018-12-09 07:09:46]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+426		    (this->_M_impl._M_start, __position.base(),
+427		     __new_start, _M_get_Tp_allocator());
+428	
+429		  ++__new_finish;
+430	
+431		  __new_finish
+432		    = std::__uninitialized_move_if_noexcept_a
+433		    (__position.base(), this->_M_impl._M_finish,
+434		     __new_finish, _M_get_Tp_allocator());
+435		}
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0xf00x5d0xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776438
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 07:09:46]
+Fault Injection Successful after 2.067737340927124s
+[INFO -- 2018-12-09 07:09:53]
+event type: exit
+[INFO -- 2018-12-09 07:09:53]
+exit code: 0

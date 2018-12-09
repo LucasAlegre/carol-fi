@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 05:45:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:45:48]
+Initialization strings:
+[INFO -- 2018-12-09 05:45:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:45:48]
+initSignal:1
+[INFO -- 2018-12-09 05:45:48]
+endSignal:8
+[INFO -- 2018-12-09 05:45:48]
+faultModel:3
+[EXCEPTION -- 2018-12-09 05:45:53]
+gdbException: Cannot access memory at address 0x0
+[EXCEPTION -- 2018-12-09 05:45:53]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 05:45:53]
+Backtrace BEGIN:
+#0  0x0000555555555091 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:40
+#1  0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+35	        exit_gracefully();
+36	    }
+37	
+38	    int peso=0, peso2=0, valor=0, valor2=0;
+39	    for(int i=0; i < n; i++){
+40	        peso += solution[i] * wt[i];
+41	        valor += solution[i] * val[i];
+42	    }
+43	    for(int i=0; i < n; i++){
+44	        peso2 += solution[i] * wt2[i];
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x900x7f0x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f078 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: cost
+symbol name: wt
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: std::vector of length 0, capacity 23456248619036
+value address: 0x55555575f070 <wt>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 05:45:53]
+Fault Injection Successful after 5.308441638946533s
+[INFO -- 2018-12-09 05:45:53]
+event type: exit
+[EXCEPTION -- 2018-12-09 05:45:53]
+exit code: no exit code available

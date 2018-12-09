@@ -1,0 +1,57 @@
+[INFO -- 2018-12-07 22:33:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:33:55]
+Initialization strings:
+[INFO -- 2018-12-07 22:33:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:33:55]
+initSignal:1
+[INFO -- 2018-12-07 22:33:55]
+endSignal:8
+[INFO -- 2018-12-07 22:33:55]
+faultModel:1
+[EXCEPTION -- 2018-12-07 22:33:57]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-07 22:33:57]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-07 22:33:57]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff74d928d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7600528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74e064a in malloc_printerr (action=<optimized out>, str=0x7ffff75fcef0 "malloc(): memory corruption", ptr=<optimized out>, ar_ptr=<optimized out>) at malloc.c:5426
+#4  0x00007ffff74e442d in _int_malloc (av=av@entry=0x7ffff7832c20 <main_arena>, bytes=bytes@entry=768) at malloc.c:3741
+#5  0x00007ffff74e6f3e in __GI___libc_malloc (bytes=768) at malloc.c:3086
+#6  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x000055555555a35a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd980, __n=192) at /usr/include/c++/7/ext/new_allocator.h:111
+#8  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=192) at /usr/include/c++/7/bits/alloc_traits.h:436
+#9  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd980, __n=192) at /usr/include/c++/7/bits/stl_vector.h:172
+#10 0x0000555555557418 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd980, __n=192, __first=0, __last=0) at /usr/include/c++/7/bits/stl_vector.h:1260
+#11 0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd980, __x=std::vector of length 192, capacity 192 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#12 0x0000555555555705 in genetic_algorithm () at knapsackga.cpp:131
+#13 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x800x00
+frame name: std::allocator_traits<std::allocator<int> >::allocate
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 8452913
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 22:33:57]
+Fault Injection Successful after 2.4284865856170654s
+[INFO -- 2018-12-07 22:33:57]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:33:57]
+exit code: no exit code available

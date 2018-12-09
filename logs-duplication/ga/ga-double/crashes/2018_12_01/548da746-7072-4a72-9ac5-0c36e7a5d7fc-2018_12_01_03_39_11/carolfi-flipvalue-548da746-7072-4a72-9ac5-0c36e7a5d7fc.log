@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 03:39:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:39:06]
+Initialization strings:
+[INFO -- 2018-12-01 03:39:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:39:06]
+initSignal:0
+[INFO -- 2018-12-01 03:39:06]
+endSignal:13
+[INFO -- 2018-12-01 03:39:06]
+faultModel:1
+[INFO -- 2018-12-01 03:39:10]
+Backtrace BEGIN:
+#0  crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#1  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+69	}
+70	
+71	void crossover(vector<int> &pai, vector<int> &mae, vector<int> &filho1, vector<int> &filho2){
+72	    vector<int> mask(n);
+73	    for(int i = 0; i < n; i++){
+74	        mask[i] = rand_bit();
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd910
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x220x000x00
+frame name: genetic_algorithm
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 0, capacity 9345848836096
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 03:39:10]
+Fault Injection Successful after 4.025372266769409s
+[INFO -- 2018-12-01 03:39:10]
+event type: exit
+[EXCEPTION -- 2018-12-01 03:39:10]
+exit code: no exit code available

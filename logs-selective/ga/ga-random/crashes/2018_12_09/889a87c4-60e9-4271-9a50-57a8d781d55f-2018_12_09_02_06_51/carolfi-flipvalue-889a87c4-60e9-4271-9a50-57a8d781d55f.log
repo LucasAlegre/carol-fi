@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 02:06:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:06:48]
+Initialization strings:
+[INFO -- 2018-12-09 02:06:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:06:48]
+initSignal:1
+[INFO -- 2018-12-09 02:06:48]
+endSignal:8
+[INFO -- 2018-12-09 02:06:48]
+faultModel:2
+[INFO -- 2018-12-09 02:06:50]
+Backtrace BEGIN:
+#0  0x000055555555a35b in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd9a0, __n=200) at /usr/include/c++/7/ext/new_allocator.h:112
+#1  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#2  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd9a0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#3  0x0000555555557418 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9a0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#4  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#5  0x000055555555571b in genetic_algorithm () at knapsackga.cpp:131
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+107		    std::align_val_t __al = std::align_val_t(alignof(_Tp));
+108		    return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp), __al));
+109		  }
+110	#endif
+111		return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+112	      }
+113	
+114	      // __p is not permitted to be a null pointer.
+115	      void
+116	      deallocate(pointer __p, size_type)
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9a0
+address max offset: 8
+Memory content after  bitflip:0x760x970xdf0xdf0x280xd10xeb0x4f
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_allocate
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd9a0
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 02:06:50]
+Fault Injection Successful after 2.4842822551727295s
+[INFO -- 2018-12-09 02:06:50]
+event type: exit
+[EXCEPTION -- 2018-12-09 02:06:50]
+exit code: no exit code available

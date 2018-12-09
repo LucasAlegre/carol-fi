@@ -1,0 +1,66 @@
+[INFO -- 2018-12-01 06:19:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:19:08]
+Initialization strings:
+[INFO -- 2018-12-01 06:19:08]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 06:19:08]
+initSignal:0
+[INFO -- 2018-12-01 06:19:08]
+endSignal:12
+[INFO -- 2018-12-01 06:19:08]
+faultModel:3
+[EXCEPTION -- 2018-12-01 06:19:08]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 06:19:09]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-12-01 06:19:09]
+Backtrace BEGIN:
+#0  0x0000555555556d2d in std::swap<int*> (__a=<error reading variable>, __b=@0x7fffffffd570: 0x0) at /usr/include/c++/7/bits/move.h:198
+#1  0x00005555555566bd in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x258, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#2  0x0000555555555f37 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x258, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#3  0x0000555555555a1f in std::vector<int, std::allocator<int> >::operator= (this=0x258, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555555025 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 3909374768359, capacity 3909374768359 = {...}) at knapsackmf.cpp:21
+#5  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#6  0x000055555555558a in main () at knapsackmf.cpp:81
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd570
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: __tmp
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1531
+value: std::vector of length 0, capacity 0
+value address: 0x7fffffffd570
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 06:19:09]
+Fault Injection Successful after 1.0795903205871582s
+[INFO -- 2018-12-01 06:19:09]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:19:09]
+exit code: no exit code available

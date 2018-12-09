@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 03:30:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:30:11]
+Initialization strings:
+[INFO -- 2018-12-01 03:30:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:30:11]
+initSignal:0
+[INFO -- 2018-12-01 03:30:11]
+endSignal:13
+[INFO -- 2018-12-01 03:30:11]
+faultModel:4
+[INFO -- 2018-12-01 03:30:16]
+Backtrace BEGIN:
+#0  0x0000555555556cf4 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776400, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:206
+#1  0x0000555555556eb0 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x340x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x5555557764e0
+address max offset: 8
+Memory content after  bitflip:0xf00x340x780x550x550x550x000x08
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_start
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 406
+value: 0x5555557764e0
+value address: 0x7fffffffd790
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 03:30:16]
+Fault Injection Successful after 5.579164505004883s
+[INFO -- 2018-12-01 03:30:16]
+event type: exit
+[EXCEPTION -- 2018-12-01 03:30:16]
+exit code: no exit code available

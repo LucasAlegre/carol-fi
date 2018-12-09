@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 07:07:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:07:33]
+Initialization strings:
+[INFO -- 2018-12-01 07:07:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:07:33]
+initSignal:0
+[INFO -- 2018-12-01 07:07:33]
+endSignal:13
+[INFO -- 2018-12-01 07:07:33]
+faultModel:2
+[INFO -- 2018-12-01 07:07:39]
+Backtrace BEGIN:
+#0  0x0000555555555e3d in std::vector<int, std::allocator<int> >::~vector (this=0x555555776400, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:433
+#1  0x0000555555555df2 in chromossome::~chromossome (this=0x555555776420, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#2  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x555555776420) at /usr/include/c++/7/bits/stl_construct.h:98
+#3  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:108
+#4  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x555555776400, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:137
+#5  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x555555776400, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:206
+#6  0x0000555555556eb0 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#7  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#10 0x0000555555555aab in main () at knapsackga.cpp:143
+
+428	       *  The dtor only erases the elements, and note that if the
+429	       *  elements themselves are pointers, the pointed-to memory is
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x640x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd790
+address max offset: 8
+Memory content after  bitflip:0xca0x1d0xa50x3b0xbf0x770xa60x36
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_start
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 406
+value: 0x5555557764e0
+value address: 0x7fffffffd790
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 07:07:39]
+Fault Injection Successful after 6.771376132965088s
+[INFO -- 2018-12-01 07:07:39]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:07:39]
+exit code: no exit code available

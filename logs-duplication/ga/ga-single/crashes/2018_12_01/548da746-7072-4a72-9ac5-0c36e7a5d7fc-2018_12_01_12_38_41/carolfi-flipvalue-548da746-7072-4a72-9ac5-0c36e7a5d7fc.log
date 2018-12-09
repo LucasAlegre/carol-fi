@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 12:38:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:38:37]
+Initialization strings:
+[INFO -- 2018-12-01 12:38:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:38:37]
+initSignal:0
+[INFO -- 2018-12-01 12:38:37]
+endSignal:13
+[INFO -- 2018-12-01 12:38:37]
+faultModel:0
+[INFO -- 2018-12-01 12:38:41]
+Backtrace BEGIN:
+#0  0x00005555555565d2 in std::swap<int> (__a=@0x55555578499c: 0, __b=@0x555555783bf0: 0) at /usr/include/c++/7/bits/move.h:187
+#1  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+182	    inline
+183	#if __cplusplus >= 201103L
+184	    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+185				      is_move_constructible<_Tp>,
+186				      is_move_assignable<_Tp>>::value>::type
+187	    swap(_Tp& __a, _Tp& __b)
+188	    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+189		            is_nothrow_move_assignable<_Tp>>::value)
+190	#else
+191	    void
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xb00x410x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 8
+Memory content after  bitflip:0xb80x410x780x550x550x550x000x00
+frame name: crossover
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 198, capacity 198 = {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+value address: 0x7fffffffd8c0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 12:38:41]
+Fault Injection Successful after 4.081166744232178s
+[INFO -- 2018-12-01 12:38:41]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:38:41]
+exit code: no exit code available

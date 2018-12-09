@@ -1,0 +1,52 @@
+[INFO -- 2018-12-02 03:11:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:11:58]
+Initialization strings:
+[INFO -- 2018-12-02 03:11:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:11:58]
+initSignal:0
+[INFO -- 2018-12-02 03:11:58]
+endSignal:13
+[INFO -- 2018-12-02 03:11:58]
+faultModel:0
+[INFO -- 2018-12-02 03:12:02]
+Backtrace BEGIN:
+#0  std::swap<int> (__a=@0x5555557808c0: 1, __b=@0x555555784c90: 1) at /usr/include/c++/7/bits/move.h:201
+#1  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+205	  /// Swap the contents of two arrays.
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffdaac
+address max offset: 4
+Memory content after  bitflip:0xff0x7f0x000x80
+frame name: main
+symbol name: result2
+symbol filename: knapsackga.cpp
+symbol line: 143
+value: -2147450881
+value address: 0x7fffffffdaac
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 03:12:02]
+Fault Injection Successful after 4.551736831665039s
+[INFO -- 2018-12-02 03:12:11]
+event type: exit
+[INFO -- 2018-12-02 03:12:11]
+exit code: 0

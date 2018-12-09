@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 09:17:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:17:24]
+Initialization strings:
+[INFO -- 2018-12-01 09:17:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:17:24]
+initSignal:0
+[INFO -- 2018-12-01 09:17:24]
+endSignal:13
+[INFO -- 2018-12-01 09:17:24]
+faultModel:1
+[INFO -- 2018-12-01 09:17:29]
+Backtrace BEGIN:
+#0  0x00007ffff74949d2 in __random () at random.c:288
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+283	random.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x6b0x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f140 
+address max offset: 8
+Memory content after  bitflip:0xb00xe30x770x550x550x550x000x00
+frame name: main
+symbol name: val
+symbol filename: knapsackga.cpp
+symbol line: 14
+value: std::vector of length -7480, capacity -7424 = {1433916736, 21845, -514590, 0, 1433917792, 21845, 1433918592, 21845, 1433918816, 21845, -514590, 0, 1433914672, 21845, 1433915472, 21845, 1433915696, 21845, -514590, 0, 1433921936, 21845, 1433922736, 21845, 1433922960, 21845, -514590, 0, 1433925056, 21845, 1433925856, 21845, 1433926080, 21845, -514590, 0, 1433912592, 21845, 1433913392, 21845, 1433913616, 21845, -514590, 0, 1433879264, 21845, 1433880064, 21845, 1433880288, 21845, -514590, 0, 1433927136, 21845, 1433927936, 21845, 1433928160, 21845, -514590, 0, 1433908432, 21845, 1433909232, 21845, 1433909456, 21845, -514590, 0, 1433907392, 21845, 1433908192, 21845, 1433908416, 21845, -513908, 0, 1433905312, 21845, 1433906112, 21845, 1433906336, 21845, -513312, 0, 1433901152, 21845, 1433901952, 21845, 1433902176, 21845, -511969, 0, 1433898032, 21845, 1433898832, 21845, 1433899056, 21845, -511264, 0, 1433896992, 21845, 1433897792, 21845, 1433898016, 21845, -510895, 0, 1433894912, 21845, 1433895712, 21845, 1433895936, 21845, -509479, 0, 1433893872, 21845, 1433894672, 21845, 1433894896, 21845, -509111, 0, 1433892832, 21845, 1433893632, 21845, 1433893856, 21845, -508651, 0, 1433891792, 21845, 1433892592, 21845, 1433892816, 21845, -508053, 0, 1433885504, 21845, 1433886304, 21845, 1433886528, 21845, -507978, 0, 1433884464, 21845, 1433885264, 21845, 1433885488, 21845, -507205, 0, 1433882384, 21845, 1433883184, 21845, 1433883408, 21845, -506987, 0, 1433881344, 21845, 1433882144, 21845, 1433882368, 21845, 99999999, 0, 1433880304, 21845, 1433881104, 21845, 1433881328, 21845, 99999999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...}
+value address: 0x55555575f140 <val>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 09:17:29]
+Fault Injection Successful after 5.13214898109436s
+[INFO -- 2018-12-01 09:17:37]
+event type: exit
+[EXCEPTION -- 2018-12-01 09:17:37]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 19:24:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:24:22]
+Initialization strings:
+[INFO -- 2018-12-08 19:24:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:24:23]
+initSignal:1
+[INFO -- 2018-12-08 19:24:23]
+endSignal:8
+[INFO -- 2018-12-08 19:24:23]
+faultModel:4
+[INFO -- 2018-12-08 19:24:24]
+Backtrace BEGIN:
+#0  0x0000555555558849 in __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x555555780dc0, __i=@0x555555780dc0: 0x0) at /usr/include/c++/7/bits/stl_iterator.h:779
+#1  0x000055555555754a in std::vector<int, std::allocator<int> >::end (this=0x555555780ef0) at /usr/include/c++/7/bits/stl_vector.h:582
+#2  0x0000555555556526 in std::vector<int, std::allocator<int> >::operator= (this=0x555555780ef0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x000055555555a4ad in chromossome::operator= (this=0x555555780ef0) at knapsackga.cpp:63
+#4  0x000055555555a505 in std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<chromossome const*, chromossome*> (__first=0x55555578ac90, __last=0x55555578b150, __result=0x555555780ef0) at /usr/include/c++/7/bits/stl_algobase.h:324
+#5  0x0000555555559aab in std::__copy_move_a<false, chromossome const*, chromossome*> (__first=0x55555578ac50, __last=0x55555578b150, __result=0x555555780eb0) at /usr/include/c++/7/bits/stl_algobase.h:386
+#6  0x0000555555558e62 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509563}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 200, capacity 256 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509563}) at /usr/include/c++/7/bits/stl_algobase.h:422
+#7  0x00005555555579f4 in std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509563}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 200, capacity 256 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509563}) at /usr/include/c++/7/bits/stl_algobase.h:456
+#8  0x00005555555569d3 in std::vector<chromossome, std::allocator<chromossome> >::operator= (this=0x7fffffffd880, __x=std::vector of length 40, capacity 64 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#9  0x000055555555590f in genetic_algorithm () at knapsackga.cpp:143
+#10 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+774	
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x01
+frame name: __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >::__normal_iterator
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 17365809
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 19:24:24]
+Fault Injection Successful after 1.9295623302459717s
+[INFO -- 2018-12-08 19:24:24]
+event type: exit
+[INFO -- 2018-12-08 19:24:24]
+exit code: 0

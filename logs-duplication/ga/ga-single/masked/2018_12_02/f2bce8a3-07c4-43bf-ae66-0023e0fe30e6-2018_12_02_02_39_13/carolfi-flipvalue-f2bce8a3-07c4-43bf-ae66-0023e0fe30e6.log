@@ -1,0 +1,52 @@
+[INFO -- 2018-12-02 02:39:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:39:00]
+Initialization strings:
+[INFO -- 2018-12-02 02:39:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:39:00]
+initSignal:0
+[INFO -- 2018-12-02 02:39:00]
+endSignal:13
+[INFO -- 2018-12-02 02:39:00]
+faultModel:0
+[INFO -- 2018-12-02 02:39:04]
+Backtrace BEGIN:
+#0  0x0000555555555dce in chromossome::chromossome (this=0x7fffffffda50) at knapsackga.cpp:50
+#1  0x00005555555555df in genetic_algorithm () at knapsackga.cpp:105
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+45	    chromossome(int size){
+46	        for(int i = 0; i < size; i++)
+47	            solution.push_back(rand_bit());
+48	        fitness = cost(solution);
+49	    }
+50	    chromossome(){};
+51	};
+52	
+53	bool operator<(const chromossome& a, const chromossome& b)
+54	{
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500xda0xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8f8
+address max offset: 8
+Memory content after  bitflip:0x100xda0xff0xff0xff0x7f0x000x00
+frame name: chromossome::chromossome
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffda50
+value address: 0x7fffffffd8f8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 02:39:04]
+Fault Injection Successful after 4.530116081237793s
+[INFO -- 2018-12-02 02:39:12]
+event type: exit
+[INFO -- 2018-12-02 02:39:12]
+exit code: 0

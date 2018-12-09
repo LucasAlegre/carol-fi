@@ -1,0 +1,69 @@
+[INFO -- 2018-12-01 01:41:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:41:34]
+Initialization strings:
+[INFO -- 2018-12-01 01:41:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:41:34]
+initSignal:0
+[INFO -- 2018-12-01 01:41:34]
+endSignal:13
+[INFO -- 2018-12-01 01:41:34]
+faultModel:2
+[INFO -- 2018-12-01 01:41:38]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<int>::~new_allocator (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/ext/new_allocator.h:86
+#1  0x0000555555556238 in std::allocator<int>::~allocator (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#2  0x0000555555556af2 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#3  0x0000555555556b5f in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#4  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x555555776520, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#5  0x0000555555555df2 in chromossome::~chromossome (this=0x555555776520, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#6  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x555555776520) at /usr/include/c++/7/bits/stl_construct.h:98
+#7  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776520, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:108
+#8  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:137
+#9  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x5555557764e0, __last=0x555555776540) at /usr/include/c++/7/bits/stl_construct.h:206
+#10 0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#11 0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#12 0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#13 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+86	      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+87	
+88	      pointer
+89	      address(reference __x) const _GLIBCXX_NOEXCEPT
+90	      { return std::__addressof(__x); }
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x600x650x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd810
+address max offset: 8
+Memory content after  bitflip:0xe90x7b0x030x790xeb0x9c0xf70xc3
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 59
+value: std::vector of length 3, capacity -135184693965594439 = {{solution = std::vector of length 200, capacity 200 = {1433930624, 21845, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513524}, {solution = std::vector of length 200, capacity 200 = {1433932256, 21845, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -513524}, {solution = std::vector of length 200, capacity 200 = {1433928992, 21845, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -511221}}
+value address: 0x7fffffffd800
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 01:41:38]
+Fault Injection Successful after 4.0679614543914795s
+[INFO -- 2018-12-01 01:41:47]
+event type: exit
+[INFO -- 2018-12-01 01:41:47]
+exit code: 0

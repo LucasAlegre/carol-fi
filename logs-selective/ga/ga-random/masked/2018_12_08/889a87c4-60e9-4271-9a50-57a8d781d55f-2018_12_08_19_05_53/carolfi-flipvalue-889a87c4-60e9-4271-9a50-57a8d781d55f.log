@@ -1,0 +1,67 @@
+[INFO -- 2018-12-08 19:05:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:05:44]
+Initialization strings:
+[INFO -- 2018-12-08 19:05:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:05:44]
+initSignal:1
+[INFO -- 2018-12-08 19:05:44]
+endSignal:8
+[INFO -- 2018-12-08 19:05:44]
+faultModel:2
+[INFO -- 2018-12-08 19:05:46]
+Backtrace BEGIN:
+#0  0x000055555555ab75 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557838b0) at /usr/include/c++/7/bits/stl_algobase.h:422
+#1  0x000055555555a2c0 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557838b0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#2  0x0000555555559778 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557838b0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x00005555555586a8 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x5555557838b0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x5555557838b0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x00005555555561bb in std::vector<int, std::allocator<int> >::vector (this=0x555555776560, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#6  0x0000555555558123 in chromossome::chromossome (this=0x555555776560) at knapsackga.cpp:63
+#7  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776560, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#8  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776560, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#9  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#10 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#12 0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#13 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+417	
+418	  template<bool _IsMove, typename _II, typename _OI>
+419	    inline _OI
+420	    __copy_move_a2(_II __first, _II __last, _OI __result)
+421	    {
+422	      return _OI(std::__copy_move_a<_IsMove>(std::__niter_base(__first),
+423						     std::__niter_base(__last),
+424						     std::__niter_base(__result)));
+425	    }
+426	
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x220x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd5f8
+address max offset: 8
+Memory content after  bitflip:0x790x490x960x370x160x020x190x8b
+frame name: std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 99
+value: <error reading variable: Cannot access memory at address 0x8b19021637964979>
+value address: 0x7fffffffd5f8
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 19:05:46]
+Fault Injection Successful after 2.2161827087402344s
+[INFO -- 2018-12-08 19:05:52]
+event type: exit
+[INFO -- 2018-12-08 19:05:52]
+exit code: 0

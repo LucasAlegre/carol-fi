@@ -1,0 +1,54 @@
+[INFO -- 2018-12-08 18:10:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:10:17]
+Initialization strings:
+[INFO -- 2018-12-08 18:10:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:10:17]
+initSignal:1
+[INFO -- 2018-12-08 18:10:17]
+endSignal:8
+[INFO -- 2018-12-08 18:10:17]
+faultModel:1
+[INFO -- 2018-12-08 18:10:21]
+Backtrace BEGIN:
+#0  0x0000555555558346 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776420, __last=0x555555776440, __result=0x555555776540, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#1  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+306					       _InputIterator __last,
+307					       _ForwardIterator __result,
+308					       _Allocator& __alloc)
+309	    {
+310	      return std::__uninitialized_copy_a
+311		(_GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__first),
+312		 _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+313	    }
+314	
+315	  template<typename _ForwardIterator, typename _Tp, typename _Allocator>
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x280x000x500x00
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 5242920
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:10:21]
+Fault Injection Successful after 4.422692537307739s
+[INFO -- 2018-12-08 18:10:21]
+event type: exit
+[INFO -- 2018-12-08 18:10:21]
+exit code: 0

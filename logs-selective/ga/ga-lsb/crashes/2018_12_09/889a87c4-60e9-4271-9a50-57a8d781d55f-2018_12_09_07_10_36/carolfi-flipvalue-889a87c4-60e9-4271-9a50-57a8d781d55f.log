@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 07:10:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:10:33]
+Initialization strings:
+[INFO -- 2018-12-09 07:10:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:10:33]
+initSignal:1
+[INFO -- 2018-12-09 07:10:33]
+endSignal:8
+[INFO -- 2018-12-09 07:10:33]
+faultModel:4
+[EXCEPTION -- 2018-12-09 07:10:35]
+gdbException: Cannot access memory at address 0x4000555555786ee0
+[EXCEPTION -- 2018-12-09 07:10:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 07:10:35]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x4000555555786ee0) at malloc.c:3124
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd8e0, __p=0x4000555555786ee0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x4000555555786ee0, __n=17293822569102704840) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd8e0, __p=0x4000555555786ee0, __n=17293822569102704840) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd8e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x000055555555578c in genetic_algorithm () at knapsackga.cpp:127
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3119	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xbe0x080x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd870
+address max offset: 4
+Memory content after  bitflip:0xbe0x080x000x80
+frame name: genetic_algorithm
+symbol name: g2
+symbol filename: knapsackga.cpp
+symbol line: 115
+value: -2147481410
+value address: 0x7fffffffd870
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 07:10:35]
+Fault Injection Successful after 2.4870216846466064s
+[INFO -- 2018-12-09 07:10:35]
+event type: exit
+[EXCEPTION -- 2018-12-09 07:10:35]
+exit code: no exit code available

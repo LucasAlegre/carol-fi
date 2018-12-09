@@ -1,0 +1,58 @@
+[INFO -- 2018-12-02 03:42:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:42:20]
+Initialization strings:
+[INFO -- 2018-12-02 03:42:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:42:20]
+initSignal:0
+[INFO -- 2018-12-02 03:42:20]
+endSignal:13
+[INFO -- 2018-12-02 03:42:20]
+faultModel:1
+[INFO -- 2018-12-02 03:42:23]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffda50, __n=140737488345200) at /usr/include/c++/7/bits/stl_vector.h:169
+#1  0x00005555555573be in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffda30, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#2  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda30, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x00005555555555f5 in genetic_algorithm () at knapsackga.cpp:105
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+164	
+165	    public:
+166	      _Vector_impl _M_impl;
+167	
+168	      pointer
+169	      _M_allocate(size_t __n)
+170	      {
+171		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+172		return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+173	      }
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555781830
+address max offset: 4
+Memory content after  bitflip:0x300x030x840x00
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: 8651568
+value address: 0x7fffffffd870
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-02 03:42:23]
+Fault Injection Successful after 3.917473316192627s
+[INFO -- 2018-12-02 03:42:33]
+event type: exit
+[INFO -- 2018-12-02 03:42:33]
+exit code: 0

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 06:01:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:01:23]
+Initialization strings:
+[INFO -- 2018-12-01 06:01:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:01:23]
+initSignal:0
+[INFO -- 2018-12-01 06:01:23]
+endSignal:13
+[INFO -- 2018-12-01 06:01:23]
+faultModel:1
+[EXCEPTION -- 2018-12-01 06:01:30]
+gdbException: Cannot access memory at address 0x8100000000
+[INFO -- 2018-12-01 06:01:30]
+Backtrace BEGIN:
+#0  std::_Construct<chromossome, chromossome> (__p=0x555555776500, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#1  0x000055555555a66c in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776400, __last=0x555555776440, __result=0x5555557764e0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x0000555555555aab in main () at knapsackga.cpp:143
+
+70	   */
+71	#if __cplusplus >= 201103L
+72	  template<typename _T1, typename... _Args>
+73	    inline void
+74	    _Construct(_T1* __p, _Args&&... __args)
+75	    { ::new(static_cast<void*>(__p)) _T1(std::forward<_Args>(__args)...); }
+76	#else
+77	  template<typename _T1, typename _T2>
+78	    inline void
+79	    _Construct(_T1* __p, const _T2& __value)
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x2e0x000x000x00
+frame name: genetic_algorithm
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 46
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:01:30]
+Fault Injection Successful after 7.853459596633911s
+[INFO -- 2018-12-01 06:01:31]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:01:31]
+exit code: no exit code available

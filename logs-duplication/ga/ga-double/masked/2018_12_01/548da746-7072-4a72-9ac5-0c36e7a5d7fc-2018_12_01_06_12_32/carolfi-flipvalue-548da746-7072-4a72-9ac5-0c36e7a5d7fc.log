@@ -1,0 +1,64 @@
+[INFO -- 2018-12-01 06:12:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:12:19]
+Initialization strings:
+[INFO -- 2018-12-01 06:12:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:12:19]
+initSignal:0
+[INFO -- 2018-12-01 06:12:19]
+endSignal:13
+[INFO -- 2018-12-01 06:12:19]
+faultModel:1
+[INFO -- 2018-12-01 06:12:21]
+Backtrace BEGIN:
+#0  0x000055555555ace5 in std::move_iterator<chromossome*>::operator* (this=0x7fffffffd668) at /usr/include/c++/7/bits/stl_iterator.h:1050
+#1  0x000055555555a652 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#2  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557764e0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776400, __last=0x555555776440, __result=0x5555557764e0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1045	      base() const
+1046	      { return _M_current; }
+1047	
+1048	      _GLIBCXX17_CONSTEXPR reference
+1049	      operator*() const
+1050	      { return static_cast<reference>(*_M_current); }
+1051	
+1052	      _GLIBCXX17_CONSTEXPR pointer
+1053	      operator->() const
+1054	      { return _M_current; }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555784c10
+address max offset: 4
+Memory content after  bitflip:0x300x030x000x11
+frame name: std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __cur
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 79
+value: 0x555555776500
+value address: 0x7fffffffd678
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:12:21]
+Fault Injection Successful after 2.5765397548675537s
+[INFO -- 2018-12-01 06:12:32]
+event type: exit
+[INFO -- 2018-12-01 06:12:32]
+exit code: 0

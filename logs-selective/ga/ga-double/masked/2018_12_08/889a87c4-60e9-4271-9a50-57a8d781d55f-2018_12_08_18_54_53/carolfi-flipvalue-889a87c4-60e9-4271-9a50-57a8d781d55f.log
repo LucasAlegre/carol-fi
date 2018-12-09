@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 18:54:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:54:44]
+Initialization strings:
+[INFO -- 2018-12-08 18:54:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:54:44]
+initSignal:1
+[INFO -- 2018-12-08 18:54:44]
+endSignal:8
+[INFO -- 2018-12-08 18:54:44]
+faultModel:1
+[INFO -- 2018-12-08 18:54:46]
+Backtrace BEGIN:
+#0  std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_uninitialized.h:128
+#1  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555786ee0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x00005555555561bb in std::vector<int, std::allocator<int> >::vector (this=0x555555776560, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x0000555555558123 in chromossome::chromossome (this=0x555555776560) at knapsackga.cpp:63
+#4  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776560, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776560, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#7  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#9  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#10 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+123	      const bool __assignable = true;
+124	#else
+125	      // trivial types can have deleted assignment
+126	      typedef typename iterator_traits<_InputIterator>::reference _RefType1;
+127	      typedef typename iterator_traits<_ForwardIterator>::reference _RefType2;
+128	      const bool __assignable = is_assignable<_RefType2, _RefType1>::value;
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+
+Backtrace END
+Memory content before bitflip:0x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd63f
+address max offset: 1
+Memory content after  bitflip:0x81
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: __assignable
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 128
+value: 129
+value address: 0x7fffffffd63f
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-08 18:54:46]
+Fault Injection Successful after 2.1696794033050537s
+[INFO -- 2018-12-08 18:54:52]
+event type: exit
+[INFO -- 2018-12-08 18:54:52]
+exit code: 0

@@ -1,0 +1,63 @@
+[INFO -- 2018-12-08 18:34:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:34:59]
+Initialization strings:
+[INFO -- 2018-12-08 18:34:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:34:59]
+initSignal:1
+[INFO -- 2018-12-08 18:34:59]
+endSignal:8
+[INFO -- 2018-12-08 18:34:59]
+faultModel:3
+[EXCEPTION -- 2018-12-08 18:35:00]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-12-08 18:35:01]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<int>::~new_allocator (this=0x7fffffffd7c7, __in_chrg=<optimized out>) at /usr/include/c++/7/ext/new_allocator.h:86
+#1  0x0000555555556292 in std::allocator<int>::~allocator (this=0x7fffffffd7c7, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#2  0x0000555555556179 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd940, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x000055555555527f in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:88
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+86	      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+87	
+88	      pointer
+89	      address(reference __x) const _GLIBCXX_NOEXCEPT
+90	      { return std::__addressof(__x); }
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x7b0x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f058 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __gnu_cxx::new_allocator<int>::~new_allocator
+symbol name: val2
+symbol filename: knapsackga.cpp
+symbol line: 15
+value: std::vector of length 0, capacity 23456248618776
+value address: 0x55555575f050 <val2>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-08 18:35:01]
+Fault Injection Successful after 2.0939671993255615s
+[INFO -- 2018-12-08 18:35:01]
+event type: exit
+[EXCEPTION -- 2018-12-08 18:35:01]
+exit code: no exit code available

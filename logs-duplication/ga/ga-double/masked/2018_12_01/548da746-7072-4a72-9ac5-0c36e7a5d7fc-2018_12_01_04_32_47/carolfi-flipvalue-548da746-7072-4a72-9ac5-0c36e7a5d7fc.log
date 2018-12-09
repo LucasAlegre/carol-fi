@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 04:32:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:32:34]
+Initialization strings:
+[INFO -- 2018-12-01 04:32:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:32:34]
+initSignal:0
+[INFO -- 2018-12-01 04:32:34]
+endSignal:13
+[INFO -- 2018-12-01 04:32:34]
+faultModel:1
+[INFO -- 2018-12-01 04:32:36]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >::base (this=0x7fffffffd760) at /usr/include/c++/7/bits/stl_iterator.h:845
+#1  0x0000555555556e6e in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:433
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+840	      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+841	      { return __normal_iterator(_M_current - __n); }
+842	
+843	      const _Iterator&
+844	      base() const _GLIBCXX_NOEXCEPT
+845	      { return _M_current; }
+846	    };
+847	
+848	  // Note: In what follows, the left- and right-hand-side iterators are
+849	  // allowed to vary in types (conceptually in cv-qualification) so that
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x5555557764f8
+address max offset: 4
+Memory content after  bitflip:0x690x390xf80xcf
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_start
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 406
+value: 0x5555557764e0
+value address: 0x7fffffffd790
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 04:32:36]
+Fault Injection Successful after 2.3915205001831055s
+[INFO -- 2018-12-01 04:32:47]
+event type: exit
+[INFO -- 2018-12-01 04:32:47]
+exit code: 0

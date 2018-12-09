@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 07:51:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:51:15]
+Initialization strings:
+[INFO -- 2018-12-01 07:51:15]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:51:15]
+initSignal:0
+[INFO -- 2018-12-01 07:51:15]
+endSignal:13
+[INFO -- 2018-12-01 07:51:15]
+faultModel:2
+[INFO -- 2018-12-01 07:51:25]
+Backtrace BEGIN:
+#0  0x0000555555555e2f in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd800, __n=142) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555552d4 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:79
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555aab in main () at knapsackga.cpp:143
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x900x370x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd800
+address max offset: 8
+Memory content after  bitflip:0xe80xaa0x9d0x850x640xdf0x220x2e
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd7b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 07:51:25]
+Fault Injection Successful after 10.94054627418518s
+[INFO -- 2018-12-01 07:51:26]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:51:26]
+exit code: no exit code available

@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 05:39:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:39:35]
+Initialization strings:
+[INFO -- 2018-12-09 05:39:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:39:35]
+initSignal:1
+[INFO -- 2018-12-09 05:39:35]
+endSignal:8
+[INFO -- 2018-12-09 05:39:35]
+faultModel:3
+[INFO -- 2018-12-09 05:39:37]
+Backtrace BEGIN:
+#0  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#1  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#2  0x0000555555558625 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#3  0x000055555555715d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#4  0x00005555555562c2 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#5  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#6  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+431	       *
+432	       *  Calls @c a.allocate(n)
+433	      */
+434	      static pointer
+435	      allocate(allocator_type& __a, size_type __n)
+436	      { return __a.allocate(__n); }
+437	
+438	      /**
+439	       *  @brief  Allocate memory.
+440	       *  @param  __a  An allocator.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd780
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 136
+value: 0
+value address: 0x7fffffffd780
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 05:39:37]
+Fault Injection Successful after 2.6673645973205566s
+[INFO -- 2018-12-09 05:39:43]
+event type: exit
+[INFO -- 2018-12-09 05:39:43]
+exit code: 0

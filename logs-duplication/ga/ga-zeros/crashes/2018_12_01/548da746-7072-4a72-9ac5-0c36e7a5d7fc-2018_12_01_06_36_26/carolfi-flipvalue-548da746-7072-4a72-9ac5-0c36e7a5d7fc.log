@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 06:36:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:36:22]
+Initialization strings:
+[INFO -- 2018-12-01 06:36:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:36:22]
+initSignal:0
+[INFO -- 2018-12-01 06:36:22]
+endSignal:13
+[INFO -- 2018-12-01 06:36:22]
+faultModel:3
+[EXCEPTION -- 2018-12-01 06:36:24]
+pythonException: 19
+[EXCEPTION -- 2018-12-01 06:36:24]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 06:36:25]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff7ae1095 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7adec86 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7adecd1 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7adef14 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7adf49c in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x000055555555a2fe in __gnu_cxx::new_allocator<int>::allocate (this=0x55555577e500, __n=23456248628340) at /usr/include/c++/7/ext/new_allocator.h:111
+#8  0x0000555555559815 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=23456248628340) at /usr/include/c++/7/bits/alloc_traits.h:436
+#9  0x00005555555587e2 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x55555577e500, __n=23456248628340) at /usr/include/c++/7/bits/stl_vector.h:172
+#10 0x00005555555573be in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x55555577e500, __n=23456248628340, __first=non-dereferenceable iterator for std::vector, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#11 0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x55555577e500, __x=std::vector of length 23456248628340, capacity 23456248628340 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#12 0x000055555555a451 in chromossome::operator= (this=0x55555577e500) at knapsackga.cpp:42
+#13 0x000055555555a4a9 in std::__copy_move<false, false, std::random_access_iterator_tag>::__copy_m<chromossome const*, chromossome*> (__first=0x555555787f70, __last=0x5555557880f0, __result=0x55555577e500) at /usr/include/c++/7/bits/stl_algobase.h:324
+#14 0x0000555555559a4f in std::__copy_move_a<false, chromossome const*, chromossome*> (__first=0x555555787bf0, __last=0x5555557880f0, __result=0x55555577e180) at /usr/include/c++/7/bits/stl_algobase.h:386
+#15 0x0000555555558e06 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 200, capacity 256 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}) at /usr/include/c++/7/bits/stl_algobase.h:422
+#16 0x000055555555799a in std::copy<__gnu_cxx::__normal_iterator<chromossome const*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}, __last={solution = std::vector of length 0, capacity 1073741824, fitness = 1}, __result={solution = std::vector of length 200, capacity 256 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}) at /usr/include/c++/7/bits/stl_algobase.h:456
+#17 0x0000555555556979 in std::vector<chromossome, std::allocator<chromossome> >::operator= (this=0x7fffffffd860, __x=std::vector of length 40, capacity 64 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#18 0x00005555555557ff in genetic_algorithm () at knapsackga.cpp:117
+#19 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:36:25]
+Fault Injection Successful after 3.07542085647583s
+[INFO -- 2018-12-01 06:36:25]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:36:25]
+exit code: no exit code available

@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 22:51:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:51:23]
+Initialization strings:
+[INFO -- 2018-12-08 22:51:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:51:23]
+initSignal:1
+[INFO -- 2018-12-08 22:51:23]
+endSignal:8
+[INFO -- 2018-12-08 22:51:23]
+faultModel:1
+[INFO -- 2018-12-08 22:51:26]
+Backtrace BEGIN:
+#0  0x000055555555856a in std::allocator_traits<std::allocator<int> >::select_on_container_copy_construction (__rhs=...) at /usr/include/c++/7/bits/alloc_traits.h:504
+#1  0x00005555555570fa in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#2  0x000055555555614c in std::vector<int, std::allocator<int> >::vector (this=0x5555557766f0, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x0000555555558123 in chromossome::chromossome (this=0x5555557766f0) at knapsackga.cpp:63
+#4  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x5555557766f0, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x5555557766f0, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#7  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#9  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#10 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+499	       *  @brief  Obtain an allocator to use when copying a container.
+500	       *  @param  __rhs  An allocator.
+501	       *  @return @c __rhs
+502	      */
+503	      static allocator_type
+504	      select_on_container_copy_construction(const allocator_type& __rhs)
+505	      { return __rhs; }
+506	    };
+507	
+508	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xab0x080x00
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 568113
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:51:26]
+Fault Injection Successful after 3.2889904975891113s
+[INFO -- 2018-12-08 22:51:26]
+event type: exit
+[INFO -- 2018-12-08 22:51:26]
+exit code: 0

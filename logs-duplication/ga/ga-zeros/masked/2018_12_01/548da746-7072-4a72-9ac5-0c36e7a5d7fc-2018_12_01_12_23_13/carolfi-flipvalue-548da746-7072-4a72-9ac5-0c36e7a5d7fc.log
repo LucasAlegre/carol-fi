@@ -1,0 +1,61 @@
+[INFO -- 2018-12-01 12:23:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:23:00]
+Initialization strings:
+[INFO -- 2018-12-01 12:23:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:23:00]
+initSignal:0
+[INFO -- 2018-12-01 12:23:00]
+endSignal:13
+[INFO -- 2018-12-01 12:23:00]
+faultModel:3
+[INFO -- 2018-12-01 12:23:06]
+Backtrace BEGIN:
+#0  0x0000555555556de9 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:416
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+411		  // case, where the moves could alter a new element belonging
+412		  // to the existing vector.  This is an issue only for callers
+413		  // taking the element by lvalue ref (see last bullet of C++11
+414		  // [res.on.arguments]).
+415		  _Alloc_traits::construct(this->_M_impl,
+416					   __new_start + __elems_before,
+417	#if __cplusplus >= 201103L
+418					   std::forward<_Args>(__args)...);
+419	#else
+420					   __x);
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x500x2f0xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776418
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 59
+value: std::vector of length 2, capacity 2 = {{solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 0}, {solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -514590}}
+value address: 0x7fffffffd800
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 12:23:06]
+Fault Injection Successful after 6.271976470947266s
+[INFO -- 2018-12-01 12:23:13]
+event type: exit
+[INFO -- 2018-12-01 12:23:13]
+exit code: 0

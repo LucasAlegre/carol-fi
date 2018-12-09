@@ -1,0 +1,52 @@
+[INFO -- 2018-12-09 00:49:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:49:14]
+Initialization strings:
+[INFO -- 2018-12-09 00:49:14]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:49:14]
+initSignal:1
+[INFO -- 2018-12-09 00:49:14]
+endSignal:8
+[INFO -- 2018-12-09 00:49:14]
+faultModel:0
+[INFO -- 2018-12-09 00:49:16]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  __GI___libc_malloc (bytes=32) at malloc.c:3062
+#3  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x0000555555559cfe in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd820, __n=1) at /usr/include/c++/7/ext/new_allocator.h:111
+#5  0x000055555555928b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=1) at /usr/include/c++/7/bits/alloc_traits.h:436
+#6  0x0000555555558302 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd820, __n=1) at /usr/include/c++/7/bits/stl_vector.h:172
+#7  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#8  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#9  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#10 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+45	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd00xd70xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7b0
+address max offset: 8
+Memory content after  bitflip:0xd00xf70xff0xff0xff0x7f0x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_start
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 406
+value: 0x7fffffffd7d0
+value address: 0x7fffffffd7b0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 00:49:16]
+Fault Injection Successful after 2.228524684906006s
+[INFO -- 2018-12-09 00:49:22]
+event type: exit
+[INFO -- 2018-12-09 00:49:22]
+exit code: 0

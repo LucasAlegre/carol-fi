@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 05:21:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:21:21]
+Initialization strings:
+[INFO -- 2018-12-01 05:21:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:21:21]
+initSignal:0
+[INFO -- 2018-12-01 05:21:21]
+endSignal:13
+[INFO -- 2018-12-01 05:21:21]
+faultModel:2
+[INFO -- 2018-12-01 05:21:24]
+Backtrace BEGIN:
+#0  std::forward<chromossome const&> (__t=...) at /usr/include/c++/7/bits/move.h:73
+#1  0x0000555555558143 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd800, __p=0x555555776520, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776520, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+68	   *
+69	   *  This function is used to implement "perfect forwarding".
+70	   */
+71	  template<typename _Tp>
+72	    constexpr _Tp&&
+73	    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+74	    { return static_cast<_Tp&&>(__t); }
+75	
+76	  /**
+77	   *  @brief  Forward an rvalue.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x640x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd778
+address max offset: 8
+Memory content after  bitflip:0xa40x2a0x1c0xab0xae0x7a0x160xa9
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_finish
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 407
+value: 0x5555557764e0
+value address: 0x7fffffffd778
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 05:21:24]
+Fault Injection Successful after 3.201658248901367s
+[INFO -- 2018-12-01 05:21:33]
+event type: exit
+[INFO -- 2018-12-01 05:21:33]
+exit code: 0

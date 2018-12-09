@@ -1,0 +1,51 @@
+[INFO -- 2018-12-07 23:18:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:18:55]
+Initialization strings:
+[INFO -- 2018-12-07 23:18:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:18:55]
+initSignal:1
+[INFO -- 2018-12-07 23:18:55]
+endSignal:8
+[INFO -- 2018-12-07 23:18:55]
+faultModel:0
+[EXCEPTION -- 2018-12-07 23:18:58]
+pythonException: 19
+[EXCEPTION -- 2018-12-07 23:18:58]
+pythonException: 19
+[INFO -- 2018-12-07 23:18:58]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x100200000000) at malloc.c:3124
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd940, __p=0x100200000000) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x100200000000, __n=18446739673515556864) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd940, __p=0x100200000000, __n=18446739673515556864) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd940, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd940, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x000055555555567b in genetic_algorithm () at knapsackga.cpp:128
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3119	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x280x00
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 2685745
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 23:18:58]
+Fault Injection Successful after 3.968276023864746s
+[INFO -- 2018-12-07 23:18:59]
+event type: exit
+[EXCEPTION -- 2018-12-07 23:18:59]
+exit code: no exit code available

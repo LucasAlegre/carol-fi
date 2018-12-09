@@ -1,0 +1,63 @@
+[INFO -- 2018-12-08 22:01:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:01:46]
+Initialization strings:
+[INFO -- 2018-12-08 22:01:46]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:01:46]
+initSignal:1
+[INFO -- 2018-12-08 22:01:46]
+endSignal:8
+[INFO -- 2018-12-08 22:01:46]
+faultModel:0
+[EXCEPTION -- 2018-12-08 22:01:50]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 22:01:51]
+Backtrace BEGIN:
+#0  std::allocator<int>::~allocator (this=0x555555557370 <std::_Vector_base<int, std::allocator<int> >::_M_deallocate(int*, unsigned long)+50>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#1  0x0000555555556b26 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x55555578add0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#2  0x0000555555556b93 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555578add0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#3  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555578add0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x0000555555555e4c in chromossome::~chromossome (this=0x55555578add0, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#5  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x55555578add0) at /usr/include/c++/7/bits/stl_construct.h:98
+#6  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x55555578add0, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:108
+#7  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:137
+#8  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:206
+#9  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#10 0x000055555555591e in genetic_algorithm () at knapsackga.cpp:121
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+139	      ~allocator() throw() { }
+140	
+141	      // Inherit everything else.
+142	    };
+143	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x500xb10x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7d0
+address max offset: 8
+Memory content after  bitflip:0x500xb10x780x550x550x150x000x00
+frame name: std::_Destroy_aux<false>::__destroy<chromossome*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 105
+value: 0x55555578b150
+value address: 0x7fffffffd7d0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 22:01:51]
+Fault Injection Successful after 5.119724750518799s
+[INFO -- 2018-12-08 22:01:51]
+event type: exit
+[EXCEPTION -- 2018-12-08 22:01:51]
+exit code: no exit code available

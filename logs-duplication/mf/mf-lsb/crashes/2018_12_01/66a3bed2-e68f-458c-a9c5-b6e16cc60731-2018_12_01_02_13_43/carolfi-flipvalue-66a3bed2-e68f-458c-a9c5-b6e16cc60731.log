@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 02:13:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:13:37]
+Initialization strings:
+[INFO -- 2018-12-01 02:13:37]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 02:13:37]
+initSignal:0
+[INFO -- 2018-12-01 02:13:37]
+endSignal:12
+[INFO -- 2018-12-01 02:13:37]
+faultModel:4
+[INFO -- 2018-12-01 02:13:38]
+Backtrace BEGIN:
+#0  0x0000555555555a46 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd6d0, __n=52) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x00005555555550c5 in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:28
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x000055555555558a in main () at knapsackmf.cpp:81
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x310x0d0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555576f5b8
+address max offset: 4
+Memory content after  bitflip:0x310x0d0x000x02
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackmf.cpp
+symbol line: 0
+value: 0x7fffffffd6d0
+value address: 0x7fffffffd5e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 02:13:38]
+Fault Injection Successful after 1.1152493953704834s
+[INFO -- 2018-12-01 02:13:42]
+event type: exit
+[EXCEPTION -- 2018-12-01 02:13:42]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 01:07:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 01:07:07]
+Initialization strings:
+[INFO -- 2018-12-09 01:07:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 01:07:07]
+initSignal:1
+[INFO -- 2018-12-09 01:07:07]
+endSignal:8
+[INFO -- 2018-12-09 01:07:07]
+faultModel:2
+[INFO -- 2018-12-09 01:07:09]
+Backtrace BEGIN:
+#0  std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555786880) at /usr/include/c++/7/bits/stl_uninitialized.h:128
+#1  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555786880) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x00005555555561bb in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd960, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x000055555555527f in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:88
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+123	      const bool __assignable = true;
+124	#else
+125	      // trivial types can have deleted assignment
+126	      typedef typename iterator_traits<_InputIterator>::reference _RefType1;
+127	      typedef typename iterator_traits<_ForwardIterator>::reference _RefType2;
+128	      const bool __assignable = is_assignable<_RefType2, _RefType1>::value;
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0a8 
+address max offset: 4
+Memory content after  bitflip:0x220x1b0x970xb2
+frame name: tournament
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -1298719966
+value address: 0x55555575f0a8 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 01:07:09]
+Fault Injection Successful after 2.2428295612335205s
+[INFO -- 2018-12-09 01:07:09]
+event type: exit
+[EXCEPTION -- 2018-12-09 01:07:09]
+exit code: no exit code available

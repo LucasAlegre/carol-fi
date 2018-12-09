@@ -1,0 +1,57 @@
+[INFO -- 2018-12-09 08:34:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 08:34:42]
+Initialization strings:
+[INFO -- 2018-12-09 08:34:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 08:34:42]
+initSignal:1
+[INFO -- 2018-12-09 08:34:42]
+endSignal:8
+[INFO -- 2018-12-09 08:34:42]
+faultModel:1
+[EXCEPTION -- 2018-12-09 08:34:46]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 08:34:46]
+Backtrace BEGIN:
+#0  0x0000555555558327 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776540, __last=0x7fffffffd760, __result=0x555555556d7a <std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>(std::allocator<chromossome>&, chromossome*, chromossome const&)+54>, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:305
+#1  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+300	    }
+301	
+302	  template<typename _InputIterator, typename _ForwardIterator,
+303		   typename _Allocator>
+304	    inline _ForwardIterator
+305	    __uninitialized_move_if_noexcept_a(_InputIterator __first,
+306					       _InputIterator __last,
+307					       _ForwardIterator __result,
+308					       _Allocator& __alloc)
+309	    {
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x650x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd748
+address max offset: 8
+Memory content after  bitflip:0x400x650x770x550x550x550xc00x00
+frame name: std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> >
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 305
+value: 0x555555776540
+value address: 0x7fffffffd748
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 08:34:46]
+Fault Injection Successful after 4.875367164611816s
+[INFO -- 2018-12-09 08:34:47]
+event type: exit
+[EXCEPTION -- 2018-12-09 08:34:47]
+exit code: no exit code available

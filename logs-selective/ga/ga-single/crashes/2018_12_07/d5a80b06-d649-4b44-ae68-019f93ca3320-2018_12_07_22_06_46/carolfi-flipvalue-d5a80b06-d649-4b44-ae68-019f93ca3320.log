@@ -1,0 +1,56 @@
+[INFO -- 2018-12-07 22:06:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:06:40]
+Initialization strings:
+[INFO -- 2018-12-07 22:06:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:06:40]
+initSignal:1
+[INFO -- 2018-12-07 22:06:40]
+endSignal:8
+[INFO -- 2018-12-07 22:06:40]
+faultModel:0
+[EXCEPTION -- 2018-12-07 22:06:44]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-07 22:06:44]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-07 22:06:45]
+Backtrace BEGIN:
+#0  0x0000555555555e77 in std::vector<int, std::allocator<int> >::operator[] (this=0x55555575f090 <wt2>, __n=80) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x000055555555512c in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:45
+#2  0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0xa80x000x000x00
+frame name: cost
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: 168
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 22:06:45]
+Fault Injection Successful after 5.138887166976929s
+[INFO -- 2018-12-07 22:06:45]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:06:45]
+exit code: no exit code available

@@ -1,0 +1,62 @@
+[INFO -- 2018-12-02 06:32:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:32:23]
+Initialization strings:
+[INFO -- 2018-12-02 06:32:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:32:23]
+initSignal:0
+[INFO -- 2018-12-02 06:32:23]
+endSignal:13
+[INFO -- 2018-12-02 06:32:23]
+faultModel:3
+[INFO -- 2018-12-02 06:32:24]
+Backtrace BEGIN:
+#0  0x000055555555ab34 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_algobase.h:425
+#1  0x000055555555a264 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_algobase.h:456
+#2  0x000055555555971c in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#3  0x0000555555558692 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555557223 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x0000555555556161 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#6  0x000055555555810d in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#7  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8d0, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#8  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#9  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#10 0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#12 0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#13 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+420	    __copy_move_a2(_II __first, _II __last, _OI __result)
+421	    {
+422	      return _OI(std::__copy_move_a<_IsMove>(std::__niter_base(__first),
+423						     std::__niter_base(__last),
+424						     std::__niter_base(__result)));
+425	    }
+426	
+427	  /**
+428	   *  @brief Copies the range [first,last) into result.
+429	   *  @ingroup mutating_algorithms
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 0
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 06:32:24]
+Fault Injection Successful after 1.5530016422271729s
+[INFO -- 2018-12-02 06:32:24]
+event type: exit
+[EXCEPTION -- 2018-12-02 06:32:24]
+exit code: no exit code available

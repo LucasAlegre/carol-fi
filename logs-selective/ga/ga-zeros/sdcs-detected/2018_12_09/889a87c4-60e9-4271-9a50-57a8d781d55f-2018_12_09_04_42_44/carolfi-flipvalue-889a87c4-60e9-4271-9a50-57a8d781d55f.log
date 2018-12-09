@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 04:42:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:42:42]
+Initialization strings:
+[INFO -- 2018-12-09 04:42:42]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:42:42]
+initSignal:1
+[INFO -- 2018-12-09 04:42:42]
+endSignal:8
+[INFO -- 2018-12-09 04:42:42]
+faultModel:3
+[INFO -- 2018-12-09 04:42:43]
+Backtrace BEGIN:
+#0  0x0000555555557dbc in std::_Destroy<int*> (__first=0x555555782f20, __last=0x555555783240) at /usr/include/c++/7/bits/stl_construct.h:137
+#1  0x0000555555556bcb in std::_Destroy<int*, int> (__first=0x555555782f20, __last=0x555555783240) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555555ecb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555e4c in chromossome::~chromossome (this=0x7fffffffd980, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#4  0x000055555555575f in genetic_algorithm () at knapsackga.cpp:131
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+132	      // A deleted destructor is trivial, this ensures we reject such types:
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 0
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 04:42:43]
+Fault Injection Successful after 1.9704415798187256s
+[INFO -- 2018-12-09 04:42:43]
+event type: exit
+[INFO -- 2018-12-09 04:42:43]
+exit code: 0

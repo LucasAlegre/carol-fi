@@ -1,0 +1,53 @@
+[INFO -- 2018-12-08 23:18:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:18:41]
+Initialization strings:
+[INFO -- 2018-12-08 23:18:41]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 23:18:41]
+initSignal:0
+[INFO -- 2018-12-08 23:18:41]
+endSignal:9
+[INFO -- 2018-12-08 23:18:41]
+faultModel:3
+[INFO -- 2018-12-08 23:18:42]
+Backtrace BEGIN:
+#0  0x000055555555610a in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x5555557727c0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#1  0x0000555555555a01 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd740, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#2  0x00005555555552f7 in simulated_annealing () at knapsacksa.cpp:89
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+292		   typename _Allocator>
+293	    inline _ForwardIterator
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x5555557727c0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 288
+value: 0x5555557727c0
+value address: 0x7fffffffd668
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 23:18:42]
+Fault Injection Successful after 1.611525297164917s
+[INFO -- 2018-12-08 23:18:51]
+event type: exit
+[INFO -- 2018-12-08 23:18:51]
+exit code: 0

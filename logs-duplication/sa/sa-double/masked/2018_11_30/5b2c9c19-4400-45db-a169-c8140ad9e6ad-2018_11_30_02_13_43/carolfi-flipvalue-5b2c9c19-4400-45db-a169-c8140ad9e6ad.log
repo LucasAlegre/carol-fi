@@ -1,0 +1,52 @@
+[INFO -- 2018-11-30 02:13:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:13:35]
+Initialization strings:
+[INFO -- 2018-11-30 02:13:35]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:13:35]
+initSignal:0
+[INFO -- 2018-11-30 02:13:35]
+endSignal:7
+[INFO -- 2018-11-30 02:13:35]
+faultModel:1
+[INFO -- 2018-11-30 02:13:36]
+Backtrace BEGIN:
+#0  malloc (n=11) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  0x00007ffff719103e in tcache_get (tc_idx=<optimized out>) at malloc.c:2978
+#3  __GI___libc_malloc (bytes=800) at malloc.c:3079
+#4  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x0000555555556f72 in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#6  0x0000555555556cd5 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#7  0x0000555555556892 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#8  0x0000555555556707 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd990, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#9  0x0000555555555e7b in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd990, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#10 0x00005555555558f5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#11 0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#12 0x0000555555555522 in main () at knapsacksa.cpp:85
+
+45	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 8
+Memory content after  bitflip:0xc80x000x000x000x000x000x110x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: __n
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 136
+value: 4785074604081352
+value address: 0x7fffffffd8c0
+Type: The type is an integer type.
+Type sizeof: 8
+
+[INFO -- 2018-11-30 02:13:36]
+Fault Injection Successful after 1.632749080657959s
+[INFO -- 2018-11-30 02:13:42]
+event type: exit
+[INFO -- 2018-11-30 02:13:42]
+exit code: 0

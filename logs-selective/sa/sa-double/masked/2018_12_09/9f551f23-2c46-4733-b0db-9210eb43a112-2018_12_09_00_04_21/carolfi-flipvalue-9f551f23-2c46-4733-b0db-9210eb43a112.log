@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 00:04:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:04:11]
+Initialization strings:
+[INFO -- 2018-12-09 00:04:11]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-09 00:04:11]
+initSignal:0
+[INFO -- 2018-12-09 00:04:11]
+endSignal:9
+[INFO -- 2018-12-09 00:04:11]
+faultModel:1
+[INFO -- 2018-12-09 00:04:13]
+Backtrace BEGIN:
+#0  0x0000555555555da4 in std::min<int> (__a=@0x7fffffffd704: -474787, __b=@0x7fffffffd700: -499227) at /usr/include/c++/7/bits/stl_algobase.h:200
+#1  0x0000555555555420 in simulated_annealing () at knapsacksa.cpp:113
+#2  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+195	    min(const _Tp& __a, const _Tp& __b)
+196	    {
+197	      // concept requirements
+198	      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+199	      //return __b < __a ? __b : __a;
+200	      if (__b < __a)
+201		return __b;
+202	      return __a;
+203	    }
+204	
+
+Backtrace END
+Memory content before bitflip:0x2b0x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd718
+address max offset: 4
+Memory content after  bitflip:0x3f0x000x000x00
+frame name: simulated_annealing
+symbol name: i
+symbol filename: knapsacksa.cpp
+symbol line: 90
+value: 63
+value address: 0x7fffffffd718
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 00:04:13]
+Fault Injection Successful after 2.723618984222412s
+[INFO -- 2018-12-09 00:04:20]
+event type: exit
+[INFO -- 2018-12-09 00:04:20]
+exit code: 0

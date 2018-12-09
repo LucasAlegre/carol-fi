@@ -1,0 +1,51 @@
+[INFO -- 2018-11-30 02:02:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:02:33]
+Initialization strings:
+[INFO -- 2018-11-30 02:02:33]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:02:33]
+initSignal:0
+[INFO -- 2018-11-30 02:02:33]
+endSignal:7
+[INFO -- 2018-11-30 02:02:33]
+faultModel:2
+[INFO -- 2018-11-30 02:02:34]
+Backtrace BEGIN:
+#0  0x0000555555555075 in random01 () at knapsacksa.cpp:22
+#1  0x000055555555528f in simulated_annealing () at knapsacksa.cpp:58
+#2  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+17	int rand_bit(){
+18	    return rand() % 2;
+19	}
+20	
+21	float random01(){
+22	   return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+23	}
+24	
+25	int cost(vector<int> &solution){
+26	    int peso=0, valor=0;
+
+Backtrace END
+Memory content before bitflip:0x0d0x680xf80xff
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd954
+address max offset: 4
+Memory content after  bitflip:0x5e0x700xe50x16
+frame name: simulated_annealing
+symbol name: best
+symbol filename: knapsacksa.cpp
+symbol line: 43
+value: 384135262
+value address: 0x7fffffffd954
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 02:02:34]
+Fault Injection Successful after 1.3957691192626953s
+[INFO -- 2018-11-30 02:02:41]
+event type: exit
+[INFO -- 2018-11-30 02:02:41]
+exit code: 0

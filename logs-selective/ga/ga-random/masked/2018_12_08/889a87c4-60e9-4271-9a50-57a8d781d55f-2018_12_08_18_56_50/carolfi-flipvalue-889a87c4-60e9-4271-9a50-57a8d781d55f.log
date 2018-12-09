@@ -1,0 +1,61 @@
+[INFO -- 2018-12-08 18:56:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:56:41]
+Initialization strings:
+[INFO -- 2018-12-08 18:56:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:56:41]
+initSignal:1
+[INFO -- 2018-12-08 18:56:41]
+endSignal:8
+[INFO -- 2018-12-08 18:56:41]
+faultModel:2
+[INFO -- 2018-12-08 18:56:44]
+Backtrace BEGIN:
+#0  0x00005555555591e1 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555557257 <std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int>(__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, std::allocator<int>&)+47>, __last=0x7fffffffd7a0) at /usr/include/c++/7/bits/stl_construct.h:105
+#1  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#4  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#5  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+100	  template<bool>
+101	    struct _Destroy_aux
+102	    {
+103	      template<typename _ForwardIterator>
+104	        static void
+105	        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+106		{
+107		  for (; __first != __last; ++__first)
+108		    std::_Destroy(std::__addressof(*__first));
+109		}
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555784560
+address max offset: 4
+Memory content after  bitflip:0x9c0x800x0b0xe5
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555776740
+value address: 0x7fffffffd7c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 18:56:44]
+Fault Injection Successful after 3.557842254638672s
+[INFO -- 2018-12-08 18:56:49]
+event type: exit
+[INFO -- 2018-12-08 18:56:49]
+exit code: 0

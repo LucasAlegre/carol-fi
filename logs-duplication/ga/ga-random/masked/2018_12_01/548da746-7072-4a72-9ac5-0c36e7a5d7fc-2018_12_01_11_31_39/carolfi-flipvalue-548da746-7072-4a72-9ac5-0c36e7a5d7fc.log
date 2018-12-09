@@ -1,0 +1,64 @@
+[INFO -- 2018-12-01 11:31:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:31:26]
+Initialization strings:
+[INFO -- 2018-12-01 11:31:26]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:31:26]
+initSignal:0
+[INFO -- 2018-12-01 11:31:26]
+endSignal:13
+[INFO -- 2018-12-01 11:31:26]
+faultModel:2
+[INFO -- 2018-12-01 11:31:29]
+Backtrace BEGIN:
+#0  0x0000555555558660 in __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd6a0, __i=@0x7fffffffd698: 0x55555577eda0) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555557185 in std::vector<int, std::allocator<int> >::begin (this=0x55555577e180) at /usr/include/c++/7/bits/stl_vector.h:573
+#2  0x0000555555556150 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#3  0x000055555555810d in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#4  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd880, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#7  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x00005555555554bd in genetic_algorithm () at knapsackga.cpp:98
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557841a0
+address max offset: 4
+Memory content after  bitflip:0x110x500x7c0x21
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __p
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: 0x555555776380
+value address: 0x7fffffffd790
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 11:31:29]
+Fault Injection Successful after 3.7700209617614746s
+[INFO -- 2018-12-01 11:31:39]
+event type: exit
+[INFO -- 2018-12-01 11:31:39]
+exit code: 0

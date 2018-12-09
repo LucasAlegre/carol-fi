@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 17:16:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:16:19]
+Initialization strings:
+[INFO -- 2018-12-08 17:16:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:16:19]
+initSignal:1
+[INFO -- 2018-12-08 17:16:19]
+endSignal:8
+[INFO -- 2018-12-08 17:16:19]
+faultModel:2
+[INFO -- 2018-12-08 17:16:23]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >::base (this=0x7fffffffd780) at /usr/include/c++/7/bits/stl_iterator.h:844
+#1  0x00005555555582c3 in __gnu_cxx::operator-<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > (__lhs={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __rhs={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -508698}) at /usr/include/c++/7/bits/stl_iterator.h:965
+#2  0x0000555555556de3 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:405
+#3  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#5  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+839	      __normal_iterator
+840	      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+841	      { return __normal_iterator(_M_current - __n); }
+842	
+843	      const _Iterator&
+844	      base() const _GLIBCXX_NOEXCEPT
+845	      { return _M_current; }
+846	    };
+847	
+848	  // Note: In what follows, the left- and right-hand-side iterators are
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x640x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd828
+address max offset: 8
+Memory content after  bitflip:0x350xe20x620xe90x660x9d0x590x91
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 17:16:23]
+Fault Injection Successful after 4.884272575378418s
+[INFO -- 2018-12-08 17:16:24]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:16:24]
+exit code: no exit code available

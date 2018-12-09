@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 11:48:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:48:58]
+Initialization strings:
+[INFO -- 2018-12-01 11:48:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:48:58]
+initSignal:0
+[INFO -- 2018-12-01 11:48:58]
+endSignal:13
+[INFO -- 2018-12-01 11:48:58]
+faultModel:0
+[INFO -- 2018-12-01 11:49:05]
+Backtrace BEGIN:
+#0  0x0000555555556d48 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#1  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555aab in main () at knapsackga.cpp:143
+
+470	       *  Calls <tt> __a.construct(__p, std::forward<Args>(__args)...) </tt>
+471	      */
+472	      template<typename _Up, typename... _Args>
+473		static void
+474		construct(allocator_type& __a, _Up* __p, _Args&&... __args)
+475		{ __a.construct(__p, std::forward<_Args>(__args)...); }
+476	
+477	      /**
+478	       *  @brief  Destroy an object of type @a _Up
+479	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd760
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x200x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __position
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: <error reading variable: Cannot access memory at address 0x20000000000000>
+value address: 0x7fffffffd760
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 11:49:05]
+Fault Injection Successful after 7.621903896331787s
+[INFO -- 2018-12-01 11:49:05]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:49:05]
+exit code: no exit code available

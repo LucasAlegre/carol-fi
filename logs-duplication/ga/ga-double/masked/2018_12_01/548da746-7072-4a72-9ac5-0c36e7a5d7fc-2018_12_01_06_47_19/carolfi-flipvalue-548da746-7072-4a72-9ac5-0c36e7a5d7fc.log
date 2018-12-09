@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 06:47:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:47:06]
+Initialization strings:
+[INFO -- 2018-12-01 06:47:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:47:06]
+initSignal:0
+[INFO -- 2018-12-01 06:47:06]
+endSignal:13
+[INFO -- 2018-12-01 06:47:06]
+faultModel:1
+[INFO -- 2018-12-01 06:47:08]
+Backtrace BEGIN:
+#0  0x0000555555555e8c in std::move<int&> (__t=@0x555555784bd4: 0) at /usr/include/c++/7/bits/move.h:99
+#1  0x00005555555565f1 in std::swap<int> (__a=@0x555555784bd4: 0, __b=@0x5555557804d4: 0) at /usr/include/c++/7/bits/move.h:198
+#2  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555784bd4
+address max offset: 4
+Memory content after  bitflip:0x000x000x480x00
+frame name: std::swap<int>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x555555784bd4
+value address: 0x555555784bd4
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:47:08]
+Fault Injection Successful after 2.3513712882995605s
+[INFO -- 2018-12-01 06:47:19]
+event type: exit
+[INFO -- 2018-12-01 06:47:19]
+exit code: 0

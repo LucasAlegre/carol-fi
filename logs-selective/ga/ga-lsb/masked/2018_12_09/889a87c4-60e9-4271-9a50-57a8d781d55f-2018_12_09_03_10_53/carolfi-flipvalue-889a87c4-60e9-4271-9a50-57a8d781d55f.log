@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 03:10:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:10:44]
+Initialization strings:
+[INFO -- 2018-12-09 03:10:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:10:44]
+initSignal:1
+[INFO -- 2018-12-09 03:10:44]
+endSignal:8
+[INFO -- 2018-12-09 03:10:44]
+faultModel:4
+[EXCEPTION -- 2018-12-09 03:10:47]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 03:10:47]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7b4) at random_r.c:379
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#4  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#5  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+374	in random_r.c
+
+Backtrace END
+Fliping value of field: degrees
+Fliping array at pos: 1
+Memory content before bitflip:0x070x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff75f1898 
+address max offset: 4
+Memory content after  bitflip:0x070x000x000x10
+frame name: __random_r
+symbol name: random_poly_info
+symbol filename: random_r.c
+symbol line: 143
+value: {seps = {0, 3, 1, 3, 1}, degrees = {0, 268435463, 15, 31, 63}}
+value address: 0x7ffff75f1880 <random_poly_info>
+Type: The type is a structure.
+Type sizeof: 40
+Field name: seps
+Field Type: The type is an array.
+Field Type sizeof: 20
+Field name: degrees
+Field Type: The type is an array.
+Field Type sizeof: 20
+
+[INFO -- 2018-12-09 03:10:47]
+Fault Injection Successful after 3.8106513023376465s
+[INFO -- 2018-12-09 03:10:52]
+event type: exit
+[INFO -- 2018-12-09 03:10:52]
+exit code: 0

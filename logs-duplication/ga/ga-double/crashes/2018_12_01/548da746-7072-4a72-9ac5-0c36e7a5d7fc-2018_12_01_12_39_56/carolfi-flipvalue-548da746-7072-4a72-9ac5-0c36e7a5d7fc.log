@@ -1,0 +1,65 @@
+[INFO -- 2018-12-01 12:39:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:39:51]
+Initialization strings:
+[INFO -- 2018-12-01 12:39:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:39:51]
+initSignal:0
+[INFO -- 2018-12-01 12:39:51]
+endSignal:13
+[INFO -- 2018-12-01 12:39:51]
+faultModel:1
+[EXCEPTION -- 2018-12-01 12:39:54]
+gdbException: Cannot access memory at address 0x1d5555776fc0
+[INFO -- 2018-12-01 12:39:54]
+Backtrace BEGIN:
+#0  0x0000555555559cb8 in std::move_iterator<chromossome*>::move_iterator (this=0x7fffffffd6f0, __i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1037
+#1  0x000055555555925f in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1222
+#2  0x0000555555558338 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776440, __last=0x555555776440, __result=0x555555776540, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#3  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1032	      move_iterator()
+1033	      : _M_current() { }
+1034	
+1035	      explicit _GLIBCXX17_CONSTEXPR
+1036	      move_iterator(iterator_type __i)
+1037	      : _M_current(__i) { }
+1038	
+1039	      template<typename _Iter>
+1040		_GLIBCXX17_CONSTEXPR
+1041		move_iterator(const move_iterator<_Iter>& __i)
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8f0
+address max offset: 8
+Memory content after  bitflip:0x000x000x140x000x000x000x000x00
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 0, capacity 327680
+value address: 0x7fffffffd8e0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 12:39:54]
+Fault Injection Successful after 3.931727409362793s
+[INFO -- 2018-12-01 12:39:55]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:39:55]
+exit code: no exit code available

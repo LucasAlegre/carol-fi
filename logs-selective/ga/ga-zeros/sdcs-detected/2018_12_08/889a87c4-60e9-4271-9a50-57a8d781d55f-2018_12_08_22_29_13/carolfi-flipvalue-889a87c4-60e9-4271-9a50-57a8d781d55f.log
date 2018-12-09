@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 22:29:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:29:10]
+Initialization strings:
+[INFO -- 2018-12-08 22:29:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:29:10]
+initSignal:1
+[INFO -- 2018-12-08 22:29:10]
+endSignal:8
+[INFO -- 2018-12-08 22:29:10]
+faultModel:3
+[INFO -- 2018-12-08 22:29:12]
+Backtrace BEGIN:
+#0  std::allocator<int>::allocator (this=0x7fffffffd7d0, __a=...) at /usr/include/c++/7/bits/allocator.h:133
+#1  0x00005555555585db in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd820, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#2  0x000055555555714a in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#3  0x00005555555562c2 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#4  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#5  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+128	      typedef true_type is_always_equal;
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::allocator<int>::allocator
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:29:12]
+Fault Injection Successful after 2.611945867538452s
+[INFO -- 2018-12-08 22:29:12]
+event type: exit
+[INFO -- 2018-12-08 22:29:12]
+exit code: 0

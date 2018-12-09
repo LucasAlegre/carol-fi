@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 01:30:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:30:58]
+Initialization strings:
+[INFO -- 2018-12-01 01:30:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:30:58]
+initSignal:0
+[INFO -- 2018-12-01 01:30:58]
+endSignal:13
+[INFO -- 2018-12-01 01:30:58]
+faultModel:0
+[EXCEPTION -- 2018-12-01 01:30:59]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 01:30:59]
+Backtrace BEGIN:
+#0  0x00007ffff74e25f0 in _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555780ea0, have_lock=0) at malloc.c:4149
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd980, __p=0x555555780eb0) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555780eb0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd980, __p=0x555555780eb0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x0000555555555df2 in chromossome::~chromossome (this=0x7fffffffd980, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#8  0x0000555555555643 in genetic_algorithm () at knapsackga.cpp:105
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+4144	in malloc.c
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555780eb0
+address max offset: 4
+Memory content after  bitflip:0x000x020x000x00
+frame name: std::allocator_traits<std::allocator<int> >::deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 461
+value: 0x555555780eb0
+value address: 0x7fffffffd790
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:30:59]
+Fault Injection Successful after 1.8461685180664062s
+[INFO -- 2018-12-01 01:31:11]
+event type: exit
+[EXCEPTION -- 2018-12-01 01:31:11]
+exit code: no exit code available

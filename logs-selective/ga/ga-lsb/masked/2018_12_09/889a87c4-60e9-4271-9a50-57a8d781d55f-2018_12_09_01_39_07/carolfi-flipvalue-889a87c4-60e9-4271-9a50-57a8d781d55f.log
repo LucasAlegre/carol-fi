@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 01:38:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 01:38:58]
+Initialization strings:
+[INFO -- 2018-12-09 01:38:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 01:38:58]
+initSignal:1
+[INFO -- 2018-12-09 01:38:58]
+endSignal:8
+[INFO -- 2018-12-09 01:38:58]
+faultModel:4
+[INFO -- 2018-12-09 01:39:00]
+Backtrace BEGIN:
+#0  0x0000555555556e35 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+410		  // The order of the three operations is dictated by the C++11
+411		  // case, where the moves could alter a new element belonging
+412		  // to the existing vector.  This is an issue only for callers
+413		  // taking the element by lvalue ref (see last bullet of C++11
+414		  // [res.on.arguments]).
+415		  _Alloc_traits::construct(this->_M_impl,
+416					   __new_start + __elems_before,
+417	#if __cplusplus >= 201103L
+418					   std::forward<_Args>(__args)...);
+419	#else
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd950
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x04
+frame name: tournament
+symbol name: tournamentWinner
+symbol filename: knapsackga.cpp
+symbol line: 88
+value: std::vector of length 0, capacity 72057594037927936
+value address: 0x7fffffffd940
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 01:39:00]
+Fault Injection Successful after 2.1004176139831543s
+[INFO -- 2018-12-09 01:39:07]
+event type: exit
+[INFO -- 2018-12-09 01:39:07]
+exit code: 0

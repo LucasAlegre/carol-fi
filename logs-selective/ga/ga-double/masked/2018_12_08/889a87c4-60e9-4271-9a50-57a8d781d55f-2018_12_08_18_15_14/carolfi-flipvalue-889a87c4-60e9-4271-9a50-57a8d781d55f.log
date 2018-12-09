@@ -1,0 +1,52 @@
+[INFO -- 2018-12-08 18:15:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:15:05]
+Initialization strings:
+[INFO -- 2018-12-08 18:15:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:15:05]
+initSignal:1
+[INFO -- 2018-12-08 18:15:05]
+endSignal:8
+[INFO -- 2018-12-08 18:15:05]
+faultModel:1
+[INFO -- 2018-12-08 18:15:10]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd920, __n=120) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x00005555555553c8 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:101
+#2  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Memory content before bitflip:0xe20x250xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd86c
+address max offset: 4
+Memory content after  bitflip:0xe40x250xf80xff
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 113
+value: -514588
+value address: 0x7fffffffd86c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:15:10]
+Fault Injection Successful after 5.514166355133057s
+[INFO -- 2018-12-08 18:15:13]
+event type: exit
+[INFO -- 2018-12-08 18:15:13]
+exit code: 0

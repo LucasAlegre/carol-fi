@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 01:32:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:32:58]
+Initialization strings:
+[INFO -- 2018-12-01 01:32:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:32:58]
+initSignal:0
+[INFO -- 2018-12-01 01:32:58]
+endSignal:13
+[INFO -- 2018-12-01 01:32:58]
+faultModel:0
+[INFO -- 2018-12-01 01:32:59]
+Backtrace BEGIN:
+#0  0x000055555555765b in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x555555556cc7 <std::_Vector_base<chromossome, std::allocator<chromossome> >::~_Vector_base()+77>, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1529
+#1  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#2  0x000055555555555c in genetic_algorithm () at knapsackga.cpp:102
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1524	    private:
+1525	      // Constant-time move assignment when source object's memory can be
+1526	      // moved, either because the source's allocator will move too
+1527	      // or because the allocators are equal.
+1528	      void
+1529	      _M_move_assign(vector&& __x, std::true_type) noexcept
+1530	      {
+1531		vector __tmp(get_allocator());
+1532		this->_M_impl._M_swap_data(__tmp._M_impl);
+1533		this->_M_impl._M_swap_data(__x._M_impl);
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x210xfb0x080x00
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 588577
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 01:32:59]
+Fault Injection Successful after 1.3749768733978271s
+[INFO -- 2018-12-01 01:33:11]
+event type: exit
+[INFO -- 2018-12-01 01:33:11]
+exit code: 0

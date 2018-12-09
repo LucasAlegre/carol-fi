@@ -1,0 +1,54 @@
+[INFO -- 2018-12-08 23:39:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:39:12]
+Initialization strings:
+[INFO -- 2018-12-08 23:39:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:39:12]
+initSignal:1
+[INFO -- 2018-12-08 23:39:12]
+endSignal:8
+[INFO -- 2018-12-08 23:39:12]
+faultModel:0
+[EXCEPTION -- 2018-12-08 23:39:18]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 23:39:18]
+Backtrace BEGIN:
+#0  0x000055555555665e in std::swap<int> (__a=@0x555555786ab8: 1, __b=@0x555555783488: 1) at /usr/include/c++/7/bits/move.h:199
+#1  0x00005555555553eb in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 198, capacity 198 = {...}) at knapsackga.cpp:101
+#2  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x20
+frame name: genetic_algorithm
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 537459505
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 23:39:18]
+Fault Injection Successful after 6.927148103713989s
+[INFO -- 2018-12-08 23:39:19]
+event type: exit
+[EXCEPTION -- 2018-12-08 23:39:19]
+exit code: no exit code available

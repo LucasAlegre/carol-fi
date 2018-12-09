@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 22:47:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:47:34]
+Initialization strings:
+[INFO -- 2018-12-08 22:47:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:47:34]
+initSignal:1
+[INFO -- 2018-12-08 22:47:34]
+endSignal:8
+[INFO -- 2018-12-08 22:47:34]
+faultModel:4
+[INFO -- 2018-12-08 22:47:38]
+Backtrace BEGIN:
+#0  0x00005555555571bd in std::vector<int, std::allocator<int> >::begin (this=0x555555780f70) at /usr/include/c++/7/bits/stl_vector.h:573
+#1  0x00005555555561aa in std::vector<int, std::allocator<int> >::vector (this=0x555555776420, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#2  0x0000555555558123 in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:63
+#3  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#8  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+568	       *  first element in the %vector.  Iteration is done in ordinary
+569	       *  element order.
+570	       */
+571	      const_iterator
+572	      begin() const _GLIBCXX_NOEXCEPT
+573	      { return const_iterator(this->_M_impl._M_start); }
+574	
+575	      /**
+576	       *  Returns a read/write iterator that points one past the last
+577	       *  element in the %vector.  Iteration is done in ordinary
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x40
+frame name: genetic_algorithm
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 1073742024
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:47:38]
+Fault Injection Successful after 4.710351943969727s
+[INFO -- 2018-12-08 22:47:38]
+event type: exit
+[INFO -- 2018-12-08 22:47:38]
+exit code: 0

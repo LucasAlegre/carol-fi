@@ -1,0 +1,55 @@
+[INFO -- 2018-12-02 05:18:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:18:08]
+Initialization strings:
+[INFO -- 2018-12-02 05:18:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:18:08]
+initSignal:0
+[INFO -- 2018-12-02 05:18:08]
+endSignal:13
+[INFO -- 2018-12-02 05:18:08]
+faultModel:2
+[EXCEPTION -- 2018-12-02 05:18:15]
+gdbException: Cannot access memory at address 0xa94d65985d34f59c
+[EXCEPTION -- 2018-12-02 05:18:15]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-02 05:18:15]
+Backtrace BEGIN:
+#0  0x0000555555555050 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:26
+#1  0x000055555555578e in genetic_algorithm () at knapsackga.cpp:112
+#2  0x0000555555555aab in main () at knapsackga.cpp:143
+
+21	}
+22	
+23	int cost(vector<int> &solution){
+24	    int peso=0, valor=0;
+25	    for(int i=0; i < n; i++){
+26	        peso += solution[i] * wt[i];
+27	        valor += solution[i] * val[i];
+28	    }
+29	
+30	    if(peso > W){
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8e8
+address max offset: 4
+Memory content after  bitflip:0x2a0x570xae0xdc
+frame name: cost
+symbol name: valor
+symbol filename: knapsackga.cpp
+symbol line: 24
+value: -592554198
+value address: 0x7fffffffd8e8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 05:18:15]
+Fault Injection Successful after 7.335762977600098s
+[INFO -- 2018-12-02 05:18:15]
+event type: exit
+[EXCEPTION -- 2018-12-02 05:18:15]
+exit code: no exit code available

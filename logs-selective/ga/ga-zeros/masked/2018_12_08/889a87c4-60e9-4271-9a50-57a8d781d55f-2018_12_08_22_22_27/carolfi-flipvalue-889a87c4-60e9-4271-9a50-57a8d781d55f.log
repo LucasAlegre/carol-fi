@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 22:22:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:22:18]
+Initialization strings:
+[INFO -- 2018-12-08 22:22:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:22:18]
+initSignal:1
+[INFO -- 2018-12-08 22:22:18]
+endSignal:8
+[INFO -- 2018-12-08 22:22:18]
+faultModel:3
+[INFO -- 2018-12-08 22:22:20]
+Backtrace BEGIN:
+#0  0x000055555555618c in std::vector<int, std::allocator<int> >::vector (this=0x555555776560, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#1  0x0000555555558123 in chromossome::chromossome (this=0x555555776560) at knapsackga.cpp:63
+#2  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776560, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#3  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776560, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#4  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+333					      _M_get_Tp_allocator());
+334	      }
+335	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x200xd80xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd7e8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 22:22:20]
+Fault Injection Successful after 2.189284086227417s
+[INFO -- 2018-12-08 22:22:26]
+event type: exit
+[INFO -- 2018-12-08 22:22:26]
+exit code: 0

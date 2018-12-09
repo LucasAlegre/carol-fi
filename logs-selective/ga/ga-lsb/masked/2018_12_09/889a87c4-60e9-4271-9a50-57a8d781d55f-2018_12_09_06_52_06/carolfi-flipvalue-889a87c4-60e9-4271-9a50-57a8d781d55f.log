@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 06:51:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 06:51:57]
+Initialization strings:
+[INFO -- 2018-12-09 06:51:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 06:51:57]
+initSignal:1
+[INFO -- 2018-12-09 06:51:57]
+endSignal:8
+[INFO -- 2018-12-09 06:51:57]
+faultModel:4
+[INFO -- 2018-12-09 06:51:59]
+Backtrace BEGIN:
+#0  0x000055555555665e in std::swap<int> (__a=@0x555555783770: 0, __b=@0x555555784100: 0) at /usr/include/c++/7/bits/move.h:199
+#1  0x00005555555553eb in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:101
+#2  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00x380x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd910
+address max offset: 8
+Memory content after  bitflip:0xa00x380x780x550x550x550x000x40
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 200, capacity 1152921504606847176 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 06:51:59]
+Fault Injection Successful after 2.3080623149871826s
+[INFO -- 2018-12-09 06:52:05]
+event type: exit
+[INFO -- 2018-12-09 06:52:05]
+exit code: 0

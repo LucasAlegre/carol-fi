@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 04:51:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:51:08]
+Initialization strings:
+[INFO -- 2018-12-09 04:51:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:51:08]
+initSignal:1
+[INFO -- 2018-12-09 04:51:08]
+endSignal:8
+[INFO -- 2018-12-09 04:51:08]
+faultModel:2
+[EXCEPTION -- 2018-12-09 04:51:09]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 04:51:10]
+Backtrace BEGIN:
+#0  malloc (n=14) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  __GI___libc_malloc (bytes=800) at malloc.c:3062
+#3  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x000055555555a35a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd940, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#5  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#6  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd940, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#7  0x0000555555558625 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd940, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#8  0x000055555555715d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd940, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#9  0x000055555555616d in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd940, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#10 0x000055555555527f in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:88
+#11 0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#12 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+45	in dl-minimal.c
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0xac0xfb0x230xff
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -14419028
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 04:51:10]
+Fault Injection Successful after 2.0271108150482178s
+[INFO -- 2018-12-09 04:51:10]
+event type: exit
+[INFO -- 2018-12-09 04:51:10]
+exit code: 0

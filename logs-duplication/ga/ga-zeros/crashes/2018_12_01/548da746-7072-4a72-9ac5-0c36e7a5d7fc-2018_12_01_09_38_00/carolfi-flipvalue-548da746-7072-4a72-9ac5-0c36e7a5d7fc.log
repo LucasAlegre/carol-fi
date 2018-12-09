@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 09:37:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:37:58]
+Initialization strings:
+[INFO -- 2018-12-01 09:37:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:37:58]
+initSignal:0
+[INFO -- 2018-12-01 09:37:58]
+endSignal:13
+[INFO -- 2018-12-01 09:37:58]
+faultModel:3
+[INFO -- 2018-12-01 09:38:00]
+Backtrace BEGIN:
+#0  std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd800, __p=0x555555776400, __n=2) at /usr/include/c++/7/bits/stl_vector.h:181
+#1  0x0000555555556ee8 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:448
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+176	      _M_deallocate(pointer __p, size_t __n)
+177	      {
+178		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+179		if (__p)
+180		  _Tr::deallocate(_M_impl, __p, __n);
+181	      }
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0xc00xb00x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555577e4c0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x55555577e4c0
+value address: 0x55555577e4c0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 09:38:00]
+Fault Injection Successful after 2.1749706268310547s
+[INFO -- 2018-12-01 09:38:00]
+event type: exit
+[EXCEPTION -- 2018-12-01 09:38:00]
+exit code: no exit code available

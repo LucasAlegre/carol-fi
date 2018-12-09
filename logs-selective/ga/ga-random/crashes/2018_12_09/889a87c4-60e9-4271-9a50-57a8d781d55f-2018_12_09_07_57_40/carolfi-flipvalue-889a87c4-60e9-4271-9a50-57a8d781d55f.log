@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 07:57:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:57:38]
+Initialization strings:
+[INFO -- 2018-12-09 07:57:38]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:57:38]
+initSignal:1
+[INFO -- 2018-12-09 07:57:38]
+endSignal:8
+[INFO -- 2018-12-09 07:57:38]
+faultModel:2
+[EXCEPTION -- 2018-12-09 07:57:39]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-09 07:57:39]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 07:57:39]
+Backtrace BEGIN:
+#0  0x00007ffff74e7444 in __GI___libc_free (mem=<optimized out>) at malloc.c:3144
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x55555575f070 <wt>, __p=0x555555777cf0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555777cf0, __n=224) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x55555575f070 <wt>, __p=0x555555777cf0, __n=224) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555575f070 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555575f070 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00007ffff7493ec0 in __run_exit_handlers (status=0, listp=0x7ffff78326f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:83
+#7  0x00007ffff7493f1a in __GI_exit (status=<optimized out>) at exit.c:105
+#8  0x0000555555554fcb in exit_gracefully () at knapsackga.cpp:26
+#9  0x0000555555555165 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:48
+#10 0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3139	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x600x7c0x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f060 
+address max offset: 8
+Memory content after  bitflip:0x060x7b0xff0xfb0x2e0x0a0x920xa0
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: val2
+symbol filename: knapsackga.cpp
+symbol line: 15
+value: std::vector of length 218, capacity -1719129077280800580 = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1041, 0, 9561, 9479, 566, 849, 8355, 7360, 6698, 3082, 6060, 6069, 5813, 1584, 4307, 3936, 7231, 9949, 9494, 5442, 4449, 2683, 360, 275, 4649, 3185, 3801, 8918, 5258, 5606, 2362, 239, 3252, 1367, 5103, 9987, 6745, 1819, 8936, 7968, 7345, 9066, 7629, 7898, 3538, 9810, 9620, 1612, 7541, 7152, 4615, 5304, 4901, 9249, 5009, 8316, 3540, 8829, 8998, 4611, 5678, 9204, 7238, 4867, 2219, 3247, 6996, 1661, 9080, 2682, 9114, 3096, 9574, 7063, 5043, 5178, 6515, 5880, 3119, 2079, 5119, 9342, 6233, 754, 8204, 7260, 9077, 1915, 7448, 588, 6530, 2731, 2267, 8755, 1063, 5224, 8540, 2449, 2105, 8806, 4230, 7170, 319, 3624, 1719, 6728, 830, 9546, 254, 7295, 212, 2557, 8134, 1572, 1838, 6915, 3856, 432, 9901, 1515, 363, 3443, 6153, 7425, 1132, 3373, 309, 4487, 7660, 7400, 9021, 7557, 8625, 7054, 4728, 2256, 6609, 3164, 1021, 4479, 8748, 1276, 5850, 3930, 5149, 1439, 9598, 2591, 6061, 4198, 181, 5580, 1406, 568, 336, 1612, 959, 6351, 5083, 9835, 9342, 9946, 2325, 4447, 2508, 5913, 6242, 8003, 7095, 2567, 4231, 5262, 49, 355, 4088, 1112, 7238, 2409, 998, 1818, 2316, 2174, 5208, 4645...}
+value address: 0x55555575f050 <val2>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 07:57:39]
+Fault Injection Successful after 1.9112138748168945s
+[INFO -- 2018-12-09 07:57:40]
+event type: exit
+[EXCEPTION -- 2018-12-09 07:57:40]
+exit code: no exit code available

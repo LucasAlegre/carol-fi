@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 11:41:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:41:52]
+Initialization strings:
+[INFO -- 2018-12-01 11:41:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:41:52]
+initSignal:0
+[INFO -- 2018-12-01 11:41:52]
+endSignal:13
+[INFO -- 2018-12-01 11:41:52]
+faultModel:1
+[INFO -- 2018-12-01 11:41:53]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >::__normal_iterator (this=0x7fffffffd7c0, __i=@0x7fffffffd808: 0x555555776540) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x0000555555556036 in std::vector<chromossome, std::allocator<chromossome> >::end (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:582
+#2  0x000055555555516e in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xf80x080x00
+frame name: tournament
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 587825
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 11:41:53]
+Fault Injection Successful after 1.7701363563537598s
+[INFO -- 2018-12-01 11:42:05]
+event type: exit
+[INFO -- 2018-12-01 11:42:05]
+exit code: 0

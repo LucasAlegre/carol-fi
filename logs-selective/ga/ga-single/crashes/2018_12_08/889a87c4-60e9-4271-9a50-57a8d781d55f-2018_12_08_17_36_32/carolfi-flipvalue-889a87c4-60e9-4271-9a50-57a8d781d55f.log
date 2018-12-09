@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 17:36:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:36:29]
+Initialization strings:
+[INFO -- 2018-12-08 17:36:29]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:36:29]
+initSignal:1
+[INFO -- 2018-12-08 17:36:29]
+endSignal:8
+[INFO -- 2018-12-08 17:36:29]
+faultModel:0
+[EXCEPTION -- 2018-12-08 17:36:31]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 17:36:31]
+Backtrace BEGIN:
+#0  0x00005555555581df in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd820, __n=1, __s=0x55555555b5bf "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1499
+#1  0x0000555555556dbc in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1494	
+1495	      // Called by _M_fill_insert, _M_insert_aux etc.
+1496	      size_type
+1497	      _M_check_len(size_type __n, const char* __s) const
+1498	      {
+1499		if (max_size() - size() < __n)
+1500		  __throw_length_error(__N(__s));
+1501	
+1502		const size_type __len = size() + std::max(size(), __n);
+1503		return (__len < size() || __len > max_size()) ? max_size() : __len;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x330xfb0x080x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 588595
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 17:36:31]
+Fault Injection Successful after 2.303886651992798s
+[INFO -- 2018-12-08 17:36:31]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:36:31]
+exit code: no exit code available

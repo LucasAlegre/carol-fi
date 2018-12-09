@@ -1,0 +1,54 @@
+[INFO -- 2018-12-07 22:23:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:23:45]
+Initialization strings:
+[INFO -- 2018-12-07 22:23:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:23:45]
+initSignal:1
+[INFO -- 2018-12-07 22:23:45]
+endSignal:8
+[INFO -- 2018-12-07 22:23:45]
+faultModel:2
+[INFO -- 2018-12-07 22:23:46]
+Backtrace BEGIN:
+#0  0x0000555555556bb0 in std::_Destroy<int*, int> (__first=0x0, __last=0x0) at /usr/include/c++/7/bits/stl_construct.h:203
+#1  0x0000555555555ecb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd7d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x000055555555775e in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#3  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x00005555555556a7 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+198		__traits::destroy(__alloc, std::__addressof(*__first));
+199	    }
+200	
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x8a0x960x230xbf
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: -1088186742
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 22:23:46]
+Fault Injection Successful after 1.6038060188293457s
+[INFO -- 2018-12-07 22:23:46]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:23:46]
+exit code: no exit code available

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 03:50:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:50:25]
+Initialization strings:
+[INFO -- 2018-12-09 03:50:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:50:25]
+initSignal:1
+[INFO -- 2018-12-09 03:50:25]
+endSignal:8
+[INFO -- 2018-12-09 03:50:25]
+faultModel:0
+[INFO -- 2018-12-09 03:50:28]
+Backtrace BEGIN:
+#0  0x0000555555555ee6 in std::move<int&> (__t=@0x555555783544: 0) at /usr/include/c++/7/bits/move.h:99
+#1  0x000055555555664b in std::swap<int> (__a=@0x555555783544: 0, __b=@0x555555783874: 0) at /usr/include/c++/7/bits/move.h:198
+#2  0x00005555555553eb in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:101
+#3  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+103	    struct __move_if_noexcept_cond
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x300x420x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8e8
+address max offset: 8
+Memory content after  bitflip:0x300x420x780x550x550x5d0x000x00
+frame name: genetic_algorithm
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 2199023255752, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd8e0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 03:50:28]
+Fault Injection Successful after 3.2046570777893066s
+[INFO -- 2018-12-09 03:50:33]
+event type: exit
+[INFO -- 2018-12-09 03:50:33]
+exit code: 0

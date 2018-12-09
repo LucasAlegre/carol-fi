@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 18:17:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:17:43]
+Initialization strings:
+[INFO -- 2018-12-08 18:17:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:17:43]
+initSignal:1
+[INFO -- 2018-12-08 18:17:43]
+endSignal:8
+[INFO -- 2018-12-08 18:17:43]
+faultModel:3
+[EXCEPTION -- 2018-12-08 18:17:45]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 18:17:45]
+Backtrace BEGIN:
+#0  0x0000555555558cba in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd7d0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:270
+#1  0x00005555555576fa in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#2  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+265	      /**
+266	       *  @brief  Creates a %vector with no elements.
+267	       *  @param  __a  An allocator object.
+268	       */
+269	      explicit
+270	      vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+271	      : _Base(__a) { }
+272	
+273	#if __cplusplus >= 201103L
+274	      /**
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:17:45]
+Fault Injection Successful after 2.789093017578125s
+[INFO -- 2018-12-08 18:17:45]
+event type: exit
+[INFO -- 2018-12-08 18:17:45]
+exit code: 0

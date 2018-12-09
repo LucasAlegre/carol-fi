@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 22:56:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:56:14]
+Initialization strings:
+[INFO -- 2018-12-08 22:56:14]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:56:14]
+initSignal:1
+[INFO -- 2018-12-08 22:56:14]
+endSignal:8
+[INFO -- 2018-12-08 22:56:14]
+faultModel:1
+[INFO -- 2018-12-08 22:56:16]
+Backtrace BEGIN:
+#0  0x0000555555559c99 in std::_Destroy<chromossome> (__pointer=0x55555578acd0) at /usr/include/c++/7/bits/stl_construct.h:98
+#1  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x55555578acd0, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#5  0x000055555555591e in genetic_algorithm () at knapsackga.cpp:121
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+93	   * Destroy the object pointed to by a pointer type.
+94	   */
+95	  template<typename _Tp>
+96	    inline void
+97	    _Destroy(_Tp* __pointer)
+98	    { __pointer->~_Tp(); }
+99	
+100	  template<bool>
+101	    struct _Destroy_aux
+102	    {
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x310xf80x080x00
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 587825
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:56:16]
+Fault Injection Successful after 2.3297536373138428s
+[INFO -- 2018-12-08 22:56:16]
+event type: exit
+[INFO -- 2018-12-08 22:56:16]
+exit code: 0

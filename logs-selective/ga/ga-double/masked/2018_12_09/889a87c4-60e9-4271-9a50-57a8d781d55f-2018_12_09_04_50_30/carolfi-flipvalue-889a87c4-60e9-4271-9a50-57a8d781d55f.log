@@ -1,0 +1,65 @@
+[INFO -- 2018-12-09 04:50:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:50:21]
+Initialization strings:
+[INFO -- 2018-12-09 04:50:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:50:21]
+initSignal:1
+[INFO -- 2018-12-09 04:50:21]
+endSignal:8
+[INFO -- 2018-12-09 04:50:21]
+faultModel:1
+[INFO -- 2018-12-09 04:50:24]
+Backtrace BEGIN:
+#0  0x0000555555556b4e in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555783be0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:161
+#1  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x555555776740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x0000555555555e4c in chromossome::~chromossome (this=0x555555776740, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#3  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x555555776740) at /usr/include/c++/7/bits/stl_construct.h:98
+#4  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#5  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#6  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#7  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#8  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#9  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#10 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+156		    _M_create_storage(__n);
+157		  }
+158	      }
+159	#endif
+160	
+161	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+162	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+163			      - this->_M_impl._M_start); }
+164	
+165	    public:
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555783f00
+address max offset: 4
+Memory content after  bitflip:0xb40x030x000x00
+frame name: std::_Destroy_aux<false>::__destroy<chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 105
+value: 0x555555776740
+value address: 0x7fffffffd778
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 04:50:24]
+Fault Injection Successful after 3.837040901184082s
+[INFO -- 2018-12-09 04:50:29]
+event type: exit
+[INFO -- 2018-12-09 04:50:29]
+exit code: 0

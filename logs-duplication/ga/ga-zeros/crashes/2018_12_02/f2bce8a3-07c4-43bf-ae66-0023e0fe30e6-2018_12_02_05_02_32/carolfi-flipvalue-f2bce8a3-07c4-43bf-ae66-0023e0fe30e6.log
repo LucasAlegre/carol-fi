@@ -1,0 +1,53 @@
+[INFO -- 2018-12-02 05:02:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:02:27]
+Initialization strings:
+[INFO -- 2018-12-02 05:02:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:02:27]
+initSignal:0
+[INFO -- 2018-12-02 05:02:27]
+endSignal:13
+[INFO -- 2018-12-02 05:02:27]
+faultModel:3
+[INFO -- 2018-12-02 05:02:31]
+Backtrace BEGIN:
+#0  0x00005555555573d5 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9d0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#1  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#2  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1258				     _ForwardIterator __first, _ForwardIterator __last)
+1259		{
+1260		  pointer __result = this->_M_allocate(__n);
+1261		  __try
+1262		    {
+1263		      std::__uninitialized_copy_a(__first, __last, __result,
+1264						  _M_get_Tp_allocator());
+1265		      return __result;
+1266		    }
+1267		  __catch(...)
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: crossover
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 05:02:31]
+Fault Injection Successful after 4.474968433380127s
+[INFO -- 2018-12-02 05:02:31]
+event type: exit
+[EXCEPTION -- 2018-12-02 05:02:31]
+exit code: no exit code available

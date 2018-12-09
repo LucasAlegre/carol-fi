@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 20:54:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 20:54:12]
+Initialization strings:
+[INFO -- 2018-12-08 20:54:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 20:54:12]
+initSignal:1
+[INFO -- 2018-12-08 20:54:12]
+endSignal:8
+[INFO -- 2018-12-08 20:54:12]
+faultModel:4
+[INFO -- 2018-12-08 20:54:13]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd780, __i=@0x7fffffffd778: 0x555555786540) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x000055555555720e in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd8e0) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x0000555555556440 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:98
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x400x650x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd778
+address max offset: 8
+Memory content after  bitflip:0x400x650x780x550x550x550x000x40
+frame name: __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator
+symbol name: __i
+symbol filename: /usr/include/c++/7/bits/stl_iterator.h
+symbol line: 779
+value: @0x7fffffffd778
+value address: 0x7fffffffd778
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 20:54:13]
+Fault Injection Successful after 1.7245128154754639s
+[INFO -- 2018-12-08 20:54:13]
+event type: exit
+[EXCEPTION -- 2018-12-08 20:54:13]
+exit code: no exit code available

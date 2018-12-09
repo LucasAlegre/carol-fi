@@ -1,0 +1,63 @@
+[INFO -- 2018-12-07 23:44:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:44:35]
+Initialization strings:
+[INFO -- 2018-12-07 23:44:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:44:35]
+initSignal:1
+[INFO -- 2018-12-07 23:44:35]
+endSignal:8
+[INFO -- 2018-12-07 23:44:35]
+faultModel:4
+[EXCEPTION -- 2018-12-07 23:44:37]
+gdbException: Cannot access memory at address 0x2000555555777c70
+[EXCEPTION -- 2018-12-07 23:44:37]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-07 23:44:37]
+Backtrace BEGIN:
+#0  __memmove_sse2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:494
+#1  0x000055555555a3ba in std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int> (__first=0x555555786bb0, __last=0x555555786ed0, __result=0x10) at /usr/include/c++/7/bits/stl_algobase.h:368
+#2  0x00005555555598dc in std::__copy_move_a<false, int const*, int*> (__first=0x555555786bb0, __last=0x555555786ed0, __result=0x10) at /usr/include/c++/7/bits/stl_algobase.h:386
+#3  0x00005555555588d1 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=816, __result=<error reading variable: Cannot access memory at address 0x10>) at /usr/include/c++/7/bits/stl_algobase.h:422
+#4  0x0000555555557511 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=816, __result=<error reading variable: Cannot access memory at address 0x10>) at /usr/include/c++/7/bits/stl_algobase.h:456
+#5  0x0000555555556561 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#6  0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length -4, capacity -4 = {...}) at knapsackga.cpp:98
+#7  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+489	in ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S
+
+Backtrace END
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555786ba0
+address max offset: 4
+Memory content after  bitflip:0x300x030x000x02
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 131
+value: {solution = std::vector of length 200, capacity 200 = {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 99999999}
+value address: 0x7fffffffd9a0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-07 23:44:37]
+Fault Injection Successful after 2.774003744125366s
+[INFO -- 2018-12-07 23:44:37]
+event type: exit
+[EXCEPTION -- 2018-12-07 23:44:37]
+exit code: no exit code available

@@ -1,0 +1,64 @@
+[INFO -- 2018-12-01 10:55:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:55:59]
+Initialization strings:
+[INFO -- 2018-12-01 10:55:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:55:59]
+initSignal:0
+[INFO -- 2018-12-01 10:55:59]
+endSignal:13
+[INFO -- 2018-12-01 10:55:59]
+faultModel:4
+[INFO -- 2018-12-01 10:56:09]
+Backtrace BEGIN:
+#0  0x00005555555570ec in std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (this=0x555555778b00) at /usr/include/c++/7/bits/stl_vector.h:120
+#1  0x00005555555560e0 in std::vector<int, std::allocator<int> >::vector (this=0x555555776420, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x000055555555810d in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:42
+#3  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd800, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x0000555555555aab in main () at knapsackga.cpp:143
+
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+121	
+122	      allocator_type
+123	      get_allocator() const _GLIBCXX_NOEXCEPT
+124	      { return allocator_type(_M_get_Tp_allocator()); }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555776420
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x40
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: __p
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 135
+value: 0x555555776420
+value address: 0x7fffffffd6e0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 10:56:09]
+Fault Injection Successful after 10.339221000671387s
+[INFO -- 2018-12-01 10:56:12]
+event type: exit
+[INFO -- 2018-12-01 10:56:12]
+exit code: 0

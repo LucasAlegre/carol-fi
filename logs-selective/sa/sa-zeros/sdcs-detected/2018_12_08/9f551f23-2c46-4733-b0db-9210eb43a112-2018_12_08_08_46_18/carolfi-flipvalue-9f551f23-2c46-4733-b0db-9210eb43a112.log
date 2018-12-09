@@ -1,0 +1,54 @@
+[INFO -- 2018-12-08 08:46:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 08:46:14]
+Initialization strings:
+[INFO -- 2018-12-08 08:46:14]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 08:46:14]
+initSignal:0
+[INFO -- 2018-12-08 08:46:14]
+endSignal:9
+[INFO -- 2018-12-08 08:46:14]
+faultModel:3
+[EXCEPTION -- 2018-12-08 08:46:15]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-08 08:46:16]
+Backtrace BEGIN:
+#0  0x0000555555555852 in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd740, __n=17) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x000055555555512c in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:58
+#2  0x000055555555534c in simulated_annealing () at knapsacksa.cpp:92
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575903c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: n2
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 0
+value address: 0x55555575903c <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 08:46:16]
+Fault Injection Successful after 2.8647000789642334s
+[INFO -- 2018-12-08 08:46:16]
+event type: exit
+[INFO -- 2018-12-08 08:46:16]
+exit code: 0

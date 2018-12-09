@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 10:00:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:00:54]
+Initialization strings:
+[INFO -- 2018-12-01 10:00:54]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:00:54]
+initSignal:0
+[INFO -- 2018-12-01 10:00:54]
+endSignal:13
+[INFO -- 2018-12-01 10:00:54]
+faultModel:0
+[INFO -- 2018-12-01 10:00:56]
+Backtrace BEGIN:
+#0  0x00007ffff74e703e in tcache_get (tc_idx=<optimized out>) at malloc.c:2978
+#1  __GI___libc_malloc (bytes=800) at malloc.c:3079
+#2  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x000055555555a2fe in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd900, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#4  0x0000555555559815 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#5  0x00005555555587e2 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd900, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#6  0x00005555555573be in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd900, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#7  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#8  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#9  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#10 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+2973	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xbb0x080x00
+frame name: std::allocator_traits<std::allocator<int> >::allocate
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 572209
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 10:00:56]
+Fault Injection Successful after 2.6291568279266357s
+[INFO -- 2018-12-01 10:01:07]
+event type: exit
+[INFO -- 2018-12-01 10:01:07]
+exit code: 0

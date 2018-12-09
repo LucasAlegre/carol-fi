@@ -1,0 +1,62 @@
+[INFO -- 2018-12-08 15:05:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:05:59]
+Initialization strings:
+[INFO -- 2018-12-08 15:05:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:05:59]
+initSignal:1
+[INFO -- 2018-12-08 15:05:59]
+endSignal:8
+[INFO -- 2018-12-08 15:05:59]
+faultModel:4
+[INFO -- 2018-12-08 15:06:01]
+Backtrace BEGIN:
+#0  0x0000555555559794 in std::swap<int*> (__a=@0x555555776740: 0x0, __b=@0x7fffffffd600: 0x0) at /usr/include/c++/7/bits/move.h:187
+#1  0x000055555555872f in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#2  0x000055555555772c in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555951d in chromossome::operator= (this=0x555555776740) at knapsackga.cpp:63
+#5  0x000055555555962f in std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -504917}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1852
+#6  0x0000555555558559 in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -504917}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#7  0x0000555555557093 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -504917}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#8  0x00005555555560e7 in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 0, capacity 0, fitness = -504917}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#9  0x000055555555525c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:87
+#10 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+182	    inline
+183	#if __cplusplus >= 201103L
+184	    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+185				      is_move_constructible<_Tp>,
+186				      is_move_assignable<_Tp>>::value>::type
+187	    swap(_Tp& __a, _Tp& __b)
+188	    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+189		            is_nothrow_move_assignable<_Tp>>::value)
+190	#else
+191	    void
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd600
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x10
+frame name: std::swap<int*>
+symbol name: __b
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x7fffffffd600
+value address: 0x7fffffffd600
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:06:01]
+Fault Injection Successful after 2.136152982711792s
+[INFO -- 2018-12-08 15:06:07]
+event type: exit
+[INFO -- 2018-12-08 15:06:07]
+exit code: 0

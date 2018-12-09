@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 07:58:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:58:37]
+Initialization strings:
+[INFO -- 2018-12-09 07:58:38]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:58:38]
+initSignal:1
+[INFO -- 2018-12-09 07:58:38]
+endSignal:8
+[INFO -- 2018-12-09 07:58:38]
+faultModel:0
+[INFO -- 2018-12-09 07:58:40]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:447
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+442		    std::_Destroy(__new_start, __new_finish, _M_get_Tp_allocator());
+443		  _M_deallocate(__new_start, __len);
+444		  __throw_exception_again;
+445		}
+446	      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+447			    _M_get_Tp_allocator());
+448	      _M_deallocate(this->_M_impl._M_start,
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+451	      this->_M_impl._M_start = __new_start;
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Single bit-flip
+base address to flip value: 0x555555776558
+address max offset: 4
+Memory content after  bitflip:0x690x390xd80xff
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd7e8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 07:58:40]
+Fault Injection Successful after 2.435696601867676s
+[INFO -- 2018-12-09 07:58:46]
+event type: exit
+[INFO -- 2018-12-09 07:58:46]
+exit code: 0

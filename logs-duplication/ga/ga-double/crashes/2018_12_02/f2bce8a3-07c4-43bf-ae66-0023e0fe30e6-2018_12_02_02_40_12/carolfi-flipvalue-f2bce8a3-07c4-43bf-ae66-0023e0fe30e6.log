@@ -1,0 +1,49 @@
+[INFO -- 2018-12-02 02:40:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:40:06]
+Initialization strings:
+[INFO -- 2018-12-02 02:40:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:40:06]
+initSignal:0
+[INFO -- 2018-12-02 02:40:06]
+endSignal:13
+[INFO -- 2018-12-02 02:40:06]
+faultModel:1
+[INFO -- 2018-12-02 02:40:11]
+Backtrace BEGIN:
+#0  rand () at rand.c:28
+#1  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#2  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+23	rand.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9e0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x300x00
+frame name: crossover
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 0, capacity 3377699720527872
+value address: 0x7fffffffd9d0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 02:40:11]
+Fault Injection Successful after 5.369758129119873s
+[INFO -- 2018-12-02 02:40:11]
+event type: exit
+[EXCEPTION -- 2018-12-02 02:40:11]
+exit code: no exit code available

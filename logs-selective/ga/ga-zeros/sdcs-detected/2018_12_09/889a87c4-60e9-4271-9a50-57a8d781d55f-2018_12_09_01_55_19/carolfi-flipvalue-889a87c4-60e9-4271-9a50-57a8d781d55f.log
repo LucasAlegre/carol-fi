@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 01:55:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 01:55:16]
+Initialization strings:
+[INFO -- 2018-12-09 01:55:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 01:55:16]
+initSignal:1
+[INFO -- 2018-12-09 01:55:16]
+endSignal:8
+[INFO -- 2018-12-09 01:55:16]
+faultModel:3
+[INFO -- 2018-12-09 01:55:19]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd820, __n=2) at /usr/include/c++/7/ext/new_allocator.h:112
+#1  0x000055555555928b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=2) at /usr/include/c++/7/bits/alloc_traits.h:436
+#2  0x0000555555558302 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd820, __n=2) at /usr/include/c++/7/bits/stl_vector.h:172
+#3  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#6  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+107		    std::align_val_t __al = std::align_val_t(alignof(_Tp));
+108		    return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp), __al));
+109		  }
+110	#endif
+111		return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+112	      }
+113	
+114	      // __p is not permitted to be a null pointer.
+115	      void
+116	      deallocate(pointer __p, size_type)
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 01:55:19]
+Fault Injection Successful after 3.2300853729248047s
+[INFO -- 2018-12-09 01:55:19]
+event type: exit
+[INFO -- 2018-12-09 01:55:19]
+exit code: 0

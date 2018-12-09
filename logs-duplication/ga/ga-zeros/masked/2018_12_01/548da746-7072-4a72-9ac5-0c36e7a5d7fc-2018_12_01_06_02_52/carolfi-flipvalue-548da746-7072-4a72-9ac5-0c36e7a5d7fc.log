@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 06:02:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:02:39]
+Initialization strings:
+[INFO -- 2018-12-01 06:02:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:02:39]
+initSignal:0
+[INFO -- 2018-12-01 06:02:39]
+endSignal:13
+[INFO -- 2018-12-01 06:02:39]
+faultModel:3
+[INFO -- 2018-12-01 06:02:43]
+Backtrace BEGIN:
+#0  0x00005555555596ea in __gnu_cxx::new_allocator<int>::new_allocator (this=0x7fffffffd7af) at /usr/include/c++/7/ext/new_allocator.h:81
+#1  0x000055555555859f in std::allocator<int>::allocator (this=0x7fffffffd7af, __a=...) at /usr/include/c++/7/bits/allocator.h:134
+#2  0x0000555555558c4c in std::_Vector_base<int, std::allocator<int> >::get_allocator (this=0x7fffffffd8a0) at /usr/include/c++/7/bits/stl_vector.h:124
+#3  0x000055555555768d in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#4  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555555c in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+76	      typedef std::true_type propagate_on_container_move_assignment;
+77	#endif
+78	
+79	      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+80	
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd770
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::get_allocator
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8a0
+value address: 0x7fffffffd770
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:02:43]
+Fault Injection Successful after 4.945999383926392s
+[INFO -- 2018-12-01 06:02:52]
+event type: exit
+[INFO -- 2018-12-01 06:02:52]
+exit code: 0

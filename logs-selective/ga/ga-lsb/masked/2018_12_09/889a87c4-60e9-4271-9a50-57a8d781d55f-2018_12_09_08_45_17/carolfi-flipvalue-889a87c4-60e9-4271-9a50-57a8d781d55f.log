@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 08:45:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 08:45:08]
+Initialization strings:
+[INFO -- 2018-12-09 08:45:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 08:45:08]
+initSignal:1
+[INFO -- 2018-12-09 08:45:08]
+endSignal:8
+[INFO -- 2018-12-09 08:45:08]
+faultModel:4
+[INFO -- 2018-12-09 08:45:10]
+Backtrace BEGIN:
+#0  _int_malloc (av=av@entry=0x7ffff7832c20 <main_arena>, bytes=bytes@entry=800) at malloc.c:3737
+#1  0x00007ffff74e6f3e in __GI___libc_malloc (bytes=800) at malloc.c:3086
+#2  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x000055555555a35a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd9a0, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#4  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#5  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd9a0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#6  0x0000555555557418 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9a0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#7  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#8  0x000055555555571b in genetic_algorithm () at knapsackga.cpp:131
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3732	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555786550
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x80
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 180
+value: std::vector of length 200, capacity 200 = {-2147483648, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd920
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 08:45:10]
+Fault Injection Successful after 2.639631509780884s
+[INFO -- 2018-12-09 08:45:16]
+event type: exit
+[INFO -- 2018-12-09 08:45:16]
+exit code: 0

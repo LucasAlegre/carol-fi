@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 04:23:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:23:09]
+Initialization strings:
+[INFO -- 2018-12-01 04:23:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:23:09]
+initSignal:0
+[INFO -- 2018-12-01 04:23:09]
+endSignal:13
+[INFO -- 2018-12-01 04:23:09]
+faultModel:0
+[INFO -- 2018-12-01 04:23:09]
+Backtrace BEGIN:
+#0  0x00005555555591ef in std::max<unsigned long> (__a=@0x7fffffffd718: 1, __b=@0x7fffffffd700: 1) at /usr/include/c++/7/bits/stl_algobase.h:224
+#1  0x0000555555558223 in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd800, __n=1, __s=0x55555555b55c "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1502
+#2  0x0000555555556d88 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#3  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+219	    max(const _Tp& __a, const _Tp& __b)
+220	    {
+221	      // concept requirements
+222	      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
+223	      //return  __a < __b ? __b : __a;
+224	      if (__a < __b)
+225		return __b;
+226	      return __a;
+227	    }
+228	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x480x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 72
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 04:23:09]
+Fault Injection Successful after 0.9498474597930908s
+[INFO -- 2018-12-01 04:23:19]
+event type: exit
+[INFO -- 2018-12-01 04:23:19]
+exit code: 0

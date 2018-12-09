@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 12:40:42]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 12:40:42]
+Initialization strings:
+[INFO -- 2018-12-08 12:40:42]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 12:40:42]
+initSignal:0
+[INFO -- 2018-12-08 12:40:42]
+endSignal:9
+[INFO -- 2018-12-08 12:40:42]
+faultModel:3
+[EXCEPTION -- 2018-12-08 12:40:45]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-08 12:40:46]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-12-08 12:40:46]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff6ede801 in __GI_abort () at abort.c:79
+#2  0x00007ffff78d18b7 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff78d7a06 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff78d7a41 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff78d7c74 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff78d81ec in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x000055555555702e in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd740, __n=23456248613356) at /usr/include/c++/7/ext/new_allocator.h:111
+#8  0x0000555555556d91 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=23456248613356) at /usr/include/c++/7/bits/alloc_traits.h:436
+#9  0x000055555555694e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd740, __n=23456248613356) at /usr/include/c++/7/bits/stl_vector.h:172
+#10 0x000055555555677f in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd740, __n=23456248613356) at /usr/include/c++/7/bits/stl_vector.h:187
+#11 0x0000555555555f13 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd740, __n=23456248613356, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#12 0x00005555555559b3 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd740, __x=std::vector of length 23456248613356, capacity 23456248613356 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#13 0x00005555555552f7 in simulated_annealing () at knapsacksa.cpp:89
+#14 0x0000555555555658 in main () at knapsacksa.cpp:146
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400xd70xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd5d8
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: __gnu_cxx::new_allocator<int>::allocate
+symbol name: this
+symbol filename: knapsacksa.cpp
+symbol line: 0
+value: 0x7fffffffd740
+value address: 0x7fffffffd5d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 12:40:46]
+Fault Injection Successful after 4.811619758605957s
+[INFO -- 2018-12-08 12:40:47]
+event type: exit
+[EXCEPTION -- 2018-12-08 12:40:47]
+exit code: no exit code available

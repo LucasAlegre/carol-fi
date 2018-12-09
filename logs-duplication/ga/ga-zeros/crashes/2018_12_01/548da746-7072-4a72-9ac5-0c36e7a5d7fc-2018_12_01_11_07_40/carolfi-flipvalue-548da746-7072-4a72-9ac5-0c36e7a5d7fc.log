@@ -1,0 +1,69 @@
+[INFO -- 2018-12-01 11:07:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:07:33]
+Initialization strings:
+[INFO -- 2018-12-01 11:07:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:07:33]
+initSignal:0
+[INFO -- 2018-12-01 11:07:33]
+endSignal:13
+[INFO -- 2018-12-01 11:07:33]
+faultModel:3
+[EXCEPTION -- 2018-12-01 11:07:39]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 11:07:39]
+Backtrace BEGIN:
+#0  0x0000555555559783 in std::swap<int*> (__a=@0x555555787df0: 0x555555781510, __b=@0x5555557846e0: 0x555555781510) at /usr/include/c++/7/bits/move.h:200
+#1  0x0000555555558719 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x555555787df0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:105
+#2  0x000055555555726d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555787df0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:146
+#3  0x00005555555561fc in std::vector<int, std::allocator<int> >::vector (this=0x555555787df0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:345
+#4  0x000055555555948d in chromossome::chromossome (this=0x555555787df0) at knapsackga.cpp:42
+#5  0x000055555555ad28 in std::_Construct<chromossome, chromossome> (__p=0x555555787df0, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#6  0x000055555555a66c in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#7  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#8  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555787bf0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#9  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557844e0, __last=0x5555557848e0, __result=0x555555787bf0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#10 0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#11 0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#12 0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#13 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+204	  // DR 809. std::swap should be overloaded for array types.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00x480x780x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd6c0
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 76
+value: {_M_current = 0x0}
+value address: 0x7fffffffd6c0
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 11:07:39]
+Fault Injection Successful after 6.488386392593384s
+[INFO -- 2018-12-01 11:07:39]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:07:39]
+exit code: no exit code available

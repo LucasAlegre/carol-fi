@@ -1,0 +1,25 @@
+[INFO -- 2018-12-08 23:56:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:56:18]
+Initialization strings:
+[INFO -- 2018-12-08 23:56:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:56:18]
+initSignal:1
+[INFO -- 2018-12-08 23:56:18]
+endSignal:8
+[INFO -- 2018-12-08 23:56:18]
+faultModel:3
+[EXCEPTION -- 2018-12-08 23:56:20]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 23:56:20]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-08 23:56:20]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 23:56:20]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-08 23:56:20]
+event type: exit
+[EXCEPTION -- 2018-12-08 23:56:20]
+exit code: no exit code available

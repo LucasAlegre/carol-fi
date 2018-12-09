@@ -1,0 +1,51 @@
+[INFO -- 2018-12-01 11:04:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:04:32]
+Initialization strings:
+[INFO -- 2018-12-01 11:04:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:04:32]
+initSignal:0
+[INFO -- 2018-12-01 11:04:32]
+endSignal:13
+[INFO -- 2018-12-01 11:04:32]
+faultModel:3
+[INFO -- 2018-12-01 11:04:33]
+Backtrace BEGIN:
+#0  0x00005555555550ec in tournament (pop=<error reading variable: Cannot access memory at address 0x8>) at knapsackga.cpp:58
+#1  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+53	bool operator<(const chromossome& a, const chromossome& b)
+54	{
+55	    return a.fitness < b.fitness;
+56	}
+57	
+58	vector<int> tournament(vector<chromossome> &pop){
+59	    vector<chromossome> competitors;
+60	
+61	    for(int i=0; i < 3; i++){
+62	        int randIndex = rand() % pop_size;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 11:04:33]
+Fault Injection Successful after 1.971043348312378s
+[INFO -- 2018-12-01 11:04:45]
+event type: exit
+[INFO -- 2018-12-01 11:04:45]
+exit code: 0

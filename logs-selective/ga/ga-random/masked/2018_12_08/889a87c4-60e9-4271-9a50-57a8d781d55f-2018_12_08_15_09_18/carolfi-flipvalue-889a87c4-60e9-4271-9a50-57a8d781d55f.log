@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 15:09:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:09:09]
+Initialization strings:
+[INFO -- 2018-12-08 15:09:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:09:09]
+initSignal:1
+[INFO -- 2018-12-08 15:09:09]
+endSignal:8
+[INFO -- 2018-12-08 15:09:09]
+faultModel:2
+[INFO -- 2018-12-08 15:09:11]
+Backtrace BEGIN:
+#0  0x00005555555587ef in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555787c80, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#1  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd8e0, __p=0x555555787c80, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#2  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd8e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#3  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8e0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x000055555555578c in genetic_algorithm () at knapsackga.cpp:127
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+457	       *
+458	       *  Calls <tt> a.deallocate(p, n) </tt>
+459	      */
+460	      static void
+461	      deallocate(allocator_type& __a, pointer __p, size_type __n)
+462	      { __a.deallocate(__p, __n); }
+463	
+464	      /**
+465	       *  @brief  Construct an object of type @a _Up
+466	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xe00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x760x110x900xba0x600xbd0x4b0x1a
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_deallocate
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8e0
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:09:11]
+Fault Injection Successful after 2.650592565536499s
+[INFO -- 2018-12-08 15:09:17]
+event type: exit
+[INFO -- 2018-12-08 15:09:17]
+exit code: 0

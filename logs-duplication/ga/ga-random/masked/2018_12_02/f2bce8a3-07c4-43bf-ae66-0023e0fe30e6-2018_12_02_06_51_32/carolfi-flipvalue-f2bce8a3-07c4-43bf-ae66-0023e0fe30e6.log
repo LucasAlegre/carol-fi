@@ -1,0 +1,55 @@
+[INFO -- 2018-12-02 06:51:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:51:19]
+Initialization strings:
+[INFO -- 2018-12-02 06:51:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:51:19]
+initSignal:0
+[INFO -- 2018-12-02 06:51:19]
+endSignal:13
+[INFO -- 2018-12-02 06:51:19]
+faultModel:2
+[INFO -- 2018-12-02 06:51:22]
+Backtrace BEGIN:
+#0  0x000055555555976d in std::swap<int*> (__a=@0x7fffffffd9a0: 0x0, __b=@0x7fffffffda20: 0x555555783e70) at /usr/include/c++/7/bits/move.h:199
+#1  0x000055555555874f in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd990, __x=...) at /usr/include/c++/7/bits/stl_vector.h:107
+#2  0x00005555555576d2 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd990, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1533
+#3  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd990, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x0000555555555597 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+203	  // _GLIBCXX_RESOLVE_LIB_DEFECTS
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd820
+address max offset: 8
+Memory content after  bitflip:0x1e0x470xab0x110x6f0x7b0x1f0xf3
+frame name: std::swap<int*>
+symbol name: __tmp
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 198
+value: 0x0
+value address: 0x7fffffffd820
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 06:51:22]
+Fault Injection Successful after 3.341966152191162s
+[INFO -- 2018-12-02 06:51:32]
+event type: exit
+[INFO -- 2018-12-02 06:51:32]
+exit code: 0

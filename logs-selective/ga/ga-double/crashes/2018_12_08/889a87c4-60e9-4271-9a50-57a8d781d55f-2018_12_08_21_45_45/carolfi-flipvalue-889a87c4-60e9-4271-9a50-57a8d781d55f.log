@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 21:45:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:45:41]
+Initialization strings:
+[INFO -- 2018-12-08 21:45:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:45:41]
+initSignal:1
+[INFO -- 2018-12-08 21:45:41]
+endSignal:8
+[INFO -- 2018-12-08 21:45:41]
+faultModel:1
+[INFO -- 2018-12-08 21:45:44]
+Backtrace BEGIN:
+#0  0x00005555555582c6 in __gnu_cxx::operator-<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > (__lhs=non-dereferenceable iterator for std::vector, __rhs=non-dereferenceable iterator for std::vector) at /usr/include/c++/7/bits/stl_iterator.h:965
+#1  0x0000555555556de3 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:405
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+960	  template<typename _Iterator, typename _Container>
+961	    inline typename __normal_iterator<_Iterator, _Container>::difference_type
+962	    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+963		      const __normal_iterator<_Iterator, _Container>& __rhs)
+964	    _GLIBCXX_NOEXCEPT
+965	    { return __lhs.base() - __rhs.base(); }
+966	
+967	  template<typename _Iterator, typename _Container>
+968	    inline __normal_iterator<_Iterator, _Container>
+969	    operator+(typename __normal_iterator<_Iterator, _Container>::difference_type
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x100x2b0x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x5555557811b0
+address max offset: 8
+Memory content after  bitflip:0x100x2b0x780x550x550x410x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x5555557811b0
+value address: 0x5555557811b0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:45:44]
+Fault Injection Successful after 3.852897882461548s
+[INFO -- 2018-12-08 21:45:45]
+event type: exit
+[EXCEPTION -- 2018-12-08 21:45:45]
+exit code: no exit code available

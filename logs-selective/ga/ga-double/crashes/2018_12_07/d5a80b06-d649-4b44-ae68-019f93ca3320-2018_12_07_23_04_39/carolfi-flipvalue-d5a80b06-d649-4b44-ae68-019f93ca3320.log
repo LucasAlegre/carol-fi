@@ -1,0 +1,52 @@
+[INFO -- 2018-12-07 23:04:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:04:36]
+Initialization strings:
+[INFO -- 2018-12-07 23:04:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:04:36]
+initSignal:1
+[INFO -- 2018-12-07 23:04:36]
+endSignal:8
+[INFO -- 2018-12-07 23:04:36]
+faultModel:1
+[INFO -- 2018-12-07 23:04:38]
+Backtrace BEGIN:
+#0  0x00005555555553b6 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:101
+#1  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+96	    }
+97	    filho1 = pai;
+98	    filho2 = mae;
+99	    for(int i = 0; i < n; i++){
+100	        if(mask[i]){
+101	            swap(filho1[i], filho2[i]);
+102	        }
+103	    }
+104	}
+105	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x200x2f0x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd8e0
+address max offset: 8
+Memory content after  bitflip:0x800x2f0x780x550x550x550x000x00
+frame name: crossover
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: std::vector of length 176, capacity 176 = {1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+value address: 0x7fffffffd8e0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-07 23:04:38]
+Fault Injection Successful after 2.933161973953247s
+[INFO -- 2018-12-07 23:04:39]
+event type: exit
+[EXCEPTION -- 2018-12-07 23:04:39]
+exit code: no exit code available

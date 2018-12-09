@@ -1,0 +1,45 @@
+[INFO -- 2018-12-07 22:55:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:55:35]
+Initialization strings:
+[INFO -- 2018-12-07 22:55:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:55:35]
+initSignal:1
+[INFO -- 2018-12-07 22:55:35]
+endSignal:8
+[INFO -- 2018-12-07 22:55:35]
+faultModel:4
+[INFO -- 2018-12-07 22:55:37]
+Backtrace BEGIN:
+#0  0x00007ffff7494a29 in __random () at random.c:295
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#3  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+290	random.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x20
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: 536870952
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 22:55:37]
+Fault Injection Successful after 2.2680933475494385s
+[INFO -- 2018-12-07 22:55:37]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:55:37]
+exit code: no exit code available

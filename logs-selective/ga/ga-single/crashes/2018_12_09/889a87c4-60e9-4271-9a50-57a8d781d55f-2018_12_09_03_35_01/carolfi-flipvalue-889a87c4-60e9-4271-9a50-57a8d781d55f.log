@@ -1,0 +1,61 @@
+[INFO -- 2018-12-09 03:34:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:34:58]
+Initialization strings:
+[INFO -- 2018-12-09 03:34:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:34:58]
+initSignal:1
+[INFO -- 2018-12-09 03:34:58]
+endSignal:8
+[INFO -- 2018-12-09 03:34:58]
+faultModel:0
+[EXCEPTION -- 2018-12-09 03:35:00]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-09 03:35:00]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 03:35:00]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff74d928d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7600528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74e7650 in malloc_printerr (ar_ptr=0x0, ptr=<optimized out>, str=0x7ffff7600840 "munmap_chunk(): invalid pointer", action=<optimized out>) at malloc.c:5426
+#4  munmap_chunk (p=<optimized out>) at malloc.c:2877
+#5  __GI___libc_free (mem=<optimized out>) at malloc.c:3138
+#6  0x0000555555559a0e in __gnu_cxx::new_allocator<chromossome>::deallocate (this=0x7fffffffd8a0, __p=0x555555776b80) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555558d96 in std::allocator_traits<std::allocator<chromossome> >::deallocate (__a=..., __p=0x555555776b80, __n=4) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x00005555555577f4 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd8a0, __p=0x555555776b80, __n=4) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555556f1c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8a0, __position={solution = std::vector of length 132, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:448
+#10 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#12 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: __val
+Fliping array at pos: 8
+Memory content before bitflip:0x000xd40xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd260
+address max offset: 8
+Memory content after  bitflip:0x000xd40xff0xff0xff0x7f0x010x00
+frame name: __GI_raise
+symbol name: set
+symbol filename: ../sysdeps/unix/sysv/linux/raise.c
+symbol line: 39
+value: {__val = {0, 140737488343232, 3494696, 3, 140737341911848, 140737488343584, 3, 0, 422212465054720, 925585, 6, 140737354129696, 140737341911848, 17179869184, 140737353903792, 140737348603890}}
+value address: 0x7fffffffd220
+Type: The type is a structure.
+Type sizeof: 128
+Field name: __val
+Field Type: The type is an array.
+Field Type sizeof: 128
+
+[INFO -- 2018-12-09 03:35:00]
+Fault Injection Successful after 2.997368574142456s
+[INFO -- 2018-12-09 03:35:01]
+event type: exit
+[EXCEPTION -- 2018-12-09 03:35:01]
+exit code: no exit code available

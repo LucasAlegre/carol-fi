@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 03:43:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:43:46]
+Initialization strings:
+[INFO -- 2018-12-09 03:43:46]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:43:46]
+initSignal:1
+[INFO -- 2018-12-09 03:43:46]
+endSignal:8
+[INFO -- 2018-12-09 03:43:46]
+faultModel:2
+[INFO -- 2018-12-09 03:43:48]
+Backtrace BEGIN:
+#0  0x0000555555557212 in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd8e0) at /usr/include/c++/7/bits/stl_vector.h:591
+#1  0x0000555555556440 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#2  0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:98
+#3  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+586	       *  the last element in the %vector.  Iteration is done in
+587	       *  ordinary element order.
+588	       */
+589	      const_iterator
+590	      end() const _GLIBCXX_NOEXCEPT
+591	      { return const_iterator(this->_M_impl._M_finish); }
+592	
+593	      /**
+594	       *  Returns a read/write reverse iterator that points to the
+595	       *  last element in the %vector.  Iteration is done in reverse
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555786ed0
+address max offset: 4
+Memory content after  bitflip:0x780x990xa60x9d
+frame name: genetic_algorithm
+symbol name: pai
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd8c0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 03:43:48]
+Fault Injection Successful after 2.599226951599121s
+[INFO -- 2018-12-09 03:43:54]
+event type: exit
+[INFO -- 2018-12-09 03:43:54]
+exit code: 0

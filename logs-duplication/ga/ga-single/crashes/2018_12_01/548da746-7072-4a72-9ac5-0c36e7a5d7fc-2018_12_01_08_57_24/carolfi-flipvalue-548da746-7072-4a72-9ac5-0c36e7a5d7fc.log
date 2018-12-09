@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 08:57:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:57:03]
+Initialization strings:
+[INFO -- 2018-12-01 08:57:03]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:57:03]
+initSignal:0
+[INFO -- 2018-12-01 08:57:03]
+endSignal:13
+[INFO -- 2018-12-01 08:57:03]
+faultModel:0
+[INFO -- 2018-12-01 08:57:06]
+Backtrace BEGIN:
+#0  0x0000555555559832 in std::__niter_base<int const*, std::vector<int, std::allocator<int> > > (__it=0) at /usr/include/c++/7/bits/stl_iterator.h:984
+#1  0x000055555555ab12 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555780520) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x000055555555a264 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555780520) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x000055555555971c in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555780520) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x0000555555558692 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555780520) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555557223 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555780520) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555556161 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#7  0x000055555555810d in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#8  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd800, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#9  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#10 0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#11 0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#12 0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#13 0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#14 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+979	_GLIBCXX_BEGIN_NAMESPACE_VERSION
+980	
+981	  template<typename _Iterator, typename _Container>
+982	    _Iterator
+983	    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
+984	    { return __it.base(); }
+985	
+986	_GLIBCXX_END_NAMESPACE_VERSION
+987	} // namespace
+988	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x20
+frame name: std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 536871112
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 08:57:06]
+Fault Injection Successful after 3.0414321422576904s
+[INFO -- 2018-12-01 08:57:23]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:57:23]
+exit code: no exit code available

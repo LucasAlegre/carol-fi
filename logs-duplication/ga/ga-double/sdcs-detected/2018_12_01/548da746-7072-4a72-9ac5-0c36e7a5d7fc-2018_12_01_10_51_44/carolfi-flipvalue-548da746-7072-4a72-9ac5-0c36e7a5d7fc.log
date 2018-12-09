@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 10:51:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:51:31]
+Initialization strings:
+[INFO -- 2018-12-01 10:51:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:51:31]
+initSignal:0
+[INFO -- 2018-12-01 10:51:31]
+endSignal:13
+[INFO -- 2018-12-01 10:51:31]
+faultModel:1
+[INFO -- 2018-12-01 10:51:32]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:407
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+402	    {
+403	      const size_type __len =
+404		_M_check_len(size_type(1), "vector::_M_realloc_insert");
+405	      const size_type __elems_before = __position - begin();
+406	      pointer __new_start(this->_M_allocate(__len));
+407	      pointer __new_finish(__new_start);
+408	      __try
+409		{
+410		  // The order of the three operations is dictated by the C++11
+411		  // case, where the moves could alter a new element belonging
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0xc80x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 13171505
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 10:51:32]
+Fault Injection Successful after 1.8249378204345703s
+[INFO -- 2018-12-01 10:51:44]
+event type: exit
+[INFO -- 2018-12-01 10:51:44]
+exit code: 0

@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 06:55:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 06:55:59]
+Initialization strings:
+[INFO -- 2018-12-09 06:55:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 06:55:59]
+initSignal:1
+[INFO -- 2018-12-09 06:55:59]
+endSignal:8
+[INFO -- 2018-12-09 06:55:59]
+faultModel:2
+[EXCEPTION -- 2018-12-09 06:56:02]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 06:56:02]
+Backtrace BEGIN:
+#0  0x00007ffff7adf441 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x0000555555559cfe in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/ext/new_allocator.h:111
+#2  0x000055555555928b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=4) at /usr/include/c++/7/bits/alloc_traits.h:436
+#3  0x0000555555558302 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd820, __n=4) at /usr/include/c++/7/bits/stl_vector.h:172
+#4  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+147	    return -best;
+148	}
+149	
+150	int main()
+151	{
+152	    ifstream file("/tmp/knapsack/instance.txt");
+153	    ofstream outfile("/tmp/knapsack/outputga");
+154	    
+155	    srand (42);
+156	    file >> n; file >> W;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x9c0x950x840x7d
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 2105841052
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 06:56:02]
+Fault Injection Successful after 3.705425500869751s
+[INFO -- 2018-12-09 06:56:02]
+event type: exit
+[INFO -- 2018-12-09 06:56:02]
+exit code: 0

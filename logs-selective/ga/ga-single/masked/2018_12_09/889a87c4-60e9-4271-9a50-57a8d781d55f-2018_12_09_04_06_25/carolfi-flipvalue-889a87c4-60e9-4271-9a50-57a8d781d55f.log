@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 04:06:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:06:16]
+Initialization strings:
+[INFO -- 2018-12-09 04:06:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:06:16]
+initSignal:1
+[INFO -- 2018-12-09 04:06:16]
+endSignal:8
+[INFO -- 2018-12-09 04:06:16]
+faultModel:0
+[INFO -- 2018-12-09 04:06:18]
+Backtrace BEGIN:
+#0  0x0000555555556bc0 in std::_Destroy<int*, int> (__first=0x555555783250, __last=0x555555783570) at /usr/include/c++/7/bits/stl_construct.h:206
+#1  0x0000555555555ecb in std::vector<int, std::allocator<int> >::~vector (this=0x555555776740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x0000555555555e4c in chromossome::~chromossome (this=0x555555776740, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#3  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x555555776740) at /usr/include/c++/7/bits/stl_construct.h:98
+#4  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#5  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#6  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#7  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#8  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#9  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#10 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555783250
+address max offset: 4
+Memory content after  bitflip:0x000x000x200x00
+frame name: std::_Destroy<int*, int>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555783250
+value address: 0x7fffffffd6f8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 04:06:18]
+Fault Injection Successful after 2.5979480743408203s
+[INFO -- 2018-12-09 04:06:24]
+event type: exit
+[INFO -- 2018-12-09 04:06:24]
+exit code: 0

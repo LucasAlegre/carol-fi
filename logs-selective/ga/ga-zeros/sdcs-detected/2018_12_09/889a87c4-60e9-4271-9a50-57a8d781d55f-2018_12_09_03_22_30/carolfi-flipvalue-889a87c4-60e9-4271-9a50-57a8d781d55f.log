@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 03:22:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:22:28]
+Initialization strings:
+[INFO -- 2018-12-09 03:22:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:22:28]
+initSignal:1
+[INFO -- 2018-12-09 03:22:28]
+endSignal:8
+[INFO -- 2018-12-09 03:22:28]
+faultModel:3
+[INFO -- 2018-12-09 03:22:30]
+Backtrace BEGIN:
+#0  0x00005555555582c6 in __gnu_cxx::operator-<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > (__lhs={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __rhs={solution = std::vector of length 200, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -509591}) at /usr/include/c++/7/bits/stl_iterator.h:965
+#1  0x0000555555556de3 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:405
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+960	  template<typename _Iterator, typename _Container>
+961	    inline typename __normal_iterator<_Iterator, _Container>::difference_type
+962	    operator-(const __normal_iterator<_Iterator, _Container>& __lhs,
+963		      const __normal_iterator<_Iterator, _Container>& __rhs)
+964	    _GLIBCXX_NOEXCEPT
+965	    { return __lhs.base() - __rhs.base(); }
+966	
+967	  template<typename _Iterator, typename _Container>
+968	    inline __normal_iterator<_Iterator, _Container>
+969	    operator+(typename __normal_iterator<_Iterator, _Container>::difference_type
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 0
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 03:22:30]
+Fault Injection Successful after 2.3218941688537598s
+[INFO -- 2018-12-09 03:22:30]
+event type: exit
+[INFO -- 2018-12-09 03:22:30]
+exit code: 0

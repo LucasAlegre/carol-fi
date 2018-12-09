@@ -1,0 +1,60 @@
+[INFO -- 2018-11-30 03:36:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 03:36:51]
+Initialization strings:
+[INFO -- 2018-11-30 03:36:51]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 03:36:51]
+initSignal:0
+[INFO -- 2018-11-30 03:36:51]
+endSignal:7
+[INFO -- 2018-11-30 03:36:51]
+faultModel:4
+[EXCEPTION -- 2018-11-30 03:36:54]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-11-30 03:36:54]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-11-30 03:36:59]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff713af5d in __GI_abort () at abort.c:90
+#2  0x00007ffff718328d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff72aa528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff718a64a in malloc_printerr (action=<optimized out>, str=0x7ffff72a6eae "free(): invalid pointer", ptr=<optimized out>, ar_ptr=<optimized out>) at malloc.c:5426
+#4  0x00007ffff718c73e in _int_free (av=0x7ffff74dcc20 <main_arena>, p=<optimized out>, have_lock=0) at malloc.c:4175
+#5  0x00007ffff719144e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#6  0x0000555555556caa in __gnu_cxx::new_allocator<int>::deallocate (this=0x555555759160 <wt>, __p=0x555555770fc4) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555556855 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555770fc4, __n=255) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x00005555555560b8 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555759160 <wt>, __p=0x555555770fc4, __n=255) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555e19 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555759160 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x000055555555588b in std::vector<int, std::allocator<int> >::~vector (this=0x555555759160 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x00007ffff713dec0 in __run_exit_handlers (status=0, listp=0x7ffff74dc6f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:83
+#12 0x00007ffff713df1a in __GI_exit (status=<optimized out>) at exit.c:105
+#13 0x00007ffff71231c8 in __libc_start_main (main=0x5555555554d6 <main()>, argc=1, argv=0x7fffffffdee8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7fffffffded8) at ../csu/libc-start.c:342
+#14 0x0000555555554f6a in _start ()
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 0
+Fliping value of field: gp_offset
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffdb40
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x20
+frame name: __libc_message
+symbol name: ap
+symbol filename: ../sysdeps/posix/libc_fatal.c
+symbol line: 69
+value: {{gp_offset = 536870952, fp_offset = 0, overflow_arg_area = 0x7fffffffdbd0, reg_save_area = 0x7fffffffdb60}}
+value address: 0x7fffffffdb40
+Type: The type is an array.
+Type sizeof: 24
+
+[INFO -- 2018-11-30 03:36:59]
+Fault Injection Successful after 8.114373445510864s
+[INFO -- 2018-11-30 03:36:59]
+event type: exit
+[EXCEPTION -- 2018-11-30 03:36:59]
+exit code: no exit code available

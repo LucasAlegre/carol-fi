@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 06:03:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:03:43]
+Initialization strings:
+[INFO -- 2018-12-01 06:03:43]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:03:43]
+initSignal:0
+[INFO -- 2018-12-01 06:03:43]
+endSignal:13
+[INFO -- 2018-12-01 06:03:43]
+faultModel:3
+[INFO -- 2018-12-01 06:03:47]
+Backtrace BEGIN:
+#0  0x0000555555559263 in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x5555557763a0) at /usr/include/c++/7/bits/stl_iterator.h:1222
+#1  0x0000555555558329 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557763a0, __last=0x5555557763a0, __result=0x555555776440, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#2  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#3  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1217	  template<typename _Tp, typename _ReturnType
+1218	    = typename conditional<__move_if_noexcept_cond<_Tp>::value,
+1219				   const _Tp*, move_iterator<_Tp*>>::type>
+1220	    inline _GLIBCXX17_CONSTEXPR _ReturnType
+1221	    __make_move_if_noexcept_iterator(_Tp* __i)
+1222	    { return _ReturnType(__i); }
+1223	
+1224	  // @} group iterators
+1225	
+1226	  template<typename _Iterator>
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 0
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:03:47]
+Fault Injection Successful after 4.536956071853638s
+[INFO -- 2018-12-01 06:03:47]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:03:47]
+exit code: no exit code available

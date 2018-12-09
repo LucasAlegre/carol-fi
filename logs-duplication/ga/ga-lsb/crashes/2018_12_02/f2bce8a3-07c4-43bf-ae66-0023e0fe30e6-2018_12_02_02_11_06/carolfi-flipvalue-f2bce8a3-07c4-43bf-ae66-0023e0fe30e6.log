@@ -1,0 +1,58 @@
+[INFO -- 2018-12-02 02:10:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:10:59]
+Initialization strings:
+[INFO -- 2018-12-02 02:10:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:10:59]
+initSignal:0
+[INFO -- 2018-12-02 02:10:59]
+endSignal:13
+[INFO -- 2018-12-02 02:10:59]
+faultModel:4
+[INFO -- 2018-12-02 02:11:05]
+Backtrace BEGIN:
+#0  0x000055555555706f in std::vector<int, std::allocator<int> >::size (this=0x97f506930f7bef00) at /usr/include/c++/7/bits/stl_vector.h:670
+#1  0x00005555555560fe in std::vector<int, std::allocator<int> >::vector (this=0x555555776420, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x000055555555810d in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:42
+#3  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8d0, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+665	#endif
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x08
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 134217768
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 02:11:05]
+Fault Injection Successful after 6.4663097858428955s
+[INFO -- 2018-12-02 02:11:05]
+event type: exit
+[EXCEPTION -- 2018-12-02 02:11:05]
+exit code: no exit code available

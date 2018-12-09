@@ -1,0 +1,4 @@
+Variable Name;Variable File;Variable Line;Fault Injection Time(s);Injection Time Interval;Fault Model
+W;knapsackmf.cpp;16;1.0149550437927246;0-12;Random bit-flip
+W;knapsackmf.cpp;16;6.322148323059082;0-12;LSB bit-flip
+W;knapsackmf.cpp;16;1.1589932441711426;0-12;LSB bit-flip

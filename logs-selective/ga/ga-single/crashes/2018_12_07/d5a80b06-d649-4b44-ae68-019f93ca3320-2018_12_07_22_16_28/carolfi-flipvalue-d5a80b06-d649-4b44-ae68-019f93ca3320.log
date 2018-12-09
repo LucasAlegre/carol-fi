@@ -1,0 +1,58 @@
+[INFO -- 2018-12-07 22:16:22]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:16:22]
+Initialization strings:
+[INFO -- 2018-12-07 22:16:22]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:16:22]
+initSignal:1
+[INFO -- 2018-12-07 22:16:22]
+endSignal:8
+[INFO -- 2018-12-07 22:16:22]
+faultModel:0
+[INFO -- 2018-12-07 22:16:27]
+Backtrace BEGIN:
+#0  0x000055555555672d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#1  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+461	      operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+462	      {
+463		constexpr bool __move_storage =
+464		  _Alloc_traits::_S_propagate_on_move_assign()
+465		  || _Alloc_traits::_S_always_equal();
+466		_M_move_assign(std::move(__x), __bool_constant<__move_storage>());
+467		return *this;
+468	      }
+469	
+470	      /**
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd910
+address max offset: 8
+Memory content after  bitflip:0x000x040x000x000x000x000x000x00
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 0, capacity 256
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-07 22:16:27]
+Fault Injection Successful after 5.405931234359741s
+[INFO -- 2018-12-07 22:16:27]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:16:27]
+exit code: no exit code available

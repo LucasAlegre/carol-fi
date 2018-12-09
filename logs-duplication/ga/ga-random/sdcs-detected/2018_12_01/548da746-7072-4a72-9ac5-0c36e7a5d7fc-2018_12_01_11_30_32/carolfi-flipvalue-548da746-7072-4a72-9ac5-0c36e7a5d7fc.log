@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 11:30:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:30:19]
+Initialization strings:
+[INFO -- 2018-12-01 11:30:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:30:19]
+initSignal:0
+[INFO -- 2018-12-01 11:30:19]
+endSignal:13
+[INFO -- 2018-12-01 11:30:19]
+faultModel:2
+[INFO -- 2018-12-01 11:30:21]
+Backtrace BEGIN:
+#0  0x0000555555559c58 in std::allocator_traits<std::allocator<chromossome> >::max_size (__a=...) at /usr/include/c++/7/bits/alloc_traits.h:496
+#1  0x00005555555591da in std::vector<chromossome, std::allocator<chromossome> >::max_size (this=0x7fffffffd880) at /usr/include/c++/7/bits/stl_vector.h:676
+#2  0x000055555555824b in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd880, __n=1, __s=0x55555555b55c "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1503
+#3  0x0000555555556d88 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+491	       *  @param  __a  An allocator.
+492	       *  @return @c __a.max_size()
+493	      */
+494	      static size_type
+495	      max_size(const allocator_type& __a) noexcept
+496	      { return __a.max_size(); }
+497	
+498	      /**
+499	       *  @brief  Obtain an allocator to use when copying a container.
+500	       *  @param  __rhs  An allocator.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x1d0xec0x8d0x13
+frame name: std::vector<chromossome, std::allocator<chromossome> >::max_size
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 328068125
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 11:30:21]
+Fault Injection Successful after 2.5519602298736572s
+[INFO -- 2018-12-01 11:30:31]
+event type: exit
+[INFO -- 2018-12-01 11:30:31]
+exit code: 0

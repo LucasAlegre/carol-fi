@@ -1,0 +1,50 @@
+[INFO -- 2018-12-02 05:26:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:26:13]
+Initialization strings:
+[INFO -- 2018-12-02 05:26:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:26:13]
+initSignal:0
+[INFO -- 2018-12-02 05:26:13]
+endSignal:13
+[INFO -- 2018-12-02 05:26:13]
+faultModel:4
+[INFO -- 2018-12-02 05:26:21]
+Backtrace BEGIN:
+#0  0x00007ffff74949ee in __random () at random.c:291
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555aab in main () at knapsackga.cpp:143
+
+286	random.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555775f50
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x20
+frame name: crossover
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 200, capacity 200 = {536870912, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd990
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 05:26:21]
+Fault Injection Successful after 8.622182846069336s
+[INFO -- 2018-12-02 05:26:26]
+event type: exit
+[INFO -- 2018-12-02 05:26:26]
+exit code: 0

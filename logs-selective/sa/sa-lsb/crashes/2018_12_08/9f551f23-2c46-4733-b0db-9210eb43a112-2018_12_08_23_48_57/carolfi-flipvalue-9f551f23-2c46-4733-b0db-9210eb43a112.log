@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 23:48:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:48:54]
+Initialization strings:
+[INFO -- 2018-12-08 23:48:54]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 23:48:54]
+initSignal:0
+[INFO -- 2018-12-08 23:48:54]
+endSignal:9
+[INFO -- 2018-12-08 23:48:54]
+faultModel:4
+[EXCEPTION -- 2018-12-08 23:48:56]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 23:48:56]
+Backtrace BEGIN:
+#0  0x0000555555556803 in std::_Destroy<int*> (__first=0x5555557727c0, __last=0x555555772ae0) at /usr/include/c++/7/bits/stl_construct.h:138
+#1  0x0000555555555faf in std::_Destroy<int*, int> (__first=0x5555557727c0, __last=0x555555772ae0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x000055555555593d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#3  0x0000555555555468 in simulated_annealing () at knapsacksa.cpp:89
+#4  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+142	    {
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555759038 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x10
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 13
+value: 268435656
+value address: 0x555555759038 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 23:48:56]
+Fault Injection Successful after 2.4073946475982666s
+[INFO -- 2018-12-08 23:48:56]
+event type: exit
+[EXCEPTION -- 2018-12-08 23:48:56]
+exit code: no exit code available

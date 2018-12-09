@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 12:20:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:20:27]
+Initialization strings:
+[INFO -- 2018-12-01 12:20:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:20:27]
+initSignal:0
+[INFO -- 2018-12-01 12:20:27]
+endSignal:13
+[INFO -- 2018-12-01 12:20:27]
+faultModel:4
+[INFO -- 2018-12-01 12:20:33]
+Backtrace BEGIN:
+#0  0x0000555555556b06 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd900) at /usr/include/c++/7/bits/stl_vector.h:127
+#1  0x0000555555555e18 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd900) at /usr/include/c++/7/bits/stl_vector.h:263
+#2  0x000055555555552a in genetic_algorithm () at knapsackga.cpp:101
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+122	      allocator_type
+123	      get_allocator() const _GLIBCXX_NOEXCEPT
+124	      { return allocator_type(_M_get_Tp_allocator()); }
+125	
+126	      _Vector_base()
+127	      : _M_impl() { }
+128	
+129	      _Vector_base(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+130	      : _M_impl(__a) { }
+131	
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x080x80
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -2146895055
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:20:33]
+Fault Injection Successful after 6.385836362838745s
+[INFO -- 2018-12-01 12:20:40]
+event type: exit
+[INFO -- 2018-12-01 12:20:40]
+exit code: 0

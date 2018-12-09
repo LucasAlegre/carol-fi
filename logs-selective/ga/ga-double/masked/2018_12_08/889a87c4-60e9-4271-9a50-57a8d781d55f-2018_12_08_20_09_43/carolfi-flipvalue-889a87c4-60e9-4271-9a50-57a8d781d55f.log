@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 20:09:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 20:09:34]
+Initialization strings:
+[INFO -- 2018-12-08 20:09:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 20:09:34]
+initSignal:1
+[INFO -- 2018-12-08 20:09:34]
+endSignal:8
+[INFO -- 2018-12-08 20:09:34]
+faultModel:1
+[INFO -- 2018-12-08 20:09:37]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:447
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+442		    std::_Destroy(__new_start, __new_finish, _M_get_Tp_allocator());
+443		  _M_deallocate(__new_start, __len);
+444		  __throw_exception_again;
+445		}
+446	      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+447			    _M_get_Tp_allocator());
+448	      _M_deallocate(this->_M_impl._M_start,
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+451	      this->_M_impl._M_start = __new_start;
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x555555781048
+address max offset: 4
+Memory content after  bitflip:0x690x390xda0xff
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x555555781030
+value address: 0x555555781030
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 20:09:37]
+Fault Injection Successful after 3.0203847885131836s
+[INFO -- 2018-12-08 20:09:42]
+event type: exit
+[INFO -- 2018-12-08 20:09:42]
+exit code: 0

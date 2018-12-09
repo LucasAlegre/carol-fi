@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 01:05:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:05:24]
+Initialization strings:
+[INFO -- 2018-12-01 01:05:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:05:24]
+initSignal:0
+[INFO -- 2018-12-01 01:05:24]
+endSignal:13
+[INFO -- 2018-12-01 01:05:24]
+faultModel:3
+[INFO -- 2018-12-01 01:05:27]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:450
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x00005555555554bd in genetic_algorithm () at knapsackga.cpp:98
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+445		}
+446	      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+447			    _M_get_Tp_allocator());
+448	      _M_deallocate(this->_M_impl._M_start,
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+451	      this->_M_impl._M_start = __new_start;
+452	      this->_M_impl._M_finish = __new_finish;
+453	      this->_M_impl._M_end_of_storage = __new_start + __len;
+454	    }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 01:05:27]
+Fault Injection Successful after 3.3302297592163086s
+[INFO -- 2018-12-01 01:05:27]
+event type: exit
+[EXCEPTION -- 2018-12-01 01:05:27]
+exit code: no exit code available

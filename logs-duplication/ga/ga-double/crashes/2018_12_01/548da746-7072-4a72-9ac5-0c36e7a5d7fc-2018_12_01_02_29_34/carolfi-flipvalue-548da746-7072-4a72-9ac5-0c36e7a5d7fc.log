@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 02:29:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:29:29]
+Initialization strings:
+[INFO -- 2018-12-01 02:29:29]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 02:29:29]
+initSignal:0
+[INFO -- 2018-12-01 02:29:29]
+endSignal:13
+[INFO -- 2018-12-01 02:29:29]
+faultModel:1
+[EXCEPTION -- 2018-12-01 02:29:30]
+gdbException: Attempt to dereference a generic pointer.
+[INFO -- 2018-12-01 02:29:34]
+Backtrace BEGIN:
+#0  0x0000555555558197 in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd800, __n=93824994468736, __s=0x1 <error: Cannot access memory at address 0x1>) at /usr/include/c++/7/bits/stl_vector.h:1497
+#1  0x0000555555556d88 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1492	      { return _M_insert_rval(__position, std::move(__v)); }
+1493	#endif
+1494	
+1495	      // Called by _M_fill_insert, _M_insert_aux etc.
+1496	      size_type
+1497	      _M_check_len(size_type __n, const char* __s) const
+1498	      {
+1499		if (max_size() - size() < __n)
+1500		  __throw_length_error(__N(__s));
+1501	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xd80xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd768
+address max offset: 8
+Memory content after  bitflip:0x000xd80xff0x3f0xff0x7f0x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd768
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 02:29:34]
+Fault Injection Successful after 5.478849172592163s
+[INFO -- 2018-12-01 02:29:34]
+event type: exit
+[EXCEPTION -- 2018-12-01 02:29:34]
+exit code: no exit code available

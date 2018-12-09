@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 12:53:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:53:02]
+Initialization strings:
+[INFO -- 2018-12-01 12:53:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:53:02]
+initSignal:0
+[INFO -- 2018-12-01 12:53:02]
+endSignal:13
+[INFO -- 2018-12-01 12:53:02]
+faultModel:4
+[EXCEPTION -- 2018-12-01 12:53:06]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 12:53:06]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::begin (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:563
+#1  0x0000555555556d98 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:405
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+558	       *  Returns a read/write iterator that points to the first
+559	       *  element in the %vector.  Iteration is done in ordinary
+560	       *  element order.
+561	       */
+562	      iterator
+563	      begin() _GLIBCXX_NOEXCEPT
+564	      { return iterator(this->_M_impl._M_start); }
+565	
+566	      /**
+567	       *  Returns a read-only (constant) iterator that points to the
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x01
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 16777256
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:53:06]
+Fault Injection Successful after 4.492847681045532s
+[INFO -- 2018-12-01 12:53:06]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:53:06]
+exit code: no exit code available

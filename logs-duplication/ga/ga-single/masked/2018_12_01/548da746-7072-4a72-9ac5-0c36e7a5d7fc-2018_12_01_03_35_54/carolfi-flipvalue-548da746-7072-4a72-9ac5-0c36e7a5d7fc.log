@@ -1,0 +1,61 @@
+[INFO -- 2018-12-01 03:35:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:35:39]
+Initialization strings:
+[INFO -- 2018-12-01 03:35:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:35:39]
+initSignal:0
+[INFO -- 2018-12-01 03:35:39]
+endSignal:13
+[INFO -- 2018-12-01 03:35:39]
+faultModel:0
+[EXCEPTION -- 2018-12-01 03:35:44]
+gdbException: Cannot access memory at address 0x0
+[INFO -- 2018-12-01 03:35:44]
+Backtrace BEGIN:
+#0  0x0000555555556d88 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+398	    void
+399	    vector<_Tp, _Alloc>::
+400	    _M_realloc_insert(iterator __position, const _Tp& __x)
+401	#endif
+402	    {
+403	      const size_type __len =
+404		_M_check_len(size_type(1), "vector::_M_realloc_insert");
+405	      const size_type __elems_before = __position - begin();
+406	      pointer __new_start(this->_M_allocate(__len));
+407	      pointer __new_finish(__new_start);
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0xd00x440x780x55
+Fault Model: Single bit-flip
+base address to flip value: 0x555555776458
+address max offset: 4
+Memory content after  bitflip:0xd00x440x380x55
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd768
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 03:35:44]
+Fault Injection Successful after 5.241792917251587s
+[INFO -- 2018-12-01 03:35:52]
+event type: exit
+[INFO -- 2018-12-01 03:35:52]
+exit code: 0

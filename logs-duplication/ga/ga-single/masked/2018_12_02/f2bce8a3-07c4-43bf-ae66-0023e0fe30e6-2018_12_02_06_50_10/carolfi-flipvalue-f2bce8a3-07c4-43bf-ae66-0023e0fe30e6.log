@@ -1,0 +1,57 @@
+[INFO -- 2018-12-02 06:49:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:49:57]
+Initialization strings:
+[INFO -- 2018-12-02 06:49:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:49:57]
+initSignal:0
+[INFO -- 2018-12-02 06:49:57]
+endSignal:13
+[INFO -- 2018-12-02 06:49:57]
+faultModel:0
+[INFO -- 2018-12-02 06:50:05]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd864) at random_r.c:379
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#6  0x0000555555555aab in main () at knapsackga.cpp:143
+
+374	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x900x370x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffda30
+address max offset: 8
+Memory content after  bitflip:0x900x370x700x550x550x550x000x00
+frame name: genetic_algorithm
+symbol name: f1
+symbol filename: knapsackga.cpp
+symbol line: 105
+value: {solution = std::vector of length 131272, capacity 131272 = {<error reading variable>
+value address: 0x7fffffffda30
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-02 06:50:05]
+Fault Injection Successful after 8.288120985031128s
+[INFO -- 2018-12-02 06:50:10]
+event type: exit
+[INFO -- 2018-12-02 06:50:10]
+exit code: 0

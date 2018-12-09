@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 03:11:07]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:11:07]
+Initialization strings:
+[INFO -- 2018-12-09 03:11:07]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:11:07]
+initSignal:1
+[INFO -- 2018-12-09 03:11:07]
+endSignal:8
+[INFO -- 2018-12-09 03:11:07]
+faultModel:2
+[INFO -- 2018-12-09 03:11:11]
+Backtrace BEGIN:
+#0  0x0000555555556d10 in std::_Destroy<chromossome*, chromossome> (__first=0x7fffffffd820, __last=0x555555776780) at /usr/include/c++/7/bits/stl_construct.h:203
+#1  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+198		__traits::destroy(__alloc, std::__addressof(*__first));
+199	    }
+200	
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x670x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd750
+address max offset: 8
+Memory content after  bitflip:0x7b0xcc0x700x970x280x2d0x810xd0
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555776780
+value address: 0x7fffffffd750
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 03:11:11]
+Fault Injection Successful after 4.024129390716553s
+[INFO -- 2018-12-09 03:11:15]
+event type: exit
+[INFO -- 2018-12-09 03:11:15]
+exit code: 0

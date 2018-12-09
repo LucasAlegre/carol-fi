@@ -1,0 +1,59 @@
+[INFO -- 2018-12-07 21:59:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 21:59:34]
+Initialization strings:
+[INFO -- 2018-12-07 21:59:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 21:59:34]
+initSignal:1
+[INFO -- 2018-12-07 21:59:34]
+endSignal:8
+[INFO -- 2018-12-07 21:59:34]
+faultModel:1
+[EXCEPTION -- 2018-12-07 21:59:37]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-07 21:59:38]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-07 21:59:38]
+Backtrace BEGIN:
+#0  0x0000555555559751 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1958774088, __last=1433948720, __result=0x7fffffffd770) at /usr/include/c++/7/bits/stl_uninitialized.h:99
+#1  0x00005555555586a8 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x000055555555743f in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9a0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#4  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9a0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#5  0x000055555555571b in genetic_algorithm () at knapsackga.cpp:131
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+94	  template<>
+95	    struct __uninitialized_copy<true>
+96	    {
+97	      template<typename _InputIterator, typename _ForwardIterator>
+98	        static _ForwardIterator
+99	        __uninit_copy(_InputIterator __first, _InputIterator __last,
+100			      _ForwardIterator __result)
+101	        { return std::copy(__first, __last, __result); }
+102	    };
+103	
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x280x000x120x00
+frame name: std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 1179688
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 21:59:38]
+Fault Injection Successful after 4.706454038619995s
+[INFO -- 2018-12-07 21:59:38]
+event type: exit
+[INFO -- 2018-12-07 21:59:38]
+exit code: 0

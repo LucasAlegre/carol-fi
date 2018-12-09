@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 06:12:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:12:33]
+Initialization strings:
+[INFO -- 2018-12-01 06:12:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:12:33]
+initSignal:0
+[INFO -- 2018-12-01 06:12:33]
+endSignal:13
+[INFO -- 2018-12-01 06:12:33]
+faultModel:2
+[EXCEPTION -- 2018-12-01 06:12:35]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 06:12:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 06:12:35]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff74d928d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7600528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74e064a in malloc_printerr (action=<optimized out>, str=0x7ffff75fceae "free(): invalid pointer", ptr=<optimized out>, ar_ptr=<optimized out>) at malloc.c:5426
+#4  0x00007ffff74e273e in _int_free (av=0x7ffff7832c20 <main_arena>, p=<optimized out>, have_lock=0) at malloc.c:4175
+#5  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#6  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd8a0, __p=0x555555783e75) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555783e75, __n=202) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd8a0, __p=0x555555783e75, __n=202) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x000055555555568b in genetic_algorithm () at knapsackga.cpp:101
+#12 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0xac0x680x580x42
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1113090220
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:12:35]
+Fault Injection Successful after 2.345411777496338s
+[INFO -- 2018-12-01 06:12:35]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:12:35]
+exit code: no exit code available

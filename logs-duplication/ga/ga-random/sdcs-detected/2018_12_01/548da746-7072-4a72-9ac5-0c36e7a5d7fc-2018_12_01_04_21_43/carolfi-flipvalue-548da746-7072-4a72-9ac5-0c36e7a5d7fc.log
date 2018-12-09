@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 04:21:30]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:21:30]
+Initialization strings:
+[INFO -- 2018-12-01 04:21:30]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:21:30]
+initSignal:0
+[INFO -- 2018-12-01 04:21:30]
+endSignal:13
+[INFO -- 2018-12-01 04:21:30]
+faultModel:2
+[INFO -- 2018-12-01 04:21:34]
+Backtrace BEGIN:
+#0  0x00007ffff7494b82 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7b4) at random_r.c:376
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555555129 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:62
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+371	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 21
+Memory content before bitflip:0xde0xa70xc60x69
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff78321f4 
+address max offset: 4
+Memory content after  bitflip:0x660xd50x790x6e
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -469871858, 1620895445, 1185541568, 1910420505, 682250285, 953929159, 1852980818, 556769806, 1583504748, -1102382153, -891319575, -1065648811, -827782328, -500539281, 239818245, 115679462, 1885147955, -1046506643, 722778616, 1621606066, 1853478246, -448205678, -552002920, 1281163814, 489035392, -1959376096, -1790876878, 903764704, 47982514, 1970761465, 1244166212}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-01 04:21:34]
+Fault Injection Successful after 4.206696033477783s
+[INFO -- 2018-12-01 04:21:42]
+event type: exit
+[INFO -- 2018-12-01 04:21:42]
+exit code: 0

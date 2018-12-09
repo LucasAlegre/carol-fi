@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 04:57:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:57:52]
+Initialization strings:
+[INFO -- 2018-12-01 04:57:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:57:52]
+initSignal:0
+[INFO -- 2018-12-01 04:57:52]
+endSignal:13
+[INFO -- 2018-12-01 04:57:52]
+faultModel:1
+[INFO -- 2018-12-01 04:57:54]
+Backtrace BEGIN:
+#0  0x0000555555555e2c in std::vector<int, std::allocator<int> >::operator[] (this=0x7fffffffd900, __n=96) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555552f4 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555783b40
+address max offset: 4
+Memory content after  bitflip:0xb40x030x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd900
+value address: 0x7fffffffd7b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 04:57:54]
+Fault Injection Successful after 2.5612964630126953s
+[INFO -- 2018-12-01 04:58:05]
+event type: exit
+[INFO -- 2018-12-01 04:58:05]
+exit code: 0

@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 10:30:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:30:25]
+Initialization strings:
+[INFO -- 2018-12-01 10:30:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:30:25]
+initSignal:0
+[INFO -- 2018-12-01 10:30:25]
+endSignal:13
+[INFO -- 2018-12-01 10:30:25]
+faultModel:2
+[EXCEPTION -- 2018-12-01 10:30:30]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 10:30:30]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd760, __i=@0x7fffffffd758: 0x555555783b40) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x00005555555571da in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd8c0) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x00005555555563e6 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x0d0xce0xb40xca
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -894120435
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 10:30:30]
+Fault Injection Successful after 5.248733758926392s
+[INFO -- 2018-12-01 10:30:38]
+event type: exit
+[INFO -- 2018-12-01 10:30:38]
+exit code: 0

@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 10:09:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:09:13]
+Initialization strings:
+[INFO -- 2018-12-01 10:09:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:09:13]
+initSignal:0
+[INFO -- 2018-12-01 10:09:13]
+endSignal:13
+[INFO -- 2018-12-01 10:09:13]
+faultModel:0
+[INFO -- 2018-12-01 10:09:14]
+Backtrace BEGIN:
+#0  0x0000555555556b6e in std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (this=0x555555788010) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x0000555555555e54 in std::vector<int, std::allocator<int> >::~vector (this=0x555555788010, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x0000555555555df2 in chromossome::~chromossome (this=0x555555788010, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#3  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x555555788010) at /usr/include/c++/7/bits/stl_construct.h:98
+#4  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555788010, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:108
+#5  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x555555787bf0, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:137
+#6  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x555555787bf0, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:206
+#7  0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd880, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#8  0x000055555555580e in genetic_algorithm () at knapsackga.cpp:95
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x7b0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7d8
+address max offset: 8
+Memory content after  bitflip:0xf00x7b0x780x550x550x550x000x40
+frame name: std::_Destroy<chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x555555787bf0
+value address: 0x7fffffffd7d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 10:09:14]
+Fault Injection Successful after 1.0438339710235596s
+[INFO -- 2018-12-01 10:09:25]
+event type: exit
+[INFO -- 2018-12-01 10:09:25]
+exit code: 0

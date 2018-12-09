@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 16:10:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 16:10:06]
+Initialization strings:
+[INFO -- 2018-12-08 16:10:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 16:10:06]
+initSignal:1
+[INFO -- 2018-12-08 16:10:06]
+endSignal:8
+[INFO -- 2018-12-08 16:10:06]
+faultModel:3
+[EXCEPTION -- 2018-12-08 16:10:07]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 16:10:07]
+Backtrace BEGIN:
+#0  0x0000555555558318 in __gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >::base (this=0x7fffffffd780) at /usr/include/c++/7/bits/stl_iterator.h:845
+#1  0x0000555555556e5d in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:426
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#4  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+840	      operator-(difference_type __n) const _GLIBCXX_NOEXCEPT
+841	      { return __normal_iterator(_M_current - __n); }
+842	
+843	      const _Iterator&
+844	      base() const _GLIBCXX_NOEXCEPT
+845	      { return _M_current; }
+846	    };
+847	
+848	  // Note: In what follows, the left- and right-hand-side iterators are
+849	  // allowed to vary in types (conceptually in cv-qualification) so that
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 0
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 16:10:07]
+Fault Injection Successful after 1.8805267810821533s
+[INFO -- 2018-12-08 16:10:07]
+event type: exit
+[INFO -- 2018-12-08 16:10:07]
+exit code: 0

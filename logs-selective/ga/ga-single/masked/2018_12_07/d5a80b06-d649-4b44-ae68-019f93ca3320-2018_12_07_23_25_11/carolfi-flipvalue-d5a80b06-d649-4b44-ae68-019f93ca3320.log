@@ -1,0 +1,54 @@
+[INFO -- 2018-12-07 23:25:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:25:02]
+Initialization strings:
+[INFO -- 2018-12-07 23:25:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:25:02]
+initSignal:1
+[INFO -- 2018-12-07 23:25:02]
+endSignal:8
+[INFO -- 2018-12-07 23:25:02]
+faultModel:0
+[INFO -- 2018-12-07 23:25:07]
+Backtrace BEGIN:
+#0  0x0000555555556b95 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#1  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#2  0x0000555555555e4c in chromossome::~chromossome (this=0x7fffffffd980, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#3  0x000055555555575f in genetic_algorithm () at knapsackga.cpp:131
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+158	      }
+159	#endif
+160	
+161	      ~_Vector_base() _GLIBCXX_NOEXCEPT
+162	      { _M_deallocate(this->_M_impl._M_start, this->_M_impl._M_end_of_storage
+163			      - this->_M_impl._M_start); }
+164	
+165	    public:
+166	      _Vector_impl _M_impl;
+167	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800xd90xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd828
+address max offset: 8
+Memory content after  bitflip:0x800xd90xbf0xff0xff0x7f0x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd980
+value address: 0x7fffffffd828
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-07 23:25:07]
+Fault Injection Successful after 5.182122707366943s
+[INFO -- 2018-12-07 23:25:10]
+event type: exit
+[INFO -- 2018-12-07 23:25:10]
+exit code: 0

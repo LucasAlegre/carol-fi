@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 11:25:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:25:56]
+Initialization strings:
+[INFO -- 2018-12-01 11:25:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:25:56]
+initSignal:0
+[INFO -- 2018-12-01 11:25:56]
+endSignal:13
+[INFO -- 2018-12-01 11:25:56]
+faultModel:3
+[EXCEPTION -- 2018-12-01 11:26:01]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 11:26:01]
+gdbException: A syntax error in expression, near `...'.
+[INFO -- 2018-12-01 11:26:01]
+Backtrace BEGIN:
+#0  0x00007ffff74e25f0 in _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555780840, have_lock=0) at malloc.c:4149
+#1  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#2  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd980, __p=0x555555780850) at /usr/include/c++/7/ext/new_allocator.h:125
+#3  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555780850, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#4  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd980, __p=0x555555780850, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#5  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#6  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#7  0x0000555555555df2 in chromossome::~chromossome (this=0x7fffffffd980, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#8  0x0000555555555643 in genetic_algorithm () at knapsackga.cpp:105
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+4144	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 11:26:01]
+Fault Injection Successful after 5.507442235946655s
+[INFO -- 2018-12-01 11:26:02]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:26:02]
+exit code: no exit code available

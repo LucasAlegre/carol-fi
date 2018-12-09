@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 19:59:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 19:59:37]
+Initialization strings:
+[INFO -- 2018-12-08 19:59:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 19:59:37]
+initSignal:1
+[INFO -- 2018-12-08 19:59:37]
+endSignal:8
+[INFO -- 2018-12-08 19:59:37]
+faultModel:2
+[INFO -- 2018-12-08 19:59:41]
+Backtrace BEGIN:
+#0  __memmove_sse2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:531
+#1  0x000055555555a3ba in std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int> (__first=0x5555557788a0, __last=0x555555778bc0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_algobase.h:368
+#2  0x00005555555598dc in std::__copy_move_a<false, int const*, int*> (__first=0x5555557788a0, __last=0x555555778bc0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_algobase.h:386
+#3  0x000055555555ab8b in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_algobase.h:424
+#4  0x000055555555a2c0 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_algobase.h:456
+#5  0x0000555555559778 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#6  0x00005555555586a8 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#7  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555787c80) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#8  0x00005555555561bb in std::vector<int, std::allocator<int> >::vector (this=0x555555776780, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#9  0x0000555555558123 in chromossome::chromossome (this=0x555555776780) at knapsackga.cpp:63
+#10 0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776780, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#11 0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776780, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#12 0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#13 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#14 0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#15 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#16 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+526	../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0x4c0x630xdb0x92
+frame name: std::__copy_move_a<false, int const*, int*>
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -1831115956
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 19:59:41]
+Fault Injection Successful after 4.647423267364502s
+[INFO -- 2018-12-08 19:59:41]
+event type: exit
+[INFO -- 2018-12-08 19:59:41]
+exit code: 0

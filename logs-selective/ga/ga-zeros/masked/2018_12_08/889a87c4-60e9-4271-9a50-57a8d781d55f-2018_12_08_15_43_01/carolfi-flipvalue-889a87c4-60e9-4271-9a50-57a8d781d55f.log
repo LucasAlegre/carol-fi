@@ -1,0 +1,65 @@
+[INFO -- 2018-12-08 15:42:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:42:52]
+Initialization strings:
+[INFO -- 2018-12-08 15:42:52]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:42:52]
+initSignal:1
+[INFO -- 2018-12-08 15:42:52]
+endSignal:8
+[INFO -- 2018-12-08 15:42:52]
+faultModel:3
+[INFO -- 2018-12-08 15:42:54]
+Backtrace BEGIN:
+#0  0x0000555555559874 in std::__niter_base<int const*, std::vector<int, std::allocator<int> > > (__it=1433956880) at /usr/include/c++/7/bits/stl_iterator.h:983
+#1  0x000055555555ab6e in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786220) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x000055555555a2c0 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786220) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555559778 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786220) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x00005555555586a8 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=0, __result=0x555555786220) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555557257 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555786220) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x00005555555561bb in std::vector<int, std::allocator<int> >::vector (this=0x555555776560, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#7  0x0000555555558123 in chromossome::chromossome (this=0x555555776560) at knapsackga.cpp:63
+#8  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776560, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#9  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776560, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#10 0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#11 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#12 0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#13 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#14 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+978	{
+979	_GLIBCXX_BEGIN_NAMESPACE_VERSION
+980	
+981	  template<typename _Iterator, typename _Container>
+982	    _Iterator
+983	    __niter_base(__gnu_cxx::__normal_iterator<_Iterator, _Container> __it)
+984	    { return __it.base(); }
+985	
+986	_GLIBCXX_END_NAMESPACE_VERSION
+987	} // namespace
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0x630x4a0xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x5555557812a8
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x555555781290
+value address: 0x555555781290
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:42:54]
+Fault Injection Successful after 2.331494092941284s
+[INFO -- 2018-12-08 15:43:00]
+event type: exit
+[INFO -- 2018-12-08 15:43:00]
+exit code: 0

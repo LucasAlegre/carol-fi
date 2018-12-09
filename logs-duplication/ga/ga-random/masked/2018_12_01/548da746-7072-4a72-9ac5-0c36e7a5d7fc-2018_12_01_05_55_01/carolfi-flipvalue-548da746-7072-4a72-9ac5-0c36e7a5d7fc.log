@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 05:54:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:54:48]
+Initialization strings:
+[INFO -- 2018-12-01 05:54:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:54:48]
+initSignal:0
+[INFO -- 2018-12-01 05:54:48]
+endSignal:13
+[INFO -- 2018-12-01 05:54:48]
+faultModel:2
+[INFO -- 2018-12-01 05:54:56]
+Backtrace BEGIN:
+#0  0x0000555555559c31 in std::_Destroy<chromossome> (__pointer=0x555555776380) at /usr/include/c++/7/bits/stl_construct.h:97
+#1  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776380, __last=0x5555557763a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x555555776380, __last=0x5555557763a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x555555776380, __last=0x5555557763a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555556eb0 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 23456248625768 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#5  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#7  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#8  0x0000555555555aab in main () at knapsackga.cpp:143
+
+92	  /**
+93	   * Destroy the object pointed to by a pointer type.
+94	   */
+95	  template<typename _Tp>
+96	    inline void
+97	    _Destroy(_Tp* __pointer)
+98	    { __pointer->~_Tp(); }
+99	
+100	  template<bool>
+101	    struct _Destroy_aux
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9dc
+address max offset: 4
+Memory content after  bitflip:0xbd0x0f0x6b0x5a
+frame name: main
+symbol name: result2
+symbol filename: knapsackga.cpp
+symbol line: 143
+value: 1516965821
+value address: 0x7fffffffd9dc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 05:54:56]
+Fault Injection Successful after 8.146740674972534s
+[INFO -- 2018-12-01 05:55:01]
+event type: exit
+[INFO -- 2018-12-01 05:55:01]
+exit code: 0

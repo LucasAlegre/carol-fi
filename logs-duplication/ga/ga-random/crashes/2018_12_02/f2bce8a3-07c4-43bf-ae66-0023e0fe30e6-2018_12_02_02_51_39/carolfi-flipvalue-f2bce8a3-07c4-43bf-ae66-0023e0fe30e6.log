@@ -1,0 +1,43 @@
+[INFO -- 2018-12-02 02:51:37]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:51:37]
+Initialization strings:
+[INFO -- 2018-12-02 02:51:37]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:51:37]
+initSignal:0
+[INFO -- 2018-12-02 02:51:37]
+endSignal:13
+[INFO -- 2018-12-02 02:51:37]
+faultModel:2
+[INFO -- 2018-12-02 02:51:38]
+Backtrace BEGIN:
+#0  rand () at rand.c:27
+#1  0x0000555555555129 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:62
+#2  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+22	rand.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0x520x780x4f0xf1
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -246450094
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 02:51:38]
+Fault Injection Successful after 1.754908561706543s
+[INFO -- 2018-12-02 02:51:38]
+event type: exit
+[EXCEPTION -- 2018-12-02 02:51:38]
+exit code: no exit code available

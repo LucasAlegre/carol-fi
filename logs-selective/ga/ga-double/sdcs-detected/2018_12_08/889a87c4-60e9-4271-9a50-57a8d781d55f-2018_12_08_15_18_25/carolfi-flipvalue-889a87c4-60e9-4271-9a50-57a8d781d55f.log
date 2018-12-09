@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 15:18:21]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:18:21]
+Initialization strings:
+[INFO -- 2018-12-08 15:18:21]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:18:21]
+initSignal:1
+[INFO -- 2018-12-08 15:18:21]
+endSignal:8
+[INFO -- 2018-12-08 15:18:21]
+faultModel:1
+[INFO -- 2018-12-08 15:18:25]
+Backtrace BEGIN:
+#0  0x0000555555555114 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:44
+#1  0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+39	    for(int i=0; i < n; i++){
+40	        peso += solution[i] * wt[i];
+41	        valor += solution[i] * val[i];
+42	    }
+43	    for(int i=0; i < n; i++){
+44	        peso2 += solution[i] * wt2[i];
+45	        valor2 += solution[i] * val2[i];
+46	    }
+47	    if(peso != peso2 || valor != valor2){
+48	        exit_gracefully();
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x200xc10x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555578b0d0
+address max offset: 8
+Memory content after  bitflip:0xb00xc10x780x550x550x550x000x00
+frame name: cost
+symbol name: solution
+symbol filename: knapsackga.cpp
+symbol line: 33
+value: std::vector of length 164, capacity 164 = {0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+value address: 0x55555578b0d0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:18:25]
+Fault Injection Successful after 4.364796876907349s
+[INFO -- 2018-12-08 15:18:25]
+event type: exit
+[INFO -- 2018-12-08 15:18:25]
+exit code: 0

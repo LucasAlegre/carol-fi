@@ -1,0 +1,51 @@
+[INFO -- 2018-12-02 04:56:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:56:50]
+Initialization strings:
+[INFO -- 2018-12-02 04:56:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 04:56:50]
+initSignal:0
+[INFO -- 2018-12-02 04:56:50]
+endSignal:13
+[INFO -- 2018-12-02 04:56:50]
+faultModel:1
+[INFO -- 2018-12-02 04:56:53]
+Backtrace BEGIN:
+#0  0x00005555555565f3 in std::swap<int> (__a=@0x555555781104: 1, __b=@0x555555781138: 0) at /usr/include/c++/7/bits/move.h:198
+#1  0x000055555555574a in genetic_algorithm () at knapsackga.cpp:111
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+193	#endif
+194	    {
+195	      // concept requirements
+196	      __glibcxx_function_requires(_SGIAssignableConcept<_Tp>)
+197	
+198	      _Tp __tmp = _GLIBCXX_MOVE(__a);
+199	      __a = _GLIBCXX_MOVE(__b);
+200	      __b = _GLIBCXX_MOVE(__tmp);
+201	    }
+202	
+
+Backtrace END
+Memory content before bitflip:0x050x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd92c
+address max offset: 4
+Memory content after  bitflip:0x050x300x000x00
+frame name: genetic_algorithm
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 109
+value: 12293
+value address: 0x7fffffffd92c
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 04:56:53]
+Fault Injection Successful after 3.009700298309326s
+[INFO -- 2018-12-02 04:56:53]
+event type: exit
+[EXCEPTION -- 2018-12-02 04:56:53]
+exit code: no exit code available

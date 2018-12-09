@@ -1,0 +1,58 @@
+[INFO -- 2018-12-02 04:33:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:33:48]
+Initialization strings:
+[INFO -- 2018-12-02 04:33:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 04:33:48]
+initSignal:0
+[INFO -- 2018-12-02 04:33:48]
+endSignal:13
+[INFO -- 2018-12-02 04:33:48]
+faultModel:2
+[INFO -- 2018-12-02 04:33:49]
+Backtrace BEGIN:
+#0  std::_Vector_base<int, std::allocator<int> >::_M_get_Tp_allocator (this=0x555555776420) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x000055555555612b in std::vector<int, std::allocator<int> >::vector (this=0x555555776420, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:333
+#2  0x000055555555810d in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:42
+#3  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8d0, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x990xd00x1a0x6f
+frame name: main
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 1864028313
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 04:33:49]
+Fault Injection Successful after 1.8712172508239746s
+[INFO -- 2018-12-02 04:33:50]
+event type: exit
+[EXCEPTION -- 2018-12-02 04:33:50]
+exit code: no exit code available

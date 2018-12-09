@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 05:40:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:40:34]
+Initialization strings:
+[INFO -- 2018-12-01 05:40:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:40:34]
+initSignal:0
+[INFO -- 2018-12-01 05:40:34]
+endSignal:13
+[INFO -- 2018-12-01 05:40:34]
+faultModel:1
+[INFO -- 2018-12-01 05:40:40]
+Backtrace BEGIN:
+#0  0x0000555555556d48 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#1  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+470	       *  Calls <tt> __a.construct(__p, std::forward<Args>(__args)...) </tt>
+471	      */
+472	      template<typename _Up, typename... _Args>
+473		static void
+474		construct(allocator_type& __a, _Up* __p, _Args&&... __args)
+475		{ __a.construct(__p, std::forward<_Args>(__args)...); }
+476	
+477	      /**
+478	       *  @brief  Destroy an object of type @a _Up
+479	       *  @param  __a  An allocator.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd7f8
+address max offset: 4
+Memory content after  bitflip:0x000x000x210x00
+frame name: tournament
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 61
+value: 2162688
+value address: 0x7fffffffd7f8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 05:40:40]
+Fault Injection Successful after 6.6349310874938965s
+[INFO -- 2018-12-01 05:40:47]
+event type: exit
+[INFO -- 2018-12-01 05:40:47]
+exit code: 0

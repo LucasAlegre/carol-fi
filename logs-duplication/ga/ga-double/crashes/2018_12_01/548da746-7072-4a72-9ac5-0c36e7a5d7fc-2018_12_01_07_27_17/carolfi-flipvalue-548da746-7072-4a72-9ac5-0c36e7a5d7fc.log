@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 07:27:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:27:11]
+Initialization strings:
+[INFO -- 2018-12-01 07:27:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:27:11]
+initSignal:0
+[INFO -- 2018-12-01 07:27:11]
+endSignal:13
+[INFO -- 2018-12-01 07:27:11]
+faultModel:1
+[INFO -- 2018-12-01 07:27:15]
+Backtrace BEGIN:
+#0  0x0000555555556cd6 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_get_Tp_allocator (this=0x7fffffffd880) at /usr/include/c++/7/bits/stl_vector.h:116
+#1  0x0000555555556e93 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:447
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x00005555555554bd in genetic_algorithm () at knapsackga.cpp:98
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+111	    public:
+112	      typedef _Alloc allocator_type;
+113	
+114	      _Tp_alloc_type&
+115	      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
+116	      { return *static_cast<_Tp_alloc_type*>(&this->_M_impl); }
+117	
+118	      const _Tp_alloc_type&
+119	      _M_get_Tp_allocator() const _GLIBCXX_NOEXCEPT
+120	      { return *static_cast<const _Tp_alloc_type*>(&this->_M_impl); }
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xa00xed0x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555577e180
+address max offset: 8
+Memory content after  bitflip:0xa00xed0x770x110x550x550x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x55555577e180
+value address: 0x55555577e180
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 07:27:15]
+Fault Injection Successful after 4.6354851722717285s
+[INFO -- 2018-12-01 07:27:15]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:27:15]
+exit code: no exit code available

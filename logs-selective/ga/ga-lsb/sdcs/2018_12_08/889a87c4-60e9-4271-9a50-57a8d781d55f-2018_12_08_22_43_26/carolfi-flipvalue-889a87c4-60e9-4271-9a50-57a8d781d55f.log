@@ -1,0 +1,71 @@
+[INFO -- 2018-12-08 22:43:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:43:17]
+Initialization strings:
+[INFO -- 2018-12-08 22:43:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:43:17]
+initSignal:1
+[INFO -- 2018-12-08 22:43:17]
+endSignal:8
+[INFO -- 2018-12-08 22:43:17]
+faultModel:4
+[EXCEPTION -- 2018-12-08 22:43:21]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 22:43:21]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7b4) at random_r.c:362
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#4  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#5  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+357	in random_r.c
+
+Backtrace END
+Fliping value of field: state
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x9c0xe10xc20xa8
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff78321a4 
+address max offset: 4
+Memory content after  bitflip:0x9c0xe10xc20xaa
+frame name: __random
+symbol name: unsafe_state
+symbol filename: random.c
+symbol line: 160
+value: {fptr = 0x7ffff78321ac <randtbl+12>, rptr = 0x7ffff783221c <randtbl+124>, state = 0x7ffff78321a4 <randtbl+4>, rand_type = 3, rand_deg = 31, rand_sep = 3, end_ptr = 0x7ffff7832220 <pa_next_type>}
+value address: 0x7ffff7832720 <unsafe_state>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: fptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: state
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rand_type
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_deg
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_sep
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: end_ptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 22:43:21]
+Fault Injection Successful after 4.254981279373169s
+[INFO -- 2018-12-08 22:43:25]
+event type: exit
+[INFO -- 2018-12-08 22:43:25]
+exit code: 0

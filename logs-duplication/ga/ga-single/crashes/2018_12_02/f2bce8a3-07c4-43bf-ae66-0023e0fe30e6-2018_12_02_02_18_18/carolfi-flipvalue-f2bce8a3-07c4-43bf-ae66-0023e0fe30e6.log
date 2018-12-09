@@ -1,0 +1,52 @@
+[INFO -- 2018-12-02 02:18:14]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:18:14]
+Initialization strings:
+[INFO -- 2018-12-02 02:18:14]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:18:14]
+initSignal:0
+[INFO -- 2018-12-02 02:18:14]
+endSignal:13
+[INFO -- 2018-12-02 02:18:14]
+faultModel:0
+[EXCEPTION -- 2018-12-02 02:18:17]
+gdbException: Cannot access memory at address 0x8555555783b50
+[INFO -- 2018-12-02 02:18:17]
+Backtrace BEGIN:
+#0  __random () at random.c:297
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555527f in crossover (pai=std::vector of length -562949953421112, capacity -562949953421112 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+292	in random.c
+
+Backtrace END
+Fliping array at pos: 24
+Memory content before bitflip:0x220x090xeb0xc2
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7832200 
+address max offset: 4
+Memory content after  bitflip:0x620x090xeb0xc2
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -425347640, 1909443541, -1563040984, 464659915, -1367851054, -373562129, -1900326980, 2129554627, -1415621185, -537319060, 907393925, 1046349742, -297712186, 443262258, -1299887273, -362114078, 1406040203, 411620709, 470718054, -2014982949, -755262854, -1851367401, -2127960701, -1024784030, -939925619, 379747945, -818677040, 209097063, -521695514, -409470018, -1292807888}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-02 02:18:17]
+Fault Injection Successful after 3.8331854343414307s
+[INFO -- 2018-12-02 02:18:17]
+event type: exit
+[EXCEPTION -- 2018-12-02 02:18:17]
+exit code: no exit code available

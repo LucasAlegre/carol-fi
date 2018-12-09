@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 02:22:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:22:51]
+Initialization strings:
+[INFO -- 2018-12-09 02:22:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:22:51]
+initSignal:1
+[INFO -- 2018-12-09 02:22:51]
+endSignal:8
+[INFO -- 2018-12-09 02:22:51]
+faultModel:3
+[EXCEPTION -- 2018-12-09 02:22:53]
+gdbException: Cannot access memory at address 0x0
+[EXCEPTION -- 2018-12-09 02:22:53]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 02:22:53]
+Backtrace BEGIN:
+#0  0x00007ffff7494ead in rand () at rand.c:28
+#1  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#2  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 23456248634088, capacity 23456248634088 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#3  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+23	in rand.c
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555786bb0
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: crossover
+symbol name: mask
+symbol filename: knapsackga.cpp
+symbol line: 93
+value: std::vector of length 200, capacity 200 = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0...}
+value address: 0x7fffffffd820
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 02:22:53]
+Fault Injection Successful after 2.872161626815796s
+[INFO -- 2018-12-09 02:22:54]
+event type: exit
+[EXCEPTION -- 2018-12-09 02:22:54]
+exit code: no exit code available

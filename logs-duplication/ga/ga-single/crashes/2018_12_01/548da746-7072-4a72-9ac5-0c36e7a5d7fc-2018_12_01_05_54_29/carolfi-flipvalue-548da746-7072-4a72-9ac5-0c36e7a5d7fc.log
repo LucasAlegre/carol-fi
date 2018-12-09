@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 05:54:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:54:23]
+Initialization strings:
+[INFO -- 2018-12-01 05:54:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:54:23]
+initSignal:0
+[INFO -- 2018-12-01 05:54:23]
+endSignal:13
+[INFO -- 2018-12-01 05:54:23]
+faultModel:0
+[EXCEPTION -- 2018-12-01 05:54:28]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 05:54:28]
+Backtrace BEGIN:
+#0  0x00005555555552db in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:79
+#1  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+74	        mask[i] = rand_bit();
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+79	        if(mask[i]){
+80	            swap(filho1[i], filho2[i]);
+81	        }
+82	    }
+83	}
+
+Backtrace END
+Memory content before bitflip:0x040x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7fc
+address max offset: 4
+Memory content after  bitflip:0x040x000x080x00
+frame name: crossover
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 78
+value: 524292
+value address: 0x7fffffffd7fc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 05:54:28]
+Fault Injection Successful after 5.257093906402588s
+[INFO -- 2018-12-01 05:54:28]
+event type: exit
+[EXCEPTION -- 2018-12-01 05:54:28]
+exit code: no exit code available

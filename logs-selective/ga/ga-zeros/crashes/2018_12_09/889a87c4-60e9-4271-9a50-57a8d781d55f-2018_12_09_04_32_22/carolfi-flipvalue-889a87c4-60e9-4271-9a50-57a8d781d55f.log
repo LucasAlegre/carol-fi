@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 04:32:17]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:32:17]
+Initialization strings:
+[INFO -- 2018-12-09 04:32:17]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:32:17]
+initSignal:1
+[INFO -- 2018-12-09 04:32:17]
+endSignal:8
+[INFO -- 2018-12-09 04:32:17]
+faultModel:3
+[EXCEPTION -- 2018-12-09 04:32:21]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 04:32:21]
+Backtrace BEGIN:
+#0  0x000055555555915c in std::_Destroy_aux<true>::__destroy<int*> () at /usr/include/c++/7/bits/stl_construct.h:117
+#1  0x0000555555557dc7 in std::_Destroy<int*> (__first=0x555555787950, __last=0x555555787c70) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555556bcb in std::_Destroy<int*, int> (__first=0x555555787950, __last=0x555555787c70) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x0000555555555ecb in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd900, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#4  0x000055555555577d in genetic_algorithm () at knapsackga.cpp:127
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+112	  template<>
+113	    struct _Destroy_aux<true>
+114	    {
+115	      template<typename _ForwardIterator>
+116	        static void
+117	        __destroy(_ForwardIterator, _ForwardIterator) { }
+118	    };
+119	
+120	  /**
+121	   * Destroy a range of objects.  If the value_type of the object has
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0a8 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0a8 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 04:32:21]
+Fault Injection Successful after 4.5387890338897705s
+[INFO -- 2018-12-09 04:32:21]
+event type: exit
+[EXCEPTION -- 2018-12-09 04:32:21]
+exit code: no exit code available

@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 05:00:55]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:00:55]
+Initialization strings:
+[INFO -- 2018-12-01 05:00:55]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:00:55]
+initSignal:0
+[INFO -- 2018-12-01 05:00:55]
+endSignal:13
+[INFO -- 2018-12-01 05:00:55]
+faultModel:2
+[INFO -- 2018-12-01 05:00:59]
+Backtrace BEGIN:
+#0  0x00005555555585f8 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd800, __n=140737488345079) at /usr/include/c++/7/bits/stl_vector.h:185
+#1  0x0000555555557129 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd800, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x0000555555556268 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd800, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#3  0x0000555555555244 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+180		  _Tr::deallocate(_M_impl, __p, __n);
+181	      }
+182	
+183	    private:
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd768
+address max offset: 8
+Memory content after  bitflip:0x170x8a0x600x410x620xd20x280x2f
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd768
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 05:00:59]
+Fault Injection Successful after 4.789361953735352s
+[INFO -- 2018-12-01 05:01:07]
+event type: exit
+[INFO -- 2018-12-01 05:01:07]
+exit code: 0

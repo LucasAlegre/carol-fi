@@ -1,0 +1,57 @@
+[INFO -- 2018-12-01 06:52:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:52:25]
+Initialization strings:
+[INFO -- 2018-12-01 06:52:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:52:25]
+initSignal:0
+[INFO -- 2018-12-01 06:52:25]
+endSignal:13
+[INFO -- 2018-12-01 06:52:25]
+faultModel:3
+[EXCEPTION -- 2018-12-01 06:52:26]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 06:52:26]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 06:52:32]
+Backtrace BEGIN:
+#0  0x0000555555558c84 in std::__alloc_on_move<std::allocator<int> > (__one=..., __two=...) at /usr/include/c++/7/bits/alloc_traits.h:543
+#1  0x00005555555576f8 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1534
+#2  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x0000555555555597 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555aab in main () at knapsackga.cpp:143
+
+538	  template<typename _Alloc>
+539	    inline void __do_alloc_on_move(_Alloc&, _Alloc&, false_type)
+540	    { }
+541	
+542	  template<typename _Alloc>
+543	    inline void __alloc_on_move(_Alloc& __one, _Alloc& __two)
+544	    {
+545	      typedef allocator_traits<_Alloc> __traits;
+546	      typedef typename __traits::propagate_on_container_move_assignment __pocma;
+547	      __do_alloc_on_move(__one, __two, __pocma());
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 06:52:32]
+Fault Injection Successful after 7.765348434448242s
+[INFO -- 2018-12-01 06:52:38]
+event type: exit
+[INFO -- 2018-12-01 06:52:38]
+exit code: 0

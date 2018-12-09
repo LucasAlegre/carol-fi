@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 05:31:04]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:31:04]
+Initialization strings:
+[INFO -- 2018-12-09 05:31:04]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:31:04]
+initSignal:1
+[INFO -- 2018-12-09 05:31:04]
+endSignal:8
+[INFO -- 2018-12-09 05:31:04]
+faultModel:2
+[INFO -- 2018-12-09 05:31:07]
+Backtrace BEGIN:
+#0  0x00005555555580bf in std::allocator<chromossome>::~allocator (this=0x5555555577f4 <std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate(chromossome*, unsigned long)+50>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#1  0x0000555555556c8e in std::_Vector_base<chromossome, std::allocator<chromossome> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#2  0x0000555555556cfb in std::_Vector_base<chromossome, std::allocator<chromossome> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#3  0x0000555555555f77 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#5  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+139	      ~allocator() throw() { }
+140	
+141	      // Inherit everything else.
+142	    };
+143	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xf40x770x550x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd788
+address max offset: 8
+Memory content after  bitflip:0x220xe90x390x570xfc0xf20xdd0x87
+frame name: std::allocator<chromossome>::~allocator
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x5555555577f4 <std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate(chromossome*, unsigned long)+50>
+value address: 0x7fffffffd788
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 05:31:07]
+Fault Injection Successful after 3.4584648609161377s
+[INFO -- 2018-12-09 05:31:12]
+event type: exit
+[INFO -- 2018-12-09 05:31:12]
+exit code: 0

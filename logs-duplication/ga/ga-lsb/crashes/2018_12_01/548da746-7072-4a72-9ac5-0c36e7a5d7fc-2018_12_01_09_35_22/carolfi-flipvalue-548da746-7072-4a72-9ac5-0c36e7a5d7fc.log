@@ -1,0 +1,51 @@
+[INFO -- 2018-12-01 09:35:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:35:16]
+Initialization strings:
+[INFO -- 2018-12-01 09:35:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:35:16]
+initSignal:0
+[INFO -- 2018-12-01 09:35:16]
+endSignal:13
+[INFO -- 2018-12-01 09:35:16]
+faultModel:4
+[INFO -- 2018-12-01 09:35:21]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x555555555e18 <std::vector<int, std::allocator<int> >::vector()+24>, __x=std::vector of length -11728124026518, capacity 84 = {...}) at /usr/include/c++/7/bits/vector.tcc:179
+#1  0x00005555555555f5 in genetic_algorithm () at knapsackga.cpp:105
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+174	      return __first;
+175	    }
+176	
+177	  template<typename _Tp, typename _Alloc>
+178	    vector<_Tp, _Alloc>&
+179	    vector<_Tp, _Alloc>::
+180	    operator=(const vector<_Tp, _Alloc>& __x)
+181	    {
+182	      if (&__x != this)
+183		{
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x80
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -2147483448
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 09:35:21]
+Fault Injection Successful after 5.409184217453003s
+[INFO -- 2018-12-01 09:35:21]
+event type: exit
+[EXCEPTION -- 2018-12-01 09:35:21]
+exit code: no exit code available

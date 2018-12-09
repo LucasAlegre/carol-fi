@@ -1,0 +1,62 @@
+[INFO -- 2018-12-01 07:26:44]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:26:44]
+Initialization strings:
+[INFO -- 2018-12-01 07:26:44]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:26:44]
+initSignal:0
+[INFO -- 2018-12-01 07:26:44]
+endSignal:13
+[INFO -- 2018-12-01 07:26:44]
+faultModel:4
+[EXCEPTION -- 2018-12-01 07:26:47]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 07:26:47]
+Backtrace BEGIN:
+#0  0x0000555555558683 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x555555782b60) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#1  0x0000555555557223 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x555555782b60) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x00005555555573e5 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd900, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#3  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#4  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#5  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+129	#endif
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x300x030x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x5555557844d0
+address max offset: 4
+Memory content after  bitflip:0x300x030x000x02
+frame name: std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > >
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 1258
+value: 33555248
+value address: 0x7fffffffd730
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 07:26:47]
+Fault Injection Successful after 3.9695258140563965s
+[INFO -- 2018-12-01 07:26:51]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:26:51]
+exit code: no exit code available

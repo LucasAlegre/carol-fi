@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 23:12:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:12:28]
+Initialization strings:
+[INFO -- 2018-12-08 23:12:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:12:28]
+initSignal:1
+[INFO -- 2018-12-08 23:12:28]
+endSignal:8
+[INFO -- 2018-12-08 23:12:28]
+faultModel:2
+[INFO -- 2018-12-08 23:12:30]
+Backtrace BEGIN:
+#0  0x00005555555566f0 in std::vector<chromossome, std::allocator<chromossome> >::size (this=0x7fffffffd820) at /usr/include/c++/7/bits/stl_vector.h:671
+#1  0x0000555555558213 in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd820, __n=1, __s=0x55555555b5bf "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1502
+#2  0x0000555555556dbc in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#3  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#5  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+666	
+667	      // [23.2.4.2] capacity
+668	      /**  Returns the number of elements in the %vector.  */
+669	      size_type
+670	      size() const _GLIBCXX_NOEXCEPT
+671	      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+672	
+673	      /**  Returns the size() of the largest possible %vector.  */
+674	      size_type
+675	      max_size() const _GLIBCXX_NOEXCEPT
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0xc90xfb0xc40x1e
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_check_len
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 516225993
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 23:12:30]
+Fault Injection Successful after 2.008829116821289s
+[INFO -- 2018-12-08 23:12:30]
+event type: exit
+[INFO -- 2018-12-08 23:12:30]
+exit code: 0

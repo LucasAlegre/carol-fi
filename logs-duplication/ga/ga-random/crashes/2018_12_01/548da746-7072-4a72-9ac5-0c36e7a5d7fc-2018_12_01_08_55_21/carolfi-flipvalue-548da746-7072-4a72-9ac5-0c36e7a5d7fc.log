@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 08:55:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:55:16]
+Initialization strings:
+[INFO -- 2018-12-01 08:55:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:55:16]
+initSignal:0
+[INFO -- 2018-12-01 08:55:16]
+endSignal:13
+[INFO -- 2018-12-01 08:55:16]
+faultModel:2
+[EXCEPTION -- 2018-12-01 08:55:20]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 08:55:20]
+Backtrace BEGIN:
+#0  0x000055555555ab50 in std::fill_n<int*, unsigned long, int> (__first=0x555555775f50, __n=200, __value=@0x7fffffffd6f4: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#1  0x000055555555a2a8 in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555775f50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#2  0x00005555555597c8 in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555775f50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#3  0x0000555555558779 in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555775f50, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#4  0x00005555555572c3 in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd800, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#5  0x000055555555627b in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd800, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#6  0x0000555555555244 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:72
+#7  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+784	    fill_n(_OI __first, _Size __n, const _Tp& __value)
+785	    {
+786	      // concept requirements
+787	      __glibcxx_function_requires(_OutputIteratorConcept<_OI, _Tp>)
+788	
+789	      return _OI(std::__fill_n_a(std::__niter_base(__first), __n, __value));
+790	    }
+791	
+792	  template<bool _BoolType>
+793	    struct __equal
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x430xeb0x3b
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6f4
+address max offset: 8
+Memory content after  bitflip:0x7d0xf50x010x640x4d0x750x8e0xd3
+frame name: std::fill_n<int*, unsigned long, int>
+symbol name: __value
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 784
+value: @0x7fffffffd6f4
+value address: 0x7fffffffd6f4
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:55:20]
+Fault Injection Successful after 4.236654758453369s
+[INFO -- 2018-12-01 08:55:20]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:55:20]
+exit code: no exit code available

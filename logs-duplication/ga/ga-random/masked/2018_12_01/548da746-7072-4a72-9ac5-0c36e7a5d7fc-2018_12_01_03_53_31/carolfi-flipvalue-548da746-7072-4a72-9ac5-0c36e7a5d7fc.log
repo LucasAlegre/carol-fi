@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 03:53:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:53:18]
+Initialization strings:
+[INFO -- 2018-12-01 03:53:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:53:18]
+initSignal:0
+[INFO -- 2018-12-01 03:53:18]
+endSignal:13
+[INFO -- 2018-12-01 03:53:18]
+faultModel:2
+[INFO -- 2018-12-01 03:53:22]
+Backtrace BEGIN:
+#0  0x0000555555559816 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#1  0x00005555555587e2 in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd940, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#2  0x000055555555860f in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd940, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#3  0x0000555555557129 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd940, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#4  0x0000555555556113 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd940, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#5  0x00005555555551ab in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#6  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+431	       *
+432	       *  Calls @c a.allocate(n)
+433	      */
+434	      static pointer
+435	      allocate(allocator_type& __a, size_type __n)
+436	      { return __a.allocate(__n); }
+437	
+438	      /**
+439	       *  @brief  Allocate memory.
+440	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555784f50
+address max offset: 4
+Memory content after  bitflip:0xa00x870xa00x07
+frame name: genetic_algorithm
+symbol name: pai
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 200, capacity 200 = {127960992, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd8a0
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 03:53:22]
+Fault Injection Successful after 4.9311134815216064s
+[INFO -- 2018-12-01 03:53:31]
+event type: exit
+[INFO -- 2018-12-01 03:53:31]
+exit code: 0

@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 05:13:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:13:34]
+Initialization strings:
+[INFO -- 2018-12-09 05:13:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:13:34]
+initSignal:1
+[INFO -- 2018-12-09 05:13:34]
+endSignal:8
+[INFO -- 2018-12-09 05:13:34]
+faultModel:2
+[INFO -- 2018-12-09 05:13:36]
+Backtrace BEGIN:
+#0  malloc (n=10) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  _int_free (av=0x7ffff7832c20 <main_arena>, p=0x555555783f00, have_lock=0) at malloc.c:4149
+#3  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#4  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd9a0, __p=0x555555783f10) at /usr/include/c++/7/ext/new_allocator.h:125
+#5  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555783f10, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#6  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9a0, __p=0x555555783f10, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#7  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#8  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#9  0x0000555555555e4c in chromossome::~chromossome (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#10 0x0000555555555753 in genetic_algorithm () at knapsackga.cpp:131
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+45	dl-minimal.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x6f0x9a0x860x60
+frame name: chromossome::~chromossome
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 1619434095
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 05:13:36]
+Fault Injection Successful after 2.4212307929992676s
+[INFO -- 2018-12-09 05:13:36]
+event type: exit
+[INFO -- 2018-12-09 05:13:36]
+exit code: 0

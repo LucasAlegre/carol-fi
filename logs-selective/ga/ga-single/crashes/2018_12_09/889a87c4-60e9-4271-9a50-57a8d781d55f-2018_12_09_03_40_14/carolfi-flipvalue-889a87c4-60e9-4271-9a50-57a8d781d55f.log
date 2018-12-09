@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 03:40:09]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 03:40:09]
+Initialization strings:
+[INFO -- 2018-12-09 03:40:09]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 03:40:09]
+initSignal:1
+[INFO -- 2018-12-09 03:40:09]
+endSignal:8
+[INFO -- 2018-12-09 03:40:09]
+faultModel:0
+[EXCEPTION -- 2018-12-09 03:40:13]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-09 03:40:13]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-09 03:40:14]
+Backtrace BEGIN:
+#0  0x00007ffff74e7444 in __GI___libc_free (mem=<optimized out>) at malloc.c:3144
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x55555575f050 <val2>, __p=0x5555557778e0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557778e0, __n=224) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x55555575f050 <val2>, __p=0x5555557778e0, __n=224) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555575f050 <val2>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555575f050 <val2>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x00007ffff7493ec0 in __run_exit_handlers (status=0, listp=0x7ffff78326f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:83
+#7  0x00007ffff7493f1a in __GI_exit (status=<optimized out>) at exit.c:105
+#8  0x0000555555554fcb in exit_gracefully () at knapsackga.cpp:26
+#9  0x0000555555555165 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:48
+#10 0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3139	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x010x000x00
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: 296
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 03:40:14]
+Fault Injection Successful after 5.0261571407318115s
+[INFO -- 2018-12-09 03:40:14]
+event type: exit
+[EXCEPTION -- 2018-12-09 03:40:14]
+exit code: no exit code available

@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 10:21:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:21:56]
+Initialization strings:
+[INFO -- 2018-12-01 10:21:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:21:56]
+initSignal:0
+[INFO -- 2018-12-01 10:21:56]
+endSignal:13
+[INFO -- 2018-12-01 10:21:56]
+faultModel:2
+[INFO -- 2018-12-01 10:21:58]
+Backtrace BEGIN:
+#0  0x0000555555555714 in genetic_algorithm () at knapsackga.cpp:111
+#1  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+106	            new_pop.push_back(f1);
+107	            new_pop.push_back(f2);
+108	        }
+109	        for(int i=0; i < pop_size; i++){
+110	            if(random01() < 0.5)
+111	                swap(new_pop[i].solution[rand() % n], new_pop[i].solution[rand() % n]);
+112	            new_pop[i].fitness = cost(new_pop[i].solution);
+113	        }
+114	
+115	        sort(new_pop.begin(), new_pop.end());
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x980x230xa40x6a
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1789141912
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 10:21:58]
+Fault Injection Successful after 2.350335121154785s
+[INFO -- 2018-12-01 10:22:08]
+event type: exit
+[INFO -- 2018-12-01 10:22:08]
+exit code: 0

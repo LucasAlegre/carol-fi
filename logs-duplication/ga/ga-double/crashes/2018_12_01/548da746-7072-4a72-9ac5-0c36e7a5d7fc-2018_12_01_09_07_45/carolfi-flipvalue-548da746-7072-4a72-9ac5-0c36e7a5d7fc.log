@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 09:07:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:07:41]
+Initialization strings:
+[INFO -- 2018-12-01 09:07:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:07:41]
+initSignal:0
+[INFO -- 2018-12-01 09:07:41]
+endSignal:13
+[INFO -- 2018-12-01 09:07:41]
+faultModel:1
+[INFO -- 2018-12-01 09:07:44]
+Backtrace BEGIN:
+#0  0x0000555555556123 in std::vector<int, std::allocator<int> >::vector (this=0x555555784880, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:333
+#1  0x000055555555810d in chromossome::chromossome (this=0x555555784880) at knapsackga.cpp:42
+#2  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd880, __p=0x555555784880, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#3  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555784880, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#4  0x0000555555555f80 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#5  0x0000555555555637 in genetic_algorithm () at knapsackga.cpp:107
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+333					      _M_get_Tp_allocator());
+334	      }
+335	
+336	#if __cplusplus >= 201103L
+337	      /**
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x250x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd980
+address max offset: 8
+Memory content after  bitflip:0x000x250xb80x550x550x550x000x00
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 135
+value: @0x7fffffffd980
+value address: 0x7fffffffd980
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 09:07:44]
+Fault Injection Successful after 3.6102302074432373s
+[INFO -- 2018-12-01 09:07:44]
+event type: exit
+[EXCEPTION -- 2018-12-01 09:07:44]
+exit code: no exit code available

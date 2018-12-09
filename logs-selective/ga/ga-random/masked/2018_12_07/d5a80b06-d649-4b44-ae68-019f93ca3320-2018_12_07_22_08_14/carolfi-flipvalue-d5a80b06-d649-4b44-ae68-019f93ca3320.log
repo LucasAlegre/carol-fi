@@ -1,0 +1,57 @@
+[INFO -- 2018-12-07 22:08:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:08:05]
+Initialization strings:
+[INFO -- 2018-12-07 22:08:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:08:05]
+initSignal:1
+[INFO -- 2018-12-07 22:08:05]
+endSignal:8
+[INFO -- 2018-12-07 22:08:05]
+faultModel:2
+[INFO -- 2018-12-07 22:08:08]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:182
+#1  0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:98
+#2  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+177	  template<typename _Tp, typename _Alloc>
+178	    vector<_Tp, _Alloc>&
+179	    vector<_Tp, _Alloc>::
+180	    operator=(const vector<_Tp, _Alloc>& __x)
+181	    {
+182	      if (&__x != this)
+183		{
+184	#if __cplusplus >= 201103L
+185		  if (_Alloc_traits::_S_propagate_on_copy_assign())
+186		    {
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x620x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd8f0
+address max offset: 8
+Memory content after  bitflip:0x700x8e0x590xb80x580x040x8d0xf5
+frame name: crossover
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: std::vector of length 200, capacity -188258652149756960 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd8e0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-07 22:08:08]
+Fault Injection Successful after 3.7990193367004395s
+[INFO -- 2018-12-07 22:08:13]
+event type: exit
+[INFO -- 2018-12-07 22:08:13]
+exit code: 0

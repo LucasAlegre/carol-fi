@@ -1,0 +1,61 @@
+[INFO -- 2018-11-30 02:14:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 02:14:27]
+Initialization strings:
+[INFO -- 2018-11-30 02:14:27]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 02:14:27]
+initSignal:0
+[INFO -- 2018-11-30 02:14:27]
+endSignal:7
+[INFO -- 2018-11-30 02:14:27]
+faultModel:2
+[INFO -- 2018-11-30 02:14:27]
+Backtrace BEGIN:
+#0  0x0000555555556d1d in std::__copy_move_a<false, int const*, int*> (__first=0x55555576e610, __last=0x7fffffffd840, __result=0x7fffffffd838) at /usr/include/c++/7/bits/stl_algobase.h:375
+#1  0x0000555555556925 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=1, __last=540357171, __result=1) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x0000555555556259 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=1, __last=540357171, __result=1) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555555c17 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd970, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#4  0x00005555555552c9 in simulated_annealing () at knapsacksa.cpp:60
+#5  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+370		}
+371	    };
+372	
+373	  template<bool _IsMove, typename _II, typename _OI>
+374	    inline _OI
+375	    __copy_move_a(_II __first, _II __last, _OI __result)
+376	    {
+377	      typedef typename iterator_traits<_II>::value_type _ValueTypeI;
+378	      typedef typename iterator_traits<_OI>::value_type _ValueTypeO;
+379	      typedef typename iterator_traits<_II>::iterator_category _Category;
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x310x310x390x20
+Fault Model: Random bit-flip
+base address to flip value: 0x55555576e600
+address max offset: 4
+Memory content after  bitflip:0x6a0xe00x6d0x13
+frame name: simulated_annealing
+symbol name: solution
+symbol filename: knapsacksa.cpp
+symbol line: 40
+value: std::vector of length 200, capacity 200 = {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1...}
+value address: 0x7fffffffd970
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-11-30 02:14:27]
+Fault Injection Successful after 0.8212690353393555s
+[INFO -- 2018-11-30 02:14:34]
+event type: exit
+[INFO -- 2018-11-30 02:14:34]
+exit code: 0

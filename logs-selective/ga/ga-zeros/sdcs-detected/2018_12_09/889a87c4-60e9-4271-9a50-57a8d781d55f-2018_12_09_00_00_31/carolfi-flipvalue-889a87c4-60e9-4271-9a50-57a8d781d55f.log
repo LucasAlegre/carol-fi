@@ -1,0 +1,63 @@
+[INFO -- 2018-12-09 00:00:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:00:27]
+Initialization strings:
+[INFO -- 2018-12-09 00:00:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:00:27]
+initSignal:1
+[INFO -- 2018-12-09 00:00:27]
+endSignal:8
+[INFO -- 2018-12-09 00:00:27]
+faultModel:3
+[EXCEPTION -- 2018-12-09 00:00:30]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 00:00:30]
+Backtrace BEGIN:
+#0  0x00005555555585d6 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd5f0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#1  0x00005555555599cb in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd5f0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:130
+#2  0x0000555555558cd1 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd5f0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:271
+#3  0x00005555555576fa in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#4  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x555555776740, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555951d in chromossome::operator= (this=0x555555776740) at knapsackga.cpp:63
+#6  0x000055555555962f in std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -505025}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1852
+#7  0x0000555555558559 in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -505025}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#8  0x0000555555557093 in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = -505025}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#9  0x00005555555560e7 in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 0, capacity 0, fitness = -505025}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#10 0x000055555555525c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:87
+#11 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#12 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+95	
+96	#if __cplusplus >= 201103L
+97		_Vector_impl(_Tp_alloc_type&& __a) noexcept
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter>
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 0
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 00:00:30]
+Fault Injection Successful after 3.528379440307617s
+[INFO -- 2018-12-09 00:00:30]
+event type: exit
+[INFO -- 2018-12-09 00:00:30]
+exit code: 0

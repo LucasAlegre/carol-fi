@@ -1,0 +1,62 @@
+[INFO -- 2018-12-01 12:30:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:30:20]
+Initialization strings:
+[INFO -- 2018-12-01 12:30:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:30:20]
+initSignal:0
+[INFO -- 2018-12-01 12:30:20]
+endSignal:13
+[INFO -- 2018-12-01 12:30:20]
+faultModel:0
+[INFO -- 2018-12-01 12:30:22]
+Backtrace BEGIN:
+#0  0x0000555555559cb8 in std::move_iterator<chromossome*>::move_iterator (this=0x7fffffffd6f0, __i=0x555555776380) at /usr/include/c++/7/bits/stl_iterator.h:1037
+#1  0x000055555555925f in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x555555776380) at /usr/include/c++/7/bits/stl_iterator.h:1222
+#2  0x0000555555558338 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776380, __last=0x5555557763a0, __result=0x555555776400, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#3  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1032	      move_iterator()
+1033	      : _M_current() { }
+1034	
+1035	      explicit _GLIBCXX17_CONSTEXPR
+1036	      move_iterator(iterator_type __i)
+1037	      : _M_current(__i) { }
+1038	
+1039	      template<typename _Iter>
+1040		_GLIBCXX17_CONSTEXPR
+1041		move_iterator(const move_iterator<_Iter>& __i)
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555577a490
+address max offset: 4
+Memory content after  bitflip:0x100x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x55555577e1c0
+value address: 0x55555577e1c0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 12:30:22]
+Fault Injection Successful after 2.359118938446045s
+[INFO -- 2018-12-01 12:30:33]
+event type: exit
+[INFO -- 2018-12-01 12:30:33]
+exit code: 0

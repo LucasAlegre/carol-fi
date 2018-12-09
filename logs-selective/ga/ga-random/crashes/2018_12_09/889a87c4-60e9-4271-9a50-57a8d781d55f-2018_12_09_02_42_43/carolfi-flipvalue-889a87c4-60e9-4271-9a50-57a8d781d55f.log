@@ -1,0 +1,52 @@
+[INFO -- 2018-12-09 02:42:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:42:35]
+Initialization strings:
+[INFO -- 2018-12-09 02:42:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:42:35]
+initSignal:1
+[INFO -- 2018-12-09 02:42:35]
+endSignal:8
+[INFO -- 2018-12-09 02:42:35]
+faultModel:2
+[INFO -- 2018-12-09 02:42:42]
+Backtrace BEGIN:
+#0  0x0000555555555f34 in std::vector<chromossome, std::allocator<chromossome> >::vector (this=0x7fffffffd820) at /usr/include/c++/7/bits/stl_vector.h:263
+#1  0x00005555555551eb in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#2  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+258	       */
+259	      vector()
+260	#if __cplusplus >= 201103L
+261	      noexcept(is_nothrow_default_constructible<_Alloc>::value)
+262	#endif
+263	      : _Base() { }
+264	
+265	      /**
+266	       *  @brief  Creates a %vector with no elements.
+267	       *  @param  __a  An allocator object.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0a8 
+address max offset: 4
+Memory content after  bitflip:0xd00x2a0xd80xc2
+frame name: std::vector<chromossome, std::allocator<chromossome> >::vector
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: -1026020656
+value address: 0x55555575f0a8 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 02:42:42]
+Fault Injection Successful after 7.76392126083374s
+[INFO -- 2018-12-09 02:42:42]
+event type: exit
+[EXCEPTION -- 2018-12-09 02:42:42]
+exit code: no exit code available

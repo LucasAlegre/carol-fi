@@ -1,0 +1,51 @@
+[INFO -- 2018-12-09 08:55:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 08:55:34]
+Initialization strings:
+[INFO -- 2018-12-09 08:55:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 08:55:34]
+initSignal:1
+[INFO -- 2018-12-09 08:55:34]
+endSignal:8
+[INFO -- 2018-12-09 08:55:34]
+faultModel:3
+[INFO -- 2018-12-09 08:55:36]
+Backtrace BEGIN:
+#0  0x0000555555555206 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:83
+#1  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+78	
+79	vector<int> tournament(vector<chromossome> &pop){
+80	    vector<chromossome> competitors;
+81	
+82	    for(int i=0; i < 3; i++){
+83	        int randIndex = rand() % pop_size;
+84	        competitors.push_back(pop[randIndex]);
+85	    }
+86	
+87	    sort(competitors.begin(), competitors.end());
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: genetic_algorithm
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 0
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 08:55:36]
+Fault Injection Successful after 2.235889434814453s
+[INFO -- 2018-12-09 08:55:36]
+event type: exit
+[INFO -- 2018-12-09 08:55:36]
+exit code: 0

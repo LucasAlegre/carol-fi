@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 02:28:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:28:10]
+Initialization strings:
+[INFO -- 2018-12-09 02:28:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:28:10]
+initSignal:1
+[INFO -- 2018-12-09 02:28:10]
+endSignal:8
+[INFO -- 2018-12-09 02:28:10]
+faultModel:0
+[EXCEPTION -- 2018-12-09 02:28:12]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 02:28:12]
+Backtrace BEGIN:
+#0  0x0000555555556b28 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#1  0x0000555555556b93 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#2  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#3  0x00005555555553fd in crossover (pai=std::vector of length 199, capacity 199 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:93
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+76	      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+77		rebind<_Tp>::other _Tp_alloc_type;
+78	      typedef typename __gnu_cxx::__alloc_traits<_Tp_alloc_type>::pointer
+79	       	pointer;
+80	
+81	      struct _Vector_impl
+82	      : public _Tp_alloc_type
+83	      {
+84		pointer _M_start;
+85		pointer _M_finish;
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0x880x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 8977201
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 02:28:12]
+Fault Injection Successful after 2.8938915729522705s
+[INFO -- 2018-12-09 02:28:13]
+event type: exit
+[EXCEPTION -- 2018-12-09 02:28:13]
+exit code: no exit code available

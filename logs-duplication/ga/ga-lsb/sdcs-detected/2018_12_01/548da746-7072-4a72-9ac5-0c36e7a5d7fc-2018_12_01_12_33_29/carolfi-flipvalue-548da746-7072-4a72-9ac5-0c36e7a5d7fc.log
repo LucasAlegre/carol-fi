@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 12:33:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:33:20]
+Initialization strings:
+[INFO -- 2018-12-01 12:33:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:33:20]
+initSignal:0
+[INFO -- 2018-12-01 12:33:20]
+endSignal:13
+[INFO -- 2018-12-01 12:33:20]
+faultModel:4
+[INFO -- 2018-12-01 12:33:22]
+Backtrace BEGIN:
+#0  0x0000555555556b7c in std::_Destroy<int*, int> (__first=0x555555783e80, __last=0x5555557831b0) at /usr/include/c++/7/bits/stl_construct.h:203
+#1  0x0000555555555e71 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x000055555555568b in genetic_algorithm () at knapsackga.cpp:101
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+198		__traits::destroy(__alloc, std::__addressof(*__first));
+199	    }
+200	
+201	  template<typename _ForwardIterator, typename _Tp>
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+
+Backtrace END
+Memory content before bitflip:0x000x080x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd854
+address max offset: 4
+Memory content after  bitflip:0x000x080x000x20
+frame name: genetic_algorithm
+symbol name: g
+symbol filename: knapsackga.cpp
+symbol line: 94
+value: 536872960
+value address: 0x7fffffffd854
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:33:22]
+Fault Injection Successful after 2.528358221054077s
+[INFO -- 2018-12-01 12:33:28]
+event type: exit
+[INFO -- 2018-12-01 12:33:28]
+exit code: 0

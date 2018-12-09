@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 07:56:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:56:40]
+Initialization strings:
+[INFO -- 2018-12-01 07:56:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:56:40]
+initSignal:0
+[INFO -- 2018-12-01 07:56:40]
+endSignal:13
+[INFO -- 2018-12-01 07:56:40]
+faultModel:2
+[EXCEPTION -- 2018-12-01 07:56:49]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 07:56:49]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 07:56:52]
+gdbException: Cannot access memory at address 0x6b7c3b1e686550c8
+[EXCEPTION -- 2018-12-01 07:56:52]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 07:56:52]
+Backtrace BEGIN:
+#0  0x00005555555550ec in tournament (pop=<error reading variable: Cannot access memory at address 0x8>) at knapsackga.cpp:58
+#1  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#2  0x0000555555555aab in main () at knapsackga.cpp:143
+
+53	bool operator<(const chromossome& a, const chromossome& b)
+54	{
+55	    return a.fitness < b.fitness;
+56	}
+57	
+58	vector<int> tournament(vector<chromossome> &pop){
+59	    vector<chromossome> competitors;
+60	
+61	    for(int i=0; i < 3; i++){
+62	        int randIndex = rand() % pop_size;
+
+Backtrace END
+Memory content before bitflip:0x1e0xda0x070x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd9d8
+address max offset: 4
+Memory content after  bitflip:0xfa0x730xb70x01
+frame name: main
+symbol name: result1
+symbol filename: knapsackga.cpp
+symbol line: 141
+value: 28799994
+value address: 0x7fffffffd9d8
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 07:56:52]
+Fault Injection Successful after 12.145244836807251s
+[INFO -- 2018-12-01 07:56:52]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:56:52]
+exit code: no exit code available

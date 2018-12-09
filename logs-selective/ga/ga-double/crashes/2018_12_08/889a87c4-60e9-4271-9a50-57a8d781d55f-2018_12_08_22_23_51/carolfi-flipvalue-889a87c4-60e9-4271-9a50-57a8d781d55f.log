@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 22:23:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:23:50]
+Initialization strings:
+[INFO -- 2018-12-08 22:23:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:23:50]
+initSignal:1
+[INFO -- 2018-12-08 22:23:50]
+endSignal:8
+[INFO -- 2018-12-08 22:23:50]
+faultModel:1
+[INFO -- 2018-12-08 22:23:51]
+Backtrace BEGIN:
+#0  0x00007ffff7adf441 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x000055555555a35a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd920, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#2  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#3  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd920, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#4  0x0000555555557418 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd920, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#5  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#6  0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:98
+#7  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+137	                swap(new_pop[i].solution[rand() % n], new_pop[i].solution[rand() % n]);
+138	            new_pop[i].fitness = cost(new_pop[i].solution);
+139	        }
+140	
+141	        sort(new_pop.begin(), new_pop.end());
+142	        best = new_pop[0].fitness;
+143	        pop = new_pop;
+144	        //cout << g << " " << -best << endl;
+145	    }
+146	
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x050x000x00
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_allocate
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: 1320
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 22:23:51]
+Fault Injection Successful after 1.3316264152526855s
+[INFO -- 2018-12-08 22:23:51]
+event type: exit
+[EXCEPTION -- 2018-12-08 22:23:51]
+exit code: no exit code available

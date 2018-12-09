@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 00:43:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:43:28]
+Initialization strings:
+[INFO -- 2018-12-09 00:43:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:43:28]
+initSignal:1
+[INFO -- 2018-12-09 00:43:28]
+endSignal:8
+[INFO -- 2018-12-09 00:43:28]
+faultModel:0
+[INFO -- 2018-12-09 00:43:31]
+Backtrace BEGIN:
+#0  0x0000555555556d84 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:394
+#1  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#3  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+389	
+390	#if __cplusplus >= 201103L
+391	  template<typename _Tp, typename _Alloc>
+392	    template<typename... _Args>
+393	      void
+394	      vector<_Tp, _Alloc>::
+395	      _M_realloc_insert(iterator __position, _Args&&... __args)
+396	#else
+397	  template<typename _Tp, typename _Alloc>
+398	    void
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x640x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd780
+address max offset: 8
+Memory content after  bitflip:0x420x640x770x550x550x550x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __position
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: {solution = std::vector of length -5699868278390784, capacity 34128840926167040 = {<error reading variable>
+value address: 0x7fffffffd780
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 00:43:31]
+Fault Injection Successful after 3.2643113136291504s
+[INFO -- 2018-12-09 00:43:36]
+event type: exit
+[INFO -- 2018-12-09 00:43:36]
+exit code: 0

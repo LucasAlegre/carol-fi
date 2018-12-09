@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 15:57:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:57:15]
+Initialization strings:
+[INFO -- 2018-12-08 15:57:15]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:57:15]
+initSignal:1
+[INFO -- 2018-12-08 15:57:15]
+endSignal:8
+[INFO -- 2018-12-08 15:57:15]
+faultModel:2
+[EXCEPTION -- 2018-12-08 15:57:17]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 15:57:17]
+Backtrace BEGIN:
+#0  0x0000555555557152 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x55555578b0d0, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#1  0x000055555555616d in std::vector<int, std::allocator<int> >::vector (this=0x55555578b0d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x0000555555558123 in chromossome::chromossome (this=0x55555578b0d0) at knapsackga.cpp:63
+#3  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8a0, __p=0x55555578b0d0, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x55555578b0d0, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555555fda in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#6  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+133	      : _M_impl()
+134	      { _M_create_storage(__n); }
+135	
+136	      _Vector_base(size_t __n, const allocator_type& __a)
+137	      : _M_impl(__a)
+138	      { _M_create_storage(__n); }
+139	
+140	#if __cplusplus >= 201103L
+141	      _Vector_base(_Tp_alloc_type&& __a) noexcept
+142	      : _M_impl(std::move(__a)) { }
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd7d8
+address max offset: 8
+Memory content after  bitflip:0xfb0x870x110x160x460x740x750x20
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8a0
+value address: 0x7fffffffd7d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:57:17]
+Fault Injection Successful after 2.4684629440307617s
+[INFO -- 2018-12-08 15:57:17]
+event type: exit
+[EXCEPTION -- 2018-12-08 15:57:17]
+exit code: no exit code available

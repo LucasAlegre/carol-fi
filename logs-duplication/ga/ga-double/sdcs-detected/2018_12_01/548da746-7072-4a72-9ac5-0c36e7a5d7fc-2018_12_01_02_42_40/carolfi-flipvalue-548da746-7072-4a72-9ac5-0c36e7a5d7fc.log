@@ -1,0 +1,68 @@
+[INFO -- 2018-12-01 02:42:27]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 02:42:27]
+Initialization strings:
+[INFO -- 2018-12-01 02:42:27]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 02:42:27]
+initSignal:0
+[INFO -- 2018-12-01 02:42:27]
+endSignal:13
+[INFO -- 2018-12-01 02:42:27]
+faultModel:1
+[EXCEPTION -- 2018-12-01 02:42:29]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 02:42:29]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 02:42:29]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 02:42:30]
+Backtrace BEGIN:
+#0  0x00007ffff7add380 in operator delete(void*) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x555555788010, __p=0x555555781510) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555781510, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x555555788010, __p=0x555555781510, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555788010, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x555555788010, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555df2 in chromossome::~chromossome (this=0x555555788010, __in_chrg=<optimized out>) at knapsackga.cpp:42
+#7  0x0000555555559c45 in std::_Destroy<chromossome> (__pointer=0x555555788010) at /usr/include/c++/7/bits/stl_construct.h:98
+#8  0x00005555555591af in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555788010, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:108
+#9  0x00005555555580e6 in std::_Destroy<chromossome*> (__first=0x555555787bf0, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:137
+#10 0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x555555787bf0, __last=0x5555557880f0) at /usr/include/c++/7/bits/stl_construct.h:206
+#11 0x0000555555555f11 in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd880, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#12 0x000055555555580e in genetic_algorithm () at knapsackga.cpp:95
+#13 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+66	    sort(competitors.begin(), competitors.end());
+67	    vector<int> tournamentWinner = competitors[0].solution;
+68	    return tournamentWinner;
+69	}
+70	
+71	void crossover(vector<int> &pai, vector<int> &mae, vector<int> &filho1, vector<int> &filho2){
+72	    vector<int> mask(n);
+73	    for(int i = 0; i < n; i++){
+74	        mask[i] = rand_bit();
+75	    }
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x310xfb0xc80x00
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 13171505
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 02:42:30]
+Fault Injection Successful after 3.653496026992798s
+[INFO -- 2018-12-01 02:42:40]
+event type: exit
+[INFO -- 2018-12-01 02:42:40]
+exit code: 0

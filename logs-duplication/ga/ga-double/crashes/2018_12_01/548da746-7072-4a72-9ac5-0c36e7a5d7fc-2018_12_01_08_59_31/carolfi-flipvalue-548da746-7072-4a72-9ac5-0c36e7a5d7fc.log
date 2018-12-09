@@ -1,0 +1,70 @@
+[INFO -- 2018-12-01 08:59:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:59:28]
+Initialization strings:
+[INFO -- 2018-12-01 08:59:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:59:28]
+initSignal:0
+[INFO -- 2018-12-01 08:59:28]
+endSignal:13
+[INFO -- 2018-12-01 08:59:28]
+faultModel:1
+[EXCEPTION -- 2018-12-01 08:59:29]
+gdbException: Cannot access memory at address 0x825555557769a0
+[EXCEPTION -- 2018-12-01 08:59:29]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 08:59:29]
+gdbException: Cannot access memory at address 0x825555557769a0
+[INFO -- 2018-12-01 08:59:29]
+Backtrace BEGIN:
+#0  0x00005555555585c9 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x555555f36b60, __a=...) at /usr/include/c++/7/bits/stl_vector.h:93
+#1  0x0000555555557116 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x555555f36b60, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:137
+#2  0x0000555555556113 in std::vector<int, std::allocator<int> >::vector (this=0x555555f36b60, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x000055555555810d in chromossome::chromossome (this=0x555555f36b60) at knapsackga.cpp:42
+#4  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd880, __p=0x555555f36b60, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#5  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555f36b60, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#6  0x0000555555555f80 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#7  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+88		_Vector_impl()
+89		: _Tp_alloc_type(), _M_start(), _M_finish(), _M_end_of_storage()
+90		{ }
+91	
+92		_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
+93		: _Tp_alloc_type(__a), _M_start(), _M_finish(), _M_end_of_storage()
+94		{ }
+95	
+96	#if __cplusplus >= 201103L
+97		_Vector_impl(_Tp_alloc_type&& __a) noexcept
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x700x620x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd908
+address max offset: 8
+Memory content after  bitflip:0x700x620x770x550x550x550x880x00
+frame name: genetic_algorithm
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 101
+value: std::vector of length 9570149208162504, capacity 200 = {1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 08:59:29]
+Fault Injection Successful after 1.7907800674438477s
+[INFO -- 2018-12-01 08:59:29]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:59:29]
+exit code: no exit code available

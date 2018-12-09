@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 11:58:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:58:24]
+Initialization strings:
+[INFO -- 2018-12-01 11:58:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:58:24]
+initSignal:0
+[INFO -- 2018-12-01 11:58:24]
+endSignal:13
+[INFO -- 2018-12-01 11:58:24]
+faultModel:4
+[INFO -- 2018-12-01 11:58:26]
+Backtrace BEGIN:
+#0  0x0000555555558356 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x0, __last=0x0, __result=0x5555557763a0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:313
+#1  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+308					       _Allocator& __alloc)
+309	    {
+310	      return std::__uninitialized_copy_a
+311		(_GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__first),
+312		 _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+313	    }
+314	
+315	  template<typename _ForwardIterator, typename _Tp, typename _Allocator>
+316	    void
+317	    __uninitialized_fill_a(_ForwardIterator __first, _ForwardIterator __last,
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x02
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd768
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 11:58:26]
+Fault Injection Successful after 2.994053840637207s
+[INFO -- 2018-12-01 11:58:27]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:58:27]
+exit code: no exit code available

@@ -1,0 +1,53 @@
+[INFO -- 2018-12-02 02:51:19]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:51:19]
+Initialization strings:
+[INFO -- 2018-12-02 02:51:19]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:51:19]
+initSignal:0
+[INFO -- 2018-12-02 02:51:19]
+endSignal:13
+[INFO -- 2018-12-02 02:51:19]
+faultModel:0
+[INFO -- 2018-12-02 02:51:21]
+Backtrace BEGIN:
+#0  0x0000555555556e9a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+441		  else
+442		    std::_Destroy(__new_start, __new_finish, _M_get_Tp_allocator());
+443		  _M_deallocate(__new_start, __len);
+444		  __throw_exception_again;
+445		}
+446	      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+447			    _M_get_Tp_allocator());
+448	      _M_deallocate(this->_M_impl._M_start,
+449			    this->_M_impl._M_end_of_storage
+450			    - this->_M_impl._M_start);
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x290x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 41
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 02:51:21]
+Fault Injection Successful after 2.4658825397491455s
+[INFO -- 2018-12-02 02:51:21]
+event type: exit
+[EXCEPTION -- 2018-12-02 02:51:21]
+exit code: no exit code available

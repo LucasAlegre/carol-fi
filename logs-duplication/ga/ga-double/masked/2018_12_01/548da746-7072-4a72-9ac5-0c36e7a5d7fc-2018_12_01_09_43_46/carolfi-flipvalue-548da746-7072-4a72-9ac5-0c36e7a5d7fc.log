@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 09:43:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:43:33]
+Initialization strings:
+[INFO -- 2018-12-01 09:43:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:43:33]
+initSignal:0
+[INFO -- 2018-12-01 09:43:33]
+endSignal:13
+[INFO -- 2018-12-01 09:43:33]
+faultModel:1
+[INFO -- 2018-12-01 09:43:41]
+Backtrace BEGIN:
+#0  0x000055555555621e in std::allocator<int>::allocator (this=0x7fffffffd980) at /usr/include/c++/7/bits/allocator.h:131
+#1  0x0000555555557d68 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_Vector_impl (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:89
+#2  0x0000555555556b0e in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:127
+#3  0x0000555555555e18 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:263
+#4  0x0000555555555dd6 in chromossome::chromossome (this=0x7fffffffd980) at knapsackga.cpp:50
+#5  0x00005555555555df in genetic_algorithm () at knapsackga.cpp:105
+#6  0x0000555555555aab in main () at knapsackga.cpp:143
+
+126	      typedef true_type propagate_on_container_move_assignment;
+127	
+128	      typedef true_type is_always_equal;
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+
+Backtrace END
+Memory content before bitflip:0x850x390xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd850
+address max offset: 4
+Memory content after  bitflip:0x850x390xf80xfa
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -84395643
+value address: 0x7fffffffd850
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 09:43:41]
+Fault Injection Successful after 8.555708408355713s
+[INFO -- 2018-12-01 09:43:46]
+event type: exit
+[INFO -- 2018-12-01 09:43:46]
+exit code: 0

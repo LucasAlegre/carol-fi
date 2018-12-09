@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 11:58:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:58:57]
+Initialization strings:
+[INFO -- 2018-12-01 11:58:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:58:57]
+initSignal:0
+[INFO -- 2018-12-01 11:58:57]
+endSignal:13
+[INFO -- 2018-12-01 11:58:57]
+faultModel:2
+[EXCEPTION -- 2018-12-01 11:58:58]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-01 11:58:58]
+gdbException: Cannot access memory at address 0x36753742edfb8bde
+[EXCEPTION -- 2018-12-01 11:58:58]
+gdbException: Cannot access memory at address 0x36753742edfb8bde
+[INFO -- 2018-12-01 11:58:58]
+Backtrace BEGIN:
+#0  __memmove_sse2_unaligned_erms () at ../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S:529
+#1  0x000055555555a35e in std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int> (__first=0x555555775f50, __last=0x555555776270, __result=0x36753742edfb8bde) at /usr/include/c++/7/bits/stl_algobase.h:368
+#2  0x0000555555559880 in std::__copy_move_a<false, int const*, int*> (__first=0x555555775f50, __last=0x555555776270, __result=0x36753742edfb8bde) at /usr/include/c++/7/bits/stl_algobase.h:386
+#3  0x0000555555558875 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=<error reading variable: Cannot access memory at address 0x36753742edfb8bde>) at /usr/include/c++/7/bits/stl_algobase.h:422
+#4  0x00005555555574b7 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=<error reading variable: Cannot access memory at address 0x36753742edfb8bde>) at /usr/include/c++/7/bits/stl_algobase.h:456
+#5  0x0000555555556507 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8e0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#6  0x000055555555529a in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length -981025852730827511, capacity -981025852730827511 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:76
+#7  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+524	../sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0xe10x320x0d0x75
+frame name: crossover
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 1963799265
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 11:58:58]
+Fault Injection Successful after 1.8320729732513428s
+[INFO -- 2018-12-01 11:58:58]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:58:58]
+exit code: no exit code available

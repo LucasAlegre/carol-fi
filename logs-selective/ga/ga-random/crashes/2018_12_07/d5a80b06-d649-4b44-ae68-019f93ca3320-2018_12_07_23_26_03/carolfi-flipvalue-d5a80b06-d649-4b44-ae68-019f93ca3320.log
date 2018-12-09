@@ -1,0 +1,56 @@
+[INFO -- 2018-12-07 23:25:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:25:59]
+Initialization strings:
+[INFO -- 2018-12-07 23:25:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:25:59]
+initSignal:1
+[INFO -- 2018-12-07 23:25:59]
+endSignal:8
+[INFO -- 2018-12-07 23:25:59]
+faultModel:2
+[EXCEPTION -- 2018-12-07 23:26:02]
+gdbException: Cannot access memory at address 0x66ca6ecbfb20b53e
+[INFO -- 2018-12-07 23:26:03]
+Backtrace BEGIN:
+#0  0x0000555555557238 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x55555555883e <std::_Vector_base<int, std::allocator<int> >::_M_allocate(unsigned long)+42>) at /usr/include/c++/7/bits/stl_uninitialized.h:287
+#1  0x000055555555743f in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd900, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#2  0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x000055555555536e in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:97
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+282		}
+283	    }
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0b0 
+address max offset: 4
+Memory content after  bitflip:0xb40x8c0x9a0x7b
+frame name: main
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 2073726132
+value address: 0x55555575f0b0 <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 23:26:03]
+Fault Injection Successful after 4.043114185333252s
+[INFO -- 2018-12-07 23:26:03]
+event type: exit
+[EXCEPTION -- 2018-12-07 23:26:03]
+exit code: no exit code available

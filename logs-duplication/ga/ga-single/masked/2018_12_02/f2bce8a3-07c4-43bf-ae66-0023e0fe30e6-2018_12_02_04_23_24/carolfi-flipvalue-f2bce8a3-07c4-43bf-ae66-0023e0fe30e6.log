@@ -1,0 +1,54 @@
+[INFO -- 2018-12-02 04:23:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:23:11]
+Initialization strings:
+[INFO -- 2018-12-02 04:23:11]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 04:23:11]
+initSignal:0
+[INFO -- 2018-12-02 04:23:11]
+endSignal:13
+[INFO -- 2018-12-02 04:23:11]
+faultModel:0
+[INFO -- 2018-12-02 04:23:14]
+Backtrace BEGIN:
+#0  std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#1  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#2  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#3  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+419	#else
+420					   __x);
+421	#endif
+422		  __new_finish = pointer();
+423	
+424		  __new_finish
+425		    = std::__uninitialized_move_if_noexcept_a
+426		    (this->_M_impl._M_start, __position.base(),
+427		     __new_start, _M_get_Tp_allocator());
+428	
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xd00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd898
+address max offset: 8
+Memory content after  bitflip:0xd00xd00xff0xff0xff0x7f0x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8d0
+value address: 0x7fffffffd898
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 04:23:14]
+Fault Injection Successful after 3.2603182792663574s
+[INFO -- 2018-12-02 04:23:24]
+event type: exit
+[INFO -- 2018-12-02 04:23:24]
+exit code: 0

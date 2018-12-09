@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 00:39:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:39:00]
+Initialization strings:
+[INFO -- 2018-12-09 00:39:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:39:00]
+initSignal:1
+[INFO -- 2018-12-09 00:39:00]
+endSignal:8
+[INFO -- 2018-12-09 00:39:00]
+faultModel:1
+[INFO -- 2018-12-09 00:39:05]
+Backtrace BEGIN:
+#0  0x00005555555570fe in __gnu_cxx::__alloc_traits<std::allocator<int> >::_S_select_on_copy (__a=...) at /usr/include/c++/7/ext/alloc_traits.h:95
+#1  0x000055555555614c in std::vector<int, std::allocator<int> >::vector (this=0x555555776420, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#2  0x0000555555558123 in chromossome::chromossome (this=0x555555776420) at knapsackga.cpp:63
+#3  0x0000555555558180 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776420, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#4  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776420, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#5  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#6  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#8  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+90	      static typename std::enable_if<__is_custom_pointer<_Ptr>::value>::type
+91	      destroy(_Alloc& __a, _Ptr __p)
+92	      { _Base_type::destroy(__a, std::addressof(*__p)); }
+93	
+94	    static _Alloc _S_select_on_copy(const _Alloc& __a)
+95	    { return _Base_type::select_on_container_copy_construction(__a); }
+96	
+97	    static void _S_on_swap(_Alloc& __a, _Alloc& __b)
+98	    { std::__alloc_on_swap(__a, __b); }
+99	
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0xc30x3a0xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x5555557812e8
+address max offset: 4
+Memory content after  bitflip:0x030x3a0xf80xff
+frame name: __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 135
+value: @0x5555557812d0
+value address: 0x5555557812d0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 00:39:05]
+Fault Injection Successful after 5.483427047729492s
+[INFO -- 2018-12-09 00:39:08]
+event type: exit
+[INFO -- 2018-12-09 00:39:08]
+exit code: 0

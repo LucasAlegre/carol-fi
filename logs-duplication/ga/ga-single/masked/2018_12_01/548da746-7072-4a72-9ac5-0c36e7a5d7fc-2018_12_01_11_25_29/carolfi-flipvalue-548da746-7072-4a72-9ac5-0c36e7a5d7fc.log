@@ -1,0 +1,60 @@
+[INFO -- 2018-12-01 11:25:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:25:16]
+Initialization strings:
+[INFO -- 2018-12-01 11:25:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:25:16]
+initSignal:0
+[INFO -- 2018-12-01 11:25:16]
+endSignal:13
+[INFO -- 2018-12-01 11:25:16]
+faultModel:0
+[INFO -- 2018-12-01 11:25:17]
+Backtrace BEGIN:
+#0  tcache_put (tc_idx=49, chunk=0x5555557848e0) at malloc.c:2967
+#1  _int_free (av=0x7ffff7832c20 <main_arena>, p=0x5555557848e0, have_lock=0) at malloc.c:4196
+#2  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#3  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd8a0, __p=0x5555557848f0) at /usr/include/c++/7/ext/new_allocator.h:125
+#4  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557848f0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#5  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd8a0, __p=0x5555557848f0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#6  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#7  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#8  0x000055555555568b in genetic_algorithm () at knapsackga.cpp:101
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+2962	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x080x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd990
+address max offset: 8
+Memory content after  bitflip:0x400x080x780x570x550x550x000x00
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 105
+value: {solution = std::vector of length 200, capacity 8388808 = {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 99999999}
+value address: 0x7fffffffd980
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-01 11:25:17]
+Fault Injection Successful after 1.151698112487793s
+[INFO -- 2018-12-01 11:25:29]
+event type: exit
+[INFO -- 2018-12-01 11:25:29]
+exit code: 0

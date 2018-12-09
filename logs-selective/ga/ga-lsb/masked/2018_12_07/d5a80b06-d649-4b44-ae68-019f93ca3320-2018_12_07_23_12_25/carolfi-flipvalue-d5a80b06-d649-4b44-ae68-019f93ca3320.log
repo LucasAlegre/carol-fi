@@ -1,0 +1,51 @@
+[INFO -- 2018-12-07 23:12:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:12:16]
+Initialization strings:
+[INFO -- 2018-12-07 23:12:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:12:16]
+initSignal:1
+[INFO -- 2018-12-07 23:12:16]
+endSignal:8
+[INFO -- 2018-12-07 23:12:16]
+faultModel:4
+[INFO -- 2018-12-07 23:12:22]
+Backtrace BEGIN:
+#0  0x000055555555517a in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:55
+#1  0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+50	
+51	    if(peso > W){
+52	        return 99999999;
+53	    }
+54	    else{
+55	        return -valor;
+56	    }
+57	}
+58	
+59	float random01(){
+
+Backtrace END
+Memory content before bitflip:0x2e0xfb0x080x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd828
+address max offset: 4
+Memory content after  bitflip:0x2e0xfb0x080x20
+frame name: cost
+symbol name: peso
+symbol filename: knapsackga.cpp
+symbol line: 38
+value: 537459502
+value address: 0x7fffffffd828
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-07 23:12:22]
+Fault Injection Successful after 6.8967509269714355s
+[INFO -- 2018-12-07 23:12:24]
+event type: exit
+[INFO -- 2018-12-07 23:12:24]
+exit code: 0

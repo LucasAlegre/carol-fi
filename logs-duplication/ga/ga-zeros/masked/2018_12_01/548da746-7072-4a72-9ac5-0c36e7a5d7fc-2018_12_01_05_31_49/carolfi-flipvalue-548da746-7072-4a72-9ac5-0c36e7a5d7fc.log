@@ -1,0 +1,70 @@
+[INFO -- 2018-12-01 05:31:36]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:31:36]
+Initialization strings:
+[INFO -- 2018-12-01 05:31:36]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:31:36]
+initSignal:0
+[INFO -- 2018-12-01 05:31:36]
+endSignal:13
+[INFO -- 2018-12-01 05:31:36]
+faultModel:3
+[INFO -- 2018-12-01 05:31:37]
+Backtrace BEGIN:
+#0  0x0000555555559970 in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd5d0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:130
+#1  0x0000555555558c75 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd5d0, __a=...) at /usr/include/c++/7/bits/stl_vector.h:271
+#2  0x00005555555576a0 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1531
+#3  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x5555557764e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x00005555555594c1 in chromossome::operator= (this=0x5555557764e0) at knapsackga.cpp:42
+#5  0x00005555555595d3 in std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1852
+#6  0x0000555555558543 in std::__final_insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1890
+#7  0x000055555555705f in std::__sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter> (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __comp=...) at /usr/include/c++/7/bits/stl_algo.h:1971
+#8  0x000055555555608d in std::sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > > > (__first={solution = std::vector of length 0, capacity 0, fitness = 99999999}, __last={solution = std::vector of length 0, capacity 0, fitness = 99999999}) at /usr/include/c++/7/bits/stl_algo.h:4836
+#9  0x0000555555555188 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:66
+#10 0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#11 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+125	
+126	      _Vector_base()
+127	      : _M_impl() { }
+128	
+129	      _Vector_base(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+130	      : _M_impl(__a) { }
+131	
+132	      _Vector_base(size_t __n)
+133	      : _M_impl()
+134	      { _M_create_storage(__n); }
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776548
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::__insertion_sort<__gnu_cxx::__normal_iterator<chromossome*, std::vector<chromossome, std::allocator<chromossome> > >, __gnu_cxx::__ops::_Iter_less_iter>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_algo.h
+symbol line: 1841
+value: {solution = std::vector of length 0, capacity 0, fitness = 99999999}
+value address: 0x7fffffffd680
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 05:31:37]
+Fault Injection Successful after 1.5980660915374756s
+[INFO -- 2018-12-01 05:31:49]
+event type: exit
+[INFO -- 2018-12-01 05:31:49]
+exit code: 0

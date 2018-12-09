@@ -1,0 +1,65 @@
+[INFO -- 2018-12-02 03:14:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 03:14:48]
+Initialization strings:
+[INFO -- 2018-12-02 03:14:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 03:14:48]
+initSignal:0
+[INFO -- 2018-12-02 03:14:48]
+endSignal:13
+[INFO -- 2018-12-02 03:14:48]
+faultModel:0
+[INFO -- 2018-12-02 03:14:49]
+Backtrace BEGIN:
+#0  0x00005555555580db in std::_Destroy<chromossome*> (__first=0x555555776380, __last=0x5555557763a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#1  0x0000555555556cff in std::_Destroy<chromossome*, chromossome> (__first=0x555555776380, __last=0x5555557763a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#2  0x0000555555556eb0 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#3  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+132	      // A deleted destructor is trivial, this ensures we reject such types:
+133	      static_assert(is_destructible<_Value_type>::value,
+134			    "value type is destructible");
+135	#endif
+136	      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+137		__destroy(__first, __last);
+138	    }
+139	
+140	  template<bool>
+141	    struct _Destroy_n_aux
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x5555557763a0
+address max offset: 8
+Memory content after  bitflip:0x000x800x000x000x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8d0
+value address: 0x7fffffffd838
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 03:14:49]
+Fault Injection Successful after 1.2424242496490479s
+[INFO -- 2018-12-02 03:15:00]
+event type: exit
+[INFO -- 2018-12-02 03:15:00]
+exit code: 0

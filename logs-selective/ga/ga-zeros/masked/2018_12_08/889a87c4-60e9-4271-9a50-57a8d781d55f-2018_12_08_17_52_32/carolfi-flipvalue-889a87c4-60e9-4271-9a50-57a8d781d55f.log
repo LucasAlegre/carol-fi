@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 17:52:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:52:23]
+Initialization strings:
+[INFO -- 2018-12-08 17:52:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:52:23]
+initSignal:1
+[INFO -- 2018-12-08 17:52:23]
+endSignal:8
+[INFO -- 2018-12-08 17:52:23]
+faultModel:3
+[EXCEPTION -- 2018-12-08 17:52:24]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 17:52:24]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8e0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:461
+#1  0x00005555555556a7 in genetic_algorithm () at knapsackga.cpp:129
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+456	       *  Afterwards @a __x is a valid, but unspecified %vector.
+457	       *
+458	       *  Whether the allocator is moved depends on the allocator traits.
+459	       */
+460	      vector&
+461	      operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+462	      {
+463		constexpr bool __move_storage =
+464		  _Alloc_traits::_S_propagate_on_move_assign()
+465		  || _Alloc_traits::_S_always_equal();
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd900
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 0, capacity 0
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-08 17:52:24]
+Fault Injection Successful after 1.9525294303894043s
+[INFO -- 2018-12-08 17:52:31]
+event type: exit
+[INFO -- 2018-12-08 17:52:31]
+exit code: 0

@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 17:58:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:58:39]
+Initialization strings:
+[INFO -- 2018-12-08 17:58:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 17:58:39]
+initSignal:1
+[INFO -- 2018-12-08 17:58:39]
+endSignal:8
+[INFO -- 2018-12-08 17:58:39]
+faultModel:0
+[INFO -- 2018-12-08 17:58:41]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::vector (this=0x555555780690, __x=...) at /usr/include/c++/7/bits/stl_vector.h:344
+#1  0x00005555555594e9 in chromossome::chromossome (this=0x555555776740) at knapsackga.cpp:63
+#2  0x000055555555ad84 in std::_Construct<chromossome, chromossome> (__p=0x555555776740, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#3  0x000055555555a6c8 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#4  0x0000555555559d49 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776540, __last=0x555555776580, __result=0x555555776740, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#7  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#8  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#9  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#10 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#11 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+339	       *  @param  __x  A %vector of identical element and allocator types.
+340	       *
+341	       *  The newly-created %vector contains the exact contents of @a __x.
+342	       *  The contents of @a __x are a valid, but unspecified %vector.
+343	       */
+344	      vector(vector&& __x) noexcept
+345	      : _Base(std::move(__x)) { }
+346	
+347	      /// Copy constructor with alternative allocator
+348	      vector(const vector& __x, const allocator_type& __a)
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x02
+frame name: chromossome::chromossome
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 19
+value: 33554472
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 17:58:41]
+Fault Injection Successful after 2.4933998584747314s
+[INFO -- 2018-12-08 17:58:41]
+event type: exit
+[EXCEPTION -- 2018-12-08 17:58:41]
+exit code: no exit code available

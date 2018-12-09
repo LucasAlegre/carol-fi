@@ -1,0 +1,52 @@
+[INFO -- 2018-11-30 07:34:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 07:34:39]
+Initialization strings:
+[INFO -- 2018-11-30 07:34:39]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 07:34:39]
+initSignal:0
+[INFO -- 2018-11-30 07:34:39]
+endSignal:7
+[INFO -- 2018-11-30 07:34:39]
+faultModel:4
+[INFO -- 2018-11-30 07:34:43]
+Backtrace BEGIN:
+#0  0x0000555555555798 in std::vector<int, std::allocator<int> >::operator[] (this=0x555555759160 <wt>, __n=1) at /usr/include/c++/7/bits/stl_vector.h:795
+#1  0x00005555555550db in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:28
+#2  0x0000555555555259 in simulated_annealing () at knapsacksa.cpp:52
+#3  0x0000555555555532 in main () at knapsacksa.cpp:87
+
+790	       *  Note that data access with this operator is unchecked and
+791	       *  out_of_range lookups are not defined. (For checked lookups
+792	       *  see at().)
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x10
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 268435656
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 07:34:43]
+Fault Injection Successful after 4.714356422424316s
+[INFO -- 2018-11-30 07:34:43]
+event type: exit
+[EXCEPTION -- 2018-11-30 07:34:43]
+exit code: no exit code available

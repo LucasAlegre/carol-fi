@@ -1,0 +1,57 @@
+[INFO -- 2018-11-30 03:49:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 03:49:54]
+Initialization strings:
+[INFO -- 2018-11-30 03:49:54]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 03:49:54]
+initSignal:0
+[INFO -- 2018-11-30 03:49:54]
+endSignal:7
+[INFO -- 2018-11-30 03:49:54]
+faultModel:4
+[INFO -- 2018-11-30 03:49:55]
+Backtrace BEGIN:
+#0  0x0000555555556d52 in std::__niter_base<int*> (__it=0x10055555576e2e0) at /usr/include/c++/7/bits/stl_algobase.h:277
+#1  0x00005555555570a8 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_algobase.h:422
+#2  0x0000555555556f2b in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x0000555555556c88 in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x0000555555556828 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555556071 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=540619057, __result=0x55555576e610) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x0000555555555943 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd990, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#7  0x0000555555555204 in simulated_annealing () at knapsacksa.cpp:49
+#8  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+272	
+273	  // Fallback implementation of the function in bits/stl_iterator.h used to
+274	  // remove the __normal_iterator wrapper. See copy, fill, ...
+275	  template<typename _Iterator>
+276	    inline _Iterator
+277	    __niter_base(_Iterator __it)
+278	    { return __it; }
+279	
+280	  // All of these auxiliary structs serve two purposes.  (1) Replace
+281	  // calls to copy with memmove whenever possible.  (Memmove, not memcpy,
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x40
+frame name: std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*>
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 1073742024
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 03:49:55]
+Fault Injection Successful after 1.0065290927886963s
+[INFO -- 2018-11-30 03:49:55]
+event type: exit
+[EXCEPTION -- 2018-11-30 03:49:55]
+exit code: no exit code available

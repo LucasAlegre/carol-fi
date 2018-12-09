@@ -1,0 +1,47 @@
+[INFO -- 2018-12-08 15:49:31]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:49:31]
+Initialization strings:
+[INFO -- 2018-12-08 15:49:31]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:49:31]
+initSignal:1
+[INFO -- 2018-12-08 15:49:31]
+endSignal:8
+[INFO -- 2018-12-08 15:49:31]
+faultModel:4
+[INFO -- 2018-12-08 15:49:33]
+Backtrace BEGIN:
+#0  0x00007ffff7494ba8 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7b4) at random_r.c:392
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#4  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#5  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+387	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x720xc40x410x1d
+Fault Model: LSB bit-flip
+base address to flip value: 0x7ffff78321cc 
+address max offset: 4
+Memory content after  bitflip:0x720xc40x410x5d
+frame name: __random_r
+symbol name: fptr
+symbol filename: random_r.c
+symbol line: 371
+value: 0x7ffff78321cc <randtbl+44>
+value address: 0x7ffff7832720 <unsafe_state>
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 15:49:33]
+Fault Injection Successful after 2.285548210144043s
+[INFO -- 2018-12-08 15:49:39]
+event type: exit
+[INFO -- 2018-12-08 15:49:39]
+exit code: 0

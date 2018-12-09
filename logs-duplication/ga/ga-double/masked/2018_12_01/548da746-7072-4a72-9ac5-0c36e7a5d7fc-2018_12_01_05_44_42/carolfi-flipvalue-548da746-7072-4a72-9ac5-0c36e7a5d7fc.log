@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 05:44:29]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:44:29]
+Initialization strings:
+[INFO -- 2018-12-01 05:44:29]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:44:29]
+initSignal:0
+[INFO -- 2018-12-01 05:44:29]
+endSignal:13
+[INFO -- 2018-12-01 05:44:29]
+faultModel:1
+[INFO -- 2018-12-01 05:44:29]
+Backtrace BEGIN:
+#0  0x0000555555556b99 in std::_Destroy<int*, int> (__first=0x555555780eb0, __last=0x5555557811d0) at /usr/include/c++/7/bits/stl_construct.h:207
+#1  0x0000555555555e71 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x000055555555568b in genetic_algorithm () at knapsackga.cpp:101
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+211	    inline void
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xb00x0e0x780x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0xb00x0e0x780x550x650x550x000x00
+frame name: std::_Destroy<int*, int>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555780eb0
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 05:44:29]
+Fault Injection Successful after 0.6692647933959961s
+[INFO -- 2018-12-01 05:44:41]
+event type: exit
+[INFO -- 2018-12-01 05:44:41]
+exit code: 0

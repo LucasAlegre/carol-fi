@@ -1,0 +1,58 @@
+[INFO -- 2018-12-02 06:16:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:16:28]
+Initialization strings:
+[INFO -- 2018-12-02 06:16:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:16:28]
+initSignal:0
+[INFO -- 2018-12-02 06:16:28]
+endSignal:13
+[INFO -- 2018-12-02 06:16:28]
+faultModel:1
+[EXCEPTION -- 2018-12-02 06:16:33]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-02 06:16:33]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[EXCEPTION -- 2018-12-02 06:16:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-02 06:16:35]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9d0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:203
+#1  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+198			}
+199		      std::__alloc_on_copy(_M_get_Tp_allocator(),
+200					   __x._M_get_Tp_allocator());
+201		    }
+202	#endif
+203		  const size_type __xlen = __x.size();
+204		  if (__xlen > capacity())
+205		    {
+206		      pointer __tmp = _M_allocate_and_copy(__xlen, __x.begin(),
+207							   __x.end());
+
+Backtrace END
+Memory content before bitflip:0xe20x250xf80xff
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd920
+address max offset: 4
+Memory content after  bitflip:0xe20xb50xf80xff
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -477726
+value address: 0x7fffffffd920
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 06:16:35]
+Fault Injection Successful after 7.177217960357666s
+[INFO -- 2018-12-02 06:16:35]
+event type: exit
+[EXCEPTION -- 2018-12-02 06:16:35]
+exit code: no exit code available

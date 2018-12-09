@@ -1,0 +1,62 @@
+[INFO -- 2018-12-01 06:08:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:08:16]
+Initialization strings:
+[INFO -- 2018-12-01 06:08:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:08:16]
+initSignal:0
+[INFO -- 2018-12-01 06:08:16]
+endSignal:13
+[INFO -- 2018-12-01 06:08:16]
+faultModel:0
+[INFO -- 2018-12-01 06:08:17]
+Backtrace BEGIN:
+#0  0x000055555555921b in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=1) at /usr/include/c++/7/bits/alloc_traits.h:436
+#1  0x00005555555582ec in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd800, __n=1) at /usr/include/c++/7/bits/stl_vector.h:172
+#2  0x0000555555556dc6 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#3  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+431	       *
+432	       *  Calls @c a.allocate(n)
+433	      */
+434	      static pointer
+435	      allocate(allocator_type& __a, size_type __n)
+436	      { return __a.allocate(__n); }
+437	
+438	      /**
+439	       *  @brief  Allocate memory.
+440	       *  @param  __a  An allocator.
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd810
+address max offset: 8
+Memory content after  bitflip:0x000x000x010x000x000x000x000x00
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 59
+value: std::vector of length 0, capacity 2048
+value address: 0x7fffffffd800
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 06:08:17]
+Fault Injection Successful after 1.2342524528503418s
+[INFO -- 2018-12-01 06:08:29]
+event type: exit
+[INFO -- 2018-12-01 06:08:29]
+exit code: 0

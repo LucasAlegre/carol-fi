@@ -1,0 +1,60 @@
+[INFO -- 2018-12-08 17:11:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 17:11:15]
+Initialization strings:
+[INFO -- 2018-12-08 17:11:15]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 17:11:15]
+initSignal:0
+[INFO -- 2018-12-08 17:11:15]
+endSignal:9
+[INFO -- 2018-12-08 17:11:15]
+faultModel:3
+[EXCEPTION -- 2018-12-08 17:11:17]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 17:11:17]
+Backtrace BEGIN:
+#0  0x0000555555556a10 in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:425
+#1  0x0000555555556317 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > > (__first=0, __last=0, __result=0) at /usr/include/c++/7/bits/stl_algobase.h:456
+#2  0x0000555555555cd5 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd720, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:218
+#3  0x00005555555553e6 in simulated_annealing () at knapsacksa.cpp:108
+#4  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+420	    __copy_move_a2(_II __first, _II __last, _OI __result)
+421	    {
+422	      return _OI(std::__copy_move_a<_IsMove>(std::__niter_base(__first),
+423						     std::__niter_base(__last),
+424						     std::__niter_base(__result)));
+425	    }
+426	
+427	  /**
+428	   *  @brief Copies the range [first,last) into result.
+429	   *  @ingroup mutating_algorithms
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555772490
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 420
+value: 0
+value address: 0x7fffffffd5f8
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-08 17:11:17]
+Fault Injection Successful after 2.589273452758789s
+[INFO -- 2018-12-08 17:11:24]
+event type: exit
+[INFO -- 2018-12-08 17:11:24]
+exit code: 0

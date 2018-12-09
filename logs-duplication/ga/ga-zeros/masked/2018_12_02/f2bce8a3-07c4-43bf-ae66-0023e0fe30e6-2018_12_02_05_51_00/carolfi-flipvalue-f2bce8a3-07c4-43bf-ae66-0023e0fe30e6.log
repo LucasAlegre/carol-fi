@@ -1,0 +1,57 @@
+[INFO -- 2018-12-02 05:50:47]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 05:50:47]
+Initialization strings:
+[INFO -- 2018-12-02 05:50:47]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 05:50:47]
+initSignal:0
+[INFO -- 2018-12-02 05:50:47]
+endSignal:13
+[INFO -- 2018-12-02 05:50:47]
+faultModel:3
+[INFO -- 2018-12-02 05:50:51]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x555555787d70, __n=66) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x000055555555503a in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:26
+#2  0x000055555555578e in genetic_algorithm () at knapsackga.cpp:112
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x100x050x780x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555787d80
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::operator[]
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x555555787d70
+value address: 0x7fffffffd8b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 05:50:51]
+Fault Injection Successful after 4.763666152954102s
+[INFO -- 2018-12-02 05:51:00]
+event type: exit
+[INFO -- 2018-12-02 05:51:00]
+exit code: 0

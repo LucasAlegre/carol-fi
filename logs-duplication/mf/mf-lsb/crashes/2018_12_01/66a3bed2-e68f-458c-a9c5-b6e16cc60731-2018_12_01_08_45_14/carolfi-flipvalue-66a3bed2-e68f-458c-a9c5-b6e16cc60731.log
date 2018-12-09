@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 08:45:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:45:12]
+Initialization strings:
+[INFO -- 2018-12-01 08:45:12]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-01 08:45:12]
+initSignal:0
+[INFO -- 2018-12-01 08:45:12]
+endSignal:12
+[INFO -- 2018-12-01 08:45:12]
+faultModel:4
+[EXCEPTION -- 2018-12-01 08:45:13]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 08:45:13]
+Backtrace BEGIN:
+#0  0x00005555555558d2 in std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::operator[] (this=0x7fffffffd6d0, __n=89) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x00005555555550ba in knapSack (W=588593, n=200, values=std::vector of length 200, capacity 256 = {...}, weights=std::vector of length 200, capacity 256 = {...}, V=std::vector of length 201, capacity 201 = {...}) at knapsackmf.cpp:28
+#2  0x0000555555555494 in executeAlgorithm () at knapsackmf.cpp:75
+#3  0x000055555555558a in main () at knapsackmf.cpp:81
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0x590x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd628
+address max offset: 4
+Memory content after  bitflip:0x590x000x000x01
+frame name: knapSack
+symbol name: i
+symbol filename: knapsackmf.cpp
+symbol line: 23
+value: 16777305
+value address: 0x7fffffffd628
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 08:45:13]
+Fault Injection Successful after 1.4225084781646729s
+[INFO -- 2018-12-01 08:45:13]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:45:13]
+exit code: no exit code available

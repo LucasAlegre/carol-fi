@@ -1,0 +1,54 @@
+[INFO -- 2018-11-30 07:02:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-11-30 07:02:39]
+Initialization strings:
+[INFO -- 2018-11-30 07:02:39]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-11-30 07:02:39]
+initSignal:0
+[INFO -- 2018-11-30 07:02:39]
+endSignal:7
+[INFO -- 2018-11-30 07:02:39]
+faultModel:2
+[INFO -- 2018-11-30 07:02:40]
+Backtrace BEGIN:
+#0  0x0000555555556c43 in std::_Destroy_aux<true>::__destroy<int*> () at /usr/include/c++/7/bits/stl_construct.h:117
+#1  0x0000555555556789 in std::_Destroy<int*> (__first=0x55555576e610, __last=0x55555576e930) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555555f17 in std::_Destroy<int*, int> (__first=0x55555576e610, __last=0x55555576e930) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x000055555555587f in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd990, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#4  0x0000555555555305 in simulated_annealing () at knapsacksa.cpp:49
+#5  0x0000555555555522 in main () at knapsacksa.cpp:85
+
+112	  template<>
+113	    struct _Destroy_aux<true>
+114	    {
+115	      template<typename _ForwardIterator>
+116	        static void
+117	        __destroy(_ForwardIterator, _ForwardIterator) { }
+118	    };
+119	
+120	  /**
+121	   * Destroy a range of objects.  If the value_type of the object has
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555759178 
+address max offset: 4
+Memory content after  bitflip:0x460x260xa30x4e
+frame name: main
+symbol name: n
+symbol filename: knapsacksa.cpp
+symbol line: 15
+value: 1319315014
+value address: 0x555555759178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-11-30 07:02:40]
+Fault Injection Successful after 1.5312232971191406s
+[INFO -- 2018-11-30 07:02:40]
+event type: exit
+[EXCEPTION -- 2018-11-30 07:02:40]
+exit code: no exit code available

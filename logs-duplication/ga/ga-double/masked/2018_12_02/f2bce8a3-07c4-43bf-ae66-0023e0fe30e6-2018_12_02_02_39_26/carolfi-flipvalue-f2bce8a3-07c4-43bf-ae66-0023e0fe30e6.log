@@ -1,0 +1,48 @@
+[INFO -- 2018-12-02 02:39:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 02:39:13]
+Initialization strings:
+[INFO -- 2018-12-02 02:39:13]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 02:39:13]
+initSignal:0
+[INFO -- 2018-12-02 02:39:13]
+endSignal:13
+[INFO -- 2018-12-02 02:39:13]
+faultModel:1
+[INFO -- 2018-12-02 02:39:19]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x55555577e9a0) at malloc.c:3107
+#1  0x00005555555597ea in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd9d0, __p=0x55555577e9a0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x00005555555587a6 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x55555577e9a0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557316 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9d0, __p=0x55555577e9a0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b53 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555e7d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9d0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x000055555555565e in genetic_algorithm () at knapsackga.cpp:101
+#7  0x0000555555555aab in main () at knapsackga.cpp:143
+
+3102	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xa00xe90x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9d0
+address max offset: 8
+Memory content after  bitflip:0xa00xe90x770x590x550x550x000x00
+frame name: std::allocator_traits<std::allocator<int> >::deallocate
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 461
+value: @0x7fffffffd9d0
+value address: 0x7fffffffd9d0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 02:39:19]
+Fault Injection Successful after 6.844554424285889s
+[INFO -- 2018-12-02 02:39:25]
+event type: exit
+[INFO -- 2018-12-02 02:39:25]
+exit code: 0

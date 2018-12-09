@@ -1,0 +1,59 @@
+[INFO -- 2018-12-08 21:49:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:49:16]
+Initialization strings:
+[INFO -- 2018-12-08 21:49:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:49:16]
+initSignal:1
+[INFO -- 2018-12-08 21:49:16]
+endSignal:8
+[INFO -- 2018-12-08 21:49:16]
+faultModel:2
+[EXCEPTION -- 2018-12-08 21:49:17]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 21:49:18]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator[] (this=0x55555575f090 <wt2>, __n=51) at /usr/include/c++/7/bits/stl_vector.h:799
+#1  0x000055555555510f in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:44
+#2  0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#3  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+803	       *  @param __n The index of the element for which data should be
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x5555557892d0
+address max offset: 4
+Memory content after  bitflip:0x5a0x680x2c0x5e
+frame name: cost
+symbol name: solution
+symbol filename: knapsackga.cpp
+symbol line: 33
+value: std::vector of length 200, capacity 200 = {1579968602, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x55555578ac40
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:49:18]
+Fault Injection Successful after 2.0905725955963135s
+[INFO -- 2018-12-08 21:49:18]
+event type: exit
+[EXCEPTION -- 2018-12-08 21:49:18]
+exit code: no exit code available

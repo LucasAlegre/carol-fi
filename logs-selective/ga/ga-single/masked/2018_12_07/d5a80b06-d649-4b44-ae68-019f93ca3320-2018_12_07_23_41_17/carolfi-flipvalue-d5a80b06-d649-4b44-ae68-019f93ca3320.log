@@ -1,0 +1,55 @@
+[INFO -- 2018-12-07 23:41:08]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 23:41:08]
+Initialization strings:
+[INFO -- 2018-12-07 23:41:08]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 23:41:08]
+initSignal:1
+[INFO -- 2018-12-07 23:41:08]
+endSignal:8
+[INFO -- 2018-12-07 23:41:08]
+faultModel:0
+[INFO -- 2018-12-07 23:41:11]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x555555787fb0) at malloc.c:3107
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd980, __p=0x555555787fb0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555787fb0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd980, __p=0x555555787fb0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd980, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555e4c in chromossome::~chromossome (this=0x7fffffffd980, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#7  0x000055555555575f in genetic_algorithm () at knapsackga.cpp:131
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3102	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd9b8
+address max offset: 4
+Memory content after  bitflip:0xff0xe00x750x05
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 131
+value: {solution = std::vector of length 200, capacity 200 = {0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = 91611391}
+value address: 0x7fffffffd9a0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-07 23:41:11]
+Fault Injection Successful after 3.8443517684936523s
+[INFO -- 2018-12-07 23:41:16]
+event type: exit
+[INFO -- 2018-12-07 23:41:16]
+exit code: 0

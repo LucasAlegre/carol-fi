@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 22:03:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:03:53]
+Initialization strings:
+[INFO -- 2018-12-08 22:03:53]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:03:53]
+initSignal:1
+[INFO -- 2018-12-08 22:03:53]
+endSignal:8
+[INFO -- 2018-12-08 22:03:53]
+faultModel:2
+[INFO -- 2018-12-08 22:03:57]
+Backtrace BEGIN:
+#0  0x000055555555a6df in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776440) at /usr/include/c++/7/bits/stl_uninitialized.h:84
+#1  0x0000555555559d49 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776440) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776440) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x0, __last=0x0, __result=0x555555776440, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#4  0x0000555555556eb7 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+79		  _ForwardIterator __cur = __result;
+80		  __try
+81		    {
+82		      for (; __first != __last; ++__first, (void)++__cur)
+83			std::_Construct(std::__addressof(*__cur), *__first);
+84		      return __cur;
+85		    }
+86		  __catch(...)
+87		    {
+88		      std::_Destroy(__result, __cur);
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd6ef
+address max offset: 1
+Memory content after  bitflip:0x2b
+frame name: std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __assignable
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 128
+value: 43
+value address: 0x7fffffffd6ef
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-08 22:03:57]
+Fault Injection Successful after 4.812439203262329s
+[INFO -- 2018-12-08 22:04:01]
+event type: exit
+[INFO -- 2018-12-08 22:04:01]
+exit code: 0

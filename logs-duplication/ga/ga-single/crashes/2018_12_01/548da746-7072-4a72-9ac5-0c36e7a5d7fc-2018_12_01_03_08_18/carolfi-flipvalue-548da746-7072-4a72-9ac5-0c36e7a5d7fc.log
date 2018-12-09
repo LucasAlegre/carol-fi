@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 03:08:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:08:15]
+Initialization strings:
+[INFO -- 2018-12-01 03:08:15]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:08:15]
+initSignal:0
+[INFO -- 2018-12-01 03:08:15]
+endSignal:13
+[INFO -- 2018-12-01 03:08:15]
+faultModel:0
+[INFO -- 2018-12-01 03:08:18]
+Backtrace BEGIN:
+#0  0x000055555555814a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd880, __p=0x555555784840, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#1  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555784840, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#2  0x0000555555555f80 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#3  0x0000555555555637 in genetic_algorithm () at knapsackga.cpp:107
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+131	
+132	#if __cplusplus >= 201103L
+133	      template<typename _Up, typename... _Args>
+134		void
+135		construct(_Up* __p, _Args&&... __args)
+136		{ ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+137	
+138	      template<typename _Up>
+139		void
+140		destroy(_Up* __p) { __p->~_Up(); }
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x800x3e0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd980
+address max offset: 8
+Memory content after  bitflip:0x800x7e0x780x550x550x550x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x7fffffffd980
+value address: 0x7fffffffd980
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 03:08:18]
+Fault Injection Successful after 3.3818612098693848s
+[INFO -- 2018-12-01 03:08:18]
+event type: exit
+[EXCEPTION -- 2018-12-01 03:08:18]
+exit code: no exit code available

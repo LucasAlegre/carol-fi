@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 07:47:25]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:47:25]
+Initialization strings:
+[INFO -- 2018-12-01 07:47:25]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:47:25]
+initSignal:0
+[INFO -- 2018-12-01 07:47:25]
+endSignal:13
+[INFO -- 2018-12-01 07:47:25]
+faultModel:4
+[INFO -- 2018-12-01 07:47:26]
+Backtrace BEGIN:
+#0  0x0000555555555e3d in std::vector<int, std::allocator<int> >::~vector (this=0xc03c033bfae22b00, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:433
+#1  0x0000555555555329 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:72
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+428	       *  The dtor only erases the elements, and note that if the
+429	       *  elements themselves are pointers, the pointed-to memory is
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x55555575f010 
+address max offset: 4
+Memory content after  bitflip:0x280x000x000x02
+frame name: crossover
+symbol name: pop_size
+symbol filename: knapsackga.cpp
+symbol line: 17
+value: 33554472
+value address: 0x55555575f010 <pop_size>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 07:47:26]
+Fault Injection Successful after 1.5197710990905762s
+[INFO -- 2018-12-01 07:47:26]
+event type: exit
+[EXCEPTION -- 2018-12-01 07:47:26]
+exit code: no exit code available

@@ -1,0 +1,62 @@
+[INFO -- 2018-12-08 21:12:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:12:34]
+Initialization strings:
+[INFO -- 2018-12-08 21:12:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:12:34]
+initSignal:1
+[INFO -- 2018-12-08 21:12:34]
+endSignal:8
+[INFO -- 2018-12-08 21:12:34]
+faultModel:1
+[EXCEPTION -- 2018-12-08 21:12:36]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 21:12:36]
+Backtrace BEGIN:
+#0  0x0000555555558ce0 in std::__alloc_on_move<std::allocator<int> > (__one=..., __two=...) at /usr/include/c++/7/bits/alloc_traits.h:543
+#1  0x0000555555557752 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1534
+#2  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#3  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+538	  template<typename _Alloc>
+539	    inline void __do_alloc_on_move(_Alloc&, _Alloc&, false_type)
+540	    { }
+541	
+542	  template<typename _Alloc>
+543	    inline void __alloc_on_move(_Alloc& __one, _Alloc& __two)
+544	    {
+545	      typedef allocator_traits<_Alloc> __traits;
+546	      typedef typename __traits::propagate_on_container_move_assignment __pocma;
+547	      __do_alloc_on_move(__one, __two, __pocma());
+
+Backtrace END
+Fliping value of field: fitness
+Memory content before bitflip:0xff0xe00xf50x05
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9b8
+address max offset: 4
+Memory content after  bitflip:0xff0xe00xf50xa5
+frame name: genetic_algorithm
+symbol name: f2
+symbol filename: knapsackga.cpp
+symbol line: 131
+value: {solution = std::vector of length 200, capacity 200 = {0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -1510612737}
+value address: 0x7fffffffd9a0
+Type: The type is a structure.
+Type sizeof: 32
+Field name: solution
+Field Type: The type is a structure.
+Field Type sizeof: 24
+Field name: fitness
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-08 21:12:36]
+Fault Injection Successful after 2.2377302646636963s
+[INFO -- 2018-12-08 21:12:43]
+event type: exit
+[INFO -- 2018-12-08 21:12:43]
+exit code: 0

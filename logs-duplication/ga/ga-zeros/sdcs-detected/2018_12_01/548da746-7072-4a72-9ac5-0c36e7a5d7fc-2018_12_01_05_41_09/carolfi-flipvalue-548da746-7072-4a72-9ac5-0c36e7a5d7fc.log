@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 05:40:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 05:40:56]
+Initialization strings:
+[INFO -- 2018-12-01 05:40:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 05:40:56]
+initSignal:0
+[INFO -- 2018-12-01 05:40:56]
+endSignal:13
+[INFO -- 2018-12-01 05:40:56]
+faultModel:3
+[INFO -- 2018-12-01 05:41:00]
+Backtrace BEGIN:
+#0  0x0000555555555cb1 in operator new (__p=0x0) at /usr/include/c++/7/new:169
+#1  0x0000555555558157 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd880, __p=0x5555557848a0, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x5555557848a0, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555555f80 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#4  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+164	#endif // __cpp_sized_deallocation
+165	#endif // __cpp_aligned_new
+166	
+167	// Default placement versions of operator new.
+168	inline void* operator new(std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+169	{ return __p; }
+170	inline void* operator new[](std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+171	{ return __p; }
+172	
+173	// Default placement versions of operator delete.
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x55555575f17c 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: W
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 0
+value address: 0x55555575f17c <W>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 05:41:00]
+Fault Injection Successful after 4.158108949661255s
+[INFO -- 2018-12-01 05:41:09]
+event type: exit
+[INFO -- 2018-12-01 05:41:09]
+exit code: 0

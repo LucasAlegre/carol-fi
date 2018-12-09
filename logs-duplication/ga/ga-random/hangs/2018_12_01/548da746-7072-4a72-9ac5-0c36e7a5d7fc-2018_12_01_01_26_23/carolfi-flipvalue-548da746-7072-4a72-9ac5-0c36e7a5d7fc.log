@@ -1,0 +1,48 @@
+[INFO -- 2018-12-01 01:25:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:25:56]
+Initialization strings:
+[INFO -- 2018-12-01 01:25:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:25:57]
+initSignal:0
+[INFO -- 2018-12-01 01:25:57]
+endSignal:13
+[INFO -- 2018-12-01 01:25:57]
+faultModel:2
+[INFO -- 2018-12-01 01:25:57]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::capacity (this=0x7fffffffd980) at /usr/include/c++/7/bits/stl_vector.h:752
+#1  0x00005555555563cb in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd980, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:204
+#2  0x000055555555560b in genetic_algorithm () at knapsackga.cpp:105
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+747	       *  hold before needing to allocate more memory.
+748	       */
+749	      size_type
+750	      capacity() const _GLIBCXX_NOEXCEPT
+751	      { return size_type(this->_M_impl._M_end_of_storage
+752				 - this->_M_impl._M_start); }
+753	
+754	      /**
+755	       *  Returns true if the %vector is empty.  (Thus begin() would
+756	       *  equal end().)
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0xc70x0b0xe30x38
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: 954403783
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 01:25:57]
+Fault Injection Successful after 0.638941764831543s

@@ -1,0 +1,49 @@
+[INFO -- 2018-12-09 02:46:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:46:48]
+Initialization strings:
+[INFO -- 2018-12-09 02:46:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:46:48]
+initSignal:1
+[INFO -- 2018-12-09 02:46:48]
+endSignal:8
+[INFO -- 2018-12-09 02:46:48]
+faultModel:0
+[INFO -- 2018-12-09 02:46:50]
+Backtrace BEGIN:
+#0  0x00007ffff74e73f8 in __GI___libc_free (mem=0x555555782f20) at malloc.c:3107
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd9a0, __p=0x555555782f20) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555782f20, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd9a0, __p=0x555555782f20, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555e4c in chromossome::~chromossome (this=0x7fffffffd9a0, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#7  0x0000555555555753 in genetic_algorithm () at knapsackga.cpp:131
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3102	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555782f20
+address max offset: 4
+Memory content after  bitflip:0x000x400x000x00
+frame name: std::allocator_traits<std::allocator<int> >::deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 461
+value: 0x555555782f20
+value address: 0x7fffffffd7b0
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 02:46:50]
+Fault Injection Successful after 2.830562114715576s
+[INFO -- 2018-12-09 02:46:56]
+event type: exit
+[INFO -- 2018-12-09 02:46:56]
+exit code: 0

@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 11:33:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:33:33]
+Initialization strings:
+[INFO -- 2018-12-01 11:33:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:33:34]
+initSignal:0
+[INFO -- 2018-12-01 11:33:34]
+endSignal:13
+[INFO -- 2018-12-01 11:33:34]
+faultModel:2
+[INFO -- 2018-12-01 11:33:39]
+Backtrace BEGIN:
+#0  0x000055555555acb4 in std::operator!=<chromossome*> (__x=..., __y=...) at /usr/include/c++/7/bits/stl_iterator.h:1138
+#1  0x000055555555a642 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557844e0) at /usr/include/c++/7/bits/stl_uninitialized.h:82
+#2  0x0000555555559ced in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555557844e0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#3  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x5555557844e0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#4  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557769a0, __last=0x555555776ba0, __result=0x5555557844e0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#5  0x0000555555556e42 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 260, capacity 10177998752086 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1133	
+1134	  template<typename _Iterator>
+1135	    inline _GLIBCXX17_CONSTEXPR bool
+1136	    operator!=(const move_iterator<_Iterator>& __x,
+1137		       const move_iterator<_Iterator>& __y)
+1138	    { return !(__x == __y); }
+1139	
+1140	  template<typename _IteratorL, typename _IteratorR>
+1141	    inline _GLIBCXX17_CONSTEXPR bool
+1142	    operator<(const move_iterator<_IteratorL>& __x,
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd7d8
+address max offset: 8
+Memory content after  bitflip:0xa70x5b0x060xa80xef0x870x7e0xde
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __new_finish
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 407
+value: 0x0
+value address: 0x7fffffffd7d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 11:33:39]
+Fault Injection Successful after 5.672988176345825s
+[INFO -- 2018-12-01 11:33:46]
+event type: exit
+[INFO -- 2018-12-01 11:33:46]
+exit code: 0

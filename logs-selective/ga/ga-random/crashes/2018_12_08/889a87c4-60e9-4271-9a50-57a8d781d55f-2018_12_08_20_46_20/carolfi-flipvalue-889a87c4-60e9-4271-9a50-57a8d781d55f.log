@@ -1,0 +1,48 @@
+[INFO -- 2018-12-08 20:46:12]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 20:46:12]
+Initialization strings:
+[INFO -- 2018-12-08 20:46:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 20:46:12]
+initSignal:1
+[INFO -- 2018-12-08 20:46:12]
+endSignal:8
+[INFO -- 2018-12-08 20:46:12]
+faultModel:2
+[INFO -- 2018-12-08 20:46:19]
+Backtrace BEGIN:
+#0  0x00007ffff74e73e2 in __GI___libc_free (mem=0x555555776540) at malloc.c:3107
+#1  0x0000555555559a0e in __gnu_cxx::new_allocator<chromossome>::deallocate (this=0x7fffffffd820, __p=0x555555776540) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558d96 in std::allocator_traits<std::allocator<chromossome> >::deallocate (__a=..., __p=0x555555776540, __n=2) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x00005555555577f4 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_deallocate (this=0x7fffffffd820, __p=0x555555776540, __n=2) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556f1c in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:448
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3102	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f0a8 
+address max offset: 4
+Memory content after  bitflip:0x720x500x340x4e
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 1312051314
+value address: 0x55555575f0a8 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 20:46:19]
+Fault Injection Successful after 7.405865907669067s
+[INFO -- 2018-12-08 20:46:19]
+event type: exit
+[EXCEPTION -- 2018-12-08 20:46:19]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-09 04:39:24]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:39:24]
+Initialization strings:
+[INFO -- 2018-12-09 04:39:24]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:39:24]
+initSignal:1
+[INFO -- 2018-12-09 04:39:24]
+endSignal:8
+[INFO -- 2018-12-09 04:39:24]
+faultModel:1
+[INFO -- 2018-12-09 04:39:26]
+Backtrace BEGIN:
+#0  std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd8a0, __n=64) at /usr/include/c++/7/bits/stl_vector.h:173
+#1  0x0000555555556dfa in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8a0, __position={solution = std::vector of length 204, capacity 1073741824 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#2  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+168	      pointer
+169	      _M_allocate(size_t __n)
+170	      {
+171		typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
+172		return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+173	      }
+174	
+175	      void
+176	      _M_deallocate(pointer __p, size_t __n)
+177	      {
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd7b8
+address max offset: 8
+Memory content after  bitflip:0xa00xd80xf30xff0xff0x7f0x000x00
+frame name: std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8a0
+value address: 0x7fffffffd7b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 04:39:26]
+Fault Injection Successful after 2.848127603530884s
+[INFO -- 2018-12-09 04:39:32]
+event type: exit
+[INFO -- 2018-12-09 04:39:32]
+exit code: 0

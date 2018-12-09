@@ -1,0 +1,63 @@
+[INFO -- 2018-12-09 04:57:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:57:33]
+Initialization strings:
+[INFO -- 2018-12-09 04:57:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:57:33]
+initSignal:1
+[INFO -- 2018-12-09 04:57:33]
+endSignal:8
+[INFO -- 2018-12-09 04:57:33]
+faultModel:0
+[EXCEPTION -- 2018-12-09 04:57:35]
+gdbException: Cannot access memory at address 0x555755787210
+[EXCEPTION -- 2018-12-09 04:57:35]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 04:57:35]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff7ae1095 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7adec86 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7adecd1 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7adef14 in __cxa_throw () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x00007ffff7b086f2 in std::__throw_bad_alloc() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#7  0x000055555555a34a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd920, __n=18446744071562068168) at /usr/include/c++/7/ext/new_allocator.h:102
+#8  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=18446744071562068168) at /usr/include/c++/7/bits/alloc_traits.h:436
+#9  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd920, __n=18446744071562068168) at /usr/include/c++/7/bits/stl_vector.h:172
+#10 0x0000555555557418 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd920, __n=18446744071562068168, __first=<error reading variable: Cannot access memory at address 0x555755787210>, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1260
+#11 0x0000555555556465 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd920, __x=std::vector of length -2147483448, capacity -2147483448 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#12 0x0000555555555381 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length -2147483448, capacity -2147483448 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:98
+#13 0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#14 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0xf00x4e0x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd908
+address max offset: 8
+Memory content after  bitflip:0xf00x4e0x780x550x550x550x800x00
+frame name: crossover
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: std::vector of length 9007199254741192, capacity 200 = {0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x7fffffffd900
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 04:57:35]
+Fault Injection Successful after 2.726271390914917s
+[INFO -- 2018-12-09 04:57:35]
+event type: exit
+[EXCEPTION -- 2018-12-09 04:57:35]
+exit code: no exit code available

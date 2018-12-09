@@ -1,0 +1,69 @@
+[INFO -- 2018-12-09 01:39:46]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 01:39:46]
+Initialization strings:
+[INFO -- 2018-12-09 01:39:46]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 01:39:46]
+initSignal:1
+[INFO -- 2018-12-09 01:39:46]
+endSignal:8
+[INFO -- 2018-12-09 01:39:46]
+faultModel:1
+[EXCEPTION -- 2018-12-09 01:39:49]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 01:39:49]
+Backtrace BEGIN:
+#0  0x000055555555627b in std::allocator<int>::~allocator (this=0x555555557dc7 <std::_Destroy<int*>(int*, int*)+35>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#1  0x0000555555556b26 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::~_Vector_impl (this=0x555555776420, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#2  0x0000555555556b93 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x555555776420, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#3  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x555555776420, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#4  0x0000555555555e4c in chromossome::~chromossome (this=0x555555776420, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#5  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x555555776420) at /usr/include/c++/7/bits/stl_construct.h:98
+#6  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:108
+#7  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:137
+#8  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:206
+#9  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#10 0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#11 0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#12 0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#13 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+136	      template<typename _Tp1>
+137		allocator(const allocator<_Tp1>&) throw() { }
+138	
+139	      ~allocator() throw() { }
+140	
+141	      // Inherit everything else.
+142	    };
+143	
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x555555776420
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000xc0
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x555555776420
+value address: 0x7fffffffd6a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 01:39:49]
+Fault Injection Successful after 3.4300906658172607s
+[INFO -- 2018-12-09 01:39:49]
+event type: exit
+[EXCEPTION -- 2018-12-09 01:39:49]
+exit code: no exit code available

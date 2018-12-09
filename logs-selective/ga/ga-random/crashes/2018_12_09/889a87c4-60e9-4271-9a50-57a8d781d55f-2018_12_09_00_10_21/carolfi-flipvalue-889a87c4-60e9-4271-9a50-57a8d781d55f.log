@@ -1,0 +1,71 @@
+[INFO -- 2018-12-09 00:10:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:10:16]
+Initialization strings:
+[INFO -- 2018-12-09 00:10:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:10:16]
+initSignal:1
+[INFO -- 2018-12-09 00:10:16]
+endSignal:8
+[INFO -- 2018-12-09 00:10:16]
+faultModel:2
+[EXCEPTION -- 2018-12-09 00:10:20]
+gdbException: Cannot access memory at address 0xdd6a69d0c73b5b93
+[EXCEPTION -- 2018-12-09 00:10:20]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 00:10:20]
+Backtrace BEGIN:
+#0  0x0000555555559291 in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1221
+#1  0x000055555555834e in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776420, __last=0x555555776440, __result=0x555555776540, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#2  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#3  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#5  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1216	  // returning a constant iterator when we don't want to move.
+1217	  template<typename _Tp, typename _ReturnType
+1218	    = typename conditional<__move_if_noexcept_cond<_Tp>::value,
+1219				   const _Tp*, move_iterator<_Tp*>>::type>
+1220	    inline _GLIBCXX17_CONSTEXPR _ReturnType
+1221	    __make_move_if_noexcept_iterator(_Tp* __i)
+1222	    { return _ReturnType(__i); }
+1223	
+1224	  // @} group iterators
+1225	
+
+Backtrace END
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555783580
+address max offset: 4
+Memory content after  bitflip:0x2d0x4a0xbb0x92
+frame name: tournament
+symbol name: competitors
+symbol filename: knapsackga.cpp
+symbol line: 80
+value: std::vector of length 1, capacity 1 = {{solution = std::vector of length 200, capacity 200 = {-1833219539, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1...}, fitness = -506187}}
+value address: 0x7fffffffd820
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-09 00:10:20]
+Fault Injection Successful after 4.401271343231201s
+[INFO -- 2018-12-09 00:10:20]
+event type: exit
+[EXCEPTION -- 2018-12-09 00:10:20]
+exit code: no exit code available

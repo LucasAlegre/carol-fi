@@ -1,0 +1,63 @@
+[INFO -- 2018-12-09 05:17:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:17:05]
+Initialization strings:
+[INFO -- 2018-12-09 05:17:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:17:05]
+initSignal:1
+[INFO -- 2018-12-09 05:17:05]
+endSignal:8
+[INFO -- 2018-12-09 05:17:05]
+faultModel:3
+[INFO -- 2018-12-09 05:17:06]
+Backtrace BEGIN:
+#0  0x0000555555557617 in std::forward<chromossome> (__t=...) at /usr/include/c++/7/bits/move.h:74
+#1  0x000055555555ad60 in std::_Construct<chromossome, chromossome> (__p=0x5555557772e0, __args#0=...) at /usr/include/c++/7/bits/stl_construct.h:75
+#2  0x000055555555a6c8 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555777240) at /usr/include/c++/7/bits/stl_uninitialized.h:83
+#3  0x0000555555559d49 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555777240) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#4  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555777240) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#5  0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776b00, __last=0x555555776c00, __result=0x555555777240, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#6  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8a0, __position={solution = std::vector of length 132, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#7  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+69	   *  This function is used to implement "perfect forwarding".
+70	   */
+71	  template<typename _Tp>
+72	    constexpr _Tp&&
+73	    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+74	    { return static_cast<_Tp&&>(__t); }
+75	
+76	  /**
+77	   *  @brief  Forward an rvalue.
+78	   *  @return The parameter cast to the specified type.
+
+Backtrace END
+Fliping value of field: _M_current
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x6b0x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd738
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 115
+value: {_M_current = 0x0}
+value address: 0x7fffffffd738
+Type: The type is a structure.
+Type sizeof: 8
+Field name: _M_current
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-09 05:17:06]
+Fault Injection Successful after 1.3319411277770996s
+[INFO -- 2018-12-09 05:17:13]
+event type: exit
+[INFO -- 2018-12-09 05:17:13]
+exit code: 0

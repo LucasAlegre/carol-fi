@@ -1,0 +1,54 @@
+[INFO -- 2018-12-08 18:31:43]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:31:43]
+Initialization strings:
+[INFO -- 2018-12-08 18:31:43]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 18:31:43]
+initSignal:0
+[INFO -- 2018-12-08 18:31:43]
+endSignal:9
+[INFO -- 2018-12-08 18:31:43]
+faultModel:0
+[EXCEPTION -- 2018-12-08 18:31:47]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-08 18:31:48]
+Backtrace BEGIN:
+#0  0x0000555555555fb1 in std::_Destroy<int*, int> (__first=0x5555557727c0, __last=0x555555772ae0) at /usr/include/c++/7/bits/stl_construct.h:207
+#1  0x000055555555593d in std::vector<int, std::allocator<int> >::~vector (this=0x7fffffffd740, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#2  0x0000555555555468 in simulated_annealing () at knapsacksa.cpp:89
+#3  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+202	    inline void
+203	    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
+204		     allocator<_Tp>&)
+205	    {
+206	      _Destroy(__first, __last);
+207	    }
+208	
+209	#if __cplusplus > 201402L
+210	  template <typename _Tp>
+211	    inline void
+
+Backtrace END
+Memory content before bitflip:0xec0xb60x060x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd714
+address max offset: 4
+Memory content after  bitflip:0xec0xb60x020x00
+frame name: simulated_annealing
+symbol name: t
+symbol filename: knapsacksa.cpp
+symbol line: 88
+value: 177900
+value address: 0x7fffffffd714
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:31:48]
+Fault Injection Successful after 5.28967022895813s
+[INFO -- 2018-12-08 18:31:55]
+event type: exit
+[INFO -- 2018-12-08 18:31:55]
+exit code: 0

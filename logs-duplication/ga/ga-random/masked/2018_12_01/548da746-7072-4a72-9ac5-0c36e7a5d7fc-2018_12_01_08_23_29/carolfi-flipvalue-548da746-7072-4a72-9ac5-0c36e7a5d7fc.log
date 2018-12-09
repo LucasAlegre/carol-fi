@@ -1,0 +1,59 @@
+[INFO -- 2018-12-01 08:23:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:23:16]
+Initialization strings:
+[INFO -- 2018-12-01 08:23:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:23:16]
+initSignal:0
+[INFO -- 2018-12-01 08:23:16]
+endSignal:13
+[INFO -- 2018-12-01 08:23:16]
+faultModel:2
+[INFO -- 2018-12-01 08:23:17]
+Backtrace BEGIN:
+#0  0x000055555555986d in std::__copy_move_a<false, int const*, int*> (__first=0x5555557848f0, __last=0x555555784c10, __result=0x555555785280) at /usr/include/c++/7/bits/stl_algobase.h:386
+#1  0x000055555555ab2f in std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=816, __result=0x555555785280) at /usr/include/c++/7/bits/stl_algobase.h:424
+#2  0x000055555555a264 in std::copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=816, __result=0x555555785280) at /usr/include/c++/7/bits/stl_algobase.h:456
+#3  0x000055555555971c in std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=816, __result=0x555555785280) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#4  0x0000555555558692 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=1, __last=816, __result=0x555555785280) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#5  0x0000555555557223 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=1, __last=816, __result=0x555555785280) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#6  0x00005555555573e5 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd960, __n=200, __first=1, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#7  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd960, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#8  0x00005555555555f5 in genetic_algorithm () at knapsackga.cpp:105
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+381		                     && __is_pointer<_II>::__value
+382		                     && __is_pointer<_OI>::__value
+383				     && __are_same<_ValueTypeI, _ValueTypeO>::__value);
+384	
+385	      return std::__copy_move<_IsMove, __simple,
+386		                      _Category>::__copy_m(__first, __last, __result);
+387	    }
+388	
+389	  // Helpers for streambuf iterators (either istream or ostream).
+390	  // NB: avoid including <iosfwd>, relatively large.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x520x780x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd778
+address max offset: 8
+Memory content after  bitflip:0xb80x810xd80xdb0xcd0x4f0xf50x17
+frame name: std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int>
+symbol name: __result
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 288
+value: 0x555555785280
+value address: 0x7fffffffd778
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:23:17]
+Fault Injection Successful after 1.4459023475646973s
+[INFO -- 2018-12-01 08:23:29]
+event type: exit
+[INFO -- 2018-12-01 08:23:29]
+exit code: 0

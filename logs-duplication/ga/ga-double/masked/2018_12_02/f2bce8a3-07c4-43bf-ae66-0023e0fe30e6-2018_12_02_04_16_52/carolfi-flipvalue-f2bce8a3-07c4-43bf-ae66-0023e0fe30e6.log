@@ -1,0 +1,60 @@
+[INFO -- 2018-12-02 04:16:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 04:16:39]
+Initialization strings:
+[INFO -- 2018-12-02 04:16:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 04:16:39]
+initSignal:0
+[INFO -- 2018-12-02 04:16:39]
+endSignal:13
+[INFO -- 2018-12-02 04:16:39]
+faultModel:1
+[EXCEPTION -- 2018-12-02 04:16:49]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-02 04:16:49]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-02 04:16:49]
+Backtrace BEGIN:
+#0  0x0000555555559263 in std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> > (__i=0x555555776440) at /usr/include/c++/7/bits/stl_iterator.h:1222
+#1  0x0000555555558329 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776440, __last=0x555555776440, __result=0x555555776540, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:311
+#2  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8d0, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#3  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8d0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#4  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#5  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555aab in main () at knapsackga.cpp:143
+
+1217	  template<typename _Tp, typename _ReturnType
+1218	    = typename conditional<__move_if_noexcept_cond<_Tp>::value,
+1219				   const _Tp*, move_iterator<_Tp*>>::type>
+1220	    inline _GLIBCXX17_CONSTEXPR _ReturnType
+1221	    __make_move_if_noexcept_iterator(_Tp* __i)
+1222	    { return _ReturnType(__i); }
+1223	
+1224	  // @} group iterators
+1225	
+1226	  template<typename _Iterator>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x400x640x770x550x550x550x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd7b8
+address max offset: 8
+Memory content after  bitflip:0x400x640x770x550x550x110x000x00
+frame name: std::__make_move_if_noexcept_iterator<chromossome, std::move_iterator<chromossome*> >
+symbol name: __i
+symbol filename: /usr/include/c++/7/bits/stl_iterator.h
+symbol line: 1221
+value: 0x555555776440
+value address: 0x7fffffffd7b8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 04:16:49]
+Fault Injection Successful after 10.839796543121338s
+[INFO -- 2018-12-02 04:16:51]
+event type: exit
+[INFO -- 2018-12-02 04:16:51]
+exit code: 0

@@ -1,0 +1,71 @@
+[INFO -- 2018-12-01 06:52:53]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:52:53]
+Initialization strings:
+[INFO -- 2018-12-01 06:52:53]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:52:53]
+initSignal:0
+[INFO -- 2018-12-01 06:52:53]
+endSignal:13
+[INFO -- 2018-12-01 06:52:53]
+faultModel:0
+[EXCEPTION -- 2018-12-01 06:53:01]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 06:53:01]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd794) at random_r.c:378
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#6  0x0000555555555aab in main () at knapsackga.cpp:143
+
+373	in random_r.c
+
+Backtrace END
+Fliping value of field: state
+Fliping a bit of the pointer
+Memory content before bitflip:0xa40x210x830xf70xff0x7f0x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7832730 
+address max offset: 8
+Memory content after  bitflip:0xa40x210x830xf70xfb0x7f0x000x00
+frame name: __random
+symbol name: unsafe_state
+symbol filename: random.c
+symbol line: 160
+value: {fptr = 0x7ffff7832204 <randtbl+100>, rptr = 0x7ffff78321f8 <randtbl+88>, state = 0x7ffbf78321a4, rand_type = 3, rand_deg = 31, rand_sep = 3, end_ptr = 0x7ffff7832220 <pa_next_type>}
+value address: 0x7ffff7832720 <unsafe_state>
+Type: The type is a structure.
+Type sizeof: 48
+Field name: fptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: state
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: rand_type
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_deg
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: rand_sep
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: end_ptr
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 06:53:01]
+Fault Injection Successful after 8.15153431892395s
+[INFO -- 2018-12-01 06:53:01]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:53:01]
+exit code: no exit code available

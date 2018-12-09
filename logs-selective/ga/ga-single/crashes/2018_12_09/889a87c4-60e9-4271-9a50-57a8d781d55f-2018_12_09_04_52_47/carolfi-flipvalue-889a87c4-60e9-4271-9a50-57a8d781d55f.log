@@ -1,0 +1,62 @@
+[INFO -- 2018-12-09 04:52:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 04:52:45]
+Initialization strings:
+[INFO -- 2018-12-09 04:52:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 04:52:45]
+initSignal:1
+[INFO -- 2018-12-09 04:52:45]
+endSignal:8
+[INFO -- 2018-12-09 04:52:45]
+faultModel:0
+[INFO -- 2018-12-09 04:52:46]
+Backtrace BEGIN:
+#0  0x0000555555559d26 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555558123 <chromossome::chromossome(chromossome const&)+35>) at /usr/include/c++/7/bits/stl_uninitialized.h:115
+#1  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776540, __last=0x555555776580, __result=0x555555776740, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#3  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#6  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+110	   *
+111	   *  Like copy(), but does not require an initialized output range.
+112	  */
+113	  template<typename _InputIterator, typename _ForwardIterator>
+114	    inline _ForwardIterator
+115	    uninitialized_copy(_InputIterator __first, _InputIterator __last,
+116			       _ForwardIterator __result)
+117	    {
+118	      typedef typename iterator_traits<_InputIterator>::value_type
+119		_ValueType1;
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x800xfd0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555781118
+address max offset: 8
+Memory content after  bitflip:0x800xfd0x770x550x550x550x800x00
+frame name: std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&>
+symbol name: __args#0
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 395
+value: @0x555555781110
+value address: 0x555555781110
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 04:52:46]
+Fault Injection Successful after 1.9664332866668701s
+[INFO -- 2018-12-09 04:52:47]
+event type: exit
+[EXCEPTION -- 2018-12-09 04:52:47]
+exit code: no exit code available

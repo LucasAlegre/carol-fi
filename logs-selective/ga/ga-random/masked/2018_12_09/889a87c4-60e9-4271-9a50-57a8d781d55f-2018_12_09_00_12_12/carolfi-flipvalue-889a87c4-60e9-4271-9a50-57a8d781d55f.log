@@ -1,0 +1,59 @@
+[INFO -- 2018-12-09 00:12:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 00:12:03]
+Initialization strings:
+[INFO -- 2018-12-09 00:12:03]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 00:12:03]
+initSignal:1
+[INFO -- 2018-12-09 00:12:03]
+endSignal:8
+[INFO -- 2018-12-09 00:12:03]
+faultModel:2
+[INFO -- 2018-12-09 00:12:04]
+Backtrace BEGIN:
+#0  0x000055555555b0f1 in std::__fill_n_a<int*, unsigned long, int> (__first=0x555555786bd8, __n=200, __value=@0x7fffffffd714: 0) at /usr/include/c++/7/bits/stl_algobase.h:754
+#1  0x000055555555abca in std::fill_n<int*, unsigned long, int> (__first=0x555555786bb0, __n=200, __value=@0x7fffffffd714: 0) at /usr/include/c++/7/bits/stl_algobase.h:789
+#2  0x000055555555a304 in std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long> (__first=0x555555786bb0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:548
+#3  0x0000555555559824 in std::__uninitialized_default_n<int*, unsigned long> (__first=0x555555786bb0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:583
+#4  0x000055555555878f in std::__uninitialized_default_n_a<int*, unsigned long, int> (__first=0x555555786bb0, __n=200) at /usr/include/c++/7/bits/stl_uninitialized.h:645
+#5  0x00005555555572f7 in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#6  0x00005555555562d5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#7  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#8  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+749	    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value)
+750	    {
+751	      const _Tp __tmp = __value;
+752	      for (__decltype(__n + 0) __niter = __n;
+753		   __niter > 0; --__niter, ++__first)
+754		*__first = __tmp;
+755	      return __first;
+756	    }
+757	
+758	  template<typename _Size, typename _Tp>
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd714
+address max offset: 4
+Memory content after  bitflip:0x6c0xb20x860x46
+frame name: std::fill_n<int*, unsigned long, int>
+symbol name: __value
+symbol filename: /usr/include/c++/7/bits/stl_algobase.h
+symbol line: 784
+value: @0x7fffffffd714
+value address: 0x7fffffffd714
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 00:12:04]
+Fault Injection Successful after 1.3628718852996826s
+[INFO -- 2018-12-09 00:12:11]
+event type: exit
+[INFO -- 2018-12-09 00:12:11]
+exit code: 0

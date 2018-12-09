@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 05:23:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 05:23:35]
+Initialization strings:
+[INFO -- 2018-12-09 05:23:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 05:23:35]
+initSignal:1
+[INFO -- 2018-12-09 05:23:35]
+endSignal:8
+[INFO -- 2018-12-09 05:23:35]
+faultModel:0
+[EXCEPTION -- 2018-12-09 05:23:38]
+gdbException: Cannot access memory at address 0x555555737450
+[INFO -- 2018-12-09 05:23:38]
+Backtrace BEGIN:
+#0  0x00005555555572f2 in std::vector<int, std::allocator<int> >::_M_default_initialize (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:1347
+#1  0x00005555555562d5 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:285
+#2  0x0000555555555318 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#3  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#4  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+1342	      // Called by the vector(n) constructor.
+1343	      void
+1344	      _M_default_initialize(size_type __n)
+1345	      {
+1346		this->_M_impl._M_finish =
+1347		  std::__uninitialized_default_n_a(this->_M_impl._M_start, __n,
+1348						   _M_get_Tp_allocator());
+1349	      }
+1350	#endif
+1351	
+
+Backtrace END
+Memory content before bitflip:0x280x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x55555575f014 
+address max offset: 4
+Memory content after  bitflip:0x280x800x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_default_initialize
+symbol name: pop_size2
+symbol filename: knapsackga.cpp
+symbol line: 20
+value: 32808
+value address: 0x55555575f014 <pop_size2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 05:23:38]
+Fault Injection Successful after 3.7966630458831787s
+[INFO -- 2018-12-09 05:23:38]
+event type: exit
+[EXCEPTION -- 2018-12-09 05:23:38]
+exit code: no exit code available

@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 09:05:16]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 09:05:16]
+Initialization strings:
+[INFO -- 2018-12-01 09:05:16]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 09:05:16]
+initSignal:0
+[INFO -- 2018-12-01 09:05:16]
+endSignal:13
+[INFO -- 2018-12-01 09:05:16]
+faultModel:0
+[EXCEPTION -- 2018-12-01 09:05:22]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 09:05:22]
+Backtrace BEGIN:
+#0  std::swap<int> (__a=@0x555555784084: 1, __b=@0x555555784af4: 1) at /usr/include/c++/7/bits/move.h:187
+#1  0x0000555555555317 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#2  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+182	    inline
+183	#if __cplusplus >= 201103L
+184	    typename enable_if<__and_<__not_<__is_tuple_like<_Tp>>,
+185				      is_move_constructible<_Tp>,
+186				      is_move_assignable<_Tp>>::value>::type
+187	    swap(_Tp& __a, _Tp& __b)
+188	    noexcept(__and_<is_nothrow_move_constructible<_Tp>,
+189		            is_nothrow_move_assignable<_Tp>>::value)
+190	#else
+191	    void
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd7b4
+address max offset: 4
+Memory content after  bitflip:0x200x000x000x00
+frame name: std::swap<int>
+symbol name: __tmp
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 198
+value: 32
+value address: 0x7fffffffd7b4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 09:05:22]
+Fault Injection Successful after 6.57735800743103s
+[INFO -- 2018-12-01 09:05:29]
+event type: exit
+[INFO -- 2018-12-01 09:05:29]
+exit code: 0

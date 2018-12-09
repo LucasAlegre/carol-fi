@@ -1,0 +1,65 @@
+[INFO -- 2018-12-01 07:02:35]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 07:02:35]
+Initialization strings:
+[INFO -- 2018-12-01 07:02:35]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 07:02:35]
+initSignal:0
+[INFO -- 2018-12-01 07:02:35]
+endSignal:13
+[INFO -- 2018-12-01 07:02:35]
+faultModel:2
+[INFO -- 2018-12-01 07:02:41]
+Backtrace BEGIN:
+#0  __gnu_cxx::new_allocator<chromossome>::~new_allocator (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/ext/new_allocator.h:86
+#1  0x00005555555580c0 in std::allocator<chromossome>::~allocator (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/allocator.h:139
+#2  0x0000555555556c5a in std::_Vector_base<chromossome, std::allocator<chromossome> >::_Vector_impl::~_Vector_impl (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:81
+#3  0x0000555555556cc7 in std::_Vector_base<chromossome, std::allocator<chromossome> >::~_Vector_base (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:163
+#4  0x0000555555555f1d in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd800, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#5  0x00005555555551b8 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#6  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+81	      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
+82	
+83	      template<typename _Tp1>
+84		new_allocator(const new_allocator<_Tp1>&) _GLIBCXX_USE_NOEXCEPT { }
+85	
+86	      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
+87	
+88	      pointer
+89	      address(reference __x) const _GLIBCXX_NOEXCEPT
+90	      { return std::__addressof(__x); }
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x555555776450
+address max offset: 4
+Memory content after  bitflip:0xac0xc50x870xb3
+frame name: std::_Vector_base<chromossome, std::allocator<chromossome> >::~_Vector_base
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd7a8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 07:02:41]
+Fault Injection Successful after 6.024313926696777s
+[INFO -- 2018-12-01 07:02:48]
+event type: exit
+[INFO -- 2018-12-01 07:02:48]
+exit code: 0

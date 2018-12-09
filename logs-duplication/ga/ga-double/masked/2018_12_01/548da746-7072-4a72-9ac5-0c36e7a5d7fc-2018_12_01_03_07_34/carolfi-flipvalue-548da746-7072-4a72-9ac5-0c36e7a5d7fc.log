@@ -1,0 +1,64 @@
+[INFO -- 2018-12-01 03:07:20]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 03:07:20]
+Initialization strings:
+[INFO -- 2018-12-01 03:07:20]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 03:07:20]
+initSignal:0
+[INFO -- 2018-12-01 03:07:20]
+endSignal:13
+[INFO -- 2018-12-01 03:07:20]
+faultModel:1
+[EXCEPTION -- 2018-12-01 03:07:24]
+pythonException: Unable to exit loop in struct fields; Exiting wihtout making a bit flip
+[INFO -- 2018-12-01 03:07:24]
+Backtrace BEGIN:
+#0  0x000055555555915c in std::allocator<chromossome>::allocator (this=0x7fffffffd800) at /usr/include/c++/7/bits/allocator.h:131
+#1  0x0000555555558082 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_Vector_impl::_Vector_impl (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:89
+#2  0x0000555555556c76 in std::_Vector_base<chromossome, std::allocator<chromossome> >::_Vector_base (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:127
+#3  0x0000555555555ed8 in std::vector<chromossome, std::allocator<chromossome> >::vector (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:263
+#4  0x0000555555555117 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:59
+#5  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+126	      typedef true_type propagate_on_container_move_assignment;
+127	
+128	      typedef true_type is_always_equal;
+129	#endif
+130	
+131	      allocator() throw() { }
+132	
+133	      allocator(const allocator& __a) throw()
+134	      : __allocator_base<_Tp>(__a) { }
+135	
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd930
+address max offset: 8
+Memory content after  bitflip:0x600x000x000x000x000x000x000x00
+frame name: tournament
+symbol name: tournamentWinner
+symbol filename: knapsackga.cpp
+symbol line: 67
+value: std::vector of length 0, capacity 24
+value address: 0x7fffffffd920
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-01 03:07:24]
+Fault Injection Successful after 4.690239191055298s
+[INFO -- 2018-12-01 03:07:33]
+event type: exit
+[INFO -- 2018-12-01 03:07:33]
+exit code: 0

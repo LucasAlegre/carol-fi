@@ -1,0 +1,56 @@
+[INFO -- 2018-12-01 08:45:28]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:45:28]
+Initialization strings:
+[INFO -- 2018-12-01 08:45:28]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:45:28]
+initSignal:0
+[INFO -- 2018-12-01 08:45:28]
+endSignal:13
+[INFO -- 2018-12-01 08:45:28]
+faultModel:3
+[INFO -- 2018-12-01 08:45:33]
+Backtrace BEGIN:
+#0  std::move<int*&> (__t=@0x7fffffffd8a8: 0x0) at /usr/include/c++/7/bits/move.h:98
+#1  0x000055555555976a in std::swap<int*> (__a=@0x7fffffffd8a8: 0x0, __b=@0x7fffffffd7b8: 0x0) at /usr/include/c++/7/bits/move.h:199
+#2  0x0000555555558734 in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#3  0x00005555555576bf in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#4  0x00005555555566e3 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555555c in genetic_algorithm () at knapsackga.cpp:102
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+93	   *  @param  __t  A thing of arbitrary type.
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd798
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::vector<int, std::allocator<int> >::_M_move_assign
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8a0
+value address: 0x7fffffffd798
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 08:45:33]
+Fault Injection Successful after 5.769957542419434s
+[INFO -- 2018-12-01 08:45:33]
+event type: exit
+[EXCEPTION -- 2018-12-01 08:45:33]
+exit code: no exit code available

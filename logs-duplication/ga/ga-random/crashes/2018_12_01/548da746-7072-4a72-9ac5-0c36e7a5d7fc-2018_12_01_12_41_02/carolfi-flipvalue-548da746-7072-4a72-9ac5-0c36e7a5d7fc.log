@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 12:40:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 12:40:57]
+Initialization strings:
+[INFO -- 2018-12-01 12:40:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 12:40:57]
+initSignal:0
+[INFO -- 2018-12-01 12:40:57]
+endSignal:13
+[INFO -- 2018-12-01 12:40:57]
+faultModel:2
+[INFO -- 2018-12-01 12:41:01]
+Backtrace BEGIN:
+#0  0x0000555555557428 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd900, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1272
+#1  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd900, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#2  0x00005555555552ad in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:77
+#3  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+1267		  __catch(...)
+1268		    {
+1269		      _M_deallocate(__result, __n);
+1270		      __throw_exception_again;
+1271		    }
+1272		}
+1273	
+1274	
+1275	      // Internal constructor functions follow.
+1276	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555575f178 
+address max offset: 4
+Memory content after  bitflip:0xb80x350xee0xcd
+frame name: main
+symbol name: n
+symbol filename: knapsackga.cpp
+symbol line: 16
+value: -840026696
+value address: 0x55555575f178 <n>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 12:41:01]
+Fault Injection Successful after 4.162002325057983s
+[INFO -- 2018-12-01 12:41:01]
+event type: exit
+[EXCEPTION -- 2018-12-01 12:41:01]
+exit code: no exit code available

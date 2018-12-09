@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 22:47:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 22:47:40]
+Initialization strings:
+[INFO -- 2018-12-08 22:47:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 22:47:40]
+initSignal:1
+[INFO -- 2018-12-08 22:47:40]
+endSignal:8
+[INFO -- 2018-12-08 22:47:40]
+faultModel:0
+[EXCEPTION -- 2018-12-08 22:47:43]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 22:47:43]
+Backtrace BEGIN:
+#0  std::move<int*&> (__t=@0x7fffffffd8c8: 0x0) at /usr/include/c++/7/bits/move.h:98
+#1  0x00005555555597c6 in std::swap<int*> (__a=@0x7fffffffd8c8: 0x0, __b=@0x7fffffffd7d8: 0x0) at /usr/include/c++/7/bits/move.h:199
+#2  0x000055555555874a in std::_Vector_base<int, std::allocator<int> >::_Vector_impl::_M_swap_data (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:106
+#3  0x0000555555557719 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1532
+#4  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#5  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+93	   *  @param  __t  A thing of arbitrary type.
+94	   *  @return The parameter cast to an rvalue-reference to allow moving it.
+95	  */
+96	  template<typename _Tp>
+97	    constexpr typename std::remove_reference<_Tp>::type&&
+98	    move(_Tp&& __t) noexcept
+99	    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+100	
+101	
+102	  template<typename _Tp>
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8c8
+address max offset: 8
+Memory content after  bitflip:0x000x080x000x000x000x000x000x00
+frame name: std::swap<int*>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/move.h
+symbol line: 187
+value: @0x7fffffffd8c8
+value address: 0x7fffffffd8c8
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 22:47:43]
+Fault Injection Successful after 3.1571013927459717s
+[INFO -- 2018-12-08 22:47:43]
+event type: exit
+[EXCEPTION -- 2018-12-08 22:47:43]
+exit code: no exit code available

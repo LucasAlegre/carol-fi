@@ -1,0 +1,58 @@
+[INFO -- 2018-12-09 01:02:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 01:02:56]
+Initialization strings:
+[INFO -- 2018-12-09 01:02:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 01:02:56]
+initSignal:1
+[INFO -- 2018-12-09 01:02:56]
+endSignal:8
+[INFO -- 2018-12-09 01:02:56]
+faultModel:3
+[INFO -- 2018-12-09 01:03:00]
+Backtrace BEGIN:
+#0  std::_Destroy<chromossome> (__pointer=0x555555776760) at /usr/include/c++/7/bits/stl_construct.h:97
+#1  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776760, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#5  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#6  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+92	  /**
+93	   * Destroy the object pointed to by a pointer type.
+94	   */
+95	  template<typename _Tp>
+96	    inline void
+97	    _Destroy(_Tp* __pointer)
+98	    { __pointer->~_Tp(); }
+99	
+100	  template<bool>
+101	    struct _Destroy_aux
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0xc80x290xf80xff
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776758
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __first
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x555555776740
+value address: 0x7fffffffd7c8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 01:03:00]
+Fault Injection Successful after 4.6441028118133545s
+[INFO -- 2018-12-09 01:03:04]
+event type: exit
+[INFO -- 2018-12-09 01:03:04]
+exit code: 0

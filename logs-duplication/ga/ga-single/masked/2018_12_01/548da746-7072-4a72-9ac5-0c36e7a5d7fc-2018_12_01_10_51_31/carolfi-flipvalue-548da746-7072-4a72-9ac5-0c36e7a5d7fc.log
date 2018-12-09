@@ -1,0 +1,55 @@
+[INFO -- 2018-12-01 10:51:18]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:51:18]
+Initialization strings:
+[INFO -- 2018-12-01 10:51:18]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:51:18]
+initSignal:0
+[INFO -- 2018-12-01 10:51:18]
+endSignal:13
+[INFO -- 2018-12-01 10:51:18]
+faultModel:0
+[INFO -- 2018-12-01 10:51:19]
+Backtrace BEGIN:
+#0  0x0000555555559cee in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776540) at /usr/include/c++/7/bits/stl_uninitialized.h:135
+#1  0x00005555555592a8 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776540) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#2  0x0000555555558351 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776440, __last=0x555555776440, __result=0x555555776540, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#3  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd880, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd880, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555621 in genetic_algorithm () at knapsackga.cpp:106
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+130	
+131	      return std::__uninitialized_copy<__is_trivial(_ValueType1)
+132					       && __is_trivial(_ValueType2)
+133					       && __assignable>::
+134		__uninit_copy(__first, __last, __result);
+135	    }
+136	
+137	
+138	  template<bool _TrivialValueType>
+139	    struct __uninitialized_fill
+
+Backtrace END
+Memory content before bitflip:0x01
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd72f
+address max offset: 1
+Memory content after  bitflip:0x09
+frame name: std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*>
+symbol name: __assignable
+symbol filename: /usr/include/c++/7/bits/stl_uninitialized.h
+symbol line: 128
+value: 9
+value address: 0x7fffffffd72f
+Type: A boolean type.
+Type sizeof: 1
+
+[INFO -- 2018-12-01 10:51:19]
+Fault Injection Successful after 1.5421252250671387s
+[INFO -- 2018-12-01 10:51:31]
+event type: exit
+[INFO -- 2018-12-01 10:51:31]
+exit code: 0

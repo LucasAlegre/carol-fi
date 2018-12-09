@@ -1,0 +1,64 @@
+[INFO -- 2018-12-01 10:00:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:00:39]
+Initialization strings:
+[INFO -- 2018-12-01 10:00:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:00:39]
+initSignal:0
+[INFO -- 2018-12-01 10:00:39]
+endSignal:13
+[INFO -- 2018-12-01 10:00:39]
+faultModel:4
+[EXCEPTION -- 2018-12-01 10:00:45]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 10:00:45]
+Backtrace BEGIN:
+#0  0x0000555555559c4c in std::allocator_traits<std::allocator<chromossome> >::max_size (__a=...) at /usr/include/c++/7/bits/alloc_traits.h:495
+#1  0x00005555555591da in std::vector<chromossome, std::allocator<chromossome> >::max_size (this=0x7fffffffd800) at /usr/include/c++/7/bits/stl_vector.h:676
+#2  0x00005555555581c2 in std::vector<chromossome, std::allocator<chromossome> >::_M_check_len (this=0x7fffffffd800, __n=1, __s=0x55555555b55c "vector::_M_realloc_insert") at /usr/include/c++/7/bits/stl_vector.h:1499
+#3  0x0000555555556d88 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:403
+#4  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#6  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+490	       *  @brief  The maximum supported allocation size
+491	       *  @param  __a  An allocator.
+492	       *  @return @c __a.max_size()
+493	      */
+494	      static size_type
+495	      max_size(const allocator_type& __a) noexcept
+496	      { return __a.max_size(); }
+497	
+498	      /**
+499	       *  @brief  Obtain an allocator to use when copying a container.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<chromossome, std::allocator<chromossome> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x400x3b0x780x55
+Fault Model: LSB bit-flip
+base address to flip value: 0x555555776458
+address max offset: 4
+Memory content after  bitflip:0x400x3b0x780x75
+frame name: std::vector<chromossome, std::allocator<chromossome> >::max_size
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd800
+value address: 0x7fffffffd6d8
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 10:00:45]
+Fault Injection Successful after 6.134002685546875s
+[INFO -- 2018-12-01 10:00:52]
+event type: exit
+[EXCEPTION -- 2018-12-01 10:00:52]
+exit code: no exit code available

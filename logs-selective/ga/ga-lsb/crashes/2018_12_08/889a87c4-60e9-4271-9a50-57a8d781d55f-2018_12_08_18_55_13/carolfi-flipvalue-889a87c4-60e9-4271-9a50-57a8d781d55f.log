@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 18:55:06]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:55:06]
+Initialization strings:
+[INFO -- 2018-12-08 18:55:06]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:55:06]
+initSignal:1
+[INFO -- 2018-12-08 18:55:06]
+endSignal:8
+[INFO -- 2018-12-08 18:55:06]
+faultModel:4
+[INFO -- 2018-12-08 18:55:12]
+Backtrace BEGIN:
+#0  0x0000555555556d42 in std::forward<chromossome const&> (__t=...) at /usr/include/c++/7/bits/move.h:74
+#1  0x0000555555558159 in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd820, __p=0x555555776780, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776780, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555556e3a in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 23456248631644 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#6  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+69	   *  This function is used to implement "perfect forwarding".
+70	   */
+71	  template<typename _Tp>
+72	    constexpr _Tp&&
+73	    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+74	    { return static_cast<_Tp&&>(__t); }
+75	
+76	  /**
+77	   *  @brief  Forward an rvalue.
+78	   *  @return The parameter cast to the specified type.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xf00x640x770x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd820
+address max offset: 8
+Memory content after  bitflip:0xf00x640x770x550x550x550x000x80
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: @0x7fffffffd820
+value address: 0x7fffffffd820
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 18:55:12]
+Fault Injection Successful after 6.884582996368408s
+[INFO -- 2018-12-08 18:55:13]
+event type: exit
+[EXCEPTION -- 2018-12-08 18:55:13]
+exit code: no exit code available

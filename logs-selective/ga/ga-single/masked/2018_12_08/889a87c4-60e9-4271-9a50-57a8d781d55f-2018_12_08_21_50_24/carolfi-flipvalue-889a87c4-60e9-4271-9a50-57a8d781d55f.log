@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 21:50:15]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:50:15]
+Initialization strings:
+[INFO -- 2018-12-08 21:50:15]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:50:15]
+initSignal:1
+[INFO -- 2018-12-08 21:50:15]
+endSignal:8
+[INFO -- 2018-12-08 21:50:15]
+faultModel:0
+[INFO -- 2018-12-08 21:50:17]
+Backtrace BEGIN:
+#0  0x0000555555559210 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x5555557772c0, __last=0x555555777440) at /usr/include/c++/7/bits/stl_construct.h:107
+#1  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555777240, __last=0x555555777440) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555777240, __last=0x555555777440) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8a0, __position={solution = std::vector of length 260, capacity 10177998752086 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+102	    {
+103	      template<typename _ForwardIterator>
+104	        static void
+105	        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+106		{
+107		  for (; __first != __last; ++__first)
+108		    std::_Destroy(std::__addressof(*__first));
+109		}
+110	    };
+111	
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: fitness
+Memory content before bitflip:0xe60x7a0x550x55
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd998
+address max offset: 4
+Memory content after  bitflip:0xe60x7b0x550x55
+frame name: std::vector<chromossome, std::allocator<chromossome> >::push_back
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 939
+value: @0x7fffffffd980
+value address: 0x7fffffffd980
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:50:17]
+Fault Injection Successful after 2.74680495262146s
+[INFO -- 2018-12-08 21:50:24]
+event type: exit
+[INFO -- 2018-12-08 21:50:24]
+exit code: 0

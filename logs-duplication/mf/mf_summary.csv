@@ -1,0 +1,121 @@
+Faults Injected:;4621
+
+Fault Effect;#Effect;PVF
+Masked;2380;0.5150400346245402
+SDCs;203;0.043929885306210774
+Crashes;2035;0.4403808699415711
+Hangs;3;0.0006492101276779918
+
+
+Detected SDCs:;199
+SDC Coverage (%):;98.0295566502463
+
+FaultModels SDCs:
+FaultModel ;#SDCs;percentage
+Zero bit-flip;70;34.48275862068966
+Double bit-flip;50;24.63054187192118
+Single bit-flip;44;21.67487684729064
+LSB bit-flip;28;13.793103448275861
+Random bit-flip;11;5.41871921182266
+
+FaultModels Detected SDCs:
+FaultModel ;#SDCs Detected; percentage
+Zero bit-flip;70;34.48275862068966
+Double bit-flip;48;23.645320197044335
+Single bit-flip;43;21.182266009852217
+LSB bit-flip;28;13.793103448275861
+Random bit-flip;10;4.926108374384237
+
+FaultModels Crashes:
+FaultModel ;#Crashes;percentage
+Random bit-flip;514;25.25798525798526
+LSB bit-flip;454;22.30958230958231
+Double bit-flip;400;19.656019656019655
+Single bit-flip;385;18.91891891891892
+Zero bit-flip;282;13.857493857493857
+
+FaultModels Hangs:
+FaultModel ;#Hangs;percentage
+LSB bit-flip;2;66.66666666666666
+Random bit-flip;1;33.33333333333333
+
+Variables that caused SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+7.990012484394507;801;64;j;knapsackmf.cpp;38
+5.843293492695882;753;44;i;knapsackmf.cpp;38
+22.330097087378643;103;23;result1;knapsackmf.cpp;81
+29.850746268656714;67;20;W;knapsackmf.cpp;16
+5.985915492957746;284;17;values;knapsackmf.cpp;38
+20.8955223880597;67;14;n;knapsackmf.cpp;16
+21.428571428571427;56;12;w;knapsackmf.cpp;24
+18.181818181818183;33;6;values;knapsackmf.cpp;16
+100.0;1;1;__a;/usr/include/c++/7/bits/stl_algobase.h;219
+3.4482758620689653;29;1;values;knapsackmf.cpp;58
+2.5;40;1;i;knapsackmf.cpp;23
+
+Variables that caused Detected SDCs:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+7.990012484394507;801;64;j;knapsackmf.cpp;38
+5.843293492695882;753;44;i;knapsackmf.cpp;38
+22.330097087378643;103;23;result1;knapsackmf.cpp;81
+29.850746268656714;67;20;W;knapsackmf.cpp;16
+5.985915492957746;284;17;values;knapsackmf.cpp;38
+20.8955223880597;67;14;n;knapsackmf.cpp;16
+21.428571428571427;56;12;w;knapsackmf.cpp;24
+9.090909090909092;33;3;values;knapsackmf.cpp;16
+100.0;1;1;__a;/usr/include/c++/7/bits/stl_algobase.h;219
+2.5;40;1;i;knapsackmf.cpp;23
+
+Variables that caused Crash:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+86.32138114209828;753;650;i;knapsackmf.cpp;38
+56.30461922596754;801;451;j;knapsackmf.cpp;38
+26.50887573964497;845;224;value;knapsackmf.cpp;39
+61.386138613861384;202;124;V;knapsackmf.cpp;38
+37.67605633802817;284;107;weights;knapsackmf.cpp;38
+32.3943661971831;284;92;values;knapsackmf.cpp;38
+79.1044776119403;67;53;n;knapsackmf.cpp;16
+65.67164179104478;67;44;W;knapsackmf.cpp;16
+77.5;40;31;i;knapsackmf.cpp;23
+39.436619718309856;71;28;this;knapsackmf.cpp;0
+14.960629921259844;127;19;result2;knapsackmf.cpp;82
+61.29032258064516;31;19;V;knapsackmf.cpp;60
+38.095238095238095;42;16;__n;/usr/include/c++/7/bits/stl_vector.h;795
+80.0;20;16;V;knapsackmf.cpp;16
+14.563106796116504;103;15;result1;knapsackmf.cpp;81
+18.91891891891892;74;14;n;knapsackmf.cpp;57
+21.428571428571427;56;12;w;knapsackmf.cpp;24
+90.9090909090909;11;10;i;knapsackmf.cpp;20
+83.33333333333334;12;10;__niter;/usr/include/c++/7/bits/stl_algobase.h;752
+69.23076923076923;13;9;__value;/usr/include/c++/7/bits/stl_algobase.h;784
+52.94117647058824;17;9;__first;/usr/include/c++/7/bits/stl_algobase.h;749
+100.0;9;9;user_entry;../elf/dl-sysdep.c;91
+7.865168539325842;89;7;W;knapsackmf.cpp;56
+25.925925925925924;27;7;weights;knapsackmf.cpp;16
+24.137931034482758;29;7;values;knapsackmf.cpp;58
+85.71428571428571;7;6;_dl_skip_args;rtld.c;84
+55.55555555555556;9;5;__value;/usr/include/c++/7/bits/stl_algobase.h;749
+15.625;32;5;weights;knapsackmf.cpp;59
+12.121212121212121;33;4;values;knapsackmf.cpp;16
+100.0;3;3;set;../sysdeps/unix/sysv/linux/raise.c;39
+42.857142857142854;7;3;__a;/usr/include/c++/7/bits/stl_vector.h;283
+100.0;3;3;action;../sysdeps/posix/libc_fatal.c;67
+100.0;3;3;__p;/usr/include/c++/7/ext/new_allocator.h;116
+100.0;2;2;__first;/usr/include/c++/7/bits/stl_construct.h;105
+25.0;8;2;__GI__dl_argv;rtld.c;83
+100.0;2;2;sigs;abort.c;51
+10.0;20;2;__n;/usr/include/c++/7/bits/stl_vector.h;1344
+15.384615384615385;13;2;_rtld_global_ro;rtld.c;259
+100.0;2;2;__n;/usr/include/c++/7/bits/stl_vector.h;176
+5.88235294117647;17;1;__first;/usr/include/c++/7/bits/stl_algobase.h;784
+3.7037037037037033;27;1;__first;/usr/include/c++/7/bits/stl_uninitialized.h;643
+100.0;1;1;ranges;dl-reloc.c;258
+100.0;1;1;__tmp;/usr/include/c++/7/bits/stl_vector.h;1531
+7.6923076923076925;13;1;__n;/usr/include/c++/7/bits/stl_uninitialized.h;574
+5.263157894736842;19;1;__n;/usr/include/c++/7/bits/stl_uninitialized.h;543
+100.0;1;1;__first;/usr/include/c++/7/bits/stl_construct.h;127
+6.666666666666667;15;1;__n;/usr/include/c++/7/bits/stl_vector.h;283
+
+Variables that caused Hang:
+PVF ;#flips ;#SDCs ;Var name ;file ;line number
+4.477611940298507;67;3;W;knapsackmf.cpp;16

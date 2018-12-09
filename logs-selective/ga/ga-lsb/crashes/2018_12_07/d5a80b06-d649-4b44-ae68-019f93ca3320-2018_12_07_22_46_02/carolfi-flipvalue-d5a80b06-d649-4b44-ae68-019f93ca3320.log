@@ -1,0 +1,63 @@
+[INFO -- 2018-12-07 22:45:58]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-07 22:45:58]
+Initialization strings:
+[INFO -- 2018-12-07 22:45:58]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-07 22:45:58]
+initSignal:1
+[INFO -- 2018-12-07 22:45:58]
+endSignal:8
+[INFO -- 2018-12-07 22:45:58]
+faultModel:4
+[INFO -- 2018-12-07 22:46:01]
+Backtrace BEGIN:
+#0  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x555555776760, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#1  0x0000555555555e4c in chromossome::~chromossome (this=0x555555776760, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#2  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x555555776760) at /usr/include/c++/7/bits/stl_construct.h:98
+#3  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776760, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:108
+#4  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:137
+#5  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776740, __last=0x5555557767a0) at /usr/include/c++/7/bits/stl_construct.h:206
+#6  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd820, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#7  0x000055555555528c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:80
+#8  0x0000555555555653 in genetic_algorithm () at knapsackga.cpp:128
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+430	       *  not touched in any way.  Managing the pointer is the user's
+431	       *  responsibility.
+432	       */
+433	      ~vector() _GLIBCXX_NOEXCEPT
+434	      { std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+435			      _M_get_Tp_allocator()); }
+436	
+437	      /**
+438	       *  @brief  %Vector assignment operator.
+439	       *  @param  __x  A %vector of identical element and allocator types.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x100x3f0x780x55
+Fault Model: LSB bit-flip
+base address to flip value: 0x5555557838b0
+address max offset: 4
+Memory content after  bitflip:0x100x3f0x780x75
+frame name: std::vector<int, std::allocator<int> >::~vector
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x555555776760
+value address: 0x7fffffffd718
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-07 22:46:01]
+Fault Injection Successful after 3.681953191757202s
+[INFO -- 2018-12-07 22:46:01]
+event type: exit
+[EXCEPTION -- 2018-12-07 22:46:01]
+exit code: no exit code available

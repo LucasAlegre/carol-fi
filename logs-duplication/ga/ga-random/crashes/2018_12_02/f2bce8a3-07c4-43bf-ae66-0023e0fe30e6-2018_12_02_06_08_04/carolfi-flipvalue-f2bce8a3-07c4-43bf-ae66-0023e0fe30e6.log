@@ -1,0 +1,54 @@
+[INFO -- 2018-12-02 06:08:00]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:08:00]
+Initialization strings:
+[INFO -- 2018-12-02 06:08:00]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:08:00]
+initSignal:0
+[INFO -- 2018-12-02 06:08:00]
+endSignal:13
+[INFO -- 2018-12-02 06:08:00]
+faultModel:2
+[INFO -- 2018-12-02 06:08:02]
+Backtrace BEGIN:
+#0  __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator (this=0x7fffffffd8a0, __i=@0x7fffffffd898: 0x555555776270) at /usr/include/c++/7/bits/stl_iterator.h:780
+#1  0x00005555555571da in std::vector<int, std::allocator<int> >::end (this=0x7fffffffd9d0) at /usr/include/c++/7/bits/stl_vector.h:591
+#2  0x00005555555563e6 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffda50, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#3  0x000055555555560b in genetic_algorithm () at knapsackga.cpp:105
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+775	      _GLIBCXX_CONSTEXPR __normal_iterator() _GLIBCXX_NOEXCEPT
+776	      : _M_current(_Iterator()) { }
+777	
+778	      explicit
+779	      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+780	      : _M_current(__i) { }
+781	
+782	      // Allow iterator to const_iterator conversion
+783	      template<typename _Iter>
+784	        __normal_iterator(const __normal_iterator<_Iter,
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0xa00xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd868
+address max offset: 8
+Memory content after  bitflip:0x740xe80x460x4a0xeb0x480x750x62
+frame name: __gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >::__normal_iterator
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd8a0
+value address: 0x7fffffffd868
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-02 06:08:02]
+Fault Injection Successful after 2.9972689151763916s
+[INFO -- 2018-12-02 06:08:03]
+event type: exit
+[EXCEPTION -- 2018-12-02 06:08:03]
+exit code: no exit code available

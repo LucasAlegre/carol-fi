@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 15:54:45]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:54:45]
+Initialization strings:
+[INFO -- 2018-12-08 15:54:45]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:54:45]
+initSignal:1
+[INFO -- 2018-12-08 15:54:45]
+endSignal:8
+[INFO -- 2018-12-08 15:54:45]
+faultModel:1
+[EXCEPTION -- 2018-12-08 15:54:47]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 15:54:48]
+Backtrace BEGIN:
+#0  0x0000555555555e35 in chromossome::~chromossome (this=0x55555578b110, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#1  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x55555578b130) at /usr/include/c++/7/bits/stl_construct.h:98
+#2  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x55555578b130, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:108
+#3  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:137
+#4  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:206
+#5  0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#6  0x000055555555591e in genetic_algorithm () at knapsackga.cpp:121
+#7  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+58	
+59	float random01(){
+60	    return static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+61	}
+62	
+63	struct chromossome{
+64	    vector<int> solution;
+65	    int fitness;
+66	    chromossome(int size){
+67	        for(int i = 0; i < size; i++)
+
+Backtrace END
+Memory content before bitflip:0x310xfb0x080x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0b4 
+address max offset: 4
+Memory content after  bitflip:0x340xfb0x080x00
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: W2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 588596
+value address: 0x55555575f0b4 <W2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 15:54:48]
+Fault Injection Successful after 3.0881903171539307s
+[INFO -- 2018-12-08 15:54:48]
+event type: exit
+[EXCEPTION -- 2018-12-08 15:54:48]
+exit code: no exit code available

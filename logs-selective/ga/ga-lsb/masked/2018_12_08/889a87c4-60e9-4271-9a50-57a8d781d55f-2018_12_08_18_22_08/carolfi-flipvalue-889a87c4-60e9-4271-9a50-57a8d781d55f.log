@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 18:21:59]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:21:59]
+Initialization strings:
+[INFO -- 2018-12-08 18:21:59]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:21:59]
+initSignal:1
+[INFO -- 2018-12-08 18:21:59]
+endSignal:8
+[INFO -- 2018-12-08 18:21:59]
+faultModel:4
+[EXCEPTION -- 2018-12-08 18:22:02]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 18:22:02]
+Backtrace BEGIN:
+#0  std::__do_alloc_on_move<std::allocator<int> > (__one=..., __two=...) at /usr/include/c++/7/bits/alloc_traits.h:535
+#1  0x0000555555558d0b in std::__alloc_on_move<std::allocator<int> > (__one=..., __two=...) at /usr/include/c++/7/bits/alloc_traits.h:547
+#2  0x0000555555557752 in std::vector<int, std::allocator<int> >::_M_move_assign (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:1534
+#3  0x000055555555673d in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd8c0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:466
+#4  0x000055555555566c in genetic_algorithm () at knapsackga.cpp:128
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+530	      typedef allocator_traits<_Alloc> __traits;
+531	      return __traits::select_on_container_copy_construction(__a);
+532	    }
+533	
+534	  template<typename _Alloc>
+535	    inline void __do_alloc_on_move(_Alloc& __one, _Alloc& __two, true_type)
+536	    { __one = std::move(__two); }
+537	
+538	  template<typename _Alloc>
+539	    inline void __do_alloc_on_move(_Alloc&, _Alloc&, false_type)
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x400xd90xff0xff0xff0x7f0x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd780
+address max offset: 8
+Memory content after  bitflip:0x400xd90xff0xff0xff0x7f0x000x02
+frame name: std::__do_alloc_on_move<std::allocator<int> >
+symbol name: __two
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 535
+value: @0x7fffffffd780
+value address: 0x7fffffffd780
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 18:22:02]
+Fault Injection Successful after 3.4471757411956787s
+[INFO -- 2018-12-08 18:22:08]
+event type: exit
+[INFO -- 2018-12-08 18:22:08]
+exit code: 0

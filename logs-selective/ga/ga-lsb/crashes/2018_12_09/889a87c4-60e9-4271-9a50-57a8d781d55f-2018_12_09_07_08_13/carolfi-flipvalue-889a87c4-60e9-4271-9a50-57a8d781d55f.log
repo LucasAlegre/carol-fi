@@ -1,0 +1,55 @@
+[INFO -- 2018-12-09 07:08:10]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 07:08:10]
+Initialization strings:
+[INFO -- 2018-12-09 07:08:10]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 07:08:10]
+initSignal:1
+[INFO -- 2018-12-09 07:08:10]
+endSignal:8
+[INFO -- 2018-12-09 07:08:10]
+faultModel:4
+[INFO -- 2018-12-09 07:08:12]
+Backtrace BEGIN:
+#0  0x000055555555864d in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd960, __n=200) at /usr/include/c++/7/bits/stl_vector.h:189
+#1  0x000055555555715d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd960, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#2  0x000055555555616d in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd960, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#3  0x000055555555527f in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:88
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+184	      void
+185	      _M_create_storage(size_t __n)
+186	      {
+187		this->_M_impl._M_start = this->_M_allocate(__n);
+188		this->_M_impl._M_finish = this->_M_impl._M_start;
+189		this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
+190	      }
+191	    };
+192	
+193	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x000x000x3b0x800x260xbd0x690xc7
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd7c7
+address max offset: 8
+Memory content after  bitflip:0x000x000x3b0x800x260xbd0x690xcf
+frame name: std::_Vector_base<int, std::allocator<int> >::_Vector_base
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 136
+value: @0x7fffffffd7c7
+value address: 0x7fffffffd7c7
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 07:08:12]
+Fault Injection Successful after 2.6326589584350586s
+[INFO -- 2018-12-09 07:08:12]
+event type: exit
+[EXCEPTION -- 2018-12-09 07:08:12]
+exit code: no exit code available

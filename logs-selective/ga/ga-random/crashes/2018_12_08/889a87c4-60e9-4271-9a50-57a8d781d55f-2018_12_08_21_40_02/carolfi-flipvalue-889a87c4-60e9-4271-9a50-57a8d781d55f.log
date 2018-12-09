@@ -1,0 +1,61 @@
+[INFO -- 2018-12-08 21:39:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:39:54]
+Initialization strings:
+[INFO -- 2018-12-08 21:39:54]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:39:54]
+initSignal:1
+[INFO -- 2018-12-08 21:39:54]
+endSignal:8
+[INFO -- 2018-12-08 21:39:54]
+faultModel:2
+[EXCEPTION -- 2018-12-08 21:40:00]
+gdbException: Cannot access memory at address 0xa9c9250533b89efd
+[INFO -- 2018-12-08 21:40:00]
+Backtrace BEGIN:
+#0  0x00007ffff7adf440 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#1  0x000055555555a35a in __gnu_cxx::new_allocator<int>::allocate (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/ext/new_allocator.h:111
+#2  0x0000555555559871 in std::allocator_traits<std::allocator<int> >::allocate (__a=..., __n=200) at /usr/include/c++/7/bits/alloc_traits.h:436
+#3  0x000055555555883e in std::_Vector_base<int, std::allocator<int> >::_M_allocate (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:172
+#4  0x0000555555558625 in std::_Vector_base<int, std::allocator<int> >::_M_create_storage (this=0x7fffffffd820, __n=200) at /usr/include/c++/7/bits/stl_vector.h:187
+#5  0x000055555555715d in std::_Vector_base<int, std::allocator<int> >::_Vector_base (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:138
+#6  0x00005555555562c2 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd820, __n=200, __a=...) at /usr/include/c++/7/bits/stl_vector.h:284
+#7  0x0000555555555318 in crossover (pai=std::vector of length 1553121832925655848, capacity 1553121832925655848 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:93
+#8  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#9  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+147	    return -best;
+148	}
+149	
+150	int main()
+151	{
+152	    ifstream file("/tmp/knapsack/instance.txt");
+153	    ofstream outfile("/tmp/knapsack/outputga");
+154	    
+155	    srand (42);
+156	    file >> n; file >> W;
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x200xd80xff0xff0xff0x7f0x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd738
+address max offset: 8
+Memory content after  bitflip:0xdc0x4c0x120x150x520x320xcf0xa3
+frame name: std::_Vector_base<int, std::allocator<int> >::_M_allocate
+symbol name: this
+symbol filename: knapsackga.cpp
+symbol line: 0
+value: 0x7fffffffd820
+value address: 0x7fffffffd738
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:40:00]
+Fault Injection Successful after 6.936915874481201s
+[INFO -- 2018-12-08 21:40:01]
+event type: exit
+[EXCEPTION -- 2018-12-08 21:40:01]
+exit code: no exit code available

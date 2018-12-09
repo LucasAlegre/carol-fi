@@ -1,0 +1,56 @@
+[INFO -- 2018-12-09 08:50:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 08:50:32]
+Initialization strings:
+[INFO -- 2018-12-09 08:50:32]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 08:50:32]
+initSignal:1
+[INFO -- 2018-12-09 08:50:32]
+endSignal:8
+[INFO -- 2018-12-09 08:50:32]
+faultModel:2
+[INFO -- 2018-12-09 08:50:33]
+Backtrace BEGIN:
+#0  std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776b40, __last=0x555555776c00) at /usr/include/c++/7/bits/stl_construct.h:108
+#1  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776b00, __last=0x555555776c00) at /usr/include/c++/7/bits/stl_construct.h:137
+#2  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776b00, __last=0x555555776c00) at /usr/include/c++/7/bits/stl_construct.h:206
+#3  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd8a0, __position={solution = std::vector of length 132, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#4  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#5  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#6  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+103	      template<typename _ForwardIterator>
+104	        static void
+105	        __destroy(_ForwardIterator __first, _ForwardIterator __last)
+106		{
+107		  for (; __first != __last; ++__first)
+108		    std::_Destroy(std::__addressof(*__first));
+109		}
+110	    };
+111	
+112	  template<>
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x6c0x770x550x550x550x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd780
+address max offset: 8
+Memory content after  bitflip:0x410x380x350x2b0xe60x560x1d0xb6
+frame name: std::_Destroy<chromossome*>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 127
+value: 0x555555776c00
+value address: 0x7fffffffd780
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-09 08:50:33]
+Fault Injection Successful after 1.6679339408874512s
+[INFO -- 2018-12-09 08:50:40]
+event type: exit
+[INFO -- 2018-12-09 08:50:40]
+exit code: 0

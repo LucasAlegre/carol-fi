@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 11:49:40]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 11:49:40]
+Initialization strings:
+[INFO -- 2018-12-01 11:49:40]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 11:49:40]
+initSignal:0
+[INFO -- 2018-12-01 11:49:40]
+endSignal:13
+[INFO -- 2018-12-01 11:49:40]
+faultModel:4
+[INFO -- 2018-12-01 11:49:41]
+Backtrace BEGIN:
+#0  std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd980, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:212
+#1  0x000055555555560b in genetic_algorithm () at knapsackga.cpp:105
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+207							   __x.end());
+208		      std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+209				    _M_get_Tp_allocator());
+210		      _M_deallocate(this->_M_impl._M_start,
+211				    this->_M_impl._M_end_of_storage
+212				    - this->_M_impl._M_start);
+213		      this->_M_impl._M_start = __tmp;
+214		      this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __xlen;
+215		    }
+216		  else if (size() >= __xlen)
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x800x3e0x780x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd808
+address max offset: 8
+Memory content after  bitflip:0x800x3e0x780x550x550x550x000x40
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __tmp
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 206
+value: 0x555555783e80
+value address: 0x7fffffffd808
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 11:49:41]
+Fault Injection Successful after 1.247541904449463s
+[INFO -- 2018-12-01 11:49:41]
+event type: exit
+[EXCEPTION -- 2018-12-01 11:49:41]
+exit code: no exit code available

@@ -1,0 +1,50 @@
+[INFO -- 2018-12-01 04:11:54]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:11:54]
+Initialization strings:
+[INFO -- 2018-12-01 04:11:54]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:11:54]
+initSignal:0
+[INFO -- 2018-12-01 04:11:54]
+endSignal:13
+[INFO -- 2018-12-01 04:11:54]
+faultModel:2
+[INFO -- 2018-12-01 04:11:58]
+Backtrace BEGIN:
+#0  0x00007ffff7494a6d in __random () at random.c:298
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#3  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#4  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+293	random.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 8
+Memory content before bitflip:0x6a0xdf0x930xca
+Fault Model: Random bit-flip
+base address to flip value: 0x7ffff78321c0 
+address max offset: 4
+Memory content after  bitflip:0xbe0x3d0xcb0x3a
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, -34626084, 650246579, 1535530169, 1484933552, 2119650888, -187859381, 354653870, 986398142, -1887012204, -1594954254, -836238285, 600041577, 1518509492, 327448875, -1372665713, 338772633, 928638216, 1457843851, -1505586202, -1761051396, 602583687, -921265670, -406812074, 893959172, 2044727010, 519241980, 564457018, -831853027, -815435325, 1001972440, -652901521}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-01 04:11:58]
+Fault Injection Successful after 4.12629771232605s
+[INFO -- 2018-12-01 04:12:07]
+event type: exit
+[INFO -- 2018-12-01 04:12:07]
+exit code: 0

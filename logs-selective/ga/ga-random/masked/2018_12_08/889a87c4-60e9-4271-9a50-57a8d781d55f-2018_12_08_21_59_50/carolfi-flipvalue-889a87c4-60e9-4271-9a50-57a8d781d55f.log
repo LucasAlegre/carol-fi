@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 21:59:41]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:59:41]
+Initialization strings:
+[INFO -- 2018-12-08 21:59:41]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:59:41]
+initSignal:1
+[INFO -- 2018-12-08 21:59:41]
+endSignal:8
+[INFO -- 2018-12-08 21:59:41]
+faultModel:2
+[INFO -- 2018-12-08 21:59:45]
+Backtrace BEGIN:
+#0  __GI___libc_free (mem=0x5555557892d0) at malloc.c:3107
+#1  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x55555578ac90, __p=0x5555557892d0) at /usr/include/c++/7/ext/new_allocator.h:125
+#2  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x5555557892d0, __n=200) at /usr/include/c++/7/bits/alloc_traits.h:462
+#3  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x55555578ac90, __p=0x5555557892d0, __n=200) at /usr/include/c++/7/bits/stl_vector.h:180
+#4  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555578ac90, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#5  0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555578ac90, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#6  0x0000555555555e4c in chromossome::~chromossome (this=0x55555578ac90, __in_chrg=<optimized out>) at knapsackga.cpp:63
+#7  0x0000555555559ca1 in std::_Destroy<chromossome> (__pointer=0x55555578ac90) at /usr/include/c++/7/bits/stl_construct.h:98
+#8  0x000055555555920b in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x55555578ac90, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:108
+#9  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:137
+#10 0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x55555578ac50, __last=0x55555578b150) at /usr/include/c++/7/bits/stl_construct.h:206
+#11 0x0000555555555f6b in std::vector<chromossome, std::allocator<chromossome> >::~vector (this=0x7fffffffd8a0, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:434
+#12 0x000055555555591e in genetic_algorithm () at knapsackga.cpp:121
+#13 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+3102	malloc.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: fitness
+Memory content before bitflip:0x010x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x55555578b168
+address max offset: 4
+Memory content after  bitflip:0xce0xc60x100x41
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: __last
+symbol filename: /usr/include/c++/7/bits/stl_construct.h
+symbol line: 203
+value: 0x55555578b150
+value address: 0x7fffffffd820
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:59:45]
+Fault Injection Successful after 4.69389009475708s
+[INFO -- 2018-12-08 21:59:49]
+event type: exit
+[INFO -- 2018-12-08 21:59:49]
+exit code: 0

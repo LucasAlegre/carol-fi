@@ -1,0 +1,52 @@
+[INFO -- 2018-12-01 06:17:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 06:17:03]
+Initialization strings:
+[INFO -- 2018-12-01 06:17:03]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 06:17:03]
+initSignal:0
+[INFO -- 2018-12-01 06:17:03]
+endSignal:13
+[INFO -- 2018-12-01 06:17:03]
+faultModel:0
+[INFO -- 2018-12-01 06:17:08]
+Backtrace BEGIN:
+#0  crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 200, capacity 200 = {...}, filho2=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:80
+#1  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#2  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+75	    }
+76	    filho1 = pai;
+77	    filho2 = mae;
+78	    for(int i = 0; i < n; i++){
+79	        if(mask[i]){
+80	            swap(filho1[i], filho2[i]);
+81	        }
+82	    }
+83	}
+84	
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0xb00x410x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8c0
+address max offset: 8
+Memory content after  bitflip:0xa00x410x780x550x550x550x000x00
+frame name: crossover
+symbol name: mae
+symbol filename: knapsackga.cpp
+symbol line: 71
+value: std::vector of length 204, capacity 204 = {816, 0, 817, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0...}
+value address: 0x7fffffffd8c0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 06:17:08]
+Fault Injection Successful after 5.1450278759002686s
+[INFO -- 2018-12-01 06:17:08]
+event type: exit
+[EXCEPTION -- 2018-12-01 06:17:08]
+exit code: no exit code available

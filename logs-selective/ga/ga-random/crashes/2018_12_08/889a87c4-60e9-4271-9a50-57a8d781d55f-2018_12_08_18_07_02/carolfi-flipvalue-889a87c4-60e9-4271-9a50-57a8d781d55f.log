@@ -1,0 +1,47 @@
+[INFO -- 2018-12-08 18:06:56]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 18:06:56]
+Initialization strings:
+[INFO -- 2018-12-08 18:06:56]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 18:06:56]
+initSignal:1
+[INFO -- 2018-12-08 18:06:56]
+endSignal:8
+[INFO -- 2018-12-08 18:06:56]
+faultModel:2
+[EXCEPTION -- 2018-12-08 18:07:01]
+gdbException: Cannot access memory at address 0x5246d6a2548cf32f
+[INFO -- 2018-12-08 18:07:01]
+Backtrace BEGIN:
+#0  0x00007ffff74949d7 in __random () at random.c:288
+#1  0x00007ffff7494ea9 in rand () at rand.c:27
+#2  0x0000555555554ff1 in rand_bit () at knapsackga.cpp:30
+#3  0x0000555555555353 in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length -1482165488042851531, capacity -1482165488042851531 = {...}, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:95
+#4  0x00005555555556d7 in genetic_algorithm () at knapsackga.cpp:130
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+283	in random.c
+
+Backtrace END
+Memory content before bitflip:0x0a0x630x520x5b
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd7b4
+address max offset: 4
+Memory content after  bitflip:0x680xa90x0a0xe5
+frame name: __random
+symbol name: retval
+symbol filename: random.c
+symbol line: 289
+value: -452286104
+value address: 0x7fffffffd7b4
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 18:07:01]
+Fault Injection Successful after 5.542405843734741s
+[INFO -- 2018-12-08 18:07:01]
+event type: exit
+[EXCEPTION -- 2018-12-08 18:07:01]
+exit code: no exit code available

@@ -1,0 +1,63 @@
+[INFO -- 2018-12-01 01:40:33]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:40:33]
+Initialization strings:
+[INFO -- 2018-12-01 01:40:33]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:40:33]
+initSignal:0
+[INFO -- 2018-12-01 01:40:33]
+endSignal:13
+[INFO -- 2018-12-01 01:40:33]
+faultModel:3
+[INFO -- 2018-12-01 01:40:36]
+Backtrace BEGIN:
+#0  0x0000555555556105 in std::vector<int, std::allocator<int> >::vector (this=0x555555776380, __x=std::vector of length 200, capacity 256 = {...}) at /usr/include/c++/7/bits/stl_vector.h:328
+#1  0x000055555555810d in chromossome::chromossome (this=0x555555776380) at knapsackga.cpp:42
+#2  0x000055555555816a in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd800, __p=0x555555776380, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#3  0x0000555555556d46 in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555776380, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#4  0x0000555555556e06 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:415
+#5  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#7  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#8  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+323	       *  The newly-created %vector uses a copy of the allocator object used
+324	       *  by @a __x (unless the allocator traits dictate a different object).
+325	       */
+326	      vector(const vector& __x)
+327	      : _Base(__x.size(),
+328		_Alloc_traits::_S_select_on_copy(__x._M_get_Tp_allocator()))
+329	      {
+330		this->_M_impl._M_finish =
+331		  std::__uninitialized_copy_a(__x.begin(), __x.end(),
+332					      this->_M_impl._M_start,
+
+Backtrace END
+Fliping a bit of the value pointed by a pointer
+Fliping value of field: solution
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_start
+Fliping a bit of the pointer
+Memory content before bitflip:0x500x630x770x550x550x550x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x555555776380
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __p
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: 0x555555776380
+value address: 0x7fffffffd730
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:40:36]
+Fault Injection Successful after 3.415653944015503s
+[INFO -- 2018-12-01 01:40:46]
+event type: exit
+[INFO -- 2018-12-01 01:40:46]
+exit code: 0

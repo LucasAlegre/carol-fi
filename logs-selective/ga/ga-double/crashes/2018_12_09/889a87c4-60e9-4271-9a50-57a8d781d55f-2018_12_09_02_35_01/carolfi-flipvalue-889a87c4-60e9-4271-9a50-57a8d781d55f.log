@@ -1,0 +1,60 @@
+[INFO -- 2018-12-09 02:34:57]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 02:34:57]
+Initialization strings:
+[INFO -- 2018-12-09 02:34:57]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 02:34:57]
+initSignal:1
+[INFO -- 2018-12-09 02:34:57]
+endSignal:8
+[INFO -- 2018-12-09 02:34:57]
+faultModel:1
+[EXCEPTION -- 2018-12-09 02:35:00]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-09 02:35:00]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-09 02:35:01]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff74d928d in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7600528 "*** Error in `%s': %s: 0x%s ***\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff74e064a in malloc_printerr (action=<optimized out>, str=0x7ffff75fceae "free(): invalid pointer", ptr=<optimized out>, ar_ptr=<optimized out>) at malloc.c:5426
+#4  0x00007ffff74e273e in _int_free (av=0x7ffff7832c20 <main_arena>, p=<optimized out>, have_lock=0) at malloc.c:4175
+#5  0x00007ffff74e744e in __GI___libc_free (mem=<optimized out>) at malloc.c:3145
+#6  0x0000555555559846 in __gnu_cxx::new_allocator<int>::deallocate (this=0x55555575f070 <wt>, __p=0x555555777cf1) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555558802 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555777cf1, __n=223) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x0000555555557370 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x55555575f070 <wt>, __p=0x555555777cf1, __n=223) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555556b87 in std::_Vector_base<int, std::allocator<int> >::~_Vector_base (this=0x55555575f070 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:162
+#10 0x0000555555555ed7 in std::vector<int, std::allocator<int> >::~vector (this=0x55555575f070 <wt>, __in_chrg=<optimized out>) at /usr/include/c++/7/bits/stl_vector.h:435
+#11 0x00007ffff7493ec0 in __run_exit_handlers (status=0, listp=0x7ffff78326f8 <__exit_funcs>, run_list_atexit=run_list_atexit@entry=true, run_dtors=run_dtors@entry=true) at exit.c:83
+#12 0x00007ffff7493f1a in __GI_exit (status=<optimized out>) at exit.c:105
+#13 0x0000555555554fcb in exit_gracefully () at knapsackga.cpp:26
+#14 0x0000555555555165 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsackga.cpp:48
+#15 0x000055555555589e in genetic_algorithm () at knapsackga.cpp:138
+#16 0x0000555555555b6c in main () at knapsackga.cpp:165
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x4d0xd20x070x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd834
+address max offset: 4
+Memory content after  bitflip:0xed0xd20x070x00
+frame name: cost
+symbol name: valor2
+symbol filename: knapsackga.cpp
+symbol line: 38
+value: 512749
+value address: 0x7fffffffd834
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-09 02:35:01]
+Fault Injection Successful after 4.010546445846558s
+[INFO -- 2018-12-09 02:35:01]
+event type: exit
+[EXCEPTION -- 2018-12-09 02:35:01]
+exit code: no exit code available

@@ -1,0 +1,71 @@
+[INFO -- 2018-12-01 10:54:26]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:54:26]
+Initialization strings:
+[INFO -- 2018-12-01 10:54:26]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:54:26]
+initSignal:0
+[INFO -- 2018-12-01 10:54:26]
+endSignal:13
+[INFO -- 2018-12-01 10:54:26]
+faultModel:1
+[EXCEPTION -- 2018-12-01 10:54:26]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 10:54:26]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-01 10:54:26]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-01 10:54:26]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff7490f5d in __GI_abort () at abort.c:90
+#2  0x00007ffff7ae1095 in __gnu_cxx::__verbose_terminate_handler() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#3  0x00007ffff7adec86 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#4  0x00007ffff7adecd1 in std::terminate() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#5  0x00007ffff7adef69 in __cxa_rethrow () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#6  0x0000555555556fa2 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position=non-dereferenceable iterator for std::vector, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:444
+#7  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#8  0x000055555555515c in tournament (pop=std::vector of length 38, capacity 62 = {...}) at knapsackga.cpp:63
+#9  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#10 0x0000555555555a9b in main () at knapsackga.cpp:141
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping value of field: sa_mask
+Fliping value of field: __val
+Fliping array at pos: 3
+Memory content before bitflip:0x400x360x830xf70xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd660
+address max offset: 8
+Memory content after  bitflip:0x400x360x830xf70xff0x7f0x000x03
+frame name: __GI_abort
+symbol name: act
+symbol filename: abort.c
+symbol line: 53
+value: {__sigaction_handler = {sa_handler = 0x0, sa_sigaction = 0x0}, sa_mask = {__val = {0, 140737349465954, 140737342450599, 216313519459743296, 3432, 1, 140737345959619, 10, 140737342980292, 140737353895200, 140737342980292, 2, 140737345959619, 93824994469104, 140737353895232, 140737345959488}}, sa_flags = -139600448, sa_restorer = 0x7ffff7b8b762}
+value address: 0x7fffffffd640
+Type: The type is a structure.
+Type sizeof: 152
+Field name: __sigaction_handler
+Field Type: The type is a union.
+Field Type sizeof: 8
+Field name: sa_mask
+Field Type: The type is a structure.
+Field Type sizeof: 128
+Field name: sa_flags
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+Field name: sa_restorer
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+
+[INFO -- 2018-12-01 10:54:27]
+Fault Injection Successful after 1.0000741481781006s
+[INFO -- 2018-12-01 10:54:27]
+event type: exit
+[EXCEPTION -- 2018-12-01 10:54:27]
+exit code: no exit code available

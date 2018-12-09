@@ -1,0 +1,70 @@
+[INFO -- 2018-12-09 06:16:51]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-09 06:16:51]
+Initialization strings:
+[INFO -- 2018-12-09 06:16:51]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-09 06:16:51]
+initSignal:1
+[INFO -- 2018-12-09 06:16:51]
+endSignal:8
+[INFO -- 2018-12-09 06:16:51]
+faultModel:3
+[EXCEPTION -- 2018-12-09 06:16:51]
+gdbException: Cannot access memory at address 0xffffffffffffffff
+[INFO -- 2018-12-09 06:16:51]
+Backtrace BEGIN:
+#0  malloc (n=9) at dl-minimal.c:50
+#1  <function called from gdb>
+#2  malloc (n=9) at dl-minimal.c:50
+#3  <function called from gdb>
+#4  0x00007ffff7df21e0 in __libc_open64 (file=file@entry=0x7ffff7ffed60 "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", oflag=oflag@entry=524288) at ../sysdeps/unix/sysv/linux/open64.c:46
+#5  0x00007ffff7ddab38 in open_verify (name=name@entry=0x7ffff7ffed60 "/usr/lib/x86_64-linux-gnu/libstdc++.so.6", fbp=fbp@entry=0x7fffffffd5b0, loader=<optimized out>, whatcode=whatcode@entry=8, mode=mode@entry=0, found_other_class=found_other_class@entry=0x7fffffffd59f, free_name=false, fd=-1) at dl-load.c:1747
+#6  0x00007ffff7dde37f in _dl_map_object (loader=0x7ffff7ffe150, name=0x5555555545a1 "libstdc++.so.6", type=1, trace_mode=0, mode=<optimized out>, nsid=<optimized out>) at dl-load.c:2361
+#7  0x00007ffff7de3280 in openaux (a=a@entry=0x7fffffffdb80) at dl-deps.c:63
+#8  0x00007ffff7df10b0 in _dl_catch_error (objname=objname@entry=0x7fffffffdb78, errstring=errstring@entry=0x7fffffffdb70, mallocedp=mallocedp@entry=0x7fffffffdb6f, operate=operate@entry=0x7ffff7de3250 <openaux>, args=args@entry=0x7fffffffdb80) at dl-error-skeleton.c:198
+#9  0x00007ffff7de389b in _dl_map_object_deps (map=map@entry=0x7ffff7ffe150, preloads=<optimized out>, npreloads=npreloads@entry=0, trace_mode=trace_mode@entry=0, open_mode=open_mode@entry=0) at dl-deps.c:254
+#10 0x00007ffff7dd8b14 in dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:1725
+#11 0x00007ffff7df015a in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdf00, dl_main=dl_main@entry=0x7ffff7dd73d0 <dl_main>) at ../elf/dl-sysdep.c:253
+#12 0x00007ffff7dd6e88 in _dl_start_final (arg=0x7fffffffdf00) at rtld.c:414
+#13 _dl_start (arg=0x7fffffffdf00) at rtld.c:520
+#14 0x00007ffff7dd5ea8 in _start () from /lib64/ld-linux-x86-64.so.2
+#15 0x0000000000000001 in ?? ()
+#16 0x00007fffffffe287 in ?? ()
+#17 0x0000000000000000 in ?? ()
+
+45	in dl-minimal.c
+
+Backtrace END
+Fliping value of field: next
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff7ffdff8 
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: dl_main
+symbol name: _dl_rtld_libname2
+symbol filename: rtld.c
+symbol line: 302
+value: {name = 0x0, next = 0x0, dont_free = 0}
+value address: 0x7ffff7ffdff0 <_dl_rtld_libname2>
+Type: The type is a structure.
+Type sizeof: 24
+Field name: name
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: next
+Field Type: The type is a pointer.
+Field Type sizeof: 8
+Field name: dont_free
+Field Type: The type is an integer type.
+Field Type sizeof: 4
+
+[INFO -- 2018-12-09 06:16:51]
+Fault Injection Successful after 0.9764566421508789s
+[INFO -- 2018-12-09 06:17:00]
+event type: exit
+[INFO -- 2018-12-09 06:17:00]
+exit code: 0

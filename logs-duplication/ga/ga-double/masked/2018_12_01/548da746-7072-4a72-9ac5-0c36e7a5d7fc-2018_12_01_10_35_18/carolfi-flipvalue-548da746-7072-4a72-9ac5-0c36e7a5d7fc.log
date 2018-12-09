@@ -1,0 +1,49 @@
+[INFO -- 2018-12-01 10:35:05]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 10:35:05]
+Initialization strings:
+[INFO -- 2018-12-01 10:35:05]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 10:35:05]
+initSignal:0
+[INFO -- 2018-12-01 10:35:05]
+endSignal:13
+[INFO -- 2018-12-01 10:35:05]
+faultModel:1
+[INFO -- 2018-12-01 10:35:09]
+Backtrace BEGIN:
+#0  __GI___libc_malloc (bytes=64) at malloc.c:3057
+#1  0x00007ffff7adf458 in operator new(unsigned long) () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x0000555555559ca2 in __gnu_cxx::new_allocator<chromossome>::allocate (this=0x7fffffffd800, __n=2) at /usr/include/c++/7/ext/new_allocator.h:111
+#3  0x000055555555922f in std::allocator_traits<std::allocator<chromossome> >::allocate (__a=..., __n=2) at /usr/include/c++/7/bits/alloc_traits.h:436
+#4  0x00005555555582ec in std::_Vector_base<chromossome, std::allocator<chromossome> >::_M_allocate (this=0x7fffffffd800, __n=2) at /usr/include/c++/7/bits/stl_vector.h:172
+#5  0x0000555555556dc6 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:406
+#6  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#7  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#8  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#9  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+3052	malloc.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0xff0x7f0x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd9dc
+address max offset: 4
+Memory content after  bitflip:0x7e0x7f0x000x00
+frame name: main
+symbol name: result2
+symbol filename: knapsackga.cpp
+symbol line: 143
+value: 32638
+value address: 0x7fffffffd9dc
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 10:35:09]
+Fault Injection Successful after 4.6031036376953125s
+[INFO -- 2018-12-01 10:35:18]
+event type: exit
+[INFO -- 2018-12-01 10:35:18]
+exit code: 0

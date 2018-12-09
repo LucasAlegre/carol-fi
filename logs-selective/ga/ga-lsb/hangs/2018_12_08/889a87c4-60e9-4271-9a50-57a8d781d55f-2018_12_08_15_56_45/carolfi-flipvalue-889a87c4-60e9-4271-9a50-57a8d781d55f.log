@@ -1,0 +1,43 @@
+[INFO -- 2018-12-08 15:55:50]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:55:50]
+Initialization strings:
+[INFO -- 2018-12-08 15:55:50]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:55:50]
+initSignal:1
+[INFO -- 2018-12-08 15:55:50]
+endSignal:8
+[INFO -- 2018-12-08 15:55:50]
+faultModel:4
+[EXCEPTION -- 2018-12-08 15:55:52]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 15:55:52]
+Backtrace BEGIN:
+#0  0x00007ffff7494b82 in __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd7d4) at random_r.c:376
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x00005555555551fd in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:83
+#4  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+371	in random_r.c
+
+Backtrace END
+Memory content before bitflip:0x020x000x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd818
+address max offset: 4
+Memory content after  bitflip:0x020x000x000x80
+frame name: tournament
+symbol name: i
+symbol filename: knapsackga.cpp
+symbol line: 82
+value: -2147483646
+value address: 0x7fffffffd818
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 15:55:52]
+Fault Injection Successful after 2.8505797386169434s

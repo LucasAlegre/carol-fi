@@ -1,0 +1,64 @@
+[INFO -- 2018-12-08 16:22:39]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 16:22:39]
+Initialization strings:
+[INFO -- 2018-12-08 16:22:39]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 16:22:39]
+initSignal:1
+[INFO -- 2018-12-08 16:22:39]
+endSignal:8
+[INFO -- 2018-12-08 16:22:39]
+faultModel:2
+[INFO -- 2018-12-08 16:22:42]
+Backtrace BEGIN:
+#0  0x000055555555a677 in std::__uninitialized_copy<false>::__uninit_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x5555555561bb <std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&)+181>) at /usr/include/c++/7/bits/stl_uninitialized.h:76
+#1  0x0000555555559d49 in std::uninitialized_copy<std::move_iterator<chromossome*>, chromossome*> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x0000555555559304 in std::__uninitialized_copy_a<std::move_iterator<chromossome*>, chromossome*, chromossome> (__first=..., __last=..., __result=0x555555776740) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x0000555555558367 in std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x555555776540, __last=0x555555776580, __result=0x555555776740, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#4  0x0000555555556e76 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 36, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:424
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+71	  template<bool _TrivialValueTypes>
+72	    struct __uninitialized_copy
+73	    {
+74	      template<typename _InputIterator, typename _ForwardIterator>
+75	        static _ForwardIterator
+76	        __uninit_copy(_InputIterator __first, _InputIterator __last,
+77			      _ForwardIterator __result)
+78	        {
+79		  _ForwardIterator __cur = __result;
+80		  __try
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Random bit-flip
+base address to flip value: 0x7fffffffd930
+address max offset: 8
+Memory content after  bitflip:0xa20xca0x2c0x560x790x990x840x26
+frame name: genetic_algorithm
+symbol name: filho2
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 0, capacity 693878004195734184
+value address: 0x7fffffffd920
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-08 16:22:42]
+Fault Injection Successful after 3.4786813259124756s
+[INFO -- 2018-12-08 16:22:42]
+event type: exit
+[EXCEPTION -- 2018-12-08 16:22:42]
+exit code: no exit code available

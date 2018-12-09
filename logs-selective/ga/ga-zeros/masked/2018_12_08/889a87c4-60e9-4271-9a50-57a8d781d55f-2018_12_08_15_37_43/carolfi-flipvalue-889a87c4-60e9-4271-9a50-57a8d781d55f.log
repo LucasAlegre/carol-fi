@@ -1,0 +1,62 @@
+[INFO -- 2018-12-08 15:37:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 15:37:34]
+Initialization strings:
+[INFO -- 2018-12-08 15:37:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 15:37:34]
+initSignal:1
+[INFO -- 2018-12-08 15:37:34]
+endSignal:8
+[INFO -- 2018-12-08 15:37:34]
+faultModel:3
+[EXCEPTION -- 2018-12-08 15:37:39]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 15:37:39]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 15:37:41]
+Backtrace BEGIN:
+#0  0x0000555555555206 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:83
+#1  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#2  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+78	
+79	vector<int> tournament(vector<chromossome> &pop){
+80	    vector<chromossome> competitors;
+81	
+82	    for(int i=0; i < 3; i++){
+83	        int randIndex = rand() % pop_size;
+84	        competitors.push_back(pop[randIndex]);
+85	    }
+86	
+87	    sort(competitors.begin(), competitors.end());
+
+Backtrace END
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the pointer
+Memory content before bitflip:0x000x000x000x000x000x000x000x00
+Fault Model: Zero bit-flip
+base address to flip value: 0x7fffffffd908
+address max offset: 8
+Memory content after  bitflip:0x000x000x000x000x000x000x000x00
+frame name: genetic_algorithm
+symbol name: filho1
+symbol filename: knapsackga.cpp
+symbol line: 127
+value: std::vector of length 0, capacity 0
+value address: 0x7fffffffd900
+Type: The type is a structure.
+Type sizeof: 24
+Field name: std::_Vector_base<int, std::allocator<int> >
+Field Type: The type is a structure.
+Field Type sizeof: 24
+
+[INFO -- 2018-12-08 15:37:41]
+Fault Injection Successful after 7.298671007156372s
+[INFO -- 2018-12-08 15:37:43]
+event type: exit
+[INFO -- 2018-12-08 15:37:43]
+exit code: 0

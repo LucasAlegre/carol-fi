@@ -1,0 +1,55 @@
+[INFO -- 2018-12-08 21:41:23]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 21:41:23]
+Initialization strings:
+[INFO -- 2018-12-08 21:41:23]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 21:41:23]
+initSignal:1
+[INFO -- 2018-12-08 21:41:23]
+endSignal:8
+[INFO -- 2018-12-08 21:41:23]
+faultModel:0
+[INFO -- 2018-12-08 21:41:24]
+Backtrace BEGIN:
+#0  0x0000555555555d03 in operator new (__p=0x0) at /usr/include/c++/7/new:169
+#1  0x000055555555816d in __gnu_cxx::new_allocator<chromossome>::construct<chromossome, chromossome const&> (this=0x7fffffffd8a0, __p=0x555555787900, __args#0=...) at /usr/include/c++/7/ext/new_allocator.h:136
+#2  0x0000555555556d7a in std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&> (__a=..., __p=0x555555787900, __args#0=...) at /usr/include/c++/7/bits/alloc_traits.h:475
+#3  0x0000555555555fda in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd8a0, __x=...) at /usr/include/c++/7/bits/stl_vector.h:943
+#4  0x0000555555555731 in genetic_algorithm () at knapsackga.cpp:132
+#5  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+164	#endif // __cpp_sized_deallocation
+165	#endif // __cpp_aligned_new
+166	
+167	// Default placement versions of operator new.
+168	inline void* operator new(std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+169	{ return __p; }
+170	inline void* operator new[](std::size_t, void* __p) _GLIBCXX_USE_NOEXCEPT
+171	{ return __p; }
+172	
+173	// Default placement versions of operator delete.
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x400x750x780x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd8a0
+address max offset: 8
+Memory content after  bitflip:0x400x750x780x550x550x550x000x08
+frame name: std::allocator_traits<std::allocator<chromossome> >::construct<chromossome, chromossome const&>
+symbol name: __a
+symbol filename: /usr/include/c++/7/bits/alloc_traits.h
+symbol line: 474
+value: @0x7fffffffd8a0
+value address: 0x7fffffffd8a0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 21:41:24]
+Fault Injection Successful after 1.5907220840454102s
+[INFO -- 2018-12-08 21:41:24]
+event type: exit
+[EXCEPTION -- 2018-12-08 21:41:24]
+exit code: no exit code available

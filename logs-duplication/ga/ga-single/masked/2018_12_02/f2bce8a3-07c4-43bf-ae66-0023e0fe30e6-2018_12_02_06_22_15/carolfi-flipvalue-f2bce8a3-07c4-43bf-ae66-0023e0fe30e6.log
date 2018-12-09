@@ -1,0 +1,56 @@
+[INFO -- 2018-12-02 06:22:02]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-02 06:22:02]
+Initialization strings:
+[INFO -- 2018-12-02 06:22:02]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-02 06:22:02]
+initSignal:0
+[INFO -- 2018-12-02 06:22:02]
+endSignal:13
+[INFO -- 2018-12-02 06:22:02]
+faultModel:0
+[INFO -- 2018-12-02 06:22:04]
+Backtrace BEGIN:
+#0  std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557801f0) at /usr/include/c++/7/bits/stl_uninitialized.h:101
+#1  0x0000555555558692 in std::uninitialized_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*> (__first=0, __last=816, __result=0x5555557801f0) at /usr/include/c++/7/bits/stl_uninitialized.h:134
+#2  0x0000555555557223 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=816, __result=0x5555557801f0) at /usr/include/c++/7/bits/stl_uninitialized.h:289
+#3  0x00005555555573e5 in std::vector<int, std::allocator<int> >::_M_allocate_and_copy<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > > > (this=0x7fffffffd9b0, __n=200, __first=0, __last=816) at /usr/include/c++/7/bits/stl_vector.h:1263
+#4  0x000055555555640b in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd9b0, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#5  0x000055555555529a in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:76
+#6  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#7  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+96	    {
+97	      template<typename _InputIterator, typename _ForwardIterator>
+98	        static _ForwardIterator
+99	        __uninit_copy(_InputIterator __first, _InputIterator __last,
+100			      _ForwardIterator __result)
+101	        { return std::copy(__first, __last, __result); }
+102	    };
+103	
+104	  /**
+105	   *  @brief Copies the range [first,last) into result.
+
+Backtrace END
+Memory content before bitflip:0x690x390xf80xff
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd920
+address max offset: 4
+Memory content after  bitflip:0x690xb90xf80xff
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -476823
+value address: 0x7fffffffd920
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-02 06:22:04]
+Fault Injection Successful after 2.4384446144104004s
+[INFO -- 2018-12-02 06:22:15]
+event type: exit
+[INFO -- 2018-12-02 06:22:15]
+exit code: 0

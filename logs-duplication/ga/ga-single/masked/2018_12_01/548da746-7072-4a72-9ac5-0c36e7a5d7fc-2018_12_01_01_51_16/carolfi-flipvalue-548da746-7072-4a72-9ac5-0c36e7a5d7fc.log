@@ -1,0 +1,58 @@
+[INFO -- 2018-12-01 01:51:03]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 01:51:03]
+Initialization strings:
+[INFO -- 2018-12-01 01:51:03]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 01:51:03]
+initSignal:0
+[INFO -- 2018-12-01 01:51:03]
+endSignal:13
+[INFO -- 2018-12-01 01:51:03]
+faultModel:0
+[INFO -- 2018-12-01 01:51:08]
+Backtrace BEGIN:
+#0  0x0000555555557200 in std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<int const*, std::vector<int, std::allocator<int> > >, int*, int> (__first=0, __last=0, __result=0x555555775f50) at /usr/include/c++/7/bits/stl_uninitialized.h:287
+#1  0x0000555555556161 in std::vector<int, std::allocator<int> >::vector (this=0x7fffffffd920, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/stl_vector.h:331
+#2  0x00005555555551ab in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:67
+#3  0x0000555555555543 in genetic_algorithm () at knapsackga.cpp:102
+#4  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+282		}
+283	    }
+284	
+285	  template<typename _InputIterator, typename _ForwardIterator, typename _Tp>
+286	    inline _ForwardIterator
+287	    __uninitialized_copy_a(_InputIterator __first, _InputIterator __last,
+288				   _ForwardIterator __result, allocator<_Tp>&)
+289	    { return std::uninitialized_copy(__first, __last, __result); }
+290	
+291	  template<typename _InputIterator, typename _ForwardIterator,
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_end_of_storage
+Fliping a bit of the pointer
+Memory content before bitflip:0x700x620x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x5555557764f0
+address max offset: 8
+Memory content after  bitflip:0x700x620xf70x550x550x550x000x00
+frame name: std::vector<int, std::allocator<int> >::vector
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/stl_vector.h
+symbol line: 326
+value: std::vector of length 200, capacity 2097352 = {0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1...}
+value address: 0x5555557764e0
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 01:51:08]
+Fault Injection Successful after 5.706381320953369s
+[INFO -- 2018-12-01 01:51:16]
+event type: exit
+[INFO -- 2018-12-01 01:51:16]
+exit code: 0

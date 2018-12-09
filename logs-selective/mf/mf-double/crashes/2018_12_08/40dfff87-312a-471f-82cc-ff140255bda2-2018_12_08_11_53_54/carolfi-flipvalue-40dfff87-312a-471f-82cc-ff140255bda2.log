@@ -1,0 +1,51 @@
+[INFO -- 2018-12-08 11:53:52]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 11:53:52]
+Initialization strings:
+[INFO -- 2018-12-08 11:53:52]
+(1) file /tmp/knapsack/mf
+[INFO -- 2018-12-08 11:53:52]
+initSignal:1
+[INFO -- 2018-12-08 11:53:52]
+endSignal:3
+[INFO -- 2018-12-08 11:53:52]
+faultModel:1
+[INFO -- 2018-12-08 11:53:53]
+Backtrace BEGIN:
+#0  0x0000555555555b9b in std::vector<int, std::allocator<int> >::operator[] (this=0x555555774738, __n=213410) at /usr/include/c++/7/bits/stl_vector.h:798
+#1  0x0000555555555147 in knapSack () at knapsackmf.cpp:48
+#2  0x0000555555555578 in main () at knapsackmf.cpp:108
+
+793	       */
+794	      reference
+795	      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+796	      {
+797		__glibcxx_requires_subscript(__n);
+798		return *(this->_M_impl._M_start + __n);
+799	      }
+800	
+801	      /**
+802	       *  @brief  Subscript access to the data contained in the %vector.
+
+Backtrace END
+Memory content before bitflip:0xc70x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x7fffffffd950
+address max offset: 4
+Memory content after  bitflip:0xc70x000x000x28
+frame name: knapSack
+symbol name: i
+symbol filename: knapsackmf.cpp
+symbol line: 40
+value: 671088839
+value address: 0x7fffffffd950
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 11:53:53]
+Fault Injection Successful after 1.1923620700836182s
+[INFO -- 2018-12-08 11:53:53]
+event type: exit
+[EXCEPTION -- 2018-12-08 11:53:53]
+exit code: no exit code available

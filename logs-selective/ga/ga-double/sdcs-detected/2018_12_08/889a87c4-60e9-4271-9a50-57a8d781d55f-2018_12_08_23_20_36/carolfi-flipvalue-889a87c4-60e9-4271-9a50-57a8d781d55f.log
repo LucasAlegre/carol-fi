@@ -1,0 +1,57 @@
+[INFO -- 2018-12-08 23:20:34]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:20:34]
+Initialization strings:
+[INFO -- 2018-12-08 23:20:34]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-08 23:20:34]
+initSignal:1
+[INFO -- 2018-12-08 23:20:34]
+endSignal:8
+[INFO -- 2018-12-08 23:20:34]
+faultModel:1
+[INFO -- 2018-12-08 23:20:35]
+Backtrace BEGIN:
+#0  0x00005555555591db in std::__addressof<chromossome> (__r=...) at /usr/include/c++/7/bits/move.h:48
+#1  0x0000555555559203 in std::_Destroy_aux<false>::__destroy<chromossome*> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:108
+#2  0x00005555555580fc in std::_Destroy<chromossome*> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:137
+#3  0x0000555555556d33 in std::_Destroy<chromossome*, chromossome> (__first=0x555555776420, __last=0x555555776440) at /usr/include/c++/7/bits/stl_construct.h:206
+#4  0x0000555555556ee4 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd820, __position={solution = std::vector of length 20, capacity 0 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:446
+#5  0x0000555555556012 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd820, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#6  0x0000555555555230 in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:84
+#7  0x0000555555555691 in genetic_algorithm () at knapsackga.cpp:129
+#8  0x0000555555555b6c in main () at knapsackga.cpp:165
+
+43	   *  @ingroup utilities
+44	   */
+45	  template<typename _Tp>
+46	    inline _GLIBCXX_CONSTEXPR _Tp*
+47	    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+48	    { return __builtin_addressof(__r); }
+49	
+50	_GLIBCXX_END_NAMESPACE_VERSION
+51	} // namespace
+52	
+
+Backtrace END
+Memory content before bitflip:0xc80x000x000x00
+Fault Model: Double bit-flip
+base address to flip value: 0x55555575f0ac 
+address max offset: 4
+Memory content after  bitflip:0xc80x000x000x22
+frame name: std::_Destroy<chromossome*, chromossome>
+symbol name: n2
+symbol filename: knapsackga.cpp
+symbol line: 18
+value: 570425544
+value address: 0x55555575f0ac <n2>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 23:20:35]
+Fault Injection Successful after 1.7253432273864746s
+[INFO -- 2018-12-08 23:20:35]
+event type: exit
+[INFO -- 2018-12-08 23:20:35]
+exit code: 0

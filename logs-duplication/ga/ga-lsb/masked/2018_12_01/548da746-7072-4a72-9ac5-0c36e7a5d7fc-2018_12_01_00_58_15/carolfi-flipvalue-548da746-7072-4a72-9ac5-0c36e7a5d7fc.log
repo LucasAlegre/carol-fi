@@ -1,0 +1,54 @@
+[INFO -- 2018-12-01 00:58:01]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 00:58:01]
+Initialization strings:
+[INFO -- 2018-12-01 00:58:01]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 00:58:01]
+initSignal:0
+[INFO -- 2018-12-01 00:58:01]
+endSignal:13
+[INFO -- 2018-12-01 00:58:01]
+faultModel:4
+[INFO -- 2018-12-01 00:58:04]
+Backtrace BEGIN:
+#0  std::__uninitialized_move_if_noexcept_a<chromossome*, chromossome*, std::allocator<chromossome> > (__first=0x5555557763a0, __last=0x5555557763a0, __result=0x5555557763f0, __alloc=...) at /usr/include/c++/7/bits/stl_uninitialized.h:312
+#1  0x0000555555556e83 in std::vector<chromossome, std::allocator<chromossome> >::_M_realloc_insert<chromossome const&> (this=0x7fffffffd800, __position={solution = std::vector of length 20, capacity 23456248627324 = {<error reading variable>, __args#0=...) at /usr/include/c++/7/bits/vector.tcc:431
+#2  0x0000555555555fb8 in std::vector<chromossome, std::allocator<chromossome> >::push_back (this=0x7fffffffd800, __x=...) at /usr/include/c++/7/bits/stl_vector.h:948
+#3  0x000055555555515c in tournament (pop=std::vector of length 40, capacity 64 = {...}) at knapsackga.cpp:63
+#4  0x0000555555555581 in genetic_algorithm () at knapsackga.cpp:103
+#5  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+307					       _ForwardIterator __result,
+308					       _Allocator& __alloc)
+309	    {
+310	      return std::__uninitialized_copy_a
+311		(_GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__first),
+312		 _GLIBCXX_MAKE_MOVE_IF_NOEXCEPT_ITERATOR(__last), __result, __alloc);
+313	    }
+314	
+315	  template<typename _ForwardIterator, typename _Tp, typename _Allocator>
+316	    void
+
+Backtrace END
+Memory content before bitflip:0xef0x290xf80xff
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd850
+address max offset: 4
+Memory content after  bitflip:0xef0x290xf80xbf
+frame name: genetic_algorithm
+symbol name: best
+symbol filename: knapsackga.cpp
+symbol line: 92
+value: -1074255377
+value address: 0x7fffffffd850
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-01 00:58:04]
+Fault Injection Successful after 3.865704298019409s
+[INFO -- 2018-12-01 00:58:14]
+event type: exit
+[INFO -- 2018-12-01 00:58:14]
+exit code: 0

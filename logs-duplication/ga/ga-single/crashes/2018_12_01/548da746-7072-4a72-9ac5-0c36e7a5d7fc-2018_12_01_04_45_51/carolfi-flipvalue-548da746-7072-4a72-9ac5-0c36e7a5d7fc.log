@@ -1,0 +1,53 @@
+[INFO -- 2018-12-01 04:45:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 04:45:48]
+Initialization strings:
+[INFO -- 2018-12-01 04:45:48]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 04:45:48]
+initSignal:0
+[INFO -- 2018-12-01 04:45:48]
+endSignal:13
+[INFO -- 2018-12-01 04:45:48]
+faultModel:0
+[INFO -- 2018-12-01 04:45:50]
+Backtrace BEGIN:
+#0  0x000055555555716b in std::vector<int, std::allocator<int> >::begin (this=0x7fffffffd900) at /usr/include/c++/7/bits/stl_vector.h:573
+#1  0x00005555555563f5 in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd980, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:206
+#2  0x000055555555560b in genetic_algorithm () at knapsackga.cpp:105
+#3  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+568	       *  first element in the %vector.  Iteration is done in ordinary
+569	       *  element order.
+570	       */
+571	      const_iterator
+572	      begin() const _GLIBCXX_NOEXCEPT
+573	      { return const_iterator(this->_M_impl._M_start); }
+574	
+575	      /**
+576	       *  Returns a read/write iterator that points one past the last
+577	       *  element in the %vector.  Iteration is done in ordinary
+
+Backtrace END
+Fliping a bit of the reference
+Memory content before bitflip:0x500x5f0x770x550x550x550x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7fffffffd900
+address max offset: 8
+Memory content after  bitflip:0xd00x5f0x770x550x550x550x000x00
+frame name: std::vector<int, std::allocator<int> >::operator=
+symbol name: __x
+symbol filename: /usr/include/c++/7/bits/vector.tcc
+symbol line: 180
+value: std::vector of length 168, capacity 168 = {0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1}
+value address: 0x7fffffffd900
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-01 04:45:50]
+Fault Injection Successful after 2.2659523487091064s
+[INFO -- 2018-12-01 04:45:50]
+event type: exit
+[EXCEPTION -- 2018-12-01 04:45:50]
+exit code: no exit code available

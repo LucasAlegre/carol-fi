@@ -1,0 +1,51 @@
+[INFO -- 2018-12-01 08:36:11]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-01 08:36:11]
+Initialization strings:
+[INFO -- 2018-12-01 08:36:12]
+(1) file /tmp/knapsack/ga
+[INFO -- 2018-12-01 08:36:12]
+initSignal:0
+[INFO -- 2018-12-01 08:36:12]
+endSignal:13
+[INFO -- 2018-12-01 08:36:12]
+faultModel:3
+[INFO -- 2018-12-01 08:36:15]
+Backtrace BEGIN:
+#0  __random_r (buf=buf@entry=0x7ffff7832720 <unsafe_state>, result=result@entry=0x7fffffffd794) at random_r.c:378
+#1  0x00007ffff7494a22 in __random () at random.c:293
+#2  0x00007ffff7494ea9 in rand () at rand.c:27
+#3  0x0000555555554fe3 in rand_bit () at knapsackga.cpp:20
+#4  0x000055555555527f in crossover (pai=std::vector of length 200, capacity 200 = {...}, mae=std::vector of length 200, capacity 200 = {...}, filho1=std::vector of length 0, capacity 0, filho2=std::vector of length 0, capacity 0) at knapsackga.cpp:74
+#5  0x00005555555555c7 in genetic_algorithm () at knapsackga.cpp:104
+#6  0x0000555555555a9b in main () at knapsackga.cpp:141
+
+373	random_r.c: No such file or directory.
+
+Backtrace END
+Fliping array at pos: 3
+Memory content before bitflip:0x810xd50x2e0xe9
+Fault Model: Zero bit-flip
+base address to flip value: 0x7ffff78321ac 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x00
+frame name: __random
+symbol name: randtbl
+symbol filename: random.c
+symbol line: 146
+value: {3, 22016102, -1543070930, 0, -1006185398, 209383949, -388996903, -1631742676, 1951647872, 950007953, -1267504903, -1581024506, 1875143250, 1455174184, -1364986058, -896444875, -1828329841, -1523233868, -1937609624, -696627506, 335300770, -978282892, -849725317, 2122981473, 189903789, -1464342698, 2023238043, 558727481, 1937266862, 726428546, -1733843538, 100738181}
+value address: 0x7ffff78321a0 <randtbl>
+Type: The type is an array.
+Type sizeof: 128
+Field name: None
+Field Type: A range type, that is, an integer type with bounds.
+Field Type sizeof: 8
+Field Type range: (0, 31)
+
+[INFO -- 2018-12-01 08:36:15]
+Fault Injection Successful after 3.495897054672241s
+[INFO -- 2018-12-01 08:36:24]
+event type: exit
+[INFO -- 2018-12-01 08:36:24]
+exit code: 0
