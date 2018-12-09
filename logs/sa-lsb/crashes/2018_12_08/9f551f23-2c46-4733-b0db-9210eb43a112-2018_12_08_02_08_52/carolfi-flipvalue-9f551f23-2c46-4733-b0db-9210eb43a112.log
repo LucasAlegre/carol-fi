@@ -1,0 +1,56 @@
+[INFO -- 2018-12-08 02:08:48]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 02:08:48]
+Initialization strings:
+[INFO -- 2018-12-08 02:08:48]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 02:08:48]
+initSignal:0
+[INFO -- 2018-12-08 02:08:48]
+endSignal:9
+[INFO -- 2018-12-08 02:08:48]
+faultModel:4
+[EXCEPTION -- 2018-12-08 02:08:50]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 02:08:51]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 02:08:51]
+Backtrace BEGIN:
+#0  __GI_raise (sig=sig@entry=6) at ../sysdeps/unix/sysv/linux/raise.c:51
+#1  0x00007ffff6ede801 in __GI_abort () at abort.c:79
+#2  0x00007ffff6f27897 in __libc_message (action=action@entry=do_abort, fmt=fmt@entry=0x7ffff7054b9a "%s\n") at ../sysdeps/posix/libc_fatal.c:181
+#3  0x00007ffff6f2e90a in malloc_printerr (str=str@entry=0x7ffff7052d88 "free(): invalid pointer") at malloc.c:5350
+#4  0x00007ffff6f35e1c in _int_free (have_lock=0, p=0x555555772484, av=0x7ffff7289c40 <main_arena>) at malloc.c:4157
+#5  __GI___libc_free (mem=0x555555772494) at malloc.c:3124
+#6  0x0000555555556d66 in __gnu_cxx::new_allocator<int>::deallocate (this=0x7fffffffd720, __p=0x555555772494) at /usr/include/c++/7/ext/new_allocator.h:125
+#7  0x0000555555556912 in std::allocator_traits<std::allocator<int> >::deallocate (__a=..., __p=0x555555772494, __n=199) at /usr/include/c++/7/bits/alloc_traits.h:462
+#8  0x0000555555556176 in std::_Vector_base<int, std::allocator<int> >::_M_deallocate (this=0x7fffffffd720, __p=0x555555772494, __n=199) at /usr/include/c++/7/bits/stl_vector.h:180
+#9  0x0000555555555c3e in std::vector<int, std::allocator<int> >::operator= (this=0x7fffffffd720, __x=std::vector of length 200, capacity 200 = {...}) at /usr/include/c++/7/bits/vector.tcc:210
+#10 0x00005555555553e6 in simulated_annealing () at knapsacksa.cpp:108
+#11 0x0000555555555658 in main () at knapsacksa.cpp:146
+
+46	../sysdeps/unix/sysv/linux/raise.c: No such file or directory.
+
+Backtrace END
+Fliping a bit of the pointer
+Memory content before bitflip:0x940x240x770x550x550x550x000x00
+Fault Model: LSB bit-flip
+base address to flip value: 0x7fffffffd610
+address max offset: 8
+Memory content after  bitflip:0x940x240x770x550x550x550x000x40
+frame name: __gnu_cxx::new_allocator<int>::deallocate
+symbol name: __p
+symbol filename: /usr/include/c++/7/ext/new_allocator.h
+symbol line: 116
+value: 0x555555772494
+value address: 0x7fffffffd610
+Type: The type is a pointer.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 02:08:51]
+Fault Injection Successful after 3.3595380783081055s
+[INFO -- 2018-12-08 02:08:51]
+event type: exit
+[EXCEPTION -- 2018-12-08 02:08:51]
+exit code: no exit code available

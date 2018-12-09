@@ -1,0 +1,58 @@
+[INFO -- 2018-12-08 23:23:32]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 23:23:32]
+Initialization strings:
+[INFO -- 2018-12-08 23:23:32]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 23:23:32]
+initSignal:0
+[INFO -- 2018-12-08 23:23:32]
+endSignal:9
+[INFO -- 2018-12-08 23:23:32]
+faultModel:0
+[EXCEPTION -- 2018-12-08 23:23:32]
+pythonException: empty range for randrange() (0,0, 0)
+[INFO -- 2018-12-08 23:23:33]
+Backtrace BEGIN:
+#0  0x0000555555555161 in cost (solution=std::vector of length 200, capacity 200 = {...}) at knapsacksa.cpp:59
+#1  0x000055555555534c in simulated_annealing () at knapsacksa.cpp:92
+#2  0x0000555555555658 in main () at knapsacksa.cpp:146
+
+54	    }
+55	
+56	    int peso=0, peso2=0, valor=0, valor2=0;
+57	    for(int i=0; i < n; i++){
+58	        peso += solution[i] * wt[i];
+59	        valor += solution[i] * val[i];
+60	    }
+61	    for(int i=0; i < n; i++){
+62	        peso2 += solution[i] * wt2[i];
+63	        valor2 += solution[i] * val2[i];
+
+Backtrace END
+Fliping a bit of the value pointed by a reference
+Fliping value of field: std::_Vector_base<int, std::allocator<int> >
+Fliping value of field: _M_impl
+Fliping value of field: _M_finish
+Fliping a bit of the value pointed by a pointer
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x555555772ae0
+address max offset: 4
+Memory content after  bitflip:0x000x010x000x00
+frame name: cost
+symbol name: solution
+symbol filename: knapsacksa.cpp
+symbol line: 51
+value: std::vector of length 200, capacity 200 = {0, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0...}
+value address: 0x7fffffffd740
+Type: A reference type.
+Type sizeof: 8
+
+[INFO -- 2018-12-08 23:23:33]
+Fault Injection Successful after 1.0764191150665283s
+[INFO -- 2018-12-08 23:23:33]
+event type: exit
+[EXCEPTION -- 2018-12-08 23:23:33]
+exit code: no exit code available

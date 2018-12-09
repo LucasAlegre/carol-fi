@@ -1,0 +1,23 @@
+[INFO -- 2018-12-08 05:06:38]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 05:06:38]
+Initialization strings:
+[INFO -- 2018-12-08 05:06:38]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 05:06:38]
+initSignal:0
+[INFO -- 2018-12-08 05:06:38]
+endSignal:9
+[INFO -- 2018-12-08 05:06:38]
+faultModel:4
+[EXCEPTION -- 2018-12-08 05:06:43]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 05:06:43]
+pythonException: empty range for randrange() (0,0, 0)
+[EXCEPTION -- 2018-12-08 05:06:43]
+gdbException: No symbol "None" in current context.
+[INFO -- 2018-12-08 05:06:44]
+event type: exit
+[EXCEPTION -- 2018-12-08 05:06:44]
+exit code: no exit code available

@@ -1,0 +1,47 @@
+[INFO -- 2018-12-08 02:49:13]
+Starting flip_value script
+version: 1.1
+[INFO -- 2018-12-08 02:49:13]
+Initialization strings:
+[INFO -- 2018-12-08 02:49:13]
+(1) file /tmp/knapsack/sa
+[INFO -- 2018-12-08 02:49:13]
+initSignal:0
+[INFO -- 2018-12-08 02:49:13]
+endSignal:9
+[INFO -- 2018-12-08 02:49:13]
+faultModel:0
+[INFO -- 2018-12-08 02:49:13]
+Backtrace BEGIN:
+#0  dl_main (phdr=<optimized out>, phnum=<optimized out>, user_entry=<optimized out>, auxv=<optimized out>) at rtld.c:2289
+#1  0x00007ffff7defdd0 in _dl_sysdep_start (start_argptr=start_argptr@entry=0x7fffffffdc90, dl_main=dl_main@entry=0x7ffff7dd7660 <dl_main>) at ../elf/dl-sysdep.c:253
+#2  0x00007ffff7dd7128 in _dl_start_final (arg=0x7fffffffdc90) at rtld.c:414
+#3  _dl_start (arg=0x7fffffffdc90) at rtld.c:521
+#4  0x00007ffff7dd6098 in _start () from /lib64/ld-linux-x86-64.so.2
+#5  0x0000000000000001 in ?? ()
+#6  0x00007fffffffe07d in ?? ()
+#7  0x0000000000000000 in ?? ()
+
+2284	rtld.c: No such file or directory.
+
+Backtrace END
+Memory content before bitflip:0x000x000x000x00
+Fault Model: Single bit-flip
+base address to flip value: 0x7ffff7ffce60 
+address max offset: 4
+Memory content after  bitflip:0x000x000x000x08
+frame name: _dl_sysdep_start
+symbol name: __GI___libc_enable_secure
+symbol filename: ../elf/dl-sysdep.c
+symbol line: 58
+value: 134217728
+value address: 0x7ffff7ffce60 <__libc_enable_secure>
+Type: The type is an integer type.
+Type sizeof: 4
+
+[INFO -- 2018-12-08 02:49:13]
+Fault Injection Successful after 0.5617051124572754s
+[INFO -- 2018-12-08 02:49:22]
+event type: exit
+[INFO -- 2018-12-08 02:49:22]
+exit code: 0
